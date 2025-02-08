@@ -108,29 +108,69 @@ if uploaded_file:
             Dưới đây là danh sách các chương và số lượng câu hỏi mong muốn:
             {chr(10).join(chapter_questions)}
 
-            Hãy tạo câu hỏi trắc nghiệm dựa trên nội dung của từng chương.
-            Yêu cầu:
-            - Mỗi câu hỏi có 4 đáp án (A, B, C, D).
-            - Mỗi câu hỏi phải có đáp án
+            Hãy tạo câu hỏi trắc nghiệm dưới dạng JSON, với định dạng như sau:
+            [
+                {{
+                    "chapter": "Chương 1: Tên chương",
+                    "questions": [
+                        {{
+                            "question": "Câu hỏi 1?",
+                            "options": {{
+                                "A": "Lựa chọn A",
+                                "B": "Lựa chọn B",
+                                "C": "Lựa chọn C",
+                                "D": "Lựa chọn D"
+                            }},
+                            "correct_answer": "B"
+                        }}
+                    ]
+                }}
+            ]
+            ⚠ **Chú ý quan trọng:** 
+            - Trả về JSON hợp lệ, không thêm văn bản ngoài JSON.
+            - Nội dung chương được lấy từ tài liệu dưới đây.
+            - Trả về số lượng câu hỏi theo danh sách yêu cầu.
 
             Nội dung toàn bộ tài liệu:
             {st.session_state.file_content}
             """
-            print("------------------ ")
-            print(prompt)
 
-            # Gọi API OpenAI một lần duy nhất
-            # response = openai.ChatCompletion.create(
-            #     model="gpt-4o-mini",
-            #     messages=[{"role": "user", "content": prompt}],
-            #     temperature=0.7
-            # )
+            # st.subheader("📜 Debug: Nội dung Prompt Gửi OpenAI")
+            # st.text_area("Nội dung Prompt", prompt, height=300)
 
-            # mcq_response = response['choices'][0]['message']['content']
+            response = openai.ChatCompletion.create(
+                model="gpt-4o-mini",
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.7
+            )
 
-            # # Hiển thị câu hỏi trắc nghiệm trên giao diện
-            # st.subheader("📜 Câu Hỏi Trắc Nghiệm:")
-            # st.markdown(mcq_response)
+            response_text = response['choices'][0]['message']['content'].strip()
+            
+            # Kiểm tra xem response có phải JSON hợp lệ không
+            json_match = re.search(r'\[\s*{.*}\s*\]', response_text, re.DOTALL)
+            
+            if json_match:
+                json_text = json_match.group(0)  # Lấy phần JSON hợp lệ
+                try:
+                    mcq_data=json.loads(json_text)  # Chuyển thành danh sách Python
+                except json.JSONDecodeError as e:
+                    print(f"Lỗi khi phân tích JSON: {e}")
+                    mcq_data= []
+            else:
+                print("Không tìm thấy JSON hợp lệ trong phản hồi API.")
+                mcq_data= []
+            
+            
+            # Hiển thị danh sách câu hỏi trên giao diện
+            if mcq_data:
+                for chapter_data in mcq_data:
+                    st.markdown(f"## 📖 {chapter_data['chapter']}")
+                    for idx, question in enumerate(chapter_data['questions']):
+                        st.markdown(f"**Câu {idx+1}: {question['question']}**")
+                        for key, value in question['options'].items():
+                            st.write(f"- {key}: {value}")
+                        st.markdown(f"✅ **Đáp án đúng: {question['correct_answer']}**")
+                        st.markdown("---")
+            else:
+                st.warning("⚠ Không có câu hỏi nào được tạo.")
 
-            # # Cho phép tải xuống kết quả
-            # st.download_button("📥 Tải xuống câu hỏi", mcq_response, file_name="mcqs.txt", mime="text/plain")
