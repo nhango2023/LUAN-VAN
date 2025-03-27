@@ -74,3 +74,6 @@ pytest_cache/
 # Folder
 demo
 
+# env file
+.env
+
