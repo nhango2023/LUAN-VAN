@@ -21,14 +21,19 @@
           <div class="col-md-8 col-lg-6 col-xxl-3">
             <div class="card mb-0">
               <div class="card-body">
-                <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
+                {{-- <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
                   <img src="../assets/images/logos/logo-light.svg" alt="">
-                </a>
+                </a> --}}
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <p class="text-center">Welcome back</p>
                 <form action="login" method="post">
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Username</label>
-                    <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" value="{{ old('email') }}" name="email" aria-describedby="emailHelp">
                   </div>
                   <div class="mb-4">
                     <label for="exampleInputPassword1" class="form-label">Password</label>

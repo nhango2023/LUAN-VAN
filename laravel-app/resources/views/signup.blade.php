@@ -21,18 +21,28 @@
           <div class="col-md-8 col-lg-6 col-xxl-3">
             <div class="card mb-0">
               <div class="card-body">
-                <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
+                {{-- <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
                   <img src="../assets/images/logos/logo-light.svg" alt="">
-                </a>
+                </a> --}}
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <p class="text-center">Create an account</p>
                 <form action="signup" method="post">
                   <div class="mb-3">
                     <label for="exampleInputtext1" class="form-label">Full name</label>
-                    <input type="text" name='full_name' class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                    <input type="text" name='full_name' class="form-control" value="{{ old('full_name') }}" aria-describedby="textHelp">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email Address</label>
-                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" name="email" class="form-control" value="{{ old('email') }}" aria-describedby="emailHelp">
                   </div>
                   <div class="mb-4">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
