@@ -43,5 +43,8 @@ pytest_cache/
 /docker/
 /utils*
 
-#env file
+#environment file
 .env
+
+#virtual environment
+.venv/
