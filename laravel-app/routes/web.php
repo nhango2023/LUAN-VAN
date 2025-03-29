@@ -27,7 +27,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::put('/personal/edit/{id}', [UserController::class, "updatePersonalInfor"])->name('personal.edit');
         Route::get('/create', [UserController::class, "showFormCreate"])->name('create');
         Route::post('/create', [UserController::class, "create"])->name('create');
-        Route::post('/create', [UserController::class, "create"])->name('create');
         Route::delete('/delete/{id}', [UserController::class, 'delete'])->name('delete');
     });
 });

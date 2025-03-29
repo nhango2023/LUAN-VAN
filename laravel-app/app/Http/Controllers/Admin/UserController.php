@@ -68,14 +68,12 @@ class UserController extends Controller
             return back()->with('error', 'Mật khẩu xác nhận không khớp.')->withInput();
         }
 
-
-
         // Tạo user mới
         $user = new User();
         $user->fullname = $req->input('full_name');
         $user->email = $req->input('email');
         $user->password = Hash::make($req->input('password'));
-        $user->sdt = $req->input('phone_number_');
+        $user->sdt = $req->input('phone_number');
         $user->dia_chi = $req->input('address');
         $user->username = $req->input('email');
         $user->level = 'user';

@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SeoDash Free Bootstrap Admin Template by Adminmart</title>
-  <link rel="shortcut icon" type="image/png" href="{{ asset('login-template/assets/images/logos/seodashlogo.png')}}" />
+  <title>@yield('title', 'Admin dashboard')</title>
+  {{-- <link rel="shortcut icon" type="image/png" href="{{ asset('login-template/assets/images/logos/seodashlogo222.png')}}" /> --}}
   <link rel="stylesheet" href="{{ asset('login-template/assets/css/styles.min.css')}}" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -171,12 +171,12 @@
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
               {{-- <a href="#" target="_blank" class="btn btn-primary me-2"><span class="d-none d-md-block">Check Pro
                   Version</span> <span class="d-block d-md-none">Pro</span></a> --}}
-              <a href="#" target="_blank" class="btn btn-success"><span class="d-none d-md-block">Current plan: Free </span>
+              <a href="#" target="_blank" class="btn btn-success"><span class="d-none d-md-block">{{ Auth::user()->level }} </span>
                 <span class="d-block d-md-none">Free</span></a>
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
-                  <img src="{{ $user->avatar ? asset('storage/' . $user->avatar) : 'https://img.freepik.com/free-vector/add-new-user_78370-4710.jpg' }}" alt="" width="35" height="35" class="rounded-circle">
+                  <img src="{{ Auth::user()->avatar ? asset('storage/' . $user->avatar) : 'https://img.freepik.com/free-vector/add-new-user_78370-4710.jpg' }}" alt="" width="35" height="35" class="rounded-circle">
                   {{ Auth::user()->fullname }}!
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">

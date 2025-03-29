@@ -1,5 +1,7 @@
 @extends('admin.layout')
 @section('content')
+@section('title', 'Manage Users')
+<title>Manage uers</title>
     <div class="container-xl" style="overflow-y: hidden">
         <div class="table-responsive" style="overflow-y: hidden">
           <div class="table-wrapper" style="overflow-y: hidden">
@@ -33,7 +35,8 @@
                 <tr>
                     <td>{{ $user->id }}</td>
                     <td>
-                        <a href="#"><img src="/examples/images/avatar/1.jpg" class="avatar" alt="Avatar"> {{ $user->fullname }}</a>
+                        <a href="#"><img style="width: 40px; height: 40px" src="{{ $user->avatar ? asset('storage/' . $user->avatar) : 'https://img.freepik.com/free-vector/add-new-user_78370-4710.jpg' }}" class="avatar rounded-circle img-thumbnail " alt="Avatar"> <span>{{ $user->fullname }}</span></a>
+
                     </td>
                     <td>{{ $user->created_at  }}</td>
                     <td>{{ $user->level }}</td>
