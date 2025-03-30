@@ -1,5 +1,5 @@
 from langchain_core.prompts import ChatPromptTemplate  # noqa: I001
-from langchain_core.pydantic_v1 import BaseModel, Field
+from pydantic import BaseModel, Field
 from chatbot.utils.custom_prompt import CustomPrompt
 from langchain_core.runnables import RunnableSequence
 
