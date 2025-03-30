@@ -1,5 +1,5 @@
 class CustomPrompt:
-    GRADE_DOCUMENT_PROMPT = """
+    GRADE_DOCUMENT_LEVEL = """
         Bạn là người đánh giá mức độ liên quan của một tài liệu đã được truy xuất đối với câu hỏi của người dùng. 
         Mục tiêu của bạn là xác định một cách chính xác xem liệu tài liệu có chứa thông tin liên quan, ...
         Hãy thực hiện các bước dưới đây một cách cẩn thận,...

@@ -41,21 +41,8 @@ class LLM:
         )
         return llm
 
-    def gemini(self):
-        """
-        Khởi tạo mô hình Google Gemini sử dụng API Key từ settings.
 
-        Returns:
-            ChatGoogleGenerativeAI: Đối tượng mô hình Google Gemini.
-        """
-        llm = ChatGoogleGenerativeAI(
-            google_api_key=settings.KEY_API,  # API Key Google Gemini
-            model=settings.GOOGLE_LLM,  # Mô hình Google Gemini (ví dụ: 'gemini-pro')
-            temperature=self.temperature,
-        )
-        return llm
-
-    def get_llm(self, llm_name: str):
+    def get_llm(self):
         """
         Trả về mô hình LLM tương ứng dựa trên tên được cung cấp.
 
@@ -65,9 +52,4 @@ class LLM:
         Returns:
             ChatOpenAI hoặc ChatGoogleGenerativeAI: Đối tượng mô hình tương ứng.
         """
-        if llm_name == "openai":
-            return self.open_ai()
-        elif llm_name == "gemini":
-            return self.gemini()
-        else:
-            return self.open_ai()  # Mặc định sử dụng OpenAI nếu không có tên hợp lệ
+        return self.open_ai()  # Mặc định sử dụng OpenAI nếu không có tên hợp lệ
