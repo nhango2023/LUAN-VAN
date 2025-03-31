@@ -37,10 +37,10 @@ class UserController extends Controller
             $file = $req->file('avatar');
             $filename = time() . '_' . $file->getClientOriginalName();
 
-            // ✅ Ghi file vào storage/app/public/avatars
+
             $path = Storage::disk('public')->putFileAs('avatars', $file, $filename);
 
-            // ✅ Xoá file cũ nếu có
+
             if ($user->avatar && Storage::disk('public')->exists($user->avatar)) {
                 Storage::disk('public')->delete($user->avatar);
             }
@@ -57,32 +57,52 @@ class UserController extends Controller
     {
         return view('admin.user-management.create-form');
     }
+
     public function create(Request $req)
     {
-        // Kiểm tra email đã tồn tại
-        if (User::where('email', $req->input('email'))->exists()) {
+        $req->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+            'confirm_password' => 'required|same:password',
+            'fullname' => 'required|string|max:255',
+        ], [
+            'email.required' => 'Email không được để trống.',
+            'email.email' => 'Email không đúng định dạng.',
+            'password.required' => 'Mật khẩu không được để trống.',
+            'confirm_password.same' => 'Mật khẩu xác nhận không khớp.',
+            'fullname.required' => 'Họ tên không được để trống.'
+        ]);
+
+
+        if (User::where('email', $req->email)->exists()) {
             return back()->with('error', 'Email đã tồn tại.')->withInput();
         }
-        // Kiểm tra xác nhận mật khẩu
-        if ($req->input('password') !== $req->input('confirm_password')) {
-            return back()->with('error', 'Mật khẩu xác nhận không khớp.')->withInput();
+
+
+        $user = new User();
+        $user->email = $req->email;
+        $user->password = Hash::make($req->password);
+        $user->fullname = $req->fullname;
+        $user->dia_chi = $req->address;
+        $user->sdt = $req->phone;
+        $user->username = $req->email;
+        $user->level = 'user';
+        $user->status = 1;
+
+        // ✅ Nếu có avatar được chọn
+        if ($req->hasFile('avatar')) {
+            $file = $req->file('avatar');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $path = Storage::disk('public')->putFileAs('avatars', $file, $filename);
+            $user->avatar = $path;
         }
 
-        // Tạo user mới
-        $user = new User();
-        $user->fullname = $req->input('full_name');
-        $user->email = $req->input('email');
-        $user->password = Hash::make($req->input('password'));
-        $user->sdt = $req->input('phone_number');
-        $user->dia_chi = $req->input('address');
-        $user->username = $req->input('email');
-        $user->level = 'user';
-        $user->status = '1';
-
+        // ✅ Lưu vào DB
         $user->save();
 
-        return redirect()->route('admin.user.createcreate')->with('success', 'Thêm người dùng thành công!');
+        return redirect()->route('admin.user.create')->with('success', 'Thêm người dùng thành công!');
     }
+
     public function delete($id)
     {
         $user = User::findOrFail($id);

@@ -1,6 +1,12 @@
 @extends('admin.layout') <!-- nếu dùng layout chung, còn không thì bỏ dòng này -->
 
 @section('content')
+<style>
+    .body-wrapper {
+        margin-top: -48px;
+    }
+  </style>
+
 <div class="container mt-5 mb-5">
     <div class="card shadow">
         <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">

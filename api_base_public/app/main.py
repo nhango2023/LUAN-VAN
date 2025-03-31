@@ -6,9 +6,16 @@ from typing import Literal
 import fitz  # PyMuPDF
 import docx
 from llm.utils.split_document import SplitDocument
-
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+import openai
+import json
+from llm.llm_level.llm import LLM_LEVEL
+from llm.llm_level.grade_document_level import DocumentGrader
 # Tạo instance của FastAPI
 app = FastAPI()
+
+with open("../apikey.txt", "r") as f:
+    openai.api_key = f.readline().strip()
 
 # Cấu hình CORS
 app.add_middleware(
@@ -28,6 +35,10 @@ app.add_middleware(
 @app.get("/")
 def read_root():
     return {"message": "Welcome to my FastAPI application"}
+
+@app.get("/test-call-api")
+def read_root():
+    return {"message": "thành công rồi"}
 
 # Settings.LLM_NAME = "openai"
 
@@ -63,6 +74,19 @@ async def upload_file(
     ##chia tai lieu thanh cac doan nho
     splitter=SplitDocument()
     splited_documents = splitter.process_text(text)
-    print(splited_documents)
+
+    #llm xac dinh level
+    llm_instance = LLM_LEVEL()
+    openai_llm = llm_instance.get_llm()
+    # Khởi tạo grader
+    grader = DocumentGrader(openai_llm).get_chain()
+
+    #goi api xac dinh cap do
+    for idx, text in enumerate(splited_documents):
+        result = grader.invoke({"document": splited_documents[idx]})
+        print(result)
+        print("====")
+    
+        
     
     return {"message": "thanh cong"}
