@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SignupController;
-
+use Illuminate\Support\Facades\Http;
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,3 +32,20 @@ Route::prefix('admin')->name('admin.')->group(function () {
 });
 
 Route::get('logout', [LogoutController::class, 'index'])->name('logout');
+
+Route::get('test-api', function () {
+    try {
+        $response = Http::timeout(5)->get('http://localhost:8000/test-call-api');
+
+        if ($response->successful()) {
+
+            $text = $response->json();
+
+            return view('welcome', compact('text'));
+        } else {
+            return ['error' => $response->status()];
+        }
+    } catch (\Exception $e) {
+        return ['error' => $e->getMessage()];
+    }
+});

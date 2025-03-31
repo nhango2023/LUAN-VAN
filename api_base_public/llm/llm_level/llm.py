@@ -1,55 +1,37 @@
-from langchain_openai import ChatOpenAI  # Import API của OpenAI
-from langchain_google_genai import ChatGoogleGenerativeAI  # Import API của Google Gemini
-from app.config import settings  # Import cấu hình API từ file settings
+from langchain_openai import ChatOpenAI
+from llm.config import settings
 
 
-class LLM:
+class LLM_LEVEL:
     """
-    Lớp LLM (Large Language Model) hỗ trợ gọi API của OpenAI và Google Gemini.
-
-    Attributes:
-        temperature (float): Độ sáng tạo của mô hình.
-        max_tokens (int): Số token tối đa trong một lần gọi API.
-        n_ctx (int): Ngữ cảnh tối đa trong một lần gọi API.
+    Lớp LLM hỗ trợ khởi tạo mô hình OpenAI với các tham số tùy chỉnh.
     """
 
     def __init__(self, temperature: float = 0.01, max_tokens: int = 4096, n_ctx: int = 4096) -> None:
-        """
-        Khởi tạo lớp LLM với các tham số điều chỉnh mô hình.
-
-        Args:
-            temperature (float, optional): Độ sáng tạo của mô hình. Mặc định là 0.01.
-            max_tokens (int, optional): Số lượng token tối đa. Mặc định là 4096.
-            n_ctx (int, optional): Ngữ cảnh tối đa. Mặc định là 4096.
-        """
         self.temperature = temperature
-        self.n_ctx = n_ctx
         self.max_tokens = max_tokens
-        self.model = ""  # Biến model để lưu mô hình đang sử dụng (nếu cần)
+        self.n_ctx = n_ctx
+        self.model = ""
 
     def open_ai(self):
         """
-        Khởi tạo mô hình OpenAI sử dụng API Key từ settings.
+        Khởi tạo mô hình ChatOpenAI với cấu hình từ settings.
 
         Returns:
-            ChatOpenAI: Đối tượng mô hình OpenAI.
+            ChatOpenAI: Mô hình ngôn ngữ của OpenAI.
         """
-        llm = ChatOpenAI(
-            openai_api_key=settings.KEY_API_GPT,  # API Key OpenAI
-            model=settings.OPENAI_LLM,  # Mô hình OpenAI (ví dụ: 'gpt-4')
+        return ChatOpenAI(
+            openai_api_key=settings.KEY_API_GPT,
+            model=settings.OPENAI_LLM,
             temperature=self.temperature,
+            max_tokens=self.max_tokens,
         )
-        return llm
-
 
     def get_llm(self):
         """
-        Trả về mô hình LLM tương ứng dựa trên tên được cung cấp.
-
-        Args:
-            llm_name (str): Tên mô hình ('openai' hoặc 'gemini').
+        Lấy mô hình LLM (hiện tại mặc định là OpenAI).
 
         Returns:
-            ChatOpenAI hoặc ChatGoogleGenerativeAI: Đối tượng mô hình tương ứng.
+            ChatOpenAI: Mô hình được khởi tạo.
         """
-        return self.open_ai()  # Mặc định sử dụng OpenAI nếu không có tên hợp lệ
+        return self.open_ai()
