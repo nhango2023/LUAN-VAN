@@ -1,28 +1,50 @@
 class CalculateQuestion:
     def __init__(self):
-        self.level_1 = {"name": "Remember", "number": 0}
-        self.level_2 = {"name": "Understand", "number": 0}
-        self.level_3 = {"name": "Apply", "number": 0}
-        self.level_4 = {"name": "Analyze", "number": 0}
-        self.level_5 = {"name": "Evaluate", "number": 0}
-        self.level_6 = {"name": "Create", "number": 0}
-        pass
-    
-    def calcuate_level(self, list_level):
-        for level in list_level:
-            name = level["name"].lower()
-            if name == "remember":
-                self.level_1["number"] += 1
-            elif name == "understand":
-                self.level_2["number"] += 1
-            elif name == "apply":
-                self.level_3["number"] += 1
-            elif name == "analyze":
-                self.level_4["number"] += 1
-            elif name == "evaluate":
-                self.level_5["number"] += 1
-            elif name == "create":
-                self.level_6["number"] += 1
+        self.idx_doc_by_level = {
+            "remember": [],
+            "understand": [],
+            "apply": [],
+            "analyze": [],
+            "evaluate": [],
+            "create": [],
+        }
 
-    def calculate_number_question_for_each_level():
-        pass
+        self.n_question_for_each_paragraph = {
+            "remember": [],
+            "understand": [],
+            "apply": [],
+            "analyze": [],
+            "evaluate": [],
+            "create": [],
+        }
+
+    def calculate_level(self, idx, list_level):
+        for level in list_level:
+            name = level.lower()
+            if name in self.idx_doc_by_level:
+                self.idx_doc_by_level[name].append(idx)
+
+    def calculate_number_question_for_each_level(self, n_question, lv_name):
+        n_paragraph=len(self.idx_doc_by_level[lv_name])
+        if (n_paragraph>0):
+            if n_question < n_paragraph:
+                raise ValueError("Not enough questions to assign at least 1 to each paragraph.")
+
+            # Start by giving each paragraph 1 question
+            distribution = [1] * n_paragraph
+            remaining = n_question - n_paragraph
+
+            # Distribute remaining questions
+            i = 0
+            while remaining > 0:
+                distribution[i] += 1
+                remaining -= 1
+                i = (i + 1) % n_paragraph
+
+
+            if lv_name in self.n_question_for_each_paragraph:
+                self.n_question_for_each_paragraph[lv_name] = distribution
+            else:
+                raise ValueError(f"Level name '{lv_name}' is not recognized.")
+           
+

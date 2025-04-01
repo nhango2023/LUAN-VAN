@@ -42,7 +42,7 @@
                     <td>{{ $user->level }}</td>
                     {{-- <td><span class="status text-success">&bull;</span> Active</td> --}}
                     <td>
-                      <a href="{{ route('admin.user.personal.edit', ['id' => $user->id]) }}" class="settings" title="Settings" data-toggle="tooltip"><i
+                      <a href="{{ route('admin.user.personal.show', ['id' => $user->id]) }}" class="settings" title="Settings" data-toggle="tooltip"><i
                           class="material-icons">&#xE3C9;</i></a>
                           <a href="#" class="delete-user" data-fullname="{{ $user->fullname }}" data-id="{{ $user->id }}" style="color: red" title="Delete" data-toggle="tooltip">
                             <i class="material-icons">&#xE5C9;</i>
