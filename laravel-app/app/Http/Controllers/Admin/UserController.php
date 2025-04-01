@@ -58,6 +58,8 @@ class UserController extends Controller
         return view('admin.user-management.create-form');
     }
 
+
+
     public function create(Request $req)
     {
         $req->validate([
@@ -110,5 +112,44 @@ class UserController extends Controller
         $user->save();
 
         return back()->with('success', 'Người dùng đã bị xóa.');
+    }
+
+    public function showFormAdvanced($id)
+    {
+
+        $user = User::findOrFail($id); // tìm user theo ID
+        return view('admin.user-management.advanced-form', compact('user'));
+    }
+
+    public function updatePassWord(Request $req, $id)
+    {
+        $user = User::findOrFail($id);
+        $req->validate([
+            'new_password' => 'required',
+            'confirm_new_password' => 'required|same:new_password',
+        ], [
+            'new_password.required' => 'Mật khẩu không được để trống.',
+            'confirm_password.same' => 'Mật khẩu xác nhận không khớp.',
+        ]);
+        $user->password = Hash::make($req->new_password);
+
+        $user->save();
+
+        return back()->with('success', 'Cập nhật password thành công!');
+    }
+
+    public function updateCredit(Request $req, $id)
+    {
+        $user = User::findOrFail($id);
+        $req->validate([
+            'new_credit' => 'required',
+        ], [
+            'new_credit.required' => 'Credit không được để trống.',
+        ]);
+        $user->credit = $req->new_credit;
+
+        $user->save();
+
+        return back()->with('success', 'Cập nhật credit thành công!');
     }
 }
