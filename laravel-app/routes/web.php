@@ -8,13 +8,12 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\SignupController;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Hash;
 
 Route::get('/', function () {
     return view('home');
 });
-Route::get('history', function () {
-    return view('history');
-})->name('history');
+
 
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'store'])->name('login.store');
@@ -49,23 +48,9 @@ Route::prefix('question')->name('question.')->group(function () {
     Route::get('/show', [QuestionController::class, 'show'])->name('show');
 });
 
-Route::get('display', function () {
-    $questions = [
-        [
-            'question' => 'What is the capital of France?',
-            'options' => ['Berlin', 'Madrid', 'Paris', 'Rome'],
-            'answer' => 'Paris'
-        ],
-        [
-            'question' => 'Which language is used for web development?',
-            'options' => ['Python', 'JavaScript', 'Java', 'C++'],
-            'answer' => 'JavaScript'
-        ],
-    ];
-
-    return view('displayQ', compact('questions'));
+Route::get('taomatkhau', function () {
+    dd(Hash::make('1'));
 });
-
 
 // Route::get('test-api', function () {
 //     try {

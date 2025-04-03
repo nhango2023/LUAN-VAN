@@ -2,7 +2,7 @@ from langchain_openai import ChatOpenAI
 from llm.config import settings
 
 
-class LLM_LEVEL:
+class LLM_GRADE_QUESTION:
     """
     Lớp LLM hỗ trợ khởi tạo mô hình OpenAI với các tham số tùy chỉnh.
     """
