@@ -279,7 +279,7 @@
         </div>
         <div class="nav-links">
             <a href="#" class="active">Question generating</a>
-            <a href="{{ route('history') }}">History</a>
+            <a href="{{ route('question.show') }}">History</a>
         </div>
         <div class="actions">
             <button class="language">
@@ -290,9 +290,9 @@
                     <i style="font-size: 16px" class="fa fa-bell"></i>
                 </button>
                 
-                <img src="{{asset('storage/' . $user->avatar) }}" alt="" width="30" height="30" class="rounded-circle">              
+                <img src="{{ Auth::user()->avatar ? asset('storage/avatars/' . Auth::user()->avatar) : 'https://img.freepik.com/free-vector/add-new-user_78370-4710.jpg' }}" alt="" width="30" height="30" class="rounded-circle">              
             @else                              
-                <button type="button" class="btn btn-success">Sgin in -></button>            
+                <a type="button" href="{{ route("login") }}" class="btn btn-success">Sgin in -></a>            
             @endauth
             
         </div>

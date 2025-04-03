@@ -10,7 +10,6 @@ class QuestionItem(BaseModel):
     options: List[str] = Field(..., description="Danh sách 4 phương án")
     answer: str = Field(..., description="Đáp án đúng")
     level: str = Field(..., description="Cấp độ Bloom's taxonomy")
-    idx_paragraph: int = Field(..., description="Chỉ số đoạn văn gốc")
 
 class QuestionModel(BaseModel):
     Question: List[QuestionItem]

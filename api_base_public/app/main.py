@@ -12,6 +12,9 @@ from llm.llm_level.grade_document_level_template import DocumentGrader
 from llm.llm_generate_question.llm import LLM_GENERATE_QUESTION
 from llm.llm_generate_question.generate_question_template import GenerateQuestion
 
+from llm.llm_grade_question.llm import LLM_GRADE_QUESTION
+from llm.llm_grade_question.grade_question_template import GradeDocument
+
 from llm.utils.calculate_number_question_each_level import CalculateQuestion
 
 # Tạo instance của FastAPI
@@ -47,6 +50,65 @@ lst_keyword={
 def read_root():
     return {"message": "Welcome to my FastAPI application"}
 
+  
+
+def generate_and_filter_questions(document, keyword, level, n_question, llm_generate, llm_grade_question):
+    """
+    Sinh và lọc các câu hỏi trắc nghiệm theo cấp độ Bloom's taxonomy có liên quan với tài liệu
+
+    Parameters:
+        document (str): Nội dung đoạn văn bản gốc dùng làm nguồn để tạo câu hỏi.
+        keyword (str): Chuỗi các từ khóa liên quan đến cấp độ Bloom, cần được sử dụng trong nội dung câu hỏi.
+        level (str): Cấp độ Bloom hiện tại (ví dụ: "remember", "understand", ...).
+        n_question (int): Số lượng câu hỏi cần tạo ra cho đoạn tài liệu này.
+        llm_generate (RunnableSequence): Pipeline của mô hình tạo câu hỏi (từ LangChain).
+        llm_grade_question (RunnableSequence): Pipeline của mô hình đánh giá tính liên quan giữa câu hỏi, tài liệu và đáp án.
+    Returns:
+        List[QuestionItem]: Danh sách các câu hỏi đã được tạo và xác thực là liên quan đến nội dung tài liệu.
+    
+    Notes:
+        - Hàm sẽ cố gắng tạo thêm câu hỏi nếu số lượng ban đầu chưa đủ.
+        - Giới hạn số lần thử lại (max_attempts = 3) để tránh vòng lặp vô hạn nếu không thể tạo đủ câu hỏi phù hợp.
+    """
+    questions = []
+    attempts = 0
+    max_attempts = 3  # tránh lặp vô hạn nếu mãi không tạo được câu phù hợp
+
+    while len(questions) < n_question:
+        needed = n_question - len(questions)
+        if (attempts==0):
+            print(f"\ntao lai cau hoi level:{level}...\n")
+        else:
+            print(f"\ntao cau hoi level:{level}...\n")
+        
+        result = llm_generate.invoke({
+            "document": document,
+            "keyword": keyword,
+            "n_question": needed
+        })
+        print("\ndanh gia cau hoi....\n")
+        for q in result.Question:
+            # print(f"question: {q.question}\nanswer: {q.answer}\ndocument: {document}\n")
+            if (attempts<max_attempts):
+                score = llm_grade_question.invoke({
+                    "document": document,
+                    "question": q.question,
+                    "suggested_answer": q.answer
+                })
+                print(f"\nsore: {score.binary_score}\n")
+                if score.binary_score == "yes":
+                    q.level = level
+                    # print(f"new question: {q}")
+                    questions.append(q)
+            else:
+                print("\nattempt: ==max_attempt")
+                q.level = level
+                questions.append(q)
+        
+        attempts += 1
+        print(f"\nattempts: {attempts}\n")
+
+    return questions   
 
 
 @app.post("/question/create")
@@ -126,23 +188,91 @@ async def upload_file(
     # Khởi tạo llm tao cau hoi
     llm_generate = GenerateQuestion(LLM_GENERATE_QUESTION().get_llm()).get_chain()
 
+    # Khởi tạo llm danh gia muc do lien quan cua tai lieu voi cau hoi va cau tra loi goi y
+    llm_grade = GradeDocument(LLM_GRADE_QUESTION().get_llm()).get_chain()
+
+    #duyet qua tung level va so luong cau hoi tung level
     for level, count in n_question.items():
+        #so luong paragraph thuoc level hien tai
         n_paragraph=len(calculate_question.idx_doc_by_level[level])
         if (n_paragraph>0):
+            #duyet qua index cua paragraph
             for idx, idx_para in enumerate(calculate_question.idx_doc_by_level[level]):
+                #tai lieu
                 document = splited_documents[idx_para].page_content
-                n_question = calculate_question.n_question_for_each_paragraph[level][idx]
+                #so luong cau hoi cho tai lieu
+                n_q = calculate_question.n_question_for_each_paragraph[level][idx]
+                #tu khoa cua cap do
                 keyword=lst_keyword[level]
                 
-                result = llm_generate.invoke({
-                    "document":document,
-                    "keyword": keyword,
-                    "n_question": n_question
-                })
-                for q in result.Question:
-                    q.level = level
-                    q.idx_paragraph = idx_para
-                questions.extend(result.Question)
-    print("====finish!====")
+                #goi ham tao cau hoi va danh gia do lien quan cua tai lieu
+                filtered_questions = generate_and_filter_questions(
+                document=document,
+                keyword=keyword,
+                level=level,
+                n_question=n_q,
+                llm_generate=llm_generate,
+                llm_grade_question=llm_grade
+                )
+                
+                # print(filtered_questions)
+                #them cau hoi da thoa man o tren vao mang
+                questions.extend(filtered_questions)
+
+                # #tao cau hoi
+                # result = llm_generate.invoke({
+                #     "document":document,
+                #     "keyword": keyword,
+                #     "n_question": n_question
+                # })
+                # n_question_not_relative = 0
+                # #duyet qua tung cau hoi vua moi duoc tao ra 
+                # for q in result.Question:        
+                #     #danh gia tai lieu co lien quan den cau hoi va cau tra loi goi y =>(yes/no)
+                #     score = llm_grade_question.invoke({
+                #     "document":document,
+                #     "question": q.question,
+                #     "suggested_answer": q.answer
+                # })
+                #     print("\n")
+                #     print(score)
+                #     print("\n")
+                #     if (score=="yes"):
+                #         q.level=level
+                #         questions.append(q)
+                #     else:
+                #         n_question_not_relative+=1
+
+
+                # result = llm_generate.invoke({
+                #         "document":document,
+                #         "keyword": keyword,
+                #         "n_question": n_question_not_relative
+                # })
+
+                # #so luong cau hoi khong lien quan trong tai lieu(document)
+                # n_question_not_relative=0
+
+                # #tao lai cau hoi khong lien quan den tai lieu
+                # for q in result.Question:        
+                #     #danh gia tai lieu co lien quan den cau hoi va cau tra loi goi y =>(yes/no)
+                #     score = llm_grade_question.invoke({
+                #     "document":document,
+                #     "question": q.question,
+                #     "suggested_answer": q.answer
+                # })
+                #     print("\n")
+                #     print(score)
+                #     print("\n")
+                #     if (score=="yes"):
+                #         q.level=level
+                #         questions.append(q)
+                #     else:
+                #         n_question_not_relative+=1                    
+
+                        
+
+                # questions.extend(result.Question)
+    print("\n====finish!====\n")
     return {"questions": questions}
 

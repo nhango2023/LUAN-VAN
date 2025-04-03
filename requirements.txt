@@ -1,4 +1,3 @@
-streamlit
 PyMuPDF  # for fitz (PyMuPDF)
 python-docx  # for Word document reading
 
