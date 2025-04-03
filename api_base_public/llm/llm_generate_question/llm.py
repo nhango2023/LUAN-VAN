@@ -7,7 +7,7 @@ class LLM_GENERATE_QUESTION:
     Lớp LLM hỗ trợ khởi tạo mô hình OpenAI với các tham số tùy chỉnh.
     """
 
-    def __init__(self, temperature: float = 0.01, max_tokens: int = 4096, n_ctx: int = 4096) -> None:
+    def __init__(self, temperature: float = 0.05, max_tokens: int = 4096, n_ctx: int = 4096) -> None:
         self.temperature = temperature
         self.max_tokens = max_tokens
         self.n_ctx = n_ctx
