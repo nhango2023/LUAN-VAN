@@ -5,12 +5,16 @@ use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\SignupController;
 use Illuminate\Support\Facades\Http;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+Route::get('history', function () {
+    return view('history');
+})->name('history');
 
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'store'])->name('login.store');
@@ -40,19 +44,42 @@ Route::prefix('admin')->name('admin.')->middleware('canAccessAdminPage')->group(
 
 Route::get('logout', [LogoutController::class, 'index'])->name('logout');
 
-Route::get('test-api', function () {
-    try {
-        $response = Http::timeout(5)->get('http://localhost:8000/test-call-api');
-
-        if ($response->successful()) {
-
-            $text = $response->json();
-
-            return view('welcome', compact('text'));
-        } else {
-            return ['error' => $response->status()];
-        }
-    } catch (\Exception $e) {
-        return ['error' => $e->getMessage()];
-    }
+Route::prefix('question')->name('question.')->group(function () {
+    Route::post('/create', [QuestionController::class, 'create'])->name('create');
+    Route::get('/show', [QuestionController::class, 'show'])->name('show');
 });
+
+Route::get('display', function () {
+    $questions = [
+        [
+            'question' => 'What is the capital of France?',
+            'options' => ['Berlin', 'Madrid', 'Paris', 'Rome'],
+            'answer' => 'Paris'
+        ],
+        [
+            'question' => 'Which language is used for web development?',
+            'options' => ['Python', 'JavaScript', 'Java', 'C++'],
+            'answer' => 'JavaScript'
+        ],
+    ];
+
+    return view('displayQ', compact('questions'));
+});
+
+
+// Route::get('test-api', function () {
+//     try {
+//         $response = Http::timeout(5)->get('http://localhost:8000/test-call-api');
+
+//         if ($response->successful()) {
+
+//             $text = $response->json();
+
+//             return view('welcome', compact('text'));
+//         } else {
+//             return ['error' => $response->status()];
+//         }
+//     } catch (\Exception $e) {
+//         return ['error' => $e->getMessage()];
+//     }
+// });

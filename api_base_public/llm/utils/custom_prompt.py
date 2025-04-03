@@ -25,19 +25,12 @@ class CustomPrompt:
     Bạn là công cụ tạo câu hỏi trắc nghiệm theo thang Bloom (Bloom's taxonomy).
 
     Nhiệm vụ:
-    - Dựa vào nội dung tài liệu được cung cấp và từ khóa đã cho.
+    - Bám sát vào nội dung tài liệu được cung cấp.
     - Tạo ra số lượng câu hỏi trắc nghiệm chính xác như yêu cầu.
-
-    Yêu cầu định dạng đầu ra:
-    - Mỗi câu hỏi phải có các trường sau:
-    - "question": chuỗi nội dung câu hỏi (phải có chứa ít nhất 1 từ khóa trong câu).
-    - "options": danh sách gồm 4 đáp án dạng chuỗi (A, B, C, D).
-    - "answer": một trong các giá trị "A", "B", "C", hoặc "D" là đáp án đúng.
-
-    - Trả về kết quả dưới dạng **danh sách JSON**
+    - Câu hỏi phải chứa từ khóa được cho.
+    - Đảm bảo đáp án có trong nội dung tài liệu.
 
     Lưu ý:
-    - Không thêm bất kỳ văn bản nào khác ngoài danh sách JSON chứa các câu hỏi.
     - Các câu hỏi phải bám sát tài liệu, đúng nội dung, hợp lý về logic.
     """
 
