@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Http;
 use App\Models\Uploaded_file;
 use App\Models\Question;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class QuestionController extends Controller
 {
@@ -18,56 +19,110 @@ class QuestionController extends Controller
         // Kiểm tra nếu có file
         if ($req->hasFile('file_upload')) {
             // Lấy file từ request
-            $file = $req->file('file_upload');
-            $originalName = $file->getClientOriginalName();
+            // $file = $req->file('file_upload');
+            // $originalName = $file->getClientOriginalName();
 
-            // Save the file locally in the 'uploads' directory (you can change the directory as needed)
-            $uniqueName = time() . '_' . $originalName;
-            $filePath = $file->storeAs('uploads', $uniqueName, 'public');
-            // Insert the file data into the uploaded_files table
-            $uploadedFile = Uploaded_file::create([
-                'id_user' => Auth::user()->id, // Assuming you have user authentication
-                'file_path' => $filePath,
-                'original_name' => $originalName
-            ]);
+            // // Save the file locally in the 'uploads' directory (you can change the directory as needed)
+            // $uniqueName = time() . '_' . $originalName;
+            // $filePath = $file->storeAs('uploads', $uniqueName, 'public');
+            // // Insert the file data into the uploaded_files table
+            // $uploadedFile = Uploaded_file::create([
+            //     'id_user' => Auth::user()->id, // Assuming you have user authentication
+            //     'file_path' => $filePath,
+            //     'original_name' => $originalName
+            // ]);
 
-            // Call API to get questions
-            $response = Http::timeout(300)->attach(
-                'file',               // Tên input file trong API
-                file_get_contents($file->getPathname()),  // Read the content of the file
-                $file->getClientOriginalName() // Keep the original file name
-            )->asMultipart()->post('http://localhost:8000/question/create', [
-                'Nquestion_json' => json_encode([
-                    'remember' => $req->n_remember,
-                    'understand' => $req->n_understand,
-                    'apply' => $req->n_apply,
-                    'analyze' => $req->n_analyze,
-                    'evaluate' => $req->n_evaluate,
-                    'create' => $req->n_create
-                ]),
-            ]);
+            // // Call API to get questions
+            // $response = Http::timeout(300)->attach(
+            //     'file',               // Tên input file trong API
+            //     file_get_contents($file->getPathname()),  // Read the content of the file
+            //     $file->getClientOriginalName() // Keep the original file name
+            // )->asMultipart()->post('http://localhost:8000/question/create', [
+            //     'Nquestion_json' => json_encode([
+            //         'remember' => $req->n_remember,
+            //         'understand' => $req->n_understand,
+            //         'apply' => $req->n_apply,
+            //         'analyze' => $req->n_analyze,
+            //         'evaluate' => $req->n_evaluate,
+            //         'create' => $req->n_create
+            //     ]),
+            // ]);
 
-            // Get questions from API response
-            $questions = $response->json()['questions'];
+            // // Get questions from API response
+            // $questions = $response->json()['questions'];
 
-            // Insert questions into the database
-            foreach ($questions as $question) {
-                Question::create([
-                    'id_file' => $uploadedFile->id, // Set id_file from uploaded file's ID
-                    'content' => $question['question'],
-                    'option_1' => $question['options'][0],
-                    'option_2' => $question['options'][1],
-                    'option_3' => $question['options'][2],
-                    'option_4' => $question['options'][3],
-                    'answer' => $question['answer'],
-                    'level' => $question['level']
-                ]);
-            }
+            // // Insert questions into the database
+            // foreach ($questions as $question) {
+            //     Question::create([
+            //         'id_file' => $uploadedFile->id, // Set id_file from uploaded file's ID
+            //         'content' => $question['question'],
+            //         'option_1' => $question['options'][0],
+            //         'option_2' => $question['options'][1],
+            //         'option_3' => $question['options'][2],
+            //         'option_4' => $question['options'][3],
+            //         'answer' => $question['answer'],
+            //         'level' => $question['level']
+            //     ]);
+            // }
 
             // After inserting, you can return the questions to the view if needed
-            return view('history', compact('questions'));
+            // return view('history', compact('questions'));
+            dd(" có file");
         } else {
             dd("Chưa có file"); // If no file was uploaded
         }
+    }
+
+    public function show()
+    {
+        $userId = Auth::user()->id;
+        // Query to join uploaded_files and questions, then group by level
+        $questions = DB::table('questions as q')
+            ->join('uploaded_files as ulf', 'q.id_file', '=', 'ulf.id')
+            ->where('ulf.id_user', $userId)
+            ->select(
+                'ulf.id as file_id',
+                'ulf.file_path',
+                'ulf.created_at',
+                'ulf.original_name',
+                'q.content as question',
+                'q.option_1',
+                'q.option_2',
+                'q.option_3',
+                'q.option_4',
+                'q.answer',
+                'q.level'
+            )
+            ->get();
+        // Group by file_id then by level
+        $grouped = $questions->groupBy('file_id')->map(function ($groupByFile) {
+            $filePath = $groupByFile->first()->file_path;
+            $fileName = $groupByFile->first()->original_name;
+            $created_at = $groupByFile->first()->created_at;
+
+            // Group again by level inside each file
+            $levels = $groupByFile->groupBy('level')->map(function ($questionsByLevel) {
+                return $questionsByLevel->map(function ($q) {
+                    return [
+                        'question' => $q->question,
+                        'options' => [
+                            'A: ' . $q->option_1,
+                            'B: ' . $q->option_2,
+                            'C: ' . $q->option_3,
+                            'D: ' . $q->option_4,
+                        ],
+                        'answer' => $q->answer,
+                    ];
+                });
+            });
+
+            return [
+                'file_path' => $filePath,
+                'original_name' => $fileName,
+                'created_at' => $created_at,
+                'levels' => $levels,
+            ];
+        });
+        return view('history', ['groupedQuestions' => $grouped]);
     }
 }

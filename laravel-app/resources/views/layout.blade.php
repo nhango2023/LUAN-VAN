@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/docx@7.8.2/build/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
     <!-- Custom CSS for the UI -->
     <style>
         body {
@@ -266,7 +270,14 @@
             text-decoration: underline;
             cursor: pointer;
         }
-
+        .tab-QG {
+            color: #238a6a;
+            font-weight: bold;
+        }
+        .tab-history{
+            color: black;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -277,9 +288,9 @@
             <i class="fa fa-bars"></i>
             <span>Text To Multiple-Choice Questions</span>
         </div>
-        <div class="nav-links">
-            <a href="#" class="active">Question generating</a>
-            <a href="{{ route('question.show') }}">History</a>
+        <div class="">
+            <a href="{{ route("home") }}" class="tab-QG mr-2">Questioning</a>
+            <a href="{{ route('question.show') }}" class="tab-history">History</a>
         </div>
         <div class="actions">
             <button class="language">

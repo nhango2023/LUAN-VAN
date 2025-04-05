@@ -1,5 +1,7 @@
 @extends('layout')
 @section('content')
+
+
     <style>
         .history-header {
             display: flex;
@@ -259,6 +261,13 @@
         .category-btn:active {
             background-color: #004085;
         }
+        .tab-QG {
+            color: black;
+
+        }
+        .tab-history{
+            color: #238a6a;
+        }
     </style>
 
     <div class="history-header">
@@ -273,99 +282,207 @@
         </div>
     </div>
 
-    <!-- History Card -->
-    <div class="history-card">
-        <div class="header">
-            <div class="voice-info">           
-                <div class="tags">
-                    <span class="id" style="background-color: #848fc6;color: black">8 Remember</span>
-                    <span class="id" style="background-color: #89c0e6;color: black">8 Understand</span>
-                    <span class="id" style="background-color: #75ac82;color: black">8 Apply</span>
-                    <span class="id" style="background-color: #aed981;color: black">8 Analyze</span>
-                    <span class="id" style="background-color: #f3da69;color: black">8 Evaculate</span>
-                    <span class="id" style="background-color: #e78b76;color: black">8 Create</span>
+    @php
+    $levelLabels = [
+        'remember' => 'Remember',
+        'understand' => 'Understand',
+        'apply' => 'Apply',
+        'analyze' => 'Analyze',
+        'evaluate' => 'Evaluate',
+        'create' => 'Create'
+    ];
+    
+    $levelColors = [
+        'remember' => '#848fc6',
+        'understand' => '#89c0e6',
+        'apply' => '#75ac82',
+        'analyze' => '#aed981',
+        'evaluate' => '#f3da69',
+        'create' => '#e78b76'
+    ];
+    @endphp
+    
+    @foreach($groupedQuestions as $fileId => $fileGroup)
+        <div class="history-card mt-3">
+            <div class="header">
+                          
+                    <div class="tags">
+                        <h6>📝 File: {{ $fileGroup['original_name'] }}</h6>
+                    </div>
+                
+                <div class="timestamp" style="color: #94a3b8">{{ $fileGroup['created_at'] }}</div>
+            </div>
+            <div id="export-content">
+                <div class="text">
+                    @foreach($fileGroup['levels'] as $level => $questions)
+                        <div class="category" id="{{ $level }}">
+                            <button class="category-btn" style="background-color: {{ $levelColors[$level] }}; color: black">
+                                {{ $levelLabels[$level] }} - {{ count($questions) }} câu hỏi
+                            </button>
+                            <div class="questions-container">
+                                @foreach($questions as $index => $q)
+                                    <div class="question">
+                                        <p class="question-text"><strong>Câu {{ $index + 1 }}:</strong> {{ $q['question'] }}</p>
+                                        <ul class="options">
+                                            @foreach($q['options'] as $option)
+                                                <li>{{ $option }}</li>
+                                            @endforeach
+                                        </ul>
+                                        <p class="correct-answer">✅ <strong>Đáp án đúng:</strong> {{ $q['answer'] }}</p>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
-            <div class="timestamp">37 minutes ago</div>
-        </div>
-        <div class="text">
-
-            <div class="questionnaire">
-                @php
-                $levels = [
-                    'remember' => 'Remembering',
-                    'understand' => 'Understanding',
-                    'apply' => 'Applying',
-                    'analyze' => 'Analyzing',
-                    'evaluate' => 'Evaluating',
-                    'create' => 'Creating',
-                ];
-            
-                $colors = [
-                    'remember' => '#848fc6',
-                    'understand' => '#89c0e6',
-                    'apply' => '#75ac82',
-                    'analyze' => '#aed981',
-                    'evaluate' => '#f3da69',
-                    'create' => '#e78b76',
-                ];
-            @endphp
-            
-            @foreach($levels as $levelKey => $levelName)
-                @if(isset($groupedQuestions[$levelKey]))
-                    <div class="category" id="{{ $levelKey }}">
-                        <button class="category-btn" style="background-color: {{ $colors[$levelKey] }}; color: black">
-                            {{ $levelName }} - {{ count($groupedQuestions[$levelKey]) }} câu hỏi
-                        </button>
-                        <div class="questions-container">
-                            @foreach($groupedQuestions[$levelKey] as $index => $question)
-                                <div class="question">
-                                    <p class="question-text"><strong>Câu {{ $index + 1 }}:</strong> {{ $question['question'] }}</p>
-                                    <ul class="options">
-                                        @foreach($question['options'] as $option)
-                                            <li>{{ $option }}</li>
-                                        @endforeach
-                                    </ul>
-                                    <p class="correct-answer">✅ <strong>Đáp án đúng:</strong> {{ $question['answer'] }}</p>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                @endif
-            @endforeach
-            
-            
+            <div class="footer">
+                <div class="details"><i class="fa fa-info-circle"></i>Details</div>
+                <div class="actions">
+                    <span># {{ \Illuminate\Support\Str::uuid() }}</span>
+                    <button><i class="fa fa-thumbs-up"></i></button>
+                    <button><i class="fa fa-thumbs-down"></i></button>
+                </div>
             </div>
-        
-        <div class="footer">
-            <div class="details">
-                <i class="fa fa-info-circle"></i> Details for each block
+            <div class="d-flex align-items-center my-1" style="margin-left: -5px; color: black">
+                <i class="material-icons">download</i>
+                <div>Download</div> 
             </div>
-            <div class="actions">
-                <span># 45c5a664-0f75-11f0-bf80-9645d7b8ec08</span>
-                <button><i class="fa fa-thumbs-up"></i></button>
-                <button><i class="fa fa-thumbs-down"></i></button>
+            <div class="d-flex justify-content-left">
+                <button onclick="exportQuestionsToExcel()" style="" type="button" class="btn btn-light d-flex align-items-center">
+                    <img style="width: 50px; height: 30px" src="{{ asset('storage/images/excel_download_icon.png') }}" alt="">       
+                </button>
+                <button id="btn-word" onclick="Export2Doc('export-content')"  style="" type="button" class="btn btn-light d-flex align-items-center mx-1">
+                    <img style="width: 50px; height: 30px" src="{{ asset('storage/images/word_download_icon.png') }}" alt="">       
+                </button>
+                <button onclick="exportToText()" style="" type="button" class="btn btn-light d-flex align-items-center">
+                    <img style="width: 50px; height: 30px" src="{{ asset('storage/images/txt_download_icon.png') }}" alt="">       
+                </button>
             </div>
         </div>
-        <div class="actions mt-1">
-            Download
-        </div>
-        <div class="d-flex justify-content-left">
-            <button type="button" class="btn btn-primary">Download exel file</button>
-            <button type="button" class="btn btn-primary mx-3">Download word file</button>
-            <button type="button" class="btn btn-primary">Download txt file</button>
-        </div>
-    </div>
+    @endforeach
+    
 
     <script >
+        
         document.querySelectorAll('.category-btn').forEach(button => {
         button.addEventListener('click', function() {
             const questionsContainer = this.nextElementSibling;
             questionsContainer.style.display = 
                 questionsContainer.style.display === 'block' ? 'none' : 'block';
+            });
         });
-    });
-    
+
+        function exportQuestionsToExcel() {
+            const data = [];
+            const categories = document.querySelectorAll('.category');
+
+            categories.forEach(category => {
+                const level = category.getAttribute('id');
+                const questions = category.querySelectorAll('.question');
+
+                questions.forEach((qEl, index) => {
+                    const questionText = qEl.querySelector('.question-text')?.innerText.replace(/^Câu \d+:\s*/, '') || '';
+                    const answer = qEl.querySelector('.correct-answer')?.innerText.replace(/^✅\s*Đáp án đúng:\s*/, '') || '';
+                    const options = Array.from(qEl.querySelectorAll('.options li')).map(li => li.innerText);
+
+                    data.push({
+                        'Cấp độ': level,
+                        'Câu hỏi': questionText,
+                        'A': options[0] || '',
+                        'B': options[1] || '',
+                        'C': options[2] || '',
+                        'D': options[3] || '',
+                        'Đáp án đúng': answer
+                    });
+                });
+            });
+
+            // Convert to worksheet
+            const worksheet = XLSX.utils.json_to_sheet(data);
+            const workbook = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(workbook, worksheet, "Questions");
+
+            // Trigger download
+            XLSX.writeFile(workbook, "cau_hoi.xlsx");
+        }
+        
+        function exportToText() {
+            let content = '';
+            const categories = document.querySelectorAll('.category');
+
+            categories.forEach(category => {
+                const level = category.getAttribute('id');
+                content += `=== ${level.toUpperCase()} ===\n`;
+
+                const questions = category.querySelectorAll('.question');
+                questions.forEach((qEl, index) => {
+                    const questionText = qEl.querySelector('.question-text')?.innerText || '';
+                    const answer = qEl.querySelector('.correct-answer')?.innerText || '';
+                    const options = Array.from(qEl.querySelectorAll('.options li')).map(li => li.innerText);
+
+                    content += `\n${questionText}\n`;
+                    options.forEach(opt => content += `${opt}\n`);
+                    content += `${answer}\n\n`;
+                });
+            });
+
+            const blob = new Blob([content], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'cau_hoi.txt';
+            link.click();
+        }
+        
+        
+
+        async function Export2Doc(elementId) {
+            const preHtml = `
+                <html xmlns:o='urn:schemas-microsoft-com:office:office' 
+                    xmlns:w='urn:schemas-microsoft-com:office:word' 
+                    xmlns='http://www.w3.org/TR/REC-html40'>
+                <head><meta charset='utf-8'><title>Export HTML to Word</title></head><body>`;
+            const postHtml = "</body></html>";
+            const content = document.getElementById(elementId).innerHTML;
+
+            const html = preHtml + content + postHtml;
+
+            const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+
+            // Use File System Access API if available
+            if (window.showSaveFilePicker) {
+                try {
+                    const handle = await window.showSaveFilePicker({
+                        suggestedName: 'questions.doc',
+                        types: [{
+                            description: 'Word Document',
+                            accept: { 'application/msword': ['.doc'] },
+                        }],
+                    });
+
+                    const writable = await handle.createWritable();
+                    await writable.write(blob);
+                    await writable.close();
+                    alert("Save file successfully!");
+                } catch (err) {
+                    
+                    alert("failed!, please try again");
+                }
+            } else {
+                // Fallback for older browsers
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement("a");
+                link.href = url;
+                link.download = "questions.doc";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
+
+
+
+
     </script>
 
   
