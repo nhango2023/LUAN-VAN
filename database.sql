@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2025 at 03:57 AM
+-- Generation Time: Apr 07, 2025 at 09:51 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -146,7 +146,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('Rts4VmCgQZYTuCVGAXiz0ePk6frUDiGdEsHRThmh', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiMEgyQTNGTDZPd283WlUyMW1BbFFTTUZZNzJjVVZHcHBGY0NVbjJqWiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJuZXciO2E6MDp7fXM6Mzoib2xkIjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMSI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI7fQ==', 1743693846);
+('raoP6QI2VZjuEI0xNDofwn55nzydjZhdeVn4v4ig', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiem52YlB0S3RIWkp1ZWRMb3psQlJ5Q29kN2gwbUFBVFkwZXd0TDVhZCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMS9xdWVzdGlvbi9zaG93Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1743869061);
 
 -- --------------------------------------------------------
 
@@ -169,7 +169,8 @@ CREATE TABLE `uploaded_files` (
 
 INSERT INTO `uploaded_files` (`id`, `id_user`, `file_path`, `original_name`, `created_at`, `updated_at`) VALUES
 (4, 2, 'uploads/1743693208_TLHĐC-pages-1.pdf', 'TLHĐC-pages-1.pdf', '2025-04-03 08:13:28', '2025-04-03 08:13:28'),
-(5, 2, 'uploads/1743693671_TLHĐC-pages-2.pdf', 'TLHĐC-pages-2.pdf', '2025-04-03 08:21:11', '2025-04-03 08:21:11');
+(5, 2, 'uploads/1743693671_TLHĐC-pages-2.pdf', 'TLHĐC-pages-2.pdf', '2025-04-03 08:21:11', '2025-04-03 08:21:11'),
+(6, 2, 'uploads/1743757203_test.doc', 'test.doc', '2025-04-04 02:00:03', '2025-04-04 02:00:03');
 
 -- --------------------------------------------------------
 
@@ -249,7 +250,7 @@ ALTER TABLE `questions`
 -- AUTO_INCREMENT for table `uploaded_files`
 --
 ALTER TABLE `uploaded_files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
