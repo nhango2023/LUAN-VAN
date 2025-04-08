@@ -2,54 +2,54 @@
 @section('content')
     <style>
         /* .upload-container {
-                                                                                                                                                                background-color: #fff;
-                                                                                                                                                                border: 2px dashed #ddd;
-                                                                                                                                                                padding: 40px;
-                                                                                                                                                                text-align: center;
-                                                                                                                                                                width: 100%;
-                                                                                                                                                                height: 100%;
-                                                                                                                                                                border-radius: 8px;
-                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    background-color: #fff;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    border: 2px dashed #ddd;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    padding: 40px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    text-align: center;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    width: 100%;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    height: 100%;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    border-radius: 8px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
 
-                                                                                                                                                            .upload-container h3 {
-                                                                                                                                                                margin-bottom: 20px;
-                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .upload-container h3 {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    margin-bottom: 20px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
 
-                                                                                                                                                            .upload-container button {
-                                                                                                                                                                background-color: #A0A0A0;
-                                                                                                                                                                color: white;
-                                                                                                                                                                border: none;
-                                                                                                                                                                padding: 12px 20px;
-                                                                                                                                                                font-size: 14px;
-                                                                                                                                                                cursor: pointer;
-                                                                                                                                                                border-radius: 4px;
-                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .upload-container button {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    background-color: #A0A0A0;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    color: white;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    border: none;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    padding: 12px 20px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    font-size: 14px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    cursor: pointer;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    border-radius: 4px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
 
-                                                                                                                                                            .upload-container p {
-                                                                                                                                                                margin-top: 10px;
-                                                                                                                                                                color: #888;
-                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .upload-container p {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    margin-top: 10px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    color: #888;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
 
-                                                                                                                                                            .upload-container input[type="file"] {
-                                                                                                                                                                display: none;
-                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .upload-container input[type="file"] {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    display: none;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
 
-                                                                                                                                                            .drop-zone {
-                                                                                                                                                                display: inline-block;
-                                                                                                                                                                padding: 20px;
-                                                                                                                                                                border: 2px dashed #007bff;
-                                                                                                                                                                border-radius: 8px;
-                                                                                                                                                                cursor: pointer;
-                                                                                                                                                                transition: background-color 0.3s ease;
-                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .drop-zone {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    display: inline-block;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    padding: 20px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    border: 2px dashed #007bff;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    border-radius: 8px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    cursor: pointer;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    transition: background-color 0.3s ease;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
 
-                                                                                                                                                            .drop-zone:hover {
-                                                                                                                                                                background-color: #f1f9ff;
-                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .drop-zone:hover {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    background-color: #f1f9ff;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
 
-                                                                                                                                                            .drop-zone.active {
-                                                                                                                                                                background-color: #f1f9ff;
-                                                                                                                                                            } */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .drop-zone.active {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    background-color: #f1f9ff;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                } */
         .container-upload {
             text-align: center;
             width: 100%;
@@ -508,31 +508,70 @@
         .toast-close:hover {
             color: #111827;
         }
+
+        .payment-options {
+            display: flex;
+            gap: 12px;
+        }
+
+        .payment-options input[type="radio"] {
+            display: none;
+        }
+
+        .payment-options label {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            border: 2px solid #3b82f6;
+            /* blue-500 */
+            border-radius: 8px;
+            cursor: pointer;
+            color: #3b82f6;
+            font-weight: 600;
+            font-family: sans-serif;
+            transition: all 0.2s ease;
+        }
+
+        .payment-options label .custom-radio {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #3b82f6;
+            border-radius: 50%;
+            margin-right: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .payment-options label .custom-radio::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            display: none;
+        }
+
+        .payment-options input[type="radio"]:checked+label {
+            background-color: #3b82f6;
+            color: white;
+        }
+
+        .payment-options input[type="radio"]:checked+label .custom-radio {
+            background-color: white;
+        }
+
+        .payment-options input[type="radio"]:checked+label .custom-radio::after {
+            display: block;
+        }
     </style>
-
-
-
-
     <!-- Main Content -->
     <div class="main-container">
         <!-- Text Input Section -->
         <div class="text-input-section">
-
-            {{-- <div class="upload-container">
-                <h3>Upload Your File</h3>
-                <label for="file-upload" class="drop-zone">
-                    <span>Choose Files</span>
-                    
-                </label>
-                <p>or drop files here</p>
-                <p id="file-name-display" style="color: #333; font-weight: bold;"></p>
-            </div> --}}
-
-
             <div class="container">
                 <div class="header-section">
                     <h1>Upload Files</h1>
-
                 </div>
                 <div class="drop-section">
                     <div class="col" style="text-align: center">
@@ -558,88 +597,242 @@
 
         <!-- Voice Selection Section -->
         <div class="voice-selection-section">
+            <div class="payment-options">
+                <input type="radio" id="rdo_number" name="payment" checked>
+                <label for="rdo_number">
+                    <span class="custom-radio"></span>
+                    Quanlity
+                </label>
+
+                <input type="radio" id="rdo_percent" name="payment">
+                <label for="rdo_percent">
+                    <span class="custom-radio"></span>
+                    Quanlity(%)
+                </label>
+            </div>
+
             <form action="{{ route('question.create') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <!-- Hidden input file (vẫn có thể trigger bằng JS) -->
                 <input type="file" name="file_upload" id="file-upload" style="display: none;">
+
+                <div class="input-group mb-3 d-none" id='div_total'>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" style=" color: black;">In total</span>
+                    </div>
+                    <input id="total" type="number" class="form-control"
+                        aria-label="Dollar amount (with dot and two decimal places)">
+                </div>
+
                 <div class="form-row">
+                    <div class="form-group col-md-6 d-none">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"
+                                    style="background-color: #848fc6; color: black">Remember</span>
+                            </div>
+                            <input type="number" aria-label="First name" class="form-control" name="%_remember">
+                            <span class="input-group-text">%</span>
+                        </div>
+                    </div>
+
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">remember</label>
-                        <input type="number" name="n_remember" class="form-control" id="inputEmail4">
+                        <div class="input-group ">
+                            <input type="number" class="form-control" aria-label="" name="n_remember">
+                            <div class="input-group-append">
+                                <span class="input-group-text"
+                                    style="background-color: #848fc6; color: black">Remember</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6 d-none">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"
+                                    style="background-color: #89c0e6; color: black">Understand</span>
+                            </div>
+                            <input type="number" aria-label="First name" class="form-control" name="%_understand">
+                            <span class="input-group-text">%</span>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">remember</label>
-                        <input type="number" class="form-control" id="inputPassword4">
+                        <div class="input-group ">
+                            <input type="number" class="form-control" name="n_understand"
+                                aria-label="Dollar amount (with dot and two decimal places)">
+                            <div class="input-group-append">
+                                <span class="input-group-text"
+                                    style="background-color: #89c0e6; color: black">Understand</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">understand</label>
-                        <input type="number" name="n_understand" class="form-control" id="inputEmail4">
+                    <div class="form-group col-md-6 d-none">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="background-color: #75ac82; color: black">Apply</span>
+                            </div>
+                            <input type="number" name="%_apply" aria-label="First name" class="form-control">
+                            <span class="input-group-text">%</span>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">understand</label>
-                        <input type="number" class="form-control" id="inputPassword4">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">apply</label>
-                        <input type="number" name="n_apply" class="form-control" id="inputEmail4">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">apply</label>
-                        <input type="number" class="form-control" id="inputPassword4">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">analyze</label>
-                        <input type="number" name="n_analyze" class="form-control" id="inputEmail4">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">analyz</label>
-                        <input type="number" class="form-control" id="inputPassword4">
+                        <div class="input-group ">
+                            <input type="number" class="form-control" name="n_apply"
+                                aria-label="Dollar amount (with dot and two decimal places)">
+                            <div class="input-group-append">
+                                <span class="input-group-text"
+                                    style="background-color: #75ac82; color: black">Apply</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">evaluate</label>
-                        <input type="number" name="n_evaluate" class="form-control" id="inputEmail4">
+                    <div class="form-group col-md-6 d-none">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"
+                                    style="background-color: #aed981; color: black">Analyze</span>
+                            </div>
+                            <input type="number" aria-label="First name" class="form-control" name="%_analyze">
+                            <span class="input-group-text">%</span>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">evaluate</label>
-                        <input type="number" class="form-control" id="inputPassword4">
+                        <div class="input-group ">
+                            <input type="number" class="form-control" name="n_analyze"
+                                aria-label="Dollar amount (with dot and two decimal places)">
+                            <div class="input-group-append">
+                                <span class="input-group-text"
+                                    style="background-color: #aed981; color: black">Analyze</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">create</label>
-                        <input type="number" name="n_create" class="form-control" id="inputEmail4">
+                    <div class="form-group col-md-6 d-none">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"
+                                    style="background-color: #f3da69; color: black">Evaluate</span>
+                            </div>
+                            <input type="number" aria-label="First name" class="form-control" name="%_evaluate">
+                            <span class="input-group-text">%</span>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">create</label>
-                        <input type="number" class="form-control" id="inputPassword4">
+                        <div class="input-group ">
+                            <input type="number" class="form-control" name="n_evaluate"
+                                aria-label="Dollar amount (with dot and two decimal places)">
+                            <div class="input-group-append">
+                                <span class="input-group-text"
+                                    style="background-color: #f3da69; color: black">Evaluate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6 d-none">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"
+                                    style="background-color: #e78b76; color: black">Create</span>
+                            </div>
+                            <input type="number" aria-label="First name" class="form-control" name="%_create">
+                            <span class="input-group-text">%</span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <div class="input-group ">
+                            <input type="number" class="form-control" name="n_create"
+                                aria-label="Dollar amount (with dot and two decimal places)">
+                            <div class="input-group-append">
+                                <span class="input-group-text"
+                                    style="background-color: #e78b76; color: black">Create</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Generate Question</button>
-
-
             </form>
             <ul class="notifications-toast"></ul>
-            <div class="buttons">
+            {{-- <div class="buttons">
                 <button class="btn" id="success">Success</button>
-            </div>
-
+            </div> --}}
         </div>
     </div>
 
 
     </div>
     <script>
-        document.getElementById("success").addEventListener("click", () => {
-            createToast('success');
+        document.addEventListener('DOMContentLoaded', function() {
+            const rdoPercentage = document.getElementById('rdo_percent');
+            const rdoNumber = document.getElementById('rdo_number');
+            const formRows = document.querySelectorAll('.form-row');
+            const total = document.getElementById('div_total');
+            const rows = document.querySelectorAll('.form-row'); // gets the first .form-row
+
+            function toggleVisibility() {
+
+                if (rdoPercentage.checked) {
+                    rows.forEach(row => {
+                        const firstChild = row.firstElementChild;
+                        if (firstChild) {
+                            firstChild.classList.remove('d-none');
+                        }
+                    });
+                    total.classList.remove('d-none');
+                } else {
+                    rows.forEach(row => {
+                        const firstChild = row.firstElementChild;
+                        if (firstChild) {
+                            firstChild.classList.add('d-none');
+                        }
+                    });
+                    total.classList.add('d-none');
+                }
+            }
+
+            // Set correct state on page load
+            // toggleVisibility();
+
+            // Event listeners
+            rdoPercentage.addEventListener('change', toggleVisibility);
+            rdoNumber.addEventListener('change', toggleVisibility);
         });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const totalInput = document.getElementById('total');
+
+            // List of field names (without prefixes)
+            const fields = ['remember', 'understand', 'apply', 'analyze', 'evaluate', 'create'];
+
+            fields.forEach(field => {
+                const percentInput = document.querySelector(`input[name="%_${field}"]`);
+                const numberInput = document.querySelector(`input[name="n_${field}"]`);
+
+                if (percentInput && numberInput) {
+                    percentInput.addEventListener('mouseleave', function() {
+                        const total = parseFloat(totalInput.value);
+                        const percent = parseFloat(percentInput.value);
+
+                        if (!isNaN(total) && !isNaN(percent)) {
+                            numberInput.value = Math.round(total * percent / 100);
+                        }
+                    });
+                }
+            });
+        });
+
+
+
+        // document.getElementById("success").addEventListener("click", () => {
+        //     createToast('success');
+        // });
 
         const realInput = document.getElementById("file-upload");
         const fakeInput = document.querySelector(".file-selector-input");
@@ -817,5 +1010,37 @@
             // Setting a timeout to remove the toast after the specified duration
             toast.timeoutId = setTimeout(() => removeToast(toast), toastDetails.timer);
         }
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            const submitButton = form.querySelector('button[type="submit"]');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // prevent regular form submission
+
+                const formData = new FormData(form);
+
+                fetch('/question/create', {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value,
+                        },
+                        body: formData
+                    })
+                    .then(response => {
+                        if (!response.ok) throw new Error('Network response was not ok');
+                        return response.json();
+                    })
+                    .then(data => {
+                        createToast('success'); // your custom toast
+                        console.log(data); // optional: handle any returned data
+                    })
+                    .catch(error => {
+
+                        createToast('error'); // optional error toast
+                    });
+            });
+        });
     </script>
 @endsection
