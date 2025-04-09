@@ -112,7 +112,7 @@ def generate_and_filter_questions(document, keyword, level, n_question, llm_gene
 
 
 @app.post("/question/create")
-async def upload_file(
+async def create_question(
     file: UploadFile = File(...),
     Nquestion_json: str = Form(...)
 ):
@@ -154,31 +154,36 @@ async def upload_file(
     splitter=SplitDocument()
     splited_documents = splitter.process_text(text)
     
+    print(f"\n the number of paragraphs: {len(splited_documents)}\n")
+
     # Khởi tạo llm grader xac dinh level
     llm_grader_level = DocumentGrader(LLM_LEVEL().get_llm()).get_chain()
 
-    #khoi tao lop tinh toan moi cap do co bao nhieu doan
+    #khoi tao lop tinh toan moi cap do co bao nhieu cau hoi
     calculate_question=CalculateQuestion()
-    print("Detect levels of each paragraph....")
+
+    print("\nDetect levels of each paragraph....\n")
     #goi api xac dinh cap do
     for idx, text in enumerate(splited_documents):
         result = llm_grader_level.invoke({"document": splited_documents[idx].page_content})
         print(result)
         calculate_question.calculate_level(idx, result.level)
 
-    print("\n")
+    print("\n check there are levels not detected in paragraphs\n")
+    calculate_question.fallback_if_empty_level()
 
+
+    print("\nindex of paragraph following its level\n")    
+    for level, questions in calculate_question.idx_doc_by_level.items():
+        print(f"{level}: {questions}")
+
+    
     for level, count in n_question.items():
         #tinh so luong cau hoi cho moi cap do va cho moi doan van ban
         calculate_question.calculate_number_question_for_each_level(count, level)
 
-    print("index of paragraph following its level")
-    for level, questions in calculate_question.idx_doc_by_level.items():
-        print(f"{level}: {questions}")
 
-    print('\n')
-
-    print("number of questions for each paragraph arranged in order of paragraph's index ")
+    print("\nnumber of questions for each paragraph arranged in order of paragraph's index \n")
     for level, questions in calculate_question.n_question_for_each_paragraph.items():
         print(f"{level}: {questions}")
 
