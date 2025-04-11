@@ -1,7 +1,5 @@
 @extends('layout')
 @section('content')
-
-
     <style>
         .history-header {
             display: flex;
@@ -88,6 +86,7 @@
             background-color: #0078d4;
             color: #fff;
         }
+
         .history-card {
             background-color: #fff;
             border-radius: 10px;
@@ -97,86 +96,105 @@
             margin: 0 auto;
             margin-top: 10px;
         }
+
         .history-card .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 10px;
         }
+
         .history-card .header .voice-info {
             display: flex;
             align-items: center;
             gap: 10px;
         }
+
         .history-card .header .voice-info .icon {
             background-color: #e0e0e0;
             border-radius: 50%;
             padding: 5px;
         }
+
         .history-card .header .voice-info .tags {
             display: flex;
             gap: 5px;
         }
+
         .history-card .header .voice-info .tags span {
             padding: 2px 8px;
             border-radius: 10px;
             font-size: 12px;
         }
+
         .history-card .header .voice-info .tags .id {
             background-color: #f0f0f0;
         }
+
         .history-card .header .voice-info .tags .name {
             background-color: #ffe6e6;
         }
+
         .history-card .header .voice-info .tags .credits {
             background-color: #e6f7fa;
         }
+
         .history-card .header .voice-info .tags .quality {
             background-color: #fff3cd;
         }
+
         .history-card .header .voice-info .tags .speed {
             background-color: #e6e6e6;
             color: #666;
         }
+
         .history-card .header .timestamp {
             font-size: 12px;
             color: #666;
         }
+
         .history-card .text {
             font-size: 14px;
             color: #333;
             margin-bottom: 10px;
         }
+
         .history-card .audio-player {
             display: flex;
             align-items: center;
             gap: 10px;
             margin-bottom: 10px;
         }
+
         .history-card .audio-player .play-btn {
             background: none;
             border: none;
             cursor: pointer;
         }
+
         .history-card .audio-player .timeline {
             flex: 1;
             display: flex;
             align-items: center;
             gap: 5px;
         }
+
         .history-card .audio-player .timeline input {
             width: 100%;
         }
+
         .history-card .audio-player .actions {
             display: flex;
             gap: 10px;
         }
+
         .history-card .audio-player .actions button {
             background: none;
             border: none;
             cursor: pointer;
             color: #666;
         }
+
         .history-card .footer {
             display: flex;
             justify-content: space-between;
@@ -184,28 +202,31 @@
             font-size: 12px;
             color: #666;
         }
+
         .history-card .footer .details {
             display: flex;
             align-items: center;
             gap: 5px;
             cursor: pointer;
         }
+
         .history-card .footer .actions {
             display: flex;
             gap: 10px;
         }
+
         .history-card .footer .actions span {
             color: #666;
         }
+
         .history-card .footer .actions button {
             background: none;
             border: none;
             cursor: pointer;
             color: #666;
         }
-        .questionnaire {
-            
-        }
+
+        .questionnaire {}
 
         .category {
             margin-bottom: 20px;
@@ -261,11 +282,13 @@
         .category-btn:active {
             background-color: #004085;
         }
+
         .tab-QG {
             color: black;
 
         }
-        .tab-history{
+
+        .tab-history {
             color: #238a6a;
         }
     </style>
@@ -283,48 +306,49 @@
     </div>
 
     @php
-    $levelLabels = [
-        'remember' => 'Remember',
-        'understand' => 'Understand',
-        'apply' => 'Apply',
-        'analyze' => 'Analyze',
-        'evaluate' => 'Evaluate',
-        'create' => 'Create'
-    ];
-    
-    $levelColors = [
-        'remember' => '#848fc6',
-        'understand' => '#89c0e6',
-        'apply' => '#75ac82',
-        'analyze' => '#aed981',
-        'evaluate' => '#f3da69',
-        'create' => '#e78b76'
-    ];
+        $levelLabels = [
+            'remember' => 'Cấp 1',
+            'understand' => 'Cấp 2',
+            'apply' => 'Cấp 3',
+            'analyze' => 'Cấp 4',
+            'evaluate' => 'Cấp 5',
+            'create' => 'Cấp 6',
+        ];
+
+        $levelColors = [
+            'remember' => '#848fc6',
+            'understand' => '#89c0e6',
+            'apply' => '#75ac82',
+            'analyze' => '#aed981',
+            'evaluate' => '#f3da69',
+            'create' => '#e78b76',
+        ];
     @endphp
-    
-    @foreach($groupedQuestions as $fileId => $fileGroup)
+
+    @foreach ($groupedQuestions as $fileId => $fileGroup)
         <div class="history-card mt-3">
             <div class="header">
-                          
-                    <div class="tags">
-                        <h6>📝 File: {{ $fileGroup['original_name'] }}</h6>
-                    </div>
-                
+
+                <div class="tags">
+                    <h6>📝 File: {{ $fileGroup['original_name'] }}</h6>
+                </div>
+
                 <div class="timestamp" style="color: #94a3b8">{{ $fileGroup['created_at'] }}</div>
             </div>
             <div id="export-content">
                 <div class="text">
-                    @foreach($fileGroup['levels'] as $level => $questions)
+                    @foreach ($fileGroup['levels'] as $level => $questions)
                         <div class="category" id="{{ $level }}">
                             <button class="category-btn" style="background-color: {{ $levelColors[$level] }}; color: black">
                                 {{ $levelLabels[$level] }} - {{ count($questions) }} câu hỏi
                             </button>
                             <div class="questions-container">
-                                @foreach($questions as $index => $q)
+                                @foreach ($questions as $index => $q)
                                     <div class="question">
-                                        <p class="question-text"><strong>Câu {{ $index + 1 }}:</strong> {{ $q['question'] }}</p>
+                                        <p class="question-text"><strong>Câu {{ $index + 1 }}:</strong>
+                                            {{ $q['question'] }}</p>
                                         <ul class="options">
-                                            @foreach($q['options'] as $option)
+                                            @foreach ($q['options'] as $option)
                                                 <li>{{ $option }}</li>
                                             @endforeach
                                         </ul>
@@ -346,30 +370,35 @@
             </div>
             <div class="d-flex align-items-center my-1" style="margin-left: -5px; color: black">
                 <i class="material-icons">download</i>
-                <div>Download</div> 
+                <div>Download</div>
             </div>
             <div class="d-flex justify-content-left">
-                <button onclick="exportQuestionsToExcel()" style="" type="button" class="btn btn-light d-flex align-items-center">
-                    <img style="width: 50px; height: 30px" src="{{ asset('storage/images/excel_download_icon.png') }}" alt="">       
+                <button onclick="exportQuestionsToExcel()" style="" type="button"
+                    class="btn btn-light d-flex align-items-center">
+                    <img style="width: 50px; height: 30px" src="{{ asset('storage/images/excel_download_icon.png') }}"
+                        alt="">
                 </button>
-                <button id="btn-word" onclick="Export2Doc('export-content')"  style="" type="button" class="btn btn-light d-flex align-items-center mx-1">
-                    <img style="width: 50px; height: 30px" src="{{ asset('storage/images/word_download_icon.png') }}" alt="">       
+                <button id="btn-word" onclick="Export2Doc('export-content')" style="" type="button"
+                    class="btn btn-light d-flex align-items-center mx-1">
+                    <img style="width: 50px; height: 30px" src="{{ asset('storage/images/word_download_icon.png') }}"
+                        alt="">
                 </button>
-                <button onclick="exportToText()" style="" type="button" class="btn btn-light d-flex align-items-center">
-                    <img style="width: 50px; height: 30px" src="{{ asset('storage/images/txt_download_icon.png') }}" alt="">       
+                <button onclick="exportToText()" style="" type="button"
+                    class="btn btn-light d-flex align-items-center">
+                    <img style="width: 50px; height: 30px" src="{{ asset('storage/images/txt_download_icon.png') }}"
+                        alt="">
                 </button>
             </div>
         </div>
     @endforeach
-    
 
-    <script >
-        
+
+    <script>
         document.querySelectorAll('.category-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const questionsContainer = this.nextElementSibling;
-            questionsContainer.style.display = 
-                questionsContainer.style.display === 'block' ? 'none' : 'block';
+            button.addEventListener('click', function() {
+                const questionsContainer = this.nextElementSibling;
+                questionsContainer.style.display =
+                    questionsContainer.style.display === 'block' ? 'none' : 'block';
             });
         });
 
@@ -382,8 +411,10 @@
                 const questions = category.querySelectorAll('.question');
 
                 questions.forEach((qEl, index) => {
-                    const questionText = qEl.querySelector('.question-text')?.innerText.replace(/^Câu \d+:\s*/, '') || '';
-                    const answer = qEl.querySelector('.correct-answer')?.innerText.replace(/^✅\s*Đáp án đúng:\s*/, '') || '';
+                    const questionText = qEl.querySelector('.question-text')?.innerText.replace(
+                        /^Câu \d+:\s*/, '') || '';
+                    const answer = qEl.querySelector('.correct-answer')?.innerText.replace(
+                        /^✅\s*Đáp án đúng:\s*/, '') || '';
                     const options = Array.from(qEl.querySelectorAll('.options li')).map(li => li.innerText);
 
                     data.push({
@@ -406,7 +437,7 @@
             // Trigger download
             XLSX.writeFile(workbook, "cau_hoi.xlsx");
         }
-        
+
         function exportToText() {
             let content = '';
             const categories = document.querySelectorAll('.category');
@@ -427,14 +458,16 @@
                 });
             });
 
-            const blob = new Blob([content], { type: 'text/plain' });
+            const blob = new Blob([content], {
+                type: 'text/plain'
+            });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
             link.download = 'cau_hoi.txt';
             link.click();
         }
-        
-        
+
+
 
         async function Export2Doc(elementId) {
             const preHtml = `
@@ -447,7 +480,9 @@
 
             const html = preHtml + content + postHtml;
 
-            const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+            const blob = new Blob(['\ufeff', html], {
+                type: 'application/msword'
+            });
 
             // Use File System Access API if available
             if (window.showSaveFilePicker) {
@@ -456,7 +491,9 @@
                         suggestedName: 'questions.doc',
                         types: [{
                             description: 'Word Document',
-                            accept: { 'application/msword': ['.doc'] },
+                            accept: {
+                                'application/msword': ['.doc']
+                            },
                         }],
                     });
 
@@ -465,7 +502,7 @@
                     await writable.close();
                     alert("Save file successfully!");
                 } catch (err) {
-                    
+
                     alert("failed!, please try again");
                 }
             } else {
@@ -479,11 +516,5 @@
                 document.body.removeChild(link);
             }
         }
-
-
-
-
     </script>
-
-  
 @endsection

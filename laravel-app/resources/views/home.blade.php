@@ -2,54 +2,54 @@
 @section('content')
     <style>
         /* .upload-container {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        background-color: #fff;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        border: 2px dashed #ddd;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        padding: 40px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        text-align: center;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        width: 100%;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        height: 100%;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        border-radius: 8px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        background-color: #fff;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        border: 2px dashed #ddd;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        padding: 40px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        text-align: center;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        width: 100%;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        height: 100%;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        border-radius: 8px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .upload-container h3 {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        margin-bottom: 20px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .upload-container h3 {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        margin-bottom: 20px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .upload-container button {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        background-color: #A0A0A0;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        color: white;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        border: none;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        padding: 12px 20px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        font-size: 14px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        cursor: pointer;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        border-radius: 4px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .upload-container button {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        background-color: #A0A0A0;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        color: white;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        border: none;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        padding: 12px 20px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        font-size: 14px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        cursor: pointer;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        border-radius: 4px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .upload-container p {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        margin-top: 10px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        color: #888;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .upload-container p {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        margin-top: 10px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        color: #888;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .upload-container input[type="file"] {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        display: none;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .upload-container input[type="file"] {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        display: none;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .drop-zone {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        display: inline-block;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        padding: 20px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        border: 2px dashed #007bff;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        border-radius: 8px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        cursor: pointer;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        transition: background-color 0.3s ease;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .drop-zone {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        display: inline-block;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        padding: 20px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        border: 2px dashed #007bff;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        border-radius: 8px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        cursor: pointer;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        transition: background-color 0.3s ease;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .drop-zone:hover {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        background-color: #f1f9ff;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .drop-zone:hover {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        background-color: #f1f9ff;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .drop-zone.active {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        background-color: #f1f9ff;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    } */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .drop-zone.active {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        background-color: #f1f9ff;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    } */
         .container-upload {
             text-align: center;
             width: 100%;
@@ -167,6 +167,8 @@
             text-align: left;
             margin: 0px 35px;
             padding-bottom: 20px;
+            height: 150px;
+            overflow-y: scroll
         }
 
         .list-section .list-title {
@@ -571,16 +573,16 @@
         <div class="text-input-section">
             <div class="container">
                 <div class="header-section">
-                    <h1>Upload Files</h1>
+                    <h1>Tải file</h1>
                 </div>
                 <div class="drop-section">
                     <div class="col" style="text-align: center">
                         <div class="cloud-icon">
                             <img src="{{ asset('storage/images/cloud.png') }}" alt="cloud">
                         </div>
-                        <span>Drag & Drop your files here</span>
-                        <span>OR</span>
-                        <button class="file-selector">Browse Files</button>
+                        <span>Kéo và thả file</span>
+                        <span>Hoặc</span>
+                        <button class="file-selector">Tải lên file</button>
                         <input type="file" class="file-selector-input" multiple>
                     </div>
                     <div class="col">
@@ -601,13 +603,12 @@
                 <input type="radio" id="rdo_number" name="payment" checked>
                 <label for="rdo_number">
                     <span class="custom-radio"></span>
-                    Quanlity
+                    Số lượng
                 </label>
-
                 <input type="radio" id="rdo_percent" name="payment">
                 <label for="rdo_percent">
                     <span class="custom-radio"></span>
-                    Quanlity(%)
+                    Số lượng (theo %)
                 </label>
             </div>
 
@@ -618,7 +619,7 @@
 
                 <div class="input-group mb-3 d-none" id='div_total'>
                     <div class="input-group-prepend">
-                        <span class="input-group-text" style=" color: black;">In total</span>
+                        <span class="input-group-text" style=" color: black;">Tổng số</span>
                     </div>
                     <input id="total" type="number" class="form-control"
                         aria-label="Dollar amount (with dot and two decimal places)">
@@ -628,8 +629,7 @@
                     <div class="form-group col-md-6 d-none">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"
-                                    style="background-color: #848fc6; color: black">Remember</span>
+                                <span class="input-group-text" style="background-color: #848fc6; color: black">Cấp 1</span>
                             </div>
                             <input type="number" aria-label="First name" class="form-control" name="%_remember">
                             <span class="input-group-text">%</span>
@@ -640,8 +640,7 @@
                         <div class="input-group ">
                             <input type="number" class="form-control" aria-label="" name="n_remember">
                             <div class="input-group-append">
-                                <span class="input-group-text"
-                                    style="background-color: #848fc6; color: black">Remember</span>
+                                <span class="input-group-text" style="background-color: #848fc6; color: black">Cấp 1</span>
                             </div>
                         </div>
                     </div>
@@ -651,8 +650,7 @@
                     <div class="form-group col-md-6 d-none">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"
-                                    style="background-color: #89c0e6; color: black">Understand</span>
+                                <span class="input-group-text" style="background-color: #89c0e6; color: black">Cấp 2</span>
                             </div>
                             <input type="number" aria-label="First name" class="form-control" name="%_understand">
                             <span class="input-group-text">%</span>
@@ -663,8 +661,7 @@
                             <input type="number" class="form-control" name="n_understand"
                                 aria-label="Dollar amount (with dot and two decimal places)">
                             <div class="input-group-append">
-                                <span class="input-group-text"
-                                    style="background-color: #89c0e6; color: black">Understand</span>
+                                <span class="input-group-text" style="background-color: #89c0e6; color: black">Cấp 2</span>
                             </div>
                         </div>
                     </div>
@@ -673,7 +670,7 @@
                     <div class="form-group col-md-6 d-none">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" style="background-color: #75ac82; color: black">Apply</span>
+                                <span class="input-group-text" style="background-color: #75ac82; color: black">Cấp 3</span>
                             </div>
                             <input type="number" name="%_apply" aria-label="First name" class="form-control">
                             <span class="input-group-text">%</span>
@@ -684,8 +681,8 @@
                             <input type="number" class="form-control" name="n_apply"
                                 aria-label="Dollar amount (with dot and two decimal places)">
                             <div class="input-group-append">
-                                <span class="input-group-text"
-                                    style="background-color: #75ac82; color: black">Apply</span>
+                                <span class="input-group-text" style="background-color: #75ac82; color: black">Cấp
+                                    3</span>
                             </div>
                         </div>
                     </div>
@@ -694,8 +691,8 @@
                     <div class="form-group col-md-6 d-none">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"
-                                    style="background-color: #aed981; color: black">Analyze</span>
+                                <span class="input-group-text" style="background-color: #aed981; color: black">Cấp
+                                    4</span>
                             </div>
                             <input type="number" aria-label="First name" class="form-control" name="%_analyze">
                             <span class="input-group-text">%</span>
@@ -706,8 +703,8 @@
                             <input type="number" class="form-control" name="n_analyze"
                                 aria-label="Dollar amount (with dot and two decimal places)">
                             <div class="input-group-append">
-                                <span class="input-group-text"
-                                    style="background-color: #aed981; color: black">Analyze</span>
+                                <span class="input-group-text" style="background-color: #aed981; color: black">Cấp
+                                    4</span>
                             </div>
                         </div>
                     </div>
@@ -716,8 +713,8 @@
                     <div class="form-group col-md-6 d-none">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"
-                                    style="background-color: #f3da69; color: black">Evaluate</span>
+                                <span class="input-group-text" style="background-color: #f3da69; color: black">Cấp
+                                    5</span>
                             </div>
                             <input type="number" aria-label="First name" class="form-control" name="%_evaluate">
                             <span class="input-group-text">%</span>
@@ -728,8 +725,8 @@
                             <input type="number" class="form-control" name="n_evaluate"
                                 aria-label="Dollar amount (with dot and two decimal places)">
                             <div class="input-group-append">
-                                <span class="input-group-text"
-                                    style="background-color: #f3da69; color: black">Evaluate</span>
+                                <span class="input-group-text" style="background-color: #f3da69; color: black">Cấp
+                                    5</span>
                             </div>
                         </div>
                     </div>
@@ -738,8 +735,8 @@
                     <div class="form-group col-md-6 d-none">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"
-                                    style="background-color: #e78b76; color: black">Create</span>
+                                <span class="input-group-text" style="background-color: #e78b76; color: black">Cấp
+                                    6</span>
                             </div>
                             <input type="number" aria-label="First name" class="form-control" name="%_create">
                             <span class="input-group-text">%</span>
@@ -750,13 +747,13 @@
                             <input type="number" class="form-control" name="n_create"
                                 aria-label="Dollar amount (with dot and two decimal places)">
                             <div class="input-group-append">
-                                <span class="input-group-text"
-                                    style="background-color: #e78b76; color: black">Create</span>
+                                <span class="input-group-text" style="background-color: #e78b76; color: black">Cấp
+                                    6</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Generate Question</button>
+                <button type="submit" {{ !Auth::check() ? 'disabled' : '' }} class="btn btn-primary">Tạo câu hỏi</button>
             </form>
             <ul class="notifications-toast"></ul>
             {{-- <div class="buttons">
@@ -852,9 +849,6 @@
                 const dataTransfer = new DataTransfer();
                 dataTransfer.items.add(fakeInput.files[0]); // lấy file đầu tiên
                 realInput.files = dataTransfer.files;
-            } else {
-                alert("Vui lòng chọn file trước khi tạo câu hỏi.");
-                e.preventDefault(); // ngăn không cho submit nếu chưa có file
             }
         });
 
@@ -972,7 +966,7 @@
 
 
         const toastDetails = {
-            timer: 10000,
+            timer: 7000,
             success: {
                 icon: 'fa-circle-check',
                 text: 'Success: This is a success toast.',
@@ -982,23 +976,24 @@
         const removeToast = (toast) => {
             toast.classList.add("hide");
             if (toast.timeoutId) clearTimeout(toast.timeoutId); // Clearing the timeout for the toast
-            setTimeout(() => toast.remove(), 500); // Removing the toast after 500ms
+            setTimeout(() => toast.remove(), 100); // Removing the toast after 500ms
         }
 
-        const createToast = (id) => {
+        //toast
+
+        const createToastSuccess = (id) => {
             // Getting the icon and text for the toast based on the id passed
 
             const toast = document.createElement("li"); // Creating a new 'li' element for the toast
             toast.className = `toast-test ${id}`; // Setting the classes for the toast
             // Setting the inner HTML for the toast
-            toast.innerHTML = `                                
-                                
+            toast.innerHTML = `                                                       
                         <div class="toast-icon">
                             <i class="fas fa-check-circle" style="color: #0ABF30"></i>
                         </div>
                         <div class="toast-content">
                             <strong>Success</strong>
-                            <p>Vocalization created successfully,<br>you can check the result in history.</p>
+                            <p>Tạo câu hỏi thành công,<br>Kiểm tra kết quả trong lịch sử.</p>
                             <button onclick="window.location.href='/question/show'" class="toast-btn">Go to history</button>
                         </div>
                         <div class="toast-close" onclick="this.parentElement.remove()">
@@ -1011,18 +1006,71 @@
             toast.timeoutId = setTimeout(() => removeToast(toast), toastDetails.timer);
         }
 
+        const createToastInfor = (id, message) => {
+            // Getting the icon and text for the toast based on the id passed
+
+            const toast = document.createElement("li"); // Creating a new 'li' element for the toast
+            toast.className = `toast-test ${id}`; // Setting the classes for the toast
+            // Setting the inner HTML for the toast
+            toast.innerHTML = `                                                       
+                        <div class="toast-icon">
+                            <i class="fas fa-info-circle" style="color: #3498DB"></i>
+                        </div>
+                        <div class="toast-content">
+                            <strong>Thông tin</strong>
+                            <p>${message}</p>
+                        </div>
+                        <div class="toast-close" onclick="this.parentElement.remove()">
+                            <i class="fas fa-times"></i>
+                        </div>
+                            `;
+            notifications.appendChild(toast); // Append the toast to the notification ul
+            // Setting a timeout to remove the toast after the specified duration
+            toast.timeoutId = setTimeout(() => removeToast(toast), toastDetails.timer);
+        }
+
+        const createToastError = (id, error) => {
+            // Getting the icon and text for the toast based on the id passed
+
+            const toast = document.createElement("li"); // Creating a new 'li' element for the toast
+            toast.className = `toast-test ${id}`; // Setting the classes for the toast
+            // Setting the inner HTML for the toast
+            toast.innerHTML = `                                                       
+                        <div class="toast-icon">
+                            <i class="fas fa-exclamation-circle" style="color: #E24D4C"></i>
+                        </div>
+                        <div class="toast-content">
+                            <strong>Lỗi !</strong>
+                            <p>${error}</p>                      
+                        </div>
+                        <div class="toast-close" onclick="this.parentElement.remove()">
+                            <i class="fas fa-times"></i>
+                        </div>
+                            `;
+            notifications.appendChild(toast); // Append the toast to the notification ul
+            // Setting a timeout to remove the toast after the specified duration
+            toast.timeoutId = setTimeout(() => removeToast(toast), toastDetails.timer);
+        }
 
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.querySelector('form');
             const submitButton = form.querySelector('button[type="submit"]');
+            const realInput = document.getElementById('file-upload');
+
 
             form.addEventListener('submit', async function(e) {
                 e.preventDefault(); // prevent regular form submission
+                if (!realInput.files || realInput.files.length === 0) {
+                    createToastError('error', 'Vui lòng chọn file trước khi tạo câu hỏi.');
 
+                    return;
+                }
                 const formData = new FormData(form);
                 const csrfToken = document.querySelector('input[name="_token"]').value;
-
                 try {
+
+                    createToastInfor('info', 'Đang tạo câu hỏi, vui lòng chờ!!!');
+
                     const response = await fetch('/question/create', {
                         method: 'POST',
                         headers: {
@@ -1036,11 +1084,9 @@
                     }
 
                     const data = await response.json();
-                    console.log(data);
-                    createToast('success'); // success toast
+                    createToastSuccess('success'); // success toast
                 } catch (error) {
-                    console.error('AJAX error:', error);
-                    createToast('error'); // error toast
+                    createToastError('error', error);
                 }
             });
         });

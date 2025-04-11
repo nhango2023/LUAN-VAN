@@ -76,6 +76,7 @@ def generate_and_filter_questions(document, keyword, level, n_question, llm_gene
 
     while len(questions) < n_question:
         needed = n_question - len(questions)
+        
         if (attempts==0):
             print(f"\ntao lai cau hoi level:{level}...\n")
         else:
@@ -209,7 +210,7 @@ async def create_question(
                 n_q = calculate_question.n_question_for_each_paragraph[level][idx]
                 #tu khoa cua cap do
                 keyword=lst_keyword[level]
-                
+                print(f'\n{level}-keyword: {keyword}\n')
                 #goi ham tao cau hoi va danh gia do lien quan cua tai lieu
                 filtered_questions = generate_and_filter_questions(
                 document=document,
@@ -219,7 +220,7 @@ async def create_question(
                 llm_generate=llm_generate,
                 llm_grade_question=llm_grade
                 )
-                
+                print(f'\n{filtered_questions}\n')
                 # print(filtered_questions)
                 #them cau hoi da thoa man o tren vao mang
                 questions.extend(filtered_questions)
