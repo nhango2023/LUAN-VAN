@@ -52,6 +52,10 @@ Route::get('taomatkhau', function () {
     dd(Hash::make('1'));
 });
 
+Route::get('test-ui', function () {
+    return view('testui');
+});
+
 // Route::get('test-api', function () {
 //     try {
 //         $response = Http::timeout(5)->get('http://localhost:8000/test-call-api');

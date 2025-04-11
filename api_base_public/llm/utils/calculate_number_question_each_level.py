@@ -73,8 +73,8 @@ class CalculateQuestion:
                 if not self.idx_doc_by_level[level]:  # If current level has no paragraphs
                     for lower_level in bloom_order[i -1:]:
                         if self.idx_doc_by_level[lower_level]:  # Found a fallback
-                            print(f"⚠️ Fallback: No paragraphs for '{level}', using '{lower_level}' instead.")
+                            print(f"WARNING: No paragraphs for '{level}', using '{lower_level}' instead.")
                             self.idx_doc_by_level[level] = self.idx_doc_by_level[lower_level]
                             break
                     else:
-                        print(f"❌ Warning: No available fallback for '{level}'. It will remain empty.")
+                        print(f"Warning: No available fallback for '{level}'. It will remain empty.")
