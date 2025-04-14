@@ -38,12 +38,12 @@ app.add_middleware(
 
 
 lst_keyword={
-    "remember": "MÔ TẢ, ĐỊNH NGHĨA, LIỆT KÊ, ĐỌC, KỂ TÊN, GỌI TÊN, GHI LẠI, LẶP LẠI, ĐỌC LẠI, THUẬT LẠI, NGHE, HIỂU, TÌM RA, TÌM CÂU TRẢ LỜI, NHẮC LẠI, KỂ LẠI, NHẬN BIẾT, NHẬN DẠNG, NHẬN DIỆN, XÁC ĐỊNH, TÌM, NHẬN RA, CHỌN, NỐI KẾT ĐIỂM PHÙ HỢP, SAO CHÉP/LẶP LẠI CHÍNH XÁC, NÊU RÕ, LẬP BẢNG, CHÉP LẠI, MÔ PHỎNG, SAO CHÉP, SẮP XẾP, KỂ, SẮP XẾP THEO THỨ TỰ, LÀM THEO, TÓM TẮT LẠI, TƯỞNG TƯỢNG, HÌNH DUNG, TRÍCH DẪN, NÊU RA, LOẠI BỎ, TRÌNH BÀY ĐẠI Ý, XEM XÉT, KIỂM TRA CHI TIẾT, GHI NHỚ",
-    "understand": "HỎI, ĐẶT VẤN ĐỀ, XÁC ĐỊNH, NHẬN DẠNG, LIÊN HỆ, CHỈ RA, TRÍCH DẪN, TÌM XUẤT XỨ, SUY RA, PHỎNG ĐOÁN, PHÂN LOẠI, ĐÁNH GIÁ, NHẬN ĐỊNH, TÍNH TOÁN, ƯỚC TÍNH, ĐỊNH VỊ, SO SÁNH, ĐỐI CHIẾU, SẮP XẾP THỨ TỰ, CHUYỂN ĐỔI, DIỄN GIẢI, MÔ TẢ, NHẬN DIỆN, TÌM RA, PHÂN BIỆT, BÁO CÁO, KHÁM PHÁ, PHÁT HIỆN, TRÌNH BÀY, THẢO LUẬN, NGHIÊN CỨU, TÌM, NHẬN BIẾT, TRÌNH BÀY LẠI, NHẮC LẠI, ƯỚC LƯỢNG, PHÁN ĐOÁN, DỰ ĐOÁN, XEM LẠI, THỂ HIỆN, DIỄN ĐẠT, VIẾT LẠI, MỞ RỘNG, LỰA CHỌN, KHÁI QUÁT HÓA, TỔNG HỢP, ĐƯA RA, TÓM",
-    "apply": "ÁP DỤNG, VẬN DỤNG, ĐIỀU KHIỂN, XỬ LÍ, TÍNH TOÁN, THÊM VÀO, SỬA ĐỔI, ĐIỀU CHỈNH, THAY ĐỔI, VẬN HÀNH, CHỌN LỰA, CHỌN LỌC, LỰA CHỌN, THỰC HÀNH, PHÂN LOẠI, PHÂN LOẠI CHỦ ĐỀ, ƯỚC LƯỢNG, DỰ ĐOÁN, DỰ BÁO, HOÀN THÀNH, CHUẨN BỊ, TẠO RA, XÂY DỰNG, LIÊN HỆ KIẾN THỨC, THUYẾT MINH, CHỨNG MINH, GIẢI THÍCH, BIỂU DIỄN, LẬP KẾ HOẠCH, SOẠN, VIẾT THÀNH KỊCH BẢN, BIÊN KỊCH, CHỈ RA, NÊU RA, SỬ DỤNG, PHÁC HOẠ, GIẢI QUYẾT, KHÁI QUÁT HÓA, TỔNG QUÁT HÓA, LOẠI TRỪ, SƠ ĐỒ HOÁ, THỂ HIỆN ĐỒ THỊ, VẼ BIỂU ĐỒ, MINH HOẠ, VIẾT, THÊM THÔNG TIN, CHIA NHỎ, DIỄN GIẢI, LÀM SÁNG TỎ, DỊCH, LIỆT KÊ, ĐÁNH GIÁ, NHẬN ĐỊNH, MÔ TẢ",
-    "analyze": "PHÂN TÍCH, PHÂN BIỆT, KHU BIỆT, ĐÁNH GIÁ, KHÁM PHÁ, TÌM RA, PHÁT HIỆN, SẮP XẾP, CHIA NHỎ, PHÂN NHỎ, TÁCH NHỎ RA, TÍNH TOÁN, SOẠN, VIẾT THÀNH KỊCH BẢN, PHÂN LOẠI, PHẠM TRÙ HOÁ, PHÂN NHÓM, XEM XÉT, KIỂM TRA, THAY ĐỔI, THỬ NGHIỆM, LỰA CHỌN, XÁC ĐỊNH, MINH HỌA, KẾT HỢP, SUY LUẬN, GIẢI THÍCH, ƯỚC TÍNH, ĐIỀU HÀNH, VẬN DỤNG, XỬ LÍ, SO SÁNH, ĐỐI CHIẾU, PHẢN BIỆN, PHÊ BÌNH, BÌNH LUẬN, CHỨNG MINH, VẬN HÀNH, THIẾT KẾ, LẬP DÀN Ý, NÊU ĐẠI Ý, PHÁC THẢO, NHẬN RA, CHỈ RA, PHÁT TRIỂN, THỰC HIỆN, THỰC HÀNH, THỂ HIỆN ĐỒ THỊ, SƠ ĐỒ HÓA, ƯỚC ĐOÁN, DỰ ĐOÁN, DỰ BÁO, ĐẶT CÂU HỎI, ĐẶT VẤN ĐỀ, TẠO RA, CHẾ TẠO, SẮP XẾP KẾ HOẠCH, LIÊN HỆ, TÁCH RA, KHẢO SÁT, PHÂN CHIA",
-    "evaluate": "ĐÁNH GIÁ, THẨM ĐỊNH, TẠO RA, SUY RA, SẮP XẾP, ĐẶT VẤN ĐỀ, ĐẶT GIẢ THIẾT, THU THẬP, TẬP HỢP LẠI, PHỐI HỢP, NHẬN ĐỊNH, ĐIỀU CHỈNH, PHÂN LOẠI, PHÂN CHIA, CHUẨN BỊ, SẮP XẾP LẠI, KẾT NỐI, XÂY DỰNG LẠI, LẬP LẠI, SO SÁNH, LIÊN HỆ, KẾT HỢP, SÁNG TÁC, TÁI CẤU TRÚC, KẾT LUẬN, RÀ SOÁT, XEM XÉT LẠI, SỬA LẠI, XÂY DỰNG, VIẾT LẠI, THIẾT LẬP, LẬP, TRANH LUẬN, XÉT ĐOÁN, PHÊ BÌNH, TỔNG KẾT, TÓM TẮT, BẢO VỆ, BIỆN HỘ, CHỨNG MINH, CHO Ý KIẾN, PHÁT TRIỂN, ĐỊNH GIÁ, THIẾT KẾ, CÂN NHẮC, XEM XÉT CẨN THẬN, VIẾT, XÁC LẬP CÔNG THỨC, TỔ CHỨC, SẮP XẾP THEO HỆ THỐNG",
-    "create": "TRANH LUẬN, BIỆN LUẬN, TÍCH HỢP, KẾT HỢP, DIỄN DỊCH, DIỄN GIẢI, SÁNG TÁC, SÁNG TẠO, TÌM RA, PHÁT MINH RA, XÂY DỰNG, LẬP, THIẾT LẬP, LÀM RA, ĐỐI CHIẾU, PHÁT MINH, SÁNG CHẾ, TẠO RA, PHÁT TRIỂN, LẬP KẾ HOẠCH, SÁNG TẠO RA, CHẾ TẠO, ĐƯA RA, ĐỀ XUẤT, ĐẶT RA, PHÊ BÌNH, BÌNH LUẬN, ĐỀ NGHỊ, THIẾT KẾ, TỔNG HỢP, ƯỚC LƯỢNG, BIẾN ĐỔI",
+    "remember": "mô tả, định nghĩa, liệt kê, đọc, kể tên, gọi tên, ghi lại, lặp lại, đọc lại, thuật lại, nghe, hiểu, tìm ra, tìm câu trả lời, nhắc lại, kể lại, nhận biết, nhận dạng, nhận diện, xác định, tìm, nhận ra, chọn, nối kết điểm phù hợp, sao chép/lặp lại chính xác, nêu rõ, lập bảng, chép lại, mô phỏng, sao chép, sắp xếp, kể, sắp xếp theo thứ tự, làm theo, tóm tắt lại, tưởng tượng, hình dung, trích dẫn, nêu ra, loại bỏ, trình bày đại ý, xem xét, kiểm tra chi tiết, ghi nhớ",
+    "understand": "hỏi, đặt vấn đề, xác định, nhận dạng, liên hệ, chỉ ra, trích dẫn, tìm xuất xứ, suy ra, phỏng đoán, phân loại, đánh giá, nhận định, tính toán, ước tính, định vị, so sánh, đối chiếu, sắp xếp thứ tự, chuyển đổi, diễn giải, mô tả, nhận diện, tìm ra, phân biệt, báo cáo, khám phá, phát hiện, trình bày, thảo luận, nghiên cứu, tìm, nhận biết, trình bày lại, nhắc lại, ước lượng, phán đoán, dự đoán, xem lại, thể hiện, diễn đạt, viết lại, mở rộng, lựa chọn, khái quát hóa, tổng hợp, đưa ra, tóm",
+    "apply": "áp dụng, vận dụng, điều khiển, xử lí, tính toán, thêm vào, sửa đổi, điều chỉnh, thay đổi, vận hành, chọn lựa, chọn lọc, lựa chọn, thực hành, phân loại, phân loại chủ đề, ước lượng, dự đoán, dự báo, hoàn thành, chuẩn bị, tạo ra, xây dựng, liên hệ kiến thức, thuyết minh, chứng minh, giải thích, biểu diễn, lập kế hoạch, soạn, viết thành kịch bản, biên kịch, chỉ ra, nêu ra, sử dụng, phác họa, giải quyết, khái quát hóa, tổng quát hóa, loại trừ, sơ đồ hoá, thể hiện đồ thị, vẽ biểu đồ, minh họa, viết, thêm thông tin, chia nhỏ, diễn giải, làm sáng tỏ, dịch, liệt kê, đánh giá, nhận định, mô tả",
+    "analyze": "phân tích, phân biệt, khu biệt, đánh giá, khám phá, tìm ra, phát hiện, sắp xếp, chia nhỏ, phân nhỏ, tách nhỏ ra, tính toán, soạn, viết thành kịch bản, phân loại, phạm trù hoá, phân nhóm, xem xét, kiểm tra, thay đổi, thử nghiệm, lựa chọn, xác định, minh họa, kết hợp, suy luận, giải thích, ước tính, điều hành, vận dụng, xử lí, so sánh, đối chiếu, phản biện, phê bình, bình luận, chứng minh, vận hành, thiết kế, lập dàn ý, nêu đại ý, phác thảo, nhận ra, chỉ ra, phát triển, thực hiện, thực hành, thể hiện đồ thị, sơ đồ hóa, ước đoán, dự đoán, dự báo, đặt câu hỏi, đặt vấn đề, tạo ra, chế tạo, sắp xếp kế hoạch, liên hệ, tách ra, khảo sát, phân chia",
+    "evaluate": "đánh giá, thẩm định, tạo ra, suy ra, sắp xếp, đặt vấn đề, đặt giả thiết, thu thập, tập hợp lại, phối hợp, nhận định, điều chỉnh, phân loại, phân chia, chuẩn bị, sắp xếp lại, kết nối, xây dựng lại, lập lại, so sánh, liên hệ, kết hợp, sáng tác, tái cấu trúc, kết luận, rà soát, xem xét lại, sửa lại, xây dựng, viết lại, thiết lập, lập, tranh luận, xét đoán, phê bình, tổng kết, tóm tắt, bảo vệ, biện hộ, chứng minh, cho ý kiến, phát triển, định giá, thiết kế, cân nhắc, xem xét cẩn thận, viết, xác lập công thức, tổ chức, sắp xếp theo hệ thống",
+    "create": "tranh luận, biện luận, tích hợp, kết hợp, diễn dịch, diễn giải, sáng tác, sáng tạo, tìm ra, phát minh ra, xây dựng, lập, thiết lập, làm ra, đối chiếu, phát minh, sáng chế, tạo ra, phát triển, lập kế hoạch, sáng tạo ra, chế tạo, đưa ra, đề xuất, đặt ra, phê bình, bình luận, đề nghị, thiết kế, tổng hợp, ước lượng, biến đổi"
 }
 
 @app.get("/")
@@ -221,64 +221,10 @@ async def create_question(
                 llm_grade_question=llm_grade
                 )
                 print(f'\n{filtered_questions}\n')
-                # print(filtered_questions)
                 #them cau hoi da thoa man o tren vao mang
                 questions.extend(filtered_questions)
 
-                # #tao cau hoi
-                # result = llm_generate.invoke({
-                #     "document":document,
-                #     "keyword": keyword,
-                #     "n_question": n_question
-                # })
-                # n_question_not_relative = 0
-                # #duyet qua tung cau hoi vua moi duoc tao ra 
-                # for q in result.Question:        
-                #     #danh gia tai lieu co lien quan den cau hoi va cau tra loi goi y =>(yes/no)
-                #     score = llm_grade_question.invoke({
-                #     "document":document,
-                #     "question": q.question,
-                #     "suggested_answer": q.answer
-                # })
-                #     print("\n")
-                #     print(score)
-                #     print("\n")
-                #     if (score=="yes"):
-                #         q.level=level
-                #         questions.append(q)
-                #     else:
-                #         n_question_not_relative+=1
-
-
-                # result = llm_generate.invoke({
-                #         "document":document,
-                #         "keyword": keyword,
-                #         "n_question": n_question_not_relative
-                # })
-
-                # #so luong cau hoi khong lien quan trong tai lieu(document)
-                # n_question_not_relative=0
-
-                # #tao lai cau hoi khong lien quan den tai lieu
-                # for q in result.Question:        
-                #     #danh gia tai lieu co lien quan den cau hoi va cau tra loi goi y =>(yes/no)
-                #     score = llm_grade_question.invoke({
-                #     "document":document,
-                #     "question": q.question,
-                #     "suggested_answer": q.answer
-                # })
-                #     print("\n")
-                #     print(score)
-                #     print("\n")
-                #     if (score=="yes"):
-                #         q.level=level
-                #         questions.append(q)
-                #     else:
-                #         n_question_not_relative+=1                    
-
-                        
-
-                # questions.extend(result.Question)
+                
     print("\n====finish!====\n")
     return {"questions": questions}
 

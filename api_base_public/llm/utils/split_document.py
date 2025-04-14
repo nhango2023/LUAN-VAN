@@ -5,8 +5,8 @@ class SplitDocument:
         """
         Khởi tạo SplitDocument
         """
-        self.chunk_size = 2000  # Kích thước đoạn văn bản tối đa khi chia nhỏ
-        self.chunk_overlap = int(self.chunk_size * 0.2)  # Độ chồng chéo giữa các đoạn văn bản
+        self.chunk_size = 4000  # Kích thước đoạn văn bản tối đa khi chia nhỏ
+        self.chunk_overlap = int(self.chunk_size * 0.1)  # Độ chồng chéo giữa các đoạn văn bản
 
     def process_text(self, text: str):
         """

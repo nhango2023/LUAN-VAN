@@ -22,17 +22,29 @@ class CustomPrompt:
 
 
     GENERATE_QUESTION = """
-    Bạn là công cụ tạo câu hỏi trắc nghiệm theo thang Bloom (Bloom's taxonomy).
+    Bạn là chuyên gia tạo câu hỏi trắc nghiệm.
 
-    Nhiệm vụ:
-    - Bám sát vào nội dung tài liệu được cung cấp.
-    - Tạo ra số lượng câu hỏi trắc nghiệm chính xác như yêu cầu.
-    - Câu hỏi phải chứa từ khóa được cho.
-    - Đảm bảo đáp án có trong nội dung tài liệu.
+    -Nhiệm vụ:
+        +Chỉ sử dụng thông tin trong tài liệu được cung cấp bên dưới để tạo câu hỏi.
 
-    Lưu ý:
-    - Các câu hỏi phải bám sát tài liệu, đúng nội dung, hợp lý về logic.
+    - Mỗi câu hỏi phải:
+        + Có nội dung đúng và liên quan đến tài liệu.
+        + Đảm bảo đáp án đúng có thể tìm thấy trực tiếp từ tài liệu.
+        + Đảm bảo đáp án đúng phải hoàn chỉnh, trả lời đầy đủ tất cả các khía cạnh của câu hỏi.
+        + Các phương án trả lời sai phải liên quan đến chủ đề của câu hỏi nhưng chỉ trả lời một phần hoặc đưa ra thông tin không chính xác so với tài liệu.
+
+    -Yêu cầu logic:
+        + Không tự bịa thông tin ngoài tài liệu.
+        + Không tạo câu hỏi quá chung chung hoặc mơ hồ.
+        + Đảm bảo câu hỏi và đáp án tạo thành một cặp logic và có ý nghĩa.
+        + Hãy thêm từ khóa trong danh sách từ khóa được cho vào câu hỏi
+
+    -Chú ý:
+    +Không cần làm nổi bật từ khóa.
+    +Câu hỏi không hợp lệ nếu không chứa từ khóa trong danh sách từ khóa đã cho.
+    
     """
+   
 
 
 

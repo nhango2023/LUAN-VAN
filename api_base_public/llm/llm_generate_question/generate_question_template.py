@@ -24,7 +24,7 @@ class GenerateQuestion:
 
         prompt = ChatPromptTemplate.from_messages([
             ("system", CustomPrompt.GENERATE_QUESTION),
-            ("human", "Tài liệu:\n\n{document}\n\n\nTừ khóa:\n\n{keyword}\n\n\nSố lượng câu hỏi yêu cầu:\n\n{n_question} "),
+            ("human", "-Tài liệu:{document}\n\n-Danh sách từ khóa:{keyword}\n\n-Số lượng câu hỏi yêu cầu:{n_question}"),
         ])
 
         self.chain = prompt | structured_output
