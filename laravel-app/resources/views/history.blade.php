@@ -291,6 +291,56 @@
         .tab-history {
             color: #238a6a;
         }
+
+        .info-box {
+            background-color: #fffde7;
+            border: 1px solid #f0c14b;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 512px;
+            margin: 80px auto;
+            text-align: center;
+        }
+
+        .info-box a i {
+            color: white;
+            font-size: 20px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .info-box h5 {
+            font-weight: 600;
+            color: #5a3310;
+            margin-top: 15px;
+        }
+
+        .info-box h5 i {
+            color: #5a3310;
+            font-size: 20px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .info-box p {
+            color: #5a3310;
+            margin: 15px 0 25px;
+        }
+
+        .info-box .btn {
+            margin: 5px;
+            font-weight: 500;
+        }
+
+        .btn-brown {
+            background-color: #6b3c0f;
+            color: white;
+            border: none;
+        }
+
+        .btn-brown:hover {
+            background-color: #5a2e0d;
+        }
     </style>
 
     <div class="history-header">
@@ -305,92 +355,103 @@
         </div>
     </div>
 
-    @php
-        $levelLabels = [
-            'remember' => 'Cấp 1',
-            'understand' => 'Cấp 2',
-            'apply' => 'Cấp 3',
-            'analyze' => 'Cấp 4',
-            'evaluate' => 'Cấp 5',
-            'create' => 'Cấp 6',
-        ];
+    @auth
+        @php
+            $levelLabels = [
+                'remember' => 'Cấp 1',
+                'understand' => 'Cấp 2',
+                'apply' => 'Cấp 3',
+                'analyze' => 'Cấp 4',
+                'evaluate' => 'Cấp 5',
+                'create' => 'Cấp 6',
+            ];
 
-        $levelColors = [
-            'remember' => '#848fc6',
-            'understand' => '#89c0e6',
-            'apply' => '#75ac82',
-            'analyze' => '#aed981',
-            'evaluate' => '#f3da69',
-            'create' => '#e78b76',
-        ];
-    @endphp
+            $levelColors = [
+                'remember' => '#848fc6',
+                'understand' => '#89c0e6',
+                'apply' => '#75ac82',
+                'analyze' => '#aed981',
+                'evaluate' => '#f3da69',
+                'create' => '#e78b76',
+            ];
+        @endphp
 
-    @foreach ($groupedQuestions as $fileId => $fileGroup)
-        <div class="history-card mt-3">
-            <div class="header">
+        @foreach ($groupedQuestions as $fileId => $fileGroup)
+            <div class="history-card mt-3">
+                <div class="header">
 
-                <div class="tags">
-                    <h6>📝 File: {{ $fileGroup['original_name'] }}</h6>
+                    <div class="tags">
+                        <h6>📝 File: {{ $fileGroup['original_name'] }}</h6>
+                    </div>
+
+                    <div class="timestamp" style="color: #94a3b8">{{ $fileGroup['created_at'] }}</div>
                 </div>
-
-                <div class="timestamp" style="color: #94a3b8">{{ $fileGroup['created_at'] }}</div>
-            </div>
-            <div id="export-content">
-                <div class="text">
-                    @foreach ($fileGroup['levels'] as $level => $questions)
-                        <div class="category" id="{{ $level }}">
-                            <button class="category-btn" style="background-color: {{ $levelColors[$level] }}; color: black">
-                                {{ $levelLabels[$level] }} - {{ count($questions) }} câu hỏi
-                            </button>
-                            <div class="questions-container">
-                                @foreach ($questions as $index => $q)
-                                    <div class="question">
-                                        <p class="question-text"><strong>Câu {{ $index + 1 }}:</strong>
-                                            {{ $q['question'] }}</p>
-                                        <ul class="options">
-                                            @foreach ($q['options'] as $option)
-                                                <li>{{ $option }}</li>
-                                            @endforeach
-                                        </ul>
-                                        <p class="correct-answer">✅ <strong>Đáp án đúng:</strong> {{ $q['answer'] }}</p>
-                                    </div>
-                                @endforeach
+                <div id="export-content">
+                    <div class="text">
+                        @foreach ($fileGroup['levels'] as $level => $questions)
+                            <div class="category" id="{{ $level }}">
+                                <button class="category-btn" style="background-color: {{ $levelColors[$level] }}; color: black">
+                                    {{ $levelLabels[$level] }} - {{ count($questions) }} câu hỏi
+                                </button>
+                                <div class="questions-container">
+                                    @foreach ($questions as $index => $q)
+                                        <div class="question">
+                                            <p class="question-text"><strong>Câu {{ $index + 1 }}:</strong>
+                                                {{ $q['question'] }}</p>
+                                            <ul class="options">
+                                                @foreach ($q['options'] as $option)
+                                                    <li>{{ $option }}</li>
+                                                @endforeach
+                                            </ul>
+                                            <p class="correct-answer">✅ <strong>Đáp án đúng:</strong> {{ $q['answer'] }}</p>
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="details"><i class="fa fa-info-circle"></i>Details</div>
+                    <div class="actions">
+                        <span># {{ \Illuminate\Support\Str::uuid() }}</span>
+                        <button><i class="fa fa-thumbs-up"></i></button>
+                        <button><i class="fa fa-thumbs-down"></i></button>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center my-1" style="margin-left: -5px; color: black">
+                    <i class="material-icons">download</i>
+                    <div>Download</div>
+                </div>
+                <div class="d-flex justify-content-left">
+                    <button onclick="exportQuestionsToExcel()" style="" type="button"
+                        class="btn btn-light d-flex align-items-center">
+                        <img style="width: 50px; height: 30px" src="{{ asset('storage/images/excel_download_icon.png') }}"
+                            alt="">
+                    </button>
+                    <button id="btn-word" onclick="Export2Doc('export-content')" style="" type="button"
+                        class="btn btn-light d-flex align-items-center mx-1">
+                        <img style="width: 50px; height: 30px" src="{{ asset('storage/images/word_download_icon.png') }}"
+                            alt="">
+                    </button>
+                    <button onclick="exportToText()" style="" type="button"
+                        class="btn btn-light d-flex align-items-center">
+                        <img style="width: 50px; height: 30px" src="{{ asset('storage/images/txt_download_icon.png') }}"
+                            alt="">
+                    </button>
                 </div>
             </div>
-            <div class="footer">
-                <div class="details"><i class="fa fa-info-circle"></i>Details</div>
-                <div class="actions">
-                    <span># {{ \Illuminate\Support\Str::uuid() }}</span>
-                    <button><i class="fa fa-thumbs-up"></i></button>
-                    <button><i class="fa fa-thumbs-down"></i></button>
-                </div>
-            </div>
-            <div class="d-flex align-items-center my-1" style="margin-left: -5px; color: black">
-                <i class="material-icons">download</i>
-                <div>Download</div>
-            </div>
-            <div class="d-flex justify-content-left">
-                <button onclick="exportQuestionsToExcel()" style="" type="button"
-                    class="btn btn-light d-flex align-items-center">
-                    <img style="width: 50px; height: 30px" src="{{ asset('storage/images/excel_download_icon.png') }}"
-                        alt="">
-                </button>
-                <button id="btn-word" onclick="Export2Doc('export-content')" style="" type="button"
-                    class="btn btn-light d-flex align-items-center mx-1">
-                    <img style="width: 50px; height: 30px" src="{{ asset('storage/images/word_download_icon.png') }}"
-                        alt="">
-                </button>
-                <button onclick="exportToText()" style="" type="button"
-                    class="btn btn-light d-flex align-items-center">
-                    <img style="width: 50px; height: 30px" src="{{ asset('storage/images/txt_download_icon.png') }}"
-                        alt="">
-                </button>
-            </div>
+        @endforeach
+    @else
+        <div class="info-box shadow-sm">
+            <h5><i class="fas fa-info-circle"></i> Bạn muốn xem lịch sử tạo câu hỏi của mình?</h5>
+            <p>Bạn có thể xem lịch sử tạo câu hỏi sau khi đăng nhập hoặc đăng ký nếu cho có tài khoản</p>
+            <a href="{{ route('signup') }}" class="btn btn-brown">
+                Sign in<i class="fas fa-arrow-right ml-1"></i>
+            </a>
+            <a href="{{ route('login') }}" class="btn btn-brown">Login</a>
         </div>
-    @endforeach
+    @endauth
 
 
     <script>

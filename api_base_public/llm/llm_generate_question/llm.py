@@ -1,6 +1,6 @@
 from langchain_openai import ChatOpenAI
 from llm.config import settings
-
+from langchain_google_genai import ChatGoogleGenerativeAI  # Import API của Google Gemini
 
 class LLM_GENERATE_QUESTION:
     """
@@ -20,11 +20,17 @@ class LLM_GENERATE_QUESTION:
         Returns:
             ChatOpenAI: Mô hình ngôn ngữ của OpenAI.
         """
-        return ChatOpenAI(
-            openai_api_key=settings.KEY_API_GPT,
-            model=settings.OPENAI_LLM,
+        # return ChatOpenAI(
+        #     openai_api_key=settings.KEY_API_GPT,
+        #     model=settings.OPENAI_LLM,
+        #     temperature=self.temperature,
+        #     max_tokens=self.max_tokens,
+        # )
+
+        return ChatGoogleGenerativeAI(
+            google_api_key='AIzaSyA5EDfPHRWQi1a-mVVAqiWqIDYp3dGO_7A',  # API Key Google Gemini
+            model="gemini-2.0-flash",  # Mô hình Google Gemini (ví dụ: 'gemini-pro')
             temperature=self.temperature,
-            max_tokens=self.max_tokens,
         )
 
     def get_llm(self):
