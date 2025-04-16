@@ -10,9 +10,13 @@ class Settings:
     DIR_ROOT = os.path.dirname(os.path.abspath(dotenv_path))
     API_KEY = os.getenv("API_KEY")
     KEY_API_GPT = os.getenv("KEY_API_GPT")
-    NUM_DOC = int(os.getenv("NUM_DOC", "3"))
-    LLM_NAME = os.getenv("LLM_NAME")
-    OPENAI_LLM = os.getenv("OPENAI_LLM")
+    KEY_API_GEMINI = os.getenv("KEY_API_GEMINI")
+    # NUM_DOC = int(os.getenv("NUM_DOC", "3"))
+    # LLM_NAME = os.getenv("LLM_NAME")
+    OPENAI_LLM_MODEL = os.getenv("OPENAI_LLM_MODEL")
+    GEMINI_LLM_MODEL = os.getenv("GEMINI_LLM_MODEL")
+    KEY_API_GROK = os.getenv("KEY_API_GROK")
+    GROK_LLM_MODEL = os.getenv("GROK_LLM_MODEL")
 
 
 settings = Settings()

@@ -22,7 +22,7 @@ class LLM_LEVEL:
         """
         return ChatOpenAI(
             openai_api_key=settings.KEY_API_GPT,
-            model=settings.OPENAI_LLM,
+            model=settings.OPENAI_LLM_MODEL,
             temperature=self.temperature,
             max_tokens=self.max_tokens,
         )
