@@ -19,7 +19,7 @@ Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'store'])->name('login.store');
 
 Route::get('signup', [SignupController::class, 'index'])->name('signup');
-Route::post('signup', [SignupController::class, 'store'])->name('signup.store');
+Route::post('signup', [SignupController::class, 'create'])->name('signup.create');
 
 Route::prefix('admin')->name('admin.')->middleware('canAccessAdminPage')->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');

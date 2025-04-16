@@ -17,7 +17,7 @@ class QuestionController extends Controller
     {
 
 
-        set_time_limit(300); // Set execution time to 5 minutes (300 seconds)
+        set_time_limit(600); // Set execution time to 5 minutes (300 seconds)
 
         // Kiểm tra nếu có file
         if ($req->hasFile('file_upload')) {
@@ -39,7 +39,7 @@ class QuestionController extends Controller
 
             // Call API to get questions
 
-            $response = Http::timeout(300)->attach(
+            $response = Http::timeout(600)->attach(
                 'file',
                 file_get_contents($file->getPathname()),
                 $file->getClientOriginalName()
@@ -56,20 +56,22 @@ class QuestionController extends Controller
 
             $questions = $response->json()['questions'];
 
-
-
             // Insert questions into the database
-            foreach ($questions as $question) {
-                Question::create([
-                    'id_file' => $uploadedFile->id, // Set id_file from uploaded file's ID
-                    'content' => $question['question'],
-                    'option_1' => $question['options'][0],
-                    'option_2' => $question['options'][1],
-                    'option_3' => $question['options'][2],
-                    'option_4' => $question['options'][3],
-                    'answer' => $question['answer'],
-                    'level' => $question['level']
-                ]);
+            foreach ($questions as $index => $question) {
+                try {
+                    Question::create([
+                        'id_file' => $uploadedFile->id,
+                        'content' => $question['question'],
+                        'option_1' => $question['options'][0] ?? null,
+                        'option_2' => $question['options'][1] ?? null,
+                        'option_3' => $question['options'][2] ?? null,
+                        'option_4' => $question['options'][3] ?? null,
+                        'answer' => $question['answer'],
+                        'level' => $question['level']
+                    ]);
+                } catch (\Exception $e) {
+                    Log::error("Error inserting question #$index: " . $e->getMessage());
+                }
             }
 
             return response()->json([
