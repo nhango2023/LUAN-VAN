@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\CreateQuestionsJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Models\Uploaded_file;
@@ -15,80 +16,34 @@ class QuestionController extends Controller
 {
     public function create(Request $req)
     {
-
-
-        set_time_limit(600); // Set execution time to 5 minutes (300 seconds)
-
-        // Kiểm tra nếu có file
         if ($req->hasFile('file_upload')) {
-
             $file = $req->file('file_upload');
-
             $originalName = $file->getClientOriginalName();
-
-            // Save the file locally in the 'uploads' directory (you can change the directory as needed)
             $uniqueName = time() . '_' . $originalName;
             $filePath = $file->storeAs('uploads', $uniqueName, 'public');
-            // Insert the file data into the uploaded_files table
 
-            $uploadedFile = Uploaded_file::create([
-                'id_user' => Auth::user()->id,
-                'file_path' => $filePath,
-                'original_name' => $originalName
-            ]);
-
-            // Call API to get questions
-
-            $response = Http::timeout(600)->attach(
-                'file',
-                file_get_contents($file->getPathname()),
-                $file->getClientOriginalName()
-            )->asMultipart()->post('http://localhost:8000/question/create', [
-                'Nquestion_json' => json_encode([
-                    'remember' => $req->n_remember,
-                    'understand' => $req->n_understand,
-                    'apply' => $req->n_apply,
-                    'analyze' => $req->n_analyze,
-                    'evaluate' => $req->n_evaluate,
-                    'create' => $req->n_create
-                ]),
-            ]);
-
-            $questions = $response->json()['questions'];
-
-            // Insert questions into the database
-            foreach ($questions as $index => $question) {
-                try {
-                    Question::create([
-                        'id_file' => $uploadedFile->id,
-                        'content' => $question['question'],
-                        'option_1' => $question['options'][0] ?? null,
-                        'option_2' => $question['options'][1] ?? null,
-                        'option_3' => $question['options'][2] ?? null,
-                        'option_4' => $question['options'][3] ?? null,
-                        'answer' => $question['answer'],
-                        'level' => $question['level']
-                    ]);
-                } catch (\Exception $e) {
-                    Log::error("Error inserting question #$index: " . $e->getMessage());
-                }
-            }
+            $questionJson = [
+                'remember' => $req->n_remember,
+                'understand' => $req->n_understand,
+                'apply' => $req->n_apply,
+                'analyze' => $req->n_analyze,
+                'evaluate' => $req->n_evaluate,
+                'create' => $req->n_create,
+            ];
+            CreateQuestionsJob::dispatch($filePath, $originalName, Auth::id(), $questionJson);
 
             return response()->json([
-                'message' => 'Question created successfully !',
-                'code' => 200
-            ]);
-        } else {
-            return response()->json([
-                'message' => 'No file',
-                'code' => 200
+                'message' => 'Đang xử lý file. Vui lòng chờ...',
+                'code' => 202
             ]);
         }
+
+        return response()->json([
+            'message' => 'No file uploaded',
+            'code' => 400
+        ]);
     }
-    // return response()->json([
-    //     'message' => 'Question created successfully',
-    //     'data' => 'thanh cong'
-    // ]);
+
 
 
     public function show()

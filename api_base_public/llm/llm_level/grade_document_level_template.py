@@ -1,6 +1,6 @@
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableSequence
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel, field_validator, Field
 from llm.utils.custom_prompt import CustomPrompt
 from typing import List
 
@@ -8,23 +8,23 @@ class GradeDocumentModel(BaseModel):
     """
     Mô hình kết quả đầu ra có cấu trúc cho việc đánh giá cấp độ tài liệu theo thang Bloom.
     """
-    level: List[str]
+    level: List[str] = Field(description="Các cấp độ: remember, understand, apply, analyze, evaluate, create")
     @field_validator("level")
     @classmethod
     def normalize_levels(cls, values: List[str]) -> List[str]:
         mapping = {
-            "understanding": "Understand",
-            "understand": "Understand",
-            "applying": "Apply",
-            "apply": "Apply",
-            "analyzing": "Analyze",
-            "analyze": "Analyze",
-            "evaluating": "Evaluate",
-            "evaluate": "Evaluate",
-            "creating": "Create",
-            "create": "Create",
-            "remembering": "Remember",
-            "remember": "Remember",
+            "understanding": "understand",
+            "understand": "understand",
+            "applying": "apply",
+            "apply": "apply",
+            "analyzing": "analyze",
+            "analyze": "analyze",
+            "evaluating": "evaluate",
+            "evaluate": "evaluate",
+            "creating": "create",
+            "create": "create",
+            "remembering": "remember",
+            "remember": "remember",
         }
 
         normalized = []
@@ -38,7 +38,7 @@ class GradeDocumentModel(BaseModel):
         return list(set(normalized))  # remove duplicates if needed
 
 
-class DocumentGrader:
+class DocumentGraderLevel:
     """
     Đánh giá tài liệu dựa trên thang Bloom bằng cách sử dụng mô hình ngôn ngữ.
     """

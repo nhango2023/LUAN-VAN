@@ -1035,7 +1035,10 @@
                     })
                     .then(data => {
                         const end = performance.now();
-                        console.log(`Execution time: ${(end - start).toFixed(3)} milliseconds`);
+                        console.log(Execution time: $ {
+                                (end - start).toFixed(3)
+                            }
+                            milliseconds);
                         createToastSuccess('success');
                     })
                     .catch(error => {
