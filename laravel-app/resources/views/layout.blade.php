@@ -324,6 +324,128 @@
         color: #334155;
 
     }
+
+
+    /* Toggle Button */
+    .toggle-btn-notification-sidebar {
+        position: relative;
+        font-size: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+    }
+
+    /* Overlay */
+    .overlay-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        display: none;
+        z-index: 999;
+    }
+
+    .overlay-sidebar.active {
+        display: block;
+    }
+
+    /* Sidebar */
+    .notification-sidebar {
+        position: fixed;
+        top: 0;
+        right: -360px;
+        width: 360px;
+        height: 100vh;
+        background-color: #fff;
+        border-left: 1px solid #ddd;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+        z-index: 1000;
+        transition: right 0.3s ease;
+    }
+
+    .notification-sidebar.active {
+        right: 0;
+    }
+
+    .notification-header-sidebar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        font-size: 18px;
+        font-weight: 600;
+        border-bottom: 1px solid #eee;
+    }
+
+    .close-btn-sidebar {
+        font-size: 18px;
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+
+    .notification-item-sidebar {
+        display: flex;
+        padding: 16px 20px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .notification-icon-sidebar {
+        width: 40px;
+        height: 40px;
+        background-color: #e7f3f3;
+        color: #1d9bf0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        margin-right: 12px;
+    }
+
+    .notification-content-sidebar {
+        flex: 1;
+    }
+
+    .notification-title-sidebar {
+        font-weight: 600;
+        font-size: 14px;
+        color: #222;
+    }
+
+    .notification-text-sidebar {
+        font-size: 14px;
+        margin: 4px 0;
+        color: #444;
+    }
+
+    .notification-time-sidebar {
+        font-size: 12px;
+        color: #888;
+    }
+
+    .notification-text-sidebar a {
+        color: #2563eb;
+        text-decoration: none;
+    }
+
+    .notification-text-sidebar a:hover {
+        text-decoration: underline;
+    }
+
+    .toggle-btn-notification-sidebar .notification-dot {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        width: 10px;
+        height: 10px;
+        background-color: #f44336;
+        border-radius: 50%;
+    }
 </style>
 </head>
 
@@ -346,34 +468,60 @@
                         <a class="nav-link {{ Route::is('question.show') ? 'active' : '' }}"
                             href="{{ route('question.show') }}">Lịch sử</a>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a class="nav-link" href="#">Voice Library</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">My Voices</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">API</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Translate <i class="fas fa-arrow-up-right-from-square"
-                                style="font-size: 0.75rem;"></i></a>
-                    </li> --}}
+
                 </ul>
             </div>
 
-            {{-- <a href="{{ route('home') }}" class="tab-QG mr-2">Tạo câu hỏi</a>
-            <a href="{{ route('question.show') }}" class="tab-history">Lịch sử</a> --}}
+
         </div>
         <div class="actions">
             <button class="language">
                 <i class="fa fa-globe"></i> <span>Language</span>
             </button>
             @auth
-                <button style="position: relative; background: none" class="">
-                    <i style="font-size: 16px" class="fa fa-bell"></i>
+                <button class="toggle-btn-notification-sidebar" onclick="toggleSidebar()">
+                    <i class="fa fa-bell"></i>
+                    <span class="notification-dot"></span>
                 </button>
+                <!-- overlay-sidebar -->
+                <div class="overlay-sidebar" id="overlay-sidebar" onclick="closeSidebar()"></div>
 
+                <!-- Notification Sidebar -->
+                <div class="notification-sidebar" id="sidebar">
+                    <div class="notification-header-sidebar">
+                        Notifications
+                        <button class="close-btn-sidebar" onclick="closeSidebar()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <!-- Notification Items -->
+                    <div class="notification-item-sidebar">
+                        <div class="notification-icon-sidebar">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="notification-content-sidebar">
+                            <div class="notification-title-sidebar">Vocalize success</div>
+                            <div class="notification-text-sidebar">Your text <a href="#">[The iPh...e 2024.]</a> has
+                                been converted to audio successfully!</div>
+                            <div class="notification-time-sidebar">13 days ago</div>
+                        </div>
+                    </div>
+
+                    <div class="notification-item-sidebar">
+                        <div class="notification-icon-sidebar">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="notification-content-sidebar">
+                            <div class="notification-title-sidebar">Vocalize success</div>
+                            <div class="notification-text-sidebar">Your text <a href="#">[Prices ...f 2024.]</a> has
+                                been converted to audio successfully!</div>
+                            <div class="notification-time-sidebar">13 days ago</div>
+                        </div>
+                    </div>
+
+                    <!-- More notifications as needed -->
+                </div>
                 <img src="{{ Auth::user()->avatar ? asset('storage/avatars/' . Auth::user()->avatar) : 'https://img.freepik.com/free-vector/add-new-user_78370-4710.jpg' }}"
                     alt="" width="30" height="30" class="rounded-circle">
             @else
@@ -383,12 +531,26 @@
         </div>
     </div>
 
+
     @yield('content')
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const overlay = document.getElementById("overlay-sidebar");
+            sidebar.classList.toggle("active");
+            overlay.classList.toggle("active");
+        }
+
+        function closeSidebar() {
+            document.getElementById("sidebar").classList.remove("active");
+            document.getElementById("overlay-sidebar").classList.remove("active");
+        }
+    </script>
 </body>
 
 </html>

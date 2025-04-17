@@ -20,20 +20,20 @@ class LLM_GENERATE_QUESTION:
         Returns:
             ChatOpenAI: Mô hình ngôn ngữ của OpenAI.
         """
-        print("line 23-llm gpt")
-        return ChatOpenAI(
-            openai_api_key=settings.KEY_API_GPT,
-            model=settings.OPENAI_LLM_MODEL,
-            temperature=self.temperature,
-            max_tokens=self.max_tokens,
-        )
         
-        # return ChatGoogleGenerativeAI(
-        #     google_api_key=settings.KEY_API_GEMINI,  # API Key Google Gemini
-        #     model=settings.GEMINI_LLM_MODEL,  # Mô hình Google Gemini (ví dụ: 'gemini-pro')
+        # return ChatOpenAI(
+        #     openai_api_key=settings.KEY_API_GPT,
+        #     model=settings.OPENAI_LLM_MODEL,
         #     temperature=self.temperature,
         #     max_tokens=self.max_tokens,
         # )
+        print("line 30-llm gemini")
+        return ChatGoogleGenerativeAI(
+            google_api_key=settings.KEY_API_GEMINI,  # API Key Google Gemini
+            model=settings.GEMINI_LLM_MODEL,  # Mô hình Google Gemini (ví dụ: 'gemini-pro')
+            temperature=self.temperature,
+            max_tokens=self.max_tokens,
+        )
         
         # return ChatXAI(
         # model=settings.GROK_LLM_MODEL,

@@ -5,12 +5,12 @@ class CustomPrompt:
     Nhiệm vụ của bạn là:
     - Phân tích nội dung tài liệu được cung cấp.
     - Xác định và trả về các cấp độ phù hợp trong số 6 cấp độ Bloom:
-    - Remember
-    - Understand
-    - Apply
-    - Analyze
-    - Evaluate
-    - Create
+    - remember
+    - understand
+    - apply
+    - analyze
+    - evaluate
+    - create
 
     Yêu cầu:
     - Chỉ chọn các cấp độ có thể hiện rõ trong nội dung tài liệu.
@@ -214,6 +214,7 @@ class CustomPrompt:
     + Tận dụng khả năng xử lý nhanh và tập trung vào ngữ cảnh của mô hình để tạo câu hỏi chặt chẽ với tài liệu.
     + Với danh sách từ khóa dài, chọn từ khóa phù hợp nhất để câu hỏi tự nhiên và đúng cấp độ Bloom.
     + Đảm bảo câu hỏi ngắn gọn, dễ hiểu, và từ khóa được sử dụng đúng ngữ cảnh để tối ưu hiệu suất mô hình.
+
     """
 
 
