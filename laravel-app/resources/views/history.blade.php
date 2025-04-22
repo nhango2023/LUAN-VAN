@@ -453,7 +453,16 @@
         </div>
     @endauth
 
-
+    @vite('resources/js/app.js')
+    <script>
+        setTimeout(() => {
+            console.log('test')
+            window.Echo.channel('testChannel')
+                .listen('testingEvent', (e) => {
+                    console.log(e);
+                })
+        }, 3000);
+    </script>
     <script>
         document.querySelectorAll('.category-btn').forEach(button => {
             button.addEventListener('click', function() {

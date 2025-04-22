@@ -715,6 +715,17 @@
 
 
     </div>
+    {{-- @vite(['resources/js/app.js', 'resources/css/app.css']) --}}
+    {{-- <script>
+        
+            console.log("eeeddd")
+            Echo.channel('testchanel')
+                .listen('App\\Events\\testEvent', (e) => {
+                    console.log("fdasfasfasd", e);
+                });
+        }
+    </script> --}}
+    @vite('resources/js/app.js')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const rdoPercentage = document.getElementById('rdo_percent');
@@ -1019,7 +1030,7 @@
                 const start = performance.now();
                 const formData = new FormData(form);
                 const csrfToken = document.querySelector('input[name="_token"]').value;
-                createToastInfor('info', 'Đang tạo câu hỏi, vui lòng chờ!!!');
+
                 fetch('/question/create', {
                         method: 'POST',
                         headers: {
@@ -1034,12 +1045,7 @@
                         return response.json();
                     })
                     .then(data => {
-                        const end = performance.now();
-                        console.log(Execution time: $ {
-                                (end - start).toFixed(3)
-                            }
-                            milliseconds);
-                        createToastSuccess('success');
+                        createToastInfor('info', data.message);
                     })
                     .catch(error => {
                         console.error(error);
@@ -1047,5 +1053,12 @@
                     });
             });
         });
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('test');
+            window.Echo.channel('testChannel')
+                .listen('testingEvent', (e) => {
+                    console.log(e);
+                })
+        })
     </script>
 @endsection

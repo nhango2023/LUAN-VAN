@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text to Bloom Multiple-Choice Questions</title>
+    <title>Tạo câu hỏi trắc nghiệm theo thang bloom</title>
+    <meta name="description" content="Tạo câu hỏi trắc nghiệm theo thang bloom">
+    <meta name="keywords" content="Câu hỏi trắc nghiệm, bloom, bloom's taxonomy, tự động">
+    <link rel="icon" href="{{ asset('logo.ico') }}" type="image/x-icon">
     <!-- Include the stylesheets from your snippet -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('login-template/assets/css/styles.min.css') }}" />
@@ -326,7 +329,7 @@
     }
 
 
-    /* Toggle Button */
+    /* Message sidebar */
     .toggle-btn-notification-sidebar {
         position: relative;
         font-size: 20px;
@@ -446,6 +449,127 @@
         background-color: #f44336;
         border-radius: 50%;
     }
+
+    /* Profile sidebar */
+    .toggle-btn-notification-sidebar {
+        position: relative;
+        font-size: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+    }
+
+    /* Overlay */
+    .overlay-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        display: none;
+        z-index: 999;
+    }
+
+    .overlay-sidebar.active {
+        display: block;
+    }
+
+    /* Sidebar */
+    .profile-sidebar {
+        position: fixed;
+        top: 0;
+        right: -360px;
+        width: 360px;
+        height: 100vh;
+        background-color: #fff;
+        border-left: 1px solid #ddd;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+        z-index: 1000;
+        transition: right 0.3s ease;
+    }
+
+    .profile-sidebar.active {
+        right: 0;
+    }
+
+    .profile-header-sidebar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        font-size: 18px;
+        font-weight: 600;
+        border-bottom: 1px solid #eee;
+    }
+
+    .close-btn-sidebar {
+        font-size: 18px;
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+
+    .profile-item-sidebar {
+        display: flex;
+        padding: 16px 20px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .profile-icon-sidebar {
+        width: 40px;
+        height: 40px;
+        background-color: #e7f3f3;
+        color: #1d9bf0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        margin-right: 12px;
+    }
+
+    .profile-content-sidebar {
+        flex: 1;
+    }
+
+    .profile-title-sidebar {
+        font-weight: 600;
+        font-size: 14px;
+        color: #222;
+    }
+
+    .profile-text-sidebar {
+        font-size: 14px;
+        margin: 4px 0;
+        color: #444;
+    }
+
+    .profile-time-sidebar {
+        font-size: 12px;
+        color: #888;
+    }
+
+    .profile-text-sidebar a {
+        color: #2563eb;
+        text-decoration: none;
+    }
+
+    .profile-text-sidebar a:hover {
+        text-decoration: underline;
+    }
+
+    .toggle-btn-profile-sidebar .profile-dot {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        width: 10px;
+        height: 10px;
+        background-color: #f44336;
+        border-radius: 50%;
+    }
 </style>
 </head>
 
@@ -453,7 +577,9 @@
     <!-- Header -->
     <div class="header">
         <div class="logo">
-            <i class="fa fa-bars"></i>
+            <a href="{{ route('home') }}">
+                <img src="{{ asset('logo.png') }}" alt="Logo" width="45" height="38" class="mr-2">
+            </a>
             <span>Text To Bloom Multiple-Choice Questions</span>
         </div>
         <div class="">
@@ -479,18 +605,18 @@
                 <i class="fa fa-globe"></i> <span>Language</span>
             </button>
             @auth
-                <button class="toggle-btn-notification-sidebar" onclick="toggleSidebar()">
+                <button class="toggle-btn-notification-sidebar" onclick="toggleNotifySidebar()">
                     <i class="fa fa-bell"></i>
                     <span class="notification-dot"></span>
                 </button>
                 <!-- overlay-sidebar -->
-                <div class="overlay-sidebar" id="overlay-sidebar" onclick="closeSidebar()"></div>
+                <div class="overlay-sidebar" id="overlay-sidebar" onclick="closeNotifySidebar()"></div>
 
                 <!-- Notification Sidebar -->
-                <div class="notification-sidebar" id="sidebar">
+                <div class="notification-sidebar" id="notify-sidebar">
                     <div class="notification-header-sidebar">
                         Notifications
-                        <button class="close-btn-sidebar" onclick="closeSidebar()">
+                        <button class="close-btn-sidebar" onclick="closeNotifySidebar()">
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
@@ -522,8 +648,46 @@
 
                     <!-- More notifications as needed -->
                 </div>
+
                 <img src="{{ Auth::user()->avatar ? asset('storage/avatars/' . Auth::user()->avatar) : 'https://img.freepik.com/free-vector/add-new-user_78370-4710.jpg' }}"
-                    alt="" width="30" height="30" class="rounded-circle">
+                    alt="" width="30" height="30" class="rounded-circle" onclick="toggleProfileSidebar()">
+                <!-- Notification Sidebar -->
+                <div class="overlay-profile-sidebar" id="overlay-profile-sidebar" onclick="closeProfileSidebar()"></div>
+                <div class="profile-sidebar" id="profile-sidebar">
+                    <div class="profile-header-sidebar">
+                        profile
+                        <button class="close-btn-sidebar" onclick="closeProfileSidebar()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <!-- profile Items -->
+                    <div class="profile-item-sidebar">
+                        <div class="profile-icon-sidebar">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="profile-content-sidebar">
+                            <div class="profile-title-sidebar">Vocalize success</div>
+                            <div class="profile-text-sidebar">Your text <a href="#">[The iPh...e 2024.]</a> has
+                                been converted to audio successfully!</div>
+                            <div class="profile-time-sidebar">13 days ago</div>
+                        </div>
+                    </div>
+
+                    <div class="profile-item-sidebar">
+                        <div class="profile-icon-sidebar">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="profile-content-sidebar">
+                            <div class="profile-title-sidebar">Vocalize success</div>
+                            <div class="profile-text-sidebar">Your text <a href="#">[Prices ...f 2024.]</a> has
+                                been converted to audio successfully!</div>
+                            <div class="profile-time-sidebar">13 days ago</div>
+                        </div>
+                    </div>
+
+
+                </div>
             @else
                 <a type="button" href="{{ route('login') }}" class="btn btn-success">Sgin in -></a>
             @endauth
@@ -539,16 +703,28 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById("sidebar");
+        function toggleNotifySidebar() {
+            const sidebar = document.getElementById("notify-sidebar");
             const overlay = document.getElementById("overlay-sidebar");
             sidebar.classList.toggle("active");
             overlay.classList.toggle("active");
         }
 
-        function closeSidebar() {
-            document.getElementById("sidebar").classList.remove("active");
+        function closeNotifySidebar() {
+            document.getElementById("notify-sidebar").classList.remove("active");
             document.getElementById("overlay-sidebar").classList.remove("active");
+        }
+
+        function toggleProfileSidebar() {
+            const sidebar = document.getElementById("profile-sidebar");
+            const overlay = document.getElementById("overlay-profile-sidebar");
+            sidebar.classList.toggle("active");
+            overlay.classList.toggle("active");
+        }
+
+        function closeProfileSidebar() {
+            document.getElementById("profile-sidebar").classList.remove("active");
+            document.getElementById("profile-sidebar").classList.remove("active");
         }
     </script>
 </body>

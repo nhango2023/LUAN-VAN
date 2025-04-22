@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Events\testingEvent;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
@@ -7,10 +9,12 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\SignupController;
+use App\Jobs\CreateQuestionsJob;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Hash;
 
 Route::get('/', function () {
+    // event(new testingEvent('test socket'));
     return view('home');
 })->name('home');
 
@@ -71,4 +75,16 @@ Route::get('test-ui', function () {
 //     } catch (\Exception $e) {
 //         return ['error' => $e->getMessage()];
 //     }
+// });
+
+
+
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/test', function () {
+//     event(new testingEvent());
+//     return 'done';
 // });

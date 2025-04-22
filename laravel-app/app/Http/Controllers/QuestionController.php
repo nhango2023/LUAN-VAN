@@ -33,15 +33,10 @@ class QuestionController extends Controller
             CreateQuestionsJob::dispatch($filePath, $originalName, Auth::id(), $questionJson);
 
             return response()->json([
-                'message' => 'Đang xử lý file. Vui lòng chờ...',
+                'message' => 'Đang tạo câu hỏi, vui lòng chờ...',
                 'code' => 202
             ]);
         }
-
-        return response()->json([
-            'message' => 'No file uploaded',
-            'code' => 400
-        ]);
     }
 
 

@@ -12,7 +12,7 @@ class SignupController extends Controller
 {
     public function index()
     {
-        return view('signup');
+        return view('Auth.signup');
     }
     public function create(Request $req)
     {

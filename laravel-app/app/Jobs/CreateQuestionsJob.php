@@ -13,6 +13,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use App\Events\testingEvent;
 
 class CreateQuestionsJob implements ShouldQueue
 {
@@ -31,19 +32,29 @@ class CreateQuestionsJob implements ShouldQueue
     public function handle()
     {
         try {
-
-
-            $response = Http::timeout(600)->attach(
-                'file',
-                file_get_contents($storagePath),
-                $this->originalName
-            )->asMultipart()->post('http://localhost:8000/question/create', [
-                'Nquestion_json' => json_encode($this->questionJson)
-            ]);
-
-            $questions = $response->json()['questions'];
-
+            // Define this first
             $storagePath = storage_path("app/public/" . $this->filePath);
+            $response = Http::timeout(600)
+                ->withHeaders([
+                    'API-Key' => env('PYTHON_API_KEY', 'dffa2') // use env() or hardcode for testing
+                ])
+                ->attach(
+                    'file',
+                    file_get_contents($storagePath),
+                    $this->originalName
+                )->asMultipart()->post('http://localhost:8000/question/create', [
+                    'Nquestion_json' => json_encode($this->questionJson)
+                ]);
+
+            $responseData = $response->json();
+            $status = $response->status();
+
+            if ($status == 403) {
+                event(new testingEvent('Sai API key (403)'));
+                return;
+            }
+            $questions = $questions = $response->json();
+
             $uploadedFile = Uploaded_file::create([
                 'id_user' => $this->userId,
                 'file_path' => $this->filePath,
@@ -66,10 +77,11 @@ class CreateQuestionsJob implements ShouldQueue
                     Log::error("Insert Q#{$index} error: " . $e->getMessage());
                 }
             }
-
             Log::info("CreateQuestionsJob done for user {$this->userId}");
+            event(new testingEvent('Tạo câu hỏi thành công'));
         } catch (\Exception $e) {
             Log::error("Job failed: " . $e->getMessage());
+            event(new testingEvent($e->getMessage())); // ← Only the message is safe
         }
     }
 }

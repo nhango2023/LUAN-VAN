@@ -49,7 +49,7 @@ class CalculateQuestion:
                 # ✅ Case 2: More paragraphs than needed → pick subset and update idx_doc_by_level
                 else:
                     print("\nthe number of paragraphs>number of required questions\n")
-                    shuffled_paragraphs = number_splited_docs.copy()                  
+                    shuffled_paragraphs = self.idx_doc_by_level[level].copy()                 
                     random.shuffle(shuffled_paragraphs)  # Shuffle the list in place
                     selected_paragraphs = shuffled_paragraphs[:count]  # Pick only what's needed
                     self.idx_doc_by_level[level] = selected_paragraphs    # Update to trimmed/shuffled subset

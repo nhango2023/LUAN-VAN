@@ -75,11 +75,25 @@
         </a>
         <a href="#" class="btn btn-brown">Sign In</a>
     </div>
+    @vite('resources/js/app.js')
 
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+        console.log("dsaf")
+    </script>
+    @vite('resources/js/app.js')
 </body>
+<script>
+    setTimeout(() => {
+        console.log('test');
+        window.Echo.channel('testChannel')
+            .listen('testingEvent', (e) => {
+                console.log(e);
+            })
+    }, 2000);
+</script>
 
 </html>
