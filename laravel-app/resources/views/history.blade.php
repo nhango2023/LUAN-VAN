@@ -341,117 +341,342 @@
         .btn-brown:hover {
             background-color: #5a2e0d;
         }
+
+        .history-alert-section {
+            width: 100vw;
+            min-height: 70vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin-top: 70px;
+        }
+
+        .history-alert-section .history-alert-card {
+            background: #fffee7;
+            border: 2px solid #ffe69c;
+            border-radius: 10px;
+            padding: 36px 48px;
+            box-sizing: border-box;
+            max-width: 440px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .history-alert-section .history-alert-card .history-alert-icon-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .history-alert-section .history-alert-card .history-alert-icon-title .history-alert-icon {
+            color: #a86413;
+            font-size: 1.4em;
+            margin-right: 8px;
+        }
+
+        .history-alert-section .history-alert-card .history-alert-icon-title .history-alert-title {
+            color: #774100;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .history-alert-section .history-alert-card .history-alert-desc {
+            color: #855b14;
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .history-alert-section .history-alert-card .history-alert-actions {
+            display: flex;
+            gap: 14px;
+            margin-top: 4px;
+        }
+
+        .history-alert-section .history-alert-card .history-alert-actions .history-alert-signup,
+        .history-alert-section .history-alert-card .history-alert-actions .history-alert-signin {
+            background: #85511e;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 9px 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .history-alert-section .history-alert-card .history-alert-actions .history-alert-signup {
+            margin-right: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .history-alert-section .history-alert-card .history-alert-actions .history-alert-signup i {
+            font-size: 1.1em;
+            margin-left: 4px;
+        }
+
+        .history-alert-section .history-alert-card .history-alert-actions .history-alert-signup:hover,
+        .history-alert-section .history-alert-card .history-alert-actions .history-alert-signin:hover {
+            background: #9c6522;
+        }
+
+        .main-navbar-section {
+            margin-top: 24px;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-navbar-section .main-navbar-tabs {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            padding-bottom: 8px;
+        }
+
+        .main-navbar-section .main-navbar-tabs div {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: #64748b;
+            font-size: 1.17rem;
+            cursor: pointer;
+            transition: color 0.18s;
+        }
+
+        .main-navbar-section .main-navbar-tabs div:first-child {
+            color: #222e3a;
+            font-weight: bold;
+        }
+
+        .main-navbar-section .main-navbar-tabs div b {
+            font-weight: 700;
+        }
+
+        .main-navbar-section .main-navbar-tabs div:hover {
+            color: #222e3a;
+        }
+
+        .main-navbar-section .main-navbar-tabs div span i {
+            font-size: 0.8em;
+            margin-right: 2px;
+        }
+
+        .main-navbar-section .main-navbar-underline {
+            width: 170px;
+            height: 3px;
+            background: #16b189;
+            border-radius: 2px;
+            margin-top: -2px;
+            margin-bottom: 10px;
+        }
+
+        .main-navbar-section {
+            border-bottom: 1px solid #e7eaf1;
+            margin-bottom: 8px;
+        }
+
+        .delete-history-section {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 0px 0 16px 0;
+            gap: 24px;
+        }
+
+        .delete-history-section .delete-history-text {
+            flex: 1;
+            color: #8b99a8;
+            font-size: 1.09rem;
+            text-align: left;
+            margin-left: 40px;
+        }
+
+        .delete-history-section .delete-history-btn {
+            background: #fff;
+            color: #de3629;
+            border: 1.5px solid #e4e8ee;
+            border-radius: 999px;
+            padding: 10px 22px;
+            font-size: 1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            box-shadow: 0 1px 6px rgba(60, 60, 60, 0.04);
+            cursor: pointer;
+            transition: border 0.2s, background 0.2s;
+        }
+
+        .delete-history-section .delete-history-btn i {
+            font-size: 1.17em;
+        }
+
+        .delete-history-section .delete-history-btn:hover {
+            background: #fdeaea;
+            border: 1.5px solid #de3629;
+        }
+
+        .main-container {
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
     </style>
-
-    <div class="history-header">
-        <div class="tabs">
-            <a href="#" class="active">All</a>
-            <a href="#">Text</a>
-            <a href="#">Documents</a>
-            <a href="#">Stories</a>
+    <div class="">
+        <div class="main-navbar-section">
+            <div class="main-navbar-tabs">
+                <div>
+                    <span><i class="fa fa-cube"></i></span>
+                    <span><b>All</b></span>
+                </div>
+                {{-- <div>
+                    <span><i class="fa fa-language"></i></span>
+                    <span>Text</span>
+                </div>
+                <div>
+                    <span><i class="fa fa-smile-o"></i></span>
+                    <span>Emotion Text</span>
+                </div>
+                <div>
+                    <span><i class="fa fa-file-text-o"></i></span>
+                    <span>Documents</span>
+                </div>
+                <div>
+                    <span><i class="fa fa-users"></i></span>
+                    <span>Stories</span>
+                </div> --}}
+            </div>
+            {{-- <div class="main-navbar-underline"></div> --}}
         </div>
-        <div class="delete-all">
-            Delete all
-        </div>
-    </div>
 
-    @auth
-        @php
-            $levelLabels = [
-                'remember' => 'Cấp 1',
-                'understand' => 'Cấp 2',
-                'apply' => 'Cấp 3',
-                'analyze' => 'Cấp 4',
-                'evaluate' => 'Cấp 5',
-                'create' => 'Cấp 6',
-            ];
+        @auth
+            @php
+                $levelLabels = [
+                    'remember' => 'Cấp 1',
+                    'understand' => 'Cấp 2',
+                    'apply' => 'Cấp 3',
+                    'analyze' => 'Cấp 4',
+                    'evaluate' => 'Cấp 5',
+                    'create' => 'Cấp 6',
+                ];
 
-            $levelColors = [
-                'remember' => '#848fc6',
-                'understand' => '#89c0e6',
-                'apply' => '#75ac82',
-                'analyze' => '#aed981',
-                'evaluate' => '#f3da69',
-                'create' => '#e78b76',
-            ];
-        @endphp
-
-        @foreach ($groupedQuestions as $fileId => $fileGroup)
-            <div class="history-card mt-3">
-                <div class="header">
-
-                    <div class="tags">
-                        <h6>📝 File: {{ $fileGroup['original_name'] }}</h6>
+                $levelColors = [
+                    'remember' => '#848fc6',
+                    'understand' => '#89c0e6',
+                    'apply' => '#75ac82',
+                    'analyze' => '#aed981',
+                    'evaluate' => '#f3da69',
+                    'create' => '#e78b76',
+                ];
+            @endphp
+            <div class="delete-history-section">
+                <div class="mx-auto">
+                    <div class="delete-history-text d-inline-block mr-5">
+                        All history after 30 days will be deleted automatically.
                     </div>
-
-                    <div class="timestamp" style="color: #94a3b8">{{ $fileGroup['created_at'] }}</div>
-                </div>
-                <div id="export-content">
-                    <div class="text">
-                        @foreach ($fileGroup['levels'] as $level => $questions)
-                            <div class="category" id="{{ $level }}">
-                                <button class="category-btn" style="background-color: {{ $levelColors[$level] }}; color: black">
-                                    {{ $levelLabels[$level] }} - {{ count($questions) }} câu hỏi
-                                </button>
-                                <div class="questions-container">
-                                    @foreach ($questions as $index => $q)
-                                        <div class="question">
-                                            <p class="question-text"><strong>Câu {{ $index + 1 }}:</strong>
-                                                {{ $q['question'] }}</p>
-                                            <ul class="options">
-                                                @foreach ($q['options'] as $option)
-                                                    <li>{{ $option }}</li>
-                                                @endforeach
-                                            </ul>
-                                            <p class="correct-answer">✅ <strong>Đáp án đúng:</strong> {{ $q['answer'] }}</p>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="footer">
-                    <div class="details"><i class="fa fa-info-circle"></i>Details</div>
-                    <div class="actions">
-                        <span># {{ \Illuminate\Support\Str::uuid() }}</span>
-                        <button><i class="fa fa-thumbs-up"></i></button>
-                        <button><i class="fa fa-thumbs-down"></i></button>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center my-1" style="margin-left: -5px; color: black">
-                    <i class="material-icons">download</i>
-                    <div>Download</div>
-                </div>
-                <div class="d-flex justify-content-left">
-                    <button onclick="exportQuestionsToExcel()" style="" type="button"
-                        class="btn btn-light d-flex align-items-center">
-                        <img style="width: 50px; height: 30px" src="{{ asset('storage/images/excel_download_icon.png') }}"
-                            alt="">
-                    </button>
-                    <button id="btn-word" onclick="Export2Doc('export-content')" style="" type="button"
-                        class="btn btn-light d-flex align-items-center mx-1">
-                        <img style="width: 50px; height: 30px" src="{{ asset('storage/images/word_download_icon.png') }}"
-                            alt="">
-                    </button>
-                    <button onclick="exportToText()" style="" type="button"
-                        class="btn btn-light d-flex align-items-center">
-                        <img style="width: 50px; height: 30px" src="{{ asset('storage/images/txt_download_icon.png') }}"
-                            alt="">
+                    <button class="delete-history-btn d-inline">
+                        <i class="fa fa-trash-o"></i> Delete all
                     </button>
                 </div>
             </div>
-        @endforeach
-    @else
-        <div class="info-box shadow-sm">
-            <h5><i class="fas fa-info-circle"></i> Bạn muốn xem lịch sử tạo câu hỏi của mình?</h5>
-            <p>Bạn có thể xem lịch sử tạo câu hỏi sau khi đăng nhập hoặc đăng ký nếu cho có tài khoản</p>
-            <a href="{{ route('signup') }}" class="btn btn-brown">
-                Sign in<i class="fas fa-arrow-right ml-1"></i>
-            </a>
-            <a href="{{ route('login') }}" class="btn btn-brown">Login</a>
-        </div>
-    @endauth
+            @foreach ($groupedQuestions as $fileId => $fileGroup)
+                <div class="history-card mt-3">
+                    <div class="header">
+
+                        <div class="tags">
+                            <h6>📝 File: {{ $fileGroup['original_name'] }}</h6>
+                        </div>
+
+                        <div class="timestamp" style="color: #94a3b8">{{ $fileGroup['created_at'] }}</div>
+                    </div>
+                    <div id="export-content">
+                        <div class="text">
+                            @foreach ($fileGroup['levels'] as $level => $questions)
+                                <div class="category" id="{{ $level }}">
+                                    <button class="category-btn"
+                                        style="background-color: {{ $levelColors[$level] }}; color: black">
+                                        {{ $levelLabels[$level] }} - {{ count($questions) }} câu hỏi
+                                    </button>
+                                    <div class="questions-container">
+                                        @foreach ($questions as $index => $q)
+                                            <div class="question">
+                                                <p class="question-text"><strong>Câu {{ $index + 1 }}:</strong>
+                                                    {{ $q['question'] }}</p>
+                                                <ul class="options">
+                                                    @foreach ($q['options'] as $option)
+                                                        <li>{{ $option }}</li>
+                                                    @endforeach
+                                                </ul>
+                                                <p class="correct-answer">✅ <strong>Đáp án đúng:</strong> {{ $q['answer'] }}
+                                                </p>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div class="details"><i class="fa fa-info-circle"></i>Details</div>
+                        <div class="actions">
+                            <span># {{ \Illuminate\Support\Str::uuid() }}</span>
+                            <button><i class="fa fa-thumbs-up"></i></button>
+                            <button><i class="fa fa-thumbs-down"></i></button>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center my-1" style="margin-left: -5px; color: black">
+                        <i class="material-icons">download</i>
+                        <div>Download</div>
+                    </div>
+                    <div class="d-flex justify-content-left">
+                        <button onclick="exportQuestionsToExcel()" style="" type="button"
+                            class="btn btn-light d-flex align-items-center">
+                            <img style="width: 50px; height: 30px" src="{{ asset('storage/images/excel_download_icon.png') }}"
+                                alt="">
+                        </button>
+                        <button id="btn-word" onclick="Export2Doc('export-content')" style="" type="button"
+                            class="btn btn-light d-flex align-items-center mx-1">
+                            <img style="width: 50px; height: 30px" src="{{ asset('storage/images/word_download_icon.png') }}"
+                                alt="">
+                        </button>
+                        <button onclick="exportToText()" style="" type="button"
+                            class="btn btn-light d-flex align-items-center">
+                            <img style="width: 50px; height: 30px" src="{{ asset('storage/images/txt_download_icon.png') }}"
+                                alt="">
+                        </button>
+                    </div>
+                </div>
+            @endforeach
+        @else
+            <div class="history-alert-section">
+                <div class="history-alert-card">
+                    <div class="history-alert-icon-title">
+                        <span class="history-alert-icon"><i class="fa fa-info-circle"></i></span>
+                        <span class="history-alert-title">Want to see your history of speech creation?</span>
+                    </div>
+                    <div class="history-alert-desc">
+                        You can see your history of speech creation after you sign in. It is free and easy to sign up.
+                    </div>
+                    <div class="history-alert-actions">
+                        <button class="history-alert-signup">Sign up for free <i class="fa fa-arrow-right"></i></button>
+                        <button class="history-alert-signin">Sign In</button>
+                    </div>
+                </div>
+            </div>
+        @endauth
+
+
+    </div>
+
+
 
     @vite('resources/js/app.js')
     <script>

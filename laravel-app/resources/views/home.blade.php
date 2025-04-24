@@ -519,198 +519,199 @@
         }
     </style>
     <!-- Main Content -->
-    <div class="main-container">
-        <!-- Text Input Section -->
-        <div class="text-input-section">
-            <div class="container">
-                <div class="header-section">
-                    <h1>Tải file</h1>
-                </div>
-                <div class="drop-section">
-                    <div class="col" style="text-align: center">
-                        <div class="cloud-icon">
-                            <img src="{{ asset('storage/images/cloud.png') }}" alt="cloud">
-                        </div>
-                        <span>Kéo và thả file</span>
-                        <span>Hoặc</span>
-                        <button {{ !Auth::check() ? 'disabled' : '' }} class="file-selector">Tải lên file</button>
-                        <input type="file" class="file-selector-input" multiple>
+
+    <!-- Text Input Section -->
+    <div class="text-input-section">
+        <div class="container">
+            <div class="header-section">
+                <h1>Tải file</h1>
+            </div>
+            <div class="drop-section">
+                <div class="col" style="text-align: center">
+                    <div class="cloud-icon">
+                        <img src="{{ asset('storage/images/cloud.png') }}" alt="cloud">
                     </div>
-                    <div class="col">
-                        <div class="drop-here">Drop Here</div>
-                    </div>
+                    <span>Kéo và thả file</span>
+                    <span>Hoặc</span>
+                    <button {{ !Auth::check() ? 'disabled' : '' }} class="file-selector">Tải lên file</button>
+                    <input type="file" class="file-selector-input" multiple>
                 </div>
-                <div class="list-section">
-                    <div class="list-title">Uploaded Files</div>
-                    <div class="list"></div>
+                <div class="col">
+                    <div class="drop-here">Drop Here</div>
                 </div>
             </div>
-
+            <div class="list-section">
+                <div class="list-title">Uploaded Files</div>
+                <div class="list"></div>
+            </div>
         </div>
 
-        <!-- Voice Selection Section -->
-        <div class="voice-selection-section">
-            <div class="payment-options">
-                <input type="radio" id="rdo_number" name="payment" checked>
-                <label for="rdo_number">
-                    <span class="custom-radio"></span>
-                    Số lượng
-                </label>
-                <input type="radio" id="rdo_percent" name="payment">
-                <label for="rdo_percent">
-                    <span class="custom-radio"></span>
-                    Số lượng (theo %)
-                </label>
+    </div>
+
+    <!-- Voice Selection Section -->
+    <div class="voice-selection-section">
+        <div class="payment-options">
+            <input type="radio" id="rdo_number" name="payment" checked>
+            <label for="rdo_number">
+                <span class="custom-radio"></span>
+                Số lượng
+            </label>
+            <input type="radio" id="rdo_percent" name="payment">
+            <label for="rdo_percent">
+                <span class="custom-radio"></span>
+                Số lượng (theo %)
+            </label>
+        </div>
+
+        <form method="post" enctype="multipart/form-data" action="javascript:void(0);">
+            @csrf
+            <!-- Hidden input file (vẫn có thể trigger bằng JS) -->
+            <input type="file" name="file_upload" id="file-upload" style="display: none;">
+
+            <div class="input-group mb-3 d-none" id='div_total'>
+                <div class="input-group-prepend">
+                    <span class="input-group-text" style=" color: black;">Tổng số</span>
+                </div>
+                <input id="total" type="number" class="form-control"
+                    aria-label="Dollar amount (with dot and two decimal places)">
             </div>
 
-            <form method="post" enctype="multipart/form-data" action="javascript:void(0);">
-                @csrf
-                <!-- Hidden input file (vẫn có thể trigger bằng JS) -->
-                <input type="file" name="file_upload" id="file-upload" style="display: none;">
-
-                <div class="input-group mb-3 d-none" id='div_total'>
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" style=" color: black;">Tổng số</span>
-                    </div>
-                    <input id="total" type="number" class="form-control"
-                        aria-label="Dollar amount (with dot and two decimal places)">
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-6 d-none">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" style="background-color: #848fc6; color: black">Cấp 1</span>
-                            </div>
-                            <input type="number" aria-label="First name" class="form-control" name="%_remember">
-                            <span class="input-group-text">%</span>
+            <div class="form-row">
+                <div class="form-group col-md-6 d-none">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" style="background-color: #848fc6; color: black">Cấp 1</span>
                         </div>
-                    </div>
-
-                    <div class="form-group col-md-6">
-                        <div class="input-group ">
-                            <input type="number" class="form-control" aria-label="" name="n_remember">
-                            <div class="input-group-append">
-                                <span class="input-group-text" style="background-color: #848fc6; color: black">Cấp 1</span>
-                            </div>
-                        </div>
+                        <input type="number" aria-label="First name" class="form-control" name="%_remember">
+                        <span class="input-group-text">%</span>
                     </div>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group col-md-6 d-none">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" style="background-color: #89c0e6; color: black">Cấp 2</span>
-                            </div>
-                            <input type="number" aria-label="First name" class="form-control" name="%_understand">
-                            <span class="input-group-text">%</span>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <div class="input-group ">
-                            <input type="number" class="form-control" name="n_understand"
-                                aria-label="Dollar amount (with dot and two decimal places)">
-                            <div class="input-group-append">
-                                <span class="input-group-text" style="background-color: #89c0e6; color: black">Cấp 2</span>
-                            </div>
+                <div class="form-group col-md-6">
+                    <div class="input-group ">
+                        <input type="number" class="form-control" aria-label="" name="n_remember">
+                        <div class="input-group-append">
+                            <span class="input-group-text" style="background-color: #848fc6; color: black">Cấp 1</span>
                         </div>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6 d-none">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" style="background-color: #75ac82; color: black">Cấp 3</span>
-                            </div>
-                            <input type="number" name="%_apply" aria-label="First name" class="form-control">
-                            <span class="input-group-text">%</span>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6 d-none">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" style="background-color: #89c0e6; color: black">Cấp 2</span>
                         </div>
+                        <input type="number" aria-label="First name" class="form-control" name="%_understand">
+                        <span class="input-group-text">%</span>
                     </div>
-                    <div class="form-group col-md-6">
-                        <div class="input-group ">
-                            <input type="number" class="form-control" name="n_apply"
-                                aria-label="Dollar amount (with dot and two decimal places)">
-                            <div class="input-group-append">
-                                <span class="input-group-text" style="background-color: #75ac82; color: black">Cấp
-                                    3</span>
-                            </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <div class="input-group ">
+                        <input type="number" class="form-control" name="n_understand"
+                            aria-label="Dollar amount (with dot and two decimal places)">
+                        <div class="input-group-append">
+                            <span class="input-group-text" style="background-color: #89c0e6; color: black">Cấp 2</span>
                         </div>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6 d-none">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" style="background-color: #aed981; color: black">Cấp
-                                    4</span>
-                            </div>
-                            <input type="number" aria-label="First name" class="form-control" name="%_analyze">
-                            <span class="input-group-text">%</span>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 d-none">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" style="background-color: #75ac82; color: black">Cấp 3</span>
                         </div>
+                        <input type="number" name="%_apply" aria-label="First name" class="form-control">
+                        <span class="input-group-text">%</span>
                     </div>
-                    <div class="form-group col-md-6">
-                        <div class="input-group ">
-                            <input type="number" class="form-control" name="n_analyze"
-                                aria-label="Dollar amount (with dot and two decimal places)">
-                            <div class="input-group-append">
-                                <span class="input-group-text" style="background-color: #aed981; color: black">Cấp
-                                    4</span>
-                            </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <div class="input-group ">
+                        <input type="number" class="form-control" name="n_apply"
+                            aria-label="Dollar amount (with dot and two decimal places)">
+                        <div class="input-group-append">
+                            <span class="input-group-text" style="background-color: #75ac82; color: black">Cấp
+                                3</span>
                         </div>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6 d-none">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" style="background-color: #f3da69; color: black">Cấp
-                                    5</span>
-                            </div>
-                            <input type="number" aria-label="First name" class="form-control" name="%_evaluate">
-                            <span class="input-group-text">%</span>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 d-none">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" style="background-color: #aed981; color: black">Cấp
+                                4</span>
                         </div>
+                        <input type="number" aria-label="First name" class="form-control" name="%_analyze">
+                        <span class="input-group-text">%</span>
                     </div>
-                    <div class="form-group col-md-6">
-                        <div class="input-group ">
-                            <input type="number" class="form-control" name="n_evaluate"
-                                aria-label="Dollar amount (with dot and two decimal places)">
-                            <div class="input-group-append">
-                                <span class="input-group-text" style="background-color: #f3da69; color: black">Cấp
-                                    5</span>
-                            </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <div class="input-group ">
+                        <input type="number" class="form-control" name="n_analyze"
+                            aria-label="Dollar amount (with dot and two decimal places)">
+                        <div class="input-group-append">
+                            <span class="input-group-text" style="background-color: #aed981; color: black">Cấp
+                                4</span>
                         </div>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6 d-none">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" style="background-color: #e78b76; color: black">Cấp
-                                    6</span>
-                            </div>
-                            <input type="number" aria-label="First name" class="form-control" name="%_create">
-                            <span class="input-group-text">%</span>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 d-none">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" style="background-color: #f3da69; color: black">Cấp
+                                5</span>
                         </div>
+                        <input type="number" aria-label="First name" class="form-control" name="%_evaluate">
+                        <span class="input-group-text">%</span>
                     </div>
-                    <div class="form-group col-md-6">
-                        <div class="input-group ">
-                            <input type="number" class="form-control" name="n_create"
-                                aria-label="Dollar amount (with dot and two decimal places)">
-                            <div class="input-group-append">
-                                <span class="input-group-text" style="background-color: #e78b76; color: black">Cấp
-                                    6</span>
-                            </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <div class="input-group ">
+                        <input type="number" class="form-control" name="n_evaluate"
+                            aria-label="Dollar amount (with dot and two decimal places)">
+                        <div class="input-group-append">
+                            <span class="input-group-text" style="background-color: #f3da69; color: black">Cấp
+                                5</span>
                         </div>
                     </div>
                 </div>
-                <button type="submit" {{ !Auth::check() ? 'disabled' : '' }} class="btn btn-primary">Tạo câu hỏi</button>
-            </form>
-            <ul class="notifications-toast"></ul>
-            {{-- <div class="buttons">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 d-none">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" style="background-color: #e78b76; color: black">Cấp
+                                6</span>
+                        </div>
+                        <input type="number" aria-label="First name" class="form-control" name="%_create">
+                        <span class="input-group-text">%</span>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <div class="input-group ">
+                        <input type="number" class="form-control" name="n_create"
+                            aria-label="Dollar amount (with dot and two decimal places)">
+                        <div class="input-group-append">
+                            <span class="input-group-text" style="background-color: #e78b76; color: black">Cấp
+                                6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id='btn-submit' type="submit" {{ !Auth::check() ? 'disabled' : '' }} class="btn btn-primary">Tạo
+                câu hỏi</button>
+        </form>
+        <ul class="notifications-toast"></ul>
+        {{-- <div class="buttons">
                 <button class="btn" id="success">Success</button>
             </div> --}}
-        </div>
+
     </div>
 
 
@@ -1027,10 +1028,9 @@
 
                     return;
                 }
-                const start = performance.now();
                 const formData = new FormData(form);
                 const csrfToken = document.querySelector('input[name="_token"]').value;
-
+                document.getElementById('btn-submit').disabled = true;
                 fetch('/question/create', {
                         method: 'POST',
                         headers: {
@@ -1057,7 +1057,8 @@
             console.log('test');
             window.Echo.channel('testChannel')
                 .listen('testingEvent', (e) => {
-                    console.log(e);
+                    document.getElementById('btn-submit').disabled = true;
+                    createToastSuccess('success');
                 })
         })
     </script>

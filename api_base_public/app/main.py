@@ -28,16 +28,28 @@ app.add_middleware(
 
 
 @app.get("/")
-def read_root():
+def read_root():    
     return {"message": "Welcome to my FastAPI application"}   
 
 
-@app.post("/question/create")
+@app.post("/question/create", summary="Create a new question with an uploaded file and JSON data", response_description="Successfully created question")
 async def create_question(
-    file: UploadFile = File(...),
-    Nquestion_json: str = Form(...),
-    api_key: str = get_api_key
+    file: UploadFile = File(..., description="Tài liệu giáo trình (The instructional material file) to be uploaded."),
+    Nquestion_json: str = Form(..., description="Dữ liệu câu hỏi dưới dạng JSON (JSON string containing the question data)."),
+    api_key: str = (get_api_key)
 ):
+    """
+    Endpoint to create a new question by uploading a file and providing the question data as a JSON string.
+    
+    - **file**: The file associated with the question (e.g., an instructional material or other related document).
+    - **Nquestion_json**: A JSON string containing the question details (e.g., question text, options, etc.).
+    - **api_key**: A valid API key required for authorization to access the endpoint.
+
+    **Returns:**
+    - A success message confirming that the question has been created.
+    
+    The response will include a confirmation message indicating the status of the operation.
+    """
     Nquestion = NQuestion.model_validate_json(Nquestion_json)
     
     n_question = {

@@ -7,16 +7,19 @@ use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\SignupController;
-use App\Jobs\CreateQuestionsJob;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Hash;
 
 Route::get('/', function () {
     // event(new testingEvent('test socket'));
     return view('home');
 })->name('home');
+
+Route::prefix('/profile')->name('profile.')->group(function () {
+    Route::get('/', [ProfileController::class, 'showAccountInfor']);
+});
 
 
 Route::get('login', [LoginController::class, 'index'])->name('login');

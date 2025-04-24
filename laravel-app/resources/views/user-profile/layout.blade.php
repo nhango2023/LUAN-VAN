@@ -162,6 +162,7 @@
         height: var(--body-vh);
         padding: 20px;
         background: #f8fafc;
+
     }
 
     .text-input-section {
@@ -799,6 +800,42 @@
         color: #222;
         font-style: normal;
     }
+
+    .profile-sidebar-root {
+        width: 400px;
+        margin: 30px auto;
+        background: none;
+        padding: 32px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .account-settings-root {
+        background: #fff;
+        border: 1.3px solid #e7eaee;
+        border-radius: 5px;
+        padding: 38px 32px 48px 32px;
+        margin: 18px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        min-width: 768px;
+    }
+
+
+
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        overflow-y: auto;
+        /* Enable scrolling on the whole page */
+    }
+
+    .main-container {
+        height: auto !important;
+    }
 </style>
 </head>
 
@@ -940,7 +977,74 @@
     </div>
 
     <div class="main-container">
-        @yield('content')
+        <div class="d-flex mx-auto">
+            <div class="profile-settings-root">
+                <div class="profile-settings-sidebar">
+                    <div class="profile-header mx-4" style="padding: 10px 0">
+                        <div class="profile-info">
+                            <div class="avatar-placeholder"></div>
+                            <div class="user-details mr-3">
+                                <div class="user-name">Nha Ngo</div>
+                                <div class="user-email">ngothanhnha2017@gmail.com</div>
+                            </div>
+                            <button class="settings-btn">
+                                <i class="fas fa-cog"></i> Settings
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="profile-status mx-4">
+                        <div class="status-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Current plan</span>
+                            <span class="status-badge yellow">Free</span>
+                        </div>
+                        <div class="status-item">
+                            <i class="fas fa-star"></i>
+                            <span>Available credits</span>
+                            <span class="status-badge blue">{{ Auth::user()->credit }}</span>
+                        </div>
+                        <div class="status-item">
+                            <i class="fas fa-lock"></i>
+                            <span>Locked credits</span>
+                            <span class="status-badge red">0</span>
+                        </div>
+                    </div>
+                    <style>
+                        .action-item {
+                            padding: 8px 16px;
+                            margin-bottom: 0.6rem;
+                        }
+                    </style>
+                    <div class="profile-actions mx-3">
+                        <div class="action-item">🛒 Buy credits</div>
+                        <div class="action-item">📄 Payment history</div>
+                        <div class="action-item">👤 Account Information</div>
+                        <div class="action-item with-badge">
+                            🔗 Service Integration <span class="new-badge">New</span>
+                        </div>
+                        <div class="dv1">
+                            <div class="dv2"></div>
+                        </div>
+                        <div class="action-item">
+                            🎁 Gift Card<br>
+                            <span class="subtext">Redeem a gift card to get more credits</span>
+                        </div>
+                        <a class="action-item d-flex align-items-center" style="text-decoration: none;"
+                            href="{{ route('logout') }}">
+                            <i class="material-icons">logout</i>
+                            <div>Log out</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="profile-settings-main">
+
+                </div>
+            </div>
+            <div class="account-settings-root">
+                @yield('content')
+            </div>
+        </div>
     </div>
     <footer>
         <div class="container">
