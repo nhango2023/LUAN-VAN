@@ -38,7 +38,7 @@
                             <td>{{ $user->id }}</td>
                             <td>
                                 <a href="#"><img style="width: 40px; height: 40px"
-                                        src="{{ $user->avatar ? asset('storage/' . $user->avatar) : 'https://img.freepik.com/free-vector/add-new-user_78370-4710.jpg' }}"
+                                        src="{{ $user->avatar ? asset('storage/avatars/' . $user->avatar) : 'https://img.freepik.com/free-vector/add-new-user_78370-4710.jpg' }}"
                                         class="avatar rounded-circle img-thumbnail " alt="Avatar">
                                     <span>{{ $user->fullname }}</span></a>
 

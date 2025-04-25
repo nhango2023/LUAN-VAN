@@ -880,14 +880,16 @@
                 <div class="profile-sidebar" id="profile-sidebar">
                     <div class="profile-header mx-4">
                         <div class="profile-info">
-                            <div class="avatar-placeholder"></div>
+                            <img src="{{ Auth::user()->avatar ? asset('storage/avatars/' . Auth::user()->avatar) : 'https://img.freepik.com/free-vector/add-new-user_78370-4710.jpg' }}"
+                                alt="" class="avatar-placeholder">
                             <div class="user-details">
-                                <div class="user-name">Nha Ngo</div>
-                                <div class="user-email">ngothanhnha2017@gmail.com</div>
+                                <div class="user-name">{{ Auth::user()->fullname }}</div>
+                                <div class="user-email">{{ Auth::user()->email }}</div>
                             </div>
-                            <button class="settings-btn">
+                            <a style="text-decoration: none; color: black;" class="settings-btn"
+                                href="{{ route('profile.account-infor') }}">
                                 <i class="fas fa-cog"></i> Settings
-                            </button>
+                            </a>
                         </div>
                     </div>
 

@@ -836,6 +836,140 @@
     .main-container {
         height: auto !important;
     }
+
+
+    .account-settings-root>div>b {
+        color: #23304a;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        font-weight: 600;
+    }
+
+    .account-settings-root>div>hr {
+        border: none;
+        border-top: 1.5px solid rgb(226 232 240);
+        margin: 0px 0 2px 0;
+    }
+
+    .account-settings-root>div:first-child>div {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        background: #fcfdfe;
+        border: 1.5px solid #e1e7ee;
+        border-radius: 10px;
+        padding: 8px 14px;
+        max-width: 350px;
+    }
+
+    .account-settings-root>div:first-child>div>input[type="text"] {
+        border: none;
+        background: transparent;
+        font-size: 1.05rem;
+        color: #263352;
+        flex: 1;
+        outline: none;
+    }
+
+    .account-settings-root>div:first-child>div>button {
+        background: #14815e;
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        border-radius: 7px;
+        padding: 6px 20px;
+        font-size: 1rem;
+        transition: background 0.18s;
+        cursor: pointer;
+        margin-left: 12px;
+    }
+
+    .account-settings-root>div:first-child>div>button:hover {
+        background: #11905e;
+    }
+
+    .account-settings-root>div:nth-child(2)>span {
+        color: #8190a5;
+        font-size: 1.07rem;
+    }
+
+    .account-settings-root>div:nth-child(3)>button {
+        background: #fa5252;
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        padding: 7px 20px;
+        font-size: 1rem;
+        transition: background 0.18s;
+        cursor: pointer;
+        margin-top: 12px;
+    }
+
+    .account-settings-root>div:nth-child(3)>button:hover {
+        background: #e53e3e;
+    }
+
+    form {
+        margin-top: 12px;
+        max-width: 520px;
+    }
+
+    form>div {}
+
+    form>div>label {
+        display: block;
+        font-weight: 600;
+        color: #102043;
+        margin-bottom: 7px;
+        font-size: 1.09rem;
+    }
+
+    form>div>input[type="password"] {
+        width: 100%;
+        background: #f7fafd;
+        border: 1.2px solid #dbe3ed;
+        border-radius: 10px;
+        padding: 5px 18px;
+        font-size: 1.15rem;
+        color: #96aac4;
+        outline: none;
+        margin-top: 3px;
+        font-family: inherit;
+        letter-spacing: 0.14em;
+    }
+
+    form>button[type="submit"] {
+        margin-top: 14px;
+        background: #11805a;
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        border-radius: 10px;
+        padding: 6px 20px;
+        font-size: 1.13rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        transition: background 0.19s;
+        margin-bottom: 8px;
+    }
+
+    form>button[type="submit"]:hover {
+        background: #116c4d;
+    }
+
+    form>button[type="submit"] i {
+        font-size: 1.18em;
+        margin-left: 8px;
+    }
+
+    .action-item.active {
+        border: 1px solid #0e9f6e;
+        border-radius: 12px;
+        border-left: 5px solid #0e9f6e;
+        color: #046c4e;
+    }
 </style>
 </head>
 
@@ -917,10 +1051,12 @@
                 <div class="profile-sidebar" id="profile-sidebar">
                     <div class="profile-header mx-4">
                         <div class="profile-info">
-                            <div class="avatar-placeholder"></div>
+                            <img src="{{ Auth::user()->avatar ? asset('storage/avatars/' . Auth::user()->avatar) : 'https://img.freepik.com/free-vector/add-new-user_78370-4710.jpg' }}"
+                                alt="" class="avatar-placeholder">
+
                             <div class="user-details">
-                                <div class="user-name">Nha Ngo</div>
-                                <div class="user-email">ngothanhnha2017@gmail.com</div>
+                                <div class="user-name">{{ Auth::user()->fullname }}</div>
+                                <div class="user-email">{{ Auth::user()->email }}</div>
                             </div>
                             <button class="settings-btn">
                                 <i class="fas fa-cog"></i> Settings
@@ -949,7 +1085,8 @@
                     <div class="profile-actions mx-3">
                         <div class="action-item">🛒 Buy credits</div>
                         <div class="action-item">📄 Payment history</div>
-                        <div class="action-item">👤 Account Information</div>
+                        <div class="action-item {{ Route::is('profile.account-infor') ? 'active' : '' }}">👤 Account
+                            Information</div>
                         <div class="action-item with-badge">
                             🔗 Service Integration <span class="new-badge">New</span>
                         </div>
@@ -982,10 +1119,11 @@
                 <div class="profile-settings-sidebar">
                     <div class="profile-header mx-4" style="padding: 10px 0">
                         <div class="profile-info">
-                            <div class="avatar-placeholder"></div>
+                            <img src="{{ Auth::user()->avatar ? asset('storage/avatars/' . Auth::user()->avatar) : 'https://img.freepik.com/free-vector/add-new-user_78370-4710.jpg' }}"
+                                alt="" class="avatar-placeholder">
                             <div class="user-details mr-3">
-                                <div class="user-name">Nha Ngo</div>
-                                <div class="user-email">ngothanhnha2017@gmail.com</div>
+                                <div class="user-name">{{ Auth::user()->fullname }}</div>
+                                <div class="user-email">{{ Auth::user()->email }}</div>
                             </div>
                             <button class="settings-btn">
                                 <i class="fas fa-cog"></i> Settings
@@ -1019,7 +1157,9 @@
                     <div class="profile-actions mx-3">
                         <div class="action-item">🛒 Buy credits</div>
                         <div class="action-item">📄 Payment history</div>
-                        <div class="action-item">👤 Account Information</div>
+                        <div class="action-item {{ Route::is('profile.account-infor') ? 'active' : '' }}"">👤
+                            Account
+                            Information</div>
                         <div class="action-item with-badge">
                             🔗 Service Integration <span class="new-badge">New</span>
                         </div>
@@ -1052,7 +1192,8 @@
                 <!-- Logo and About -->
                 <div class="col-md-4">
                     <h2>logo</h2>
-                    <p>We are a young company always looking for new and creative ideas to help you with our products in
+                    <p>We are a young company always looking for new and creative ideas to help you with our
+                        products in
                         your everyday work.</p>
                     <a href="#">Our Team</a>
                 </div>
@@ -1062,7 +1203,8 @@
                     <ul>
                         <li><i class="fa fa-map-marker"></i> Via Rossini 10, 10136 Turin Italy</li>
                         <li><i class="fa fa-phone"></i> (0039) 333 12 68 347</li>
-                        <li><i class="fa fa-envelope"></i> <a href="mailto:hello@domain.com">hello@domain.com</a></li>
+                        <li><i class="fa fa-envelope"></i> <a href="mailto:hello@domain.com">hello@domain.com</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- Social Media -->

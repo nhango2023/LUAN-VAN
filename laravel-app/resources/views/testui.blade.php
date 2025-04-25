@@ -10,77 +10,95 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
+        .model-settings-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        footer {
-            background-color: #2e2e2e;
-            color: #ccc;
-            padding: 40px 0;
-            font-family: 'Varela Round', sans-serif;
+        .model-settings-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: #333;
         }
 
-        footer .container .row .col-md-4 h2 {
-            font-family: cursive;
-            color: white;
-            font-size: 36px;
-            margin-bottom: 15px;
+        .form-group {
+            margin-bottom: 20px;
         }
 
-        footer .container .row .col-md-4 p {
-            font-size: 14px;
-            line-height: 1.6;
+        .form-group label {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: block;
+            color: #333;
         }
 
-        footer .container .row .col-md-4 a {
-            color: #ccc;
-            text-decoration: underline;
-            font-size: 14px;
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            color: #333;
         }
 
-        footer .container .row .col-md-4 h5 {
-            color: white;
-            margin-bottom: 15px;
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #007bff;
         }
 
-        footer .container .row .col-md-4 ul {
-            list-style: none;
-            padding-left: 0;
+        button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
         }
 
-        footer .container .row .col-md-4 ul li {
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-
-        footer .container .row .col-md-4 ul li i {
-            margin-right: 10px;
-            color: #ccc;
-        }
-
-        footer .container .row .col-md-4 .social-icons i {
-            font-size: 18px;
-            margin-right: 15px;
-            color: #aaa;
-            transition: color 0.3s ease;
-        }
-
-        footer .container .row .col-md-4 .social-icons i:hover {
-            color: white;
-        }
-
-        footer .container .row .col-md-4 em {
-            color: white;
-            font-style: normal;
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 
 <body>
 
+    <div class="model-settings-container">
+        <h2>AI Model Settings</h2>
 
+        <!-- Form to select model and input API key -->
+        <form action="" method="POST">
+            @csrf
+
+            <!-- AI Model Selection -->
+            <div class="form-group">
+                <label for="model_name">Select AI Model</label>
+                <select name="model_name" id="model_name" class="form-control">
+                    <option value="chatgpt" {{ old('model_name') == 'chatgpt' ? 'selected' : '' }}>ChatGPT</option>
+                    <option value="gemini" {{ old('model_name') == 'gemini' ? 'selected' : '' }}>Gemini</option>
+                    <option value="grok" {{ old('model_name') == 'grok' ? 'selected' : '' }}>Grok</option>
+                </select>
+            </div>
+
+            <!-- API Key Input -->
+            <div class="form-group">
+                <label for="api_key">API Key</label>
+                <input type="text" id="api_key" name="api_key" class="form-control" value="{{ old('api_key') }}">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save Settings</button>
+        </form>
+    </div>
 
 </body>
 

@@ -45,8 +45,7 @@ class UserController extends Controller
                 Storage::disk('public')->delete($user->avatar);
             }
 
-            // ✅ Lưu đường dẫn
-            $user->avatar = $path;
+            $user->avatar = $filename;
         }
 
         $user->save();

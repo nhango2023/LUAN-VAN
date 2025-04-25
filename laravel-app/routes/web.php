@@ -4,6 +4,7 @@
 use App\Events\testingEvent;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\aiModelController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
@@ -18,7 +19,9 @@ Route::get('/', function () {
 })->name('home');
 
 Route::prefix('/profile')->name('profile.')->group(function () {
-    Route::get('/', [ProfileController::class, 'showAccountInfor']);
+    Route::get('/', [ProfileController::class, 'showAccountInfor'])->name('account-infor');
+    Route::put('/update/fullname', [ProfileController::class, "updateFullName"])->name('update.fullname');
+    Route::put('/update/password', [ProfileController::class, "updatePassword"])->name('update.password');
 });
 
 
@@ -45,6 +48,10 @@ Route::prefix('admin')->name('admin.')->middleware('canAccessAdminPage')->group(
         Route::put('/advanced/credit/edit/{id}', [UserController::class, "updateCredit"])->name('advanced.credit.edit');
 
         Route::delete('/delete/{id}', [UserController::class, 'delete'])->name('delete');
+    });
+    Route::prefix('/ai-model')->name('ai-model.')->group(function () {
+        Route::get('/show', [aiModelController::class, "show"])->name('show');
+        Route::put('/edit/api-key', [aiModelController::class, "editApiKey"])->name('api-key.edit');
     });
 });
 

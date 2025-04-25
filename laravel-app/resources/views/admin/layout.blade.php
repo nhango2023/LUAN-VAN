@@ -64,6 +64,17 @@
                                 <span class="hide-menu">Users</span>
                             </a>
                         </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{{ route('admin.ai-model.show') }}" aria-expanded="false">
+                                <span>
+                                    <iconify-icon icon="solar:layers-minimalistic-bold-duotone"
+                                        class="fs-6"></iconify-icon>
+                                </span>
+                                <span class="hide-menu">AI model</span>
+                            </a>
+                        </li>
+
                         {{-- <li class="sidebar-item">
               <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
                 <span>
@@ -102,7 +113,7 @@
                             <span class="hide-menu">AUTH</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ route('logout') }}" aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:login-3-bold-duotone" class="fs-6"></iconify-icon>
                                 </span>
