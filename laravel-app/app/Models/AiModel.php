@@ -14,5 +14,6 @@ class AiModel extends Model
     protected $fillable = [
         'name',
         'api_key',
+
     ];
 }

@@ -11,6 +11,7 @@
     <link rel="icon" href="{{ asset('logo.ico') }}" type="image/x-icon">
     {{-- <link rel="shortcut icon" type="image/png" href="{{ asset('login-template/assets/images/logos/seodashlogo222.png')}}" /> --}}
     <link rel="stylesheet" href="{{ asset('login-template/assets/css/styles.min.css') }}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

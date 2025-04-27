@@ -11,6 +11,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\SignupController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 Route::get('/', function () {
@@ -52,6 +53,7 @@ Route::prefix('admin')->name('admin.')->middleware('canAccessAdminPage')->group(
     Route::prefix('/ai-model')->name('ai-model.')->group(function () {
         Route::get('/show', [aiModelController::class, "show"])->name('show');
         Route::put('/edit/api-key', [aiModelController::class, "editApiKey"])->name('api-key.edit');
+        Route::put('/api-key/sync', [aiModelController::class, "syncApiKey"])->name('api-key.async');
     });
 });
 

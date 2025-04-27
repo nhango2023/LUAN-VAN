@@ -3,102 +3,69 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Footer UI</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Hover Text</title>
     <style>
-        .model-settings-container {
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 20px;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .model-settings-container h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.8rem;
-            color: #333;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            display: block;
-            color: #333;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border-radius: 6px;
-            border: 1px solid #ddd;
-            font-size: 1rem;
-            color: #333;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #007bff;
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            border-radius: 6px;
-            background-color: #007bff;
-            color: #fff;
+        .animated-hover-button {
+            position: relative;
+            overflow: hidden;
+            padding: 12px 28px;
             font-size: 1.1rem;
             border: none;
+            border-radius: 8px;
+            background: #007bff;
+            color: #fff;
             cursor: pointer;
+            outline: none;
         }
 
-        button:hover {
-            background-color: #0056b3;
+        .animated-hover-button span {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+            transition:
+                opacity 0.3s cubic-bezier(.5, 1.5, .5, 1),
+                transform 0.3s cubic-bezier(.5, 1.5, .5, 1);
+            pointer-events: none;
+        }
+
+        /* Show default text by default */
+        .animated-hover-button .default-text {
+            top: 50%;
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Hide hover text by default (slide below and transparent) */
+        .animated-hover-button .hover-text {
+            top: 70%;
+            opacity: 0;
+            transform: translate(-50%, 0%);
+        }
+
+        /* On hover: hide default text (slide up and fade out), show hover text (slide up and fade in) */
+        .animated-hover-button:hover .default-text {
+            top: 35%;
+            opacity: 0;
+            transform: translate(-50%, -40%);
+        }
+
+        .animated-hover-button:hover .hover-text {
+            top: 50%;
+            opacity: 1;
+            transform: translate(-50%, -50%);
         }
     </style>
 </head>
 
 <body>
 
-    <div class="model-settings-container">
-        <h2>AI Model Settings</h2>
-
-        <!-- Form to select model and input API key -->
-        <form action="" method="POST">
-            @csrf
-
-            <!-- AI Model Selection -->
-            <div class="form-group">
-                <label for="model_name">Select AI Model</label>
-                <select name="model_name" id="model_name" class="form-control">
-                    <option value="chatgpt" {{ old('model_name') == 'chatgpt' ? 'selected' : '' }}>ChatGPT</option>
-                    <option value="gemini" {{ old('model_name') == 'gemini' ? 'selected' : '' }}>Gemini</option>
-                    <option value="grok" {{ old('model_name') == 'grok' ? 'selected' : '' }}>Grok</option>
-                </select>
-            </div>
-
-            <!-- API Key Input -->
-            <div class="form-group">
-                <label for="api_key">API Key</label>
-                <input type="text" id="api_key" name="api_key" class="form-control" value="{{ old('api_key') }}">
-            </div>
-
-            <button type="submit" class="btn btn-primary">Save Settings</button>
-        </form>
-    </div>
+    <button class="animated-hover-button">
+        <span class="default-text">Click me</span>
+        <span class="hover-text">Hovered!</span>
+    </button>
 
 </body>
 
