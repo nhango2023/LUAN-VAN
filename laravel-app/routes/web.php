@@ -2,15 +2,18 @@
 
 
 use App\Events\testingEvent;
+use App\Http\Controllers\Admin\ConfigWebController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\aiModelController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\SignupController;
+use App\Models\Configweb;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -54,6 +57,10 @@ Route::prefix('admin')->name('admin.')->middleware('canAccessAdminPage')->group(
         Route::get('/show', [aiModelController::class, "show"])->name('show');
         Route::put('/edit/api-key', [aiModelController::class, "editApiKey"])->name('api-key.edit');
         Route::put('/api-key/sync', [aiModelController::class, "syncApiKey"])->name('api-key.async');
+    });
+    Route::prefix('/config-web')->name('config-web.')->group(function () {
+        Route::get('/show', [ConfigWebController::class, "show"])->name('show');
+        Route::get('/detail/{id}', [ConfigWebController::class, "showDetail"])->name('detail');
     });
 });
 

@@ -19,6 +19,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
 </head>
 
 <body>
@@ -73,6 +74,16 @@
                                         class="fs-6"></iconify-icon>
                                 </span>
                                 <span class="hide-menu">AI model</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{{ route('admin.config-web.show') }}" aria-expanded="false">
+                                <span>
+                                    <iconify-icon icon="solar:layers-minimalistic-bold-duotone"
+                                        class="fs-6"></iconify-icon>
+                                </span>
+                                <span class="hide-menu">Config website</span>
                             </a>
                         </li>
 

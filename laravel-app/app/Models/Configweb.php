@@ -18,6 +18,7 @@ class Configweb extends Model
         'title',
         'keywords',
         'web_description',
+        'isUse',
         'created_at',
         'updated_at',
     ];

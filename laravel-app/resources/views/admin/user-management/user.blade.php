@@ -2,6 +2,14 @@
 @section('content')
 @section('title', 'Tạo câu hỏi trắc nghiệm theo thang bloom|Manage Users')
 <title>Manage uers</title>
+<style>
+    table {
+        table-layout: fixed;
+        /* This forces the cells to have fixed widths */
+        width: 100%;
+        /* Ensure the table takes up full width */
+    }
+</style>
 <div class="container-xl" style="overflow-y: hidden">
     <div class="table-responsive" style="overflow-y: hidden">
         <div class="table-wrapper" style="overflow-y: hidden">
