@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\ConfigWebController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\aiModelController;
-
+use App\Http\Controllers\ExportFileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
@@ -34,6 +34,8 @@ Route::post('login', [LoginController::class, 'store'])->name('login.store');
 
 Route::get('signup', [SignupController::class, 'index'])->name('signup');
 Route::post('signup', [SignupController::class, 'create'])->name('signup.create');
+
+Route::get('/export/word/{fileId}', [ExportFileController::class, 'exportToWord'])->name('export.word');
 
 Route::prefix('admin')->name('admin.')->middleware('canAccessAdminPage')->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');

@@ -4,7 +4,6 @@ from pydantic import BaseModel,  Field
 from typing import List
 from llm.utils.custom_prompt import CustomPrompt
 
-
 class QuestionItem(BaseModel):
     question: str = Field(..., description="Nội dung câu hỏi")
     options: List[str] = Field(..., description="Danh sách 4 đáp án")

@@ -530,6 +530,7 @@
             overflow-x: hidden;
         }
     </style>
+
     <div class="">
         <div class="main-navbar-section">
             <div class="main-navbar-tabs">
@@ -642,8 +643,8 @@
                             <img style="width: 50px; height: 30px" src="{{ asset('storage/images/excel_download_icon.png') }}"
                                 alt="">
                         </button>
-                        <button id="btn-word" onclick="Export2Doc('export-content')" style="" type="button"
-                            class="btn btn-light d-flex align-items-center mx-1">
+                        <button id="btn-word" onclick="window.location.href='{{ route('export.word', $fileId) }}'"
+                            style="" type="button" class="btn btn-light d-flex align-items-center mx-1">
                             <img style="width: 50px; height: 30px" src="{{ asset('storage/images/word_download_icon.png') }}"
                                 alt="">
                         </button>
@@ -676,17 +677,15 @@
 
     </div>
 
-
-
-    @vite('resources/js/app.js')
+    {{-- @vite('resources/js/app.js') --}}
     <script>
-        setTimeout(() => {
-            console.log('test')
-            window.Echo.channel('testChannel')
-                .listen('testingEvent', (e) => {
-                    console.log(e);
-                })
-        }, 3000);
+        // setTimeout(() => {
+        //     console.log('test')
+        //     window.Echo.channel('testChannel')
+        //         .listen('testingEvent', (e) => {
+        //             console.log(e);
+        //         })
+        // }, 3000);
     </script>
     <script>
         document.querySelectorAll('.category-btn').forEach(button => {
@@ -761,55 +760,70 @@
             link.download = 'cau_hoi.txt';
             link.click();
         }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/6.2.0/docx.min.js"></script>
+    {{-- <script>
+        function Export2Doc(contentId) {
+            const doc = new docx.Document();
 
+            const contentElement = document.getElementById(contentId);
+            const fileGroups = contentElement.querySelectorAll('.history-card');
 
+            fileGroups.forEach(fileGroup => {
+                const fileName = fileGroup.querySelector('.header h6')?.innerText || '';
+                const timestamp = fileGroup.querySelector('.header .timestamp')?.innerText || '';
 
-        async function Export2Doc(elementId) {
-            const preHtml = `
-                <html xmlns:o='urn:schemas-microsoft-com:office:office' 
-                    xmlns:w='urn:schemas-microsoft-com:office:word' 
-                    xmlns='http://www.w3.org/TR/REC-html40'>
-                <head><meta charset='utf-8'><title>Export HTML to Word</title></head><body>`;
-            const postHtml = "</body></html>";
-            const content = document.getElementById(elementId).innerHTML;
+                // Add the File Information as a paragraph
+                doc.addSection({
+                    children: [
+                        new docx.Paragraph(`📝 File: ${fileName}`),
+                        new docx.Paragraph(`Date: ${timestamp}\n`),
+                    ],
+                });
 
-            const html = preHtml + content + postHtml;
+                const categories = fileGroup.querySelectorAll('.category');
+                categories.forEach(category => {
+                    const level = category.getAttribute('id');
+                    const levelLabel = category.querySelector('.category-btn')?.innerText || '';
 
-            const blob = new Blob(['\ufeff', html], {
-                type: 'application/msword'
-            });
-
-            // Use File System Access API if available
-            if (window.showSaveFilePicker) {
-                try {
-                    const handle = await window.showSaveFilePicker({
-                        suggestedName: 'questions.doc',
-                        types: [{
-                            description: 'Word Document',
-                            accept: {
-                                'application/msword': ['.doc']
-                            },
-                        }],
+                    // Add the category label as a paragraph
+                    doc.addSection({
+                        children: [
+                            new docx.Paragraph(`Level: ${levelLabel}`),
+                        ],
                     });
 
-                    const writable = await handle.createWritable();
-                    await writable.write(blob);
-                    await writable.close();
-                    alert("Save file successfully!");
-                } catch (err) {
+                    const questions = category.querySelectorAll('.question');
+                    questions.forEach((question, index) => {
+                        const questionText = question.querySelector('.question-text')?.innerText ||
+                            '';
+                        const options = question.querySelectorAll('.options li');
+                        let optionsText = '';
+                        options.forEach(option => {
+                            optionsText += `${option.innerText}\n`;
+                        });
+                        const answer = question.querySelector('.correct-answer')?.innerText || '';
 
-                    alert("failed!, please try again");
-                }
-            } else {
-                // Fallback for older browsers
-                const url = URL.createObjectURL(blob);
+                        // Add the question text and answer as a paragraph
+                        doc.addSection({
+                            children: [
+                                new docx.Paragraph(
+                                    `Question ${index + 1}: ${questionText}`),
+                                new docx.Paragraph(`Options:\n${optionsText}`),
+                                new docx.Paragraph(`Correct Answer: ${answer}\n\n`),
+                            ],
+                        });
+                    });
+                });
+            });
+
+            // Export the document as a .docx file
+            docx.Packer.toBlob(doc).then(function(blob) {
                 const link = document.createElement("a");
-                link.href = url;
-                link.download = "questions.doc";
-                document.body.appendChild(link);
+                link.href = URL.createObjectURL(blob);
+                link.download = "grouped_questions.docx";
                 link.click();
-                document.body.removeChild(link);
-            }
+            });
         }
-    </script>
+    </script> --}}
 @endsection
