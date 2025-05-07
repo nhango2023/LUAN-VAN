@@ -1,7 +1,5 @@
 <?php
 
-
-use App\Events\testingEvent;
 use App\Http\Controllers\Admin\ConfigWebController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
@@ -14,11 +12,13 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\SignupController;
+use App\Models\Configweb;
 use Illuminate\Support\Facades\Hash;
 
 Route::middleware('checkConfig')->group(function () {
     Route::get('/', function () {
-        return view('home');
+        $configWeb = ConfigWeb::where('isUse', 1)->first();
+        return view('home', compact('configWeb'));
     })->name('home');
 });
 
@@ -71,6 +71,8 @@ Route::prefix('admin')->name('admin.')->middleware('canAccessAdminPage')->group(
     Route::prefix('/config-web')->name('config-web.')->group(function () {
         Route::get('/show', [ConfigWebController::class, "show"])->name('show');
         Route::get('/detail/{id}', [ConfigWebController::class, "showDetail"])->name('detail');
+        Route::put('/update/website/config{id}', [ConfigWebController::class, "updateWebConfig"])->name('update.website.config');
+        Route::put('/update/company/config{id}', [ConfigWebController::class, "updateCompanyConfig"])->name('update.company.config');
     });
 });
 

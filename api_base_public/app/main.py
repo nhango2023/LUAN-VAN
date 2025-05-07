@@ -35,9 +35,10 @@ def read_root():
 
 @app.post("/question/create", summary="Route này dùng để tạo câu hỏi")
 async def create_question(
+    model: str,
     file: UploadFile = File(...),
     Nquestion_json: str = Form(...),
-    api_key: str = (get_api_key)
+    api_key: str = (get_api_key),
 ):
     """
     Route này dùng để tạo câu hỏi\n
@@ -45,6 +46,7 @@ async def create_question(
     - **file**: File giáo trình để ai dựa vào tạo câu hỏi
     - **Nquestion_json**: Số lượng câu hỏi cho từng cấp độ
     - **api_key**: key xác thực 
+    - **model**: tên model ai tạo câu hỏi
 
     **Returns:**
     - Danh sách câu hỏi:
@@ -70,7 +72,7 @@ async def create_question(
     if file.content_type not in ["application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"]:
         raise HTTPException(status_code=400, detail="Unsupported file type.")
 
-    agent = FilesChatAgent(file, n_question)
+    agent = FilesChatAgent(file, n_question, model)
     return await agent.get_lst_question()
     
 

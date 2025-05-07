@@ -30,7 +30,7 @@ class QuestionController extends Controller
                 'evaluate' => $req->n_evaluate,
                 'create' => $req->n_create,
             ];
-            CreateQuestionsJob::dispatch($filePath, $originalName, Auth::id(), $questionJson);
+            CreateQuestionsJob::dispatch($filePath, $originalName, Auth::id(), $questionJson, $req->model);
 
             return response()->json([
                 'message' => 'Đang tạo câu hỏi, vui lòng chờ...',

@@ -340,8 +340,8 @@
                             <th>Web description</th>
                             <th>Address</th>
 
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th style="width: 12%">Status</th>
+                            <th style="width: 13%">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -360,7 +360,7 @@
                                 <td>{{ $item->web_description }}</td>
                                 <td>{{ $item->address }}</td>
 
-                                <td>{!! $item->isSync
+                                <td>{!! $item->isUse == 1
                                     ? '<span class="status text-success">&bull;</span> In use'
                                     : '<span class="status text-danger">&bull; </span> Not in use' !!}
                                 </td>
@@ -374,15 +374,15 @@
                                             delete
                                         </span>
                                     </a>
-                                    {!! $item->isSync
+                                    {!! $item->isUse == 1
                                         ? ''
                                         : '
-                                                                        <a href="#" class="view" title="Use" data-toggle="tooltip">
-                                                                        <span class="material-symbols-outlined">
-                                                                        back_hand
-                                                                        </span>
-                                                                        </a>
-                                                                        ' !!}
+                                                                                                                                                <a href="#" class="view" title="Use" data-toggle="tooltip">
+                                                                                                                                                <span class="material-symbols-outlined">
+                                                                                                                                                back_hand
+                                                                                                                                                </span>
+                                                                                                                                                </a>
+                                                                                                                                                ' !!}
                                 </td>
                             </tr>
                         @endforeach

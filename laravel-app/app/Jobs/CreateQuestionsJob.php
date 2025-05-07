@@ -19,20 +19,21 @@ class CreateQuestionsJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public $filePath, $originalName, $userId, $questionJson;
+    public $filePath, $originalName, $userId, $questionJson, $model;
 
-    public function __construct($filePath, $originalName, $userId, $questionJson)
+    public function __construct($filePath, $originalName, $userId, $questionJson, $model)
     {
         $this->filePath = $filePath;
         $this->originalName = $originalName;
         $this->userId = $userId;
         $this->questionJson = $questionJson;
+        $this->model = $model;
     }
 
     public function handle()
     {
         try {
-            // Define this first
+            Log::debug("Model value: " . $this->model);
             $storagePath = storage_path("app/public/" . $this->filePath);
             $response = Http::timeout(600)
                 ->withHeaders([
@@ -42,18 +43,24 @@ class CreateQuestionsJob implements ShouldQueue
                     'file',
                     file_get_contents($storagePath),
                     $this->originalName
-                )->asMultipart()->post(env('API_URL') . 'question/create', [
+                )->asMultipart()->post(env('API_URL') . 'question/create?model=' . $this->model, [
                     'Nquestion_json' => json_encode($this->questionJson)
                 ]);
 
-            $responseData = $response->json();
+
             $status = $response->status();
+            $responseBody = $response->body(); // Get the raw response body
+            Log::error("API Response: Status {$status}, Body: {$responseBody}");
 
             if ($status == 403) {
                 event(new testingEvent('Sai API key (403)'));
                 return;
+            } elseif ($status == 422) {
+                event(new testingEvent('Validation error: ' . $responseBody));
+                Log::error("Validation error: {$responseBody}");
+                return;
             }
-            $questions = $questions = $response->json();
+            $questions = $response->json();
 
             $uploadedFile = Uploaded_file::create([
                 'id_user' => $this->userId,

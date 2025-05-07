@@ -309,17 +309,26 @@
 
     <!-- Voice Selection Section -->
     <div class="voice-selection-section">
-        <div class="payment-options">
-            <input type="radio" id="rdo_number" name="payment" checked>
-            <label for="rdo_number">
-                <span class="custom-radio"></span>
-                Số lượng
-            </label>
-            <input type="radio" id="rdo_percent" name="payment">
-            <label for="rdo_percent">
-                <span class="custom-radio"></span>
-                Số lượng (theo %)
-            </label>
+        <div class="payment-options d-flex justify-content-between">
+            <div class="d-flex">
+                <input type="radio" id="rdo_number" name="payment" checked>
+                <label for="rdo_number" class="mr-2">
+                    <span class="custom-radio"></span>
+                    Số lượng
+                </label>
+                <input type="radio" id="rdo_percent" name="payment">
+                <label for="rdo_percent">
+                    <span class="custom-radio"></span>
+                    Số lượng (theo %)
+                </label>
+            </div>
+            <div>
+                <select class="form-select" name="provider" aria-label="Default select example">
+                    <option value="gpt" selected>GPT</option>
+                    <option value="gemini">GEMINI</option>
+                    <option value="grok">GROK</option>
+                </select>
+            </div>
         </div>
 
         <form method="post" enctype="multipart/form-data" action="javascript:void(0);">
@@ -699,6 +708,8 @@
                     return;
                 }
                 const formData = new FormData(form);
+                const model = document.querySelector('.form-select').value;
+                formData.append('model', model);
                 const csrfToken = document.querySelector('input[name="_token"]').value;
                 document.getElementById('btn-submit').disabled = true;
                 fetch('/question/create', {
@@ -716,10 +727,12 @@
                     })
                     .then(data => {
                         createToastInfor('info', data.message);
+
                     })
                     .catch(error => {
                         console.error(error);
                         createToastError('error', error.message || 'Lỗi không xác định.');
+
                     });
             });
         });
@@ -727,8 +740,9 @@
             console.log('test');
             window.Echo.channel('testChannel')
                 .listen('testingEvent', (e) => {
-                    document.getElementById('btn-submit').disabled = true;
+
                     createToastSuccess('success');
+                    document.getElementById('btn-submit').disabled = false;
                 })
         })
     </script>

@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tạo câu hỏi trắc nghiệm theo thang bloom</title>
-    <meta name="description" content="Tạo câu hỏi trắc nghiệm theo thang bloom">
-    <meta name="keywords" content="Câu hỏi trắc nghiệm, bloom, bloom's taxonomy, tự động">
+    <title>{{ $configWeb->title }}</title>
+    <meta name="description" content="{{ $configWeb->web_description }}">
+    <meta name="keywords" content="{{ $configWeb->keywords }}">
     <link rel="icon" href="{{ asset('logo.ico') }}" type="image/x-icon">
     <!-- Include the stylesheets from your snippet -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
@@ -1193,20 +1193,17 @@
                 <!-- Logo and About -->
                 <div class="col-md-4">
                     <h2>logo</h2>
-                    <p>Adhightech Ltd. is an innovative start-up company, specializing in proposing advanced high-tech
-                        solutions, such as intelligent systems using AI, ML, Robotics, IoT, LLM,..., to serve daily
-                        life.</p>
-                    <a href="#">Our Team</a>
+                    <p>{{ $configWeb->company_description }}</p>
+
                 </div>
                 <!-- Contact Info -->
                 <div class="col-md-4">
                     <h5>Contact</h5>
                     <ul>
-                        <li><i class="fa fa-map-marker"></i> Số 44, đường Nguyễn Khuyến, Phường Tân An, Quận Ninh
-                            Kiều,TP Cần Thơ </li>
-                        <li><i class="fa fa-phone"></i> 00 (84) 916 416 490 </li>
+                        <li><i class="fa fa-map-marker"></i> {{ $configWeb->address }} </li>
+                        <li><i class="fa fa-phone"></i>{{ $configWeb->phone_number }} </li>
                         <li><i class="fa fa-envelope"></i> <a
-                                href="mailto:hello@domain.com">contact@adhigtechn.com</a></li>
+                                href="mailto:hello@domain.com">{{ $configWeb->email }}</a></li>
                     </ul>
                 </div>
                 <!-- Social Media -->

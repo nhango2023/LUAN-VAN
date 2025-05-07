@@ -20,9 +20,160 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+    <style>
+        :root {
+            --dark: #34495E;
+            --light: #ffffff;
+            --success: #0ABF30;
+            --error: #E24D4C;
+            --warning: #E9BD0C;
+            --info: #3498DB;
+        }
+
+        .notifications-toast {
+            position: fixed;
+            bottom: 0;
+            right: 0px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 10px;
+        }
+
+        .notifications-toast :where(.toast-test, .column) {
+            display: flex;
+            align-items: center;
+        }
+
+        .notifications-toast .toast-test {
+            background: red;
+            width: 400px;
+            position: relative;
+            overflow: hidden;
+            list-style: none;
+            border-radius: 4px;
+            padding: 16px 17px;
+            margin-bottom: 10px;
+            background: var(--light);
+            justify-content: space-between;
+            animation: show_toast 0.3s ease forwards;
+        }
+
+        @keyframes show_toast {
+            0% {
+                transform: translateX(100%);
+            }
+
+            40% {
+                transform: translateX(-5%);
+            }
+
+            80% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-10px);
+            }
+        }
+
+        .notifications-toast .toast-test.hide {
+            animation: hide_toast 0.3s ease forwards;
+        }
+
+        @keyframes hide_toast {
+            0% {
+                transform: translateX(-10px);
+            }
+
+            40% {
+                transform: translateX(0%);
+            }
+
+            80% {
+                transform: translateX(-5%);
+            }
+
+            100% {
+                transform: translateX(calc(100% + 20px));
+            }
+        }
+
+        .toast-test::before {
+            position: absolute;
+            content: "";
+            height: 3px;
+            width: 100%;
+            bottom: 0px;
+            left: 0px;
+            animation: progress 5s linear forwards;
+        }
+
+        @keyframes progress {
+            100% {
+                width: 0%;
+            }
+        }
+
+        .toast-test.success::before,
+        .btn#success {
+            background: var(--success);
+        }
+
+        .toast-test.error::before,
+        .btn#error {
+            background: var(--error);
+        }
+
+        .toast-test.warning::before,
+        .btn#warning {
+            background: var(--warning);
+        }
+
+        .toast-test.info::before,
+        .btn#info {
+            background: var(--info);
+        }
+
+        .toast-test .column i {
+            font-size: 1.75rem;
+        }
+
+        .toast-test.success .column i {
+            color: var(--success);
+        }
+
+        .toast-test.error .column i {
+            color: var(--error);
+        }
+
+        .toast-test.warning .column i {
+            color: var(--warning);
+        }
+
+        .toast-test.info .column i {
+            color: var(--info);
+        }
+
+        .toast-test .column span {
+            font-size: 1.07rem;
+            margin-left: 12px;
+        }
+
+        .toast-test i:last-child {
+            color: #aeb0d7;
+            cursor: pointer;
+        }
+
+        .toast-test i:last-child:hover {
+            color: var(--dark);
+        }
+    </style>
     <!--  Body Wrapper -->
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed">
@@ -245,6 +396,7 @@
             <!--  Header End -->
             @yield('content')
         </div>
+        <ul class="notifications-toast"></ul>
         <link rel="stylesheet" href="{{ asset('login-template/assets/css/styles.min.css') }}">
         <script src="{{ asset('login-template//assets/libs/jquery/dist/jquery.min.js') }}"></script>
         <script src="{{ asset('login-template/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
@@ -255,5 +407,96 @@
         <script src="{{ asset('login-template/assets/js/dashboard.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 </body>
+<script>
+    //toast
+    const notifications = document.querySelector(".notifications-toast")
+
+
+    const toastDetails = {
+        timer: 7000,
+        success: {
+            icon: 'fa-circle-check',
+            text: 'Success: This is a success toast.',
+        }
+    }
+
+    const removeToast = (toast) => {
+        toast.classList.add("hide");
+        if (toast.timeoutId) clearTimeout(toast.timeoutId); // Clearing the timeout for the toast
+        setTimeout(() => toast.remove(), 100); // Removing the toast after 500ms
+    }
+
+    //toast
+    const createToastSuccess = (message) => {
+        // Getting the icon and text for the toast based on the id passed
+        const id = "success";
+        const toast = document.createElement("li"); // Creating a new 'li' element for the toast
+        toast.className = `toast-test ${id}`; // Setting the classes for the toast
+        // Setting the inner HTML for the toast
+        toast.innerHTML = `                                                       
+                <div class="toast-icon">
+                    <i class="fas fa-check-circle" style="color: #0ABF30"></i>
+                </div>
+                <div class="toast-content">
+                    <strong>Success</strong>
+                    <p>${message}</p>
+                    
+                </div>
+                <div class="toast-close" onclick="this.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                </div>
+                </div>
+                    `;
+        notifications.appendChild(toast); // Append the toast to the notification ul
+        // Setting a timeout to remove the toast after the specified duration
+        toast.timeoutId = setTimeout(() => removeToast(toast), toastDetails.timer);
+    }
+
+    const createToastInfor = (id, message) => {
+        // Getting the icon and text for the toast based on the id passed
+
+        const toast = document.createElement("li"); // Creating a new 'li' element for the toast
+        toast.className = `toast-test ${id}`; // Setting the classes for the toast
+        // Setting the inner HTML for the toast
+        toast.innerHTML = `                                                       
+                <div class="toast-icon">
+                    <i class="fas fa-info-circle" style="color: #3498DB"></i>
+                </div>
+                <div class="toast-content">
+                    <strong>Thông tin</strong>
+                    <p>${message}</p>
+                </div>
+                <div class="toast-close" onclick="this.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                </div>
+                    `;
+        notifications.appendChild(toast); // Append the toast to the notification ul
+        // Setting a timeout to remove the toast after the specified duration
+        toast.timeoutId = setTimeout(() => removeToast(toast), toastDetails.timer);
+    }
+
+    const createToastError = (error) => {
+        // Getting the icon and text for the toast based on the id passed
+        id = 'error';
+        const toast = document.createElement("li"); // Creating a new 'li' element for the toast
+        toast.className = `toast-test ${id}`; // Setting the classes for the toast
+        // Setting the inner HTML for the toast
+        toast.innerHTML = `                                                       
+                <div class="toast-icon">
+                    <i class="fas fa-exclamation-circle" style="color: #E24D4C"></i>
+                </div>
+                <div class="toast-content">
+                    <strong>Lỗi !</strong>
+                    <p>${error}</p>                      
+                </div>
+                <div class="toast-close" onclick="this.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                </div>
+                    `;
+        notifications.appendChild(toast); // Append the toast to the notification ul
+        // Setting a timeout to remove the toast after the specified duration
+        toast.timeoutId = setTimeout(() => removeToast(toast), toastDetails.timer);
+    }
+</script>
 
 </html>

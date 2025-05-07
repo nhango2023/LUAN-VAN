@@ -26,4 +26,46 @@ class ConfigWebController extends Controller
         // Pass the retrieved configWeb data to the view
         return view('admin.config-web-management.detail', compact('configWeb'));
     }
+
+    public function updateWebConfig(Request $request, $id)
+    {
+        $request->validate([
+            'title' => 'required|string',
+            'keywords' => 'required|string',
+            'description' => 'required|string',
+        ]);
+
+        $config = ConfigWeb::findOrFail($id);
+
+        $config->title = $request->title;
+        $config->keywords = $request->keywords;
+        $config->web_description = $request->description;
+
+        $config->save();
+
+        return response()->json(['success' => true]);
+    }
+
+    public function updateCompanyConfig(Request $request, $id)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'phone_number' => 'required|string',
+            'facebook_link' => 'required|string',
+            'address' => 'required|string',
+            'company_description' => 'required|string',
+        ]);
+
+        $config = ConfigWeb::findOrFail($id);
+
+        $config->email = $request->email;
+        $config->phone_number = $request->phone_number;
+        $config->facebook_link = $request->facebook_link;
+        $config->address = $request->address;
+        $config->company_description = $request->company_description;
+
+        $config->save();
+
+        return response()->json(['success' => true]);
+    }
 }
