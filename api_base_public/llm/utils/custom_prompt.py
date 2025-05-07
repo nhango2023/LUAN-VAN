@@ -178,44 +178,36 @@ class CustomPrompt:
 #     """
 
     
-    GENERATE_QUESTION="""
-    Bạn là chuyên gia tạo câu hỏi trắc nghiệm theo thang Bloom.
+    GENERATE_QUESTION = """
+        Bạn là chuyên gia tạo câu hỏi trắc nghiệm.
 
-    - Nhiệm vụ:
-    + Tạo **MỘT** câu hỏi trắc nghiệm dựa **CHỈ** trên thông tin từ tài liệu cung cấp.
-    + Câu hỏi đi kèm **BỐN** phương án trả lời, với **CHỈ MỘT** phương án đúng.
+        - Nhiệm vụ:
+            + Chỉ sử dụng thông tin trong tài liệu được cung cấp bên dưới để tạo câu hỏi.
 
-    - Yêu cầu cho câu hỏi:
-    + Câu hỏi phải rõ ràng, cụ thể, đặt ra vấn đề hoặc yêu cầu trả lời đầy đủ dựa trên tài liệu.
-    + **BẮT BUỘC** sử dụng **CHỈ MỘT** từ khóa được chọn **NGẪU NHIÊN** từ danh sách từ khóa của cấp độ Bloom đã cung cấp. Từ khóa phải được tích hợp **TỰ NHIÊN**, không làm câu hỏi gượng ép.
-    + **TUYỆT ĐỐI KHÔNG** đặt từ khóa hoặc bất kỳ phần nào của câu hỏi trong dấu ngoặc, dấu sao, hoặc định dạng đặc biệt (ví dụ: *từ khóa*, **từ khóa**, [từ khóa]).
-    + Diễn đạt câu hỏi tự nhiên, **TRÁNH** các cụm như "Theo tài liệu...", "Hãy nêu...", "Điều nào sau đây...". Sử dụng cách hỏi trực tiếp, hòa nhập với nội dung tài liệu.
-    + Câu hỏi phải phù hợp với cấp độ nhận thức của thang Bloom tương ứng với từ khóa.
+        - Mỗi câu hỏi phải:
+            + Có nội dung đúng và liên quan đến tài liệu.
+            + Đảm bảo đáp án đúng có thể tìm thấy trực tiếp từ tài liệu.
+            + Đảm bảo đáp án đúng phải hoàn chỉnh, trả lời đầy đủ tất cả các khía cạnh của câu hỏi.
+            + Các phương án trả lời sai phải liên quan đến chủ đề của câu hỏi nhưng chỉ trả lời một phần hoặc đưa ra thông tin không chính xác so với tài liệu.
 
-    - Yêu cầu cho phương án trả lời:
-    + **CHỈ MỘT** phương án là **ĐÚNG** và **HOÀN CHỈNH**, trả lời **ĐẦY ĐỦ** câu hỏi dựa trên tài liệu.
-    + Ba phương án sai phải liên quan đến chủ đề nhưng chứa thông tin **KHÔNG CHÍNH XÁC** hoặc chỉ trả lời **MỘT PHẦN**.
-    + Các phương án phải rõ ràng, không mơ hồ, có độ dài tương đương để tránh gợi ý đáp án đúng.
+        - Yêu cầu logic:
+            + Không tự bịa thông tin ngoài tài liệu.
+            + Không tạo câu hỏi quá chung chung hoặc mơ hồ.
+            + Đảm bảo câu hỏi và đáp án tạo thành một cặp logic và có ý nghĩa.
+            + Hãy thêm một từ khóa trong danh sách từ khóa được cho vào câu hỏi.
 
-    - Yêu cầu logic và chính xác:
-    + **KHÔNG** thêm thông tin ngoài tài liệu hoặc suy diễn không căn cứ.
-    + **TRÁNH** câu hỏi hoặc phương án mơ hồ, chung chung, hoặc không liên quan đến tài liệu.
-    + Câu hỏi và đáp án phải logic, có ý nghĩa, và phù hợp với mục đích kiểm tra kiến thức.
+        - Trích dẫn (citation):
+            + Với mỗi câu hỏi, hãy cung cấp nội dung trích dẫn từ tài liệu để làm căn cứ cho đáp án đúng.
+            + Trích dẫn nên ngắn gọn, chính xác, đúng ngữ cảnh, và phản ánh rõ lý do vì sao đáp án đúng là hợp lý.
+            + Nếu tài liệu có nhiều đoạn phù hợp, chọn đoạn súc tích và sát nhất với nội dung câu hỏi.
+            + Trích dẫn không được suy luận hoặc tổng hợp, chỉ lấy nguyên văn từ tài liệu.
 
-    - Chú ý **ĐẶC BIỆT**:
-    + Câu hỏi **KHÔNG HỢP LỆ** nếu:
-        - Không sử dụng **CHÍNH XÁC MỘT** từ khóa từ danh sách cung cấp.
-        - Từ khóa hoặc bất kỳ phần nào của câu hỏi nằm trong dấu ngoặc, dấu sao, hoặc định dạng đặc biệt.
-        - Không có phương án nào **HOÀN CHỈNH** và trả lời **ĐẦY ĐỦ** câu hỏi.
-        - Từ khóa không được tích hợp tự nhiên hoặc làm câu hỏi thiếu tự nhiên.
-    + Từ khóa phải được dùng **LINH HOẠT**, đúng ngữ pháp và ngữ nghĩa.
+        - Chú ý:
+            + Không cần làm nổi bật từ khóa.
+            + Câu hỏi không hợp lệ nếu không chứa từ khóa trong danh sách từ khóa đã cho.
+        """
 
-    - Hướng dẫn:
-    + Tận dụng khả năng xử lý nhanh và tập trung vào ngữ cảnh của mô hình để tạo câu hỏi chặt chẽ với tài liệu.
-    + Với danh sách từ khóa dài, chọn từ khóa phù hợp nhất để câu hỏi tự nhiên và đúng cấp độ Bloom.
-    + Đảm bảo câu hỏi ngắn gọn, dễ hiểu, và từ khóa được sử dụng đúng ngữ cảnh để tối ưu hiệu suất mô hình.
 
-    """
 
 
     GRADE_DOCUMENT = """

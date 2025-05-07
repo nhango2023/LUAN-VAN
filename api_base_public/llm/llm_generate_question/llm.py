@@ -13,40 +13,72 @@ class LLM_GENERATE_QUESTION:
         self.n_ctx = n_ctx
         self.model = ""
 
-    def open_ai(self):
+
+    def grok_ai(self):
         """
-        Khởi tạo mô hình ChatOpenAI với cấu hình từ settings.
+        Khởi tạo mô hình Grok sử dụng API Key từ settings.
 
         Returns:
-            ChatOpenAI: Mô hình ngôn ngữ của OpenAI.
+            ChatXAI: Đối tượng mô hình grok.
         """
+        print('use grok')
+        llm = ChatXAI(
+            model=settings.GROK_LLM_MODEL,
+            temperature=self.temperature,
+            max_tokens=self.max_tokens,
+            api_key=settings.KEY_API_GROK
+        )
+        return llm
 
-        # return ChatOpenAI(
-        #     openai_api_key=settings.KEY_API_GPT,
-        #     model=settings.OPENAI_LLM_MODEL,
-        #     temperature=self.temperature,
-        #     max_tokens=self.max_tokens,
-        # )
-        
-        return ChatGoogleGenerativeAI(
+    def open_ai(self):
+        """
+        Khởi tạo mô hình OpenAI sử dụng API Key từ settings.
+
+        Returns:
+            ChatOpenAI: Đối tượng mô hình OpenAI.
+        """
+        print('use gpt')
+        llm = ChatOpenAI(
+            openai_api_key=settings.KEY_API_GPT,
+            model=settings.OPENAI_LLM_MODEL,
+            temperature=self.temperature,
+            max_tokens=self.max_tokens,
+        )
+        return llm
+
+    def gemini(self):
+        """
+        Khởi tạo mô hình Google Gemini sử dụng API Key từ settings.
+
+        Returns:
+            ChatGoogleGenerativeAI: Đối tượng mô hình Google Gemini.
+        """
+        print('use gemini')
+        llm = ChatGoogleGenerativeAI(
             google_api_key=settings.KEY_API_GEMINI,  
             model=settings.GEMINI_LLM_MODEL, 
             temperature=self.temperature,
             max_tokens=self.max_tokens,
         )
-        
-    #     return ChatXAI(
-    #     model=settings.GROK_LLM_MODEL,
-    #     temperature=self.temperature,
-    #     max_tokens=self.max_tokens,
-    #     api_key=settings.KEY_API_GROK
-    # )
+        return llm
 
-    def get_llm(self):
+
+    def get_llm(self, llm_name: str):
         """
-        Lấy mô hình LLM (hiện tại mặc định là OpenAI).
+        Trả về mô hình LLM tương ứng dựa trên tên được cung cấp.
+
+        Args:
+            llm_name (str): Tên mô hình ('openai' hoặc 'gemini' hoặc 'grok').
 
         Returns:
-            ChatOpenAI: Mô hình được khởi tạo.
+            ChatOpenAI hoặc ChatGoogleGenerativeAI hoặc ChatXAI: Đối tượng mô hình tương ứng.
         """
-        return self.open_ai()
+        if llm_name == "openai":
+            return self.open_ai()
+        elif llm_name == "gemini":
+            return self.gemini()
+        elif llm_name == "grok":
+            return self.grok_ai
+        else:
+            return self.open_ai()  # Mặc định sử dụng OpenAI nếu không có tên hợp lệ
+

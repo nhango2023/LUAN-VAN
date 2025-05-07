@@ -50,7 +50,7 @@ class aiModelController extends Controller
     {
         try {
             // Call the FastAPI backend
-            $fastApiUrl = 'http://localhost:8000/update-api-key?model_name=' . urlencode($request->model_name) . '&api_key=' . urlencode($request->api_key);
+            $fastApiUrl = env('API_URL') . 'update-api-key?model_name=' . urlencode($request->model_name) . '&api_key=' . urlencode($request->api_key);
 
             $Response = Http::put($fastApiUrl);
 

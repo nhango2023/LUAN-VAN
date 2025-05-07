@@ -1,15 +1,19 @@
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableSequence
 from pydantic import BaseModel,  Field
-from typing import List
+from typing import List, Optional
 from llm.utils.custom_prompt import CustomPrompt
 
 class QuestionItem(BaseModel):
     question: str = Field(..., description="Nội dung câu hỏi")
     options: List[str] = Field(..., description="Danh sách 4 đáp án")
     answer: str = Field(..., description="Đáp án đúng")
-    level: str = Field(..., description="Cấp độ Bloom's taxonomy")
-    
+    citation: str = Field(..., description="Trích dẫn nguyên văn từ tài liệu làm căn cứ cho đáp án đúng")
+    page: Optional[int] = Field(None,description="0")
+    level: Optional[str] = Field(None,description="Trả về None")
+
+    class Config:
+        extra = "forbid"
 
 class QuestionModel(BaseModel):
     Question: List[QuestionItem]

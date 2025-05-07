@@ -57,7 +57,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
-        background-color: #fcfdfe;
+        background-color: white;
         height: var(--header-vh);
     }
 
@@ -737,7 +737,7 @@
 
     /* footer*/
     footer {
-        background-color: #fcfdfe;
+        background-color: white;
         color: #333;
         padding: 5px 0;
         font-family: 'Varela Round', sans-serif;
@@ -1193,17 +1193,20 @@
                 <!-- Logo and About -->
                 <div class="col-md-4">
                     <h2>logo</h2>
-                    <p>We are a young company always looking for new and creative ideas to help you with our products in
-                        your everyday work.</p>
+                    <p>Adhightech Ltd. is an innovative start-up company, specializing in proposing advanced high-tech
+                        solutions, such as intelligent systems using AI, ML, Robotics, IoT, LLM,..., to serve daily
+                        life.</p>
                     <a href="#">Our Team</a>
                 </div>
                 <!-- Contact Info -->
                 <div class="col-md-4">
                     <h5>Contact</h5>
                     <ul>
-                        <li><i class="fa fa-map-marker"></i> Via Rossini 10, 10136 Turin Italy</li>
-                        <li><i class="fa fa-phone"></i> (0039) 333 12 68 347</li>
-                        <li><i class="fa fa-envelope"></i> <a href="mailto:hello@domain.com">hello@domain.com</a></li>
+                        <li><i class="fa fa-map-marker"></i> Số 44, đường Nguyễn Khuyến, Phường Tân An, Quận Ninh
+                            Kiều,TP Cần Thơ </li>
+                        <li><i class="fa fa-phone"></i> 00 (84) 916 416 490 </li>
+                        <li><i class="fa fa-envelope"></i> <a
+                                href="mailto:hello@domain.com">contact@adhigtechn.com</a></li>
                     </ul>
                 </div>
                 <!-- Social Media -->

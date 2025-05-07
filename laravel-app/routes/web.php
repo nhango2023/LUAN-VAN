@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ConfigWebController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\aiModelController;
+use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\ExportFileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -13,14 +14,21 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\SignupController;
-use App\Models\Configweb;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-Route::get('/', function () {
-    // event(new testingEvent('test socket'));
-    return view('home');
-})->name('home');
+Route::middleware('checkConfig')->group(function () {
+    Route::get('/', function () {
+        return view('home');
+    })->name('home');
+});
+
+Route::prefix('/config')->name('config.')->group(function () {
+    Route::get('/', function () {
+        return view('config');
+    });
+    Route::post('/create', [ConfigController::class, "create"])->name('create');
+});
+
 
 Route::prefix('/profile')->name('profile.')->group(function () {
     Route::get('/', [ProfileController::class, 'showAccountInfor'])->name('account-infor');
@@ -80,32 +88,3 @@ Route::get('taomatkhau', function () {
 Route::get('test-ui', function () {
     return view('testui');
 });
-
-// Route::get('test-api', function () {
-//     try {
-//         $response = Http::timeout(5)->get('http://localhost:8000/test-call-api');
-
-//         if ($response->successful()) {
-
-//             $text = $response->json();
-
-//             return view('welcome', compact('text'));
-//         } else {
-//             return ['error' => $response->status()];
-//         }
-//     } catch (\Exception $e) {
-//         return ['error' => $e->getMessage()];
-//     }
-// });
-
-
-
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/test', function () {
-//     event(new testingEvent());
-//     return 'done';
-// });

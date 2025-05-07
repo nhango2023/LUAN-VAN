@@ -70,27 +70,8 @@ async def create_question(
     if file.content_type not in ["application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"]:
         raise HTTPException(status_code=400, detail="Unsupported file type.")
 
-    # Read file content into memory
-    contents = await file.read()
-
-    text = ""
-
-    if file.filename.endswith(".pdf"):
-        with fitz.open(stream=contents, filetype="pdf") as doc:
-            for page in doc:
-                text += page.get_text()
-
-    elif file.filename.endswith(".docx"):
-        # Save contents temporarily to load with python-docx
-        import tempfile
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".docx") as tmp:
-            tmp.write(contents)
-            tmp_path = tmp.name
-
-        doc = docx.Document(tmp_path)
-        text = "\n".join([para.text for para in doc.paragraphs])
-    
-    return FilesChatAgent(text, n_question).get_lst_question()
+    agent = FilesChatAgent(file, n_question)
+    return await agent.get_lst_question()
     
 
 @app.put("/update-api-key", summary="Route này dùng để thay đổi key api")

@@ -374,8 +374,15 @@
                                             delete
                                         </span>
                                     </a>
-
-
+                                    {!! $item->isSync
+                                        ? ''
+                                        : '
+                                                                        <a href="#" class="view" title="Use" data-toggle="tooltip">
+                                                                        <span class="material-symbols-outlined">
+                                                                        back_hand
+                                                                        </span>
+                                                                        </a>
+                                                                        ' !!}
                                 </td>
                             </tr>
                         @endforeach

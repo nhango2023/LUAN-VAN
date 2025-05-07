@@ -119,7 +119,7 @@
             margin: 0px 35px;
             padding-bottom: 20px;
             height: 150px;
-            overflow-y: scroll
+
         }
 
         .list-section .list-title {
@@ -281,10 +281,10 @@
 
     <!-- Text Input Section -->
     <div class="text-input-section">
-        <div class="container">
-            <div class="header-section">
+        <div class="h-100 container d-flex flex-column justify-content-center">
+            {{-- <div class="header-section">
                 <h1>Tải file</h1>
-            </div>
+            </div> --}}
             <div class="drop-section">
                 <div class="col" style="text-align: center">
                     <div class="cloud-icon">

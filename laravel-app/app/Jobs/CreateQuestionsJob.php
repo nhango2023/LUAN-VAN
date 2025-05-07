@@ -36,13 +36,13 @@ class CreateQuestionsJob implements ShouldQueue
             $storagePath = storage_path("app/public/" . $this->filePath);
             $response = Http::timeout(600)
                 ->withHeaders([
-                    'API-Key' => env('PYTHON_API_KEY', 'dffa2') // use env() or hardcode for testing
+                    'API-Key' => env('API_KEY') // use env() or hardcode for testing
                 ])
                 ->attach(
                     'file',
                     file_get_contents($storagePath),
                     $this->originalName
-                )->asMultipart()->post('http://localhost:8000/question/create', [
+                )->asMultipart()->post(env('API_URL') . 'question/create', [
                     'Nquestion_json' => json_encode($this->questionJson)
                 ]);
 

@@ -20,14 +20,14 @@ load_dotenv(dotenv_path)
 
 
 class FilesChatAgent:
-    def __init__(self, doc, number_question):
-        self.doc = doc #tai lieu cua nguoi dung
+    def __init__(self, file, number_question):
+        self.file = file #tai lieu cua nguoi dung
         self.splitted_docs=""#tai lieu sau khi duoc chia thanh cac doan nho
         self.number_question=number_question #so luong cau hoi do nguoi dung yeu cau
         self.splitter_doc= SplitDocument() #lop chia tai lieu thanh nhung doan nho
         self.llm_grader_level = DocumentGraderLevel(LLM_LEVEL().get_llm()).get_chain() #lop danh gia level theo thang bloom cua tung doan
         self.calculate_question = CalculateQuestion(number_question) #lop tinh toan so luong cau hoi cho tung doan nho theo tung level
-        self.llm_generate = GenerateQuestion(LLM_GENERATE_QUESTION().get_llm()).get_chain() #lop tao cau hoi
+        self.llm_generate = GenerateQuestion(LLM_GENERATE_QUESTION().get_llm("openai")).get_chain() #lop tao cau hoi
         self.llm_grade = GradeDocument(LLM_GRADE_QUESTION().get_llm()).get_chain() #lop danh gia lien quan giua cau hoi, cau tra loi va doan nho tai lieu
         self.questions=[]
         self.lst_keyword={
@@ -39,14 +39,13 @@ class FilesChatAgent:
             "create" : os.getenv("KEYWORD_CREATE")
         }
 
-    def split_document(self):
-        self.splitted_docs=self.splitter_doc.process_text(self.doc)
-        print(f"Number of paragraphs: {len(self.splitted_docs)}")
-        print("\n")
+    async def split_document(self):
+        self.splitted_docs = await self.splitter_doc.process_file(self.file)
+        print(f"Number of chunks: {len(self.splitted_docs)}")
 
     def detect_level_and_calculate_question(self):
         for idx, text in enumerate(self.splitted_docs):
-            result = self.llm_grader_level.invoke({"document": self.splitted_docs[idx].page_content})     
+            result = self.llm_grader_level.invoke({"document": self.splitted_docs[idx].page_content})
             print(f'doan van-[{idx}]: {result.level}')
             self.calculate_question.sort_idx_doc_with_its_level(idx, result.level)
 
@@ -66,15 +65,17 @@ class FilesChatAgent:
         print("\n")
 
 
+        
     def generate_question_and_grade_question(self, max_attempts=3):
         #duyet qua tung level va so luong cau hoi tung level
         for level, count in self.number_question.items():
             keyword=self.lst_keyword[level]
-            print(f'{level}-keyword: {keyword}')
             #duyet qua index cua paragraph
             for idx, idx_splited_doc in enumerate(self.calculate_question.idx_doc_by_level[level]):
                 #tai lieu
                 splited_doc = self.splitted_docs[idx_splited_doc].page_content
+                print(f"doc: {splited_doc}")
+                page=self.splitted_docs[idx].metadata.get('page')
                 #so luong cau hoi cho tai lieu
                 number_required_questions = self.calculate_question.number_question_for_each_splited_doc[level][idx]
                 #tu khoa cua cap do 
@@ -92,12 +93,13 @@ class FilesChatAgent:
                         "keyword": keyword,
                         "n_question": needed_question
                     })
+                    print(f"So luong cau hoi duoc tao ra cau: {len(result.Question)}")
                     if result is None:
                         print("Khong the tao cau hoi!!!")
                     else:                       
                         print("danh gia cau hoi....")
                         for q in result.Question:
-                            print(f"Question: {q.question}\nanswer: {q.answer}")                  
+                            print(f"Question: {q}")                  
                             score = self.llm_grade.invoke({
                                     "document": splited_doc,
                                     "question": q.question,
@@ -106,12 +108,12 @@ class FilesChatAgent:
                             print(f"score: {score}")
                             if score.binary_score == "yes":
                                 q.level = level
-                                # print(f"new question: {q}")
+                                q.page = page
                                 lst_current_questions.append(q)
-                            if (attempts==max_attempts):
-                                print("attempts==max_attempts")
-                                q.level = level
-                                lst_current_questions.append(q)
+                            # if (attempts==max_attempts):
+                            #     print("attempts==max_attempts")
+                            #     q.level = level
+                            #     lst_current_questions.append(q)
 
                     print(f"attempts: {attempts}")
                     print(f"number required questions: {number_required_questions}")
@@ -120,8 +122,8 @@ class FilesChatAgent:
                 
                 self.questions.extend(lst_current_questions)                         
 
-    def get_lst_question(self):
-        self.split_document()
+    async def get_lst_question(self):
+        await self.split_document()
         self.detect_level_and_calculate_question()
         self.generate_question_and_grade_question()
         return self.questions
