@@ -27,7 +27,8 @@ class FilesChatAgent:
         self.splitter_doc= SplitDocument() #lop chia tai lieu thanh nhung doan nho
         self.llm_grader_level = DocumentGraderLevel(LLM_LEVEL().get_llm()).get_chain() #lop danh gia level theo thang bloom cua tung doan
         self.calculate_question = CalculateQuestion(number_question) #lop tinh toan so luong cau hoi cho tung doan nho theo tung level
-        self.llm_generate = GenerateQuestion(LLM_GENERATE_QUESTION().get_llm(model)).get_chain() #lop tao cau hoi
+        self.generate = GenerateQuestion(LLM_GENERATE_QUESTION().get_llm(model))
+        self.llm_generate = self.generate.get_chain()
         self.llm_grade = GradeDocument(LLM_GRADE_QUESTION().get_llm()).get_chain() #lop danh gia lien quan giua cau hoi, cau tra loi va doan nho tai lieu
         self.questions=[]
         self.lst_keyword={
@@ -76,50 +77,104 @@ class FilesChatAgent:
             for idx, idx_splited_doc in enumerate(self.calculate_question.idx_doc_by_level[level]):
                 #tai lieu
                 splited_doc = self.splitted_docs[idx_splited_doc].page_content
+                page = self.splitted_docs[idx_splited_doc].metadata["page"]
                 #so luong cau hoi cho tai lieu
                 number_required_questions = self.calculate_question.number_question_for_each_splited_doc[level][idx]
                 #tu khoa cua cap do 
-                lst_current_questions = []    
+                lst_current_questions = []   
+                lst_questions_without_keywords = [] 
+                total_invalid_questions = 0
                 attempts = 0
                 while len(lst_current_questions) < number_required_questions and attempts<max_attempts:                    
                     needed_question = number_required_questions - len(lst_current_questions)                
                     if attempts>0 and needed_question>0:
-                        print(f"tao lai cau hoi level:{level}...")
+                        print(f"\ntao lai cau hoi level:{level}...")
                     else:
                         print(f"\ntao cau hoi level:{level}...\n")
                     
-                    result = self.llm_generate.invoke({
+                    
+                    existing_questions = "\n".join(
+                        f"+{item.question}" for item in self.questions if item.page==1 
+                    )
+                     
+                    lst_questions_without_keywords_format_text = "\n".join(
+                        f"+{item}" for item in lst_questions_without_keywords
+                    )
+
+                    # Create input
+                    input_data = {
                         "document": splited_doc,
                         "keyword": keyword,
-                        "n_question": needed_question
-                    })
+                        "n_question": needed_question,
+                        "existing_questions": existing_questions,
+                        "questions_without_keywords": lst_questions_without_keywords_format_text
+                    }
+
+                    print(f"full promt:\n=========\n{self.generate.render_prompt(input_data)}\n===============\n")
+                    result = self.llm_generate.invoke(input_data)
+                    
                     if result is None:
                         print("Khong the tao cau hoi!!!")
                     else:                       
-                        print("danh gia cau hoi....")
-                        for q in result.Question:
-                            print(f"Question: {q.question}\nanswer: {q.answer}")                  
-                            score = self.llm_grade.invoke({
-                                    "document": splited_doc,
-                                    "question": q.question,
-                                    "suggested_answer": q.answer
-                            })
-                            print(f"score: {score}")
-                            if score.binary_score == "yes":
-                                q.level = level
-                                # print(f"new question: {q}")
-                                lst_current_questions.append(q)
-                            if (attempts==max_attempts):
-                                print("attempts==max_attempts")
-                                q.level = level
-                                lst_current_questions.append(q)
+                        print("Danh gia cau hoi....")
 
-                    print(f"attempts: {attempts}")
-                    print(f"number required questions: {number_required_questions}")
-                    print(f"number current questions: {len(lst_current_questions)}")
-                    attempts += 1   
-                
+                        for q in result.Question:
+                            matched_keyword=self.check_keyword_in_question(q.question, level)
+                            print(f"Answer: {q.answer}")  
+                            print(f"Keyword: {matched_keyword}")
+                            if (matched_keyword):                
+                                score = self.llm_grade.invoke({
+                                        "document": splited_doc,
+                                        "question": q.question,
+                                        "suggested_answer": q.answer
+                                })
+                                print(f"Lien quan: {score.binary_score}")
+                                if score.binary_score == "yes":
+                                    q.level = level
+                                    q.page=page
+                                    print(f"cau hoi dung: {q}")
+                                    lst_current_questions.append(q)
+                            else:
+                                lst_questions_without_keywords.append(q.question)
+                                total_invalid_questions += 1
+
+
+                    print(f"Tạo đủ {len(lst_current_questions)}/{number_required_questions} câu hỏi")
+                    print(f"Số câu không có từ khóa: {total_invalid_questions}")
+                    print(f"Số lần tạo lại: {attempts}")
+
+                    attempts += 1
+                    if len(lst_current_questions) >= number_required_questions:
+                        break   
+
                 self.questions.extend(lst_current_questions)                         
+
+    def check_keyword_in_question(self, question: str, level: str):
+        """
+        Kiểm tra xem câu hỏi có chứa từ khóa thuộc cấp độ Bloom đã cho hay không.
+
+        Args:
+            question (str): Nội dung câu hỏi
+            level (str): Tên cấp độ Bloom (remember, understand, ...)
+
+        Returns:
+            boolean: true nếu có từ khóa phù hợp, false nếu không
+        """
+        print(f"Level: {level}")
+        print(f"Question: {question}")
+        question_lower = question.lower()
+        keyword_str = self.lst_keyword.get(level)
+        if not keyword_str:
+            print("keyword rong !!!")
+            return False
+
+        for keyword in keyword_str.split(", "):
+            if keyword in question_lower:
+                print(f"[{keyword}]")
+                return True
+
+        return False
+
 
     async def get_lst_question(self):
         await self.split_document()

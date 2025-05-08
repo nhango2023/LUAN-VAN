@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\CreateQuestionsJob;
+use App\Models\Configweb;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Models\Uploaded_file;
@@ -93,7 +94,10 @@ class QuestionController extends Controller
                     'levels' => $levels,
                 ];
             });
-            return view('history', ['groupedQuestions' => $grouped]);
+
+            $configWeb = ConfigWeb::where('isUse', 1)->first();
+
+            return view('history', ['groupedQuestions' => $grouped, 'configWeb' => $configWeb]);
         } else {
             return view('history');
         }

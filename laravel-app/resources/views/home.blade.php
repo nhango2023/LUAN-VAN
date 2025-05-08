@@ -494,7 +494,7 @@
                 });
         }
     </script> --}}
-    @vite('resources/js/app.js')
+    {{-- @vite('resources/js/app.js') --}}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const rdoPercentage = document.getElementById('rdo_percent');
@@ -736,14 +736,13 @@
                     });
             });
         });
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('test');
-            window.Echo.channel('testChannel')
-                .listen('testingEvent', (e) => {
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     window.Echo.channel('testChannel')
+        //         .listen('testingEvent', (e) => {
 
-                    createToastSuccess('success');
-                    document.getElementById('btn-submit').disabled = false;
-                })
-        })
+        //             createToastSuccess('success');
+        //             document.getElementById('btn-submit').disabled = false;
+        //         })
+        // })
     </script>
 @endsection

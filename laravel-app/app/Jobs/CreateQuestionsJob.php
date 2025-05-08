@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Events\QuestionEvent;
 use App\Models\Uploaded_file;
 use App\Models\Question;
 use Illuminate\Bus\Queueable;
@@ -33,7 +34,7 @@ class CreateQuestionsJob implements ShouldQueue
     public function handle()
     {
         try {
-            Log::debug("Model value: " . $this->model);
+
             $storagePath = storage_path("app/public/" . $this->filePath);
             $response = Http::timeout(600)
                 ->withHeaders([
@@ -78,17 +79,19 @@ class CreateQuestionsJob implements ShouldQueue
                         'option_3' => $question['options'][2] ?? null,
                         'option_4' => $question['options'][3] ?? null,
                         'answer' => $question['answer'],
-                        'level' => $question['level']
+                        'level' => $question['level'],
+                        'page' => $question['page'],
+                        'document' => $question['citation']
                     ]);
                 } catch (\Exception $e) {
                     Log::error("Insert Q#{$index} error: " . $e->getMessage());
                 }
             }
             Log::info("CreateQuestionsJob done for user {$this->userId}");
-            event(new testingEvent('Tạo câu hỏi thành công'));
+            event(new QuestionEvent('Tạo câu hỏi thành công'));
         } catch (\Exception $e) {
             Log::error("Job failed: " . $e->getMessage());
-            event(new testingEvent($e->getMessage())); // ← Only the message is safe
+            event(new QuestionEvent($e->getMessage())); // ← Only the message is safe
         }
     }
 }

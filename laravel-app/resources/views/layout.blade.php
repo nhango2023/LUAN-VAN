@@ -1222,15 +1222,17 @@
     </footer>
 
 
-    {{-- @vite('resources/js/app.js') --}}
+
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+    @vite('resources/js/app.js')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            window.Echo.channel('testChannel')
-                .listen('testingEvent', (e) => {
+            window.Echo.channel('Message')
+                .listen('QuestionEvent', (e) => {
                     const notificationHTML = `
                 <div class="notification-item-sidebar">
                     <div class="notification-icon-sidebar">
@@ -1253,9 +1255,13 @@
                     // 3. Remove d-none from notification-dot
                     const notificationDot = document.getElementById('notification-dot');
                     notificationDot.classList.remove('d-none');
+                    console.log('thanh cong');
+                    createToastSuccess('success');
+                    document.getElementById('btn-submit').disabled = false;
                 })
         })
-
+    </script>
+    <script>
         //toast
         const notifications = document.querySelector(".notifications-toast")
 

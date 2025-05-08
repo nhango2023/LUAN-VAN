@@ -19,194 +19,53 @@ class CustomPrompt:
     - Không thêm bất kỳ văn bản nào ngoài danh sách kết quả.
 
     """
-
-
-#     GENERATE_QUESTION = """
-#     Bạn là chuyên gia tạo câu hỏi trắc nghiệm.
-
-#     -Nhiệm vụ:
-#         +Chỉ sử dụng thông tin trong tài liệu được cung cấp bên dưới để tạo câu hỏi.
-
-#     - Mỗi câu hỏi phải:
-#         + Có nội dung đúng và liên quan đến tài liệu.
-#         + Đảm bảo đáp án đúng có thể tìm thấy trực tiếp từ tài liệu.
-#         + Đảm bảo đáp án đúng phải hoàn chỉnh, trả lời đầy đủ tất cả các khía cạnh của câu hỏi.
-#         + Các phương án trả lời sai phải liên quan đến chủ đề của câu hỏi nhưng chỉ trả lời một phần hoặc đưa ra thông tin không chính xác so với tài liệu.
-
-#     -Yêu cầu logic:
-#         + Không tự bịa thông tin ngoài tài liệu.
-#         + Không tạo câu hỏi quá chung chung hoặc mơ hồ.
-#         + Đảm bảo câu hỏi và đáp án tạo thành một cặp logic và có ý nghĩa.
-#         + Hãy thêm một từ khóa trong danh sách từ khóa được cho vào câu hỏi
-
-#     -Chú ý:
-#     +Không cần làm nổi bật từ khóa.
-#     +Câu hỏi không hợp lệ nếu không chứa từ khóa trong danh sách từ khóa đã cho.
     
-#     """
-   
-#     GENERATE_QUESTION = """
-#     Bạn là chuyên gia tạo câu hỏi trắc nghiệm.
 
-#     - Nhiệm vụ:
-#         + Chỉ sử dụng thông tin **TRỰC TIẾP** từ tài liệu được cung cấp bên dưới để tạo câu hỏi.
-#         + Tạo **BỐN** phương án trả lời cho câu hỏi đó.
-
-#     - Yêu cầu cho câu hỏi:
-#         + Câu hỏi phải đặt ra một vấn đề hoặc yêu cầu cụ thể, có thể được trả lời một cách đầy đủ.
-#         + Câu hỏi phải chứa **MỘT** từ khóa được chọn từ danh sách từ khóa.
-#         + Đảm bảo câu hỏi diễn đạt một cách tự nhiên, không gượng ép hoặc sử dụng cụm từ thừa (ví dụ: "Theo tài liệu,...").
-#         + Tránh đưa từ khóa vào trong dấu ngoặc đơn, ngoặc vuông, dấu sao hoặc in đậm/nghiêng gây khó hiểu cho người đọc.
-
-#     - Yêu cầu cho phương án trả lời:
-#         + **MỘT VÀ CHỈ MỘT** trong bốn phương án trả lời phải là đáp án **ĐÚNG** và **HOÀN CHỈNH**, trả lời **ĐẦY ĐỦ** tất cả các khía cạnh của câu hỏi.
-#         + Các phương án trả lời sai phải liên quan đến chủ đề của câu hỏi nhưng chỉ trả lời **MỘT PHẦN** hoặc đưa ra thông tin **KHÔNG CHÍNH XÁC** so với tài liệu.
-#         + Đảm bảo đáp án đúng có thể tìm thấy trực tiếp từ tài liệu và trả lời đầy đủ câu hỏi.
-
-#     - Yêu cầu logic:
-#         + **TUYỆT ĐỐI KHÔNG** tự ý thêm thông tin không có trong tài liệu.
-#         + **TRÁNH** tạo các câu hỏi mơ hồ hoặc các phương án trả lời quá chung chung hoặc không liên quan.
-#         + Đảm bảo câu hỏi và đáp án tạo thành một cặp logic và có ý nghĩa.
-
-#     - Chú ý **ĐẶC BIỆT**:
-#         + Câu hỏi sẽ được đánh giá là **KHÔNG HỢP LỆ** nếu:
-#             - Không chứa **MỘT** từ khóa từ danh sách từ khóa đã cho.
-#             - Không có phương án trả lời nào **HOÀN CHỈNH** và trả lời **ĐẦY ĐỦ** nội dung câu hỏi.
-#         + Từ khóa phải được tích hợp một cách tự nhiên vào ngữ cảnh của câu hỏi.
-
-#     """
-
-    # GENERATE_QUESTION = """
-    # Bạn là chuyên gia tạo câu hỏi trắc nghiệm.
-
-    # - Nhiệm vụ:
-    #     + Chỉ sử dụng thông tin trong tài liệu được cung cấp bên dưới để tạo câu hỏi.
-    #     + Tạo đúng số lượng câu hỏi được yêu cầu.
-
-    # - Yêu cầu cho mỗi câu hỏi:
-    #     + Nội dung câu hỏi phải liên quan trực tiếp và rõ ràng đến tài liệu.
-    #     + Câu hỏi phải chứa **một từ khóa thuộc danh sách từ khóa được cung cấp**.
-    #         * Từ khóa phải nằm tự nhiên trong câu hỏi.
-    #         * Không dùng ngoặc đơn (), ngoặc vuông [], dấu hoa thị **, hoặc bất kỳ cách đánh dấu nào quanh từ khóa.
-    #         * Không được đưa từ khóa vào cuối câu hỏi như chú thích (ví dụ: không ghi “… là gì? (ghi nhớ)”).
-    #     + Câu hỏi phải đủ rõ ràng, không mơ hồ hoặc quá chung chung.
-    #     + Đảm bảo đáp án đúng có thể tìm thấy trực tiếp trong tài liệu, trả lời đầy đủ nội dung câu hỏi.
-    #     + Các phương án sai phải hợp lý, liên quan đến chủ đề nhưng sai hoặc chưa đầy đủ so với tài liệu.
-
-    # - Logic và ngôn ngữ:
-    #     + Không sử dụng cụm từ như “Theo tài liệu…” hoặc “Dựa vào tài liệu…”.
-    #     + Câu hỏi phải là câu hỏi tự nhiên như trong đề kiểm tra thật.
-    #     + Mỗi câu hỏi có 4 phương án, chỉ có một đáp án đúng.
-
-    # """
-
-#     GENERATE_QUESTION = """
-#     Bạn là chuyên gia tạo câu hỏi trắc nghiệm theo thang Bloom.
-
-#     - Nhiệm vụ:
-#         + Chỉ sử dụng thông tin **TRỰC TIẾP** từ tài liệu được cung cấp bên dưới để tạo **MỘT** câu hỏi duy nhất.
-#         + Tạo **BỐN** phương án trả lời cho câu hỏi đó.
-
-#     - Yêu cầu cho câu hỏi:
-#         + Câu hỏi phải đặt ra một vấn đề hoặc yêu cầu cụ thể, có thể được trả lời một cách đầy đủ.
-#         + Câu hỏi phải chứa **MỘT** từ khóa được chọn **NGẪU NHIÊN** từ danh sách từ khóa tương ứng với cấp độ nhận thức mong muốn.
-#         + Đảm bảo câu hỏi diễn đạt một cách tự nhiên, **TRÁNH** sử dụng các cụm từ như "Theo tài liệu,...".
-#         + **TUYỆT ĐỐI TRÁNH** đưa từ khóa vào trong dấu ngoặc đơn, ngoặc vuông, dấu sao hoặc in đậm/nghiêng. Thay vào đó, hãy tích hợp từ khóa một cách tự nhiên vào ngữ cảnh của câu hỏi.
-
-#     - Yêu cầu cho phương án trả lời:
-#         + **MỘT VÀ CHỈ MỘT** trong bốn phương án trả lời phải là đáp án **ĐÚNG** và **HOÀN CHỈNH**, trả lời **ĐẦY ĐỦ** tất cả các khía cạnh của câu hỏi.
-#         + Các phương án trả lời sai phải liên quan đến chủ đề của câu hỏi nhưng chỉ trả lời **MỘT PHẦN** hoặc đưa ra thông tin **KHÔNG CHÍNH XÁC** so với tài liệu.
-#         + Đảm bảo đáp án đúng có thể tìm thấy trực tiếp từ tài liệu và trả lời đầy đủ câu hỏi.
-
-#     - Yêu cầu logic:
-#         + **TUYỆT ĐỐI KHÔNG** tự ý thêm thông tin không có trong tài liệu.
-#         + **TRÁNH** tạo các câu hỏi mơ hồ hoặc các phương án trả lời quá chung chung hoặc không liên quan.
-#         + Đảm bảo câu hỏi và đáp án tạo thành một cặp logic và có ý nghĩa.
-
-#     - Chú ý **ĐẶC BIỆT**:
-#         + Câu hỏi sẽ được đánh giá là **KHÔNG HỢP LỆ** nếu:
-#             - Không chứa **MỘT** từ khóa từ danh sách từ khóa đã cho.
-#             - Từ khóa được đặt trong dấu ngoặc đơn, ngoặc vuông, dấu sao hoặc in đậm/nghiêng.
-#             - Không có phương án trả lời nào **HOÀN CHỈNH** và trả lời **ĐẦY ĐỦ** nội dung câu hỏi.
-#         + Từ khóa phải được tích hợp một cách tự nhiên vào ngữ cảnh của câu hỏi.
-
-#     """
-
-#     GENERATE_QUESTION = """
-#     Bạn là chuyên gia tạo câu hỏi trắc nghiệm theo thang Bloom.
-
-#     - Nhiệm vụ:
-#         + Chỉ sử dụng thông tin **TRỰC TIẾP** từ tài liệu được cung cấp bên dưới để tạo **MỘT** câu hỏi duy nhất.
-#         + Tạo **BỐN** phương án trả lời cho câu hỏi đó.
-
-#     - Yêu cầu cho câu hỏi:
-#         + Câu hỏi phải đặt ra một vấn đề hoặc yêu cầu cụ thể, có thể được trả lời một cách đầy đủ.
-#         + Câu hỏi **BẮT BUỘC** phải chứa **MỘT** từ khóa được chọn **NGẪU NHIÊN** từ danh sách từ khóa tương ứng với cấp độ nhận thức mong muốn và được tích hợp tự nhiên vào câu hỏi.
-#         + Đảm bảo câu hỏi diễn đạt một cách tự nhiên, **TUYỆT ĐỐI TRÁNH** sử dụng các cụm từ như "Theo tài liệu,...", "Hãy nêu...", "Điều nào sau đây...". Thay vào đó, hãy đặt câu hỏi trực tiếp vào nội dung.
-#         + **TUYỆT ĐỐI TRÁNH** đưa từ khóa hoặc bất kỳ phần nào của câu hỏi vào trong dấu ngoặc đơn, ngoặc vuông, dấu sao hoặc in đậm/nghiêng.
-
-#     - Yêu cầu cho phương án trả lời:
-#         + **MỘT VÀ CHỈ MỘT** trong bốn phương án trả lời phải là đáp án **ĐÚNG** và **HOÀN CHỈNH**, trả lời **ĐẦY ĐỦ** tất cả các khía cạnh của câu hỏi.
-#         + Các phương án trả lời sai phải liên quan đến chủ đề của câu hỏi nhưng chỉ trả lời **MỘT PHẦN** hoặc đưa ra thông tin **KHÔNG CHÍNH XÁC** so với tài liệu.
-#         + Đảm bảo đáp án đúng có thể tìm thấy trực tiếp từ tài liệu và trả lời đầy đủ câu hỏi.
-
-#     - Yêu cầu logic:
-#         + **TUYỆT ĐỐI KHÔNG** tự ý thêm thông tin không có trong tài liệu.
-#         + **TRÁNH** tạo các câu hỏi mơ hồ hoặc các phương án trả lời quá chung chung hoặc không liên quan.
-#         + Đảm bảo câu hỏi và đáp án tạo thành một cặp logic và có ý nghĩa.
-
-#     - Chú ý **ĐẶC BIỆT**:
-#         + Câu hỏi sẽ bị đánh giá là **KHÔNG HỢP LỆ** nếu:
-#             - Không chứa **MỘT** từ khóa từ danh sách từ khóa đã cho.
-#             - Từ khóa hoặc bất kỳ phần nào của câu hỏi được đặt trong dấu ngoặc đơn, ngoặc vuông, dấu sao hoặc in đậm/nghiêng.
-#             - Không có phương án trả lời nào **HOÀN CHỈNH** và trả lời **ĐẦY ĐỦ** nội dung câu hỏi.
-#         + Từ khóa phải được tích hợp một cách tự nhiên vào ngữ cảnh của câu hỏi.
-
-#     """
-    
-#     GENERATE_QUESTION = """
-#         Bạn được yêu cầu tạo câu trả lời trắc nghiệm dựa trên tài liệu được cung cấp bên dưới. 
-#         - Nhiệm vụ:
-# #         + Chỉ sử dụng thông tin **TRỰC TIẾP** từ tài liệu được cung cấp bên dưới.
-#           + Tạo ra đúng số lượng câu hỏi được yêu cầu.
-#         Hãy tuân thủ theo các bước dưới đây. 
-
-#         1. Tạo câu hỏi và thêm một từ khóa từ danh sách từ khóa được cho bên dưới một cách tự nhiên, đảm bảo câu hỏi phải đặt ra một vấn đề hoặc yêu cầu cụ thể, có thể được trả lời một cách đầy đủ.
-#         2. Tạo 4 đáp án dựa vào tài liệu đã cho và phù hợp với câu hỏi vừa được tạo.
-#         3. Chọn ra đáp án dựa vào tài liệu.
-
-#     """
-
-    
     GENERATE_QUESTION = """
-        Bạn là chuyên gia tạo câu hỏi trắc nghiệm.
+Bạn là chuyên gia tạo câu hỏi trắc nghiệm theo thang Bloom (Bloom's Taxonomy).
 
-        - Nhiệm vụ:
-            + Chỉ sử dụng thông tin trong tài liệu được cung cấp bên dưới để tạo câu hỏi.
+- Yêu cầu câu hỏi:
+    + Câu hỏi phải được tạo dựa trên thông tin trong tài liệu được cung cấp.
+    + Câu hỏi phải liên quan chặt chẽ đến nội dung tài liệu, không được mơ hồ hay quá chung chung.
+    + Mỗi câu hỏi bắt buộc phải chứa từ khóa nằm trong danh sách từ khóa được cho.
+    + Đảm bảo từ khóa đã cho được thêm vào câu hỏi một cách tự nhiên, đúng với ngôn ngữ tự nhiên.
+    + Đảm bảo tạo đúng số lượng câu hỏi được yêu cầu.
+    + Cố gắn thêm từ khóa được cho vào danh sách câu hỏi chưa có tài khóa một cách tự nhiên, đúng với ngôn ngữ tự nhiên.
+    + Không được đưa thêm thông tin không có trong tài liệu.
+    + Không tạo ra câu hỏi đã có trong danh sách câu hỏi đã có.
+            
 
-        - Mỗi câu hỏi phải:
-            + Có nội dung đúng và liên quan đến tài liệu.
-            + Đảm bảo đáp án đúng có thể tìm thấy trực tiếp từ tài liệu.
-            + Đảm bảo đáp án đúng phải hoàn chỉnh, trả lời đầy đủ tất cả các khía cạnh của câu hỏi.
-            + Các phương án trả lời sai phải liên quan đến chủ đề của câu hỏi nhưng chỉ trả lời một phần hoặc đưa ra thông tin không chính xác so với tài liệu.
+- Yêu cầu đáp án:
+    + Mỗi câu hỏi có bốn phương án trả lời (một đúng, ba sai).
+    + Tất cả phương án phải liên quan đến câu hỏi.
 
-        - Yêu cầu logic:
-            + Không tự bịa thông tin ngoài tài liệu.
-            + Không tạo câu hỏi quá chung chung hoặc mơ hồ.
-            + Đảm bảo câu hỏi và đáp án tạo thành một cặp logic và có ý nghĩa.
-            + Hãy thêm một từ khóa trong danh sách từ khóa được cho vào câu hỏi.
+- Yêu cầu đáp án sai:
+    + Các phương án sai phải liên quan đến câu hỏi.
+    + Các phương án sai có thể đúng một phần, mơ hồ, không đầy đủ hoặc chứa thông tin sai lệch so với tài liệu.
+    + Không được đưa ra các đáp án sai vô nghĩa.
 
-        - Trích dẫn (citation):
-            + Với mỗi câu hỏi, hãy cung cấp nội dung trích dẫn từ tài liệu để làm căn cứ cho đáp án đúng.
-            + Trích dẫn nên ngắn gọn, chính xác, đúng ngữ cảnh, và phản ánh rõ lý do vì sao đáp án đúng là hợp lý.
-            + Nếu tài liệu có nhiều đoạn phù hợp, chọn đoạn súc tích và sát nhất với nội dung câu hỏi.
-            + Trích dẫn không được suy luận hoặc tổng hợp, chỉ lấy nguyên văn từ tài liệu.
+- Yêu cầu đáp án đúng:
+    + Có nội dung đúng và liên quan đến tài liệu.
+    + Đảm bảo đáp án đúng phải hoàn chỉnh, trả lời đầy đủ tất cả các khía cạnh của câu hỏi.
+    + Không được diễn giải hoặc suy luận từ nội dung ngoài tài liệu.
 
-        - Chú ý:
-            + Không cần làm nổi bật từ khóa.
-            + Câu hỏi không hợp lệ nếu không chứa từ khóa trong danh sách từ khóa đã cho.
+- Yêu cầu cấp độ:
+    + Mỗi câu hỏi phải thể hiện rõ cấp độ nhận thức theo thang Bloom.
+    + Cấp độ phải phù hợp với nội dung câu hỏi và từ khóa sử dụng.
+
+- Yêu cầu trích dẫn:
+    + Mỗi câu hỏi phải đi kèm một trích dẫn từ tài liệu để làm căn cứ cho đáp án đúng.
+    + Trích dẫn phải chính xác, đúng ngữ cảnh và phản ánh rõ lý do vì sao đáp án đúng là hợp lý.
+    + Không được tự suy luận.
+
+- Chú ý:
+    + Không cần làm nổi bật từ khóa trong câu hỏi, ví dụ: **từ khóa**, (từ khóa), TỪ KHÓA.
+    + Một câu hỏi sẽ bị xem là **không hợp lệ** nếu **không chứa từ khóa** từ danh sách từ khóa đã cho hoặc đã có trong danh sách câu hỏi đã có.
+            
         """
 
+
+    
 
 
 
