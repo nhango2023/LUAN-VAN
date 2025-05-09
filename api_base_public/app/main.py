@@ -72,7 +72,8 @@ async def create_question(
     if file.content_type not in ["application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"]:
         raise HTTPException(status_code=400, detail="Unsupported file type.")
 
-    agent = FilesChatAgent(file, n_question, model)
+    log_file_path=save_log_file(file)
+    agent = FilesChatAgent(file, n_question, model, log_file_path)
     return await agent.get_lst_question()
     
 
@@ -129,3 +130,30 @@ async def update_api_key(
         status_code=200,
         content={"message": "Đổi api key thành công"}
     )
+
+import os
+from datetime import datetime
+
+def save_log_file(file: UploadFile):
+    # Tạo thư mục log nếu chưa có
+    log_dir = "log"
+    os.makedirs(log_dir, exist_ok=True)
+
+    # Lấy tên file gốc và loại bỏ phần mở rộng
+    base_filename = os.path.splitext(file.filename)[0]
+
+    # Lấy thời gian hiện tại định dạng YYYYMMDD_HHMMSS
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+    # Tạo tên file log
+    log_filename = f"{base_filename}_{timestamp}.txt"
+
+    # Đường dẫn đầy đủ
+    log_path = os.path.join(log_dir, log_filename)
+
+    # Ghi một nội dung mẫu (bạn có thể thay thế bằng nội dung thực tế)
+    with open(log_path, "w", encoding="utf-8") as f:
+        f.write(f"Log created at {timestamp} for file: {file.filename}\n")
+
+    return log_path
+

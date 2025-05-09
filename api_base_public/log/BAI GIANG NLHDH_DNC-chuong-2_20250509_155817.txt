@@ -1,0 +1,65 @@
+Log created at 20250509_155817 for file: BAI GIANG NLHDH_DNC-chuong-2.pdf
+Number of paragraphs: 6
+
+
+doan van-[0]: ['apply', 'analyze', 'remember', 'understand']
+doan van-[1]: ['apply', 'analyze', 'remember', 'understand']
+doan van-[2]: ['apply', 'analyze', 'remember', 'understand']
+doan van-[3]: ['apply', 'analyze', 'remember', 'understand']
+doan van-[4]: ['apply', 'remember', 'understand']
+doan van-[5]: ['apply', 'remember', 'understand']
+Check there are levels not detected in paragraphs
+index of splited docs following its level
+remember: [0, 1, 2, 3, 4, 5]
+understand: [0, 1, 2, 3, 4, 5]
+apply: [0, 1, 2, 3, 4, 5]
+analyze: [0, 1, 2, 3]
+evaluate: [0, 1, 2, 3]
+create: [0, 1, 2, 3]
+
+number of questions for each paragraph arranged in order of paragraph's index 
+
+level: remember
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: understand
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: apply
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: analyze
+idx: [0, 1, 2, 3]
+number questions: [3, 3, 2, 2]
+level: evaluate
+idx: [0, 1, 2, 3]
+number questions: [3, 3, 2, 2]
+level: create
+idx: [0, 1, 2, 3]
+number questions: [3, 3, 2, 2]
+
+
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: remember
+Question: Mô tả vai trò của bộ phận quản lý tiến trình trong hệ điều hành?
+[mô tả]
+Answer: Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình
+Keyword: True
+Lien quan: yes
+cau hoi dung: question='Mô tả vai trò của bộ phận quản lý tiến trình trong hệ điều hành?' options=['Quản lý tài nguyên mạng cho các tiến trình', 'Cung cấp cơ chế bảo mật cho hệ thống', 'Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình', 'Đảm bảo an toàn dữ liệu trong bộ nhớ phụ'] answer='Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình' citation='"Tóm lại, bộ phận quản lý tiến trình phụ trách các công việc sau đây: Tạo lập, hủy bỏ một tiến trình. Tạm dừng (suspend), tái kích hoạt (resume) một tiến trình."' level='remember' page=1 idx_doc=0
+Level: remember
+Question: Liệt kê các công việc mà bộ phận quản lý bộ nhớ chính cần thực hiện trong hệ điều hành?
+[liệt kê]
+Answer: Cấp phát và thu hồi vùng nhớ cho tiến trình
+Keyword: True
+Lien quan: no
+Tạo đủ 1/2 câu hỏi

@@ -1,0 +1,41 @@
+Log created at 20250509_155642 for file: BAI GIANG NLHDH_DNC-chuong-2.pdf
+Number of paragraphs: 6
+
+
+doan van-[0]: ['apply', 'remember', 'understand', 'analyze']
+doan van-[1]: ['apply', 'remember', 'understand', 'analyze']
+doan van-[2]: ['apply', 'remember', 'understand', 'analyze']
+doan van-[3]: ['apply', 'remember', 'understand', 'analyze']
+doan van-[4]: ['apply', 'remember', 'understand']
+doan van-[5]: ['apply', 'remember', 'understand', 'analyze']
+Check there are levels not detected in paragraphs
+index of splited docs following its level
+remember: [0, 1, 2, 3, 4, 5]
+understand: [0, 1, 2, 3, 4, 5]
+apply: [0, 1, 2, 3, 4, 5]
+analyze: [0, 1, 2, 3, 5]
+evaluate: [0, 1, 2, 3, 5]
+create: [0, 1, 2, 3, 5]
+
+number of questions for each paragraph arranged in order of paragraph's index 
+
+level: remember
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: understand
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: apply
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: analyze
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+level: evaluate
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+level: create
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+
+

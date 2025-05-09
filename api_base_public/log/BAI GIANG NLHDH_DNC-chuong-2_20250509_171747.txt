@@ -1,0 +1,1431 @@
+Log created at 20250509_171747 for file: BAI GIANG NLHDH_DNC-chuong-2.pdf
+Number of paragraphs: 6
+
+
+doan van-[0]: ['apply', 'analyze', 'remember', 'understand']
+doan van-[1]: ['apply', 'analyze', 'remember', 'understand']
+doan van-[2]: ['apply', 'analyze', 'remember', 'understand']
+doan van-[3]: ['apply', 'analyze', 'remember', 'understand']
+doan van-[4]: ['apply', 'remember', 'understand']
+doan van-[5]: ['apply', 'analyze', 'remember', 'understand']
+Check there are levels not detected in paragraphs
+index of splited docs following its level
+remember: [0, 1, 2, 3, 4, 5]
+understand: [0, 1, 2, 3, 4, 5]
+apply: [0, 1, 2, 3, 4, 5]
+analyze: [0, 1, 2, 3, 5]
+evaluate: [0, 1, 2, 3, 5]
+create: [0, 1, 2, 3, 5]
+
+number of questions for each paragraph arranged in order of paragraph's index 
+
+level: remember
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: understand
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: apply
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: analyze
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+level: evaluate
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+level: create
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+
+
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: remember
+Question: Mô tả các công việc mà bộ phận quản lý tiến trình phải thực hiện trong hệ điều hành.
+[mô tả]
+Answer: Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình
+Keyword: True
+cau hoi dung: question='Mô tả các công việc mà bộ phận quản lý tiến trình phải thực hiện trong hệ điều hành.' options=['Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình', 'Chỉ tạo lập và hủy bỏ tiến trình', 'Cung cấp tài nguyên cho tiến trình và ghi nhận tình trạng bộ nhớ', 'Quản lý thiết bị nhập/xuất cho tiến trình'] answer='Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình' citation='"Tóm lại, bộ phận quản lý tiến trình phụ trách các công việc sau đây: Tạo lập, hủy bỏ một tiến trình. Tạm dừng (suspend), tái kích hoạt (resume) một tiến trình."' level='remember' page=1 idx_doc=0
+Level: remember
+Question: Liệt kê các công việc mà bộ phận quản lý bộ nhớ chính cần thực hiện.
+[liệt kê]
+Answer: Cấp phát và thu hồi vùng nhớ cho tiến trình
+Keyword: True
+Lien quan: no
+Giai thich: Câu trả lời chỉ liệt kê một công việc trong số các công việc mà bộ phận quản lý bộ nhớ chính cần thực hiện, không đầy đủ như yêu cầu của câu hỏi.
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:remember...
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: remember
+Question: Hệ điều hành cần thực hiện những công việc gì để quản lý tiến trình?
+Answer: Tạo lập, hủy bỏ, và tạm dừng tiến trình
+Keyword: False
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 1
+
+tao lai cau hoi level:remember...
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
++Hệ điều hành cần thực hiện những công việc gì để quản lý tiến trình?
+Danh gia cau hoi....
+Level: remember
+Question: Hệ điều hành cần xác định những công việc nào để quản lý bộ nhớ chính?
+[xác định]
+Answer: Cấp phát và thu hồi vùng nhớ cho tiến trình
+Keyword: True
+cau hoi dung: question='Hệ điều hành cần xác định những công việc nào để quản lý bộ nhớ chính?' options=['Cấp phát và thu hồi vùng nhớ cho tiến trình', 'Tạo lập và hủy bỏ tiến trình', 'Cung cấp cơ chế đồng bộ hóa các tiến trình', 'Trao đổi thông tin giữa các tiến trình'] answer='Cấp phát và thu hồi vùng nhớ cho tiến trình' citation='Bộ phận quản lý bộ nhớ cần đảm nhiệm các công việc sau: Cấp phát và thu hồi một vùng nhớ cho tiến trình khi cần thiết.' level='remember' page=1 idx_doc=0
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 2
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: remember
+Question: Mô tả vai trò của hệ điều hành trong việc quản lý đĩa?
+[mô tả]
+Answer: Quản lý vùng trống trên đĩa, định vị lƣu trữ và lập lịch cho đĩa.
+Keyword: True
+cau hoi dung: question='Mô tả vai trò của hệ điều hành trong việc quản lý đĩa?' options=['Quản lý vùng trống trên đĩa, định vị lƣu trữ và lập lịch cho đĩa.', 'Chỉ thực hiện việc lưu trữ dữ liệu trên đĩa.', 'Cung cấp giao diện người dùng cho các thiết bị phần cứng.', 'Thực hiện các phép toán số học trên dữ liệu lưu trữ.'] answer='Quản lý vùng trống trên đĩa, định vị lƣu trữ và lập lịch cho đĩa.' citation='Vai trò của hệ điều hành trong quản lý đĩa: Quản lý vùng trống trên đĩa. Định vị lƣu trữ. Lập lịch cho đĩa.' level='remember' page=2 idx_doc=1
+Level: remember
+Question: Liệt kê các thành phần chính của hệ thống nhập xuất trong hệ điều hành?
+[liệt kê]
+Answer: Hệ thống buffer caching, device driver tổng quát, bộ điều khiển thiết bị phần cứng.
+Keyword: True
+cau hoi dung: question='Liệt kê các thành phần chính của hệ thống nhập xuất trong hệ điều hành?' options=['Hệ thống buffer caching, device driver tổng quát, bộ điều khiển thiết bị phần cứng.', 'Chỉ có device driver và bộ điều khiển thiết bị phần cứng.', 'Hệ thống lưu trữ và quản lý tập tin.', 'Giao diện người dùng và hệ thống bảo vệ.'] answer='Hệ thống buffer caching, device driver tổng quát, bộ điều khiển thiết bị phần cứng.' citation='Một hệ thống nhập xuất bao gồm: Hệ thống buffer caching. Giao tiếp điều khiển thiết bị (device driver) tổng quát. Bộ điều khiển cho các thiết bị phần cứng cụ thể.' level='remember' page=2 idx_doc=1
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 0
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: remember
+Question: Mô tả vai trò của hệ thông dịch lệnh trong hệ điều hành?
+[mô tả]
+Answer: Hệ thông dịch lệnh giúp người dùng giao tiếp với hệ điều hành thông qua các chỉ thị điều khiển.
+Keyword: True
+cau hoi dung: question='Mô tả vai trò của hệ thông dịch lệnh trong hệ điều hành?' options=['Hệ thông dịch lệnh chỉ nhận lệnh mà không xử lý chúng.', 'Hệ thông dịch lệnh giúp người dùng giao tiếp với hệ điều hành thông qua các chỉ thị điều khiển.', 'Hệ thông dịch lệnh không có vai trò quan trọng trong hệ điều hành.', 'Hệ thông dịch lệnh chỉ thực hiện các lệnh mà không cần thông dịch.'] answer='Hệ thông dịch lệnh giúp người dùng giao tiếp với hệ điều hành thông qua các chỉ thị điều khiển.' citation='Đây là một trong những bộ phận quan trọng nhất của hệ điều hành, đóng vai trò giao tiếp giữa hệ điều hành và người sử dụng.' level='remember' page=3 idx_doc=2
+Level: remember
+Question: Liệt kê các dịch vụ mà hệ điều hành cung cấp cho chương trình và người sử dụng?
+[liệt kê]
+Answer: Thi hành chương trình, thao tác nhập xuất, thao tác trên hệ thống tập tin, thông tin.
+Keyword: True
+cau hoi dung: question='Liệt kê các dịch vụ mà hệ điều hành cung cấp cho chương trình và người sử dụng?' options=['Thi hành chương trình, thao tác nhập xuất, thao tác trên hệ thống tập tin, thông tin.', 'Chỉ có thao tác nhập xuất và thông tin.', 'Chỉ có thi hành chương trình và thao tác trên hệ thống tập tin.', 'Chỉ có thông tin và phát hiện lỗi.'] answer='Thi hành chương trình, thao tác nhập xuất, thao tác trên hệ thống tập tin, thông tin.' citation='Hệ điều hành cung cấp môi trường để thi hành các chương trình, bằng cách cung cấp các dịch vụ cho chương trình và người sử dụng.' level='remember' page=3 idx_doc=2
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 0
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: remember
+Question: Mô tả các dạng giao diện người dùng trong hệ điều hành.
+[mô tả]
+Answer: Dòng lệnh, xử lý theo lô, giao diện đồ họa
+Keyword: True
+cau hoi dung: question='Mô tả các dạng giao diện người dùng trong hệ điều hành.' options=['Dòng lệnh, xử lý theo lô, giao diện đồ họa', 'Chỉ có giao diện đồ họa', 'Chỉ có dòng lệnh và xử lý theo lô', 'Giao diện đồ họa và giao diện văn bản'] answer='Dòng lệnh, xử lý theo lô, giao diện đồ họa' citation='Có nhiều dạng: dòng lệnh (CLI – Command-Line Interface), xử lý theo lô (Batch Interface), giao diện đồ họa (GUI – Graphical User Interface).' level='remember' page=4 idx_doc=3
+Level: remember
+Question: Xác định ba phương pháp được sử dụng để chuyển tham số cho hệ điều hành.
+[xác định]
+Answer: Chuyển tham số vào thanh ghi, lưu giữ trong bảng, dùng cơ chế Stack
+Keyword: True
+cau hoi dung: question='Xác định ba phương pháp được sử dụng để chuyển tham số cho hệ điều hành.' options=['Chuyển tham số vào thanh ghi, lưu giữ trong bảng, dùng cơ chế Stack', 'Chỉ có chuyển tham số vào thanh ghi', 'Chỉ có lưu giữ trong bảng và dùng cơ chế Stack', 'Chuyển tham số vào thanh ghi và dùng cơ chế Stack'] answer='Chuyển tham số vào thanh ghi, lưu giữ trong bảng, dùng cơ chế Stack' citation='Có 3 phương pháp được sử dụng để chuyển tham số cho hệ điều hành: Chuyển tham số vào thanh ghi, Lưu giữ trong một bảng trong bộ nhớ và địa chỉ của bảng này được truyền thông qua thanh ghi, Dùng cơ chế Stack.' level='remember' page=4 idx_doc=3
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 0
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: remember
+Question: Liệt kê các loại chương trình hệ thống được đề cập trong tài liệu.
+[liệt kê]
+Answer: Thao tác với tập tin, Thông tin trạng thái, Mô tả tập tin, Hỗ trợ ngôn ngữ lập trình
+Keyword: True
+cau hoi dung: question='Liệt kê các loại chương trình hệ thống được đề cập trong tài liệu.' options=['Thao tác với tập tin, Thông tin trạng thái, Mô tả tập tin, Hỗ trợ ngôn ngữ lập trình', 'Nạp và thi hành chương trình, Thông tin, Các chương trình ứng dụng, Giao diện người dùng', 'Thao tác với tập tin, Thông tin trạng thái, Giao diện người dùng, Các chương trình ứng dụng', 'Thao tác với tập tin, Mô tả tập tin, Hỗ trợ ngôn ngữ lập trình, Nạp và thi hành chương trình'] answer='Thao tác với tập tin, Thông tin trạng thái, Mô tả tập tin, Hỗ trợ ngôn ngữ lập trình' citation='Các chương trình hệ thống cung cấp một môi trường tiện lợi hơn cho việc xây dựng và thi hành chương trình. Nó có thể chia thành một số loại như: Thao tác với tập tin, Thông tin trạng thái, Mô tả tập tin, Hỗ trợ ngôn ngữ lập trình.' level='remember' page=5 idx_doc=4
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: remember
+Question: Mô tả các thành phần chính trong hệ điều hành và cách chúng phối hợp với nhau để hoạt động.
+[mô tả]
+Answer: Các thành phần bao gồm nhiều dịch vụ và hệ thống file
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi yêu cầu mô tả các thành phần chính trong hệ điều hành và cách chúng phối hợp với nhau để hoạt động, nhưng tài liệu chỉ đề cập đến việc hệ điều hành được thiết kế bao gồm nhiều thành phần mà không cung cấp thông tin chi tiết về các thành phần cụ thể hay cách chúng phối hợp. Do đó, không đủ thông tin để trả lời câu hỏi.
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:remember...
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: remember
+Question: Mô tả các thành phần chính của hệ điều hành và cách chúng phối hợp với nhau để hoạt động.
+[mô tả]
+Answer: Các thành phần bao gồm trình điều khiển thiết bị, hệ thống file và dịch vụ hệ thống.
+Keyword: True
+cau hoi dung: question='Mô tả các thành phần chính của hệ điều hành và cách chúng phối hợp với nhau để hoạt động.' options=['Các thành phần bao gồm trình điều khiển thiết bị, hệ thống file và dịch vụ hệ thống.', 'Các thành phần chỉ bao gồm phần mềm ứng dụng và dịch vụ hệ thống.', 'Các thành phần chỉ là phần cứng và bộ nhớ.', 'Các thành phần không cần phối hợp với nhau để hoạt động.'] answer='Các thành phần bao gồm trình điều khiển thiết bị, hệ thống file và dịch vụ hệ thống.' citation='Hệ điều hành được thiết kế bao gồm nhiều thành phần hệ thống phối hợp với nhau để hoạt động.' level='remember' page=6 idx_doc=5
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 1
+
+
+
+tao cau hoi level:understand...
+
+cau hoi da co: 
++Mô tả các công việc mà bộ phận quản lý tiến trình phải thực hiện trong hệ điều hành.
++Hệ điều hành cần xác định những công việc nào để quản lý bộ nhớ chính?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: understand
+Question: Chỉ ra các tài nguyên nào mà một tiến trình thường đòi hỏi trong quá trình hoạt động?
+[hỏi]
+Answer: CPU, bộ nhớ, thiết bị nhập/xuất
+Keyword: True
+cau hoi dung: question='Chỉ ra các tài nguyên nào mà một tiến trình thường đòi hỏi trong quá trình hoạt động?' options=['CPU, bộ nhớ, thiết bị nhập/xuất', 'Chỉ cần CPU', 'Bộ nhớ chính và bộ nhớ phụ', 'Thiết bị nhập/xuất và thiết bị đầu ra'] answer='CPU, bộ nhớ, thiết bị nhập/xuất' citation='"Để hoàn tất tác vụ, một tiến trình thường đòi hỏi một số tài nguyên nào đó như CPU, bộ nhớ, thiết bị nhập/xuất,…"' level='understand' page=1 idx_doc=0
+Level: understand
+Question: Đánh giá vai trò của bộ phận quản lý bộ nhớ trong hệ điều hành?
+[đánh giá]
+Answer: Cấp phát và thu hồi một vùng nhớ cho tiến trình
+Keyword: True
+cau hoi dung: question='Đánh giá vai trò của bộ phận quản lý bộ nhớ trong hệ điều hành?' options=['Cấp phát và thu hồi tài nguyên cho tiến trình', 'Quản lý tiến trình và đồng bộ hóa', 'Cấp phát và thu hồi một vùng nhớ cho tiến trình', 'Chỉ cần ghi nhận tình trạng bộ nhớ'] answer='Cấp phát và thu hồi một vùng nhớ cho tiến trình' citation='"Bộ phận quản lý bộ nhớ cần đảm nhiệm các công việc sau: Cấp phát và thu hồi một vùng nhớ cho tiến trình khi cần thiết."' level='understand' page=1 idx_doc=0
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 0
+
+
+
+tao cau hoi level:understand...
+
+cau hoi da co: 
++Mô tả vai trò của hệ điều hành trong việc quản lý đĩa?
++Liệt kê các thành phần chính của hệ thống nhập xuất trong hệ điều hành?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: understand
+Question: Xác định các thao tác mà hệ điều hành thực hiện liên quan đến tập tin?
+[xác định]
+Answer: Tạo lập, hủy bỏ một tập tin và thƣ mục
+Keyword: True
+cau hoi dung: question='Xác định các thao tác mà hệ điều hành thực hiện liên quan đến tập tin?' options=['Tạo lập, hủy bỏ một tập tin và thƣ mục', 'Chỉ định quyền truy cập cho người dùng', 'Sao lưu dữ liệu trên đĩa', 'Phân loại các thiết bị lưu trữ'] answer='Tạo lập, hủy bỏ một tập tin và thƣ mục' citation='Hệ điều hành chịu trách nhiệm về các thao tác liên quan đến tập tin như: Tạo lập, hủy bỏ một tập tin, Tạo lập, hủy bỏ một thƣ mục.' level='understand' page=2 idx_doc=1
+Level: understand
+Question: Trình bày vai trò của hệ điều hành trong việc quản lý vùng trống trên đĩa?
+[trình bày]
+Answer: Quản lý vùng trống trên đĩa
+Keyword: True
+cau hoi dung: question='Trình bày vai trò của hệ điều hành trong việc quản lý vùng trống trên đĩa?' options=['Đảm bảo an toàn cho dữ liệu', 'Quản lý vùng trống trên đĩa', 'Tăng tốc độ truy xuất dữ liệu', 'Cung cấp giao diện người dùng'] answer='Quản lý vùng trống trên đĩa' citation='Vai trò của hệ điều hành trong quản lý đĩa: Quản lý vùng trống trên đĩa.' level='understand' page=2 idx_doc=1
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 0
+
+
+
+tao cau hoi level:understand...
+
+cau hoi da co: 
++Mô tả vai trò của hệ thông dịch lệnh trong hệ điều hành?
++Liệt kê các dịch vụ mà hệ điều hành cung cấp cho chương trình và người sử dụng?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: understand
+Question: Xác định các cơ chế bảo vệ mà hệ điều hành cần xây dựng để kiểm soát sai lạc cho toàn hệ thống.
+[xác định]
+Answer: Các cơ chế bảo vệ cho phép áp dụng các chiến lược bảo vệ thích hợp
+Keyword: True
+cau hoi dung: question='Xác định các cơ chế bảo vệ mà hệ điều hành cần xây dựng để kiểm soát sai lạc cho toàn hệ thống.' options=['Các cơ chế bảo vệ không cần thiết', 'Các cơ chế bảo vệ chỉ áp dụng cho một bộ xử lý', 'Các cơ chế bảo vệ cho phép truy cập tài nguyên hệ thống', 'Các cơ chế bảo vệ cho phép áp dụng các chiến lược bảo vệ thích hợp'] answer='Các cơ chế bảo vệ cho phép áp dụng các chiến lược bảo vệ thích hợp' citation='Hệ điều hành cần xây dựng các cơ chế bảo vệ cho phép áp dụng các chiến lược bảo vệ thích hợp.' level='understand' page=3 idx_doc=2
+Level: understand
+Question: Trình bày cách thức mà hệ điều hành thực hiện thao tác nhập xuất cho chương trình thi hành.
+[trình bày]
+Answer: Hệ điều hành cung cấp cách thức cho phép truy xuất thiết bị nhập xuất
+Keyword: True
+cau hoi dung: question='Trình bày cách thức mà hệ điều hành thực hiện thao tác nhập xuất cho chương trình thi hành.' options=['Người sử dụng truy xuất trực tiếp các thiết bị nhập xuất', 'Hệ điều hành cung cấp cách thức cho phép truy xuất thiết bị nhập xuất', 'Chương trình không cần thao tác nhập xuất', 'Hệ điều hành không hỗ trợ thao tác nhập xuất'] answer='Hệ điều hành cung cấp cách thức cho phép truy xuất thiết bị nhập xuất' citation='Để tăng hiệu quả, người sử dụng không truy xuất trực tiếp các thiết bị nhập xuất mà thông qua cách thức do hệ điều hành cung cấp.' level='understand' page=3 idx_doc=2
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 0
+
+
+
+tao cau hoi level:understand...
+
+cau hoi da co: 
++Mô tả các dạng giao diện người dùng trong hệ điều hành.
++Xác định ba phương pháp được sử dụng để chuyển tham số cho hệ điều hành.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: understand
+Question: Chỉ ra vai trò của lời gọi hệ thống trong việc giao tiếp giữa tiến trình và hệ điều hành.
+[chỉ ra]
+Answer: Lời gọi hệ thống cung cấp giao tiếp giữa tiến trình và hệ điều hành.
+Keyword: True
+cau hoi dung: question='Chỉ ra vai trò của lời gọi hệ thống trong việc giao tiếp giữa tiến trình và hệ điều hành.' options=['Lời gọi hệ thống không có vai trò gì trong giao tiếp.', 'Lời gọi hệ thống chỉ được sử dụng trong lập trình ngôn ngữ cấp cao.', 'Lời gọi hệ thống cung cấp giao tiếp giữa tiến trình và hệ điều hành.', 'Lời gọi hệ thống chỉ là các lệnh hợp ngữ mà không có chức năng khác.'] answer='Lời gọi hệ thống cung cấp giao tiếp giữa tiến trình và hệ điều hành.' citation='Lời gọi hệ thống cung cấp một giao tiếp giữa tiến trình và hệ điều hành.' level='understand' page=4 idx_doc=3
+Level: understand
+Question: Phân loại các dạng giao diện người dùng trong hệ điều hành.
+[phân loại]
+Answer: Có ba dạng giao diện chính là CLI, GUI và Batch Interface.
+Keyword: True
+cau hoi dung: question='Phân loại các dạng giao diện người dùng trong hệ điều hành.' options=['Có hai dạng giao diện chính là CLI và GUI.', 'Có ba dạng giao diện chính là CLI, GUI và Batch Interface.', 'Chỉ có một dạng giao diện là GUI.', 'Giao diện người dùng không có phân loại rõ ràng.'] answer='Có ba dạng giao diện chính là CLI, GUI và Batch Interface.' citation='Có nhiều dạng: dòng lệnh (CLI – Command-Line Interface), xử lý theo lô (Batch Interface), giao diện đồ họa (GUI – Graphical User Interface).' level='understand' page=4 idx_doc=3
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 0
+
+
+
+tao cau hoi level:understand...
+
+cau hoi da co: 
++Liệt kê các loại chương trình hệ thống được đề cập trong tài liệu.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: understand
+Question: Mô tả các chức năng chính của các chương trình hệ thống trong môi trường Windows và UNIX.
+[mô tả]
+Answer: Thao tác với tập tin và thông tin trạng thái
+Keyword: True
+cau hoi dung: question='Mô tả các chức năng chính của các chương trình hệ thống trong môi trường Windows và UNIX.' options=['Quản lý người dùng và bảo mật hệ thống', 'Cung cấp môi trường lập trình và biên dịch', 'Thao tác với tập tin và thông tin trạng thái', 'Giao tiếp giữa người dùng và phần cứng'] answer='Thao tác với tập tin và thông tin trạng thái' citation='Các chương trình hệ thống cung cấp một môi trường tiện lợi hơn cho việc xây dựng và thi hành chương trình. Nó có thể chia thành một số loại như: Thao tác với tập tin, Thông tin trạng thái.' level='understand' page=5 idx_doc=4
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+
+
+
+tao cau hoi level:understand...
+
+cau hoi da co: 
++Mô tả các thành phần chính của hệ điều hành và cách chúng phối hợp với nhau để hoạt động.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: understand
+Question: Chỉ ra các loại dịch vụ mà hệ điều hành cung cấp cho người dùng và phần mềm ứng dụng.
+[chỉ ra]
+Answer: Dịch vụ nhập xuất và quản lý file
+Keyword: True
+cau hoi dung: question='Chỉ ra các loại dịch vụ mà hệ điều hành cung cấp cho người dùng và phần mềm ứng dụng.' options=['Dịch vụ bảo mật và phát hiện lỗi', 'Dịch vụ quản lý mạng và bảo trì hệ thống', 'Dịch vụ truyền thông và xử lý dữ liệu', 'Dịch vụ nhập xuất và quản lý file'] answer='Dịch vụ nhập xuất và quản lý file' citation='Có nhiều loại dịch vụ được cung cấp cho người dùng, phần mềm ứng dụng.' level='understand' page=6 idx_doc=5
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+
+
+
+tao cau hoi level:apply...
+
+cau hoi da co: 
++Mô tả các công việc mà bộ phận quản lý tiến trình phải thực hiện trong hệ điều hành.
++Hệ điều hành cần xác định những công việc nào để quản lý bộ nhớ chính?
++Chỉ ra các tài nguyên nào mà một tiến trình thường đòi hỏi trong quá trình hoạt động?
++Đánh giá vai trò của bộ phận quản lý bộ nhớ trong hệ điều hành?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: apply
+Question: Vận dụng các kiến thức đã học để giải thích vai trò của bộ phận quản lý tiến trình trong hệ điều hành.
+[vận dụng]
+Answer: Tạo lập và duy trì hoạt động của các tiến trình
+Keyword: True
+cau hoi dung: question='Vận dụng các kiến thức đã học để giải thích vai trò của bộ phận quản lý tiến trình trong hệ điều hành.' options=['Quản lý tài nguyên cho người dùng', 'Cung cấp giao diện người dùng', 'Tạo lập và duy trì hoạt động của các tiến trình', 'Quản lý các thiết bị ngoại vi'] answer='Tạo lập và duy trì hoạt động của các tiến trình' citation='Hệ điều hành phải tạo lập và duy trì hoạt động của các tiến trình.' level='apply' page=1 idx_doc=0
+Level: apply
+Question: Phân loại các công việc mà bộ phận quản lý bộ nhớ phụ cần thực hiện trong hệ điều hành.
+[phân loại]
+Answer: Quyết định tiến trình nào được nạp vào bộ nhớ chính
+Keyword: True
+Lien quan: no
+Giai thich: Câu trả lời chỉ đề cập đến một công việc cụ thể của bộ phận quản lý bộ nhớ phụ, trong khi tài liệu không cung cấp thông tin đầy đủ về các công việc khác mà bộ phận này cần thực hiện.
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:apply...
+cau hoi da co: 
++Mô tả các công việc mà bộ phận quản lý tiến trình phải thực hiện trong hệ điều hành.
++Hệ điều hành cần xác định những công việc nào để quản lý bộ nhớ chính?
++Chỉ ra các tài nguyên nào mà một tiến trình thường đòi hỏi trong quá trình hoạt động?
++Đánh giá vai trò của bộ phận quản lý bộ nhớ trong hệ điều hành?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: apply
+Question: Liệt kê các công việc mà bộ phận quản lý bộ nhớ phụ phải thực hiện trong hệ điều hành?
+[liệt kê]
+Answer: Cấp phát và thu hồi vùng nhớ cho tiến trình
+Keyword: True
+Lien quan: no
+Giai thich: Câu trả lời không đầy đủ, không liệt kê các công việc mà bộ phận quản lý bộ nhớ phụ phải thực hiện, chỉ nêu một phần công việc.
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 1
+
+tao lai cau hoi level:apply...
+cau hoi da co: 
++Mô tả các công việc mà bộ phận quản lý tiến trình phải thực hiện trong hệ điều hành.
++Hệ điều hành cần xác định những công việc nào để quản lý bộ nhớ chính?
++Chỉ ra các tài nguyên nào mà một tiến trình thường đòi hỏi trong quá trình hoạt động?
++Đánh giá vai trò của bộ phận quản lý bộ nhớ trong hệ điều hành?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: apply
+Question: Giải thích cách mà hệ điều hành quản lý tiến trình trong môi trường đa nhiệm.
+[giải thích]
+Answer: Hệ điều hành cần đảm bảo các tiến trình có thể trao đổi thông tin và đồng bộ hóa hoạt động.
+Keyword: True
+cau hoi dung: question='Giải thích cách mà hệ điều hành quản lý tiến trình trong môi trường đa nhiệm.' options=['Hệ điều hành chỉ tạo lập và hủy bỏ tiến trình.', 'Hệ điều hành không cần phân phối CPU cho các tiến trình.', 'Hệ điều hành cần đảm bảo các tiến trình có thể trao đổi thông tin và đồng bộ hóa hoạt động.', 'Hệ điều hành chỉ cần cấp phát tài nguyên cho tiến trình khi tạo lập.'] answer='Hệ điều hành cần đảm bảo các tiến trình có thể trao đổi thông tin và đồng bộ hóa hoạt động.' citation='"Ngoài ra hệ điều hành cũng cần cung cấp các cơ chế giúp các tiến trình có thể trao đổi thông tin và đồng bộ hóa hoạt động của chúng."' level='apply' page=1 idx_doc=0
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 2
+
+
+
+tao cau hoi level:apply...
+
+cau hoi da co: 
++Mô tả vai trò của hệ điều hành trong việc quản lý đĩa?
++Liệt kê các thành phần chính của hệ thống nhập xuất trong hệ điều hành?
++Xác định các thao tác mà hệ điều hành thực hiện liên quan đến tập tin?
++Trình bày vai trò của hệ điều hành trong việc quản lý vùng trống trên đĩa?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: apply
+Question: Nêu ra những mục tiêu chính của hệ điều hành trong việc quản lý nhập xuất?
+[nêu ra]
+Answer: Che dấu đặc thù của thiết bị phần cứng
+Keyword: True
+cau hoi dung: question='Nêu ra những mục tiêu chính của hệ điều hành trong việc quản lý nhập xuất?' options=['Che dấu đặc thù của thiết bị phần cứng', 'Tạo lập các thư mục cho tập tin', 'Quản lý vùng trống trên đĩa', 'Lập lịch cho đĩa'] answer='Che dấu đặc thù của thiết bị phần cứng' citation='Một trong những mục tiêu của hệ điều hành là che dấu những đặc thù của các thiết bị phần cứng đối với ngƣời sử dụng.' level='apply' page=2 idx_doc=1
+Level: apply
+Question: Chọn lựa các thao tác mà hệ điều hành thực hiện liên quan đến tập tin?
+[chọn lựa]
+Answer: Tạo lập, hủy bỏ một tập tin
+Keyword: True
+cau hoi dung: question='Chọn lựa các thao tác mà hệ điều hành thực hiện liên quan đến tập tin?' options=['Tạo lập, hủy bỏ một tập tin', 'Lập lịch cho đĩa', 'Quản lý vùng trống trên đĩa', 'Cung cấp giao tiếp điều khiển thiết bị'] answer='Tạo lập, hủy bỏ một tập tin' citation='Nhƣ vậy, hệ điều hành chịu trách nhiệm về các thao tác liên quan đến tập tin nhƣ: Tạo lập, hủy bỏ một tập tin.' level='apply' page=2 idx_doc=1
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 0
+
+
+
+tao cau hoi level:apply...
+
+cau hoi da co: 
++Mô tả vai trò của hệ thông dịch lệnh trong hệ điều hành?
++Liệt kê các dịch vụ mà hệ điều hành cung cấp cho chương trình và người sử dụng?
++Xác định các cơ chế bảo vệ mà hệ điều hành cần xây dựng để kiểm soát sai lạc cho toàn hệ thống.
++Trình bày cách thức mà hệ điều hành thực hiện thao tác nhập xuất cho chương trình thi hành.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: apply
+Question: Giải thích cách mà hệ điều hành xây dựng các cơ chế bảo vệ cho phép kiểm soát sai lạc trong hệ thống?
+[xây dựng]
+Answer: Hệ điều hành cần áp dụng các chiến lược bảo vệ thích hợp để kiểm soát sai lạc.
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi yêu cầu giải thích chi tiết về cách mà hệ điều hành xây dựng các cơ chế bảo vệ, nhưng tài liệu chỉ đề cập đến việc hệ điều hành cần xây dựng các cơ chế bảo vệ mà không cung cấp thông tin cụ thể về cách thức thực hiện điều đó.
+Level: apply
+Question: Nêu ra các bước mà hệ điều hành thực hiện để thi hành một chương trình?
+[nêu ra]
+Answer: Hệ điều hành cần nạp chương trình vào bộ nhớ và thi hành nó.
+Keyword: True
+cau hoi dung: question='Nêu ra các bước mà hệ điều hành thực hiện để thi hành một chương trình?' options=['Hệ điều hành chỉ cần nạp chương trình vào bộ nhớ.', 'Hệ điều hành cần nạp chương trình vào bộ nhớ và thi hành nó.', 'Hệ điều hành không cần thực hiện bất kỳ bước nào.', 'Hệ điều hành chỉ cần chấm dứt thi hành chương trình.'] answer='Hệ điều hành cần nạp chương trình vào bộ nhớ và thi hành nó.' citation='Hệ thống phải có khả năng nạp chương trình vào bộ nhớ và thi hành nó.' level='apply' page=3 idx_doc=2
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:apply...
+cau hoi da co: 
++Mô tả vai trò của hệ thông dịch lệnh trong hệ điều hành?
++Liệt kê các dịch vụ mà hệ điều hành cung cấp cho chương trình và người sử dụng?
++Xác định các cơ chế bảo vệ mà hệ điều hành cần xây dựng để kiểm soát sai lạc cho toàn hệ thống.
++Trình bày cách thức mà hệ điều hành thực hiện thao tác nhập xuất cho chương trình thi hành.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: apply
+Question: Nêu ra các phương pháp mà hệ điều hành sử dụng để thực hiện thao tác trên hệ thống tập tin?
+[nêu ra]
+Answer: Đọc, ghi, xóa, đổi tên, tìm kiếm, cấp quyền cho tập tin
+Keyword: True
+cau hoi dung: question='Nêu ra các phương pháp mà hệ điều hành sử dụng để thực hiện thao tác trên hệ thống tập tin?' options=['Đọc, ghi, xóa, đổi tên, tìm kiếm, cấp quyền cho tập tin', 'Chỉ thực hiện đọc và ghi tập tin', 'Chỉ cho phép xóa và đổi tên tập tin', 'Không có phương pháp cụ thể nào'] answer='Đọc, ghi, xóa, đổi tên, tìm kiếm, cấp quyền cho tập tin' citation='"Chương trình có thế yêu cầu đọc, ghi, xóa, đổi tên, tìm kiếm, cấp quyền cho tập tin, thƣ mục."' level='apply' page=3 idx_doc=2
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 1
+
+
+
+tao cau hoi level:apply...
+
+cau hoi da co: 
++Mô tả các dạng giao diện người dùng trong hệ điều hành.
++Xác định ba phương pháp được sử dụng để chuyển tham số cho hệ điều hành.
++Chỉ ra vai trò của lời gọi hệ thống trong việc giao tiếp giữa tiến trình và hệ điều hành.
++Phân loại các dạng giao diện người dùng trong hệ điều hành.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: apply
+Question: Áp dụng các phương pháp chuyển tham số cho hệ điều hành, bạn có thể nêu ra những phương pháp nào?
+[áp dụng]
+Answer: Chuyển tham số vào thanh ghi, lưu giữ trong bảng bộ nhớ, dùng cơ chế Stack
+Keyword: True
+cau hoi dung: question='Áp dụng các phương pháp chuyển tham số cho hệ điều hành, bạn có thể nêu ra những phương pháp nào?' options=['Chuyển tham số vào thanh ghi, lưu giữ trong bảng bộ nhớ, dùng cơ chế Stack', 'Chuyển tham số vào thanh ghi, sử dụng giao diện đồ họa, dùng cơ chế Stack', 'Chuyển tham số vào thanh ghi, lưu giữ trong bảng bộ nhớ, sử dụng lệnh hợp ngữ', 'Chuyển tham số vào thanh ghi, dùng giao diện dòng lệnh, dùng cơ chế Stack'] answer='Chuyển tham số vào thanh ghi, lưu giữ trong bảng bộ nhớ, dùng cơ chế Stack' citation='Có 3 phương pháp được sử dụng để chuyển tham số cho hệ điều hành: Chuyển tham số vào thanh ghi, Lưu giữ trong một bảng trong bộ nhớ và địa chỉ của bảng này được truyền thông qua thanh ghi, Dùng cơ chế Stack.' level='apply' page=4 idx_doc=3
+Level: apply
+Question: Giải thích vai trò của giao diện người dùng trong hệ điều hành và nêu ra các dạng của nó.
+[giải thích]
+Answer: Giao diện người dùng giúp người dùng tương tác với hệ điều hành, bao gồm CLI, Batch Interface và GUI
+Keyword: True
+cau hoi dung: question='Giải thích vai trò của giao diện người dùng trong hệ điều hành và nêu ra các dạng của nó.' options=['Giao diện người dùng giúp người dùng tương tác với hệ điều hành, bao gồm CLI, Batch Interface và GUI', 'Giao diện người dùng chỉ có một dạng là GUI', 'Giao diện người dùng không ảnh hưởng đến hiệu suất của hệ điều hành', 'Giao diện người dùng chỉ có thể là dòng lệnh hoặc đồ họa'] answer='Giao diện người dùng giúp người dùng tương tác với hệ điều hành, bao gồm CLI, Batch Interface và GUI' citation='Có nhiều dạng: dòng lệnh (CLI – Command-Line Interface), xử lý theo lô (Batch Interface), giao diện đồ họa (GUI – Graphical User Interface).' level='apply' page=4 idx_doc=3
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 0
+
+
+
+tao cau hoi level:apply...
+
+cau hoi da co: 
++Liệt kê các loại chương trình hệ thống được đề cập trong tài liệu.
++Mô tả các chức năng chính của các chương trình hệ thống trong môi trường Windows và UNIX.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: apply
+Question: Chọn lựa một số loại chương trình hệ thống được phân loại trong tài liệu.
+[chọn lựa]
+Answer: Thao tác với tập tin
+Keyword: True
+cau hoi dung: question='Chọn lựa một số loại chương trình hệ thống được phân loại trong tài liệu.' options=['Thao tác với tập tin', 'Giao diện người dùng', 'Trình duyệt web', 'Chương trình diệt virus'] answer='Thao tác với tập tin' citation='Các chƣơng trình hệ thống có thể chia thành một số loại nhƣ: Thao tác với tập tin, Thông tin trạng thái, Mô tả tập tin, Hỗ trợ ngôn ngữ lập trình, Nạp và thi hành chƣơng trình, Thông tin, Các chƣơng trình ứng dụng.' level='apply' page=5 idx_doc=4
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+
+
+
+tao cau hoi level:apply...
+
+cau hoi da co: 
++Mô tả các thành phần chính của hệ điều hành và cách chúng phối hợp với nhau để hoạt động.
++Chỉ ra các loại dịch vụ mà hệ điều hành cung cấp cho người dùng và phần mềm ứng dụng.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: apply
+Question: Nêu ra cách thức mà các dịch vụ hệ thống được khai thác thông qua những lời gọi hệ thống.
+[nêu ra]
+Answer: Thông qua những lời gọi hệ thống
+Keyword: True
+cau hoi dung: question='Nêu ra cách thức mà các dịch vụ hệ thống được khai thác thông qua những lời gọi hệ thống.' options=['Bằng cách sử dụng phần mềm ứng dụng', 'Thông qua các giao thức mạng', 'Bằng cách thực hiện các thao tác nhập xuất', 'Thông qua những lời gọi hệ thống'] answer='Thông qua những lời gọi hệ thống' citation='Các dịch vụ được khai thác thông qua những lời gọi hệ thống.' level='apply' page=6 idx_doc=5
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+
+
+
+tao cau hoi level:analyze...
+
+cau hoi da co: 
++Mô tả các công việc mà bộ phận quản lý tiến trình phải thực hiện trong hệ điều hành.
++Hệ điều hành cần xác định những công việc nào để quản lý bộ nhớ chính?
++Chỉ ra các tài nguyên nào mà một tiến trình thường đòi hỏi trong quá trình hoạt động?
++Đánh giá vai trò của bộ phận quản lý bộ nhớ trong hệ điều hành?
++Vận dụng các kiến thức đã học để giải thích vai trò của bộ phận quản lý tiến trình trong hệ điều hành.
++Giải thích cách mà hệ điều hành quản lý tiến trình trong môi trường đa nhiệm.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: analyze
+Question: Phân tích các công việc mà bộ phận quản lý bộ nhớ chính phải thực hiện trong hệ điều hành.
+[phân tích]
+Answer: Tất cả các công việc trên.
+Keyword: True
+cau hoi dung: question='Phân tích các công việc mà bộ phận quản lý bộ nhớ chính phải thực hiện trong hệ điều hành.' options=['Cấp phát và thu hồi một vùng nhớ cho tiến trình khi cần thiết.', 'Quyết định tiến trình nào được nạp vào bộ nhớ chính khi có một vùng nhớ trống.', 'Ghi nhận tình trạng bộ nhớ chính: phần nào đã được cấp phát, phần nào còn có thể sử dụng.', 'Tất cả các công việc trên.'] answer='Tất cả các công việc trên.' citation='Bộ phận quản lý bộ nhớ cần đảm nhiệm các công việc sau: Cấp phát và thu hồi một vùng nhớ cho tiến trình khi cần thiết. Ghi nhận tình trạng bộ nhớ chính: phần nào đã được cấp phát, phần nào còn có thể sử dụng,… Quyết định tiến trình nào được nạp vào bộ nhớ chính khi có một vùng nhớ trống.' level='analyze' page=1 idx_doc=0
+Level: analyze
+Question: So sánh vai trò của bộ phận quản lý tiến trình và bộ phận quản lý bộ nhớ trong hệ điều hành.
+[điều hành]
+Answer: Bộ phận quản lý tiến trình và bộ phận quản lý bộ nhớ đều cần cấp phát tài nguyên và quản lý hiệu suất.
+Keyword: True
+Lien quan: no
+Giai thich: Câu trả lời không đầy đủ và không chính xác so với nội dung tài liệu. Tài liệu mô tả rõ vai trò cụ thể của từng bộ phận, nhưng câu trả lời chỉ nêu chung chung mà không so sánh cụ thể giữa hai bộ phận.
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:analyze...
+cau hoi da co: 
++Mô tả các công việc mà bộ phận quản lý tiến trình phải thực hiện trong hệ điều hành.
++Hệ điều hành cần xác định những công việc nào để quản lý bộ nhớ chính?
++Chỉ ra các tài nguyên nào mà một tiến trình thường đòi hỏi trong quá trình hoạt động?
++Đánh giá vai trò của bộ phận quản lý bộ nhớ trong hệ điều hành?
++Vận dụng các kiến thức đã học để giải thích vai trò của bộ phận quản lý tiến trình trong hệ điều hành.
++Giải thích cách mà hệ điều hành quản lý tiến trình trong môi trường đa nhiệm.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: analyze
+Question: Phân tích các công việc mà bộ phận quản lý bộ nhớ phụ cần thực hiện trong hệ điều hành?
+[phân tích]
+Answer: Quyết định tiến trình nào được nạp vào bộ nhớ chính
+Keyword: True
+Lien quan: no
+Giai thich: Câu trả lời không đầy đủ và không chính xác theo nội dung tài liệu, vì tài liệu không đề cập đến các công việc cụ thể của bộ phận quản lý bộ nhớ phụ.
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 1
+
+tao lai cau hoi level:analyze...
+cau hoi da co: 
++Mô tả các công việc mà bộ phận quản lý tiến trình phải thực hiện trong hệ điều hành.
++Hệ điều hành cần xác định những công việc nào để quản lý bộ nhớ chính?
++Chỉ ra các tài nguyên nào mà một tiến trình thường đòi hỏi trong quá trình hoạt động?
++Đánh giá vai trò của bộ phận quản lý bộ nhớ trong hệ điều hành?
++Vận dụng các kiến thức đã học để giải thích vai trò của bộ phận quản lý tiến trình trong hệ điều hành.
++Giải thích cách mà hệ điều hành quản lý tiến trình trong môi trường đa nhiệm.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: analyze
+Question: Phân tích các công việc mà bộ phận quản lý bộ nhớ phụ phải thực hiện trong hệ điều hành?
+[phân tích]
+Answer: Ghi nhận tình trạng bộ nhớ chính và bộ nhớ phụ.
+Keyword: True
+Lien quan: no
+Giai thich: Câu trả lời không đầy đủ và không chính xác theo nội dung tài liệu, vì tài liệu không đề cập đến các công việc cụ thể mà bộ phận quản lý bộ nhớ phụ phải thực hiện.
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 2
+
+
+
+tao cau hoi level:analyze...
+
+cau hoi da co: 
++Mô tả vai trò của hệ điều hành trong việc quản lý đĩa?
++Liệt kê các thành phần chính của hệ thống nhập xuất trong hệ điều hành?
++Xác định các thao tác mà hệ điều hành thực hiện liên quan đến tập tin?
++Trình bày vai trò của hệ điều hành trong việc quản lý vùng trống trên đĩa?
++Nêu ra những mục tiêu chính của hệ điều hành trong việc quản lý nhập xuất?
++Chọn lựa các thao tác mà hệ điều hành thực hiện liên quan đến tập tin?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: analyze
+Question: Phân tích vai trò của hệ điều hành trong việc lập lịch cho đĩa?
+[phân tích]
+Answer: Hệ điều hành lập lịch cho đĩa để tối ưu hóa tốc độ truy xuất.
+Keyword: True
+cau hoi dung: question='Phân tích vai trò của hệ điều hành trong việc lập lịch cho đĩa?' options=['Hệ điều hành không có vai trò trong lập lịch cho đĩa.', 'Hệ điều hành lập lịch cho đĩa để tối ưu hóa tốc độ truy xuất.', 'Hệ điều hành lập lịch cho đĩa chỉ khi có yêu cầu từ người dùng.', 'Hệ điều hành lập lịch cho đĩa để giảm thiểu không gian lưu trữ.'] answer='Hệ điều hành lập lịch cho đĩa để tối ưu hóa tốc độ truy xuất.' citation='Vai trò của hệ điều hành trong quản lý đĩa: Lập lịch cho đĩa.' level='analyze' page=2 idx_doc=1
+Level: analyze
+Question: So sánh các thao tác mà hệ điều hành thực hiện liên quan đến tập tin và thƣ mục?
+[điều hành]
+Answer: Hệ điều hành thực hiện thao tác tạo lập và hủy bỏ cả tập tin và thƣ mục.
+Keyword: True
+cau hoi dung: question='So sánh các thao tác mà hệ điều hành thực hiện liên quan đến tập tin và thƣ mục?' options=['Hệ điều hành chỉ thực hiện thao tác tạo lập tập tin.', 'Hệ điều hành thực hiện thao tác hủy bỏ tập tin nhưng không quản lý thƣ mục.', 'Hệ điều hành thực hiện thao tác tạo lập và hủy bỏ cả tập tin và thƣ mục.', 'Hệ điều hành chỉ quản lý thƣ mục mà không quản lý tập tin.'] answer='Hệ điều hành thực hiện thao tác tạo lập và hủy bỏ cả tập tin và thƣ mục.' citation='Nhƣ vậy, hệ điều hành chịu trách nhiệm về các thao tác liên quan đến tập tin nhƣ: Tạo lập, hủy bỏ một tập tin; Tạo lập, hủy bỏ một thƣ mục.' level='analyze' page=2 idx_doc=1
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 0
+
+
+
+tao cau hoi level:analyze...
+
+cau hoi da co: 
++Mô tả vai trò của hệ thông dịch lệnh trong hệ điều hành?
++Liệt kê các dịch vụ mà hệ điều hành cung cấp cho chương trình và người sử dụng?
++Xác định các cơ chế bảo vệ mà hệ điều hành cần xây dựng để kiểm soát sai lạc cho toàn hệ thống.
++Trình bày cách thức mà hệ điều hành thực hiện thao tác nhập xuất cho chương trình thi hành.
++Nêu ra các bước mà hệ điều hành thực hiện để thi hành một chương trình?
++Nêu ra các phương pháp mà hệ điều hành sử dụng để thực hiện thao tác trên hệ thống tập tin?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: analyze
+Question: Phân tích vai trò của hệ thống phân tán trong việc chia sẻ thông tin giữa các bộ xử lý?
+[phân tích]
+Answer: Hệ thống phân tán cho phép người dùng truy cập đến nhiều tài nguyên hệ thống khác nhau.
+Keyword: True
+cau hoi dung: question='Phân tích vai trò của hệ thống phân tán trong việc chia sẻ thông tin giữa các bộ xử lý?' options=['Hệ thống phân tán giúp tăng tốc độ xử lý thông tin.', 'Hệ thống phân tán cho phép người dùng truy cập đến nhiều tài nguyên hệ thống khác nhau.', 'Hệ thống phân tán chỉ sử dụng một bộ xử lý để xử lý thông tin.', 'Hệ thống phân tán không có vai trò trong việc chia sẻ thông tin.'] answer='Hệ thống phân tán cho phép người dùng truy cập đến nhiều tài nguyên hệ thống khác nhau.' citation='"Hệ thống phân tán cho phép người dùng truy cập đến nhiều tài nguyên hệ thống khác nhau."' level='analyze' page=3 idx_doc=2
+Level: analyze
+Question: Đánh giá tầm quan trọng của việc phát hiện lỗi trong hệ điều hành?
+[đánh giá]
+Answer: Phát hiện lỗi giúp hệ điều hành hoạt động hiệu quả hơn.
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi yêu cầu đánh giá tầm quan trọng của việc phát hiện lỗi trong hệ điều hành, nhưng tài liệu không cung cấp thông tin cụ thể về vai trò hay tầm quan trọng của việc phát hiện lỗi. Do đó, không có đủ thông tin để trả lời câu hỏi.
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:analyze...
+cau hoi da co: 
++Mô tả vai trò của hệ thông dịch lệnh trong hệ điều hành?
++Liệt kê các dịch vụ mà hệ điều hành cung cấp cho chương trình và người sử dụng?
++Xác định các cơ chế bảo vệ mà hệ điều hành cần xây dựng để kiểm soát sai lạc cho toàn hệ thống.
++Trình bày cách thức mà hệ điều hành thực hiện thao tác nhập xuất cho chương trình thi hành.
++Nêu ra các bước mà hệ điều hành thực hiện để thi hành một chương trình?
++Nêu ra các phương pháp mà hệ điều hành sử dụng để thực hiện thao tác trên hệ thống tập tin?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: analyze
+Question: Phân tích vai trò của hệ thống phân tán trong việc chia sẻ thông tin giữa các bộ xử lý?
+[phân tích]
+Answer: Hệ thống phân tán cho phép người dùng truy cập đến nhiều tài nguyên hệ thống khác nhau.
+Keyword: True
+cau hoi dung: question='Phân tích vai trò của hệ thống phân tán trong việc chia sẻ thông tin giữa các bộ xử lý?' options=['Hệ thống phân tán cho phép người dùng truy cập đến nhiều tài nguyên hệ thống khác nhau.', 'Hệ thống phân tán chỉ có một bộ xử lý duy nhất.', 'Hệ thống phân tán không cho phép chia sẻ thông tin giữa các bộ xử lý.', 'Hệ thống phân tán chỉ hoạt động trên một mạng truyền thông duy nhất.'] answer='Hệ thống phân tán cho phép người dùng truy cập đến nhiều tài nguyên hệ thống khác nhau.' citation='"Một hệ thống phân tán bao gồm nhiều bộ xử lý cùng chia sẻ thông tin với nhau."' level='analyze' page=3 idx_doc=2
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 1
+
+
+
+tao cau hoi level:analyze...
+
+cau hoi da co: 
++Mô tả các dạng giao diện người dùng trong hệ điều hành.
++Xác định ba phương pháp được sử dụng để chuyển tham số cho hệ điều hành.
++Chỉ ra vai trò của lời gọi hệ thống trong việc giao tiếp giữa tiến trình và hệ điều hành.
++Phân loại các dạng giao diện người dùng trong hệ điều hành.
++Áp dụng các phương pháp chuyển tham số cho hệ điều hành, bạn có thể nêu ra những phương pháp nào?
++Giải thích vai trò của giao diện người dùng trong hệ điều hành và nêu ra các dạng của nó.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: analyze
+Question: Phân biệt các dạng giao diện người dùng trong hệ điều hành dựa trên mức độ sử dụng của chúng.
+[phân biệt]
+Answer: Giao diện đồ họa (GUI) được sử dụng nhiều nhất trong các hệ thống
+Keyword: True
+cau hoi dung: question='Phân biệt các dạng giao diện người dùng trong hệ điều hành dựa trên mức độ sử dụng của chúng.' options=['Giao diện dòng lệnh (CLI) ít được sử dụng hơn giao diện đồ họa (GUI)', 'Giao diện đồ họa (GUI) là dạng duy nhất được sử dụng', 'Giao diện xử lý theo lô (Batch Interface) là dạng phổ biến nhất', 'Giao diện đồ họa (GUI) được sử dụng nhiều nhất trong các hệ thống'] answer='Giao diện đồ họa (GUI) được sử dụng nhiều nhất trong các hệ thống' citation='Trong đó dạng GUI được sử dụng nhiều nhất, một số hệ thống còn cung cấp nhiều loại giao diện.' level='analyze' page=4 idx_doc=3
+Level: analyze
+Question: Đánh giá các phương pháp chuyển tham số cho hệ điều hành và chỉ ra phương pháp nào là phổ biến nhất.
+[đánh giá]
+Answer: Chuyển tham số vào thanh ghi và lưu giữ trong bảng là hai phương pháp chính
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi yêu cầu đánh giá các phương pháp chuyển tham số cho hệ điều hành và chỉ ra phương pháp phổ biến nhất, nhưng tài liệu không cung cấp thông tin về sự phổ biến của từng phương pháp.
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:analyze...
+cau hoi da co: 
++Mô tả các dạng giao diện người dùng trong hệ điều hành.
++Xác định ba phương pháp được sử dụng để chuyển tham số cho hệ điều hành.
++Chỉ ra vai trò của lời gọi hệ thống trong việc giao tiếp giữa tiến trình và hệ điều hành.
++Phân loại các dạng giao diện người dùng trong hệ điều hành.
++Áp dụng các phương pháp chuyển tham số cho hệ điều hành, bạn có thể nêu ra những phương pháp nào?
++Giải thích vai trò của giao diện người dùng trong hệ điều hành và nêu ra các dạng của nó.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: analyze
+Question: Phân biệt các dạng giao diện người dùng trong hệ điều hành và cho biết dạng nào được sử dụng nhiều nhất?
+[phân biệt]
+Answer: Giao diện đồ họa (GUI) là dạng được sử dụng nhiều nhất.
+Keyword: True
+cau hoi dung: question='Phân biệt các dạng giao diện người dùng trong hệ điều hành và cho biết dạng nào được sử dụng nhiều nhất?' options=['Giao diện dòng lệnh (CLI) là dạng được sử dụng nhiều nhất.', 'Giao diện đồ họa (GUI) là dạng được sử dụng nhiều nhất.', 'Giao diện xử lý theo lô (Batch Interface) là dạng được sử dụng nhiều nhất.', 'Tất cả các dạng giao diện đều được sử dụng như nhau.'] answer='Giao diện đồ họa (GUI) là dạng được sử dụng nhiều nhất.' citation='Trong đó dạng GUI được sử dụng nhiều nhất, một số hệ thống còn cung cấp nhiều loại giao diện.' level='analyze' page=4 idx_doc=3
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 1
+
+
+
+tao cau hoi level:analyze...
+
+cau hoi da co: 
++Liệt kê các loại chương trình hệ thống được đề cập trong tài liệu.
++Mô tả các chức năng chính của các chương trình hệ thống trong môi trường Windows và UNIX.
++Chọn lựa một số loại chương trình hệ thống được phân loại trong tài liệu.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: analyze
+Question: Phân tích các thành phần chính của hệ điều hành được thiết kế trong tài liệu.
+[phân tích]
+Answer: Các thành phần bao gồm phần mềm ứng dụng và dịch vụ hệ thống.
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi yêu cầu phân tích các thành phần chính của hệ điều hành, nhưng tài liệu chỉ đề cập đến một số thành phần mà không cung cấp thông tin chi tiết để phân tích. Câu trả lời gợi ý cũng không đủ để đáp ứng yêu cầu của câu hỏi.
+Level: analyze
+Question: Đánh giá vai trò của dịch vụ hệ thống trong việc hỗ trợ người dùng và phần mềm ứng dụng.
+[đánh giá]
+Answer: Dịch vụ hệ thống cung cấp các chức năng cần thiết cho người dùng và phần mềm ứng dụng.
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi không có thông tin trong tài liệu để trả lời về vai trò của dịch vụ hệ thống trong việc hỗ trợ người dùng và phần mềm ứng dụng.
+Tạo đủ 0/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:analyze...
+cau hoi da co: 
++Liệt kê các loại chương trình hệ thống được đề cập trong tài liệu.
++Mô tả các chức năng chính của các chương trình hệ thống trong môi trường Windows và UNIX.
++Chọn lựa một số loại chương trình hệ thống được phân loại trong tài liệu.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: analyze
+Question: Phân tích các thành phần chính của hệ điều hành được thiết kế trong tài liệu.
+[phân tích]
+Answer: Gồm nhiều thành phần hệ thống phối hợp với nhau để hoạt động.
+Keyword: True
+cau hoi dung: question='Phân tích các thành phần chính của hệ điều hành được thiết kế trong tài liệu.' options=['Gồm nhiều thành phần hệ thống phối hợp với nhau để hoạt động.', 'Chỉ bao gồm một số thành phần cơ bản.', 'Không có thành phần nào liên quan đến người dùng.', 'Chỉ hoạt động độc lập mà không cần phối hợp.'] answer='Gồm nhiều thành phần hệ thống phối hợp với nhau để hoạt động.' citation='Hệ điều hành được thiết kế bao gồm nhiều thành phần hệ thống phối hợp với nhau để hoạt động.' level='analyze' page=6 idx_doc=4
+Level: analyze
+Question: Xác định các dịch vụ được cung cấp cho người dùng trong hệ điều hành.
+[xác định]
+Answer: Có nhiều loại dịch vụ được cung cấp cho người dùng, phần mềm ứng dụng.
+Keyword: True
+cau hoi dung: question='Xác định các dịch vụ được cung cấp cho người dùng trong hệ điều hành.' options=['Chỉ có dịch vụ bảo mật và phát hiện lỗi.', 'Có nhiều loại dịch vụ được cung cấp cho người dùng, phần mềm ứng dụng.', 'Chỉ có dịch vụ cấp phát tài nguyên.', 'Không có dịch vụ nào được cung cấp cho người dùng.'] answer='Có nhiều loại dịch vụ được cung cấp cho người dùng, phần mềm ứng dụng.' citation='Có nhiều loại dịch vụ được cung cấp cho người dùng, phần mềm ứng dụng.' level='analyze' page=6 idx_doc=4
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 1
+
+
+
+tao cau hoi level:evaluate...
+
+cau hoi da co: 
++Mô tả các công việc mà bộ phận quản lý tiến trình phải thực hiện trong hệ điều hành.
++Hệ điều hành cần xác định những công việc nào để quản lý bộ nhớ chính?
++Chỉ ra các tài nguyên nào mà một tiến trình thường đòi hỏi trong quá trình hoạt động?
++Đánh giá vai trò của bộ phận quản lý bộ nhớ trong hệ điều hành?
++Vận dụng các kiến thức đã học để giải thích vai trò của bộ phận quản lý tiến trình trong hệ điều hành.
++Giải thích cách mà hệ điều hành quản lý tiến trình trong môi trường đa nhiệm.
++Phân tích các công việc mà bộ phận quản lý bộ nhớ chính phải thực hiện trong hệ điều hành.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: evaluate
+Question: Xác định các cơ chế mà bộ phận quản lý tiến trình cần cung cấp để hỗ trợ các tiến trình trao đổi thông tin.
+Answer: Cung cấp cơ chế đồng bộ hóa các tiến trình
+Keyword: False
+Level: evaluate
+Question: Sắp xếp các công việc mà bộ phận quản lý bộ nhớ chính phải thực hiện theo thứ tự ưu tiên.
+[sắp xếp]
+Answer: Cấp phát và thu hồi vùng nhớ, quyết định tiến trình nạp vào bộ nhớ, ghi nhận tình trạng bộ nhớ chính
+Keyword: True
+cau hoi dung: question='Sắp xếp các công việc mà bộ phận quản lý bộ nhớ chính phải thực hiện theo thứ tự ưu tiên.' options=['Ghi nhận tình trạng bộ nhớ chính, cấp phát và thu hồi vùng nhớ, quyết định tiến trình nạp vào bộ nhớ', 'Quyết định tiến trình nào được nạp vào bộ nhớ, ghi nhận tình trạng bộ nhớ chính, cấp phát và thu hồi vùng nhớ', 'Cấp phát và thu hồi vùng nhớ, quyết định tiến trình nạp vào bộ nhớ, ghi nhận tình trạng bộ nhớ chính', 'Ghi nhận tình trạng bộ nhớ chính, quyết định tiến trình nào được nạp vào bộ nhớ, cấp phát và thu hồi vùng nhớ'] answer='Cấp phát và thu hồi vùng nhớ, quyết định tiến trình nạp vào bộ nhớ, ghi nhận tình trạng bộ nhớ chính' citation='"Bộ phận quản lý bộ nhớ cần đảm nhiệm các công việc sau: Cấp phát và thu hồi một vùng nhớ cho tiến trình khi cần thiết. Ghi nhận tình trạng bộ nhớ chính: phần nào đã được cấp phát, phần nào còn có thể sử dụng,… Quyết định tiến trình nào được nạp vào bộ nhớ chính khi có một vùng nhớ trống."' level='evaluate' page=1 idx_doc=0
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:evaluate...
+cau hoi da co: 
++Mô tả các công việc mà bộ phận quản lý tiến trình phải thực hiện trong hệ điều hành.
++Hệ điều hành cần xác định những công việc nào để quản lý bộ nhớ chính?
++Chỉ ra các tài nguyên nào mà một tiến trình thường đòi hỏi trong quá trình hoạt động?
++Đánh giá vai trò của bộ phận quản lý bộ nhớ trong hệ điều hành?
++Vận dụng các kiến thức đã học để giải thích vai trò của bộ phận quản lý tiến trình trong hệ điều hành.
++Giải thích cách mà hệ điều hành quản lý tiến trình trong môi trường đa nhiệm.
++Phân tích các công việc mà bộ phận quản lý bộ nhớ chính phải thực hiện trong hệ điều hành.
+cau hoi khong chua tu khoa: 
++Xác định các cơ chế mà bộ phận quản lý tiến trình cần cung cấp để hỗ trợ các tiến trình trao đổi thông tin.
+Danh gia cau hoi....
+Level: evaluate
+Question: Sắp xếp các công việc mà bộ phận quản lý bộ nhớ phụ cần thực hiện trong hệ điều hành?
+[sắp xếp]
+Answer: Lưu trữ dữ liệu và chương trình trong bộ nhớ chính
+Keyword: True
+Lien quan: no
+Giai thich: Câu trả lời không đúng với nội dung tài liệu, vì tài liệu không đề cập đến công việc cụ thể của bộ phận quản lý bộ nhớ phụ.
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 1
+
+tao lai cau hoi level:evaluate...
+cau hoi da co: 
++Mô tả các công việc mà bộ phận quản lý tiến trình phải thực hiện trong hệ điều hành.
++Hệ điều hành cần xác định những công việc nào để quản lý bộ nhớ chính?
++Chỉ ra các tài nguyên nào mà một tiến trình thường đòi hỏi trong quá trình hoạt động?
++Đánh giá vai trò của bộ phận quản lý bộ nhớ trong hệ điều hành?
++Vận dụng các kiến thức đã học để giải thích vai trò của bộ phận quản lý tiến trình trong hệ điều hành.
++Giải thích cách mà hệ điều hành quản lý tiến trình trong môi trường đa nhiệm.
++Phân tích các công việc mà bộ phận quản lý bộ nhớ chính phải thực hiện trong hệ điều hành.
+cau hoi khong chua tu khoa: 
++Xác định các cơ chế mà bộ phận quản lý tiến trình cần cung cấp để hỗ trợ các tiến trình trao đổi thông tin.
+Danh gia cau hoi....
+Level: evaluate
+Question: Sắp xếp các công việc mà bộ phận quản lý bộ nhớ phụ cần thực hiện trong hệ điều hành?
+[sắp xếp]
+Answer: Đảm bảo dữ liệu không bị mất khi không còn năng lượng
+Keyword: True
+Lien quan: no
+Giai thich: Câu trả lời không có trong tài liệu và không đủ thông tin để trả lời câu hỏi về các công việc cụ thể mà bộ phận quản lý bộ nhớ phụ cần thực hiện.
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 2
+
+
+
+tao cau hoi level:evaluate...
+
+cau hoi da co: 
++Mô tả vai trò của hệ điều hành trong việc quản lý đĩa?
++Liệt kê các thành phần chính của hệ thống nhập xuất trong hệ điều hành?
++Xác định các thao tác mà hệ điều hành thực hiện liên quan đến tập tin?
++Trình bày vai trò của hệ điều hành trong việc quản lý vùng trống trên đĩa?
++Nêu ra những mục tiêu chính của hệ điều hành trong việc quản lý nhập xuất?
++Chọn lựa các thao tác mà hệ điều hành thực hiện liên quan đến tập tin?
++Phân tích vai trò của hệ điều hành trong việc lập lịch cho đĩa?
++So sánh các thao tác mà hệ điều hành thực hiện liên quan đến tập tin và thƣ mục?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: evaluate
+Question: Đánh giá vai trò của hệ điều hành trong việc định vị lƣu trữ trên đĩa?
+[đánh giá]
+Answer: Hệ điều hành quản lý và tối ưu hóa việc định vị lƣu trữ để tăng tốc độ truy xuất.
+Keyword: True
+cau hoi dung: question='Đánh giá vai trò của hệ điều hành trong việc định vị lƣu trữ trên đĩa?' options=['Hệ điều hành không có vai trò trong việc định vị lƣu trữ.', 'Hệ điều hành chỉ định vị lƣu trữ cho các thiết bị phần cứng.', 'Hệ điều hành giúp người dùng dễ dàng truy cập dữ liệu trên đĩa.', 'Hệ điều hành quản lý và tối ưu hóa việc định vị lƣu trữ để tăng tốc độ truy xuất.'] answer='Hệ điều hành quản lý và tối ưu hóa việc định vị lƣu trữ để tăng tốc độ truy xuất.' citation='Vai trò của hệ điều hành trong quản lý đĩa: Định vị lƣu trữ.' level='evaluate' page=2 idx_doc=1
+Level: evaluate
+Question: Sắp xếp các thao tác mà hệ điều hành thực hiện liên quan đến tập tin và thƣ mục?
+[sắp xếp]
+Answer: Hệ điều hành tạo lập, hủy bỏ tập tin và thƣ mục, cung cấp thao tác xử lý.
+Keyword: True
+cau hoi dung: question='Sắp xếp các thao tác mà hệ điều hành thực hiện liên quan đến tập tin và thƣ mục?' options=['Hệ điều hành chỉ tạo lập tập tin và không hủy bỏ.', 'Hệ điều hành không tổ chức tập tin thành các thƣ mục.', 'Hệ điều hành tạo lập, hủy bỏ tập tin và thƣ mục, cung cấp thao tác xử lý.', 'Hệ điều hành chỉ kiểm soát việc truy cập đến tập tin mà không tạo lập.'] answer='Hệ điều hành tạo lập, hủy bỏ tập tin và thƣ mục, cung cấp thao tác xử lý.' citation='Nhƣ vậy, hệ điều hành chịu trách nhiệm về các thao tác liên quan đến tập tin nhƣ: Tạo lập, hủy bỏ một tập tin, Tạo lập, hủy bỏ một thƣ mục, Cung cấp thao tác xử lý tập tin và thƣ mục.' level='evaluate' page=2 idx_doc=1
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 0
+
+
+
+tao cau hoi level:evaluate...
+
+cau hoi da co: 
++Mô tả vai trò của hệ thông dịch lệnh trong hệ điều hành?
++Liệt kê các dịch vụ mà hệ điều hành cung cấp cho chương trình và người sử dụng?
++Xác định các cơ chế bảo vệ mà hệ điều hành cần xây dựng để kiểm soát sai lạc cho toàn hệ thống.
++Trình bày cách thức mà hệ điều hành thực hiện thao tác nhập xuất cho chương trình thi hành.
++Nêu ra các bước mà hệ điều hành thực hiện để thi hành một chương trình?
++Nêu ra các phương pháp mà hệ điều hành sử dụng để thực hiện thao tác trên hệ thống tập tin?
++Phân tích vai trò của hệ thống phân tán trong việc chia sẻ thông tin giữa các bộ xử lý?
++Phân tích vai trò của hệ thống phân tán trong việc chia sẻ thông tin giữa các bộ xử lý?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: evaluate
+Question: Đánh giá vai trò của hệ điều hành trong việc quản lý mạng trong một hệ thống phân tán?
+[đánh giá]
+Answer: Hệ điều hành giúp kết nối và chia sẻ thông tin giữa các bộ xử lý.
+Keyword: True
+cau hoi dung: question='Đánh giá vai trò của hệ điều hành trong việc quản lý mạng trong một hệ thống phân tán?' options=['Hệ điều hành không có vai trò trong quản lý mạng.', 'Hệ điều hành chỉ quản lý một bộ xử lý trong mạng.', 'Hệ điều hành giúp kết nối và chia sẻ thông tin giữa các bộ xử lý.', 'Hệ điều hành chỉ cung cấp dịch vụ cho người sử dụng mà không liên quan đến mạng.'] answer='Hệ điều hành giúp kết nối và chia sẻ thông tin giữa các bộ xử lý.' citation='Hệ thống phân tán cho phép người dùng truy cập đến nhiều tài nguyên hệ thống khác nhau.' level='evaluate' page=3 idx_doc=2
+Level: evaluate
+Question: Sắp xếp các dịch vụ mà hệ điều hành cung cấp cho chương trình và người sử dụng theo thứ tự ưu tiên từ quan trọng nhất đến ít quan trọng hơn?
+[sắp xếp]
+Answer: Thi hành chương trình, thao tác trên hệ thống tập tin, thông tin, thao tác nhập xuất.
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi yêu cầu sắp xếp các dịch vụ theo thứ tự ưu tiên, nhưng tài liệu không cung cấp thông tin về thứ tự ưu tiên của các dịch vụ này.
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:evaluate...
+cau hoi da co: 
++Mô tả vai trò của hệ thông dịch lệnh trong hệ điều hành?
++Liệt kê các dịch vụ mà hệ điều hành cung cấp cho chương trình và người sử dụng?
++Xác định các cơ chế bảo vệ mà hệ điều hành cần xây dựng để kiểm soát sai lạc cho toàn hệ thống.
++Trình bày cách thức mà hệ điều hành thực hiện thao tác nhập xuất cho chương trình thi hành.
++Nêu ra các bước mà hệ điều hành thực hiện để thi hành một chương trình?
++Nêu ra các phương pháp mà hệ điều hành sử dụng để thực hiện thao tác trên hệ thống tập tin?
++Phân tích vai trò của hệ thống phân tán trong việc chia sẻ thông tin giữa các bộ xử lý?
++Phân tích vai trò của hệ thống phân tán trong việc chia sẻ thông tin giữa các bộ xử lý?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: evaluate
+Question: Đánh giá tầm quan trọng của việc xây dựng các cơ chế bảo vệ trong hệ điều hành?
+[đánh giá]
+Answer: Để kiểm soát sai lạc cho toàn hệ thống
+Keyword: True
+cau hoi dung: question='Đánh giá tầm quan trọng của việc xây dựng các cơ chế bảo vệ trong hệ điều hành?' options=['Để tăng tốc độ xử lý của hệ thống', 'Để kiểm soát sai lạc cho toàn hệ thống', 'Để giảm thiểu chi phí bảo trì', 'Để cải thiện giao diện người dùng'] answer='Để kiểm soát sai lạc cho toàn hệ thống' citation='Hệ điều hành cần xây dựng các cơ chế bảo vệ cho phép đặc tả sự kiểm soát và một phương cách để áp dụng các chiến lược bảo vệ thích hợp.' level='evaluate' page=3 idx_doc=2
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 1
+
+
+
+tao cau hoi level:evaluate...
+
+cau hoi da co: 
++Mô tả các dạng giao diện người dùng trong hệ điều hành.
++Xác định ba phương pháp được sử dụng để chuyển tham số cho hệ điều hành.
++Chỉ ra vai trò của lời gọi hệ thống trong việc giao tiếp giữa tiến trình và hệ điều hành.
++Phân loại các dạng giao diện người dùng trong hệ điều hành.
++Áp dụng các phương pháp chuyển tham số cho hệ điều hành, bạn có thể nêu ra những phương pháp nào?
++Giải thích vai trò của giao diện người dùng trong hệ điều hành và nêu ra các dạng của nó.
++Phân biệt các dạng giao diện người dùng trong hệ điều hành dựa trên mức độ sử dụng của chúng.
++Phân biệt các dạng giao diện người dùng trong hệ điều hành và cho biết dạng nào được sử dụng nhiều nhất?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: evaluate
+Question: Đánh giá vai trò của việc phát hiện lỗi trong hệ điều hành đối với tính toán chính xác.
+[đánh giá]
+Answer: Phát hiện lỗi giúp đảm bảo tính toán chính xác và ổn định của hệ thống.
+Keyword: True
+cau hoi dung: question='Đánh giá vai trò của việc phát hiện lỗi trong hệ điều hành đối với tính toán chính xác.' options=['Việc phát hiện lỗi không quan trọng trong hệ điều hành.', 'Phát hiện lỗi chỉ liên quan đến phần mềm.', 'Phát hiện lỗi giúp đảm bảo tính toán chính xác và ổn định của hệ thống.', 'Phát hiện lỗi chỉ cần thiết trong giai đoạn phát triển phần mềm.'] answer='Phát hiện lỗi giúp đảm bảo tính toán chính xác và ổn định của hệ thống.' citation='Hệ điều hành phải đảm bảo việc tính toán chính xác thông qua việc phát hiện các lỗi do phần cứng (CPU, bộ nhớ, thiết bị nhập xuất) hoặc chương trình của người dùng.' level='evaluate' page=4 idx_doc=3
+Level: evaluate
+Question: Sắp xếp các phương pháp chuyển tham số cho hệ điều hành theo thứ tự ưu tiên sử dụng.
+[sắp xếp]
+Answer: Chuyển tham số vào thanh ghi, dùng cơ chế Stack, lưu giữ trong một bảng.
+Keyword: True
+cau hoi dung: question='Sắp xếp các phương pháp chuyển tham số cho hệ điều hành theo thứ tự ưu tiên sử dụng.' options=['Chuyển tham số vào thanh ghi, dùng cơ chế Stack, lưu giữ trong một bảng.', 'Dùng cơ chế Stack, lưu giữ trong một bảng, chuyển tham số vào thanh ghi.', 'Lưu giữ trong một bảng, chuyển tham số vào thanh ghi, dùng cơ chế Stack.', 'Chuyển tham số vào thanh ghi, lưu giữ trong một bảng, dùng cơ chế Stack.'] answer='Chuyển tham số vào thanh ghi, dùng cơ chế Stack, lưu giữ trong một bảng.' citation='Có 3 phương pháp được sử dụng để chuyển tham số cho hệ điều hành: Chuyển tham số vào thanh ghi, Lưu giữ trong một bảng trong bộ nhớ và địa chỉ của bảng này được truyền thông qua thanh ghi, Dùng cơ chế Stack.' level='evaluate' page=4 idx_doc=3
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 0
+
+
+
+tao cau hoi level:evaluate...
+
+cau hoi da co: 
++Liệt kê các loại chương trình hệ thống được đề cập trong tài liệu.
++Mô tả các chức năng chính của các chương trình hệ thống trong môi trường Windows và UNIX.
++Chọn lựa một số loại chương trình hệ thống được phân loại trong tài liệu.
++Phân tích các thành phần chính của hệ điều hành được thiết kế trong tài liệu.
++Xác định các dịch vụ được cung cấp cho người dùng trong hệ điều hành.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: evaluate
+Question: Đánh giá vai trò của bộ nhớ đệm trong hệ thống nhập xuất theo tài liệu.
+[đánh giá]
+Answer: Bộ nhớ đệm giúp tăng tốc độ xử lý dữ liệu
+Keyword: True
+cau hoi dung: question='Đánh giá vai trò của bộ nhớ đệm trong hệ thống nhập xuất theo tài liệu.' options=['Bộ nhớ đệm giúp tăng tốc độ xử lý dữ liệu', 'Bộ nhớ đệm chỉ lưu trữ tạm thời dữ liệu', 'Bộ nhớ đệm không ảnh hưởng đến hiệu suất hệ thống', 'Bộ nhớ đệm chỉ được sử dụng cho phần mềm ứng dụng'] answer='Bộ nhớ đệm giúp tăng tốc độ xử lý dữ liệu' citation='Hệ điều hành được thiết kế bao gồm nhiều thành phần hệ thống phối hợp với nhau để hoạt động.' level='evaluate' page=6 idx_doc=4
+Level: evaluate
+Question: Phân loại các dịch vụ được cung cấp cho người dùng trong hệ điều hành như được mô tả trong tài liệu.
+[phân loại]
+Answer: Tất cả các dịch vụ trên
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi yêu cầu phân loại các dịch vụ được cung cấp cho người dùng trong hệ điều hành, nhưng tài liệu không cung cấp thông tin chi tiết về các loại dịch vụ cụ thể, chỉ nêu rằng có nhiều loại dịch vụ mà không phân loại chúng.
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:evaluate...
+cau hoi da co: 
++Liệt kê các loại chương trình hệ thống được đề cập trong tài liệu.
++Mô tả các chức năng chính của các chương trình hệ thống trong môi trường Windows và UNIX.
++Chọn lựa một số loại chương trình hệ thống được phân loại trong tài liệu.
++Phân tích các thành phần chính của hệ điều hành được thiết kế trong tài liệu.
++Xác định các dịch vụ được cung cấp cho người dùng trong hệ điều hành.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: evaluate
+Question: Đánh giá vai trò của các dịch vụ trong hệ điều hành đối với người dùng và phần mềm ứng dụng.
+[đánh giá]
+Answer: Các dịch vụ cung cấp hỗ trợ cho người dùng và phần mềm ứng dụng thông qua lời gọi hệ thống.
+Keyword: True
+cau hoi dung: question='Đánh giá vai trò của các dịch vụ trong hệ điều hành đối với người dùng và phần mềm ứng dụng.' options=['Các dịch vụ không ảnh hưởng đến người dùng.', 'Các dịch vụ chỉ phục vụ cho phần cứng mà không liên quan đến phần mềm ứng dụng.', 'Các dịch vụ cung cấp hỗ trợ cho người dùng và phần mềm ứng dụng thông qua lời gọi hệ thống.', 'Các dịch vụ chỉ là những tính năng không cần thiết trong hệ điều hành.'] answer='Các dịch vụ cung cấp hỗ trợ cho người dùng và phần mềm ứng dụng thông qua lời gọi hệ thống.' citation='Có nhiều loại dịch vụ được cung cấp cho người dùng, phần mềm ứng dụng. Các dịch vụ được khai thác thông qua những lời gọi hệ thống.' level='evaluate' page=6 idx_doc=4
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 1
+
+
+
+tao cau hoi level:create...
+
+cau hoi da co: 
++Mô tả các công việc mà bộ phận quản lý tiến trình phải thực hiện trong hệ điều hành.
++Hệ điều hành cần xác định những công việc nào để quản lý bộ nhớ chính?
++Chỉ ra các tài nguyên nào mà một tiến trình thường đòi hỏi trong quá trình hoạt động?
++Đánh giá vai trò của bộ phận quản lý bộ nhớ trong hệ điều hành?
++Vận dụng các kiến thức đã học để giải thích vai trò của bộ phận quản lý tiến trình trong hệ điều hành.
++Giải thích cách mà hệ điều hành quản lý tiến trình trong môi trường đa nhiệm.
++Phân tích các công việc mà bộ phận quản lý bộ nhớ chính phải thực hiện trong hệ điều hành.
++Sắp xếp các công việc mà bộ phận quản lý bộ nhớ chính phải thực hiện theo thứ tự ưu tiên.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: create
+Question: Lập danh sách các công việc mà bộ phận quản lý bộ nhớ phụ cần thực hiện trong hệ điều hành.
+[lập]
+Answer: Cấp phát và thu hồi vùng nhớ cho tiến trình
+Keyword: True
+Lien quan: no
+Giai thich: Câu trả lời không có trong tài liệu, vì tài liệu không đề cập đến các công việc cụ thể của bộ phận quản lý bộ nhớ phụ.
+Level: create
+Question: Đề xuất các cơ chế mà hệ điều hành có thể sử dụng để đồng bộ hóa các tiến trình.
+[đề xuất]
+Answer: Cung cấp cơ chế trao đổi thông tin giữa các tiến trình
+Keyword: True
+Lien quan: no
+Giai thich: Câu trả lời không đầy đủ và không chính xác theo nội dung tài liệu, vì tài liệu không chỉ đề cập đến cơ chế trao đổi thông tin mà còn nói đến các cơ chế đồng bộ hóa khác mà hệ điều hành cần cung cấp.
+Tạo đủ 0/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:create...
+cau hoi da co: 
++Mô tả các công việc mà bộ phận quản lý tiến trình phải thực hiện trong hệ điều hành.
++Hệ điều hành cần xác định những công việc nào để quản lý bộ nhớ chính?
++Chỉ ra các tài nguyên nào mà một tiến trình thường đòi hỏi trong quá trình hoạt động?
++Đánh giá vai trò của bộ phận quản lý bộ nhớ trong hệ điều hành?
++Vận dụng các kiến thức đã học để giải thích vai trò của bộ phận quản lý tiến trình trong hệ điều hành.
++Giải thích cách mà hệ điều hành quản lý tiến trình trong môi trường đa nhiệm.
++Phân tích các công việc mà bộ phận quản lý bộ nhớ chính phải thực hiện trong hệ điều hành.
++Sắp xếp các công việc mà bộ phận quản lý bộ nhớ chính phải thực hiện theo thứ tự ưu tiên.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: create
+Question: Đề xuất các cơ chế mà hệ điều hành cần cung cấp để các tiến trình có thể trao đổi thông tin với nhau.
+[đề xuất]
+Answer: Cung cấp cơ chế đồng bộ hóa
+Keyword: True
+Lien quan: no
+Giai thich: Câu trả lời chỉ đề cập đến cơ chế đồng bộ hóa mà không đầy đủ thông tin về các cơ chế khác mà hệ điều hành cần cung cấp để các tiến trình có thể trao đổi thông tin với nhau.
+Level: create
+Question: Tìm ra các công việc mà bộ phận quản lý bộ nhớ phụ cần thực hiện trong hệ điều hành.
+[tìm ra]
+Answer: Quyết định tiến trình nào được nạp vào bộ nhớ chính
+Keyword: True
+Lien quan: no
+Giai thich: Câu trả lời không đầy đủ, chỉ đề cập đến một công việc mà bộ phận quản lý bộ nhớ phụ cần thực hiện mà không liệt kê các công việc khác.
+Tạo đủ 0/2 câu hỏi
+Số lần tạo lại: 1
+
+tao lai cau hoi level:create...
+cau hoi da co: 
++Mô tả các công việc mà bộ phận quản lý tiến trình phải thực hiện trong hệ điều hành.
++Hệ điều hành cần xác định những công việc nào để quản lý bộ nhớ chính?
++Chỉ ra các tài nguyên nào mà một tiến trình thường đòi hỏi trong quá trình hoạt động?
++Đánh giá vai trò của bộ phận quản lý bộ nhớ trong hệ điều hành?
++Vận dụng các kiến thức đã học để giải thích vai trò của bộ phận quản lý tiến trình trong hệ điều hành.
++Giải thích cách mà hệ điều hành quản lý tiến trình trong môi trường đa nhiệm.
++Phân tích các công việc mà bộ phận quản lý bộ nhớ chính phải thực hiện trong hệ điều hành.
++Sắp xếp các công việc mà bộ phận quản lý bộ nhớ chính phải thực hiện theo thứ tự ưu tiên.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: create
+Question: Đề xuất các cơ chế mà hệ điều hành cần cung cấp để các tiến trình có thể trao đổi thông tin và đồng bộ hóa hoạt động của chúng.
+[đề xuất]
+Answer: Cung cấp cơ chế trao đổi thông tin và đồng bộ hóa
+Keyword: True
+cau hoi dung: question='Đề xuất các cơ chế mà hệ điều hành cần cung cấp để các tiến trình có thể trao đổi thông tin và đồng bộ hóa hoạt động của chúng.' options=['Cung cấp cơ chế quản lý bộ nhớ', 'Cung cấp cơ chế trao đổi thông tin và đồng bộ hóa', 'Cung cấp cơ chế quản lý tiến trình', 'Cung cấp cơ chế xử lý đa nhiệm'] answer='Cung cấp cơ chế trao đổi thông tin và đồng bộ hóa' citation='"Hệ điều hành cũng cần cung cấp các cơ chế giúp các tiến trình có thể trao đổi thông tin và đồng bộ hóa hoạt động của chúng."' level='create' page=1 idx_doc=0
+Level: create
+Question: Tìm ra các công việc cụ thể mà bộ phận quản lý bộ nhớ phụ cần thực hiện trong hệ điều hành.
+[tìm ra]
+Answer: Quyết định tiến trình nào được nạp vào bộ nhớ chính
+Keyword: True
+Lien quan: no
+Giai thich: Câu trả lời không đầy đủ và không chính xác so với nội dung tài liệu, vì tài liệu không đề cập đến các công việc cụ thể của bộ phận quản lý bộ nhớ phụ.
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 2
+
+
+
+tao cau hoi level:create...
+
+cau hoi da co: 
++Mô tả vai trò của hệ điều hành trong việc quản lý đĩa?
++Liệt kê các thành phần chính của hệ thống nhập xuất trong hệ điều hành?
++Xác định các thao tác mà hệ điều hành thực hiện liên quan đến tập tin?
++Trình bày vai trò của hệ điều hành trong việc quản lý vùng trống trên đĩa?
++Nêu ra những mục tiêu chính của hệ điều hành trong việc quản lý nhập xuất?
++Chọn lựa các thao tác mà hệ điều hành thực hiện liên quan đến tập tin?
++Phân tích vai trò của hệ điều hành trong việc lập lịch cho đĩa?
++So sánh các thao tác mà hệ điều hành thực hiện liên quan đến tập tin và thƣ mục?
++Đánh giá vai trò của hệ điều hành trong việc định vị lƣu trữ trên đĩa?
++Sắp xếp các thao tác mà hệ điều hành thực hiện liên quan đến tập tin và thƣ mục?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: create
+Question: Tìm ra các thao tác mà hệ điều hành thực hiện trong việc quản lý tập tin?
+[tìm ra]
+Answer: Tạo lập và hủy bỏ một tập tin
+Keyword: True
+cau hoi dung: question='Tìm ra các thao tác mà hệ điều hành thực hiện trong việc quản lý tập tin?' options=['Tạo lập và hủy bỏ một tập tin', 'Chỉ định quyền truy cập cho người dùng', 'Lưu trữ dữ liệu trên đĩa', 'Sao chép tập tin từ thiết bị này sang thiết bị khác'] answer='Tạo lập và hủy bỏ một tập tin' citation='Nhƣ vậy, hệ điều hành chịu trách nhiệm về các thao tác liên quan đến tập tin nhƣ: Tạo lập, hủy bỏ một tập tin.' level='create' page=2 idx_doc=1
+Level: create
+Question: Đề xuất các phương pháp để hệ điều hành có thể cải thiện việc quản lý vùng trống trên đĩa?
+[đề xuất]
+Answer: Tổ chức lại dữ liệu trên đĩa
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi yêu cầu đề xuất các phương pháp cải thiện việc quản lý vùng trống trên đĩa, nhưng tài liệu không cung cấp thông tin cụ thể về các phương pháp này. Câu trả lời gợi ý cũng không có trong nội dung tài liệu.
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:create...
+cau hoi da co: 
++Mô tả vai trò của hệ điều hành trong việc quản lý đĩa?
++Liệt kê các thành phần chính của hệ thống nhập xuất trong hệ điều hành?
++Xác định các thao tác mà hệ điều hành thực hiện liên quan đến tập tin?
++Trình bày vai trò của hệ điều hành trong việc quản lý vùng trống trên đĩa?
++Nêu ra những mục tiêu chính của hệ điều hành trong việc quản lý nhập xuất?
++Chọn lựa các thao tác mà hệ điều hành thực hiện liên quan đến tập tin?
++Phân tích vai trò của hệ điều hành trong việc lập lịch cho đĩa?
++So sánh các thao tác mà hệ điều hành thực hiện liên quan đến tập tin và thƣ mục?
++Đánh giá vai trò của hệ điều hành trong việc định vị lƣu trữ trên đĩa?
++Sắp xếp các thao tác mà hệ điều hành thực hiện liên quan đến tập tin và thƣ mục?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: create
+Question: Đề xuất các thao tác mà hệ điều hành thực hiện để quản lý tập tin và thƣ mục?
+[đề xuất]
+Answer: Tạo lập, hủy bỏ một tập tin và thƣ mục
+Keyword: True
+cau hoi dung: question='Đề xuất các thao tác mà hệ điều hành thực hiện để quản lý tập tin và thƣ mục?' options=['Tạo lập, hủy bỏ một tập tin và thƣ mục', 'Chỉ định quyền truy cập cho người dùng', 'Sao lưu dữ liệu trên đĩa cứng', 'Chuyển đổi định dạng tập tin'] answer='Tạo lập, hủy bỏ một tập tin và thƣ mục' citation='Nhƣ vậy, hệ điều hành chịu trách nhiệm về các thao tác liên quan đến tập tin nhƣ: Tạo lập, hủy bỏ một tập tin. Tạo lập, hủy bỏ một thƣ mục.' level='create' page=2 idx_doc=1
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 1
+
+
+
+tao cau hoi level:create...
+
+cau hoi da co: 
++Mô tả vai trò của hệ thông dịch lệnh trong hệ điều hành?
++Liệt kê các dịch vụ mà hệ điều hành cung cấp cho chương trình và người sử dụng?
++Xác định các cơ chế bảo vệ mà hệ điều hành cần xây dựng để kiểm soát sai lạc cho toàn hệ thống.
++Trình bày cách thức mà hệ điều hành thực hiện thao tác nhập xuất cho chương trình thi hành.
++Nêu ra các bước mà hệ điều hành thực hiện để thi hành một chương trình?
++Nêu ra các phương pháp mà hệ điều hành sử dụng để thực hiện thao tác trên hệ thống tập tin?
++Phân tích vai trò của hệ thống phân tán trong việc chia sẻ thông tin giữa các bộ xử lý?
++Phân tích vai trò của hệ thống phân tán trong việc chia sẻ thông tin giữa các bộ xử lý?
++Đánh giá vai trò của hệ điều hành trong việc quản lý mạng trong một hệ thống phân tán?
++Đánh giá tầm quan trọng của việc xây dựng các cơ chế bảo vệ trong hệ điều hành?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: create
+Question: Lập kế hoạch các dịch vụ mà hệ điều hành cần cung cấp cho người sử dụng để nâng cao hiệu quả lập trình?
+[lập]
+Answer: Cung cấp dịch vụ thi hành chương trình cho người sử dụng
+Keyword: True
+cau hoi dung: question='Lập kế hoạch các dịch vụ mà hệ điều hành cần cung cấp cho người sử dụng để nâng cao hiệu quả lập trình?' options=['Cung cấp dịch vụ nhập xuất cho người sử dụng', 'Cung cấp dịch vụ thông tin cho người sử dụng', 'Cung cấp dịch vụ thi hành chương trình cho người sử dụng', 'Cung cấp dịch vụ thao tác trên hệ thống tập tin cho người sử dụng'] answer='Cung cấp dịch vụ thi hành chương trình cho người sử dụng' citation='Hệ điều hành cung cấp môi trường để thi hành các chương trình, bằng cách cung cấp các dịch vụ cho chương trình và người sử dụng.' level='create' page=3 idx_doc=2
+Level: create
+Question: Đề xuất các phương pháp để hệ điều hành phát hiện lỗi trong quá trình thi hành chương trình?
+[đề xuất]
+Answer: Sử dụng cơ chế thông điệp để phát hiện lỗi
+Keyword: True
+Lien quan: no
+Giai thich: Câu trả lời không có trong tài liệu.
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:create...
+cau hoi da co: 
++Mô tả vai trò của hệ thông dịch lệnh trong hệ điều hành?
++Liệt kê các dịch vụ mà hệ điều hành cung cấp cho chương trình và người sử dụng?
++Xác định các cơ chế bảo vệ mà hệ điều hành cần xây dựng để kiểm soát sai lạc cho toàn hệ thống.
++Trình bày cách thức mà hệ điều hành thực hiện thao tác nhập xuất cho chương trình thi hành.
++Nêu ra các bước mà hệ điều hành thực hiện để thi hành một chương trình?
++Nêu ra các phương pháp mà hệ điều hành sử dụng để thực hiện thao tác trên hệ thống tập tin?
++Phân tích vai trò của hệ thống phân tán trong việc chia sẻ thông tin giữa các bộ xử lý?
++Phân tích vai trò của hệ thống phân tán trong việc chia sẻ thông tin giữa các bộ xử lý?
++Đánh giá vai trò của hệ điều hành trong việc quản lý mạng trong một hệ thống phân tán?
++Đánh giá tầm quan trọng của việc xây dựng các cơ chế bảo vệ trong hệ điều hành?
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: create
+Question: Lập kế hoạch cho các dịch vụ mà hệ điều hành cung cấp nhằm hỗ trợ lập trình viên và người sử dụng là gì?
+[lập]
+Answer: Cung cấp môi trường để thi hành chương trình
+Keyword: True
+cau hoi dung: question='Lập kế hoạch cho các dịch vụ mà hệ điều hành cung cấp nhằm hỗ trợ lập trình viên và người sử dụng là gì?' options=['Cung cấp môi trường để thi hành chương trình', 'Thi hành chương trình theo cách thông thường', 'Cung cấp các dịch vụ nhập xuất cho thiết bị', 'Cung cấp các dịch vụ cho hệ thống tập tin'] answer='Cung cấp môi trường để thi hành chương trình' citation='Hệ điều hành cung cấp môi trường để thi hành các chương trình, bằng cách cung cấp các dịch vụ cho chương trình và người sử dụng.' level='create' page=3 idx_doc=2
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 1
+
+
+
+tao cau hoi level:create...
+
+cau hoi da co: 
++Mô tả các dạng giao diện người dùng trong hệ điều hành.
++Xác định ba phương pháp được sử dụng để chuyển tham số cho hệ điều hành.
++Chỉ ra vai trò của lời gọi hệ thống trong việc giao tiếp giữa tiến trình và hệ điều hành.
++Phân loại các dạng giao diện người dùng trong hệ điều hành.
++Áp dụng các phương pháp chuyển tham số cho hệ điều hành, bạn có thể nêu ra những phương pháp nào?
++Giải thích vai trò của giao diện người dùng trong hệ điều hành và nêu ra các dạng của nó.
++Phân biệt các dạng giao diện người dùng trong hệ điều hành dựa trên mức độ sử dụng của chúng.
++Phân biệt các dạng giao diện người dùng trong hệ điều hành và cho biết dạng nào được sử dụng nhiều nhất?
++Đánh giá vai trò của việc phát hiện lỗi trong hệ điều hành đối với tính toán chính xác.
++Sắp xếp các phương pháp chuyển tham số cho hệ điều hành theo thứ tự ưu tiên sử dụng.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: create
+Question: Lập kế hoạch cho việc phát triển giao diện người dùng trong hệ điều hành, bạn sẽ xem xét những yếu tố nào?
+[lập]
+Answer: Tính năng và khả năng sử dụng
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi không có thông tin liên quan trong tài liệu để trả lời về việc lập kế hoạch phát triển giao diện người dùng trong hệ điều hành.
+Level: create
+Question: Đề xuất các phương pháp để phát hiện lỗi trong hệ điều hành nhằm đảm bảo tính toán chính xác, bạn sẽ đưa ra những phương pháp nào?
+[đưa ra]
+Answer: Kiểm tra phần cứng và phần mềm
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi yêu cầu đề xuất các phương pháp phát hiện lỗi trong hệ điều hành, nhưng tài liệu chỉ đề cập đến việc phát hiện lỗi mà không nêu rõ các phương pháp cụ thể. Do đó, không có thông tin đầy đủ để trả lời câu hỏi.
+Tạo đủ 0/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:create...
+cau hoi da co: 
++Mô tả các dạng giao diện người dùng trong hệ điều hành.
++Xác định ba phương pháp được sử dụng để chuyển tham số cho hệ điều hành.
++Chỉ ra vai trò của lời gọi hệ thống trong việc giao tiếp giữa tiến trình và hệ điều hành.
++Phân loại các dạng giao diện người dùng trong hệ điều hành.
++Áp dụng các phương pháp chuyển tham số cho hệ điều hành, bạn có thể nêu ra những phương pháp nào?
++Giải thích vai trò của giao diện người dùng trong hệ điều hành và nêu ra các dạng của nó.
++Phân biệt các dạng giao diện người dùng trong hệ điều hành dựa trên mức độ sử dụng của chúng.
++Phân biệt các dạng giao diện người dùng trong hệ điều hành và cho biết dạng nào được sử dụng nhiều nhất?
++Đánh giá vai trò của việc phát hiện lỗi trong hệ điều hành đối với tính toán chính xác.
++Sắp xếp các phương pháp chuyển tham số cho hệ điều hành theo thứ tự ưu tiên sử dụng.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: create
+Question: Đề xuất một phương pháp hiệu quả để chuyển tham số cho hệ điều hành từ các phương pháp đã nêu.
+[đề xuất]
+Answer: Chuyển tham số vào thanh ghi
+Keyword: True
+cau hoi dung: question='Đề xuất một phương pháp hiệu quả để chuyển tham số cho hệ điều hành từ các phương pháp đã nêu.' options=['Chuyển tham số vào thanh ghi', 'Lưu giữ trong một bảng trong bộ nhớ', 'Dùng cơ chế Stack', 'Sử dụng giao diện đồ họa'] answer='Chuyển tham số vào thanh ghi' citation='Có 3 phương pháp được sử dụng để chuyển tham số cho hệ điều hành: Chuyển tham số vào thanh ghi, Lưu giữ trong một bảng trong bộ nhớ và địa chỉ của bảng này được truyền thông qua thanh ghi, Dùng cơ chế Stack.' level='create' page=4 idx_doc=3
+Level: create
+Question: Tìm ra những lợi ích của việc sử dụng giao diện đồ họa (GUI) trong hệ điều hành.
+[tìm ra]
+Answer: Giao diện người dùng dễ sử dụng
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi yêu cầu thông tin về lợi ích của giao diện đồ họa (GUI) trong hệ điều hành, nhưng tài liệu chỉ đề cập đến các dạng giao diện mà không nêu rõ lợi ích cụ thể của GUI.
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 1
+
+tao lai cau hoi level:create...
+cau hoi da co: 
++Mô tả các dạng giao diện người dùng trong hệ điều hành.
++Xác định ba phương pháp được sử dụng để chuyển tham số cho hệ điều hành.
++Chỉ ra vai trò của lời gọi hệ thống trong việc giao tiếp giữa tiến trình và hệ điều hành.
++Phân loại các dạng giao diện người dùng trong hệ điều hành.
++Áp dụng các phương pháp chuyển tham số cho hệ điều hành, bạn có thể nêu ra những phương pháp nào?
++Giải thích vai trò của giao diện người dùng trong hệ điều hành và nêu ra các dạng của nó.
++Phân biệt các dạng giao diện người dùng trong hệ điều hành dựa trên mức độ sử dụng của chúng.
++Phân biệt các dạng giao diện người dùng trong hệ điều hành và cho biết dạng nào được sử dụng nhiều nhất?
++Đánh giá vai trò của việc phát hiện lỗi trong hệ điều hành đối với tính toán chính xác.
++Sắp xếp các phương pháp chuyển tham số cho hệ điều hành theo thứ tự ưu tiên sử dụng.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: create
+Question: Tìm ra những lợi ích của việc sử dụng giao diện đồ họa (GUI) trong hệ điều hành so với các dạng giao diện khác.
+[tìm ra]
+Answer: Giao diện đồ họa dễ sử dụng hơn cho người dùng không chuyên
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi yêu cầu thông tin về lợi ích của giao diện đồ họa (GUI) so với các dạng giao diện khác, nhưng tài liệu không cung cấp thông tin cụ thể nào về lợi ích này.
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 2
+
+
+
+tao cau hoi level:create...
+
+cau hoi da co: 
++Liệt kê các loại chương trình hệ thống được đề cập trong tài liệu.
++Mô tả các chức năng chính của các chương trình hệ thống trong môi trường Windows và UNIX.
++Chọn lựa một số loại chương trình hệ thống được phân loại trong tài liệu.
++Phân tích các thành phần chính của hệ điều hành được thiết kế trong tài liệu.
++Xác định các dịch vụ được cung cấp cho người dùng trong hệ điều hành.
++Đánh giá vai trò của bộ nhớ đệm trong hệ thống nhập xuất theo tài liệu.
++Đánh giá vai trò của các dịch vụ trong hệ điều hành đối với người dùng và phần mềm ứng dụng.
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: create
+Question: Trình bày các dịch vụ mà hệ điều hành cung cấp cho người dùng và phần mềm ứng dụng theo tài liệu.
+Answer: Cung cấp dịch vụ nhập xuất và quản lý file
+Keyword: False
+Level: create
+Question: Đề xuất cách thức mà bộ nhớ đệm có thể cải thiện hiệu suất hệ thống nhập xuất trong hệ điều hành.
+[đề xuất]
+Answer: Bằng cách giảm thiểu thời gian truy cập dữ liệu
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi không có thông tin trong tài liệu để trả lời về cách thức mà bộ nhớ đệm cải thiện hiệu suất hệ thống nhập xuất.
+Tạo đủ 0/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:create...
+cau hoi da co: 
++Liệt kê các loại chương trình hệ thống được đề cập trong tài liệu.
++Mô tả các chức năng chính của các chương trình hệ thống trong môi trường Windows và UNIX.
++Chọn lựa một số loại chương trình hệ thống được phân loại trong tài liệu.
++Phân tích các thành phần chính của hệ điều hành được thiết kế trong tài liệu.
++Xác định các dịch vụ được cung cấp cho người dùng trong hệ điều hành.
++Đánh giá vai trò của bộ nhớ đệm trong hệ thống nhập xuất theo tài liệu.
++Đánh giá vai trò của các dịch vụ trong hệ điều hành đối với người dùng và phần mềm ứng dụng.
+cau hoi khong chua tu khoa: 
++Trình bày các dịch vụ mà hệ điều hành cung cấp cho người dùng và phần mềm ứng dụng theo tài liệu.
+Danh gia cau hoi....
+Level: create
+Question: Lập kế hoạch cho việc tích hợp các dịch vụ mà hệ điều hành cung cấp cho người dùng và phần mềm ứng dụng.
+[tích hợp]
+Answer: Tích hợp các dịch vụ thông qua lời gọi hệ thống
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi không có thông tin trong tài liệu để trả lời, vì tài liệu chỉ đề cập đến các dịch vụ mà hệ điều hành cung cấp mà không nêu rõ cách lập kế hoạch tích hợp các dịch vụ đó.
+Level: create
+Question: Đề xuất cách thức phát triển bộ nhớ đệm trong hệ thống nhập xuất để nâng cao hiệu suất.
+[phát triển]
+Answer: Tăng cường khả năng xử lý của bộ nhớ đệm
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi không có thông tin liên quan trong tài liệu để trả lời. Tài liệu chỉ đề cập đến mục đích của bộ nhớ đệm mà không cung cấp cách thức phát triển hay nâng cao hiệu suất.
+Tạo đủ 0/2 câu hỏi
+Số lần tạo lại: 1
+
+tao lai cau hoi level:create...
+cau hoi da co: 
++Liệt kê các loại chương trình hệ thống được đề cập trong tài liệu.
++Mô tả các chức năng chính của các chương trình hệ thống trong môi trường Windows và UNIX.
++Chọn lựa một số loại chương trình hệ thống được phân loại trong tài liệu.
++Phân tích các thành phần chính của hệ điều hành được thiết kế trong tài liệu.
++Xác định các dịch vụ được cung cấp cho người dùng trong hệ điều hành.
++Đánh giá vai trò của bộ nhớ đệm trong hệ thống nhập xuất theo tài liệu.
++Đánh giá vai trò của các dịch vụ trong hệ điều hành đối với người dùng và phần mềm ứng dụng.
+cau hoi khong chua tu khoa: 
++Trình bày các dịch vụ mà hệ điều hành cung cấp cho người dùng và phần mềm ứng dụng theo tài liệu.
+Danh gia cau hoi....
+Level: create
+Question: Lập kế hoạch cho việc tích hợp các dịch vụ mà hệ điều hành cung cấp cho người dùng và phần mềm ứng dụng.
+[tích hợp]
+Answer: Hệ điều hành cung cấp nhiều dịch vụ cho người dùng và phần mềm ứng dụng.
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi yêu cầu lập kế hoạch cho việc tích hợp các dịch vụ, trong khi tài liệu chỉ nêu rằng hệ điều hành cung cấp nhiều dịch vụ mà không cung cấp thông tin chi tiết hoặc hướng dẫn về cách tích hợp các dịch vụ đó.
+Level: create
+Question: Đề xuất cách thức để phát triển các thành phần hệ thống trong thiết kế hệ điều hành.
+[phát triển]
+Answer: Các thành phần hệ thống cần được phát triển để phối hợp với nhau.
+Keyword: True
+Lien quan: no
+Giai thich: Câu hỏi không có thông tin trong tài liệu để trả lời, vì tài liệu chỉ đề cập đến các thành phần hệ thống mà không nêu rõ cách thức phát triển chúng.
+Tạo đủ 0/2 câu hỏi
+Số lần tạo lại: 2

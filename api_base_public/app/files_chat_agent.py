@@ -20,7 +20,8 @@ load_dotenv(dotenv_path)
 
 
 class FilesChatAgent:
-    def __init__(self, doc, number_question, model):
+    def __init__(self, doc, number_question, model, log_file_path):
+        self.log_file_path=log_file_path
         self.doc = doc #tai lieu cua nguoi dung
         self.splitted_docs=""#tai lieu sau khi duoc chia thanh cac doan nho
         self.number_question=number_question #so luong cau hoi do nguoi dung yeu cau
@@ -42,29 +43,36 @@ class FilesChatAgent:
 
     async def split_document(self):
         self.splitted_docs= await self.splitter_doc.process_file(self.doc)
-        print(f"Number of paragraphs: {len(self.splitted_docs)}")
-        print("\n")
+        self.write_log(f"Number of paragraphs: {len(self.splitted_docs)}")
+        
+
+        self.write_log("\n")
 
     def detect_level_and_calculate_question(self):
         for idx, text in enumerate(self.splitted_docs):
             result = self.llm_grader_level.invoke({"document": self.splitted_docs[idx].page_content})     
-            print(f'doan van-[{idx}]: {result.level}')
+            self.write_log(f'doan van-[{idx}]: {result.level}')
+            
             self.calculate_question.sort_idx_doc_with_its_level(idx, result.level)
 
-        print("Check there are levels not detected in paragraphs")
+        
+        self.write_log("Check there are levels not detected in paragraphs")
         self.calculate_question.handle_level_not_detected()
 
-        print("index of splited docs following its level")    
+        
+        self.write_log("index of splited docs following its level")   
         for level, questions in self.calculate_question.idx_doc_by_level.items():
-            print(f"{level}: {questions}")
+            
+            self.write_log(f"{level}: {questions}")   
         
         self.calculate_question.calculate_number_question_for_each_splited_docs()
-        print("\nnumber of questions for each paragraph arranged in order of paragraph's index \n")
+        self.write_log("\nnumber of questions for each paragraph arranged in order of paragraph's index \n")
+        
         for level, questions in self.calculate_question.number_question_for_each_splited_doc.items():
-            print(f"level: {level}")
-            print(f"idx: {self.calculate_question.idx_doc_by_level[level]}")
-            print(f"number questions: {questions}")
-        print("\n")
+            self.write_log(f"level: {level}")  
+            self.write_log(f"idx: {self.calculate_question.idx_doc_by_level[level]}")
+            self.write_log(f"number questions: {questions}")
+        self.write_log("\n")
 
 
 
@@ -82,25 +90,27 @@ class FilesChatAgent:
                 number_required_questions = self.calculate_question.number_question_for_each_splited_doc[level][idx]
                 #tu khoa cua cap do 
                 lst_current_questions = []   
-                lst_questions_without_keywords = [] 
-                total_invalid_questions = 0
-                attempts = 0
+                lst_questions_without_keywords = []
+                
+                attempts = 0   
+                self.write_log("\n")
                 while len(lst_current_questions) < number_required_questions and attempts<max_attempts:                    
                     needed_question = number_required_questions - len(lst_current_questions)                
                     if attempts>0 and needed_question>0:
-                        print(f"\ntao lai cau hoi level:{level}...")
+                        self.write_log(f"\ntao lai cau hoi level:{level}...")
                     else:
-                        print(f"\ntao cau hoi level:{level}...\n")
+                        self.write_log(f"\ntao cau hoi level:{level}...\n")
                     
                     
                     existing_questions = "\n".join(
-                        f"+{item.question}" for item in self.questions if item.page==1 
+                        f"+{item.question}" for item in self.questions if item.idx_doc==idx 
                     )
-                     
+                    self.write_log(f"cau hoi da co: \n{existing_questions}")
+
                     lst_questions_without_keywords_format_text = "\n".join(
                         f"+{item}" for item in lst_questions_without_keywords
                     )
-
+                    self.write_log(f"cau hoi khong chua tu khoa: \n{lst_questions_without_keywords_format_text}")
                     # Create input
                     input_data = {
                         "document": splited_doc,
@@ -110,38 +120,61 @@ class FilesChatAgent:
                         "questions_without_keywords": lst_questions_without_keywords_format_text
                     }
 
-                    print(f"full promt:\n=========\n{self.generate.render_prompt(input_data)}\n===============\n")
+                    
                     result = self.llm_generate.invoke(input_data)
                     
                     if result is None:
-                        print("Khong the tao cau hoi!!!")
+                        self.write_log("Khong the tao cau hoi!!!")
                     else:                       
-                        print("Danh gia cau hoi....")
+                        self.write_log("Kiem tra tu khoa....")
 
                         for q in result.Question:
                             matched_keyword=self.check_keyword_in_question(q.question, level)
-                            print(f"Answer: {q.answer}")  
-                            print(f"Keyword: {matched_keyword}")
-                            if (matched_keyword):                
+                            self.write_log(f"Answer: {q.answer}")  
+                            self.write_log(f"Keyword: {matched_keyword}")
+                            if (matched_keyword):  
+                                self.write_log("Danh gia cau hoi....")              
                                 score = self.llm_grade.invoke({
                                         "document": splited_doc,
                                         "question": q.question,
                                         "suggested_answer": q.answer
                                 })
-                                print(f"Lien quan: {score.binary_score}")
+                                if (score.binary_score == "no"):
+                                    self.write_log(f"Lien quan: {score.binary_score}")
+                                    self.write_log(f"Giai thich: {score.description}")
+                                elif (score.binary_score == "yes"):
+                                    self.write_log(f"Lien quan: {score.binary_score}")
+                                else: 
+                                    self.write_log(f"Lien quan: {score.binary_score}")
+                                    self.write_log(f"Cau tra loi moi: {score.new_anser}")
+                                    new_answer=score.new_anser
+                                    self.write_log(f"Trich dan cu: {q.citation}")
+                                    self.write_log(f"Trich dan moi: {score.citation}")
+                                    new_citation=score.citation
+                                    self.write_log(f"Giai thich: {score.description}")
                                 if score.binary_score == "yes":
                                     q.level = level
                                     q.page=page
-                                    print(f"cau hoi dung: {q}")
+                                    q.idx_doc=idx
+                                    self.write_log(f"cau hoi dung: {q}")
                                     lst_current_questions.append(q)
+                                elif score.binary_score == "no":
+                                    pass
+                                else:
+                                    q.level = level
+                                    q.page=page
+                                    q.idx_doc=idx
+                                    q.answer=new_answer
+                                    q.citation=new_citation
+                                    self.write_log(f"cau hoi voi dap an moi va trich dan moi: {q}")
                             else:
                                 lst_questions_without_keywords.append(q.question)
-                                total_invalid_questions += 1
+                                
 
 
-                    print(f"Tạo đủ {len(lst_current_questions)}/{number_required_questions} câu hỏi")
-                    print(f"Số câu không có từ khóa: {total_invalid_questions}")
-                    print(f"Số lần tạo lại: {attempts}")
+                    self.write_log(f"Tạo đủ {len(lst_current_questions)}/{number_required_questions} câu hỏi")
+                    
+                    self.write_log(f"Số lần tạo lại: {attempts}")
 
                     attempts += 1
                     if len(lst_current_questions) >= number_required_questions:
@@ -160,20 +193,24 @@ class FilesChatAgent:
         Returns:
             boolean: true nếu có từ khóa phù hợp, false nếu không
         """
-        print(f"Level: {level}")
-        print(f"Question: {question}")
+        self.write_log(f"Level: {level}")
+        self.write_log(f"Question: {question}")
         question_lower = question.lower()
         keyword_str = self.lst_keyword.get(level)
         if not keyword_str:
-            print("keyword rong !!!")
+            self.write_log("keyword rong !!!")
             return False
 
         for keyword in keyword_str.split(", "):
             if keyword in question_lower:
-                print(f"[{keyword}]")
+                self.write_log(f"[{keyword}]")
                 return True
 
         return False
+
+    def write_log(self, content):
+        with open(self.log_file_path, "a", encoding="utf-8") as f:
+            f.write(content + "\n")
 
 
     async def get_lst_question(self):

@@ -1,0 +1,157 @@
+Log created at 20250509_170101 for file: BAI GIANG NLHDH_DNC-chuong-2.pdf
+Number of paragraphs: 6
+
+
+doan van-[0]: ['remember', 'analyze', 'apply', 'understand']
+doan van-[1]: ['remember', 'analyze', 'apply', 'understand']
+doan van-[2]: ['remember', 'analyze', 'apply', 'understand']
+doan van-[3]: ['remember', 'analyze', 'apply', 'understand']
+doan van-[4]: ['remember', 'apply', 'understand']
+doan van-[5]: ['remember', 'analyze', 'apply', 'understand']
+Check there are levels not detected in paragraphs
+index of splited docs following its level
+remember: [0, 1, 2, 3, 4, 5]
+understand: [0, 1, 2, 3, 4, 5]
+apply: [0, 1, 2, 3, 4, 5]
+analyze: [0, 1, 2, 3, 5]
+evaluate: [0, 1, 2, 3, 5]
+create: [0, 1, 2, 3, 5]
+
+number of questions for each paragraph arranged in order of paragraph's index 
+
+level: remember
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: understand
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: apply
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: analyze
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+level: evaluate
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+level: create
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+
+
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: remember
+Question: Hệ điều hành cần thực hiện những công việc gì để quản lý tiến trình?
+Answer: Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt một tiến trình.
+Keyword: False
+Level: remember
+Question: Bộ phận quản lý bộ nhớ chính có nhiệm vụ gì trong hệ điều hành?
+Answer: Cấp phát và thu hồi vùng nhớ cho tiến trình khi cần thiết.
+Keyword: False
+Tạo đủ 0/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:remember...
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
++Hệ điều hành cần thực hiện những công việc gì để quản lý tiến trình?
++Bộ phận quản lý bộ nhớ chính có nhiệm vụ gì trong hệ điều hành?
+Danh gia cau hoi....
+Level: remember
+Question: Hệ điều hành cần thực hiện những công việc gì để quản lý tiến trình?
+Answer: Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình.
+Keyword: False
+Level: remember
+Question: Bộ phận quản lý bộ nhớ chính có nhiệm vụ gì trong hệ điều hành?
+Answer: Cấp phát và thu hồi một vùng nhớ cho tiến trình khi cần thiết.
+Keyword: False
+Tạo đủ 0/2 câu hỏi
+Số lần tạo lại: 1
+
+tao lai cau hoi level:remember...
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
++Hệ điều hành cần thực hiện những công việc gì để quản lý tiến trình?
++Bộ phận quản lý bộ nhớ chính có nhiệm vụ gì trong hệ điều hành?
++Hệ điều hành cần thực hiện những công việc gì để quản lý tiến trình?
++Bộ phận quản lý bộ nhớ chính có nhiệm vụ gì trong hệ điều hành?
+Danh gia cau hoi....
+Level: remember
+Question: Hệ điều hành cần thực hiện những công việc gì để quản lý tiến trình?
+Answer: Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình.
+Keyword: False
+Level: remember
+Question: Bộ phận quản lý bộ nhớ chính có nhiệm vụ gì trong hệ điều hành?
+Answer: Cấp phát và thu hồi vùng nhớ cho tiến trình.
+Keyword: False
+Tạo đủ 0/2 câu hỏi
+Số lần tạo lại: 2
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Danh gia cau hoi....
+Level: remember
+Question: Hệ điều hành có vai trò gì trong việc quản lý đĩa?
+Answer: Quản lý vùng trống trên đĩa, định vị lƣu trữ và lập lịch cho đĩa
+Keyword: False
+Level: remember
+Question: Hệ điều hành định nghĩa khái niệm nào để quản lý tập tin trên các thiết bị lưu trữ vật lý?
+[định nghĩa]
+Answer: Định nghĩa tập tin
+Keyword: True
+cau hoi dung: question='Hệ điều hành định nghĩa khái niệm nào để quản lý tập tin trên các thiết bị lưu trữ vật lý?' options=['Định nghĩa tập tin', 'Định nghĩa thư mục', 'Định nghĩa bộ nhớ', 'Định nghĩa thiết bị lưu trữ'] answer='Định nghĩa tập tin' citation='Hệ điều hành đƣa ra một khái niệm trừu tƣợng đồng nhất cho tất cả các thiết bị lƣu trữ vật lý bằng cách định nghĩa một đơn vị lƣu trữ là một tập tin.' level='remember' page=2 idx_doc=1
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:remember...
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
++Hệ điều hành có vai trò gì trong việc quản lý đĩa?
+Danh gia cau hoi....
+Level: remember
+Question: Hệ điều hành có vai trò gì trong việc quản lý đĩa?
+Answer: Quản lý vùng trống trên đĩa, định vị lƣu trữ và lập lịch cho đĩa.
+Keyword: False
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 1
+
+tao lai cau hoi level:remember...
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
++Hệ điều hành có vai trò gì trong việc quản lý đĩa?
++Hệ điều hành có vai trò gì trong việc quản lý đĩa?
+Danh gia cau hoi....
+Level: remember
+Question: Hệ điều hành có vai trò gì trong việc quản lý đĩa?
+Answer: Quản lý vùng trống trên đĩa, định vị lƣu trữ và lập lịch cho đĩa.
+Keyword: False
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 2
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
