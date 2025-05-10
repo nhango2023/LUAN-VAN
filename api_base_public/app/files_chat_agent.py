@@ -13,6 +13,8 @@ from llm.utils.calculate_number_question_each_level import CalculateQuestion
 
 import os
 from dotenv import load_dotenv
+import string
+
 
 # Load biến môi trường từ file .env ở thư mục gốc
 dotenv_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env")
@@ -129,49 +131,58 @@ class FilesChatAgent:
                         self.write_log("Kiem tra tu khoa....")
 
                         for q in result.Question:
-                            matched_keyword=self.check_keyword_in_question(q.question, level)
-                            self.write_log(f"Answer: {q.answer}")  
-                            self.write_log(f"Keyword: {matched_keyword}")
-                            if (matched_keyword):  
-                                self.write_log("Danh gia cau hoi....")              
-                                score = self.llm_grade.invoke({
-                                        "document": splited_doc,
-                                        "question": q.question,
-                                        "suggested_answer": q.answer
-                                })
-                                if (score.binary_score == "no"):
-                                    self.write_log(f"Lien quan: {score.binary_score}")
-                                    self.write_log(f"Giai thich: {score.description}")
-                                elif (score.binary_score == "yes"):
-                                    self.write_log(f"Lien quan: {score.binary_score}")
-                                else: 
-                                    self.write_log(f"Lien quan: {score.binary_score}")
-                                    self.write_log(f"Cau tra loi moi: {score.new_anser}")
-                                    new_answer=score.new_anser
-                                    self.write_log(f"Trich dan cu: {q.citation}")
-                                    self.write_log(f"Trich dan moi: {score.citation}")
-                                    new_citation=score.citation
-                                    self.write_log(f"Giai thich: {score.description}")
-                                if score.binary_score == "yes":
-                                    q.level = level
-                                    q.page=page
-                                    q.idx_doc=idx
-                                    self.write_log(f"cau hoi dung: {q}")
-                                    lst_current_questions.append(q)
-                                elif score.binary_score == "no":
-                                    pass
-                                else:
-                                    q.level = level
-                                    q.page=page
-                                    q.idx_doc=idx
-                                    q.answer=new_answer
-                                    q.citation=new_citation
-                                    self.write_log(f"cau hoi voi dap an moi va trich dan moi: {q}")
+                            if (self.is_question_in_list(q.question, self.questions)):                              
+                                self.write_log(f"Da ton tai!!!")
                             else:
-                                lst_questions_without_keywords.append(q.question)
+                                matched_keyword=self.check_keyword_in_question(q.question, level)
+                                self.write_log(f"Option 1: {q.options[0]}")
+                                self.write_log(f"Option 2: {q.options[1]}")
+                                self.write_log(f"Option 3: {q.options[2]}")
+                                self.write_log(f"Option 4: {q.options[3]}")
+                                self.write_log(f"Answer: {q.answer}")  
+                                self.write_log(f"Keyword: {matched_keyword}")
+                                if (matched_keyword):  
+                                    self.write_log("Danh gia cau hoi....")              
+                                    score = self.llm_grade.invoke({
+                                            "document": splited_doc,
+                                            "question": q.question,
+                                            "suggested_answer": q.answer
+                                    })    
+                                    if score.binary_score == "yes":
+                                        self.write_log(f"Lien quan: {score.binary_score}")
+                                        q.level = level
+                                        q.page=page
+                                        q.idx_doc=idx
+                                        self.write_log(f"cau hoi dung: {q}")
+                                        self.write_log(f"them cau hoi vao danh sach tam thoi!")
+                                        lst_current_questions.append(q)
+                                    elif score.binary_score == "no":
+                                        self.write_log(f"Lien quan: {score.binary_score}")
+                                        self.write_log(f"Giai thich: {score.description}")     
+                                    else:
+                                        self.write_log(f"Lien quan: {score.binary_score}")
+                                        self.write_log(f"Giai thich: {score.description}")
+                                        self.write_log(f"Cau tra loi moi: {score.new_answer}")
+                                        new_answer=score.new_answer
+                                        self.write_log(f"Trich dan cu: {q.citation}")
+                                        self.write_log(f"Trich dan moi: {score.citation}")
+                                        new_citation=score.citation
+                                        q.level = level
+                                        q.page=page
+                                        q.idx_doc=idx
+                                        q.answer=new_answer
+                                        for i, option in enumerate(q.options):
+                                            if option.strip() == q.answer.strip():
+                                                # Replace the original option with normalized answer
+                                                q.options[i] = new_answer
+                                                break
+                                        q.citation=new_citation                      
+                                        self.write_log(f"cau hoi voi dap an moi va trich dan moi: {q}")
+                                        self.write_log(f"them cau hoi vao danh sach tam thoi!")
+                                        lst_current_questions.append(q)
+                                else:
+                                    lst_questions_without_keywords.append(q.question)
                                 
-
-
                     self.write_log(f"Tạo đủ {len(lst_current_questions)}/{number_required_questions} câu hỏi")
                     
                     self.write_log(f"Số lần tạo lại: {attempts}")
@@ -179,8 +190,9 @@ class FilesChatAgent:
                     attempts += 1
                     if len(lst_current_questions) >= number_required_questions:
                         break   
-
-                self.questions.extend(lst_current_questions)                         
+                self.write_log(f"Them {len(lst_current_questions)} cau hoi vao danh sach tong")
+                self.questions.extend(lst_current_questions)
+                self.write_log(f"Tong cau hoi hien tai: {len(self.questions)}")                         
 
     def check_keyword_in_question(self, question: str, level: str):
         """
@@ -212,6 +224,20 @@ class FilesChatAgent:
         with open(self.log_file_path, "a", encoding="utf-8") as f:
             f.write(content + "\n")
 
+
+    def normalize(self, text: str) -> str:
+    # Strip, lowercase, and remove punctuation
+        return text.strip().lower().translate(str.maketrans('', '', string.punctuation))
+
+    def is_question_in_list(self, question: str, question_list: list) -> bool:
+        created_question = self.normalize(question)
+        for item in question_list:
+            self.write_log(f"Cau hoi duoc tao: {created_question}")
+            existed_question=self.normalize(item.question)           
+            if created_question == existed_question:
+                self.write_log(f"Cau hoi da co: {existed_question}")
+                return True
+        return False
 
     async def get_lst_question(self):
         await self.split_document()

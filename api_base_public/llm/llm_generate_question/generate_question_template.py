@@ -8,7 +8,7 @@ class QuestionItem(BaseModel):
     question: str = Field(..., description="Nội dung câu hỏi")
     options: List[str] = Field(..., description="Danh sách 4 đáp án")
     answer: str = Field(..., description="Đáp án đúng")
-    citation: str = Field(..., description="Trích dẫn nguyên văn từ tài liệu làm căn cứ cho đáp án đúng")
+    citation: str = Field(..., description="Giải thích cho câu trả lời đúng")
     level: Optional[str] = Field(None,description="Cấp độ Bloom của câu hỏi")
     page: Optional[int] = Field(None,description="0")
     idx_doc: Optional[int] = Field(None, description="0")

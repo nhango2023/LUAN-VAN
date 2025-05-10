@@ -25,16 +25,15 @@ class CustomPrompt:
 Bạn là chuyên gia tạo câu hỏi trắc nghiệm theo thang Bloom (Bloom's Taxonomy).
 
 - Yêu cầu câu hỏi:
+    + TUYỆT ĐỐI KHÔNG tạo ra câu hỏi đã có trong danh sách câu hỏi đã có.
+    + TUYỆT ĐỐI KHÔNG tạo ra câu hỏi đã có trong danh sách câu hỏi không có động từ.
     + Câu hỏi phải được tạo dựa trên thông tin trong tài liệu được cung cấp.
     + Câu hỏi phải liên quan chặt chẽ đến nội dung tài liệu, không được mơ hồ hay quá chung chung.
     + Mỗi câu hỏi bắt buộc phải chứa động từ nằm trong danh sách động từ được yêu cầu thêm vào câu hỏi.
     + Đảm bảo động từ được yêu cầu thêm vào câu hỏi một cách tự nhiên, đúng với ngôn ngữ tự nhiên.
     + Đảm bảo tạo đúng số lượng câu hỏi được yêu cầu.
     + Cố gắn thêm động từ được cho vào danh sách câu hỏi chưa có tài khóa một cách tự nhiên, đúng với ngôn ngữ tự nhiên.
-    + Không được đưa thêm thông tin không có trong tài liệu.
-    + Không tạo ra câu hỏi đã có trong danh sách câu hỏi đã có.
-    + Không tạo ra câu hỏi đã có trong danh sách câu hỏi không có động từ.
-            
+    + Không được đưa thêm thông tin không có trong tài liệu.       
 
 - Yêu cầu đáp án:
     + Mỗi câu hỏi có bốn phương án trả lời (một đúng, ba sai).
@@ -55,9 +54,10 @@ Bạn là chuyên gia tạo câu hỏi trắc nghiệm theo thang Bloom (Bloom's
 
 - Yêu cầu trích dẫn:
     + Trích dẫn phải dựa vào tài liệu và không tự suy luận.
+    + Trích dẫn bằng ngôn ngữ tự nhiên.
     + Mỗi câu hỏi phải đi kèm một trích dẫn từ tài liệu để làm căn cứ cho đáp án đúng.
-    + Trích dẫn phải chính xác, đúng ngữ cảnh và phản ánh rõ lý do vì sao đáp án đúng là hợp lý.
-    + Không cần nhắc lại câu trả lời.
+    + Trích dẫn phải ngắn gọn, chính xác, đầy đủ, đúng ngữ cảnh và phản ánh rõ lý do vì sao đáp án đúng là hợp lý.
+    + Không lặp lại câu hỏi và câu đáp án đúng trong trích dẫn.
 
 - Chú ý:
     + Không cần làm nổi bật động từ trong câu hỏi, ví dụ: **động từ**, (động từ), động từ.
@@ -67,7 +67,7 @@ Bạn là chuyên gia tạo câu hỏi trắc nghiệm theo thang Bloom (Bloom's
         """
 
     GRADE_DOCUMENT = """
-Bạn là chuyên gia đánh giá chất lượng câu hỏi trắc nghiệm và câu trả lời trắc nghiệm dựa trên tài liệu được cung cấp.
+Bạn là chuyên gia đánh giá chất lượng câu hỏi và câu trả lời dựa trên tài liệu được cung cấp.
 
 1. Đánh giá câu hỏi:
     - Nếu câu hỏi KHÔNG liên quan đến tài liệu: trả về kết quả `binary_score = "no"`, đồng thời mô tả lý do trong trường `description`.
@@ -75,19 +75,23 @@ Bạn là chuyên gia đánh giá chất lượng câu hỏi trắc nghiệm và
 
 2. Đánh giá câu trả lời:
     - Nếu câu trả lời đúng, đầy đủ và có thể tìm thấy trong tài liệu: `binary_score = "yes"`.
-    - Nếu câu trả lời không đúng, chưa đầy đủ, chưa rõ ràng:
+    - Nếu câu trả lời không đúng hoặc chưa đầy đủ hoặc chưa rõ ràng hoặc không thể tìm thấy trên tài liệu:
         → Sinh ra một câu trả lời mới trong trường `new_answer`.
         → Cung cấp trích dẫn nguyên văn từ tài liệu trong trường `citation`.
         → Trả về `binary_score = "re-generate"`.
+    - Nếu câu trả lời không đúng hoặc chưa đầy đủ hoặc chưa rõ ràng hoặc không thể tìm thấy trên tài liệu: KHÔNG được trả về "no", mà phải trả về "re-generate".
 
 3. Quy định cho câu trả lời mới:
-    - Phải đúng, đầy đủ, trả lời tất cả các khía cạnh của câu hỏi.
     - KHÔNG được suy luận hoặc thêm thông tin ngoài tài liệu.
-    - Phải lấy được nội dung rõ ràng từ tài liệu.
+    - Câu trả lời mới KHÔNG nhắc lại câu hỏi.
+    - Câu trả lời mới phải dựa vào tài liệu, trả lời một cách ngắn gọn, không dài dòng, nằm trên một hàng, đúng, đầy đủ, trả lời tất cả các khía cạnh của câu hỏi.
 
 4. Quy định cho trích dẫn:
-    - Trích dẫn phải rõ ràng, diễn giải đúng như trong tài liệu.
-    - Không cần lặp lại câu trả lời trong trích dẫn.
+    - Trích dẫn phải dựa vào tài liệu và không tự suy luận. 
+    + Trích dẫn bằng ngôn ngữ tự nhiên.
+    - Trích dẫn phải ngắn gọn, chính xác, đầy đủ, đúng ngữ cảnh và phản ánh rõ lý do vì sao đáp án đúng là hợp lý.
+    - Không cần lặp lại câu hỏi và câu trả lời trong trích dẫn.
+    + Không cần nhắc lại câu hỏi và câu đáp án đúng trong trích dẫn.
 
 5. Trường `description`:
     - Luôn cung cấp giải thích ngắn gọn nhưng rõ ràng cho kết quả đánh giá.

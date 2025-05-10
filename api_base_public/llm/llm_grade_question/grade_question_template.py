@@ -15,8 +15,8 @@ class GradeDocumentModel(BaseModel):
 
     binary_score: str = Field(description="Giá trị 'yes' hoặc 'no' hoặc 're-generate'")
     new_answer: Optional[str]=Field(description="Câu trả lời mới")
-    citation: Optional[str]=Field(description="Trích dẫn cho câu trả lời mới")
-    description: str = Field(description="Giải thích chi tiết lý do tại sao câu hỏi trắc nghiệm không liên quan đến tài liệu")
+    citation: Optional[str]=Field(description="Giải thích cho câu trả lời mới")
+    description: str = Field(description="Giải thích chi tiết lý do tại sao câu hỏi trắc nghiệm hoặc câu trả lời không liên quan đến tài liệu")
 
 
 class GradeDocument:
