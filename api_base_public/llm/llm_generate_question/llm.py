@@ -73,12 +73,13 @@ class LLM_GENERATE_QUESTION:
         Returns:
             ChatOpenAI hoặc ChatGoogleGenerativeAI hoặc ChatXAI: Đối tượng mô hình tương ứng.
         """
+        
         if llm_name == "openai":
             return self.open_ai()
         elif llm_name == "gemini":
             return self.gemini()
         elif llm_name == "grok":
-            return self.grok_ai
+            return self.grok_ai()
         else:
             return self.open_ai()  # Mặc định sử dụng OpenAI nếu không có tên hợp lệ
 

@@ -1,0 +1,131 @@
+Log created at 20250511_170907 for file: BAI GIANG NLHDH_DNC-chuong-2.pdf
+Number of paragraphs: 6
+
+
+doan van-[0]: ['remember', 'understand', 'apply', 'analyze']
+doan van-[1]: ['remember', 'understand', 'apply', 'analyze']
+doan van-[2]: ['remember', 'understand', 'apply', 'analyze']
+doan van-[3]: ['remember', 'understand', 'apply', 'analyze']
+doan van-[4]: ['remember', 'understand', 'apply']
+doan van-[5]: ['remember', 'understand', 'apply', 'analyze']
+Check there are levels not detected in paragraphs
+index of splited docs following its level
+remember: [0, 1, 2, 3, 4, 5]
+understand: [0, 1, 2, 3, 4, 5]
+apply: [0, 1, 2, 3, 4, 5]
+analyze: [0, 1, 2, 3, 5]
+evaluate: [0, 1, 2, 3, 5]
+create: [0, 1, 2, 3, 5]
+
+number of questions for each paragraph arranged in order of paragraph's index 
+
+level: remember
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: understand
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: apply
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: analyze
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+level: evaluate
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+level: create
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+
+
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Kiem tra cau hoi da ton tai hay chua...
+Cau hoi duoc tao: mô tả vai trò của bộ phận quản lý tiến trình trong hệ điều hành
+Kiem tra tu khoa....
+Level: remember
+Question: Mô tả vai trò của bộ phận quản lý tiến trình trong hệ điều hành?
+[mô tả]
+Option 1: Quản lý tài nguyên mạng
+Option 2: Quản lý tiến trình và tài nguyên của nó
+Option 3: Quản lý dữ liệu trong bộ nhớ phụ
+Option 4: Quản lý các thiết bị ngoại vi
+Answer: Quản lý tiến trình và tài nguyên của nó
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+cau hoi dung: question='Mô tả vai trò của bộ phận quản lý tiến trình trong hệ điều hành?' options=['Quản lý tài nguyên mạng', 'Quản lý tiến trình và tài nguyên của nó', 'Quản lý dữ liệu trong bộ nhớ phụ', 'Quản lý các thiết bị ngoại vi'] answer='Quản lý tiến trình và tài nguyên của nó' citation='Bộ phận quản lý tiến trình phụ trách các công việc như tạo lập, hủy bỏ một tiến trình và cung cấp các cơ chế trao đổi thông tin giữa các tiến trình.' level='remember' page=1 idx_doc=0
+them cau hoi vao danh sach tam thoi!
+Cau hoi duoc tao: liệt kê các công việc mà bộ phận quản lý bộ nhớ chính cần thực hiện
+Kiem tra tu khoa....
+Level: remember
+Question: Liệt kê các công việc mà bộ phận quản lý bộ nhớ chính cần thực hiện?
+[liệt kê]
+Option 1: Cấp phát và thu hồi vùng nhớ cho tiến trình
+Option 2: Quản lý tiến trình đang chạy
+Option 3: Phân phối CPU cho các tiến trình
+Option 4: Tạo lập và hủy bỏ tiến trình
+Answer: Cấp phát và thu hồi vùng nhớ cho tiến trình
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+cau hoi dung: question='Liệt kê các công việc mà bộ phận quản lý bộ nhớ chính cần thực hiện?' options=['Cấp phát và thu hồi vùng nhớ cho tiến trình', 'Quản lý tiến trình đang chạy', 'Phân phối CPU cho các tiến trình', 'Tạo lập và hủy bỏ tiến trình'] answer='Cấp phát và thu hồi vùng nhớ cho tiến trình' citation='Bộ phận quản lý bộ nhớ cần đảm nhiệm các công việc như cấp phát và thu hồi một vùng nhớ cho tiến trình khi cần thiết.' level='remember' page=1 idx_doc=0
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 0
+Them 2 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 2
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Kiem tra cau hoi da ton tai hay chua...
+Cau hoi duoc tao: mô tả vai trò của hệ điều hành trong quản lý đĩa
+Kiem tra tu khoa....
+Level: remember
+Question: Mô tả vai trò của hệ điều hành trong quản lý đĩa?
+[mô tả]
+Option 1: Quản lý vùng trống trên đĩa
+Option 2: Cung cấp giao diện người dùng cho thiết bị
+Option 3: Lập lịch cho các tiến trình
+Option 4: Thực hiện các phép toán số học
+Answer: Quản lý vùng trống trên đĩa
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+cau hoi dung: question='Mô tả vai trò của hệ điều hành trong quản lý đĩa?' options=['Quản lý vùng trống trên đĩa', 'Cung cấp giao diện người dùng cho thiết bị', 'Lập lịch cho các tiến trình', 'Thực hiện các phép toán số học'] answer='Quản lý vùng trống trên đĩa' citation='Vai trò của hệ điều hành trong quản lý đĩa bao gồm việc quản lý vùng trống trên đĩa.' level='remember' page=2 idx_doc=1
+them cau hoi vao danh sach tam thoi!
+Cau hoi duoc tao: liệt kê các thành phần của hệ thống nhập xuất trong hệ điều hành
+Kiem tra tu khoa....
+Level: remember
+Question: Liệt kê các thành phần của hệ thống nhập xuất trong hệ điều hành?
+[liệt kê]
+Option 1: Hệ thống buffer caching
+Option 2: Bộ điều khiển cho các thiết bị phần cứng
+Option 3: Giao tiếp điều khiển thiết bị
+Option 4: Tất cả các đáp án trên
+Answer: Tất cả các đáp án trên
+Keyword: True
+Danh gia cau hoi....
+Lien quan: re-generate
+Giai thich: Câu trả lời gợi ý "Tất cả các đáp án trên" không chính xác vì nó không liệt kê cụ thể các thành phần của hệ thống nhập xuất. Cần tạo lại câu trả lời với các thành phần cụ thể được nêu trong tài liệu.
+New option 1: Hệ thống buffer caching
+New option 2: Giao tiếp điều khiển thiết bị (device driver) tổng quát
+New option 3: Bộ điều khiển cho các thiết bị phần cứng cụ thể
+New option 4: Tất cả các thành phần trên
+New answer: Hệ thống buffer caching, Giao tiếp điều khiển thiết bị (device driver) tổng quát, Bộ điều khiển cho các thiết bị phần cứng cụ thể.
+Trich dan cu: Một hệ thống nhập xuất bao gồm hệ thống buffer caching, giao tiếp điều khiển thiết bị và bộ điều khiển cho các thiết bị phần cứng cụ thể.
+Trich dan moi: Một hệ thống nhập xuất bao gồm: Hệ thống buffer caching, Giao tiếp điều khiển thiết bị (device driver) tổng quát, Bộ điều khiển cho các thiết bị phần cứng cụ thể.

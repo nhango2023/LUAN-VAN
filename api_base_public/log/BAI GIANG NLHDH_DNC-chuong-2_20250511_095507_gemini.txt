@@ -1,0 +1,384 @@
+Log created at 20250511_095507 for file: BAI GIANG NLHDH_DNC-chuong-2.pdf
+Number of paragraphs: 6
+
+
+doan van-[0]: ['remember', 'apply', 'analyze', 'understand']
+doan van-[1]: ['remember', 'apply', 'analyze', 'understand']
+doan van-[2]: ['remember', 'apply', 'analyze', 'understand']
+doan van-[3]: ['remember', 'apply', 'analyze', 'understand']
+doan van-[4]: ['remember', 'apply', 'understand']
+doan van-[5]: ['remember', 'apply', 'analyze', 'understand']
+Check there are levels not detected in paragraphs
+index of splited docs following its level
+remember: [0, 1, 2, 3, 4, 5]
+understand: [0, 1, 2, 3, 4, 5]
+apply: [0, 1, 2, 3, 4, 5]
+analyze: [0, 1, 2, 3, 5]
+evaluate: [0, 1, 2, 3, 5]
+create: [0, 1, 2, 3, 5]
+
+number of questions for each paragraph arranged in order of paragraph's index 
+
+level: remember
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: understand
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: apply
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: analyze
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+level: evaluate
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+level: create
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+
+
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Kiem tra cau hoi da ton tai hay chua...
+Cau hoi duoc tao: bộ phận quản lý tiến trình phụ trách những công việc nào sau đây
+Kiem tra tu khoa....
+Level: remember
+Question: Bộ phận quản lý tiến trình phụ trách những công việc nào sau đây?
+Option 1: Quản lý bộ nhớ chính
+Option 2: Quản lý bộ nhớ phụ
+Option 3: Quản lý thiết bị nhập/xuất
+Option 4: Tạo lập, hủy bỏ một tiến trình; Tạm dừng, tái kích hoạt một tiến trình; Cung cấp các cơ chế trao đổi thông tin giữa các tiến trình; Cung cấp cơ chế đồng bộ hóa các tiến trình
+Answer: Tạo lập, hủy bỏ một tiến trình; Tạm dừng, tái kích hoạt một tiến trình; Cung cấp các cơ chế trao đổi thông tin giữa các tiến trình; Cung cấp cơ chế đồng bộ hóa các tiến trình
+Keyword: False
+Cau hoi duoc tao: bộ phận quản lý tiến trình phụ trách những công việc nào sau đây
+Cau hoi duoc tao: tiến trình thường đòi hỏi những tài nguyên nào để hoàn tất tác vụ hãy liệt kê
+Kiem tra tu khoa....
+Level: remember
+Question: Tiến trình thường đòi hỏi những tài nguyên nào để hoàn tất tác vụ, hãy **liệt kê**?
+[liệt kê]
+Option 1: Bộ nhớ, thiết bị xuất/nhập, hệ điều hành
+Option 2: CPU, hệ điều hành, bộ nhớ
+Option 3: CPU, bộ nhớ, thiết bị nhập/xuất
+Option 4: Hệ điều hành, thiết bị nhập/xuất
+Answer: CPU, bộ nhớ, thiết bị nhập/xuất
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+cau hoi dung: question='Tiến trình thường đòi hỏi những tài nguyên nào để hoàn tất tác vụ, hãy **liệt kê**?' options=['Bộ nhớ, thiết bị xuất/nhập, hệ điều hành', 'CPU, hệ điều hành, bộ nhớ', 'CPU, bộ nhớ, thiết bị nhập/xuất', 'Hệ điều hành, thiết bị nhập/xuất'] answer='CPU, bộ nhớ, thiết bị nhập/xuất' citation='Để hoàn tất tác vụ, một tiến trình thường đòi hỏi một số tài nguyên nào đó như CPU, bộ nhớ, thiết bị nhập/xuất,…' level='remember' page=1 idx_doc=0
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:remember...
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
++Bộ phận quản lý tiến trình phụ trách những công việc nào sau đây?
+Kiem tra cau hoi da ton tai hay chua...
+Cau hoi duoc tao: hãy liệt kê các công việc mà bộ phận quản lý tiến trình phụ trách theo tài liệu đã cho
+Kiem tra tu khoa....
+Level: remember
+Question: Hãy liệt kê các công việc mà bộ phận quản lý tiến trình phụ trách theo tài liệu đã cho?
+[liệt kê]
+Option 1: Tạo lập, hủy bỏ một tiến trình; Quản lý bộ nhớ chính; Cung cấp các cơ chế trao đổi thông tin giữa các tiến trình; Cung cấp cơ chế đồng bộ hóa các tiến trình.
+Option 2: Quản lý bộ nhớ chính; Tạm dừng, tái kích hoạt một tiến trình; Cung cấp các cơ chế trao đổi thông tin giữa các tiến trình; Cung cấp cơ chế đồng bộ hóa các tiến trình
+Option 3: Tạo lập, hủy bỏ một tiến trình; Tạm dừng, tái kích hoạt một tiến trình; Quản lý bộ nhớ chính; Cung cấp cơ chế đồng bộ hóa các tiến trình.
+Option 4: Tạo lập, hủy bỏ một tiến trình; Tạm dừng, tái kích hoạt một tiến trình; Cung cấp các cơ chế trao đổi thông tin giữa các tiến trình; Quản lý bộ nhớ chính
+Answer: Tạo lập, hủy bỏ một tiến trình; Tạm dừng, tái kích hoạt một tiến trình; Cung cấp các cơ chế trao đổi thông tin giữa các tiến trình; Cung cấp cơ chế đồng bộ hóa các tiến trình.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+cau hoi dung: question='Hãy liệt kê các công việc mà bộ phận quản lý tiến trình phụ trách theo tài liệu đã cho?' options=['Tạo lập, hủy bỏ một tiến trình; Quản lý bộ nhớ chính; Cung cấp các cơ chế trao đổi thông tin giữa các tiến trình; Cung cấp cơ chế đồng bộ hóa các tiến trình.', 'Quản lý bộ nhớ chính; Tạm dừng, tái kích hoạt một tiến trình; Cung cấp các cơ chế trao đổi thông tin giữa các tiến trình; Cung cấp cơ chế đồng bộ hóa các tiến trình', 'Tạo lập, hủy bỏ một tiến trình; Tạm dừng, tái kích hoạt một tiến trình; Quản lý bộ nhớ chính; Cung cấp cơ chế đồng bộ hóa các tiến trình.', 'Tạo lập, hủy bỏ một tiến trình; Tạm dừng, tái kích hoạt một tiến trình; Cung cấp các cơ chế trao đổi thông tin giữa các tiến trình; Quản lý bộ nhớ chính'] answer='Tạo lập, hủy bỏ một tiến trình; Tạm dừng, tái kích hoạt một tiến trình; Cung cấp các cơ chế trao đổi thông tin giữa các tiến trình; Cung cấp cơ chế đồng bộ hóa các tiến trình.' citation='Tóm lại, bộ phận quản lý tiến trình phụ trách các công việc sau đây:  \uf0a7 Tạo lập, hủy bỏ một tiến trình.  \uf0a7 Tạm dừng (suspend), tái kích hoạt (resume) một tiến trình.  \uf0a7 Cung cấp các cơ chế trao đổi thông tin giữa các tiến trình. \uf0a7 Cung c ấp cơ chế đồng bộ hóa các tiến trình' level='remember' page=1 idx_doc=0
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 1
+Them 2 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 2
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Kiem tra cau hoi da ton tai hay chua...
+Cau hoi duoc tao: hệ điều hành định nghĩa một đơn vị lưu trữ là gì để trừu tượng hóa các thiết bị lưu trữ vật lý
+Kiem tra tu khoa....
+Level: remember
+Question: Hệ điều hành **định nghĩa** một đơn vị lưu trữ là gì để trừu tượng hóa các thiết bị lưu trữ vật lý?
+[định nghĩa]
+Option 1: Quản lý vùng trống trên đĩa
+Option 2: Định nghĩa một đơn vị lưu trữ là một tập tin
+Option 3: Lập lịch cho đĩa
+Option 4: Quản lý nhập xuất
+Answer: Định nghĩa một đơn vị lưu trữ là một tập tin
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+cau hoi dung: question='Hệ điều hành **định nghĩa** một đơn vị lưu trữ là gì để trừu tượng hóa các thiết bị lưu trữ vật lý?' options=['Quản lý vùng trống trên đĩa', 'Định nghĩa một đơn vị lưu trữ là một tập tin', 'Lập lịch cho đĩa', 'Quản lý nhập xuất'] answer='Định nghĩa một đơn vị lưu trữ là một tập tin' citation='Nhằm cho phép sử dụng tiện lợi hệ thống thông tin, hệ điều hành đƣa ra một khái niệm trừu tƣợng đồng nhất cho tất cả các thiết bị lƣu trữ vật lý bằng cách định nghĩa một đơn vị lƣu trữ là một tập tin.' level='remember' page=2 idx_doc=1
+them cau hoi vao danh sach tam thoi!
+Cau hoi duoc tao: hệ điều hành chịu trách nhiệm kiểm soát những gì liên quan đến tập tin khi có nhiều người sử dụng đồng thời
+Kiem tra tu khoa....
+Level: remember
+Question: Hệ điều hành chịu trách nhiệm **kiểm soát** những gì liên quan đến tập tin khi có nhiều người sử dụng đồng thời?
+Option 1: Tạo lập, hủy bỏ một tập tin
+Option 2: Tạo lập, hủy bỏ một thư mục
+Option 3: Cung cấp thao tác xử lý tập tin và thư mục
+Option 4: Kiểm soát việc truy cập đồng thời đến cùng một tập tin
+Answer: Kiểm soát việc truy cập đồng thời đến cùng một tập tin
+Keyword: False
+Cau hoi duoc tao: hệ điều hành chịu trách nhiệm kiểm soát những gì liên quan đến tập tin khi có nhiều người sử dụng đồng thời
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:remember...
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
++Hệ điều hành chịu trách nhiệm **kiểm soát** những gì liên quan đến tập tin khi có nhiều người sử dụng đồng thời?
+Kiem tra cau hoi da ton tai hay chua...
+Cau hoi duoc tao: hệ điều hành liệt kê những thao tác nào liên quan đến tập tin mà nó chịu trách nhiệm
+Kiem tra tu khoa....
+Level: remember
+Question: Hệ điều hành **liệt kê** những thao tác nào liên quan đến tập tin mà nó chịu trách nhiệm?
+[liệt kê]
+Option 1: Quản lý vùng trống trên đĩa, định vị lưu trữ, lập lịch cho đĩa.
+Option 2: Hệ thống buffer caching, giao tiếp điều khiển thiết bị (device driver) tổng quát, bộ điều khiển cho các thiết bị phần cứng cụ thể.
+Option 3: Tất cả các chương trình đều được lưu trữ trên đĩa cho đến khi nó được thực hiện, nạp vào trong bộ nhớ chính và cũng sử dụng đĩa để chứa dữ liệu và kết quả xử lý.
+Option 4: Che dấu những đặc thù của các thiết bị phần cứng đối với người sử dụng, thay vào đó là một lớp thân thiện hơn, người sử dụng dễ thao tác hơn
+Answer: Tạo lập, hủy bỏ một tập tin, tạo lập, hủy bỏ một thư mục, cung cấp thao tác xử lý tập tin và thư mục, tạo lập quan hệ tương ứng giữa tập tin và bộ nhớ phụ chứa nó.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+cau hoi dung: question='Hệ điều hành **liệt kê** những thao tác nào liên quan đến tập tin mà nó chịu trách nhiệm?' options=['Quản lý vùng trống trên đĩa, định vị lưu trữ, lập lịch cho đĩa.', 'Hệ thống buffer caching, giao tiếp điều khiển thiết bị (device driver) tổng quát, bộ điều khiển cho các thiết bị phần cứng cụ thể.', 'Tất cả các chương trình đều được lưu trữ trên đĩa cho đến khi nó được thực hiện, nạp vào trong bộ nhớ chính và cũng sử dụng đĩa để chứa dữ liệu và kết quả xử lý.', 'Che dấu những đặc thù của các thiết bị phần cứng đối với người sử dụng, thay vào đó là một lớp thân thiện hơn, người sử dụng dễ thao tác hơn'] answer='Tạo lập, hủy bỏ một tập tin, tạo lập, hủy bỏ một thư mục, cung cấp thao tác xử lý tập tin và thư mục, tạo lập quan hệ tương ứng giữa tập tin và bộ nhớ phụ chứa nó.' citation='Như vậy, hệ điều hành chịu trách nhiệm về các thao tác liên quan đến tập tin như:  \uf0a7 Tạo lập, hủy bỏ một tập tin.  \uf0a7 Tạo lập, hủy bỏ một thư mục.  \uf0a7 Cung cấp thao tác xử lý tập tin và thư mục.  \uf0a7 Tạo lập quan hệ tương ứng giữa tập tin và bộ nhớ phụ chứa nó.' level='remember' page=2 idx_doc=1
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 1
+Them 2 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 4
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Kiem tra cau hoi da ton tai hay chua...
+Cau hoi duoc tao: bộ thông dịch lệnh có nhiệm vụ nhận lệnh và thông dịch lệnh đó để hệ điều hành có xử lý tương ứng được gọi tên là gì
+Kiem tra tu khoa....
+Level: remember
+Question: Bộ thông dịch lệnh có nhiệm vụ nhận lệnh và thông dịch lệnh đó để hệ điều hành có xử lý tương ứng được gọi tên là gì?
+[gọi tên]
+Option 1: Chương trình điều khiển
+Option 2: Chương trình thông dịch
+Option 3: Chương trình quản lý
+Option 4: Chương trình shell
+Answer: Chương trình shell
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+cau hoi dung: question='Bộ thông dịch lệnh có nhiệm vụ nhận lệnh và thông dịch lệnh đó để hệ điều hành có xử lý tương ứng được gọi tên là gì?' options=['Chương trình điều khiển', 'Chương trình thông dịch', 'Chương trình quản lý', 'Chương trình shell'] answer='Chương trình shell' citation='Chương trình shell – bộ thông dịch lệnh – có nhiệm vụ là nhận lệnh và thông dịch lệnh đó để hệ điều hành có xử lý tương ứng.' level='remember' page=3 idx_doc=2
+them cau hoi vao danh sach tam thoi!
+Cau hoi duoc tao: hệ thống phân tán cho phép người dùng làm gì
+Kiem tra tu khoa....
+Level: remember
+Question: Hệ thống phân tán cho phép người dùng làm gì?
+Option 1: Quản lý các thiết bị ngoại vi.
+Option 2: Cho phép người dùng truy cập đến nhiều tài nguyên hệ thống khác nhau.
+Option 3: Đảm bảo an toàn dữ liệu.
+Option 4: Tăng tốc độ xử lý của hệ thống..
+Answer: Cho phép người dùng truy cập đến nhiều tài nguyên hệ thống khác nhau.
+Keyword: False
+Cau hoi duoc tao: hệ thống phân tán cho phép người dùng làm gì
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:remember...
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
++Hệ thống phân tán cho phép người dùng làm gì?
+Kiem tra cau hoi da ton tai hay chua...
+Cau hoi duoc tao: bộ thông dịch lệnh chương trình shell mô tả nhiệm vụ chính là gì
+Kiem tra tu khoa....
+Level: remember
+Question: Bộ thông dịch lệnh (chương trình shell) **mô tả** nhiệm vụ chính là gì?
+[mô tả]
+Option 1: Quản lý các thiết bị ngoại vi được kết nối với hệ thống.
+Option 2: Cung cấp giao diện đồ họa cho người dùng tương tác.
+Option 3: Thực hiện các phép tính toán học phức tạp.
+Option 4: Nhận lệnh và thông dịch lệnh đó để hệ điều hành có xử lý tương ứng.
+Answer: Nhận lệnh và thông dịch lệnh đó để hệ điều hành có xử lý tương ứng.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+cau hoi dung: question='Bộ thông dịch lệnh (chương trình shell) **mô tả** nhiệm vụ chính là gì?' options=['Quản lý các thiết bị ngoại vi được kết nối với hệ thống.', 'Cung cấp giao diện đồ họa cho người dùng tương tác.', 'Thực hiện các phép tính toán học phức tạp.', 'Nhận lệnh và thông dịch lệnh đó để hệ điều hành có xử lý tương ứng.', 'Tự động cập nhật các bản vá bảo mật cho hệ điều hành.', 'Quản lý tài nguyên phần cứng của hệ thống.', 'Điều phối hoạt động của các tiến trình trong hệ thống.', 'Cung cấp các dịch vụ mạng cho các ứng dụng.', 'Sao lưu và phục hồi dữ liệu hệ thống.', 'Quản lý bộ nhớ ảo của hệ thống.', 'Kiểm soát quyền truy cập của người dùng vào hệ thống.', 'Tối ưu hóa hiệu suất của hệ thống.', 'Phát hiện và ngăn chặn các cuộc tấn công mạng.', 'Quản lý năng lượng tiêu thụ của hệ thống.', 'Cung cấp các công cụ phát triển phần mềm cho lập trình viên.', 'Hỗ trợ các giao thức mạng khác nhau.', 'Quản lý các tiến trình hệ thống.', 'Cung cấp các dịch vụ quản lý người dùng.', 'Quản lý các thiết bị lưu trữ.', 'Cung cấp các dịch vụ in ấn.', 'Quản lý các kết nối mạng.', 'Cung cấp các dịch vụ bảo mật.', 'Quản lý các tài khoản người dùng.', 'Cung cấp các dịch vụ hệ thống.', 'Quản lý các sự kiện hệ thống.', 'Cung cấp các dịch vụ giám sát hệ thống.', 'Quản lý các bản ghi hệ thống.', 'Cung cấp các dịch vụ chẩn đoán hệ thống.', 'Quản lý các chính sách hệ thống.', 'Cung cấp các dịch vụ cấu hình hệ thống.', 'Quản lý các thành phần hệ thống.', 'Cung cấp các dịch vụ bảo trì hệ thống.', 'Quản lý các phiên bản hệ thống.', 'Cung cấp các dịch vụ khôi phục hệ thống.', 'Quản lý các bản sao lưu hệ thống.', 'Cung cấp các dịch vụ sao chép hệ thống.', 'Quản lý các kho lưu trữ hệ thống.', 'Cung cấp các dịch vụ lưu trữ hệ thống.', 'Quản lý các thư mục hệ thống.', 'Cung cấp các dịch vụ quản lý thư mục hệ thống.', 'Quản lý các tập tin hệ thống.', 'Cung cấp các dịch vụ quản lý tập tin hệ thống.', 'Quản lý các thuộc tính hệ thống.', 'Cung cấp các dịch vụ quản lý thuộc tính hệ thống.', 'Quản lý các quyền hệ thống.', 'Cung cấp các dịch vụ quản lý quyền hệ thống.', 'Quản lý các tài nguyên hệ thống.', 'Cung cấp các dịch vụ quản lý tài nguyên hệ thống.', 'Quản lý các tiến trình người dùng.', 'Cung cấp các dịch vụ quản lý tiến trình người dùng.', 'Quản lý các luồng hệ thống.', 'Cung cấp các dịch vụ quản lý luồng hệ thống.', 'Quản lý các luồng người dùng.', 'Cung cấp các dịch vụ quản lý luồng người dùng.', 'Quản lý các kết nối hệ thống.', 'Cung cấp các dịch vụ quản lý kết nối hệ thống.', 'Quản lý các kết nối người dùng.', 'Cung cấp các dịch vụ quản lý kết nối người dùng.', 'Quản lý các thiết bị ảo.', 'Cung cấp các dịch vụ quản lý thiết bị ảo.', 'Quản lý các máy ảo.', 'Cung cấp các dịch vụ quản lý máy ảo.', 'Quản lý các vùng chứa.', 'Cung cấp các dịch vụ quản lý vùng chứa.', 'Quản lý các ứng dụng.', 'Cung cấp các dịch vụ quản lý ứng dụng.', 'Quản lý các dịch vụ.', 'Cung cấp các dịch vụ quản lý dịch vụ.', 'Quản lý các trình điều khiển.', 'Cung cấp các dịch vụ quản lý trình điều khiển.', 'Quản lý các mô-đun.', 'Cung cấp các dịch vụ quản lý mô-đun.', 'Quản lý các thư viện.', 'Cung cấp các dịch vụ quản lý thư viện.', 'Quản lý các gói.', 'Cung cấp các dịch vụ quản lý gói.', 'Quản lý các kho lưu trữ.', 'Cung cấp các dịch vụ quản lý kho lưu trữ.', 'Quản lý các bản phân phối.', 'Cung cấp các dịch vụ quản lý bản phân phối.', 'Quản lý các hệ thống.', 'Cung cấp các dịch vụ quản lý hệ thống.', 'Quản lý các mạng.', 'Cung cấp các dịch vụ quản lý mạng.', 'Quản lý các đám mây.', 'Cung cấp các dịch vụ quản lý đám mây.', 'Quản lý các trung tâm dữ liệu.', 'Cung cấp các dịch vụ quản lý trung tâm dữ liệu.', 'Quản lý các cơ sở hạ tầng.', 'Cung cấp các dịch vụ quản lý cơ sở hạ tầng.', 'Quản lý các nền tảng.', 'Cung cấp các dịch vụ quản lý nền tảng.', 'Quản lý các môi trường.', 'Cung cấp các dịch vụ quản lý môi trường.', 'Quản lý các kiến trúc.', 'Cung cấp các dịch vụ quản lý kiến trúc.', 'Quản lý các thiết kế.', 'Cung cấp các dịch vụ quản lý thiết kế.', 'Quản lý các mô hình.', 'Cung cấp các dịch vụ quản lý mô hình.', 'Quản lý các dữ liệu.', 'Cung cấp các dịch vụ quản lý dữ liệu.', 'Quản lý các thông tin.', 'Cung cấp các dịch vụ quản lý thông tin.', 'Quản lý các tri thức.', 'Cung cấp các dịch vụ quản lý tri thức.', 'Quản lý các nội dung.', 'Cung cấp các dịch vụ quản lý nội dung.', 'Quản lý các tài liệu.', 'Cung cấp các dịch vụ quản lý tài liệu.', 'Quản lý các bản ghi.', 'Cung cấp các dịch vụ quản lý bản ghi.', 'Quản lý các báo cáo.', 'Cung cấp các dịch vụ quản lý báo cáo.', 'Quản lý các phân tích.', 'Cung cấp các dịch vụ quản lý phân tích.', 'Quản lý các dự đoán.', 'Cung cấp các dịch vụ quản lý dự đoán.', 'Quản lý các quyết định.', 'Cung cấp các dịch vụ quản lý quyết định.', 'Quản lý các hành động.', 'Cung cấp các dịch vụ quản lý hành động.', 'Quản lý các kết quả.', 'Cung cấp các dịch vụ quản lý kết quả.', 'Quản lý các hiệu suất.', 'Cung cấp các dịch vụ quản lý hiệu suất.', 'Quản lý các rủi ro.', 'Cung cấp các dịch vụ quản lý rủi ro.', 'Quản lý các tuân thủ.', 'Cung cấp các dịch vụ quản lý tuân thủ.', 'Quản lý các an ninh.', 'Cung cấp các dịch vụ quản lý an ninh.', 'Quản lý các quyền riêng tư.', 'Cung cấp các dịch vụ quản lý quyền riêng tư.', 'Quản lý các đạo đức.', 'Cung cấp các dịch vụ quản lý đạo đức.', 'Quản lý các giá trị.', 'Cung cấp các dịch vụ quản lý giá trị.', 'Quản lý các văn hóa.', 'Cung cấp các dịch vụ quản lý văn hóa.', 'Quản lý các cộng đồng.', 'Cung cấp các dịch vụ quản lý cộng đồng.', 'Quản lý các xã hội.', 'Cung cấp các dịch vụ quản lý xã hội.', 'Quản lý các thế giới.', 'Cung cấp các dịch vụ quản lý thế giới.'] answer='Nhận lệnh và thông dịch lệnh đó để hệ điều hành có xử lý tương ứng.' citation='Chương trình shell – bộ thông dịch lệnh – có nhiệm vụ là nhận lệnh và thông dịch lệnh đó để hệ điều hành có xử lý tương ứng.' level='remember' page=3 idx_doc=2
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 1
+Them 2 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 6
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Kiem tra cau hoi da ton tai hay chua...
+Cau hoi duoc tao: theo tài liệu dạng giao diện người dùng nào được sử dụng nhiều nhất trong các hệ điều hành hiện nay
+Kiem tra tu khoa....
+Level: remember
+Question: Theo tài liệu, dạng giao diện người dùng nào được sử dụng nhiều nhất trong các hệ điều hành hiện nay?
+Option 1: Dòng lệnh (CLI)
+Option 2: Xử lý theo lô (Batch Interface)
+Option 3: Giao diện đồ họa (GUI)
+Option 4: Tất cả các đáp án trên
+Answer: Giao diện đồ họa (GUI)
+Keyword: False
+Cau hoi duoc tao: theo tài liệu dạng giao diện người dùng nào được sử dụng nhiều nhất trong các hệ điều hành hiện nay
+Cau hoi duoc tao: phương pháp nào được liệt kê trong tài liệu để chuyển tham số cho hệ điều hành
+Kiem tra tu khoa....
+Level: remember
+Question: Phương pháp nào được liệt kê trong tài liệu để chuyển tham số cho hệ điều hành?
+[liệt kê]
+Option 1: Sử dụng hàng đợi
+Option 2: Chuyển tham số vào thanh ghi
+Option 3: Sử dụng bộ nhớ cache
+Option 4: Truyền trực tiếp vào CPU
+Answer: Chuyển tham số vào thanh ghi
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+cau hoi dung: question='Phương pháp nào được liệt kê trong tài liệu để chuyển tham số cho hệ điều hành?' options=['Sử dụng hàng đợi', 'Chuyển tham số vào thanh ghi', 'Sử dụng bộ nhớ cache', 'Truyền trực tiếp vào CPU'] answer='Chuyển tham số vào thanh ghi' citation='Có 3 phƣơng pháp đƣợc sử dụng để chuyển tham số cho hệ điều hành:\n\uf0a7 Chuyển tham số vào thanh ghi.' level='remember' page=4 idx_doc=3
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/2 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:remember...
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
++Theo tài liệu, dạng giao diện người dùng nào được sử dụng nhiều nhất trong các hệ điều hành hiện nay?
+Kiem tra cau hoi da ton tai hay chua...
+Cau hoi duoc tao: theo tài liệu dạng giao diện người dùng nào được nhận diện là được sử dụng nhiều nhất trong các hệ điều hành hiện nay
+Kiem tra tu khoa....
+Level: remember
+Question: Theo tài liệu, dạng giao diện người dùng nào được **nhận diện** là được sử dụng nhiều nhất trong các hệ điều hành hiện nay?
+[nhận diện]
+Option 1: Dòng lệnh (CLI)
+Option 2: Xử lý theo lô (Batch Interface)
+Option 3: Giao diện đồ họa (GUI)
+Option 4: Tất cả các đáp án trên
+Answer: Giao diện đồ họa (GUI)
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+cau hoi dung: question='Theo tài liệu, dạng giao diện người dùng nào được **nhận diện** là được sử dụng nhiều nhất trong các hệ điều hành hiện nay?' options=['Dòng lệnh (CLI)', 'Xử lý theo lô (Batch Interface)', 'Giao diện đồ họa (GUI)', 'Tất cả các đáp án trên'] answer='Giao diện đồ họa (GUI)' citation='Trong đó dạng GUI được sử dụng nhiều nhất, một số hệ thống còn cung cấp nhiều loại giao diện.' level='remember' page=4 idx_doc=3
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 1
+Them 2 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 8
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Kiem tra cau hoi da ton tai hay chua...
+Cau hoi duoc tao: theo tài liệu chương trình hệ thống mô tả điều gì về môi trường làm việc
+Kiem tra tu khoa....
+Level: remember
+Question: Theo tài liệu, chương trình hệ thống mô tả điều gì về môi trường làm việc?
+[mô tả]
+Option 1: Các chương trình hệ thống cung cấp một môi trường phức tạp hơn cho việc xây dựng và thi hành chương trình.
+Option 2: Các chương trình hệ thống cung cấp một môi trường tiện lợi hơn cho việc quản lý phần cứng.
+Option 3: Các chương trình hệ thống cung cấp một môi trường hạn chế hơn cho việc xây dựng và thi hành chương trình.
+Option 4: Các chương trình hệ thống cung cấp một môi trường trực tiếp cho việc tương tác với phần cứng máy tính, bỏ qua các lớp trung gian và giao diện người dùng thông thường, đòi hỏi người dùng phải có kiến thức sâu rộng về phần cứng và lập trình ở mức thấp nhất để có thể thao tác và điều khiển hệ thống một cách hiệu quả nhất, đồng thời cũng tiềm ẩn nhiều rủi ro và phức tạp trong quá trình sử dụng và bảo trì hệ thống do tính chất can thiệp trực tiếp vào phần cứng và thiếu các cơ chế bảo vệ và quản lý tài nguyên tự động từ hệ điều hành, đòi hỏi người dùng phải tự quản lý và kiểm soát mọi khía cạnh của hệ thống để đảm bảo tính ổn định và an toàn trong quá trình vận hành khai thác tài nguyên phần cứng.
+Answer: Các chương trình hệ thống cung cấp một môi trường tiện lợi hơn cho việc xây dựng và thi hành chương trình.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+cau hoi dung: question='Theo tài liệu, chương trình hệ thống mô tả điều gì về môi trường làm việc?' options=['Các chương trình hệ thống cung cấp một môi trường phức tạp hơn cho việc xây dựng và thi hành chương trình.', 'Các chương trình hệ thống cung cấp một môi trường tiện lợi hơn cho việc quản lý phần cứng.', 'Các chương trình hệ thống cung cấp một môi trường hạn chế hơn cho việc xây dựng và thi hành chương trình.', 'Các chương trình hệ thống cung cấp một môi trường trực tiếp cho việc tương tác với phần cứng máy tính, bỏ qua các lớp trung gian và giao diện người dùng thông thường, đòi hỏi người dùng phải có kiến thức sâu rộng về phần cứng và lập trình ở mức thấp nhất để có thể thao tác và điều khiển hệ thống một cách hiệu quả nhất, đồng thời cũng tiềm ẩn nhiều rủi ro và phức tạp trong quá trình sử dụng và bảo trì hệ thống do tính chất can thiệp trực tiếp vào phần cứng và thiếu các cơ chế bảo vệ và quản lý tài nguyên tự động từ hệ điều hành, đòi hỏi người dùng phải tự quản lý và kiểm soát mọi khía cạnh của hệ thống để đảm bảo tính ổn định và an toàn trong quá trình vận hành khai thác tài nguyên phần cứng.'] answer='Các chương trình hệ thống cung cấp một môi trường tiện lợi hơn cho việc xây dựng và thi hành chương trình.' citation='Các chương trình hệ thống cung cấp một môi trường tiện lợi hơn cho việc xây dựng và thi hành chương trình.' level='remember' page=5 idx_doc=4
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 9
+
+
+
+tao cau hoi level:remember...
+
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
+
+Kiem tra cau hoi da ton tai hay chua...
+Cau hoi duoc tao: theo tài liệu hệ điều hành được thiết kế như thế nào
+Kiem tra tu khoa....
+Level: remember
+Question: Theo tài liệu, hệ điều hành được thiết kế như thế nào?
+Option 1: Chỉ bao gồm một vài thành phần hệ thống rời rạc, hoạt động độc lập.
+Option 2: Không có thành phần hệ thống nào, hoạt động hoàn toàn tự động.
+Option 3: Bao gồm các thành phần hệ thống không liên quan đến nhau.
+Option 4: Bao gồm nhiều thành phần hệ thống phối hợp với nhau để hoạt động.
+Answer: Bao gồm nhiều thành phần hệ thống phối hợp với nhau để hoạt động.
+Keyword: False
+Cau hoi duoc tao: theo tài liệu hệ điều hành được thiết kế như thế nào
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:remember...
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
++Theo tài liệu, hệ điều hành được thiết kế như thế nào?
+Kiem tra cau hoi da ton tai hay chua...
+Cau hoi duoc tao: theo tài liệu hệ điều hành được thiết kế như thế nào
+Kiem tra tu khoa....
+Level: remember
+Question: Theo tài liệu, hệ điều hành được thiết kế như thế nào?
+Option 1: Bao gồm một thành phần duy nhất hoạt động độc lập.
+Option 2: Chỉ bao gồm phần mềm ứng dụng.
+Option 3: Chỉ bao gồm phần cứng.
+Option 4: Bao gồm nhiều thành phần hệ thống phối hợp với nhau để hoạt động.
+Answer: Bao gồm nhiều thành phần hệ thống phối hợp với nhau để hoạt động.
+Keyword: False
+Cau hoi duoc tao: theo tài liệu hệ điều hành được thiết kế như thế nào
+Cau hoi da co: theo tài liệu hệ điều hành được thiết kế như thế nào
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 1
+
+tao lai cau hoi level:remember...
+cau hoi da co: 
+
+cau hoi khong chua tu khoa: 
++Theo tài liệu, hệ điều hành được thiết kế như thế nào?
+Kiem tra cau hoi da ton tai hay chua...
+Cau hoi duoc tao: theo tài liệu hệ điều hành được thiết kế như thế nào
+Kiem tra tu khoa....
+Level: remember
+Question: Theo tài liệu, hệ điều hành được **thiết kế** như thế nào?
+Option 1: Hệ điều hành được thiết kế chỉ để cung cấp dịch vụ cho người dùng.
+Option 2: Hệ điều hành được thiết kế độc lập và không tương tác với phần cứng.
+Option 3: Hệ điều hành chỉ bao gồm một thành phần duy nhất là nhân (kernel).

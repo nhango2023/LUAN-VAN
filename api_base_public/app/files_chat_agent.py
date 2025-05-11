@@ -85,7 +85,6 @@ class FilesChatAgent:
             
             #duyet qua index cua paragraph
             for idx, idx_splited_doc in enumerate(self.calculate_question.idx_doc_by_level[level]):
-                #tai lieu
                 splited_doc = self.splitted_docs[idx_splited_doc].page_content
                 page = self.splitted_docs[idx_splited_doc].metadata["page"]
                 #so luong cau hoi cho tai lieu
@@ -105,12 +104,12 @@ class FilesChatAgent:
                     
                     
                     existing_questions = "\n".join(
-                        f"+{item.question}" for item in self.questions if item.idx_doc==idx 
+                        f"+{item.question}" for item in self.questions if item.idx_doc==idx_splited_doc
                     )
                     self.write_log(f"cau hoi da co: \n{existing_questions}")
 
                     lst_questions_without_keywords_format_text = "\n".join(
-                        f"+{item}" for item in lst_questions_without_keywords
+                        f"+{item.question}" for item in lst_questions_without_keywords
                     )
                     self.write_log(f"cau hoi khong chua tu khoa: \n{lst_questions_without_keywords_format_text}")
                     # Create input
@@ -128,12 +127,14 @@ class FilesChatAgent:
                     if result is None:
                         self.write_log("Khong the tao cau hoi!!!")
                     else:                       
-                        self.write_log("Kiem tra tu khoa....")
+                        self.write_log(f"Kiem tra cau hoi da ton tai hay chua...")
 
                         for q in result.Question:
+                            
                             if (self.is_question_in_list(q.question, self.questions)):                              
                                 self.write_log(f"Da ton tai!!!")
                             else:
+                                self.write_log("Kiem tra tu khoa....")
                                 matched_keyword=self.check_keyword_in_question(q.question, level)
                                 self.write_log(f"Option 1: {q.options[0]}")
                                 self.write_log(f"Option 2: {q.options[1]}")
@@ -142,17 +143,23 @@ class FilesChatAgent:
                                 self.write_log(f"Answer: {q.answer}")  
                                 self.write_log(f"Keyword: {matched_keyword}")
                                 if (matched_keyword):  
-                                    self.write_log("Danh gia cau hoi....")              
+                                    self.write_log("Danh gia cau hoi....")
+                                    wrong_answers_format=""
+                                    for i, option in enumerate(q.options):
+                                            if option.strip() != q.answer.strip():
+                                                wrong_answers_format+=f"{option}\n"
+                                    print(f"wrong answers: {wrong_answers_format}")                          
                                     score = self.llm_grade.invoke({
                                             "document": splited_doc,
                                             "question": q.question,
-                                            "suggested_answer": q.answer
+                                            "suggested_answer": q.answer,
+                                            "wrong_answers":wrong_answers_format
                                     })    
                                     if score.binary_score == "yes":
                                         self.write_log(f"Lien quan: {score.binary_score}")
                                         q.level = level
                                         q.page=page
-                                        q.idx_doc=idx
+                                        q.idx_doc=idx_splited_doc
                                         self.write_log(f"cau hoi dung: {q}")
                                         self.write_log(f"them cau hoi vao danh sach tam thoi!")
                                         lst_current_questions.append(q)
@@ -162,26 +169,33 @@ class FilesChatAgent:
                                     else:
                                         self.write_log(f"Lien quan: {score.binary_score}")
                                         self.write_log(f"Giai thich: {score.description}")
-                                        self.write_log(f"Cau tra loi moi: {score.new_answer}")
+                                        self.write_log(f"New option 1: {score.options[0]}")
+                                        self.write_log(f"New option 2: {score.options[1]}")
+                                        self.write_log(f"New option 3: {score.options[2]}")
+                                        self.write_log(f"New option 4: {score.options[3]}")
                                         new_answer=score.new_answer
+                                        self.write_log(f"New answer: {new_answer}")
+                                        
                                         self.write_log(f"Trich dan cu: {q.citation}")
                                         self.write_log(f"Trich dan moi: {score.citation}")
                                         new_citation=score.citation
                                         q.level = level
                                         q.page=page
-                                        q.idx_doc=idx
+                                        q.idx_doc=idx_splited_doc
+                                        q.options=score.options
+                                        # for i, option in enumerate(q.options):
+                                        #     if option.strip() == q.answer.strip():
+                                        #         # Replace the original option with normalized answer
+                                        #         q.options[i] = new_answer
+                                        #         break
                                         q.answer=new_answer
-                                        for i, option in enumerate(q.options):
-                                            if option.strip() == q.answer.strip():
-                                                # Replace the original option with normalized answer
-                                                q.options[i] = new_answer
-                                                break
                                         q.citation=new_citation                      
                                         self.write_log(f"cau hoi voi dap an moi va trich dan moi: {q}")
                                         self.write_log(f"them cau hoi vao danh sach tam thoi!")
                                         lst_current_questions.append(q)
                                 else:
-                                    lst_questions_without_keywords.append(q.question)
+                                    if(self.is_question_in_list(q.question, lst_questions_without_keywords))==False:
+                                        lst_questions_without_keywords.append(q)
                                 
                     self.write_log(f"Tạo đủ {len(lst_current_questions)}/{number_required_questions} câu hỏi")
                     
@@ -231,8 +245,8 @@ class FilesChatAgent:
 
     def is_question_in_list(self, question: str, question_list: list) -> bool:
         created_question = self.normalize(question)
+        self.write_log(f"Cau hoi duoc tao: {created_question}")
         for item in question_list:
-            self.write_log(f"Cau hoi duoc tao: {created_question}")
             existed_question=self.normalize(item.question)           
             if created_question == existed_question:
                 self.write_log(f"Cau hoi da co: {existed_question}")

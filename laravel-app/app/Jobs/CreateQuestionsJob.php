@@ -71,6 +71,7 @@ class CreateQuestionsJob implements ShouldQueue
 
             foreach ($questions as $index => $question) {
                 try {
+
                     Question::create([
                         'id_file' => $uploadedFile->id,
                         'content' => $question['question'],

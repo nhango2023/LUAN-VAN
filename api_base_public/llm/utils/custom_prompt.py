@@ -36,17 +36,16 @@ Bạn là chuyên gia tạo câu hỏi trắc nghiệm theo thang Bloom (Bloom's
     + Không được đưa thêm thông tin không có trong tài liệu.       
 
 - Yêu cầu đáp án:
-    + Mỗi câu hỏi có bốn phương án trả lời (một đúng, ba sai).
-    + Tất cả phương án phải liên quan đến câu hỏi.
+    + Đảm bảo mỗi câu hỏi PHẢI có đủ 4 đáp án (1 đáp án đúng, 3 đáp án sai).
+
 
 - Yêu cầu đáp án sai:
-    + Các phương án sai phải liên quan đến câu hỏi.
-    + Các phương án sai có thể đúng một phần, mơ hồ, không đầy đủ hoặc chứa thông tin sai lệch so với tài liệu.
+    + Các đáp án sai phải liên quan đến câu hỏi.
+    + Các đáp án sai có thể đúng một phần, mơ hồ, không đầy đủ hoặc chứa thông tin sai lệch so với tài liệu.
     + Không được đưa ra các đáp án sai vô nghĩa.
 
 - Yêu cầu đáp án đúng:
-    + Trả lời đúng câu hỏi và có thể tìm trực tiếp trong tài liệu.
-    + Đảm bảo đáp án đúng phải hoàn chỉnh, trả lời đầy đủ tất cả các khía cạnh của câu hỏi.
+    + Trả lời đúng câu hỏi, đúng hơn các đáp án sai và có thể tìm thấy trong tài liệu.
     + Không được diễn giải hoặc suy luận từ nội dung ngoài tài liệu.
 
 - Yêu cầu cấp độ:
@@ -70,41 +69,40 @@ Bạn là chuyên gia tạo câu hỏi trắc nghiệm theo thang Bloom (Bloom's
 Bạn là chuyên gia đánh giá chất lượng câu hỏi và câu trả lời dựa trên tài liệu được cung cấp.
 
 1. Đánh giá câu hỏi:
-    - Nếu câu hỏi KHÔNG liên quan đến tài liệu: trả về kết quả `binary_score = "no"`, đồng thời mô tả lý do trong trường `description`.
-    - Nếu câu hỏi CÓ liên quan đến tài liệu: tiếp tục đánh giá câu trả lời.
+    - Nếu câu hỏi KHÔNG liên quan đến tài liệu: trả về `binary_score = "no"` và giải thích lý do trong `description`.
+    - Nếu câu hỏi CÓ liên quan đến tài liệu: tiếp tục đánh giá phần trả lời.
 
 2. Đánh giá câu trả lời:
-    - Nếu câu trả lời đúng, đầy đủ và có thể tìm thấy trong tài liệu: `binary_score = "yes"`.
-    - Nếu câu trả lời không đúng hoặc chưa đầy đủ hoặc chưa rõ ràng hoặc không thể tìm thấy trên tài liệu:
-        → Sinh ra một câu trả lời mới trong trường `new_answer`.
-        → Cung cấp trích dẫn nguyên văn từ tài liệu trong trường `citation`.
+    - Nếu câu trả lời đúng với câu hỏi, đúng hơn các đáp án sai được cung cấp và có thể tìm thấy trong tài liệu: `binary_score = "yes"`.
+    - Nếu câu trả lời KHÔNG đúng câu hỏi, KHÔNG đúng hơn các đáp án sai, HOẶC không thể tìm thấy trong tài liệu:
         → Trả về `binary_score = "re-generate"`.
-    - Nếu câu trả lời không đúng hoặc chưa đầy đủ hoặc chưa rõ ràng hoặc không thể tìm thấy trên tài liệu: KHÔNG được trả về "no", mà phải trả về "re-generate".
+        → Tạo lại đầy đủ 4 phương án lựa chọn mới trong trường `options`, trong đó **một phương án đúng là `new_answer`** và rõ ràng hơn các phương án còn lại.
+        → Cung cấp trích dẫn nguyên văn từ tài liệu trong trường `citation`.
 
-3. Quy định cho câu trả lời mới:
-    - KHÔNG được suy luận hoặc thêm thông tin ngoài tài liệu.
-    - Câu trả lời mới KHÔNG nhắc lại câu hỏi.
-    - Câu trả lời mới phải dựa vào tài liệu, trả lời một cách ngắn gọn, không dài dòng, nằm trên một hàng, đúng, đầy đủ, trả lời tất cả các khía cạnh của câu hỏi.
+3. Quy định cho đáp án mới:
+    - 4 đáp án phải rõ ràng, sát với nội dung tài liệu.
+    - Chỉ một đáp án là đúng, ba đáp án còn lại phải có tính gây nhiễu nhưng không chính xác hoàn toàn.
+    - Không được suy luận hoặc thêm thông tin ngoài tài liệu.
+    - Câu trả lời đúng KHÔNG nhắc lại câu hỏi, phải ngắn gọn, trả lời đầy đủ.
 
 4. Quy định cho trích dẫn:
-    - Trích dẫn phải dựa vào tài liệu và không tự suy luận. 
-    + Trích dẫn bằng ngôn ngữ tự nhiên.
-    - Trích dẫn phải ngắn gọn, chính xác, đầy đủ, đúng ngữ cảnh và phản ánh rõ lý do vì sao đáp án đúng là hợp lý.
-    - Không cần lặp lại câu hỏi và câu trả lời trong trích dẫn.
-    + Không cần nhắc lại câu hỏi và câu đáp án đúng trong trích dẫn.
+    - Phải trích nguyên văn, chính xác và có thể tìm thấy trong tài liệu.
+    - Trích dẫn nên thể hiện rõ lý do tại sao đáp án đúng là hợp lý.
+    - Không cần nhắc lại câu hỏi hoặc câu trả lời trong phần trích dẫn.
 
 5. Trường `description`:
-    - Luôn cung cấp giải thích ngắn gọn nhưng rõ ràng cho kết quả đánh giá.
-    - Nếu câu hỏi không liên quan: giải thích vì sao.
-    - Nếu câu trả lời sai: mô tả vấn đề.
-    - Nếu cần tạo lại câu trả lời: nêu rõ lý do.
+    - Luôn cung cấp giải thích rõ ràng cho kết quả đánh giá.
+    - Nếu câu hỏi không liên quan: giải thích tại sao.
+    - Nếu câu trả lời không đạt: mô tả điểm chưa đúng và lý do cần tạo lại.
 
-Trả về một object chứa:
+Trả về một object JSON chứa:
 - `binary_score`: Một trong ba giá trị `"yes"`, `"no"`, `"re-generate"`.
-- `new_answer`: (Nếu có) Câu trả lời mới được tạo.
-- `citation`: (Nếu có) Trích dẫn từ tài liệu.
-- `description`: Giải thích lý do cho kết quả trên.
+- `options`: Danh sách 4 đáp án mới nếu cần.
+- `new_answer`: (nếu có) câu trả lời đúng trong danh sách trên.
+- `citation`: (nếu có) trích dẫn nội dung từ tài liệu.
+- `description`: lý do chi tiết cho đánh giá trên.
 """
+
 
 
     

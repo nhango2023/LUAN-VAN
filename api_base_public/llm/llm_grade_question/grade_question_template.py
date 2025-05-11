@@ -1,7 +1,7 @@
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableSequence
 from pydantic import BaseModel,  Field
-from typing import Optional
+from typing import Optional, List
 from llm.utils.custom_prompt import CustomPrompt
 
 
@@ -14,6 +14,7 @@ class GradeDocumentModel(BaseModel):
     """
 
     binary_score: str = Field(description="Giá trị 'yes' hoặc 'no' hoặc 're-generate'")
+    options: List[str] = Field(..., description="Danh sách 4 đáp án mới")
     new_answer: Optional[str]=Field(description="Câu trả lời mới")
     citation: Optional[str]=Field(description="Giải thích cho câu trả lời mới")
     description: str = Field(description="Giải thích chi tiết lý do tại sao câu hỏi trắc nghiệm hoặc câu trả lời không liên quan đến tài liệu")
@@ -32,7 +33,7 @@ class GradeDocument:
 
         prompt = ChatPromptTemplate.from_messages([
             ("system", CustomPrompt.GRADE_DOCUMENT),
-            ("human", "Tài liệu:\n\n{document}\n\n\nCâu hỏi trắc nghiệm:\n\n{question}\n\n\nCâu trả lời:\n\n{suggested_answer}"),
+            ("human", "Tài liệu:\n{document}\n\nCâu hỏi:\n{question}\n\nCâu trả lời được gợi ý:\n{suggested_answer}\n\nCác câu trả lời sai:\n{wrong_answers}"),
         ])
 
         self.chain = prompt | structured_output
