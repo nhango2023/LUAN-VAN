@@ -14,9 +14,6 @@ class GradeDocumentModel(BaseModel):
     """
 
     binary_score: str = Field(description="Giá trị 'yes' hoặc 'no' hoặc 're-generate'")
-    options: List[str] = Field(..., description="Danh sách 4 đáp án mới")
-    new_answer: Optional[str]=Field(description="Câu trả lời mới")
-    citation: Optional[str]=Field(description="Giải thích cho câu trả lời mới")
     description: str = Field(description="Giải thích chi tiết lý do tại sao câu hỏi trắc nghiệm hoặc câu trả lời không liên quan đến tài liệu")
 
 
@@ -29,14 +26,14 @@ class GradeDocument:
         """
         llm: large model language
         """
-        structured_output = llm.with_structured_output(GradeDocumentModel)
+        self.structured_output = llm.with_structured_output(GradeDocumentModel)
 
-        prompt = ChatPromptTemplate.from_messages([
+        self.prompt = ChatPromptTemplate.from_messages([
             ("system", CustomPrompt.GRADE_DOCUMENT),
-            ("human", "Tài liệu:\n{document}\n\nCâu hỏi:\n{question}\n\nCâu trả lời được gợi ý:\n{suggested_answer}\n\nCác câu trả lời sai:\n{wrong_answers}"),
+            ("human", "-Tài liệu:\n{document}\n\n-Câu hỏi:\n{question}\n\n-Câu trả lời được gợi ý:\n{suggested_answer}\n\n-Các đáp án khác: \n{other_questions}"),
         ])
 
-        self.chain = prompt | structured_output
+        self.chain = self.prompt | self.structured_output
 
     def get_chain(self) -> RunnableSequence:
         """
@@ -46,3 +43,10 @@ class GradeDocument:
             RunnableSequence: Pipeline thực thi.
         """
         return self.chain
+    
+    def render_prompt(self, input_dict: dict) -> str:
+        """
+        Trả về nội dung prompt đã được render (dành cho debug).
+        """
+        messages = self.prompt.format_messages(**input_dict)
+        return "\n\n".join([f"[{msg.type.upper()}] {msg.content}" for msg in messages])

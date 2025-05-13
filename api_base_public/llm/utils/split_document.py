@@ -26,10 +26,13 @@ class SplitDocument:
                 raise ValueError("Unsupported file type")
 
             documents = loader.load()
-
+            total_characters=0
             # Add page number metadata
             for i, doc in enumerate(documents):
                 doc.metadata["page"] = i + 1
+                total_characters += len(doc.page_content)
+                       
+            print(f"Total number of characters in the file: {total_characters}")
 
             text_splitter = RecursiveCharacterTextSplitter(
                 separators=["\n\n", "\n", " ", ".", ",", "\u200b", "\uff0c", "\u3001", "\uff0e", "\u3002", ""],

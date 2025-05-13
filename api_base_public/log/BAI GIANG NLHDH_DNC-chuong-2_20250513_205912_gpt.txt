@@ -1,0 +1,62 @@
+Log created at 20250513_205912 for file: BAI GIANG NLHDH_DNC-chuong-2.pdf
+Number of paragraphs: 6
+
+
+doan van-[0]: ['remember', 'understand', 'apply', 'analyze']
+doan van-[1]: ['remember', 'understand', 'apply', 'analyze']
+doan van-[2]: ['remember', 'understand', 'apply', 'analyze']
+doan van-[3]: ['remember', 'understand', 'apply', 'analyze']
+doan van-[4]: ['remember', 'understand', 'apply']
+doan van-[5]: ['remember', 'understand', 'apply', 'analyze']
+Check there are levels not detected in paragraphs
+index of splited docs following its level
+remember: [0, 1, 2, 3, 4, 5]
+understand: [0, 1, 2, 3, 4, 5]
+apply: [0, 1, 2, 3, 4, 5]
+analyze: [0, 1, 2, 3, 5]
+evaluate: [0, 1, 2, 3, 5]
+create: [0, 1, 2, 3, 5]
+
+number of questions for each paragraph arranged in order of paragraph's index 
+
+level: remember
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: understand
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: apply
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: analyze
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+level: evaluate
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+level: create
+idx: [0, 1, 2, 3, 5]
+number questions: [2, 2, 2, 2, 2]
+
+
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Mô tả vai trò của bộ phận quản lý tiến trình trong hệ điều hành?
+Cau hoi duoc tao: mô tả vai trò của bộ phận quản lý tiến trình trong hệ điều hành
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+Question: Mô tả vai trò của bộ phận quản lý tiến trình trong hệ điều hành?
+[mô tả]
+Option 1: Quản lý các thiết bị ngoại vi
+Option 2: Tạo lập, hủy bỏ và quản lý tiến trình
+Option 3: Cung cấp giao diện người dùng
+Option 4: Quản lý dữ liệu trong bộ nhớ phụ
+Answer: Tạo lập, hủy bỏ và quản lý tiến trình
+Citation: "Tóm lại, bộ phận quản lý tiến trình phụ trách các công việc sau đây: Tạo lập, hủy bỏ một tiến trình."
+Keyword: True
+Danh gia cau hoi....

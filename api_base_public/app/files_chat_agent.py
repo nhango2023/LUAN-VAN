@@ -28,12 +28,19 @@ class FilesChatAgent:
         self.splitted_docs=""#tai lieu sau khi duoc chia thanh cac doan nho
         self.number_question=number_question #so luong cau hoi do nguoi dung yeu cau
         self.splitter_doc= SplitDocument() #lop chia tai lieu thanh nhung doan nho
-        self.llm_grader_level = DocumentGraderLevel(LLM_LEVEL().get_llm()).get_chain() #lop danh gia level theo thang bloom cua tung doan
         self.calculate_question = CalculateQuestion(number_question) #lop tinh toan so luong cau hoi cho tung doan nho theo tung level
+
+        self.grader_level = DocumentGraderLevel(LLM_LEVEL().get_llm()) #lop danh gia level theo thang bloom cua tung doan
+        self.llm_grader_level=self.grader_level.get_chain()
+
         self.generate = GenerateQuestion(LLM_GENERATE_QUESTION().get_llm(model))
         self.llm_generate = self.generate.get_chain()
-        self.llm_grade = GradeDocument(LLM_GRADE_QUESTION().get_llm()).get_chain() #lop danh gia lien quan giua cau hoi, cau tra loi va doan nho tai lieu
+
+        self.grade = GradeDocument(LLM_GRADE_QUESTION().get_llm()) #lop danh gia lien quan giua cau hoi, cau tra loi va doan nho tai lieu
+        self.llm_grade = self.grade.get_chain()
+
         self.questions=[]
+        self.total_character_used=0
         self.lst_keyword={
             "remember": os.getenv("KEYWORD_REMEMBER"),
             "understand": os.getenv("KEYWORD_UNDERSTAND"),
@@ -46,13 +53,22 @@ class FilesChatAgent:
     async def split_document(self):
         self.splitted_docs= await self.splitter_doc.process_file(self.doc)
         self.write_log(f"Number of paragraphs: {len(self.splitted_docs)}")
-        
-
         self.write_log("\n")
 
     def detect_level_and_calculate_question(self):
         for idx, text in enumerate(self.splitted_docs):
-            result = self.llm_grader_level.invoke({"document": self.splitted_docs[idx].page_content})     
+            input_data={"document": self.splitted_docs[idx].page_content}
+            prompt=self.grader_level.render_prompt(input_data)
+            # Calculate the number of characters in the generated prompt
+            num_characters_input = len(prompt)
+            self.total_character_used+=num_characters_input
+            # Print the result
+            print(f"Grader level prompt input contains {num_characters_input} characters.")
+            result = self.llm_grader_level.invoke(input_data)
+            num_characters_output=len(str(result))
+            self.total_character_used+=num_characters_output
+            print(f"Grader level prompt output contains {num_characters_output} characters.") 
+            
             self.write_log(f'doan van-[{idx}]: {result.level}')
             
             self.calculate_question.sort_idx_doc_with_its_level(idx, result.level)
@@ -78,7 +94,7 @@ class FilesChatAgent:
 
 
 
-    def generate_question_and_grade_question(self, max_attempts=3):
+    def generate_question_and_grade_question(self, max_attempts=5):
         #duyet qua tung level va so luong cau hoi tung level
         for level, count in self.number_question.items():
             keyword=self.lst_keyword[level]
@@ -92,7 +108,7 @@ class FilesChatAgent:
                 #tu khoa cua cap do 
                 lst_current_questions = []   
                 lst_questions_without_keywords = []
-                
+                lst_invalid_question=[]
                 attempts = 0   
                 self.write_log("\n")
                 while len(lst_current_questions) < number_required_questions and attempts<max_attempts:                    
@@ -106,24 +122,42 @@ class FilesChatAgent:
                     existing_questions = "\n".join(
                         f"+{item.question}" for item in self.questions if item.idx_doc==idx_splited_doc
                     )
-                    self.write_log(f"cau hoi da co: \n{existing_questions}")
+                    #self.write_log(f"cau hoi da co (idx_doc={idx_splited_doc}): \n{existing_questions}")
 
                     lst_questions_without_keywords_format_text = "\n".join(
                         f"+{item.question}" for item in lst_questions_without_keywords
                     )
-                    self.write_log(f"cau hoi khong chua tu khoa: \n{lst_questions_without_keywords_format_text}")
+
+                    #self.write_log(f"cau hoi khong chua tu khoa: \n{lst_questions_without_keywords_format_text}")
+
+                    lst_invalid_question_format_text = "\n".join(
+                        f"+{item.question}" for item in lst_invalid_question
+                    )
+
+                    #self.write_log(f"cau hoi khong hop le: \n{lst_invalid_question_format_text}")
                     # Create input
                     input_data = {
                         "document": splited_doc,
                         "keyword": keyword,
                         "n_question": needed_question,
                         "existing_questions": existing_questions,
-                        "questions_without_keywords": lst_questions_without_keywords_format_text
+                        "questions_without_keywords": lst_questions_without_keywords_format_text,
+                        "invalid_questions": lst_invalid_question_format_text
                     }
+                    prompt = self.generate.render_prompt(input_data)
 
+                    # Calculate the number of characters in the generated prompt
+                    num_characters_input = len(prompt)
+                    self.total_character_used+=num_characters_input
+                    # Print the result
+                    print(f"The generated prompt input contains {num_characters_input} characters.")
                     
                     result = self.llm_generate.invoke(input_data)
                     
+                    num_characters_output=len(str(result))
+                    self.total_character_used+=num_characters_output
+                    print(f"The generated prompt output contains {num_characters_output} characters.") 
+
                     if result is None:
                         self.write_log("Khong the tao cau hoi!!!")
                     else:                       
@@ -131,68 +165,52 @@ class FilesChatAgent:
 
                         for q in result.Question:
                             
+                            self.write_log(f"\nCau hoi: {q.question}")
                             if (self.is_question_in_list(q.question, self.questions)):                              
-                                self.write_log(f"Da ton tai!!!")
+                                self.write_log(f"Cau hoi da ton tai!!!")
                             else:
-                                self.write_log("Kiem tra tu khoa....")
+                                self.write_log("Cau hoi chua ton tai=>Kiem tra tu khoa....")
                                 matched_keyword=self.check_keyword_in_question(q.question, level)
                                 self.write_log(f"Option 1: {q.options[0]}")
                                 self.write_log(f"Option 2: {q.options[1]}")
                                 self.write_log(f"Option 3: {q.options[2]}")
                                 self.write_log(f"Option 4: {q.options[3]}")
-                                self.write_log(f"Answer: {q.answer}")  
+                                self.write_log(f"Answer: {q.answer}")
+                                self.write_log(f"Citation: {q.citation}")    
                                 self.write_log(f"Keyword: {matched_keyword}")
                                 if (matched_keyword):  
                                     self.write_log("Danh gia cau hoi....")
-                                    wrong_answers_format=""
-                                    for i, option in enumerate(q.options):
-                                            if option.strip() != q.answer.strip():
-                                                wrong_answers_format+=f"{option}\n"
-                                    print(f"wrong answers: {wrong_answers_format}")                          
-                                    score = self.llm_grade.invoke({
+                                    other_questions_format_text=f"+{q.options[0]}\n+{q.options[1]}\n+{q.options[2]}\n+{q.options[3]}"                          
+                                    input_data={
                                             "document": splited_doc,
                                             "question": q.question,
                                             "suggested_answer": q.answer,
-                                            "wrong_answers":wrong_answers_format
-                                    })    
-                                    if score.binary_score == "yes":
-                                        self.write_log(f"Lien quan: {score.binary_score}")
+                                            "other_questions":other_questions_format_text
+                                    }
+                                    # Get the rendered prompt
+                                    prompt = self.grade.render_prompt(input_data)
+
+                                    # Calculate the number of characters in the generated prompt
+                                    num_characters = len(prompt)
+                                    self.total_character_used+=num_characters
+                                    # Print the result
+                                    print(f"The grade prompt input contains {num_characters} characters.")
+                                    score = self.llm_grade.invoke(input_data)
+                                    num_characters_output=len(str(result))
+                                    self.total_character_used+=num_characters_output
+                                    print(f"The grade prompt output contains {num_characters_output} characters.")     
+                                    self.write_log(f"Lien quan: {score.binary_score}")
+                                    self.write_log(f"Giai thich: {score.description}") 
+                                    if score.binary_score == "yes":        
                                         q.level = level
                                         q.page=page
                                         q.idx_doc=idx_splited_doc
                                         self.write_log(f"cau hoi dung: {q}")
                                         self.write_log(f"them cau hoi vao danh sach tam thoi!")
                                         lst_current_questions.append(q)
-                                    elif score.binary_score == "no":
-                                        self.write_log(f"Lien quan: {score.binary_score}")
-                                        self.write_log(f"Giai thich: {score.description}")     
-                                    else:
-                                        self.write_log(f"Lien quan: {score.binary_score}")
-                                        self.write_log(f"Giai thich: {score.description}")
-                                        self.write_log(f"New option 1: {score.options[0]}")
-                                        self.write_log(f"New option 2: {score.options[1]}")
-                                        self.write_log(f"New option 3: {score.options[2]}")
-                                        self.write_log(f"New option 4: {score.options[3]}")
-                                        new_answer=score.new_answer
-                                        self.write_log(f"New answer: {new_answer}")
-                                        
-                                        self.write_log(f"Trich dan cu: {q.citation}")
-                                        self.write_log(f"Trich dan moi: {score.citation}")
-                                        new_citation=score.citation
-                                        q.level = level
-                                        q.page=page
-                                        q.idx_doc=idx_splited_doc
-                                        q.options=score.options
-                                        # for i, option in enumerate(q.options):
-                                        #     if option.strip() == q.answer.strip():
-                                        #         # Replace the original option with normalized answer
-                                        #         q.options[i] = new_answer
-                                        #         break
-                                        q.answer=new_answer
-                                        q.citation=new_citation                      
-                                        self.write_log(f"cau hoi voi dap an moi va trich dan moi: {q}")
-                                        self.write_log(f"them cau hoi vao danh sach tam thoi!")
-                                        lst_current_questions.append(q)
+                                    elif score.binary_score == "no":                                       
+                                        if (self.is_question_in_list(q.question, lst_invalid_question))==False:    
+                                            lst_invalid_question.append(q)
                                 else:
                                     if(self.is_question_in_list(q.question, lst_questions_without_keywords))==False:
                                         lst_questions_without_keywords.append(q)
@@ -252,9 +270,9 @@ class FilesChatAgent:
                 self.write_log(f"Cau hoi da co: {existed_question}")
                 return True
         return False
-
     async def get_lst_question(self):
         await self.split_document()
         self.detect_level_and_calculate_question()
         self.generate_question_and_grade_question()
+        print(f"Tong characters: {self.total_character_used}")
         return self.questions

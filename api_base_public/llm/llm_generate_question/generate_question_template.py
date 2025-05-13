@@ -8,7 +8,7 @@ class QuestionItem(BaseModel):
     question: str = Field(..., description="Nội dung câu hỏi")
     options: List[str] = Field(..., description="Danh sách 4 đáp án")
     answer: str = Field(..., description="Đáp án đúng")
-    citation: str = Field(..., description="Giải thích cho câu trả lời đúng")
+    citation: str = Field(..., description="Giải thích chi tiết lý do tại sao chọn câu trả lời đó là câu trả lời")
     level: Optional[str] = Field(None,description="Cấp độ Bloom của câu hỏi")
     page: Optional[int] = Field(None,description="0")
     idx_doc: Optional[int] = Field(None, description="0")
@@ -24,7 +24,7 @@ class GenerateQuestion:
 
         self.prompt = ChatPromptTemplate.from_messages([
             ("system", CustomPrompt.GENERATE_QUESTION),
-            ("human", "-Tài liệu:\n{document}\n\n-Danh sách động từ được yêu cầu thêm vào câu hỏi:\n{keyword}\n\n-Số lượng câu hỏi yêu cầu: {n_question}\n\n-Danh sách câu hỏi đã có:\n{existing_questions}\n\n-Danh sách câu hỏi chưa có động từ được yêu cầu:\n{questions_without_keywords}"),
+            ("human", "-Tài liệu:\n{document}\n\n-Danh sách động từ được yêu cầu thêm vào câu hỏi:\n{keyword}\n\n-Số lượng câu hỏi yêu cầu: {n_question}\n\n-Danh sách câu hỏi đã có:\n{existing_questions}\n\n-Danh sách câu hỏi chưa có động từ được yêu cầu:\n{questions_without_keywords}\n\nDanh sách câu hỏi không hợp lệ:\n{invalid_questions}"),
         ])
 
         self.chain = self.prompt | self.structured_output

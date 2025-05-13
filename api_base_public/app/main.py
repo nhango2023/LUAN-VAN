@@ -2,17 +2,13 @@ from fastapi import FastAPI
 from app.models.n_question import NQuestion
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Body
-import fitz  # PyMuPDF
-import docx
 from app.security.security import get_api_key
 from fastapi.responses import JSONResponse
-
 from .files_chat_agent import FilesChatAgent
-
+import os
+from datetime import datetime
 # Tạo instance của FastAPI
 app = FastAPI()
-
-
 
 # Cấu hình CORS
 app.add_middleware(
@@ -74,6 +70,7 @@ async def create_question(
 
     log_file_path=save_log_file(file, model)
     agent = FilesChatAgent(file, n_question, model, log_file_path)
+    
     return await agent.get_lst_question()
     
 
@@ -130,9 +127,6 @@ async def update_api_key(
         status_code=200,
         content={"message": "Đổi api key thành công"}
     )
-
-import os
-from datetime import datetime
 
 def save_log_file(file: UploadFile, model):
     # Tạo thư mục log nếu chưa có

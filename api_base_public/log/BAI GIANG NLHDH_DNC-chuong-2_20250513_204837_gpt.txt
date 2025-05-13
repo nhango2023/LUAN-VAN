@@ -1,0 +1,51 @@
+Log created at 20250513_204837 for file: BAI GIANG NLHDH_DNC-chuong-2.pdf
+Number of paragraphs: 6
+
+
+doan van-[0]: ['remember', 'analyze', 'apply', 'understand']
+doan van-[1]: ['remember', 'analyze', 'apply', 'understand']
+doan van-[2]: ['remember', 'analyze', 'apply', 'understand']
+doan van-[3]: ['remember', 'analyze', 'apply', 'understand']
+doan van-[4]: ['remember', 'apply', 'understand']
+doan van-[5]: ['remember', 'apply', 'understand']
+Check there are levels not detected in paragraphs
+index of splited docs following its level
+remember: [0, 1, 2, 3, 4, 5]
+understand: [0, 1, 2, 3, 4, 5]
+apply: [0, 1, 2, 3, 4, 5]
+analyze: [0, 1, 2, 3]
+evaluate: [0, 1, 2, 3]
+create: [0, 1, 2, 3]
+
+number of questions for each paragraph arranged in order of paragraph's index 
+
+level: remember
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: understand
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: apply
+idx: [0, 1, 2, 3, 4, 5]
+number questions: [2, 2, 2, 2, 1, 1]
+level: analyze
+idx: [0, 1, 2, 3]
+number questions: [3, 3, 2, 2]
+level: evaluate
+idx: [0, 1, 2, 3]
+number questions: [3, 3, 2, 2]
+level: create
+idx: [0, 1, 2, 3]
+number questions: [3, 3, 2, 2]
+
+
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Mô tả các công việc mà bộ phận quản lý tiến trình phải thực hiện trong hệ điều hành.
+Cau hoi duoc tao: mô tả các công việc mà bộ phận quản lý tiến trình phải thực hiện trong hệ điều hành
+Cau hoi chua ton tai=>Kiem tra tu khoa....

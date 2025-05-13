@@ -44,14 +44,14 @@ class DocumentGraderLevel:
     """
 
     def __init__(self, llm) -> None:
-        structured_output = llm.with_structured_output(GradeDocumentModel)
+        self.structured_output = llm.with_structured_output(GradeDocumentModel)
 
-        prompt = ChatPromptTemplate.from_messages([
+        self.prompt = ChatPromptTemplate.from_messages([
             ("system", CustomPrompt.GRADE_DOCUMENT_LEVEL),
             ("human", "Document:\n\n{document}"),
         ])
 
-        self.chain = prompt | structured_output
+        self.chain = self.prompt | self.structured_output
 
     def get_chain(self) -> RunnableSequence:
         """
@@ -61,3 +61,10 @@ class DocumentGraderLevel:
             RunnableSequence: Pipeline thực thi.
         """
         return self.chain
+
+    def render_prompt(self, input_dict: dict) -> str:
+        """
+        Trả về nội dung prompt đã được render (dành cho debug).
+        """
+        messages = self.prompt.format_messages(**input_dict)
+        return "\n\n".join([f"[{msg.type.upper()}] {msg.content}" for msg in messages])
