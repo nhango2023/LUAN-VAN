@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use App\Models\MessageModel;
+use Carbon\Carbon;
+
+class MessageController extends Controller
+{
+    //
+    public function show()
+    {
+        $id_user = Auth::user()->id;
+
+        $messages = MessageModel::join('uploaded_files', 'uploaded_files.id', '=', 'messages.id_file')
+            ->where('uploaded_files.id_user', $id_user)
+            ->select('messages.id', 'messages.id_file', 'messages.created_at', 'messages.seen', 'uploaded_files.original_name')
+            ->orderBy('messages.created_at', 'desc')
+            ->get();
+
+        $formatted = $messages->map(function ($item) {
+            return [
+                'id' => $item->id,
+                'id_file' => $item->id_file,
+                'original_name' => $item->original_name,
+                'seen' => $item->seen,
+                'created_at' => Carbon::parse($item->created_at)
+                    ->timezone('Asia/Ho_Chi_Minh')
+                    ->format('Y-m-d H:i:s'),
+            ];
+        });
+
+        return response()->json($formatted);
+    }
+}

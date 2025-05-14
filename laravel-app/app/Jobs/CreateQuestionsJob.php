@@ -15,6 +15,8 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use App\Events\testingEvent;
+use App\Models\MessageModel; // Add this if not already imported
+use Carbon\Carbon;
 
 class CreateQuestionsJob implements ShouldQueue
 {
@@ -67,6 +69,12 @@ class CreateQuestionsJob implements ShouldQueue
                 'id_user' => $this->userId,
                 'file_path' => $this->filePath,
                 'original_name' => $this->originalName
+            ]);
+
+            // ➕ Create new message after uploaded file
+            MessageModel::create([
+                'id_file' => $uploadedFile->id,
+                'seen' => 0, // or 0 depending on your column type
             ]);
 
             foreach ($questions as $index => $question) {

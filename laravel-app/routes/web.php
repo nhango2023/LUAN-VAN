@@ -9,6 +9,7 @@ use App\Http\Controllers\ExportFileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\SignupController;
@@ -80,7 +81,12 @@ Route::get('logout', [LogoutController::class, 'index'])->name('logout');
 
 Route::prefix('question')->name('question.')->group(function () {
     Route::post('/create', [QuestionController::class, 'create'])->name('create');
-    Route::get('/show', [QuestionController::class, 'show'])->name('show');
+    Route::get('/show/{id_file?}', [QuestionController::class, 'show'])->name('show');
+});
+
+Route::prefix('message')->name('message.')->group(function () {
+
+    Route::get('/show', [MessageController::class, 'show'])->name('show');
 });
 
 Route::get('taomatkhau', function () {

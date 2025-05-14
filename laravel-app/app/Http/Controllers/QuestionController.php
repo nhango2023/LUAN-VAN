@@ -42,36 +42,43 @@ class QuestionController extends Controller
 
 
 
-    public function show()
+    public function show($id_file = null)
     {
         if (Auth::check()) {
             $userId = Auth::user()->id;
-            // Query to join uploaded_files and questions, then group by level
-            $questions = DB::table('questions as q')
+
+            // Query chính
+            $query = DB::table('questions as q')
                 ->join('uploaded_files as ulf', 'q.id_file', '=', 'ulf.id')
-                ->where('ulf.id_user', $userId)
-                ->select(
-                    'ulf.id as file_id',
-                    'ulf.file_path',
-                    'ulf.created_at',
-                    'ulf.original_name',
-                    'q.content as question',
-                    'q.option_1',
-                    'q.option_2',
-                    'q.option_3',
-                    'q.option_4',
-                    'q.answer',
-                    'q.level'
-                )
+                ->where('ulf.id_user', $userId);
+
+            // Nếu có truyền $id_file thì thêm điều kiện lọc
+            if (!is_null($id_file)) {
+                $query->where('ulf.id', $id_file);
+            }
+
+            $questions = $query->select(
+                'ulf.id as file_id',
+                'ulf.file_path',
+                'ulf.created_at',
+                'ulf.original_name',
+                'q.content as question',
+                'q.option_1',
+                'q.option_2',
+                'q.option_3',
+                'q.option_4',
+                'q.answer',
+                'q.level'
+            )
                 ->orderBy('ulf.created_at', 'desc')
                 ->get();
-            // Group by file_id then by level
+
+            // Group by file_id rồi tiếp tục group theo level
             $grouped = $questions->groupBy('file_id')->map(function ($groupByFile) {
                 $filePath = $groupByFile->first()->file_path;
                 $fileName = $groupByFile->first()->original_name;
                 $created_at = $groupByFile->first()->created_at;
 
-                // Group again by level inside each file
                 $levels = $groupByFile->groupBy('level')->map(function ($questionsByLevel) {
                     return $questionsByLevel->map(function ($q) {
                         return [

@@ -238,7 +238,7 @@ class FilesChatAgent:
             boolean: true nếu có từ khóa phù hợp, false nếu không
         """
         self.write_log(f"Level: {level}")
-        self.write_log(f"Question: {question}")
+        
         question_lower = question.lower()
         keyword_str = self.lst_keyword.get(level)
         if not keyword_str:
@@ -263,7 +263,6 @@ class FilesChatAgent:
 
     def is_question_in_list(self, question: str, question_list: list) -> bool:
         created_question = self.normalize(question)
-        self.write_log(f"Cau hoi duoc tao: {created_question}")
         for item in question_list:
             existed_question=self.normalize(item.question)           
             if created_question == existed_question:

@@ -1233,29 +1233,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             window.Echo.channel('Message')
                 .listen('QuestionEvent', (e) => {
-                    const notificationHTML = `
-                <div class="notification-item-sidebar">
-                    <div class="notification-icon-sidebar">
-                        <i class="fas fa-language"></i>
-                    </div>
-                    <div class="notification-content-sidebar">
-                        <div class="notification-title-sidebar ">
-                            <div>Tạo câu hỏi thành</div>
-                            <div class="notification-time-sidebar">13 days ago</div>
-                        </div>
-                        <div class="notification-text-sidebar">Đã tạo câu hỏi từ file <a href="#">[TLDC.pdf]</a>
-                            thành công !</div>
 
-                    </div>
-                </div>
-                    `;
-                    // 2. Append to the notify-sidebar
-                    document.getElementById('notify-sidebar').insertAdjacentHTML('beforeend', notificationHTML);
 
-                    // 3. Remove d-none from notification-dot
-                    const notificationDot = document.getElementById('notification-dot');
-                    notificationDot.classList.remove('d-none');
-                    console.log('thanh cong');
+
                     createToastSuccess('success');
                     document.getElementById('btn-submit').disabled = false;
                 })
@@ -1376,6 +1356,68 @@
             document.getElementById("overlay-profile-sidebar").classList.remove("active");
         }
     </script>
+    @auth
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                async function fetchMessages() {
+                    try {
+                        const response = await fetch('/message/show', {
+                            method: 'GET',
+                            headers: {
+                                'Accept': 'application/json',
+                                'X-Requested-With': 'XMLHttpRequest'
+                            },
+                            credentials: 'same-origin' // Needed if using Laravel Auth
+                        });
+
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+
+                        const data = await response.json();
+                        console.log("Messages:", data);
+
+                        // Optional: render to DOM
+                        data.forEach(msg => {
+                            console.log(
+                                `Message ID: ${msg.id}, Seen: ${msg.seen}, created at: ${msg.created_at}`
+                                );
+                            const notificationHTML = `
+                <div class="notification-item-sidebar">
+                    <div class="notification-icon-sidebar">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div class="notification-content-sidebar">
+                        <div class="notification-title-sidebar ">
+                            <div>Tạo câu hỏi thành</div>
+                            <div class="notification-time-sidebar">${msg.created_at}</div>
+                        </div>
+                        <div class="notification-text-sidebar">Đã tạo câu hỏi từ file <a href="#">${msg.original_name}</a>
+                            thành công !</div>
+
+                    </div>
+                </div>
+                    `;
+
+                            document.getElementById('notify-sidebar').insertAdjacentHTML('beforeend',
+                                notificationHTML);
+
+                            // // 3. Remove d-none from notification-dot
+                            // const notificationDot = document.getElementById('notification-dot');
+                            // notificationDot.classList.remove('d-none');
+                        });
+
+                    } catch (error) {
+                        console.error('Error fetching messages:', error);
+                    }
+                }
+
+                // Call the fetch
+                fetchMessages();
+            });
+        </script>
+    @endauth
+
 </body>
 
 </html>
