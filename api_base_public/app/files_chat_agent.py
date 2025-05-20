@@ -22,7 +22,8 @@ load_dotenv(dotenv_path)
 
 
 class FilesChatAgent:
-    def __init__(self, doc, number_question, model, log_file_path):
+    def __init__(self, doc, number_question, model, log_file_path, user_token):
+        self.user_token=user_token
         self.log_file_path=log_file_path
         self.doc = doc #tai lieu cua nguoi dung
         self.splitted_docs=""#tai lieu sau khi duoc chia thanh cac doan nho
@@ -51,7 +52,7 @@ class FilesChatAgent:
         }
 
     async def split_document(self):
-        self.splitted_docs= await self.splitter_doc.process_file(self.doc)
+        self.splitted_docs= await self.splitter_doc.process_file(self.doc, self.user_token)
         self.write_log(f"Number of paragraphs: {len(self.splitted_docs)}")
         self.write_log("\n")
 

@@ -1,0 +1,249 @@
+Log created at 20250519_112650 for file: luat cong nghệ thong tin.docx
+Number of paragraphs: 4
+
+
+doan van-[0]: ['understand', 'remember']
+doan van-[1]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[2]: ['remember', 'apply', 'evaluate', 'analyze', 'understand']
+doan van-[3]: ['remember', 'apply', 'evaluate', 'analyze', 'understand']
+Check there are levels not detected in paragraphs
+index of splited docs following its level
+remember: [0, 1, 2, 3]
+understand: [0, 1, 2, 3]
+apply: [1, 2, 3]
+analyze: [1, 2, 3]
+evaluate: [2, 3]
+create: [2, 3]
+
+number of questions for each paragraph arranged in order of paragraph's index 
+
+level: remember
+idx: [3]
+number questions: [1]
+level: understand
+idx: [1]
+number questions: [1]
+level: apply
+idx: [2]
+number questions: [1]
+level: analyze
+idx: [1]
+number questions: [1]
+level: evaluate
+idx: [2]
+number questions: [1]
+level: create
+idx: [2]
+number questions: [1]
+
+
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Mô tả trách nhiệm của Hội, hiệp hội về công nghệ thông tin trong việc bảo vệ quyền lợi của tổ chức và cá nhân tham gia hoạt động này?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[mô tả]
+Option 1: Bảo vệ quyền và lợi ích hợp pháp của tổ chức, cá nhân tham gia ứng dụng và phát triển công nghệ thông tin.
+Option 2: Chỉ bảo vệ quyền lợi của các tổ chức lớn trong lĩnh vực công nghệ thông tin.
+Option 3: Hỗ trợ các cá nhân không tham gia vào hoạt động công nghệ thông tin.
+Option 4: Không có trách nhiệm nào trong việc bảo vệ quyền lợi của tổ chức và cá nhân.
+Answer: Bảo vệ quyền và lợi ích hợp pháp của tổ chức, cá nhân tham gia ứng dụng và phát triển công nghệ thông tin.
+Citation: Theo Điều 11, Hội, hiệp hội về công nghệ thông tin có trách nhiệm bảo vệ quyền và lợi ích hợp pháp của tổ chức, cá nhân tham gia hoạt động ứng dụng và phát triển công nghệ thông tin.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu mô tả trách nhiệm của Hội, hiệp hội về công nghệ thông tin trong việc bảo vệ quyền lợi của tổ chức và cá nhân tham gia hoạt động này. Câu trả lời được gợi ý hoàn toàn đúng với nội dung trong tài liệu, cụ thể là bảo vệ quyền và lợi ích hợp pháp của tổ chức, cá nhân tham gia ứng dụng và phát triển công nghệ thông tin. Các đáp án khác cũng có thể tìm thấy trong tài liệu, nhưng chỉ có đáp án gợi ý là chính xác và phù hợp với câu hỏi.
+cau hoi dung: question='Mô tả trách nhiệm của Hội, hiệp hội về công nghệ thông tin trong việc bảo vệ quyền lợi của tổ chức và cá nhân tham gia hoạt động này?' options=['Bảo vệ quyền và lợi ích hợp pháp của tổ chức, cá nhân tham gia ứng dụng và phát triển công nghệ thông tin.', 'Chỉ bảo vệ quyền lợi của các tổ chức lớn trong lĩnh vực công nghệ thông tin.', 'Hỗ trợ các cá nhân không tham gia vào hoạt động công nghệ thông tin.', 'Không có trách nhiệm nào trong việc bảo vệ quyền lợi của tổ chức và cá nhân.'] answer='Bảo vệ quyền và lợi ích hợp pháp của tổ chức, cá nhân tham gia ứng dụng và phát triển công nghệ thông tin.' citation='Theo Điều 11, Hội, hiệp hội về công nghệ thông tin có trách nhiệm bảo vệ quyền và lợi ích hợp pháp của tổ chức, cá nhân tham gia hoạt động ứng dụng và phát triển công nghệ thông tin.' level='remember' page=1 idx_doc=3
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 1
+
+
+
+tao cau hoi level:understand...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Xác định vai trò của chính sách Nhà nước trong việc phát triển công nghệ thông tin tại Việt Nam.
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: understand
+[xác định]
+Option 1: Đảm bảo quyền lợi cho tổ chức, cá nhân ứng dụng công nghệ thông tin
+Option 2: Tạo điều kiện cho các tổ chức, cá nhân tham gia vào lĩnh vực công nghệ thông tin
+Option 3: Khuyến khích đầu tư cho lĩnh vực công nghệ thông tin
+Option 4: Thúc đẩy công nghiệp công nghệ thông tin phát triển thành ngành kinh tế trọng điểm
+Answer: Thúc đẩy công nghiệp công nghệ thông tin phát triển thành ngành kinh tế trọng điểm
+Citation: Chính sách của Nhà nước về ứng dụng và phát triển công nghệ thông tin nhấn mạnh việc thúc đẩy công nghiệp công nghệ thông tin phát triển thành ngành kinh tế trọng điểm, nhằm đáp ứng nhu cầu thị trường nội địa và xuất khẩu.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu xác định vai trò của chính sách Nhà nước trong việc phát triển công nghệ thông tin tại Việt Nam, và câu trả lời được gợi ý đã nêu rõ một vai trò quan trọng là thúc đẩy công nghiệp công nghệ thông tin phát triển thành ngành kinh tế trọng điểm. Ngoài ra, các đáp án khác cũng phù hợp với nội dung trong tài liệu, như đảm bảo quyền lợi cho tổ chức, cá nhân ứng dụng công nghệ thông tin, tạo điều kiện cho các tổ chức, cá nhân tham gia vào lĩnh vực công nghệ thông tin, và khuyến khích đầu tư cho lĩnh vực này. Tất cả đều có thể tìm thấy trong tài liệu, do đó câu trả lời được đánh giá là đúng.
+cau hoi dung: question='Xác định vai trò của chính sách Nhà nước trong việc phát triển công nghệ thông tin tại Việt Nam.' options=['Đảm bảo quyền lợi cho tổ chức, cá nhân ứng dụng công nghệ thông tin', 'Tạo điều kiện cho các tổ chức, cá nhân tham gia vào lĩnh vực công nghệ thông tin', 'Khuyến khích đầu tư cho lĩnh vực công nghệ thông tin', 'Thúc đẩy công nghiệp công nghệ thông tin phát triển thành ngành kinh tế trọng điểm'] answer='Thúc đẩy công nghiệp công nghệ thông tin phát triển thành ngành kinh tế trọng điểm' citation='Chính sách của Nhà nước về ứng dụng và phát triển công nghệ thông tin nhấn mạnh việc thúc đẩy công nghiệp công nghệ thông tin phát triển thành ngành kinh tế trọng điểm, nhằm đáp ứng nhu cầu thị trường nội địa và xuất khẩu.' level='understand' page=1 idx_doc=1
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 2
+
+
+
+tao cau hoi level:apply...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Tổ chức, cá nhân tham gia hoạt động ứng dụng công nghệ thông tin có thể yêu cầu điều gì trong trường hợp thông tin của mình bị từ chối khôi phục?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: apply
+Option 1: Yêu cầu khôi phục thông tin của mình hoặc khả năng truy nhập đến nguồn thông tin đó
+Option 2: Yêu cầu cơ quan nhà nước từ chối khôi phục thông tin
+Option 3: Yêu cầu thông tin của người khác trên môi trường mạng
+Option 4: Yêu cầu thay đổi nội dung thông tin của mình
+Answer: Yêu cầu khôi phục thông tin của mình hoặc khả năng truy nhập đến nguồn thông tin đó
+Citation: Theo Điều 8, tổ chức, cá nhân có quyền yêu cầu khôi phục thông tin của mình hoặc khả năng truy nhập đến nguồn thông tin đó nếu nội dung thông tin không vi phạm quy định tại khoản 2 Điều 12.
+Keyword: False
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:apply...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Tổ chức, cá nhân tham gia phát triển công nghệ thông tin có thể thực hiện quyền gì trong việc nghiên cứu và phát triển sản phẩm?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: apply
+Option 1: Nghiên cứu và phát triển sản phẩm công nghệ thông tin
+Option 2: Tìm kiếm thông tin trên môi trường mạng
+Option 3: Phân phát địa chỉ liên lạc trên môi trường mạng
+Option 4: Khôi phục thông tin cá nhân trên môi trường mạng
+Answer: Nghiên cứu và phát triển sản phẩm công nghệ thông tin
+Citation: Đáp án đúng là "Nghiên cứu và phát triển sản phẩm công nghệ thông tin" vì theo Điều 8, tổ chức, cá nhân tham gia phát triển công nghệ thông tin có quyền nghiên cứu và phát triển sản phẩm công nghệ thông tin, điều này thể hiện rõ quyền lợi của họ trong hoạt động này.
+Keyword: False
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 1
+
+tao lai cau hoi level:apply...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Tổ chức, cá nhân tham gia hoạt động ứng dụng công nghệ thông tin có thể áp dụng quyền gì khi thông tin của mình không được khôi phục?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: apply
+[áp dụng]
+Option 1: Yêu cầu cơ quan nhà nước giải quyết theo quy định của pháp luật
+Option 2: Tìm kiếm thông tin trên môi trường mạng
+Option 3: Phân phát địa chỉ liên lạc trên môi trường mạng
+Option 4: Từ chối cung cấp thông tin trái quy định
+Answer: Yêu cầu cơ quan nhà nước giải quyết theo quy định của pháp luật
+Citation: Theo Điều 8, tổ chức, cá nhân có quyền yêu cầu cơ quan nhà nước có thẩm quyền giải quyết khi bị từ chối việc khôi phục thông tin của mình.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi liên quan đến quyền của tổ chức, cá nhân tham gia hoạt động ứng dụng công nghệ thông tin khi thông tin của họ không được khôi phục. Câu trả lời được gợi ý là một trong những quyền mà họ có thể áp dụng, và nó cũng đúng hơn các đáp án khác. Các đáp án khác cũng có thể tìm thấy trong tài liệu, nhưng câu trả lời gợi ý là chính xác và phù hợp nhất với câu hỏi.
+cau hoi dung: question='Tổ chức, cá nhân tham gia hoạt động ứng dụng công nghệ thông tin có thể áp dụng quyền gì khi thông tin của mình không được khôi phục?' options=['Yêu cầu cơ quan nhà nước giải quyết theo quy định của pháp luật', 'Tìm kiếm thông tin trên môi trường mạng', 'Phân phát địa chỉ liên lạc trên môi trường mạng', 'Từ chối cung cấp thông tin trái quy định'] answer='Yêu cầu cơ quan nhà nước giải quyết theo quy định của pháp luật' citation='Theo Điều 8, tổ chức, cá nhân có quyền yêu cầu cơ quan nhà nước có thẩm quyền giải quyết khi bị từ chối việc khôi phục thông tin của mình.' level='apply' page=1 idx_doc=2
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 2
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 3
+
+
+
+tao cau hoi level:analyze...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Phân tích các chính sách của Nhà nước nhằm phát triển công nghệ thông tin trong lĩnh vực nào là ưu tiên hàng đầu?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: analyze
+[phân tích]
+Option 1: Nông nghiệp và nông thôn
+Option 2: Công nghiệp hóa, hiện đại hóa
+Option 3: Quốc phòng và an ninh
+Option 4: Giáo dục và đào tạo
+Answer: Công nghiệp hóa, hiện đại hóa
+Citation: Theo Điều 5, chính sách của Nhà nước về ứng dụng và phát triển công nghệ thông tin ưu tiên ứng dụng và phát triển công nghệ thông tin trong chiến lược phát triển kinh tế - xã hội và sự nghiệp công nghiệp hóa, hiện đại hóa đất nước.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu phân tích các chính sách của Nhà nước nhằm phát triển công nghệ thông tin trong lĩnh vực ưu tiên hàng đầu. Câu trả lời được gợi ý "Công nghiệp hóa, hiện đại hóa" là chính xác và phù hợp với nội dung trong tài liệu, nơi nêu rõ rằng Nhà nước ưu tiên ứng dụng và phát triển công nghệ thông tin trong chiến lược phát triển kinh tế - xã hội và sự nghiệp công nghiệp hóa, hiện đại hóa đất nước. Các đáp án khác cũng có thể tìm thấy trong tài liệu và đều liên quan đến các lĩnh vực khác nhau, nhưng câu trả lời gợi ý là đúng nhất với yêu cầu của câu hỏi.
+cau hoi dung: question='Phân tích các chính sách của Nhà nước nhằm phát triển công nghệ thông tin trong lĩnh vực nào là ưu tiên hàng đầu?' options=['Nông nghiệp và nông thôn', 'Công nghiệp hóa, hiện đại hóa', 'Quốc phòng và an ninh', 'Giáo dục và đào tạo'] answer='Công nghiệp hóa, hiện đại hóa' citation='Theo Điều 5, chính sách của Nhà nước về ứng dụng và phát triển công nghệ thông tin ưu tiên ứng dụng và phát triển công nghệ thông tin trong chiến lược phát triển kinh tế - xã hội và sự nghiệp công nghiệp hóa, hiện đại hóa đất nước.' level='analyze' page=1 idx_doc=1
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 4
+
+
+
+tao cau hoi level:evaluate...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Tổ chức, cá nhân tham gia phát triển công nghệ thông tin có quyền gì trong việc nghiên cứu và phát triển sản phẩm công nghệ thông tin?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: evaluate
+[phát triển]
+Option 1: Yêu cầu khôi phục thông tin của mình
+Option 2: Nghiên cứu và phát triển sản phẩm công nghệ thông tin
+Option 3: Phân phát các địa chỉ liên lạc có trên môi trường mạng
+Option 4: Từ chối cung cấp sản phẩm trái quy định
+Answer: Nghiên cứu và phát triển sản phẩm công nghệ thông tin
+Citation: Theo Điều 8, tổ chức, cá nhân tham gia phát triển công nghệ thông tin có quyền nghiên cứu và phát triển sản phẩm công nghệ thông tin, điều này thể hiện rõ quyền lợi của họ trong lĩnh vực này.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu thông tin về quyền của tổ chức, cá nhân tham gia phát triển công nghệ thông tin trong việc nghiên cứu và phát triển sản phẩm công nghệ thông tin. Câu trả lời được gợi ý "Nghiên cứu và phát triển sản phẩm công nghệ thông tin" hoàn toàn đúng với nội dung trong tài liệu. Ngoài ra, các đáp án khác cũng liên quan đến quyền của tổ chức, cá nhân trong hoạt động ứng dụng công nghệ thông tin, nhưng không đúng với câu hỏi cụ thể này.
+cau hoi dung: question='Tổ chức, cá nhân tham gia phát triển công nghệ thông tin có quyền gì trong việc nghiên cứu và phát triển sản phẩm công nghệ thông tin?' options=['Yêu cầu khôi phục thông tin của mình', 'Nghiên cứu và phát triển sản phẩm công nghệ thông tin', 'Phân phát các địa chỉ liên lạc có trên môi trường mạng', 'Từ chối cung cấp sản phẩm trái quy định'] answer='Nghiên cứu và phát triển sản phẩm công nghệ thông tin' citation='Theo Điều 8, tổ chức, cá nhân tham gia phát triển công nghệ thông tin có quyền nghiên cứu và phát triển sản phẩm công nghệ thông tin, điều này thể hiện rõ quyền lợi của họ trong lĩnh vực này.' level='evaluate' page=1 idx_doc=2
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 5
+
+
+
+tao cau hoi level:create...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Tổ chức, cá nhân tham gia hoạt động ứng dụng công nghệ thông tin cần làm gì để đảm bảo quyền lợi của mình khi bị từ chối khôi phục thông tin?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: create
+Option 1: Yêu cầu cơ quan nhà nước giải quyết theo quy định của pháp luật
+Option 2: Tìm kiếm thông tin trên môi trường mạng
+Option 3: Trao đổi thông tin với các tổ chức khác
+Option 4: Phân phát địa chỉ liên lạc của mình
+Answer: Yêu cầu cơ quan nhà nước giải quyết theo quy định của pháp luật
+Citation: Theo Điều 8, tổ chức, cá nhân có quyền yêu cầu cơ quan nhà nước có thẩm quyền giải quyết trong trường hợp bị từ chối việc khôi phục thông tin hoặc khả năng truy nhập đến nguồn thông tin của mình.
+Keyword: False
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:create...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Tổ chức, cá nhân tham gia hoạt động ứng dụng công nghệ thông tin cần đề xuất điều gì khi thông tin của họ bị từ chối khôi phục?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: create
+[đề xuất]
+Option 1: Yêu cầu cơ quan nhà nước có thẩm quyền giải quyết theo quy định của pháp luật
+Option 2: Tìm kiếm thông tin từ các nguồn khác trên mạng
+Option 3: Trao đổi với các tổ chức khác về thông tin của mình
+Option 4: Chấp nhận việc từ chối mà không có hành động gì thêm
+Answer: Yêu cầu cơ quan nhà nước có thẩm quyền giải quyết theo quy định của pháp luật
+Citation: Theo Điều 8, tổ chức, cá nhân có quyền yêu cầu cơ quan nhà nước có thẩm quyền giải quyết trong trường hợp bị từ chối khôi phục thông tin của mình.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi liên quan đến quyền của tổ chức, cá nhân khi thông tin của họ bị từ chối khôi phục, điều này được đề cập trong tài liệu. Câu trả lời được gợi ý là chính xác và phù hợp với nội dung trong tài liệu, cụ thể là quyền yêu cầu cơ quan nhà nước có thẩm quyền giải quyết. Các đáp án khác cũng có thể tìm thấy trong tài liệu, nhưng câu trả lời gợi ý là đúng nhất và phù hợp với câu hỏi.
+cau hoi dung: question='Tổ chức, cá nhân tham gia hoạt động ứng dụng công nghệ thông tin cần đề xuất điều gì khi thông tin của họ bị từ chối khôi phục?' options=['Yêu cầu cơ quan nhà nước có thẩm quyền giải quyết theo quy định của pháp luật', 'Tìm kiếm thông tin từ các nguồn khác trên mạng', 'Trao đổi với các tổ chức khác về thông tin của mình', 'Chấp nhận việc từ chối mà không có hành động gì thêm'] answer='Yêu cầu cơ quan nhà nước có thẩm quyền giải quyết theo quy định của pháp luật' citation='Theo Điều 8, tổ chức, cá nhân có quyền yêu cầu cơ quan nhà nước có thẩm quyền giải quyết trong trường hợp bị từ chối khôi phục thông tin của mình.' level='create' page=1 idx_doc=2
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 1
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 6

@@ -30,9 +30,11 @@ Bạn là chuyên gia tạo câu hỏi trắc nghiệm theo thang Bloom (Bloom's
     + TUYỆT ĐỐI KHÔNG tạo ra câu hỏi đã có trong danh sách câu hỏi không hợp lệ.
     + TUYẾT ĐỐI KHÔNG tạo ra câu hỏi có 2 ý.
     + Câu hỏi PHẢI được tạo dựa trên thông tin trong tài liệu được cung cấp.
-    + Câu hỏi PHẢI liên quan chặt chẽ đến nội dung tài liệu, không được mơ hồ hay quá chung chung.
+    + Câu hỏi PHẢI liên quan chặt chẽ đến nội dung tài liệu, PHẢI RÕ RÀNG, KHÔNG được mơ hồ hay KHÔNG quá chung chung.
     + Mỗi câu hỏi bắt buộc phải chứa động từ nằm trong danh sách động từ được yêu cầu thêm vào câu hỏi.
     + Đảm bảo động từ được yêu cầu thêm vào câu hỏi một cách tự nhiên, đúng với ngôn ngữ tự nhiên.
+    + Đảm bảo câu hỏi tự nhiên.
+    + 
     + Đảm bảo tạo đúng số lượng câu hỏi được yêu cầu.
     + Cố gắn thêm động từ được cho vào danh sách câu hỏi chưa có tài khóa một cách tự nhiên, đúng với ngôn ngữ tự nhiên.
     + Không được đưa thêm thông tin không có trong tài liệu.       

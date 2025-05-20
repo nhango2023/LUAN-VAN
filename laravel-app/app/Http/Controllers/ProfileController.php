@@ -51,4 +51,8 @@ class ProfileController extends Controller
         // Redirect or return with success message
         return back()->with('success', 'Password updated successfully!');
     }
+    public function showBuyCredit()
+    {
+        return view('user-profile.buy-credit');
+    }
 }

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\MessageModel;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 
 class MessageController extends Controller
 {
@@ -35,5 +36,20 @@ class MessageController extends Controller
         });
 
         return response()->json($formatted);
+    }
+    public function update($id_message)
+    {
+
+        $message = MessageModel::where('id', $id_message)
+            ->where('seen', 0)
+            ->first();
+
+        if ($message) {
+            $message->seen = 1;
+            $message->save();
+            return response()->json(['message' => 'Message updated successfully.']);
+        }
+
+        return response()->json(['message' => 'No update needed or message not found.'], 404);
     }
 }

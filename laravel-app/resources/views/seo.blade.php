@@ -44,5 +44,4 @@
 <title>@yield('title') - {{ InfoWeb()[2] }}</title>
 
 
-
 <link rel="icon" type="image/x-icon" href="{{secure_url('/file/img/favicon') . '/' . InfoWeb()[1] }}">

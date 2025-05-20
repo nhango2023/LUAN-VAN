@@ -35,6 +35,7 @@ Route::prefix('/profile')->name('profile.')->group(function () {
     Route::get('/', [ProfileController::class, 'showAccountInfor'])->name('account-infor');
     Route::put('/update/fullname', [ProfileController::class, "updateFullName"])->name('update.fullname');
     Route::put('/update/password', [ProfileController::class, "updatePassword"])->name('update.password');
+    Route::get('/buy-credit', [ProfileController::class, 'showBuyCredit'])->name('buy-credit');
 });
 
 
@@ -87,6 +88,7 @@ Route::prefix('question')->name('question.')->group(function () {
 Route::prefix('message')->name('message.')->group(function () {
 
     Route::get('/show', [MessageController::class, 'show'])->name('show');
+    Route::put('/update/{id_message}', [MessageController::class, 'update'])->name('update');
 });
 
 Route::get('taomatkhau', function () {

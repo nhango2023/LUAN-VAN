@@ -9,6 +9,53 @@
     <meta name="keywords" content="{{ $configWeb->keywords }}">
     <link rel="icon" href="{{ asset('logo.ico') }}" type="image/x-icon">
     <!-- Include the stylesheets from your snippet -->
+    <!-- seo -->
+
+    @if (Request::segment(1) == '')
+        <meta name="description" content="{{ $configWeb->web_description }}@yield('description')">
+        <meta property="og:description" content="{{ $configWeb->web_description }}@yield('description')">
+        <meta name="twitter:description" content="{{ $configWeb->web_description }}@yield('description')">
+    @endif
+
+
+    @if (Request::segment(1) != '')
+        <meta name="description" content="@yield('description')">
+        <meta property="og:description" content="@yield('description')">
+        <meta name="twitter:description" content="@yield('description')">
+    @endif
+
+
+
+    <meta property="og:image" content="{{ secure_url('/file/img/logo') . '/' . $configWeb->logo }}" />
+    <meta itemprop="image" content="{{ secure_url('/file/img/logo') . '/' . $configWeb->web_description }}" />
+    <meta property="og:image:secure_url"
+        content="{{ secure_url('/file/img/logo') . '/' . $configWeb->web_description }}" />
+
+
+
+    <meta name="robots" content="all">
+
+    <meta property="og:image:alt" content="{{ $configWeb->title }}" />
+
+    <meta property="og:site_name" content="{{ $configWeb->titles }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ Request::fullUrl() }}" />
+
+    <meta name="twitter:card" content="summary">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <meta name="twitter:site" content="{{ $configWeb->title }}">
+
+    <meta name="twitter:title" content="@yield('title') - {{ $configWeb->title }}">
+    <meta property="og:title" content="@yield('title') - {{ $configWeb->title }}" />
+    <!-- seo -->
+    <title>@yield('title') - {{ $configWeb->title }}</title>
+
+    <link rel="icon" type="image/x-icon" href="{{ secure_url('/file/img/favicon') . '/' . 'favicon.ico' }}">
+
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('login-template/assets/css/styles.min.css') }}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
@@ -1041,6 +1088,19 @@
     .toast-close:hover {
         color: #111827;
     }
+
+    .action-item.active {
+        border: 1px solid #0e9f6e;
+        border-radius: 12px;
+        border-left: 5px solid #0e9f6e;
+        color: #046c4e;
+    }
+
+    @media (max-width: 768px) {
+        .header-nav-container {}
+
+
+    }
 </style>
 </head>
 
@@ -1051,7 +1111,7 @@
             <a href="{{ route('home') }}">
                 <img src="{{ asset('logo.png') }}" alt="Logo" width="45" height="38" class="mr-2">
             </a>
-            <span>Text To Bloom Multiple-Choice Questions</span>
+            <span>BloomAi</span>
         </div>
         <div class="">
 
@@ -1072,9 +1132,9 @@
 
         </div>
         <div class="actions">
-            <button class="language">
+            {{-- <button class="language">
                 <i class="fa fa-globe"></i> <span>Language</span>
-            </button>
+            </button> --}}
             @auth
                 <button class="toggle-btn-notification-sidebar" onclick="toggleNotifySidebar()">
                     <i class="fa fa-bell"></i>
@@ -1154,9 +1214,17 @@
                     </div>
 
                     <div class="profile-actions mx-3">
-                        <div class="action-item">🛒 Buy credits</div>
+                        <a href="{{ route('profile.buy-credit') }}">
+                            <div class="action-item {{ Route::is('profile.buy-credit') ? 'active' : 'noe' }}">🛒 Buy
+                                credits
+                            </div>
+                        </a>
                         <div class="action-item">📄 Payment history</div>
-                        <div class="action-item">👤 Account Information</div>
+                        <a href="{{ route('profile.account-infor') }}">
+                            <div class="action-item {{ Route::is('profile.account-infor') ? 'active' : 'none' }}">👤
+                                Account
+                                Information</div>
+                        </a>
                         <div class="action-item with-badge">
                             🔗 Service Integration <span class="new-badge">New</span>
                         </div>
@@ -1231,16 +1299,80 @@
     @vite('resources/js/app.js')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            window.Echo.channel('Message')
+            const userId = {{ Auth::id() }};
+
+            Echo.channel(`user`)
                 .listen('QuestionEvent', (e) => {
-
-
-
-                    createToastSuccess('success');
+                    console.log(e.code, e.message);
                     document.getElementById('btn-submit').disabled = false;
-                })
-        })
+
+                    if (e.code === 403 || e.code === 402) {
+                        createToastError('error', e.message);
+                    } else if (e.code === 200) {
+                        fetchMessages();
+                        createToastSuccess('success');
+                    }
+                });
+
+            async function fetchMessages() {
+                try {
+                    const response = await fetch('/message/show', {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest'
+                        },
+                        credentials: 'same-origin' // Needed if using Laravel Auth
+                    });
+
+                    if (!response.ok) throw new Error('Network response was not ok');
+
+                    const data = await response.json();
+                    const notifySidebar = document.getElementById('notify-sidebar');
+                    notifySidebar.innerHTML = '';
+                    let display_dot = false;
+
+                    data.forEach(msg => {
+                        if (msg.seen == 0) display_dot = true;
+                        const style_not_seen = msg.seen == 0 ? 'style="color: rgb(14 159 110)"' : '';
+                        const timeText = timeAgo(msg.created_at);
+
+                        const notificationHTML = `
+                    <a onclick="updateMessage(${msg.id}, ${msg.id_file})" style="text-decoration: none;color: inherit;cursor: pointer">
+                        <div class="notification-item-sidebar">
+                            <div class="notification-icon-sidebar"><i class="fas fa-language"></i></div>
+                            <div class="notification-content-sidebar">
+                                <div class="notification-title-sidebar">
+                                    <div ${style_not_seen}>Tạo câu hỏi thành công</div>
+                                    <div class="notification-time-sidebar">${timeText}</div>
+                                </div>
+                                <div class="notification-text-sidebar">
+                                    Đã tạo câu hỏi từ file 
+                                    <a href="javascript:void(0);" onclick="updateMessage(${msg.id}, ${msg.id_file})">[${msg.original_name}]</a> 
+                                    thành công !
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                `;
+                        notifySidebar.insertAdjacentHTML('beforeend', notificationHTML);
+                    });
+
+                    if (display_dot) {
+                        const notificationDot = document.getElementById('notification-dot');
+                        notificationDot.classList.remove('d-none');
+                    }
+
+                } catch (error) {
+                    console.error('Error fetching messages:', error);
+                }
+            }
+
+            // Initial call
+            fetchMessages();
+        });
     </script>
+
     <script>
         //toast
         const notifications = document.querySelector(".notifications-toast")
@@ -1358,63 +1490,57 @@
     </script>
     @auth
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                async function fetchMessages() {
-                    try {
-                        const response = await fetch('/message/show', {
-                            method: 'GET',
-                            headers: {
-                                'Accept': 'application/json',
-                                'X-Requested-With': 'XMLHttpRequest'
-                            },
-                            credentials: 'same-origin' // Needed if using Laravel Auth
-                        });
+            function timeAgo(timestamp) {
+                const now = new Date();
+                const past = new Date(timestamp);
+                const diffInSeconds = Math.floor((now - past) / 1000);
 
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok');
-                        }
-
-                        const data = await response.json();
-                        console.log("Messages:", data);
-
-                        // Optional: render to DOM
-                        data.forEach(msg => {
-                            console.log(
-                                `Message ID: ${msg.id}, Seen: ${msg.seen}, created at: ${msg.created_at}`
-                                );
-                            const notificationHTML = `
-                <div class="notification-item-sidebar">
-                    <div class="notification-icon-sidebar">
-                        <i class="fas fa-language"></i>
-                    </div>
-                    <div class="notification-content-sidebar">
-                        <div class="notification-title-sidebar ">
-                            <div>Tạo câu hỏi thành</div>
-                            <div class="notification-time-sidebar">${msg.created_at}</div>
-                        </div>
-                        <div class="notification-text-sidebar">Đã tạo câu hỏi từ file <a href="#">${msg.original_name}</a>
-                            thành công !</div>
-
-                    </div>
-                </div>
-                    `;
-
-                            document.getElementById('notify-sidebar').insertAdjacentHTML('beforeend',
-                                notificationHTML);
-
-                            // // 3. Remove d-none from notification-dot
-                            // const notificationDot = document.getElementById('notification-dot');
-                            // notificationDot.classList.remove('d-none');
-                        });
-
-                    } catch (error) {
-                        console.error('Error fetching messages:', error);
-                    }
+                if (diffInSeconds < 60) {
+                    return 'a few seconds ago';
+                } else if (diffInSeconds < 3600) {
+                    const minutes = Math.floor(diffInSeconds / 60);
+                    return `${minutes} minute${minutes !== 1 ? 's' : ''} ago`;
+                } else if (diffInSeconds < 86400) {
+                    const hours = Math.floor(diffInSeconds / 3600);
+                    return `${hours} hour${hours !== 1 ? 's' : ''} ago`;
+                } else if (diffInSeconds < 2592000) {
+                    const days = Math.floor(diffInSeconds / 86400);
+                    return `${days} day${days !== 1 ? 's' : ''} ago`;
+                } else {
+                    const months = Math.floor(diffInSeconds / 2592000);
+                    return `${months} month${months !== 1 ? 's' : ''} ago`;
                 }
+            }
 
-                // Call the fetch
-                fetchMessages();
-            });
+
+
+            async function updateMessage(id_message, id_file) {
+                try {
+                    const response = await fetch(`/message/update/${id_message}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}' // for Laravel CSRF protection
+                        },
+                        body: JSON.stringify({
+                            seen: true
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Update failed');
+                    }
+
+                    const data = await response.json();
+                    console.log('Success:', data);
+
+                    // Optional: redirect to the question page
+                    window.location.href = `/question/show/${id_file}`;
+
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            }
         </script>
     @endauth
 

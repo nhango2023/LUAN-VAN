@@ -529,6 +529,36 @@
             overflow-y: scroll;
             overflow-x: hidden;
         }
+
+        @media (max-width: 768px) {
+            body {
+                height: auto !important;
+                min-height: 0 !important;
+                overflow-y: scroll;
+            }
+
+            .header {
+                height: auto !important;
+                min-height: 0 !important;
+                max-height: none !important;
+            }
+
+            .main-container {
+                height: auto !important;
+                min-height: 0 !important;
+                max-height: none !important;
+            }
+
+            .payment-options label {
+                padding: 1px 1px;
+            }
+
+            footer {
+                height: auto !important;
+                min-height: 0 !important;
+                max-height: none !important;
+            }
+        }
     </style>
 
     <div class="">
@@ -538,24 +568,9 @@
                     <span><i class="fa fa-cube"></i></span>
                     <span><b>All</b></span>
                 </div>
-                {{-- <div>
-                    <span><i class="fa fa-language"></i></span>
-                    <span>Text</span>
-                </div>
-                <div>
-                    <span><i class="fa fa-smile-o"></i></span>
-                    <span>Emotion Text</span>
-                </div>
-                <div>
-                    <span><i class="fa fa-file-text-o"></i></span>
-                    <span>Documents</span>
-                </div>
-                <div>
-                    <span><i class="fa fa-users"></i></span>
-                    <span>Stories</span>
-                </div> --}}
+
             </div>
-            {{-- <div class="main-navbar-underline"></div> --}}
+
         </div>
 
         @auth
@@ -667,8 +682,10 @@
                         You can see your history of speech creation after you sign in. It is free and easy to sign up.
                     </div>
                     <div class="history-alert-actions">
-                        <button class="history-alert-signup">Sign up for free <i class="fa fa-arrow-right"></i></button>
-                        <button class="history-alert-signin">Sign In</button>
+                        <a href="{{ route('signup') }}" style="text-decoration: none"><button class="history-alert-signup">Sign
+                                up for free <i class="fa fa-arrow-right"></i></button></a>
+                        <a href="{{ route('login') }}" style="text-decoration: none"><button class="history-alert-signin">Sign
+                                In</button></a>
                     </div>
                 </div>
             </div>

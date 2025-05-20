@@ -1,23 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy Credits</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('login-template/assets/css/styles.min.css') }}" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+@extends('user-profile.layout')
+@section('content')
     <style>
-        body {
-            background: #f3f8f7;
-            font-family: 'Roboto', 'Varela Round', Arial, sans-serif;
-            padding: 24px;
-        }
-
         .credits-gradient {
             background: linear-gradient(100deg, #518261 10%, #f0ddab 90%);
             color: #fff;
@@ -212,12 +195,15 @@
                 width: 95%;
             }
         }
-    </style>
-</head>
 
-<body>
-    <div class="container" style="max-width: 950px;">
-        <div class="section-wrap mt-4">
+        .account-settings-root {
+            padding: 0px;
+            border: none;
+            background: #f8fafc;
+        }
+    </style>
+    <div class="container-fluid p-0" style="max-width: 950px;">
+        <div class="section-wrap">
             <div class="credits-gradient">
                 <div class="subtitle">Available credits</div>
                 <div class="big-credits">694 <span style="font-size:1.3rem; font-weight:400"> <span
@@ -288,10 +274,4 @@
             </div>
         </div>
     </div>
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+@endsection

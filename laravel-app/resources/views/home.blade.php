@@ -276,235 +276,266 @@
         .payment-options input[type="radio"]:checked+label .custom-radio::after {
             display: block;
         }
+
+        @media (max-width: 768px) {
+            body {
+                height: auto !important;
+                min-height: 0 !important;
+                overflow-y: scroll;
+            }
+
+            .header {
+                height: auto !important;
+                min-height: 0 !important;
+                max-height: none !important;
+            }
+
+            .main-container {
+                height: auto !important;
+                min-height: 0 !important;
+                max-height: none !important;
+            }
+
+            .payment-options label {
+                padding: 1px 1px;
+            }
+
+            footer {
+                height: auto !important;
+                min-height: 0 !important;
+                max-height: none !important;
+            }
+        }
     </style>
     <!-- Main Content -->
 
     <!-- Text Input Section -->
-    <div class="text-input-section">
-        <div class="h-100 container d-flex flex-column justify-content-center">
-            {{-- <div class="header-section">
-                <h1>Tải file</h1>
-            </div> --}}
-            <div class="drop-section">
-                <div class="col" style="text-align: center">
-                    <div class="cloud-icon">
-                        <img src="{{ asset('storage/images/cloud.png') }}" alt="cloud">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="text-input-section col-md-5">
+                <div class="h-100 container d-flex flex-column justify-content-center">
+
+                    <div class="drop-section">
+                        <div class="col" style="text-align: center">
+                            <div class="cloud-icon">
+                                <img src="{{ asset('storage/images/cloud.png') }}" alt="cloud">
+                            </div>
+                            <span>Kéo và thả file</span>
+                            <span>Hoặc</span>
+                            <button {{ !Auth::check() ? 'disabled' : '' }} class="file-selector">Tải lên file</button>
+                            <input type="file" class="file-selector-input" multiple>
+                        </div>
+                        <div class="col">
+                            <div class="drop-here">Drop Here</div>
+                        </div>
                     </div>
-                    <span>Kéo và thả file</span>
-                    <span>Hoặc</span>
-                    <button {{ !Auth::check() ? 'disabled' : '' }} class="file-selector">Tải lên file</button>
-                    <input type="file" class="file-selector-input" multiple>
+                    <div class="list-section">
+                        <div class="list-title">Uploaded Files</div>
+                        <div class="list"></div>
+                    </div>
                 </div>
-                <div class="col">
-                    <div class="drop-here">Drop Here</div>
-                </div>
+
             </div>
-            <div class="list-section">
-                <div class="list-title">Uploaded Files</div>
-                <div class="list"></div>
+
+            <!-- Voice Selection Section -->
+            <div class="voice-selection-section col-md-7">
+                <div class="payment-options d-flex justify-content-between">
+                    <div class="d-flex">
+                        <input type="radio" id="rdo_number" name="payment" checked>
+                        <label for="rdo_number" class="mr-2">
+                            <span class="custom-radio"></span>
+                            Số lượng
+                        </label>
+                        <input type="radio" id="rdo_percent" name="payment">
+                        <label for="rdo_percent">
+                            <span class="custom-radio"></span>
+                            Số lượng (%)
+                        </label>
+                    </div>
+                    <div>
+                        <select class="form-select" name="provider" aria-label="Default select example">
+                            <option value="gpt" selected>GPT</option>
+                            <option value="gemini">GEMINI</option>
+                            <option value="grok">GROK</option>
+                        </select>
+                    </div>
+                </div>
+
+                <form method="post" enctype="multipart/form-data" action="javascript:void(0);">
+                    @csrf
+                    <!-- Hidden input file (vẫn có thể trigger bằng JS) -->
+                    <input type="file" name="file_upload" id="file-upload" style="display: none;">
+
+                    <div class="input-group mb-3 d-none" id='div_total'>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" style=" color: black;">Tổng số</span>
+                        </div>
+                        <input id="total" type="number" min="0" value="0" class="form-control"
+                            aria-label="Dollar amount (with dot and two decimal places)">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6 d-none">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="background-color: #848fc6; color: black">Cấp
+                                        1</span>
+                                </div>
+                                <input type="number" min="0" value="0" max="100" aria-label="First name"
+                                    class="form-control" name="%_remember">
+                                <span class="input-group-text">%</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <div class="input-group ">
+                                <input type="number" min="0" class="form-control" value="0" aria-label=""
+                                    name="n_remember">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="background-color: #848fc6; color: black">Cấp
+                                        1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6 d-none">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="background-color: #89c0e6; color: black">Cấp
+                                        2</span>
+                                </div>
+                                <input type="number" min="0" value="0" max="100" aria-label="First name"
+                                    class="form-control" name="%_understand">
+                                <span class="input-group-text">%</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="input-group ">
+                                <input type="number" min="0" class="form-control" value="0"
+                                    name="n_understand" aria-label="Dollar amount (with dot and two decimal places)">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="background-color: #89c0e6; color: black">Cấp
+                                        2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6 d-none">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="background-color: #75ac82; color: black">Cấp
+                                        3</span>
+                                </div>
+                                <input type="number" min="0" value="0" max="100" name="%_apply"
+                                    aria-label="First name" class="form-control">
+                                <span class="input-group-text">%</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="input-group ">
+                                <input type="number" min="0" class="form-control" value="0" name="n_apply"
+                                    aria-label="Dollar amount (with dot and two decimal places)">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="background-color: #75ac82; color: black">Cấp
+                                        3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6 d-none">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="background-color: #aed981; color: black">Cấp
+                                        4</span>
+                                </div>
+                                <input type="number" min="0" max="100" aria-label="First name"
+                                    class="form-control" value="0" name="%_analyze">
+                                <span class="input-group-text">%</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="input-group ">
+                                <input type="number" min="0" class="form-control" value="0"
+                                    name="n_analyze" aria-label="Dollar amount (with dot and two decimal places)">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="background-color: #aed981; color: black">Cấp
+                                        4</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6 d-none">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="background-color: #f3da69; color: black">Cấp
+                                        5</span>
+                                </div>
+                                <input type="number" min="0" max="100" aria-label="First name"
+                                    class="form-control" value="0" name="%_evaluate">
+                                <span class="input-group-text">%</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="input-group ">
+                                <input type="number" min="0" class="form-control" value="0"
+                                    name="n_evaluate" aria-label="Dollar amount (with dot and two decimal places)">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="background-color: #f3da69; color: black">Cấp
+                                        5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6 d-none">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="background-color: #e78b76; color: black">Cấp
+                                        6</span>
+                                </div>
+                                <input type="number" min="0" max="100" aria-label="First name"
+                                    class="form-control" value="0" name="%_create">
+                                <span class="input-group-text">%</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="input-group ">
+                                <input type="number" min="0" class="form-control" value="0"
+                                    name="n_create" aria-label="Dollar amount (with dot and two decimal places)">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="background-color: #e78b76; color: black">Cấp
+                                        6</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id='btn-submit' type="submit" {{ !Auth::check() ? 'disabled' : '' }}
+                        class="btn btn-primary">Tạo
+                        câu hỏi</button>
+                </form>
+
+
+
             </div>
         </div>
+    </div>
 
     </div>
 
-    <!-- Voice Selection Section -->
-    <div class="voice-selection-section">
-        <div class="payment-options d-flex justify-content-between">
-            <div class="d-flex">
-                <input type="radio" id="rdo_number" name="payment" checked>
-                <label for="rdo_number" class="mr-2">
-                    <span class="custom-radio"></span>
-                    Số lượng
-                </label>
-                <input type="radio" id="rdo_percent" name="payment">
-                <label for="rdo_percent">
-                    <span class="custom-radio"></span>
-                    Số lượng (theo %)
-                </label>
-            </div>
-            <div>
-                <select class="form-select" name="provider" aria-label="Default select example">
-                    <option value="gpt" selected>GPT</option>
-                    <option value="gemini">GEMINI</option>
-                    <option value="grok">GROK</option>
-                </select>
-            </div>
-        </div>
-
-        <form method="post" enctype="multipart/form-data" action="javascript:void(0);">
-            @csrf
-            <!-- Hidden input file (vẫn có thể trigger bằng JS) -->
-            <input type="file" name="file_upload" id="file-upload" style="display: none;">
-
-            <div class="input-group mb-3 d-none" id='div_total'>
-                <div class="input-group-prepend">
-                    <span class="input-group-text" style=" color: black;">Tổng số</span>
-                </div>
-                <input id="total" type="number" class="form-control"
-                    aria-label="Dollar amount (with dot and two decimal places)">
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-6 d-none">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" style="background-color: #848fc6; color: black">Cấp 1</span>
-                        </div>
-                        <input type="number" aria-label="First name" class="form-control" name="%_remember">
-                        <span class="input-group-text">%</span>
-                    </div>
-                </div>
-
-                <div class="form-group col-md-6">
-                    <div class="input-group ">
-                        <input type="number" class="form-control" aria-label="" name="n_remember">
-                        <div class="input-group-append">
-                            <span class="input-group-text" style="background-color: #848fc6; color: black">Cấp 1</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-6 d-none">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" style="background-color: #89c0e6; color: black">Cấp 2</span>
-                        </div>
-                        <input type="number" aria-label="First name" class="form-control" name="%_understand">
-                        <span class="input-group-text">%</span>
-                    </div>
-                </div>
-                <div class="form-group col-md-6">
-                    <div class="input-group ">
-                        <input type="number" class="form-control" name="n_understand"
-                            aria-label="Dollar amount (with dot and two decimal places)">
-                        <div class="input-group-append">
-                            <span class="input-group-text" style="background-color: #89c0e6; color: black">Cấp 2</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6 d-none">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" style="background-color: #75ac82; color: black">Cấp 3</span>
-                        </div>
-                        <input type="number" name="%_apply" aria-label="First name" class="form-control">
-                        <span class="input-group-text">%</span>
-                    </div>
-                </div>
-                <div class="form-group col-md-6">
-                    <div class="input-group ">
-                        <input type="number" class="form-control" name="n_apply"
-                            aria-label="Dollar amount (with dot and two decimal places)">
-                        <div class="input-group-append">
-                            <span class="input-group-text" style="background-color: #75ac82; color: black">Cấp
-                                3</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6 d-none">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" style="background-color: #aed981; color: black">Cấp
-                                4</span>
-                        </div>
-                        <input type="number" aria-label="First name" class="form-control" name="%_analyze">
-                        <span class="input-group-text">%</span>
-                    </div>
-                </div>
-                <div class="form-group col-md-6">
-                    <div class="input-group ">
-                        <input type="number" class="form-control" name="n_analyze"
-                            aria-label="Dollar amount (with dot and two decimal places)">
-                        <div class="input-group-append">
-                            <span class="input-group-text" style="background-color: #aed981; color: black">Cấp
-                                4</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6 d-none">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" style="background-color: #f3da69; color: black">Cấp
-                                5</span>
-                        </div>
-                        <input type="number" aria-label="First name" class="form-control" name="%_evaluate">
-                        <span class="input-group-text">%</span>
-                    </div>
-                </div>
-                <div class="form-group col-md-6">
-                    <div class="input-group ">
-                        <input type="number" class="form-control" name="n_evaluate"
-                            aria-label="Dollar amount (with dot and two decimal places)">
-                        <div class="input-group-append">
-                            <span class="input-group-text" style="background-color: #f3da69; color: black">Cấp
-                                5</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6 d-none">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" style="background-color: #e78b76; color: black">Cấp
-                                6</span>
-                        </div>
-                        <input type="number" aria-label="First name" class="form-control" name="%_create">
-                        <span class="input-group-text">%</span>
-                    </div>
-                </div>
-                <div class="form-group col-md-6">
-                    <div class="input-group ">
-                        <input type="number" class="form-control" name="n_create"
-                            aria-label="Dollar amount (with dot and two decimal places)">
-                        <div class="input-group-append">
-                            <span class="input-group-text" style="background-color: #e78b76; color: black">Cấp
-                                6</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button id='btn-submit' type="submit" {{ !Auth::check() ? 'disabled' : '' }} class="btn btn-primary">Tạo
-                câu hỏi</button>
-        </form>
-
-        {{-- <div class="buttons">
-                <button class="btn" id="success">Success</button>
-            </div> --}}
-
-    </div>
-
-
-    </div>
-    {{-- @vite(['resources/js/app.js', 'resources/css/app.css']) --}}
-    {{-- <script>
-        
-            console.log("eeeddd")
-            Echo.channel('testchanel')
-                .listen('App\\Events\\testEvent', (e) => {
-                    console.log("fdasfasfasd", e);
-                });
-        }
-    </script> --}}
-    {{-- @vite('resources/js/app.js') --}}
     <script>
+        //toggle an hien input %
         document.addEventListener('DOMContentLoaded', function() {
             const rdoPercentage = document.getElementById('rdo_percent');
             const rdoNumber = document.getElementById('rdo_number');
             const formRows = document.querySelectorAll('.form-row');
             const total = document.getElementById('div_total');
             const rows = document.querySelectorAll('.form-row'); // gets the first .form-row
-
             function toggleVisibility() {
-
                 if (rdoPercentage.checked) {
                     rows.forEach(row => {
                         const firstChild = row.firstElementChild;
@@ -523,16 +554,11 @@
                     total.classList.add('d-none');
                 }
             }
-
-            // Set correct state on page load
-            // toggleVisibility();
-
-            // Event listeners
             rdoPercentage.addEventListener('change', toggleVisibility);
             rdoNumber.addEventListener('change', toggleVisibility);
         });
 
-
+        //tinh toan after user nhap %
         document.addEventListener('DOMContentLoaded', function() {
             const totalInput = document.getElementById('total');
 
@@ -555,12 +581,6 @@
                 }
             });
         });
-
-
-
-        // document.getElementById("success").addEventListener("click", () => {
-        //     createToast('success');
-        // });
 
         const realInput = document.getElementById("file-upload");
         const fakeInput = document.querySelector(".file-selector-input");
@@ -696,6 +716,41 @@
 
 
         document.addEventListener('DOMContentLoaded', function() {
+            function CanSendInput() {
+                const isPercentMode = document.getElementById('rdo_percent').checked;
+                const total = parseInt(document.getElementById('total').value);
+                const getInputVal = name => parseInt(document.querySelector(`[name="${name}"]`)?.value || 0);
+                const values = {
+                    remember: getInputVal('n_remember'),
+                    understand: getInputVal('n_understand'),
+                    apply: getInputVal('n_apply'),
+                    analyze: getInputVal('n_analyze'),
+                    evaluate: getInputVal('n_evaluate'),
+                    create: getInputVal('n_create'),
+                };
+
+                if (isPercentMode) {
+                    if (isNaN(total) || total <= 0) {
+                        createToastError('error', 'Tổng số câu hỏi phải lớn hơn 0.');
+                        return 0;
+                    }
+                    const sum = Object.values(values).reduce((acc, val) => acc + val, 0);
+                    if (sum > total) {
+                        createToastError('error', `Tổng số câu hỏi (${sum}) vượt quá tổng (${total}).`);
+                        return 0;
+                    } else if (sum < total) {
+                        createToastError('error', `Tổng số câu hỏi (${sum}) nhỏ hơn tổng (${total}).`);
+                        return 0;
+                    }
+                } else {
+                    const allZero = Object.values(values).every(v => v === 0);
+                    if (allZero) {
+                        createToastError('error', 'Bạn phải nhập ít nhất một số lượng câu hỏi.');
+                        return 0;
+                    }
+                }
+                return 1;
+            }
             const form = document.querySelector('form');
             const submitButton = form.querySelector('button[type="submit"]');
             const realInput = document.getElementById('file-upload');
@@ -705,6 +760,9 @@
                 if (!realInput.files || realInput.files.length === 0) {
                     createToastError('error', 'Vui lòng chọn file trước khi tạo câu hỏi.');
 
+                    return;
+                }
+                if (CanSendInput() == 0) {
                     return;
                 }
                 const formData = new FormData(form);
@@ -736,13 +794,5 @@
                     });
             });
         });
-        // document.addEventListener('DOMContentLoaded', function() {
-        //     window.Echo.channel('testChannel')
-        //         .listen('testingEvent', (e) => {
-
-        //             createToastSuccess('success');
-        //             document.getElementById('btn-submit').disabled = false;
-        //         })
-        // })
     </script>
 @endsection

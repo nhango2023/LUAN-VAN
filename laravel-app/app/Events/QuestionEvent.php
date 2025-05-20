@@ -17,11 +17,14 @@ class QuestionEvent implements ShouldBroadcast
     /**
      * Create a new event instance.
      */
+    public $code;
     public $message;
-    public function __construct($message)
+    public $userId;
+    public function __construct($data, $userId = null)
     {
-        //
-        $this->message = $message;
+        $this->code = $data['code'] ?? null;
+        $this->message = $data['message'] ?? '';
+        $this->userId = $userId;
     }
 
     /**
@@ -32,13 +35,14 @@ class QuestionEvent implements ShouldBroadcast
     public function broadcastWith(): array
     {
         return [
+            'code' => $this->code,
             'message' => $this->message,
         ];
     }
     public function broadcastOn(): array
     {
         return [
-            new Channel('Message'),
+            new Channel("user")
         ];
     }
 }

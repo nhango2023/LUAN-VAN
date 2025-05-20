@@ -31,7 +31,7 @@ class QuestionController extends Controller
                 'evaluate' => $req->n_evaluate,
                 'create' => $req->n_create,
             ];
-            CreateQuestionsJob::dispatch($filePath, $originalName, Auth::id(), $questionJson, $req->model);
+            CreateQuestionsJob::dispatch($filePath, $originalName, Auth::id(), $questionJson, $req->model, Auth::user()->credit);
 
             return response()->json([
                 'message' => 'Đang tạo câu hỏi, vui lòng chờ...',
@@ -44,6 +44,7 @@ class QuestionController extends Controller
 
     public function show($id_file = null)
     {
+        $configWeb = ConfigWeb::where('isUse', 1)->first();
         if (Auth::check()) {
             $userId = Auth::user()->id;
 
@@ -102,11 +103,11 @@ class QuestionController extends Controller
                 ];
             });
 
-            $configWeb = ConfigWeb::where('isUse', 1)->first();
+
 
             return view('history', ['groupedQuestions' => $grouped, 'configWeb' => $configWeb]);
         } else {
-            return view('history');
+            return view('history', ['configWeb' => $configWeb]);
         }
     }
 }

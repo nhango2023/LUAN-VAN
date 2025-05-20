@@ -1155,11 +1155,16 @@
                         }
                     </style>
                     <div class="profile-actions mx-3">
-                        <div class="action-item">🛒 Buy credits</div>
+                        <a href="{{ route('profile.buy-credit') }}">
+                            <div class="action-item {{ Route::is('profile.buy-credit') ? 'active' : '' }}">🛒 Buy
+                                credits</div>
+                        </a>
                         <div class="action-item">📄 Payment history</div>
-                        <div class="action-item {{ Route::is('profile.account-infor') ? 'active' : '' }}"">👤
-                            Account
-                            Information</div>
+                        <a href="{{ route('profile.account-infor') }}">
+                            <div class="action-item {{ Route::is('profile.account-infor') ? 'active' : '' }}">👤
+                                Account
+                                Information</div>
+                        </a>
                         <div class="action-item with-badge">
                             🔗 Service Integration <span class="new-badge">New</span>
                         </div>

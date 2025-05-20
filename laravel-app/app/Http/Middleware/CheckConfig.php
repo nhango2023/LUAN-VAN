@@ -15,8 +15,11 @@ class CheckConfig
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (empty(env('API_URL')) || empty(env('API_KEY'))) {
-            return redirect('/config'); // Named route to config.blade.php
+        $apiUrl = config('services.api.url');
+        $apiKey = config('services.api.key');
+
+        if (empty($apiUrl) || empty($apiKey)) {
+            return redirect('/config');
         }
         return $next($request);
     }

@@ -31,6 +31,7 @@ def read_root():
 
 @app.post("/question/create", summary="Route này dùng để tạo câu hỏi")
 async def create_question(
+    token: int,
     model: str,
     file: UploadFile = File(...),
     Nquestion_json: str = Form(...),
@@ -43,6 +44,7 @@ async def create_question(
     - **Nquestion_json**: Số lượng câu hỏi cho từng cấp độ
     - **api_key**: key xác thực 
     - **model**: tên model ai tạo câu hỏi
+    - **token**: số token hiện tại của user
 
     **Returns:**
     - Danh sách câu hỏi:
@@ -65,13 +67,18 @@ async def create_question(
     "create": Nquestion.create,
     }
     # Check file type
-    if file.content_type not in ["application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"]:
+    if file.content_type not in [
+    "application/pdf",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",  # .docx
+    "text/plain"  # .txt
+    ]:
         raise HTTPException(status_code=400, detail="Unsupported file type.")
 
+
     log_file_path=save_log_file(file, model)
-    agent = FilesChatAgent(file, n_question, model, log_file_path)
-    
-    return await agent.get_lst_question()
+    agent = FilesChatAgent(file, n_question, model, log_file_path, token)
+    questions = await agent.get_lst_question()
+    return  {'credit':5000, 'questions': questions}
     
 
 @app.put("/update-api-key", summary="Route này dùng để thay đổi key api")
