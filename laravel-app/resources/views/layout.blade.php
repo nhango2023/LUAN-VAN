@@ -2,6 +2,20 @@
 <html lang="en">
 
 <head>
+    <script>
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        if (isMobile()) {
+            // Option 1: Redirect to another page
+            window.location.href = "/not-available-on-mobile";
+
+            // Option 2: Show an alert and stop interaction
+            // alert("This site is not supported on mobile devices.");
+            // document.body.innerHTML = "<h2>Sorry, mobile access is not supported.</h2>";
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $configWeb->title }}</title>
@@ -1101,6 +1115,73 @@
 
 
     }
+
+    /* loading text */
+    .bloom-loading {
+        display: flex;
+        gap: 2px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: sans-serif;
+        justify-content: center;
+        /* margin-top: 50px; */
+    }
+
+    .bloom-loading span {
+        display: inline-block;
+        animation: jump 1.2s infinite;
+    }
+
+    .bloom-loading span:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .bloom-loading span:nth-child(2) {
+        animation-delay: 0.05s;
+    }
+
+    .bloom-loading span:nth-child(3) {
+        animation-delay: 0.1s;
+    }
+
+    .bloom-loading span:nth-child(4) {
+        animation-delay: 0.15s;
+    }
+
+    .bloom-loading span:nth-child(5) {
+        animation-delay: 0.2s;
+    }
+
+    .bloom-loading span:nth-child(6) {
+        animation-delay: 0.25s;
+    }
+
+    .bloom-loading span:nth-child(7) {
+        animation-delay: 0.3s;
+    }
+
+    @keyframes jump {
+
+        0% {
+            transform: translateY(3px);
+        }
+
+        25% {
+            transform: translateY(6px);
+        }
+
+        50% {
+            transform: translateY(0px);
+        }
+
+        75% {
+            transform: translateY(-3px);
+        }
+
+        100% {
+            transform: translateY(-6px);
+        }
+    }
 </style>
 </head>
 
@@ -1111,7 +1192,9 @@
             <a href="{{ route('home') }}">
                 <img src="{{ asset('logo.png') }}" alt="Logo" width="45" height="38" class="mr-2">
             </a>
-            <span>BloomAi</span>
+            <div id="loading_logo" class="">
+                <span>B</span><span>l</span><span>o</span><span>o</span><span>m</span><span>A</span><span>I</span>
+            </div>
         </div>
         <div class="">
 
@@ -1255,6 +1338,7 @@
         @yield('content')
     </div>
     <ul class="notifications-toast"></ul>
+
     <footer>
         <div class="container">
             <div class="row text-left">
@@ -1298,8 +1382,15 @@
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
     @vite('resources/js/app.js')
     <script>
+        @auth
+        const authUser = @json(auth()->user());
+        if (authUser.isCreated == 1) {
+            document.getElementById('loading_logo').classList.add('bloom-loading');
+        }
+        @endauth
+
         document.addEventListener('DOMContentLoaded', function() {
-            const userId = {{ Auth::id() }};
+
 
             Echo.channel(`user`)
                 .listen('QuestionEvent', (e) => {
@@ -1311,10 +1402,13 @@
                     } else if (e.code === 200) {
                         fetchMessages();
                         createToastSuccess('success');
+                        document.getElementById('loading_logo').classList.remove('bloom-loading');
                     }
                 });
 
             async function fetchMessages() {
+                @auth
+
                 try {
                     const response = await fetch('/message/show', {
                         method: 'GET',
@@ -1366,10 +1460,11 @@
                 } catch (error) {
                     console.error('Error fetching messages:', error);
                 }
-            }
+            @endauth
+        }
 
-            // Initial call
-            fetchMessages();
+        // Initial call
+        fetchMessages();
         });
     </script>
 

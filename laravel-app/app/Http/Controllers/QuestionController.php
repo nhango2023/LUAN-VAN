@@ -17,6 +17,12 @@ class QuestionController extends Controller
 {
     public function create(Request $req)
     {
+        if (Auth::user()->credit == 0) {
+            return response()->json([
+                'message' => 'Not enough token',
+                'code' => 402
+            ]);
+        }
         if ($req->hasFile('file_upload')) {
             $file = $req->file('file_upload');
             $originalName = $file->getClientOriginalName();
@@ -35,7 +41,7 @@ class QuestionController extends Controller
 
             return response()->json([
                 'message' => 'Đang tạo câu hỏi, vui lòng chờ...',
-                'code' => 202
+                'code' => 200
             ]);
         }
     }

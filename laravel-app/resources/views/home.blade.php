@@ -322,7 +322,8 @@
                             </div>
                             <span>Kéo và thả file</span>
                             <span>Hoặc</span>
-                            <button {{ !Auth::check() ? 'disabled' : '' }} class="file-selector">Tải lên file</button>
+                            <button {{ !Auth::check() || Auth::user()->isCreated ? 'disabled' : '' }}
+                                class="file-selector">Tải lên file</button>
                             <input type="file" class="file-selector-input" multiple>
                         </div>
                         <div class="col">
@@ -514,8 +515,8 @@
                             </div>
                         </div>
                     </div>
-                    <button id='btn-submit' type="submit" {{ !Auth::check() ? 'disabled' : '' }}
-                        class="btn btn-primary">Tạo
+                    <button id='btn-submit' type="submit"
+                        {{ !Auth::check() || Auth::user()->isCreated ? 'disabled' : '' }} class="btn btn-primary">Tạo
                         câu hỏi</button>
                 </form>
 
@@ -784,7 +785,16 @@
                         return response.json();
                     })
                     .then(data => {
-                        createToastInfor('info', data.message);
+                        if (data.code == 402) {
+                            createToastError('error', 'Không đủ credit');
+                            return;
+                        } else if (data.code == 200) {
+
+                            createToastInfor('info', data.message);
+                            document.getElementById('loading_logo').classList.add('bloom-loading');
+                            return;
+                        }
+
 
                     })
                     .catch(error => {
@@ -792,7 +802,10 @@
                         createToastError('error', error.message || 'Lỗi không xác định.');
 
                     });
+
             });
+
+
         });
     </script>
 @endsection

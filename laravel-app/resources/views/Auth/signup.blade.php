@@ -2,6 +2,20 @@
 <html lang="en">
 
 <head>
+    <script>
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        if (isMobile()) {
+            // Option 1: Redirect to another page
+            window.location.href = "/not-available-on-mobile";
+
+            // Option 2: Show an alert and stop interaction
+            // alert("This site is not supported on mobile devices.");
+            // document.body.innerHTML = "<h2>Sorry, mobile access is not supported.</h2>";
+        }
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sign up</title>

@@ -11,7 +11,9 @@ class LogoutController extends Controller
 {
     public function index(Request $request)
     {
-
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
         Auth::logout(); // Đăng xuất user
 
         $request->session()->invalidate(); // Xóa session cũ

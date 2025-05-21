@@ -98,3 +98,7 @@ Route::get('taomatkhau', function () {
 Route::get('test-ui', function () {
     return view('testui');
 });
+
+Route::get('not-available-on-mobile', function () {
+    return view('not-available-on-mobile');
+})->name('not-available-on-mobile');

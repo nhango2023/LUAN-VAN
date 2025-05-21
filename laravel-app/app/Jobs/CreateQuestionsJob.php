@@ -39,6 +39,12 @@ class CreateQuestionsJob implements ShouldQueue
     public function handle()
     {
         try {
+            $user = User::find($this->userId);
+            if ($user) {
+                $user->credit = 0;
+                $user->isCreated = 1;
+                $user->save();
+            }
             $storagePath = storage_path("app/public/" . $this->filePath);
 
             $response = Http::timeout(1200)
@@ -69,11 +75,6 @@ class CreateQuestionsJob implements ShouldQueue
 
             $questions = $responseData['questions'] ?? [];
             $tokenLeft = $responseData['credit'] ?? $this->userCredit;
-            $user = User::find($this->userId);
-            if ($user) {
-                $user->credit = 0;
-                $user->save();
-            }
 
             $uploadedFile = Uploaded_file::create([
                 'id_user' => $this->userId,
@@ -105,7 +106,8 @@ class CreateQuestionsJob implements ShouldQueue
                     Log::error("Insert Q#{$index} error: " . $e->getMessage());
                 }
             }
-
+            $user->isCreated = 0;
+            $user->save();
             event(new QuestionEvent(['code' => 200, 'message' => 'Tạo câu hỏi thành công'], $this->userId));
         } catch (\Exception $e) {
             Log::error("Job failed: " . $e->getMessage());
