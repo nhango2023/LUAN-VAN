@@ -48,7 +48,7 @@ class DocumentGraderLevel:
 
         self.prompt = ChatPromptTemplate.from_messages([
             ("system", CustomPrompt.GRADE_DOCUMENT_LEVEL),
-            ("human", "Document:\n\n{document}"),
+            ("human", "Tài liệu:\n\n{document}"),
         ])
 
         self.chain = self.prompt | self.structured_output

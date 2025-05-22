@@ -7,11 +7,11 @@ class LLM_GENERATE_QUESTION:
     Lớp LLM hỗ trợ khởi tạo mô hình OpenAI với các tham số tùy chỉnh.
     """
 
-    def __init__(self, temperature: float = 0.35, max_tokens: int = 4096, n_ctx: int = 4096) -> None:
+    def __init__(self, temperature: float = 0.35, max_tokens: int = 4096, n_ctx: int = 4096, log_file_path: str="") -> None:
         self.temperature = temperature
         self.max_tokens = max_tokens
         self.n_ctx = n_ctx
-        self.model = ""
+        self.log_file_path= log_file_path
 
 
     def grok_ai(self):
@@ -21,7 +21,8 @@ class LLM_GENERATE_QUESTION:
         Returns:
             ChatXAI: Đối tượng mô hình grok.
         """
-        print('use grok')
+        self.write_log('use grok to generate qa')
+        print('use grok to generate qa')
         llm = ChatXAI(
             model=settings.GROK_LLM_MODEL,
             temperature=self.temperature,
@@ -37,7 +38,8 @@ class LLM_GENERATE_QUESTION:
         Returns:
             ChatOpenAI: Đối tượng mô hình OpenAI.
         """
-        print('use gpt')
+        self.write_log('use gpt to generate qa')
+        print('use gpt to generate qa')
         llm = ChatOpenAI(
             openai_api_key=settings.KEY_API_GPT,
             model=settings.OPENAI_LLM_MODEL,
@@ -53,7 +55,8 @@ class LLM_GENERATE_QUESTION:
         Returns:
             ChatGoogleGenerativeAI: Đối tượng mô hình Google Gemini.
         """
-        print('use gemini')
+        self.write_log('use gemini to generate qa')
+        print('use gemini to generate qa')
         llm = ChatGoogleGenerativeAI(
             google_api_key=settings.KEY_API_GEMINI,  
             model=settings.GEMINI_LLM_MODEL, 
@@ -83,3 +86,6 @@ class LLM_GENERATE_QUESTION:
         else:
             return self.open_ai()  # Mặc định sử dụng OpenAI nếu không có tên hợp lệ
 
+    def write_log(self, content):
+        with open(self.log_file_path, "a", encoding="utf-8") as f:
+            f.write(content + "\n")

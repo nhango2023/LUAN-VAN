@@ -5,9 +5,10 @@ import os
 from fastapi import HTTPException
 
 class SplitDocument:
-    def __init__(self):
+    def __init__(self, log_file_path):
         self.chunk_size = 4000
         self.chunk_overlap = int(self.chunk_size * 0.1)
+        self.log_file_path= log_file_path
 
     async def process_file(self, file, user_token):
         """
@@ -39,8 +40,9 @@ class SplitDocument:
             #tra ve loi 402 neu user khong du token    
             if user_token < 5000:
                 raise HTTPException(status_code=402, detail="Not enough token") 
-                      
-            print(f"Total number of characters in the file: {total_characters}")
+            
+            
+            self.write_log(f"Total number of characters in the file: {total_characters}")
 
             text_splitter = RecursiveCharacterTextSplitter(
                 separators=["\n\n", "\n", " ", ".", ",", "\u200b", "\uff0c", "\u3001", "\uff0e", "\u3002", ""],
@@ -60,3 +62,7 @@ class SplitDocument:
 
         finally:
             os.remove(tmp_path)
+
+    def write_log(self, content):
+        with open(self.log_file_path, "a", encoding="utf-8") as f:
+            f.write(content + "\n")

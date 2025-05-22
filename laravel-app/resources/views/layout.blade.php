@@ -1394,7 +1394,7 @@
 
             Echo.channel(`user`)
                 .listen('QuestionEvent', (e) => {
-                    console.log(e.code, e.message);
+                    
                     document.getElementById('btn-submit').disabled = false;
 
                     if (e.code === 403 || e.code === 402) {
@@ -1402,6 +1402,7 @@
                     } else if (e.code === 200) {
                         fetchMessages();
                         createToastSuccess('success');
+                        document.querySelector('.file-selector').disabled = false;
                         document.getElementById('loading_logo').classList.remove('bloom-loading');
                     }
                 });

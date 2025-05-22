@@ -1,7 +1,7 @@
 import random
 
 class CalculateQuestion:
-    def __init__(self, number_question):
+    def __init__(self, number_question ,log_file_path):
         self.idx_doc_by_level = {
             "remember": [],
             "understand": [],
@@ -20,6 +20,7 @@ class CalculateQuestion:
             "create": [],
         }
         self.number_question=number_question
+        self.log_file_path= log_file_path
 
     #add indexes of paragraphs with its levels 
     def sort_idx_doc_with_its_level(self, idx, list_level):
@@ -36,7 +37,7 @@ class CalculateQuestion:
             if count >0 :
             # Case 1: Fewer paragraphs than needed → reuse           
                 if count >= number_splited_docs:
-                    print("the number of paragraphs < number of required questions")
+                    self.write_log("the number of paragraphs < number of required questions")
                     distribution = [1] * number_splited_docs
                     remaining = count - number_splited_docs
                     i = 0
@@ -48,7 +49,7 @@ class CalculateQuestion:
 
                 # ✅ Case 2: More paragraphs than needed → pick subset and update idx_doc_by_level
                 else:
-                    print("\nthe number of paragraphs>number of required questions\n")
+                    self.write_log("\nthe number of paragraphs>number of required questions\n")
                     shuffled_paragraphs = self.idx_doc_by_level[level].copy()                 
                     random.shuffle(shuffled_paragraphs)  # Shuffle the list in place
                     selected_paragraphs = shuffled_paragraphs[:count]  # Pick only what's needed
@@ -68,8 +69,13 @@ class CalculateQuestion:
                 if not self.idx_doc_by_level[level]:  # neu level khong co idx
                     for lower_level in bloom_order[i -1:]:# tim level nho hon
                         if self.idx_doc_by_level[lower_level]:  #tim thay level no hon
-                                print(f"Khong co level '{level}', thay the bang level '{lower_level}'")
+                                self.write_log(f"Khong co level '{level}', thay the bang level '{lower_level}'")
                                 self.idx_doc_by_level[level] = self.idx_doc_by_level[lower_level]# gan idx cua level nho hon cho level lon hon
                                 break
                         else:
-                            print(f"Khong tim thay level nho hon de thay the cho level '{level}'. De trong")
+                            self.write_log(f"Khong tim thay level nho hon de thay the cho level '{level}'. De trong")
+                            
+
+    def write_log(self, content):
+        with open(self.log_file_path, "a", encoding="utf-8") as f:
+            f.write(content + "\n")

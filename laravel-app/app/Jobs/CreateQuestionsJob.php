@@ -41,7 +41,7 @@ class CreateQuestionsJob implements ShouldQueue
         try {
             $user = User::find($this->userId);
             if ($user) {
-                $user->credit = 0;
+                // $user->credit = 0;
                 $user->isCreated = 1;
                 $user->save();
             }

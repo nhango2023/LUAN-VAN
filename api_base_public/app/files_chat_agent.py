@@ -28,16 +28,18 @@ class FilesChatAgent:
         self.doc = doc #tai lieu cua nguoi dung
         self.splitted_docs=""#tai lieu sau khi duoc chia thanh cac doan nho
         self.number_question=number_question #so luong cau hoi do nguoi dung yeu cau
-        self.splitter_doc= SplitDocument() #lop chia tai lieu thanh nhung doan nho
-        self.calculate_question = CalculateQuestion(number_question) #lop tinh toan so luong cau hoi cho tung doan nho theo tung level
 
-        self.grader_level = DocumentGraderLevel(LLM_LEVEL().get_llm()) #lop danh gia level theo thang bloom cua tung doan
+        self.splitter_doc= SplitDocument(log_file_path) #lop chia tai lieu thanh nhung doan nho
+
+        self.calculate_question = CalculateQuestion(number_question, log_file_path) #lop tinh toan so luong cau hoi cho tung doan nho theo tung level
+
+        self.grader_level = DocumentGraderLevel(LLM_LEVEL(log_file_path=log_file_path).get_llm('gemini')) #lop danh gia level theo thang bloom cua tung doan
         self.llm_grader_level=self.grader_level.get_chain()
 
-        self.generate = GenerateQuestion(LLM_GENERATE_QUESTION().get_llm(model))
+        self.generate = GenerateQuestion(LLM_GENERATE_QUESTION(log_file_path=log_file_path).get_llm('gemini'))
         self.llm_generate = self.generate.get_chain()
 
-        self.grade = GradeDocument(LLM_GRADE_QUESTION().get_llm()) #lop danh gia lien quan giua cau hoi, cau tra loi va doan nho tai lieu
+        self.grade = GradeDocument(LLM_GRADE_QUESTION(log_file_path=log_file_path).get_llm('gemini')) #lop danh gia lien quan giua cau hoi, cau tra loi va doan nho tai lieu
         self.llm_grade = self.grade.get_chain()
 
         self.questions=[]
@@ -274,5 +276,5 @@ class FilesChatAgent:
         await self.split_document()
         self.detect_level_and_calculate_question()
         self.generate_question_and_grade_question()
-        print(f"Tong characters: {self.total_character_used}")
+        self.write_log(f"Tong characters: {self.total_character_used}")
         return self.questions

@@ -390,7 +390,7 @@
 
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="0" aria-label=""
+                                <input type="number" min="0" class="form-control" value="10" aria-label=""
                                     name="n_remember">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #848fc6; color: black">Cấp
@@ -414,7 +414,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="0"
+                                <input type="number" min="0" class="form-control" value="10"
                                     name="n_understand" aria-label="Dollar amount (with dot and two decimal places)">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #89c0e6; color: black">Cấp
@@ -437,7 +437,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="0" name="n_apply"
+                                <input type="number" min="0" class="form-control" value="10" name="n_apply"
                                     aria-label="Dollar amount (with dot and two decimal places)">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #75ac82; color: black">Cấp
@@ -460,7 +460,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="0"
+                                <input type="number" min="0" class="form-control" value="10"
                                     name="n_analyze" aria-label="Dollar amount (with dot and two decimal places)">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #aed981; color: black">Cấp
@@ -483,7 +483,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="0"
+                                <input type="number" min="0" class="form-control" value="10"
                                     name="n_evaluate" aria-label="Dollar amount (with dot and two decimal places)">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #f3da69; color: black">Cấp
@@ -506,7 +506,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="0"
+                                <input type="number" min="0" class="form-control" value="10"
                                     name="n_create" aria-label="Dollar amount (with dot and two decimal places)">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #e78b76; color: black">Cấp
@@ -770,7 +770,7 @@
                 const model = document.querySelector('.form-select').value;
                 formData.append('model', model);
                 const csrfToken = document.querySelector('input[name="_token"]').value;
-                document.getElementById('btn-submit').disabled = true;
+
                 fetch('/question/create', {
                         method: 'POST',
                         headers: {
@@ -789,7 +789,8 @@
                             createToastError('error', 'Không đủ credit');
                             return;
                         } else if (data.code == 200) {
-
+                            document.querySelector('.file-selector').disabled = true;
+                            document.getElementById('btn-submit').disabled = true;
                             createToastInfor('info', data.message);
                             document.getElementById('loading_logo').classList.add('bloom-loading');
                             return;

@@ -7,6 +7,7 @@ from fastapi.responses import JSONResponse
 from .files_chat_agent import FilesChatAgent
 import os
 from datetime import datetime
+import time
 # Tạo instance của FastAPI
 app = FastAPI()
 
@@ -56,6 +57,7 @@ async def create_question(
     ....
     ]
     """
+    start_time = time.time()
     Nquestion = NQuestion.model_validate_json(Nquestion_json)
     
     n_question = {
@@ -74,10 +76,15 @@ async def create_question(
     ]:
         raise HTTPException(status_code=400, detail="Unsupported file type.")
 
-
     log_file_path=save_log_file(file, model)
     agent = FilesChatAgent(file, n_question, model, log_file_path, token)
     questions = await agent.get_lst_question()
+    end_time = time.time()
+    execution_time_seconds = end_time - start_time
+    minutes = execution_time_seconds // 60  # Get the whole minutes
+    seconds = execution_time_seconds % 60  # Get the remaining seconds
+
+    write_log(log_file_path,f"Execution Time: {int(minutes)} minutes and {seconds:.2f} seconds")
     return  {'credit':5000, 'questions': questions}
     
 
@@ -158,3 +165,6 @@ def save_log_file(file: UploadFile, model):
 
     return log_path
 
+def write_log(log_file_path, content):
+        with open(log_file_path, "a", encoding="utf-8") as f:
+            f.write(content + "\n")
