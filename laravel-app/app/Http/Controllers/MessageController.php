@@ -13,14 +13,18 @@ use Illuminate\Support\Facades\Log;
 class MessageController extends Controller
 {
     //
-    public function show()
+    public function show(Request $request)
     {
         $id_user = Auth::user()->id;
+
+        // Determine how many messages to fetch, defaulting to 5
+        $limit = $request->input('limit', 5);
 
         $messages = MessageModel::join('uploaded_files', 'uploaded_files.id', '=', 'messages.id_file')
             ->where('uploaded_files.id_user', $id_user)
             ->select('messages.id', 'messages.id_file', 'messages.created_at', 'messages.seen', 'uploaded_files.original_name')
             ->orderBy('messages.created_at', 'desc')
+            ->take($limit) // Limit the number of messages
             ->get();
 
         $formatted = $messages->map(function ($item) {
@@ -35,8 +39,16 @@ class MessageController extends Controller
             ];
         });
 
-        return response()->json($formatted);
+        $hasMore = $messages->count() >= $limit;
+
+        return response()->json([
+            'messages' => $formatted,
+            'has_more' => $hasMore,
+        ]);
     }
+
+
+
     public function update($id_message)
     {
 

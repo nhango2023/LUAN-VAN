@@ -24,7 +24,7 @@ class GenerateQuestion:
 
         self.prompt = ChatPromptTemplate.from_messages([
             ("system", CustomPrompt.GENERATE_QUESTION),
-            ("human", "-Nội dung:\n{document}\n\n-Danh sách động từ được yêu cầu thêm vào câu hỏi:\n{keyword}\n\n-Số lượng câu hỏi yêu cầu: {n_question}\n\n-Danh sách câu hỏi đã có:\n{existing_questions}\n\n-Danh sách câu hỏi chưa có động từ được yêu cầu:\n{questions_without_keywords}\n\nDanh sách câu hỏi không hợp lệ:\n{invalid_questions}"),
+            ("human", "-Nội dung:\n{document}\n\n-Danh sách động từ:\n{keyword}\n\n-Số lượng câu hỏi yêu cầu: {n_question}\n\n-Danh sách câu hỏi đã có:\n{existing_questions}\n\n-Danh sách câu hỏi không có động từ:\n{questions_without_keywords}\n\nDanh sách câu hỏi không hợp lệ:\n{invalid_questions}"),
         ])
 
         self.chain = self.prompt | self.structured_output

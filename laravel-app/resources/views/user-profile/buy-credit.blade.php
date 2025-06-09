@@ -1,15 +1,13 @@
 @extends('user-profile.layout')
-@section('content')
-    <style>
+@section('profile-right')
+    {{-- <style>
         .credits-gradient {
             background: linear-gradient(100deg, #518261 10%, #f0ddab 90%);
             color: #fff;
             border-top-right-radius: 24px;
-            border-top-left-radius: 0;
             border-bottom-right-radius: 0;
-            border-bottom-left-radius: 0;
-            padding: 32px 32px 24px 32px;
-            min-height: 125px;
+            padding: 10px 32px;
+            overflow: hidden;
             position: relative;
         }
 
@@ -18,7 +16,7 @@
         }
 
         .big-credits {
-            font-size: 2.6rem;
+            font-size: 1.5rem;
             font-weight: 600;
         }
 
@@ -32,27 +30,29 @@
             background: #fff;
             border-radius: 24px;
             box-shadow: 0 3px 12px rgba(48, 68, 44, 0.10);
-            overflow: hidden;
+            overflow-y: auto;
+            max-height: 100%;
         }
 
-        /* Quick top up carousel */
         .quick-cards {
             display: flex;
             overflow-x: auto;
             gap: 18px;
-            padding: 10px 10px 16px 10px;
+            padding: 10px;
             margin-bottom: 10px;
             scroll-behavior: smooth;
+            max-width: 100%;
+            -webkit-overflow-scrolling: touch;
         }
 
         .quick-card {
             flex: 0 0 180px;
+            min-width: 150px;
             background: #f6fafd;
             border-radius: 18px;
             box-shadow: 0 1px 4px rgba(48, 68, 44, 0.04);
-            padding: 22px 0 14px 0;
+            padding: 10px 0;
             text-align: center;
-            min-width: 150px;
             border: 1px solid #e2eaf0;
         }
 
@@ -79,11 +79,11 @@
             margin-top: 1px;
         }
 
-        /* Custom top up */
         .custom-topup-section {
-            padding: 32px 8px 8px 8px;
-            background: none;
+            padding: 4px 8px 8px;
             text-align: center;
+            max-height: 40%;
+            overflow-y: auto;
         }
 
         .custom-row {
@@ -95,8 +95,8 @@
         }
 
         .custom-btn {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             background: #5b7e57;
             border: none;
             border-radius: 50%;
@@ -110,7 +110,7 @@
         }
 
         .custom-amount {
-            font-size: 2.2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #70461b;
             margin: 0 8px;
@@ -125,7 +125,7 @@
 
         .custom-slider {
             width: 65%;
-            margin: 24px auto 10px auto;
+            margin: 24px auto 10px;
         }
 
         .paypal-btn {
@@ -137,7 +137,7 @@
             font-size: 1.08rem;
             padding: 10px 0;
             width: 260px;
-            margin: 20px auto 16px auto;
+            margin: 20px auto 16px;
             box-shadow: 0 1px 3px rgba(44, 44, 44, 0.08);
             display: flex;
             align-items: center;
@@ -152,56 +152,92 @@
 
         .explain-note {
             color: #969876;
-            font-size: 0.98rem;
+            font-size: 0.9rem;
             margin-top: 14px;
         }
 
-        @media (max-width: 768px) {
-            .section-wrap {
-                border-radius: 12px;
-            }
-
-            .credits-gradient {
-                padding: 20px 12px 18px 12px;
-            }
-
-            .quick-cards {
-                gap: 10px;
-            }
-
-            .quick-card {
-                min-width: 120px;
-                padding: 16px 0 6px 0;
-            }
-
-            .paypal-btn {
-                width: 98%;
-                font-size: 1rem;
-            }
-
-            .custom-topup-section {
-                padding: 20px 0 0 0;
-            }
-
-            .custom-row {
-                font-size: 1.3rem;
-            }
-
-            .custom-amount {
-                font-size: 1.4rem;
-            }
-
-            .custom-slider {
-                width: 95%;
-            }
-        }
-
         .account-settings-root {
-            padding: 0px;
+            padding: 0;
             border: none;
             background: #f8fafc;
         }
-    </style>
+
+        @media (max-width: 768px) {
+            .credits-gradient {
+                padding: 8px 20px;
+            }
+
+            .big-credits {
+                font-size: 1.2rem;
+            }
+
+            .quick-cards {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .quick-card {
+                flex: 0 0 150px;
+                min-width: 140px;
+                padding: 12px;
+            }
+
+            .custom-row {
+                font-size: 1.5rem;
+            }
+
+            .custom-amount {
+                font-size: 1.3rem;
+            }
+
+            .custom-btn {
+                width: 30px;
+                height: 30px;
+                font-size: 1.4rem;
+            }
+
+            .paypal-btn {
+                width: 220px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .credits-gradient {
+                padding: 6px 16px;
+            }
+
+            .big-credits {
+                font-size: 1rem;
+            }
+
+            .quick-card {
+                flex: 0 0 120px;
+                min-width: 120px;
+                padding: 8px;
+            }
+
+            .custom-row {
+                font-size: 1.2rem;
+            }
+
+            .custom-amount {
+                font-size: 1.2rem;
+            }
+
+            .paypal-btn {
+                width: 180px;
+            }
+
+            .section-wrap {
+                padding: 15px;
+            }
+
+            .explain-note {
+                font-size: 0.8rem;
+            }
+        }
+    </style> --}}
+    <link rel="stylesheet" href="{{ asset('css/user-profile/buy-credit.css') }}">
     <div class="container-fluid p-0" style="max-width: 950px;">
         <div class="section-wrap">
             <div class="credits-gradient">
@@ -209,8 +245,8 @@
                 <div class="big-credits">694 <span style="font-size:1.3rem; font-weight:400"> <span
                             style="color:#e3e6d7;">non-expiring credits</span></span></div>
             </div>
-            <div class="px-3 pt-2 pb-4">
-                <h5 class="font-weight-semibold mt-3 mb-2" style="color:#6d7c67;font-size:1.17rem">Quick top up</h5>
+            <div class="px-3 pt-2">
+                {{-- <h5 class="font-weight-semibold mt-3 mb-2" style="color:#6d7c67;font-size:1.17rem">Quick top up</h5> --}}
                 <div class="quick-cards">
                     <div class="quick-card">
                         <div><strong>+ 200K</strong></div>
@@ -252,8 +288,8 @@
             </div>
             <hr style="border: none; border-top:1.5px solid #e7e8f5; margin: 0 18px 0 18px;">
             <div class="custom-topup-section">
-                <div class="text-left mb-3" style="color:#439071;font-weight:500;font-size:1.15rem;margin-left:12%;">
-                    Custom top up</div>
+                {{-- <div class="text-left" style="color:#439071;font-weight:500;font-size:1.15rem;margin-left:12%;">
+                    Custom top up</div> --}}
                 <div class="custom-row mb-2">
                     <button class="custom-btn"><i class="fa fa-minus"></i></button>
                     <span class="custom-amount">200K</span>
@@ -266,11 +302,11 @@
                         class="form-control-range w-100">
                 </div>
                 <button class="paypal-btn"><i class="fab fa-paypal"></i> Top up now</button>
-                <div class="explain-note mx-2">
+                {{-- <div class="explain-note mx-2">
                     <i class="fa fa-info-circle"></i>
                     1,000 credits = 1,000 characters with High Quality Voice
                     (500 characters with HD Quality Voice, 1,000 characters with High Quality Plus Voice)
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

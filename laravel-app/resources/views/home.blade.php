@@ -1,315 +1,7 @@
 @extends('layout')
 @section('content')
-    <style>
-        .container-upload {
-            text-align: center;
-            width: 100%;
-            max-width: 500px;
-            min-height: 435px;
-            margin: auto;
-            background-color: white;
-            border-radius: 16px;
-            box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-        }
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 
-        .header-section {
-            padding: 25px 0px;
-            text-align: center
-        }
-
-        .header-section h1 {
-            font-weight: 500;
-            font-size: 1.7rem;
-            text-transform: uppercase;
-            color: #707EA0;
-            margin: 0px;
-            margin-bottom: 8px;
-        }
-
-        .header-section p {
-            margin: 5px;
-            font-size: 0.95rem;
-            color: #707EA0;
-        }
-
-        .drop-section {
-            min-height: 250px;
-            border: 1px dashed #A8B3E3;
-            background-image: linear-gradient(180deg, white, #F1F6FF);
-            margin: 5px 35px 35px 35px;
-            border-radius: 12px;
-            position: relative;
-        }
-
-        .drop-section div.col:first-child {
-            opacity: 1;
-            visibility: visible;
-            transition-duration: 0.2s;
-            transform: scale(1);
-            width: 200px;
-            margin: auto;
-        }
-
-        .drop-section div.col:last-child {
-            font-size: 40px;
-            font-weight: 700;
-            color: #c0cae1;
-            position: absolute;
-            top: 0px;
-            bottom: 0px;
-            left: 0px;
-            right: 0px;
-            margin: auto;
-            width: 200px;
-            height: 55px;
-            pointer-events: none;
-            opacity: 0;
-            visibility: hidden;
-            transform: scale(0.6);
-            transition-duration: 0.2s;
-        }
-
-        /* we will use "drag-over-effect" class in js */
-        .drag-over-effect div.col:first-child {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transform: scale(1.1);
-        }
-
-        .drag-over-effect div.col:last-child {
-            opacity: 1;
-            visibility: visible;
-            transform: scale(1);
-        }
-
-        .drop-section .cloud-icon {
-            text-align: center;
-            margin-top: 25px;
-            margin-bottom: 20px;
-        }
-
-        .drop-section span,
-        .drop-section button {
-            display: block;
-            margin: auto;
-            color: #707EA0;
-            margin-bottom: 10px;
-        }
-
-        .drop-section button {
-            color: white;
-            background-color: #5874C6;
-            border: none;
-            outline: none;
-            padding: 7px 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-            cursor: pointer;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-        }
-
-        .drop-section input {
-            display: none;
-        }
-
-        .list-section {
-            display: none;
-            text-align: left;
-            margin: 0px 35px;
-            padding-bottom: 20px;
-            height: 150px;
-
-        }
-
-        .list-section .list-title {
-            font-size: 0.95rem;
-            color: #707EA0;
-        }
-
-        .list-section li {
-            display: flex;
-            margin: 15px 0px;
-            padding-top: 4px;
-            padding-bottom: 2px;
-            border-radius: 8px;
-            transition-duration: 0.2s;
-        }
-
-        .list-section li:hover {
-            box-shadow: #E3EAF9 0px 0px 4px 0px, #E3EAF9 0px 12px 16px 0px;
-        }
-
-        .list-section li .col {
-            flex: .1;
-        }
-
-        .list-section li .col:nth-child(1) {
-            flex: .15;
-            text-align: center;
-        }
-
-        .list-section li .col:nth-child(2) {
-            flex: .75;
-            text-align: left;
-            font-size: 0.9rem;
-            color: #3e4046;
-            padding: 8px 10px;
-        }
-
-        .list-section li .col:nth-child(2) div.name {
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            max-width: 250px;
-            display: inline-block;
-        }
-
-        .list-section li .col .file-name span {
-            color: #707EA0;
-            float: right;
-        }
-
-        .list-section li .file-progress {
-            width: 100%;
-            height: 5px;
-            margin-top: 8px;
-            border-radius: 8px;
-            background-color: #dee6fd;
-        }
-
-        .list-section li .file-progress span {
-            display: block;
-            width: 0%;
-            height: 100%;
-            border-radius: 8px;
-            background-image: linear-gradient(120deg, #6b99fd, #9385ff);
-            transition-duration: 0.4s;
-        }
-
-        .list-section li .col .file-size {
-            font-size: 0.75rem;
-            margin-top: 3px;
-            color: #707EA0;
-        }
-
-        .list-section li .col svg.cross,
-        .list-section li .col svg.tick {
-            fill: #8694d2;
-            background-color: #dee6fd;
-            position: relative;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-        }
-
-        .list-section li .col svg.tick {
-            fill: #50a156;
-            background-color: transparent;
-        }
-
-        .list-section li.complete span,
-        .list-section li.complete .file-progress,
-        .list-section li.complete svg.cross {
-            display: none;
-        }
-
-        .list-section li.in-prog .file-size,
-        .list-section li.in-prog svg.tick {
-            display: none;
-        }
-
-
-        .payment-options {
-            display: flex;
-            gap: 12px;
-        }
-
-        .payment-options input[type="radio"] {
-            display: none;
-        }
-
-        .payment-options label {
-            display: flex;
-            align-items: center;
-            padding: 10px 20px;
-            border: 2px solid #3b82f6;
-            /* blue-500 */
-            border-radius: 8px;
-            cursor: pointer;
-            color: #3b82f6;
-            font-weight: 600;
-            font-family: sans-serif;
-            transition: all 0.2s ease;
-        }
-
-        .payment-options label .custom-radio {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #3b82f6;
-            border-radius: 50%;
-            margin-right: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .payment-options label .custom-radio::after {
-            content: "";
-            width: 10px;
-            height: 10px;
-            background: white;
-            border-radius: 50%;
-            display: none;
-        }
-
-        .payment-options input[type="radio"]:checked+label {
-            background-color: #3b82f6;
-            color: white;
-        }
-
-        .payment-options input[type="radio"]:checked+label .custom-radio {
-            background-color: white;
-        }
-
-        .payment-options input[type="radio"]:checked+label .custom-radio::after {
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                height: auto !important;
-                min-height: 0 !important;
-                overflow-y: scroll;
-            }
-
-            .header {
-                height: auto !important;
-                min-height: 0 !important;
-                max-height: none !important;
-            }
-
-            .main-container {
-                height: auto !important;
-                min-height: 0 !important;
-                max-height: none !important;
-            }
-
-            .payment-options label {
-                padding: 1px 1px;
-            }
-
-            footer {
-                height: auto !important;
-                min-height: 0 !important;
-                max-height: none !important;
-            }
-        }
-    </style>
-    <!-- Main Content -->
-
-    <!-- Text Input Section -->
     <div class="container-fluid">
         <div class="row">
             <div class="text-input-section col-md-5">
@@ -353,13 +45,13 @@
                             Số lượng (%)
                         </label>
                     </div>
-                    <div>
+                    {{-- <div>
                         <select class="form-select" name="provider" aria-label="Default select example">
                             <option value="gpt" selected>GPT</option>
                             <option value="gemini">GEMINI</option>
                             <option value="grok">GROK</option>
                         </select>
-                    </div>
+                    </div> --}}
                 </div>
 
                 <form method="post" enctype="multipart/form-data" action="javascript:void(0);">
@@ -414,8 +106,8 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="10"
-                                    name="n_understand" aria-label="Dollar amount (with dot and two decimal places)">
+                                <input type="number" min="0" class="form-control" value="10" name="n_understand"
+                                    aria-label="Dollar amount (with dot and two decimal places)">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #89c0e6; color: black">Cấp
                                         2</span>
@@ -519,15 +211,13 @@
                         {{ !Auth::check() || Auth::user()->isCreated ? 'disabled' : '' }} class="btn btn-primary">Tạo
                         câu hỏi</button>
                 </form>
-
-
-
             </div>
         </div>
     </div>
 
     </div>
 
+    {{-- <script src="{{ asset('js/home.js') }}" defer></script> --}}
     <script>
         //toggle an hien input %
         document.addEventListener('DOMContentLoaded', function() {
@@ -559,7 +249,7 @@
             rdoNumber.addEventListener('change', toggleVisibility);
         });
 
-        //tinh toan after user nhap %
+        //tinh toan sau user nhap %
         document.addEventListener('DOMContentLoaded', function() {
             const totalInput = document.getElementById('total');
 
@@ -585,6 +275,7 @@
 
         const realInput = document.getElementById("file-upload");
         const fakeInput = document.querySelector(".file-selector-input");
+
         // When a user selects a file using the external input
         fakeInput.addEventListener("change", function() {
             // Only assign the first selected file to the real input
@@ -717,6 +408,32 @@
 
 
         document.addEventListener('DOMContentLoaded', function() {
+
+            async function startCreateQuestion(taskId) {
+                const csrfToken = document.querySelector('input[name="_token"]').value;
+
+                try {
+                    const response = await fetch("/question/start", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-CSRF-TOKEN": csrfToken
+                        },
+                        body: JSON.stringify({
+                            task_id: taskId
+                        })
+                    });
+
+                    if (!response.ok) throw new Error("Failed to send task_id to Laravel");
+
+                    // const result = await response.json();
+                    // console.log("Laravel received task ID:", result);
+
+                } catch (err) {
+                    console.error("Error sending task_id to Laravel:", err);
+                }
+            }
+
             function CanSendInput() {
                 const isPercentMode = document.getElementById('rdo_percent').checked;
                 const total = parseInt(document.getElementById('total').value);
@@ -756,55 +473,135 @@
             const submitButton = form.querySelector('button[type="submit"]');
             const realInput = document.getElementById('file-upload');
 
+            // form.addEventListener('submit', async function(e) {
+            //     e.preventDefault(); // prevent regular form submission
+            //     if (!realInput.files || realInput.files.length === 0) {
+            //         createToastError('error', 'Vui lòng chọn file trước khi tạo câu hỏi.');
+
+            //         return;
+            //     }
+            //     if (CanSendInput() == 0) {
+            //         return;
+            //     }
+            //     const formData = new FormData(form);
+
+            //     formData.append('model', 'gpt');
+            //     const csrfToken = document.querySelector('input[name="_token"]').value;
+
+            //     fetch('', {
+            //             method: 'POST',
+            //             headers: {
+            //                 'X-CSRF-TOKEN': csrfToken,
+            //             },
+            //             body: formData
+            //         })
+            //         .then(response => {
+            //             if (!response.ok) {
+            //                 throw new Error('Tạo câu hỏi thất bại.');
+            //             }
+            //             return response.json();
+            //         })
+            //         .then(data => {
+            //             if (data.code == 402) {
+            //                 createToastError('error', 'Không đủ credit');
+            //                 return;
+            //             } else if (data.code == 200) {
+            //                 document.querySelector('.file-selector').disabled = true;
+            //                 document.getElementById('btn-submit').disabled = true;
+            //                 createToastInfor('info', data.message);
+            //                 document.getElementById('loading_logo').classList.add('bloom-loading');
+            //                 return;
+            //             }
+
+
+            //         })
+            //         .catch(error => {
+            //             console.error(error);
+            //             createToastError('error', error.message || 'Lỗi không xác định.');
+
+            //         });
+
+            // });
+            const API_BASE_URL = "{{ env('API_URL') }}";
+            const API_KEY = "{{ env('API_KEY') }}";
+
+            // function pollResult(taskId) {
+            //     const interval = setInterval(() => {
+            //         fetch(`${API_BASE_URL}question/result/${taskId}`)
+            //             .then(res => res.json())
+            //             .then(data => {
+            //                 if (data.status === 'done') {
+            //                     clearInterval(interval);
+            //                     console.log("Kết quả:", data.result);
+            //                 } else if (data.status === 'error') {
+            //                     clearInterval(interval);
+            //                     console.error("Lỗi:", data.result);
+            //                 }
+            //             });
+            //     }, 5000);
+            // }
+
+
+
             form.addEventListener('submit', async function(e) {
-                e.preventDefault(); // prevent regular form submission
+                e.preventDefault(); // prevent normal submission
+
                 if (!realInput.files || realInput.files.length === 0) {
                     createToastError('error', 'Vui lòng chọn file trước khi tạo câu hỏi.');
-
                     return;
                 }
+
                 if (CanSendInput() == 0) {
                     return;
                 }
-                const formData = new FormData(form);
-                const model = document.querySelector('.form-select').value;
-                formData.append('model', model);
-                const csrfToken = document.querySelector('input[name="_token"]').value;
 
-                fetch('/question/create', {
+                const formData = new FormData(form);
+
+                formData.append('model', 'gpt');
+                formData.append('token', 5000); // Ví dụ: truyền số token hiện có
+
+                // Convert từng cấp độ thành JSON để gửi cho FastAPI
+                const Nquestion = {
+                    remember: parseInt(form.querySelector('input[name="n_remember"]').value),
+                    understand: parseInt(form.querySelector('input[name="n_understand"]').value),
+                    apply: parseInt(form.querySelector('input[name="n_apply"]').value),
+                    analyze: parseInt(form.querySelector('input[name="n_analyze"]').value),
+                    evaluate: parseInt(form.querySelector('input[name="n_evaluate"]').value),
+                    create: parseInt(form.querySelector('input[name="n_create"]').value)
+                };
+                formData.append('Nquestion_json', JSON.stringify(Nquestion));
+                formData.append('file', realInput.files[0]);
+                try {
+                    const response = await fetch(`${API_BASE_URL}question/create`, {
                         method: 'POST',
                         headers: {
-                            'X-CSRF-TOKEN': csrfToken,
+                            'API-Key': API_KEY, // bắt buộc phải khớp
                         },
                         body: formData
-                    })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Tạo câu hỏi thất bại.');
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        if (data.code == 402) {
-                            createToastError('error', 'Không đủ credit');
-                            return;
-                        } else if (data.code == 200) {
-                            document.querySelector('.file-selector').disabled = true;
-                            document.getElementById('btn-submit').disabled = true;
-                            createToastInfor('info', data.message);
-                            document.getElementById('loading_logo').classList.add('bloom-loading');
-                            return;
-                        }
-
-
-                    })
-                    .catch(error => {
-                        console.error(error);
-                        createToastError('error', error.message || 'Lỗi không xác định.');
-
                     });
 
+                    if (!response.ok) {
+                        throw new Error('Tạo câu hỏi thất bại.');
+                    }
+
+                    const data = await response.json();
+                    const taskId = data.task_id;
+
+                    document.querySelector('.file-selector').disabled = true;
+                    document.getElementById('btn-submit').disabled = true;
+                    document.getElementById('loading_logo').classList.add('bloom-loading');
+
+                    createToastInfor('info', 'Đang xử lý file...');
+
+                    // Bắt đầu polling
+                    pollResult(taskId);
+
+                } catch (error) {
+                    console.error(error);
+                    createToastError('error', error.message || 'Lỗi không xác định.');
+                }
             });
+
 
 
         });

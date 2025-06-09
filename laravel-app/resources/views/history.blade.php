@@ -1,567 +1,8 @@
 @extends('layout')
 @section('content')
-    <style>
-        .history-header {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px;
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
-        }
+    <link rel="stylesheet" href="{{ asset('css/history.css') }}">
 
-        .history-header .tabs a {
-            text-decoration: none;
-            padding: 10px;
-            color: #0078d4;
-            margin-right: 10px;
-            font-weight: 500;
-        }
-
-        .history-header .tabs a.active {
-            color: #28a745;
-            font-weight: bold;
-        }
-
-        .history-header .delete-all {
-            color: #ff4c4c;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .history-item {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .history-item .audio-controls {
-            display: flex;
-            align-items: center;
-        }
-
-        .history-item .audio-controls button {
-            background-color: #0078d4;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
-            margin-right: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .history-item .audio-controls button:hover {
-            background-color: #005fa3;
-        }
-
-        .history-item .details {
-            margin-top: 10px;
-            font-size: 12px;
-            color: #666;
-        }
-
-        .history-item .details span {
-            color: #0078d4;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
-        .history-item .actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .history-item .actions button {
-            background-color: #fff;
-            color: #0078d4;
-            border: 1px solid #0078d4;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .history-item .actions button:hover {
-            background-color: #0078d4;
-            color: #fff;
-        }
-
-        .history-card {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: 0 auto;
-            margin-top: 10px;
-        }
-
-        .history-card .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .history-card .header .voice-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .history-card .header .voice-info .icon {
-            background-color: #e0e0e0;
-            border-radius: 50%;
-            padding: 5px;
-        }
-
-        .history-card .header .voice-info .tags {
-            display: flex;
-            gap: 5px;
-        }
-
-        .history-card .header .voice-info .tags span {
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-size: 12px;
-        }
-
-        .history-card .header .voice-info .tags .id {
-            background-color: #f0f0f0;
-        }
-
-        .history-card .header .voice-info .tags .name {
-            background-color: #ffe6e6;
-        }
-
-        .history-card .header .voice-info .tags .credits {
-            background-color: #e6f7fa;
-        }
-
-        .history-card .header .voice-info .tags .quality {
-            background-color: #fff3cd;
-        }
-
-        .history-card .header .voice-info .tags .speed {
-            background-color: #e6e6e6;
-            color: #666;
-        }
-
-        .history-card .header .timestamp {
-            font-size: 12px;
-            color: #666;
-        }
-
-        .history-card .text {
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .history-card .audio-player {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .history-card .audio-player .play-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .history-card .audio-player .timeline {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .history-card .audio-player .timeline input {
-            width: 100%;
-        }
-
-        .history-card .audio-player .actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .history-card .audio-player .actions button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #666;
-        }
-
-        .history-card .footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 12px;
-            color: #666;
-        }
-
-        .history-card .footer .details {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        .history-card .footer .actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .history-card .footer .actions span {
-            color: #666;
-        }
-
-        .history-card .footer .actions button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #666;
-        }
-
-        .questionnaire {}
-
-        .category {
-            margin-bottom: 20px;
-        }
-
-        .category-btn {
-            width: 100%;
-            padding: 15px;
-            text-align: left;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        .questions-container {
-            display: none;
-            margin-top: 10px;
-            padding-left: 20px;
-        }
-
-        .question {
-            margin-bottom: 15px;
-        }
-
-        .question-text {
-            font-weight: bold;
-        }
-
-        .options {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .options li {
-            margin: 5px 0;
-        }
-
-        .correct-answer {
-            margin-top: 10px;
-            color: green;
-        }
-
-        .category-btn:focus {
-            outline: none;
-        }
-
-        .category-btn:hover {
-            background-color: #0056b3;
-        }
-
-        .category-btn:active {
-            background-color: #004085;
-        }
-
-        .tab-QG {
-            color: black;
-
-        }
-
-        .tab-history {
-            color: #238a6a;
-        }
-
-        .info-box {
-            background-color: #fffde7;
-            border: 1px solid #f0c14b;
-            padding: 30px;
-            border-radius: 8px;
-            max-width: 512px;
-            margin: 80px auto;
-            text-align: center;
-        }
-
-        .info-box a i {
-            color: white;
-            font-size: 20px;
-            vertical-align: middle;
-            margin-right: 10px;
-        }
-
-        .info-box h5 {
-            font-weight: 600;
-            color: #5a3310;
-            margin-top: 15px;
-        }
-
-        .info-box h5 i {
-            color: #5a3310;
-            font-size: 20px;
-            vertical-align: middle;
-            margin-right: 10px;
-        }
-
-        .info-box p {
-            color: #5a3310;
-            margin: 15px 0 25px;
-        }
-
-        .info-box .btn {
-            margin: 5px;
-            font-weight: 500;
-        }
-
-        .btn-brown {
-            background-color: #6b3c0f;
-            color: white;
-            border: none;
-        }
-
-        .btn-brown:hover {
-            background-color: #5a2e0d;
-        }
-
-        .history-alert-section {
-            width: 100vw;
-            min-height: 70vh;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            margin-top: 70px;
-        }
-
-        .history-alert-section .history-alert-card {
-            background: #fffee7;
-            border: 2px solid #ffe69c;
-            border-radius: 10px;
-            padding: 36px 48px;
-            box-sizing: border-box;
-            max-width: 440px;
-            width: 100%;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .history-alert-section .history-alert-card .history-alert-icon-title {
-            display: flex;
-            align-items: center;
-            margin-bottom: 18px;
-        }
-
-        .history-alert-section .history-alert-card .history-alert-icon-title .history-alert-icon {
-            color: #a86413;
-            font-size: 1.4em;
-            margin-right: 8px;
-        }
-
-        .history-alert-section .history-alert-card .history-alert-icon-title .history-alert-title {
-            color: #774100;
-            font-weight: bold;
-            font-size: 1.25rem;
-        }
-
-        .history-alert-section .history-alert-card .history-alert-desc {
-            color: #855b14;
-            text-align: center;
-            font-size: 1rem;
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
-
-        .history-alert-section .history-alert-card .history-alert-actions {
-            display: flex;
-            gap: 14px;
-            margin-top: 4px;
-        }
-
-        .history-alert-section .history-alert-card .history-alert-actions .history-alert-signup,
-        .history-alert-section .history-alert-card .history-alert-actions .history-alert-signin {
-            background: #85511e;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 9px 20px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .history-alert-section .history-alert-card .history-alert-actions .history-alert-signup {
-            margin-right: 8px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .history-alert-section .history-alert-card .history-alert-actions .history-alert-signup i {
-            font-size: 1.1em;
-            margin-left: 4px;
-        }
-
-        .history-alert-section .history-alert-card .history-alert-actions .history-alert-signup:hover,
-        .history-alert-section .history-alert-card .history-alert-actions .history-alert-signin:hover {
-            background: #9c6522;
-        }
-
-        .main-navbar-section {
-            margin-top: 24px;
-            width: 100vw;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .main-navbar-section .main-navbar-tabs {
-            display: flex;
-            align-items: center;
-            gap: 36px;
-            padding-bottom: 8px;
-        }
-
-        .main-navbar-section .main-navbar-tabs div {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            color: #64748b;
-            font-size: 1.17rem;
-            cursor: pointer;
-            transition: color 0.18s;
-        }
-
-        .main-navbar-section .main-navbar-tabs div:first-child {
-            color: #222e3a;
-            font-weight: bold;
-        }
-
-        .main-navbar-section .main-navbar-tabs div b {
-            font-weight: 700;
-        }
-
-        .main-navbar-section .main-navbar-tabs div:hover {
-            color: #222e3a;
-        }
-
-        .main-navbar-section .main-navbar-tabs div span i {
-            font-size: 0.8em;
-            margin-right: 2px;
-        }
-
-        .main-navbar-section .main-navbar-underline {
-            width: 170px;
-            height: 3px;
-            background: #16b189;
-            border-radius: 2px;
-            margin-top: -2px;
-            margin-bottom: 10px;
-        }
-
-        .main-navbar-section {
-            border-bottom: 1px solid #e7eaf1;
-            margin-bottom: 8px;
-        }
-
-        .delete-history-section {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            padding: 0px 0 16px 0;
-            gap: 24px;
-        }
-
-        .delete-history-section .delete-history-text {
-            flex: 1;
-            color: #8b99a8;
-            font-size: 1.09rem;
-            text-align: left;
-            margin-left: 40px;
-        }
-
-        .delete-history-section .delete-history-btn {
-            background: #fff;
-            color: #de3629;
-            border: 1.5px solid #e4e8ee;
-            border-radius: 999px;
-            padding: 10px 22px;
-            font-size: 1rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            box-shadow: 0 1px 6px rgba(60, 60, 60, 0.04);
-            cursor: pointer;
-            transition: border 0.2s, background 0.2s;
-        }
-
-        .delete-history-section .delete-history-btn i {
-            font-size: 1.17em;
-        }
-
-        .delete-history-section .delete-history-btn:hover {
-            background: #fdeaea;
-            border: 1.5px solid #de3629;
-        }
-
-        .main-container {
-            overflow-y: scroll;
-            overflow-x: hidden;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                height: auto !important;
-                min-height: 0 !important;
-                overflow-y: scroll;
-            }
-
-            .header {
-                height: auto !important;
-                min-height: 0 !important;
-                max-height: none !important;
-            }
-
-            .main-container {
-                height: auto !important;
-                min-height: 0 !important;
-                max-height: none !important;
-            }
-
-            .payment-options label {
-                padding: 1px 1px;
-            }
-
-            footer {
-                height: auto !important;
-                min-height: 0 !important;
-                max-height: none !important;
-            }
-        }
-    </style>
-
-    <div class="">
+    <div class="mx-auto">
         <div class="main-navbar-section">
             <div class="main-navbar-tabs">
                 <div>
@@ -640,15 +81,35 @@
                             @endforeach
                         </div>
                     </div>
-                    <div class="footer">
-                        <div class="details"><i class="fa fa-info-circle"></i>Details</div>
-                        <div class="actions">
-                            <span># {{ \Illuminate\Support\Str::uuid() }}</span>
-                            <button><i class="fa fa-thumbs-up"></i></button>
-                            <button><i class="fa fa-thumbs-down"></i></button>
+                    <div class="footer w-100 mb-3">
+                        <button class="btn text-start w-100 py-1" type="button" data-toggle="collapse"
+                            data-target="#collapse-details-{{ $fileId }}" aria-expanded="false"
+                            aria-controls="collapse-details-{{ $fileId }}" style="background: #f8fafc">
+                            <i class="fa fa-info-circle"></i><span class="ml-2">Details</span>
+                        </button>
+                        <div class="collapse" id="collapse-details-{{ $fileId }}">
+                            <div class="card card-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Môn học</label>
+                                        <input type="text" class="form-control" name="subject_name" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" value="">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Thời gian làm bài (phút)</label>
+                                        <input type="number" name="time" class="form-control" id="exampleInputPassword1"
+                                            value="">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Change</button>
+                                    <small id="emailHelp" class="form-text text-muted mt-2">Thông tin trên sẽ được hiển thị
+                                        trong
+                                        file tải về</small>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center my-1" style="margin-left: -5px; color: black">
+                    <div class="d-flex align-items-center my-1 ml-3" style=" color: black">
                         <i class="material-icons">download</i>
                         <div>Download</div>
                     </div>
@@ -671,6 +132,64 @@
                     </div>
                 </div>
             @endforeach
+            <div class="clearfix mt-3">
+                {{-- <div class="hint-text">
+                    Showing <b>{{ $groupedQuestions->count() }}</b> out of <b>{{ $groupedQuestions->total() }}</b> entries
+                </div> --}}
+                <ul class="pagination justify-content-center">
+                    {{-- Previous Page --}}
+                    <li class="page-item {{ $groupedQuestions->onFirstPage() ? 'disabled' : '' }}">
+                        <a href="{{ $groupedQuestions->previousPageUrl() }}" class="page-link">Previous</a>
+                    </li>
+
+                    {{-- Page Numbers --}}
+                    @php
+                        $currentPage = $groupedQuestions->currentPage();
+                        $lastPage = $groupedQuestions->lastPage();
+                        $maxPagesToShow = 5; // Max number of pages to show in the pagination
+                        $halfMaxPages = floor($maxPagesToShow / 2);
+                        $start = max(1, $currentPage - $halfMaxPages);
+                        $end = min($lastPage, $currentPage + $halfMaxPages);
+
+                        // Adjust if the end page is less than the total pages
+                        if ($end - $start + 1 < $maxPagesToShow) {
+                            $start = max(1, $end - $maxPagesToShow + 1);
+                        }
+                    @endphp
+
+                    {{-- Show first page --}}
+                    @if ($start > 1)
+                        <li class="page-item">
+                            <a href="{{ $groupedQuestions->url(1) }}" class="page-link">1</a>
+                        </li>
+                        @if ($start > 2)
+                            <li class="page-item disabled"><span class="page-link">...</span></li>
+                        @endif
+                    @endif
+
+                    {{-- Show page numbers in the range --}}
+                    @for ($i = $start; $i <= $end; $i++)
+                        <li class="page-item {{ $groupedQuestions->currentPage() == $i ? 'active' : '' }}">
+                            <a href="{{ $groupedQuestions->url($i) }}" class="page-link">{{ $i }}</a>
+                        </li>
+                    @endfor
+
+                    {{-- Show last page --}}
+                    @if ($end < $lastPage)
+                        @if ($end < $lastPage - 1)
+                            <li class="page-item disabled"><span class="page-link">...</span></li>
+                        @endif
+                        <li class="page-item">
+                            <a href="{{ $groupedQuestions->url($lastPage) }}" class="page-link">{{ $lastPage }}</a>
+                        </li>
+                    @endif
+
+                    {{-- Next Page --}}
+                    <li class="page-item {{ $groupedQuestions->hasMorePages() ? '' : 'disabled' }}">
+                        <a href="{{ $groupedQuestions->nextPageUrl() }}" class="page-link">Next</a>
+                    </li>
+                </ul>
+            </div>
         @else
             <div class="history-alert-section">
                 <div class="history-alert-card">
@@ -682,9 +201,11 @@
                         You can see your history of speech creation after you sign in. It is free and easy to sign up.
                     </div>
                     <div class="history-alert-actions">
-                        <a href="{{ route('signup') }}" style="text-decoration: none"><button class="history-alert-signup">Sign
+                        <a href="{{ route('signup') }}" style="text-decoration: none"><button
+                                class="history-alert-signup">Sign
                                 up for free <i class="fa fa-arrow-right"></i></button></a>
-                        <a href="{{ route('login') }}" style="text-decoration: none"><button class="history-alert-signin">Sign
+                        <a href="{{ route('login') }}" style="text-decoration: none"><button
+                                class="history-alert-signin">Sign
                                 In</button></a>
                     </div>
                 </div>
@@ -694,16 +215,7 @@
 
     </div>
 
-    {{-- @vite('resources/js/app.js') --}}
-    <script>
-        // setTimeout(() => {
-        //     console.log('test')
-        //     window.Echo.channel('testChannel')
-        //         .listen('testingEvent', (e) => {
-        //             console.log(e);
-        //         })
-        // }, 3000);
-    </script>
+
     <script>
         document.querySelectorAll('.category-btn').forEach(button => {
             button.addEventListener('click', function() {
@@ -779,68 +291,4 @@
         }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/6.2.0/docx.min.js"></script>
-    {{-- <script>
-        function Export2Doc(contentId) {
-            const doc = new docx.Document();
-
-            const contentElement = document.getElementById(contentId);
-            const fileGroups = contentElement.querySelectorAll('.history-card');
-
-            fileGroups.forEach(fileGroup => {
-                const fileName = fileGroup.querySelector('.header h6')?.innerText || '';
-                const timestamp = fileGroup.querySelector('.header .timestamp')?.innerText || '';
-
-                // Add the File Information as a paragraph
-                doc.addSection({
-                    children: [
-                        new docx.Paragraph(`📝 File: ${fileName}`),
-                        new docx.Paragraph(`Date: ${timestamp}\n`),
-                    ],
-                });
-
-                const categories = fileGroup.querySelectorAll('.category');
-                categories.forEach(category => {
-                    const level = category.getAttribute('id');
-                    const levelLabel = category.querySelector('.category-btn')?.innerText || '';
-
-                    // Add the category label as a paragraph
-                    doc.addSection({
-                        children: [
-                            new docx.Paragraph(`Level: ${levelLabel}`),
-                        ],
-                    });
-
-                    const questions = category.querySelectorAll('.question');
-                    questions.forEach((question, index) => {
-                        const questionText = question.querySelector('.question-text')?.innerText ||
-                            '';
-                        const options = question.querySelectorAll('.options li');
-                        let optionsText = '';
-                        options.forEach(option => {
-                            optionsText += `${option.innerText}\n`;
-                        });
-                        const answer = question.querySelector('.correct-answer')?.innerText || '';
-
-                        // Add the question text and answer as a paragraph
-                        doc.addSection({
-                            children: [
-                                new docx.Paragraph(
-                                    `Question ${index + 1}: ${questionText}`),
-                                new docx.Paragraph(`Options:\n${optionsText}`),
-                                new docx.Paragraph(`Correct Answer: ${answer}\n\n`),
-                            ],
-                        });
-                    });
-                });
-            });
-
-            // Export the document as a .docx file
-            docx.Packer.toBlob(doc).then(function(blob) {
-                const link = document.createElement("a");
-                link.href = URL.createObjectURL(blob);
-                link.download = "grouped_questions.docx";
-                link.click();
-            });
-        }
-    </script> --}}
 @endsection

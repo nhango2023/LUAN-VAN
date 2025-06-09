@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Configweb;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -12,7 +13,9 @@ class ProfileController extends Controller
 {
     public function showAccountInfor()
     {
-        return view('user-profile.account-infor');
+        $configWeb = ConfigWeb::where('isUse', 1)->first();
+
+        return view('user-profile.account-infor', compact('configWeb'));
     }
     public function updateFullName(Request $req)
     {
@@ -53,6 +56,8 @@ class ProfileController extends Controller
     }
     public function showBuyCredit()
     {
-        return view('user-profile.buy-credit');
+        $configWeb = ConfigWeb::where('isUse', 1)->first();
+
+        return view('user-profile.buy-credit', compact('configWeb'));
     }
 }

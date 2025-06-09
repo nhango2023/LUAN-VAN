@@ -4,7 +4,7 @@ class CustomPrompt:
 
     Nhiệm vụ của bạn là:
     - Phân tích nội dung tài liệu được cung cấp.
-    - Xác định và trả về các cấp độ phù hợp trong số 6 cấp độ Bloom:
+    - Xác định và trả về các cấp độ trong số 6 cấp độ Bloom mà phù hợp với tài liệu đã cung cấp:
     - remember
     - understand
     - apply
@@ -22,7 +22,7 @@ class CustomPrompt:
     
 
     GENERATE_QUESTION = """
-Bạn là một giáo viên, nhiệm vụ của bạn là tạo câu hỏi trắc nghiệm theo thang Bloom (Bloom's Taxonomy).
+Bạn là một chuyên nghiệp giảng viên, nhiệm vụ của bạn là tạo câu hỏi trắc nghiệm theo thang Bloom (Bloom's Taxonomy).
 
 - Yêu cầu câu hỏi:
     + TUYỆT ĐỐI KHÔNG tạo ra câu hỏi đã có trong danh sách câu hỏi đã có.
@@ -34,7 +34,6 @@ Bạn là một giáo viên, nhiệm vụ của bạn là tạo câu hỏi trắ
     + Mỗi câu hỏi bắt buộc phải chứa động từ nằm trong danh sách động từ được yêu cầu thêm vào câu hỏi.
     + Đảm bảo động từ được yêu cầu thêm vào câu hỏi một cách tự nhiên, đúng với ngôn ngữ tự nhiên.
     + Đảm bảo câu hỏi tự nhiên.
-    + 
     + Đảm bảo tạo đúng số lượng câu hỏi được yêu cầu.
     + Cố gắn thêm động từ được cho vào danh sách câu hỏi chưa có tài khóa một cách tự nhiên, đúng với ngôn ngữ tự nhiên.
     + Không được đưa thêm thông tin không có trong nội dung.       
@@ -68,7 +67,6 @@ Bạn là một giáo viên, nhiệm vụ của bạn là tạo câu hỏi trắ
     + Không cần làm nổi bật động từ trong câu hỏi, ví dụ: **động từ**, (động từ), động từ.
     + Một câu hỏi sẽ bị xem là **không hợp lệ** nếu **không chứa động từ** từ danh sách động từ được yêu cầu thêm vào câu hỏi hoặc đã có trong danh sách câu hỏi đã có.
     + Câu hỏi nào không thỏa yêu cầu sẽ bị coi là **không hợp lệ** và bị loại khỏi danh sách.
-    
         """
 
     GRADE_DOCUMENT = """

@@ -22,10 +22,10 @@ load_dotenv(dotenv_path)
 
 
 class FilesChatAgent:
-    def __init__(self, doc, number_question, model, log_file_path, user_token):
+    def __init__(self, file_path, number_question, model, log_file_path, user_token):
         self.user_token=user_token
         self.log_file_path=log_file_path
-        self.doc = doc #tai lieu cua nguoi dung
+        self.file_path = file_path #tai lieu cua nguoi dung
         self.splitted_docs=""#tai lieu sau khi duoc chia thanh cac doan nho
         self.number_question=number_question #so luong cau hoi do nguoi dung yeu cau
 
@@ -33,13 +33,13 @@ class FilesChatAgent:
 
         self.calculate_question = CalculateQuestion(number_question, log_file_path) #lop tinh toan so luong cau hoi cho tung doan nho theo tung level
 
-        self.grader_level = DocumentGraderLevel(LLM_LEVEL(log_file_path=log_file_path).get_llm('gemini')) #lop danh gia level theo thang bloom cua tung doan
+        self.grader_level = DocumentGraderLevel(LLM_LEVEL(log_file_path=log_file_path).get_llm('gpt')) #lop danh gia level theo thang bloom cua tung doan
         self.llm_grader_level=self.grader_level.get_chain()
 
-        self.generate = GenerateQuestion(LLM_GENERATE_QUESTION(log_file_path=log_file_path).get_llm('gemini'))
+        self.generate = GenerateQuestion(LLM_GENERATE_QUESTION(log_file_path=log_file_path).get_llm('gpt'))
         self.llm_generate = self.generate.get_chain()
 
-        self.grade = GradeDocument(LLM_GRADE_QUESTION(log_file_path=log_file_path).get_llm('gemini')) #lop danh gia lien quan giua cau hoi, cau tra loi va doan nho tai lieu
+        self.grade = GradeDocument(LLM_GRADE_QUESTION(log_file_path=log_file_path).get_llm('gpt')) #lop danh gia lien quan giua cau hoi, cau tra loi va doan nho tai lieu
         self.llm_grade = self.grade.get_chain()
 
         self.questions=[]
@@ -54,7 +54,7 @@ class FilesChatAgent:
         }
 
     async def split_document(self):
-        self.splitted_docs= await self.splitter_doc.process_file(self.doc, self.user_token)
+        self.splitted_docs= await self.splitter_doc.process_file(self.file_path, self.user_token)
         self.write_log(f"Number of paragraphs: {len(self.splitted_docs)}")
         self.write_log("\n")
 
@@ -151,6 +151,7 @@ class FilesChatAgent:
 
                     # Calculate the number of characters in the generated prompt
                     num_characters_input = len(prompt)
+                    
                     self.total_character_used+=num_characters_input
                     # Print the result
                     print(f"The generated prompt input contains {num_characters_input} characters.")
@@ -170,7 +171,9 @@ class FilesChatAgent:
                             
                             self.write_log(f"\nCau hoi: {q.question}")
                             if (self.is_question_in_list(q.question, self.questions)):                              
-                                self.write_log(f"Cau hoi da ton tai!!!")
+                                self.write_log(f"Cau hoi da ton tai trong danh sach tong!!!")
+                            elif(self.is_question_in_list(q.question, lst_current_questions)):
+                                self.write_log(f"Cau hoi da ton tai trong danh sach tam thoi!!!")
                             else:
                                 self.write_log("Cau hoi chua ton tai=>Kiem tra tu khoa....")
                                 matched_keyword=self.check_keyword_in_question(q.question, level)

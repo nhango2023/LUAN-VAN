@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <script>
+    {{-- <script>
         function isMobile() {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         }
@@ -15,7 +15,7 @@
             // alert("This site is not supported on mobile devices.");
             // document.body.innerHTML = "<h2>Sorry, mobile access is not supported.</h2>";
         }
-    </script>
+    </script> --}}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sign up</title>

@@ -36,7 +36,7 @@ Route::prefix('/profile')->name('profile.')->group(function () {
     Route::put('/update/fullname', [ProfileController::class, "updateFullName"])->name('update.fullname');
     Route::put('/update/password', [ProfileController::class, "updatePassword"])->name('update.password');
     Route::get('/buy-credit', [ProfileController::class, 'showBuyCredit'])->name('buy-credit');
-});
+}); 
 
 
 Route::get('login', [LoginController::class, 'index'])->name('login');
@@ -81,7 +81,8 @@ Route::prefix('admin')->name('admin.')->middleware('canAccessAdminPage')->group(
 Route::get('logout', [LogoutController::class, 'index'])->name('logout');
 
 Route::prefix('question')->name('question.')->group(function () {
-    Route::post('/create', [QuestionController::class, 'create'])->name('create');
+    Route::post('/start', [QuestionController::class, 'start'])->name('start');
+    Route::post('/new', [QuestionController::class, 'new'])->name('new');
     Route::get('/show/{id_file?}', [QuestionController::class, 'show'])->name('show');
 });
 
