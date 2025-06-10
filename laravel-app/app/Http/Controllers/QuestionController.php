@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Models\Uploaded_file;
 use App\Models\Question;
+use App\Models\Task;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -48,12 +49,34 @@ class QuestionController extends Controller
 
     public function start(Request $req)
     {
-        $taskId = $req->input('task_id');
         $user = Auth::User();
-        $user->task_id = $taskId;
-        $user->save();
+        $file = $req->file('file');
+        $taskId = $req->input('task_id');
+        $status = $req->input('status');
+        //$filePath = $file->store('uploads', 'public');  // Store file in 'public/uploads'
+        $filePath = "";
+        // Save the file data into the database
 
-        return response()->json(['message' => 'Task ID saved successfully']);
+        $uploadedFile = new Uploaded_file();
+        $uploadedFile->id_user = $user->id;  // Assuming you're saving the file for the authenticated user
+        $uploadedFile->file_path = $filePath;
+        $uploadedFile->original_name = $file->getClientOriginalName();
+        $uploadedFile->created_at = now(); // Optional: This is automatically handled by Eloquent
+        $uploadedFile->save();
+
+        $fileId = $uploadedFile->id;
+
+        $task = new Task();
+        $task->id = $taskId;
+        $task->id_user = $user->id;
+        $task->id_file = $fileId;
+        $task->status = $status; 
+        $task->save();
+
+        // $user->task_id = $taskId;
+        // $user->save();
+
+        return response()->json(['message' => 'Task ID and file saved successfully']);
     }
 
 

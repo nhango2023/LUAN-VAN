@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ConfigWebController;
-use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\aiModelController;
 use App\Http\Controllers\ConfigController;
@@ -16,11 +16,15 @@ use App\Http\Controllers\SignupController;
 use App\Models\Configweb;
 use Illuminate\Support\Facades\Hash;
 
+// Route::middleware('checkConfig')->group(function () {
+//     Route::get('/', function () {
+//         $configWeb = ConfigWeb::where('isUse', 1)->first();
+//         return view('home', compact('configWeb'));
+//     })->name('home');
+// });
+
 Route::middleware('checkConfig')->group(function () {
-    Route::get('/', function () {
-        $configWeb = ConfigWeb::where('isUse', 1)->first();
-        return view('home', compact('configWeb'));
-    })->name('home');
+    Route::get('/', [HomeController::class, "show"])->name('home');
 });
 
 Route::prefix('/config')->name('config.')->group(function () {
@@ -36,7 +40,7 @@ Route::prefix('/profile')->name('profile.')->group(function () {
     Route::put('/update/fullname', [ProfileController::class, "updateFullName"])->name('update.fullname');
     Route::put('/update/password', [ProfileController::class, "updatePassword"])->name('update.password');
     Route::get('/buy-credit', [ProfileController::class, 'showBuyCredit'])->name('buy-credit');
-}); 
+});
 
 
 Route::get('login', [LoginController::class, 'index'])->name('login');

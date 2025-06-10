@@ -469,77 +469,44 @@
                 }
                 return 1;
             }
+
+
+
+
             const form = document.querySelector('form');
             const submitButton = form.querySelector('button[type="submit"]');
             const realInput = document.getElementById('file-upload');
 
-            // form.addEventListener('submit', async function(e) {
-            //     e.preventDefault(); // prevent regular form submission
-            //     if (!realInput.files || realInput.files.length === 0) {
-            //         createToastError('error', 'Vui lòng chọn file trước khi tạo câu hỏi.');
+            //save file and task id to user
+            async function saveTaskId(taskId, status) {
 
-            //         return;
-            //     }
-            //     if (CanSendInput() == 0) {
-            //         return;
-            //     }
-            //     const formData = new FormData(form);
+                const file = realInput.files[0]; // Get the selected file
 
-            //     formData.append('model', 'gpt');
-            //     const csrfToken = document.querySelector('input[name="_token"]').value;
+                const formData = new FormData();
+                formData.append('task_id', taskId); // Append task_id to FormData
+                formData.append('file', file); // Append the file to FormData
+                formData.append('status', status)
+                try {
+                    const response = await fetch('/upload-file', {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')
+                                .getAttribute('content'), // CSRF Token
+                        },
+                        body: formData
+                    });
 
-            //     fetch('', {
-            //             method: 'POST',
-            //             headers: {
-            //                 'X-CSRF-TOKEN': csrfToken,
-            //             },
-            //             body: formData
-            //         })
-            //         .then(response => {
-            //             if (!response.ok) {
-            //                 throw new Error('Tạo câu hỏi thất bại.');
-            //             }
-            //             return response.json();
-            //         })
-            //         .then(data => {
-            //             if (data.code == 402) {
-            //                 createToastError('error', 'Không đủ credit');
-            //                 return;
-            //             } else if (data.code == 200) {
-            //                 document.querySelector('.file-selector').disabled = true;
-            //                 document.getElementById('btn-submit').disabled = true;
-            //                 createToastInfor('info', data.message);
-            //                 document.getElementById('loading_logo').classList.add('bloom-loading');
-            //                 return;
-            //             }
+                    if (!response.ok) {
+                        throw new Error('File upload failed');
+                    }
 
+                    const result = await response.json();
+                    console.log("File uploaded successfully:", result);
+                } catch (error) {
+                    console.error("Error uploading file:", error);
+                }
+            }
 
-            //         })
-            //         .catch(error => {
-            //             console.error(error);
-            //             createToastError('error', error.message || 'Lỗi không xác định.');
-
-            //         });
-
-            // });
-            const API_BASE_URL = "{{ env('API_URL') }}";
-            const API_KEY = "{{ env('API_KEY') }}";
-
-            // function pollResult(taskId) {
-            //     const interval = setInterval(() => {
-            //         fetch(`${API_BASE_URL}question/result/${taskId}`)
-            //             .then(res => res.json())
-            //             .then(data => {
-            //                 if (data.status === 'done') {
-            //                     clearInterval(interval);
-            //                     console.log("Kết quả:", data.result);
-            //                 } else if (data.status === 'error') {
-            //                     clearInterval(interval);
-            //                     console.error("Lỗi:", data.result);
-            //                 }
-            //             });
-            //     }, 5000);
-            // }
 
 
 
@@ -570,7 +537,10 @@
                     create: parseInt(form.querySelector('input[name="n_create"]').value)
                 };
                 formData.append('Nquestion_json', JSON.stringify(Nquestion));
-                formData.append('file', realInput.files[0]);
+
+                const file = realInput.files[0];
+                formData.append('file', file);
+                const fileName = file.name;
                 try {
                     const response = await fetch(`${API_BASE_URL}question/create`, {
                         method: 'POST',
@@ -586,15 +556,17 @@
 
                     const data = await response.json();
                     const taskId = data.task_id;
+                    const status = data.status;
+                    await saveTaskId(taskId, status);
 
                     document.querySelector('.file-selector').disabled = true;
                     document.getElementById('btn-submit').disabled = true;
                     document.getElementById('loading_logo').classList.add('bloom-loading');
 
-                    createToastInfor('info', 'Đang xử lý file...');
+                    createToastInfor('info', 'Đang tạo câu hỏi...');
 
                     // Bắt đầu polling
-                    pollResult(taskId);
+                    // pollResult(taskId);
 
                 } catch (error) {
                     console.error(error);

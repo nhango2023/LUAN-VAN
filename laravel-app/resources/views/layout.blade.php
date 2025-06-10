@@ -87,7 +87,70 @@
 </head>
 
 <body>
+    <script>
+        const API_BASE_URL = "{{ env('API_URL') }}";
+        const API_KEY = "{{ env('API_KEY') }}";
+        // Assuming tasks are passed as a JSON object to the frontend
+        const tasks = @json($tasks); // Get tasks from PHP (Laravel)
 
+        if (tasks.length === 0) {
+            console.log("No tasks are being processed.");
+        } else {
+            tasks.forEach((task) => {
+                // Poll each task result
+                pollTaskResult(task.id);
+            });
+        }
+
+        async function pollTaskResult(taskId) {
+            const interval = setInterval(async () => {
+                const res = await fetch(`${API_BASE_URL}question/result/${taskId}`);
+                const data = await res.json();
+
+                if (data.status === 'done') {
+                    clearInterval(interval); // Stop polling for this task
+                    const results = data.result;
+
+                    console.log("Results for task:", results);
+
+                    // Call the controller to save the results
+                    await saveTaskResults(taskId, results); // Call the controller with the results
+
+                    // Optionally, continue handling other tasks or update UI
+                } else if (data.status === 'error') {
+                    clearInterval(interval);
+                    console.error("Error processing task", taskId, data.result);
+                }
+            }, 5000); // Poll every 5 seconds
+        }
+
+        async function saveTaskResults(taskId, results) {
+            try {
+                // Call the backend controller to save the results
+                const res = await fetch(`${API_BASE_URL}task/saveResults`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
+                            'content') // CSRF token
+                    },
+                    body: JSON.stringify({
+                        task_id: taskId,
+                        results: results
+                    })
+                });
+
+                const data = await res.json();
+                if (res.ok) {
+                    console.log("Task results saved successfully:", data);
+                } else {
+                    console.error("Error saving task results:", data);
+                }
+            } catch (error) {
+                console.error("Error calling save task results:", error);
+            }
+        }
+    </script>
     <!-- Header -->
     <div class="header">
         <div class="logo">
@@ -478,6 +541,11 @@
             document.getElementById("profile-sidebar").classList.remove("active");
             document.getElementById("overlay-profile-sidebar").classList.remove("active");
         }
+    </script>
+
+
+    <script>
+        console.log(API_BASE_URL)
     </script>
     @auth
         <script>
