@@ -15,8 +15,8 @@ class UserPlan extends Model
 
     // Các thuộc tính có thể gán đại trà
     protected $fillable = [
-        'user_id',
-        'plan_id',
+        'id_user',
+        'id_plan',
         'start_date',
         'end_date',
     ];

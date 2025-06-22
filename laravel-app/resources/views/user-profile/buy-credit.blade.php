@@ -29,13 +29,14 @@
                     <div class="quick-cards">
                         @foreach ($plans as $plan)
                             <div class="quick-card" data-id="{{ $plan->id }}"
-                                style="pointer-events: {{ $currentPlan->id == $plan->id || $plan->price == 0 ? 'none' : 'auto' }}">
+                                style="pointer-events: {{ $currentPlan->id_plan == $plan->id || $plan->price == 0 ? 'none' : 'auto' }}">
+
                                 <div><strong>{{ $plan->name }}</strong></div>
                                 <div class="desc">+{{ $plan->questions_limit }} questions</div>
                                 <div class="desc">+{{ $plan->processes }} processes</div>
                                 <div class="desc">+{{ $plan->description }} processes</div>
                                 <i class="fa fa-arrow-down"></i>
-                                <div class="price">{{ $plan->price / 1000 }}K</div>
+                                <div class="price">{{ $plan->duration }}days/{{ $plan->price / 1000 }}K</div>
                             </div>
                         @endforeach
                     </div>
@@ -45,7 +46,7 @@
                 <div class="custom-topup-section">
                     <div class="custom-row mb-2">
                         <button class="custom-btn" id="btnMinus"><i class="fa fa-minus"></i></button>
-                        <span class="custom-amount" id="questionAmount">200</span>
+                        <span class="custom-amount" id="questionAmount">0</span>
                         <span class="custom-desc">Questions</span>
                         <button class="custom-btn" id="btnPlus"><i class="fa fa-plus"></i></button>
                     </div>
@@ -55,7 +56,7 @@
                     </div>
 
                     <div class="custom-slider">
-                        <input type="range" min="0" max="1000" step="1" value="200"
+                        <input type="range" min="0" max="1000" step="1" value="0"
                             class="form-control-range w-100" id="questionRange">
                     </div>
                     <button type="submit" class="paypal-btn"><i class="fab fa-paypal"></i> Buy now</button>
@@ -90,11 +91,14 @@
                 e.preventDefault();
 
                 const questions = rangeInput.value;
-                const selectedPlanId = "";
-                // if (!selectedPlanId) {
-                //     alert("Please select a plan first.");
-                //     return;
-                // }
+                // const selectedPlanId = "";
+                if (!selectedPlanId) {
+                    selectedPlanId = "";
+                }
+                if (selectedPlanId === "" && questions == 0) {
+                    createToastError('error', 'Vui lòng chọn kế hoạch hoặc mua thêm câu hỏi');
+                    return;
+                }
 
                 // Redirect to payment URL
                 const targetURL = `/profile/payment?plan_id=${selectedPlanId}&questions=${questions}`;

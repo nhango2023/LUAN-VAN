@@ -8,18 +8,20 @@ use App\Models\Configweb;
 use App\Models\Payment;
 use App\Models\Plan;
 use App\Models\Task;
+use App\Models\UserPlan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
     public function showAccountInfor()
     {
         $configWeb = ConfigWeb::where('isUse', 1)->first();
-        $plan = "";
         $user = Auth::user();
+        $tasks = [];
         // Check if user is authenticated and fetch tasks
         if ($user) {
             $tasks = Task::join('uploaded_files', 'uploaded_files.id', '=', 'tasks.id_file')
@@ -28,15 +30,15 @@ class ProfileController extends Controller
                 ->select('tasks.*', 'uploaded_files.original_name')
                 ->get();
 
-            $plan = Plan::find($user->id_plan);
-            Log::debug($plan . '');
-        } else {
-            $tasks = [];  // Empty array if user is notauthenticated
+            $currentPlan = UserPlan::join('plans', 'user_plan.id_plan', '=', 'plans.id')
+                ->where('user_plan.id_user', $user->id)
+                ->select('plans.id as plan_id', 'plans.name as name', 'user_plan.end_date')
+                ->first();
         }
         return view('user-profile.account-infor', [
             'configWeb' => $configWeb,
             'tasks' => $tasks,
-            'plan' => $plan
+            'currentPlan' => $currentPlan
         ]);
     }
     public function updateFullName(Request $req)
@@ -80,7 +82,10 @@ class ProfileController extends Controller
     {
         $configWeb = ConfigWeb::where('isUse', 1)->first();
         $user = Auth::user();
-        $currentPlan = Plan::find($user->id_plan); // Lấy kế hoạch của user hiện tại
+        $currentPlan = UserPlan::join('plans', 'user_plan.id_plan', '=', 'plans.id')
+            ->where('user_plan.id_user', $user->id)
+            ->select('user_plan.id', 'plans.id as id_plan', 'plans.name as name', 'user_plan.end_date', 'plans.price')
+            ->first();
 
         $plans = Plan::orderBy('price', 'asc')->get();
         $tasks = Task::join('uploaded_files', 'uploaded_files.id', '=', 'tasks.id_file')
@@ -97,26 +102,30 @@ class ProfileController extends Controller
             'additionalQuestion' => $additionalQuestion
         ]);
     }
+
     public function showPaymentPage(Request $request)
     {
         $configWeb = ConfigWeb::where('isUse', 1)->first();
         $user = Auth::user();
-        $currentPlan = Plan::find($user->id_plan);
+        $currentPlan = UserPlan::join('plans', 'user_plan.id_plan', '=', 'plans.id')
+            ->where('user_plan.id_user', $user->id)
+            ->select('user_plan.id', 'plans.id as plan_id', 'plans.name as name', 'user_plan.end_date')
+            ->first();
+
         $planId = $request->query('plan_id');
         $questions = $request->query('questions');
 
         //user only buy extra questions
         if (empty($planId)) {
-            $planToPay = new Plan(); // create dummy plan with price = 0
+            $planToPay = new Plan();
+            $planToPay->id = -1;
             $planToPay->price = 0;
-            $planToPay->name = "No plan selected";
+            $planToPay->name = "None";
             $planToPay->questions_limit = 0;
             $planToPay->processes = 0;
             $planToPay->description = '';
         } else {
             $planToPay = Plan::find($planId);
-
-            // fallback if plan not found
         }
         $additionalQuestion = AdditionalQuestion::where('isActive', 1)->first();
 
@@ -134,7 +143,6 @@ class ProfileController extends Controller
             'planToPay' => $planToPay,
             'configWeb' => $configWeb,
             'currentPlan' => $currentPlan
-
         ]);
     }
 
@@ -144,6 +152,9 @@ class ProfileController extends Controller
         $additionalQuestion = AdditionalQuestion::where('isActive', 1)->first();
         $payment = new Payment();
         $payment->id_user = $user->id; // ID người dùng
+        if ($id_plan == -1) {
+            $id_plan = null;
+        }
         $payment->id_plan = $id_plan;
         $payment->extra_questions = $questions;
         $payment->id_additional_questions = $additionalQuestion->id;
@@ -156,7 +167,6 @@ class ProfileController extends Controller
 
     public function paymentHistory()
     {
-
         $configWeb = ConfigWeb::where('isUse', 1)->first();
         $user = Auth::user();
         $tasks = Task::join('uploaded_files', 'uploaded_files.id', '=', 'tasks.id_file')
@@ -165,16 +175,30 @@ class ProfileController extends Controller
             ->select('tasks.*', 'uploaded_files.original_name')
             ->get();
 
-        $payments = Payment::join('plans', 'plans.id', '=', 'payments.id_plan')
-            ->where('payments.id_user', $user->id)
-            ->select('payments.status', 'payments.created_at', 'plans.name', 'plans.price')
+        $userId = Auth::id();
+
+        $payments = DB::table('payments')
+            ->leftJoin('plans', 'payments.id_plan', '=', 'plans.id')
+            ->join('additional_questions', 'payments.id_additional_questions', '=', 'additional_questions.id')
+            ->where('payments.id_user', $userId)
+            ->select(
+                'plans.name as plan_name',
+                'plans.price as plan_price',
+                'additional_questions.price as additional_question_price',
+                'payments.*'
+            )
+            ->orderBy('payments.created_at', 'desc')
             ->get();
-        $plan = Plan::find($user->id_plan);
+
+        $currentPlan = UserPlan::join('plans', 'user_plan.id_plan', '=', 'plans.id')
+            ->where('user_plan.id_user', $user->id)
+            ->select('plans.id as plan_id', 'plans.name as name', 'user_plan.end_date')
+            ->first();
         return view('user-profile.payment-history', [
             'tasks' => $tasks,
             'payments' => $payments,
             'configWeb' => $configWeb,
-            'currentPlan' => $plan,
+            'currentPlan' => $currentPlan,
         ]);
     }
 }

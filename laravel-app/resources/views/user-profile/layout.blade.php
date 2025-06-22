@@ -53,8 +53,10 @@
                     </div>
                     <div class="status-item">
                         <i class="fas fa-lock"></i>
-                        <span>Locked credits</span>
-                        <span class="status-badge red">0</span>
+                        <span>Expire in</span>
+                        <span class="status-badge red">
+                            {{ $currentPlan->end_date ? $currentPlan->end_date : 'none' }}
+                        </span>
                     </div>
                 </div>
                 <style>

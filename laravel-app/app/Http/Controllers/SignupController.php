@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Plan;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\UserPlan;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 
 class SignupController extends Controller
 {
@@ -28,19 +30,26 @@ class SignupController extends Controller
         if ($validator->fails()) {
             return redirect()->back()
                 ->withErrors($validator)
-                ->withInput(); // repopulate old input values
+                ->withInput();
         }
 
-        $plan = Plan::where('price', 0)->get();
-        // Save to database
-        User::create([
+        $plan = Plan::where('price', 0)->first();
+
+
+        $user = User::create([
             'fullname' => $req->full_name,
             'level' => 'user',
             'username' => $req->full_name,
             'email' => $req->email,
-            'id_plan' => $plan->id,
             'available_question' => $plan->questions_limit,
-            'password' => Hash::make($req->password), // Always hash passwords!
+            'password' => Hash::make($req->password),
+        ]);
+
+        UserPlan::create([
+            'id_user' => $user->id,
+            'id_plan' => $plan->id,
+            'start_date' => Carbon::now(),
+            'end_date' => null,
         ]);
 
         return redirect()->route('login')->with('success', 'Đăng ký thành công! Hãy đăng nhập.');

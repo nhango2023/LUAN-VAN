@@ -16,15 +16,15 @@
                     <h5>Tổng tiền cần thanh toán:
                         <strong>{{ $planToPay->price + $questions * $additionalQuestion->price }}VND</strong>
                     </h5>
-                    <p class="mt-4">Vui lòng ấn "Confrim" khi đã chuyển khoản</p>
+                    <p class="mt-4">Vui lòng ấn <strong>"Confirm"</strong> khi đã chuyển khoản</p>
                     <p class="mt-4">Chúng tôi sẽ xác nhận trong vòng 24 giờ.</p>
-
-                    <!-- Thẻ img để hiển thị mã QR -->
-                    <img id="qrcode-img" alt="QR Code" style="max-width: 100%; height: auto;" />
                     <div>
                         <a href="{{ route('profile.payment-confirm', ['id_plan' => $planToPay->id, 'questions' => $questions]) }}"
                             class="btn btn-secondary">Confirm</a>
                     </div>
+                    <!-- Thẻ img để hiển thị mã QR -->
+                    <img id="qrcode-img" alt="QR Code" style="max-width: 100%; height: auto;" />
+
 
                     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script> <!-- Đảm bảo thư viện QRCode.js được tải đúng -->
                     <script>

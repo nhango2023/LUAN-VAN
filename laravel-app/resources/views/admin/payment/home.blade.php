@@ -78,8 +78,9 @@
                     <tr>
                         <th>Created at</th>
                         <th>User</th>
-                        <th>Plane name</th>
-                        <th>Price</th>
+                        <th>Plane name-Price</th>
+                        <th>Extra question-Price</th>
+                        <th>Total</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -89,12 +90,22 @@
                         <tr>
                             <td>{{ $payment->created_at }}</td>
                             <td>{{ $payment->fullname }}</td>
-                            <td>{{ $payment->name }}</td>
-                            <td>{{ number_format($payment->price, 2) }} VNĐ</td>
+
+                            @if ($payment->plan_name)
+                                <td>
+                                    {{ $payment->plan_name }}-{{ $payment->plan_price }}VND
+                                </td>
+                            @else
+                                <td>
+                                    0 VND
+                                </td>
+                            @endif
+                            <td>{{ $payment->extra_questions }}*{{ $payment->additional_question_price }}VND</td>
+                            <td>{{ $payment->plan_price + $payment->extra_questions * $payment->additional_question_price }}
                             <td> <span class="status status-{{ $payment->status }}">{{ $payment->status }}</span></td>
                             <td>
-                                <form action="{{ route('admin.payment.update', [$payment->id, 'confirm']) }}" method="POST"
-                                    style="display:inline-block;">
+                                <form action="{{ route('admin.payment.update', [$payment->id, 'confirm']) }}"
+                                    method="POST" style="display:inline-block;">
                                     @csrf
                                     @method('PUT')
                                     <button type="submit" class="btn btn-success btn-sm">

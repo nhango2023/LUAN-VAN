@@ -51,19 +51,28 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>Create at</th>
-                        <th>Plan name</th>
-                        <th>Price</th>
-
+                        <th>Plan name-price</th>
+                        <th>Extra question-Price</th>
+                        <th>Total</th>
                         <th>Status</th>
-
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($payments as $payment)
                         <tr>
                             <td>{{ $payment->created_at }}</td>
-                            <td>{{ $payment->name }} </td>
-                            <td>{{ $payment->price }}</td>
+                            @if ($payment->plan_name)
+                                <td>
+                                    {{ $payment->plan_name }}-{{ $payment->plan_price }}VND
+                                </td>
+                            @else
+                                <td>
+                                    0 VND
+                                </td>
+                            @endif
+                            <td>{{ $payment->extra_questions }}*{{ $payment->additional_question_price }}VND</td>
+                            <td>{{ $payment->plan_price + $payment->extra_questions * $payment->additional_question_price }}
+                            </td>
                             <td> <span class="status status-{{ $payment->status }}">{{ $payment->status }}</span></td>
                         </tr>
                     @endforeach
