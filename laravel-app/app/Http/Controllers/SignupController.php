@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Plan;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -30,12 +31,15 @@ class SignupController extends Controller
                 ->withInput(); // repopulate old input values
         }
 
+        $plan = Plan::where('price', 0)->get();
         // Save to database
         User::create([
             'fullname' => $req->full_name,
             'level' => 'user',
             'username' => $req->full_name,
             'email' => $req->email,
+            'id_plan' => $plan->id,
+            'available_question' => $plan->questions_limit,
             'password' => Hash::make($req->password), // Always hash passwords!
         ]);
 

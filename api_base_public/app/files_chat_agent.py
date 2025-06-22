@@ -22,14 +22,15 @@ load_dotenv(dotenv_path)
 
 
 class FilesChatAgent:
-    def __init__(self, file_path, number_question, model, log_file_path, user_token):
+    def __init__(self, doc, number_question, model, log_file_path, user_token, task):
+        self.task=task
         self.user_token=user_token
         self.log_file_path=log_file_path
-        self.file_path = file_path #tai lieu cua nguoi dung
+        self.doc = doc #tai lieu cua nguoi dung
         self.splitted_docs=""#tai lieu sau khi duoc chia thanh cac doan nho
         self.number_question=number_question #so luong cau hoi do nguoi dung yeu cau
 
-        self.splitter_doc= SplitDocument(log_file_path) #lop chia tai lieu thanh nhung doan nho
+        self.splitter_doc= SplitDocument() #lop chia tai lieu thanh nhung doan nho
 
         self.calculate_question = CalculateQuestion(number_question, log_file_path) #lop tinh toan so luong cau hoi cho tung doan nho theo tung level
 
@@ -53,8 +54,8 @@ class FilesChatAgent:
             "create" : os.getenv("KEYWORD_CREATE")
         }
 
-    async def split_document(self):
-        self.splitted_docs= await self.splitter_doc.process_file(self.file_path, self.user_token)
+    def split_document(self):
+        self.splitted_docs= self.splitter_doc.process_file(self.doc)
         self.write_log(f"Number of paragraphs: {len(self.splitted_docs)}")
         self.write_log("\n")
 
@@ -66,11 +67,11 @@ class FilesChatAgent:
             num_characters_input = len(prompt)
             self.total_character_used+=num_characters_input
             # Print the result
-            print(f"Grader level prompt input contains {num_characters_input} characters.")
+            #print(f"Grader level prompt input contains {num_characters_input} characters.")
             result = self.llm_grader_level.invoke(input_data)
             num_characters_output=len(str(result))
             self.total_character_used+=num_characters_output
-            print(f"Grader level prompt output contains {num_characters_output} characters.") 
+            #print(f"Grader level prompt output contains {num_characters_output} characters.") 
             
             self.write_log(f'doan van-[{idx}]: {result.level}')
             
@@ -154,13 +155,13 @@ class FilesChatAgent:
                     
                     self.total_character_used+=num_characters_input
                     # Print the result
-                    print(f"The generated prompt input contains {num_characters_input} characters.")
+                    #print(f"The generated prompt input contains {num_characters_input} characters.")
                     
                     result = self.llm_generate.invoke(input_data)
                     
                     num_characters_output=len(str(result))
                     self.total_character_used+=num_characters_output
-                    print(f"The generated prompt output contains {num_characters_output} characters.") 
+                    #print(f"The generated prompt output contains {num_characters_output} characters.") 
 
                     if result is None:
                         self.write_log("Khong the tao cau hoi!!!")
@@ -200,17 +201,18 @@ class FilesChatAgent:
                                     num_characters = len(prompt)
                                     self.total_character_used+=num_characters
                                     # Print the result
-                                    print(f"The grade prompt input contains {num_characters} characters.")
+                                    #print(f"The grade prompt input contains {num_characters} characters.")
                                     score = self.llm_grade.invoke(input_data)
                                     num_characters_output=len(str(result))
                                     self.total_character_used+=num_characters_output
-                                    print(f"The grade prompt output contains {num_characters_output} characters.")     
+                                    #print(f"The grade prompt output contains {num_characters_output} characters.")     
                                     self.write_log(f"Lien quan: {score.binary_score}")
                                     self.write_log(f"Giai thich: {score.description}") 
                                     if score.binary_score == "yes":        
                                         q.level = level
-                                        q.page=page
+                                        q.page=page+1
                                         q.idx_doc=idx_splited_doc
+                                        q.citation=splited_doc
                                         self.write_log(f"cau hoi dung: {q}")
                                         self.write_log(f"them cau hoi vao danh sach tam thoi!")
                                         lst_current_questions.append(q)
@@ -219,6 +221,7 @@ class FilesChatAgent:
                                             lst_invalid_question.append(q)
                                 else:
                                     if(self.is_question_in_list(q.question, lst_questions_without_keywords))==False:
+
                                         lst_questions_without_keywords.append(q)
                                 
                     self.write_log(f"Tạo đủ {len(lst_current_questions)}/{number_required_questions} câu hỏi")
@@ -230,7 +233,8 @@ class FilesChatAgent:
                         break   
                 self.write_log(f"Them {len(lst_current_questions)} cau hoi vao danh sach tong")
                 self.questions.extend(lst_current_questions)
-                self.write_log(f"Tong cau hoi hien tai: {len(self.questions)}")                         
+                self.write_log(f"Tong cau hoi hien tai: {len(self.questions)}")
+                self.task["current_number_question"] = len(self.questions)                         
 
     def check_keyword_in_question(self, question: str, level: str):
         """
@@ -275,8 +279,8 @@ class FilesChatAgent:
                 self.write_log(f"Cau hoi da co: {existed_question}")
                 return True
         return False
-    async def get_lst_question(self):
-        await self.split_document()
+    def get_lst_question(self):
+        self.split_document()
         self.detect_level_and_calculate_question()
         self.generate_question_and_grade_question()
         self.write_log(f"Tong characters: {self.total_character_used}")

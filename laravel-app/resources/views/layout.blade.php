@@ -87,70 +87,7 @@
 </head>
 
 <body>
-    <script>
-        const API_BASE_URL = "{{ env('API_URL') }}";
-        const API_KEY = "{{ env('API_KEY') }}";
-        // Assuming tasks are passed as a JSON object to the frontend
-        const tasks = @json($tasks); // Get tasks from PHP (Laravel)
 
-        if (tasks.length === 0) {
-            console.log("No tasks are being processed.");
-        } else {
-            tasks.forEach((task) => {
-                // Poll each task result
-                pollTaskResult(task.id);
-            });
-        }
-
-        async function pollTaskResult(taskId) {
-            const interval = setInterval(async () => {
-                const res = await fetch(`${API_BASE_URL}question/result/${taskId}`);
-                const data = await res.json();
-
-                if (data.status === 'done') {
-                    clearInterval(interval); // Stop polling for this task
-                    const results = data.result;
-
-                    console.log("Results for task:", results);
-
-                    // Call the controller to save the results
-                    await saveTaskResults(taskId, results); // Call the controller with the results
-
-                    // Optionally, continue handling other tasks or update UI
-                } else if (data.status === 'error') {
-                    clearInterval(interval);
-                    console.error("Error processing task", taskId, data.result);
-                }
-            }, 5000); // Poll every 5 seconds
-        }
-
-        async function saveTaskResults(taskId, results) {
-            try {
-                // Call the backend controller to save the results
-                const res = await fetch(`${API_BASE_URL}task/saveResults`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
-                            'content') // CSRF token
-                    },
-                    body: JSON.stringify({
-                        task_id: taskId,
-                        results: results
-                    })
-                });
-
-                const data = await res.json();
-                if (res.ok) {
-                    console.log("Task results saved successfully:", data);
-                } else {
-                    console.error("Error saving task results:", data);
-                }
-            } catch (error) {
-                console.error("Error calling save task results:", error);
-            }
-        }
-    </script>
     <!-- Header -->
     <div class="header">
         <div class="logo">
@@ -242,47 +179,54 @@
                         <div class="status-item">
                             <i class="fas fa-check-circle"></i>
                             <span>Current plan</span>
-                            <span class="status-badge yellow">Free</span>
+                            <span class="status-badge yellow">{{ $currentPlan->name }}</span>
                         </div>
                         <div class="status-item">
                             <i class="fas fa-star"></i>
                             <span>Available credits</span>
-                            <span class="status-badge blue">{{ Auth::user()->credit }}</span>
+                            <span class="status-badge blue">{{ Auth::user()->available_question }}</span>
                         </div>
-                        <div class="status-item">
+                        {{-- <div class="status-item">
                             <i class="fas fa-lock"></i>
                             <span>Locked credits</span>
                             <span class="status-badge red">0</span>
-                        </div>
+                        </div> --}}
                     </div>
 
                     <div class="profile-actions mx-3">
                         <a href="{{ route('profile.buy-credit') }}">
-                            <div class="action-item {{ Route::is('profile.buy-credit') ? 'active' : 'noe' }}">🛒 Buy
+                            <div class="action-item {{ Route::is('profile.buy-credit') ? 'active' : 'none' }}">🛒 Buy
                                 credits
                             </div>
                         </a>
-                        <div class="action-item">📄 Payment history</div>
+                        <a href="{{ route('profile.payment-history') }}">
+                            <div class="action-item {{ Route::is('profile.payment-history') ? 'active' : 'none' }}">
+                                📄 Payment history
+                            </div>
+                        </a>
+                        {{-- <div class="action-item">📄 Payment history</div> --}}
                         <a href="{{ route('profile.account-infor') }}">
                             <div class="action-item {{ Route::is('profile.account-infor') ? 'active' : 'none' }}">👤
                                 Account
                                 Information</div>
                         </a>
-                        <div class="action-item with-badge">
+                        {{-- <div class="action-item with-badge">
                             🔗 Service Integration <span class="new-badge">New</span>
-                        </div>
+                        </div> --}}
                         <div class="dv1">
                             <div class="dv2"></div>
                         </div>
-                        <div class="action-item">
+                        {{-- <div class="action-item">
                             🎁 Gift Card<br>
                             <span class="subtext">Redeem a gift card to get more credits</span>
-                        </div>
+                        </div> --}}
+
                         <a class="action-item d-flex align-items-center" style="text-decoration: none;"
                             href="{{ route('logout') }}">
                             <i class="material-icons">logout</i>
                             <div>Log out</div>
                         </a>
+
                     </div>
 
 
@@ -293,12 +237,134 @@
 
         </div>
     </div>
+    <script>
+        window.API_BASE_URL = "{{ env('API_URL') }}";
+        window.API_KEY = "{{ env('API_KEY') }}";
+        // Assuming tasks are passed as a JSON object to the frontend
+        const tasks = @json($tasks); // Get tasks from PHP (Laravel)
+        window.activeTaskCount = tasks.length;
+        if (window.activeTaskCount === 0) {
+            console.log("No tasks are being processed.");
+        } else {
+            document.getElementById('loading_logo').classList.add('bloom-loading');
+            tasks.forEach((task) => {
+                // Poll each task result
+                pollTaskResult(task.id, task.id_file, task.total_question);
+            });
+        }
 
+        function finishOneTask() {
+            activeTaskCount--;
+            if (window.activeTaskCount === 0) {
+                document.getElementById('loading_logo').classList.remove('bloom-loading');
+                console.log("All tasks finished");
+                setTimeout(function() {
+                    location.reload(); // Refresh the page after a delay
+                }, 2000);
+                createToastSuccess()
+            }
+        }
+        async function pollTaskResult(taskId, id_file, total_question) {
+
+            const interval = setInterval(async () => {
+
+                const res = await fetch(`${window.API_BASE_URL}question/result/${taskId}`);
+                const data = await res.json();
+                console.log(`{taskId}: data`)
+                window.increaseProgress(taskId, data.current_number_question, total_question);
+                total_question
+                if (data.status === 'done') {
+                    clearInterval(interval); // Stop polling for this task
+                    result = data.result;
+                    // console.log("Results for task:", result);
+
+                    // Call the controller to save the results
+                    await saveTaskResults(taskId, result, id_file); // Call the controller with the results
+                    finishOneTask();
+                    // Optionally, continufe handling other tasks or update UI
+
+                } else if (data.status === 'error') {
+                    clearInterval(interval);
+                    console.error("Error processing task", taskId, data);
+                } else {
+                    console.log("data:", data);
+
+                }
+            }, 5000); // Poll every 5 seconds
+        }
+
+        async function saveTaskResults(taskId, results, id_file) {
+            try {
+                // Call the backend controller to save the results
+                const res = await fetch(`question/new`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
+                            'content') // CSRF token
+                    },
+                    body: JSON.stringify({
+                        task_id: taskId,
+                        results: results,
+                    })
+                });
+
+                const data = await res.json();
+                if (res.ok) {
+                    console.log("Task results saved successfully:", data);
+                    await window.fetchMessages(5);
+                    createToastSuccess('success');
+                } else {
+                    console.error("Error saving task results:", data);
+                }
+            } catch (error) {
+                console.error("Error calling save task results:", error);
+            }
+        }
+    </script>
     <div class="main-container">
         @yield('content')
     </div>
     <ul class="notifications-toast"></ul>
 
+
+    {{-- pop up task --}}
+    @auth
+        <div id="popupOverlay" class="overlay-container">
+            <div class="popup-box">
+                <h5 style="color: green;">Task: {{ count($tasks) }}/{{ $currentPlan->processes }}</h5>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Task</th>
+                                <th>Start</th>
+                                <th>Progress</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($tasks as $index => $task)
+                                <tr>
+                                    <td>{{ $task->original_name }}</td>
+                                    <td>{{ $task->created_at }}</td>
+                                    <td>
+                                        <div class="progress">
+                                            <div id="{{ $task->id }}" class="progress-bar bg-primary"
+                                                style="width: 0%">
+                                                (0/{{ $task->total_question }})
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn-close-popup" onclick="togglePopup()">Close</button>
+            </div>
+        </div>
+    @endauth
     <footer>
         <div class="container">
             <div class="row text-left">
@@ -331,6 +397,11 @@
                 </div>
             </div>
         </div>
+        @auth
+            <button class="btn-open-popup" onclick="togglePopup()"><span
+                    class="material-icons">arrow_upward</span></button>
+        @endauth
+
     </footer>
 
 
@@ -339,6 +410,35 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script>
+        function togglePopup() {
+            const overlay = document.getElementById('popupOverlay');
+            overlay.classList.toggle('show');
+
+            const openBtn = document.querySelector('.btn-open-popup');
+            if (overlay.classList.contains('show')) {
+                openBtn.style.display = 'none';
+            } else {
+                openBtn.style.display = 'block';
+            }
+        }
+
+        window.increaseProgress = function(id, current_quanlity, total_quanlity) {
+            const progressBar = document.getElementById(id);
+            if (!progressBar) return;
+
+            // Tính toán phần trăm mới dựa trên current / total
+            let percentage = Math.round((current_quanlity / total_quanlity) * 100);
+
+            // Giới hạn trong 0–100%
+            percentage = Math.min(percentage, 100);
+
+            // Cập nhật giao diện thanh tiến trình
+            progressBar.style.width = percentage + '%';
+            progressBar.innerText = `(${current_quanlity}/${total_quanlity})`;
+        }
+    </script>
 
     <script>
         @auth
@@ -351,15 +451,8 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             // Initial message load
-            fetchMessages(currentLimit);
 
-            // Attach event listener to 'See More' button
-            document.getElementById('see-more-btn').addEventListener('click', function() {
-                currentLimit += 5; // Increase limit by 5 (can change this to 10 if needed)
-                fetchMessages(currentLimit); // Fetch the next set of messages
-            });
-
-            async function fetchMessages(limit) {
+            window.fetchMessages = async function(limit) {
                 @auth
                 try {
                     const response = await fetch(`/message/show?limit=${limit}`, {
@@ -382,7 +475,8 @@
 
                     data.messages.forEach(msg => {
                         if (msg.seen == 0) display_dot = true;
-                        const style_not_seen = msg.seen == 0 ? 'style="color: rgb(14 159 110)"' : '';
+                        const style_not_seen = msg.seen == 0 ? 'style="color: rgb(14 159 110)"' :
+                            '';
                         const timeText = timeAgo(msg.created_at);
 
                         const notificationHTML = `
@@ -423,6 +517,15 @@
                 }
             @endauth
         }
+
+        window.fetchMessages(currentLimit);
+
+        // Attach event listener to 'See More' button
+        document.getElementById('see-more-btn').addEventListener('click', function() {
+            currentLimit += 5; // Increase limit by 5 (can change this to 10 if needed)
+            window.fetchMessages(currentLimit); // Fetch the next set of messages
+        });
+
         });
         @endauth
     </script>
@@ -544,9 +647,7 @@
     </script>
 
 
-    <script>
-        console.log(API_BASE_URL)
-    </script>
+
     @auth
         <script>
             function timeAgo(timestamp) {

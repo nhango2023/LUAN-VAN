@@ -1,222 +1,157 @@
-from fastapi import FastAPI
-from app.models.n_question import NQuestion
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi import FastAPI, UploadFile, File, Form, HTTPException, BackgroundTasks, Request
-from app.security.security import get_api_key
 from fastapi.responses import JSONResponse
+
+from app.models.n_question import NQuestion
+from app.security.security import get_api_key
 from .files_chat_agent import FilesChatAgent
-import os
-from datetime import datetime
-import time
-import uuid
-import asyncio
-from typing import Dict
+
+from langchain_community.document_loaders import PyMuPDFLoader, UnstructuredWordDocumentLoader, TextLoader
+
 from pathlib import Path
-import shutil
-# Tạo instance của FastAPI
+from datetime import datetime
+import uuid
+import time
+import asyncio
+import os
+
 app = FastAPI()
 
 # Cấu hình CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Cho phép tất cả nguồn (hoặc chỉ định danh sách ["http://example.com"])
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],  # Cho phép tất cả phương thức (GET, POST, PUT, DELETE, v.v.)
-    allow_headers=["*"],  # Cho phép tất cả headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
-# Include các router vào ứng dụng chính
-# app.include_router(base.router)
-# app.include_router(file_upload.router)
-
-tasks: Dict[str, Dict] = {}
+# Dictionary lưu task_id
+tasks: dict[str, dict] = {}
 
 @app.get("/")
-def read_root():    
-    return {"message": "Welcome to my FastAPI application"}   
-
-
-@app.exception_handler(422)
-async def validation_exception_handler(request: Request, exc):
-    print(exc.errors())
-    return JSONResponse(
-        status_code=422,
-        content={"message": "Validation error", "errors": exc.errors()}
-    )
-
-async def handle_question_task(temp_file_path, task_id: str, file: UploadFile, model: str, nquestion_json: str, token: int, log_file_path, start_time):
-    try:
-        
-        agent = FilesChatAgent(temp_file_path, nquestion_json, model, log_file_path, token)
-        questions = await agent.get_lst_question()
-        tasks[task_id]["status"] = "done"
-        end_time = time.time()
-        execution_time_seconds = end_time - start_time
-        minutes = execution_time_seconds // 60  # Get the whole minutes
-        seconds = execution_time_seconds % 60  # Get the remaining seconds
-
-        write_log(log_file_path,f"Execution Time: {int(minutes)} minutes and {seconds:.2f} seconds")
-        tasks[task_id]["result"] = questions
-    except Exception as e:
-        tasks[task_id]["status"] = "error"
-        tasks[task_id]["result"] = str(e)
-
+async def read_root():
+    return {"message": "Welcome to my FastAPI application"}
 
 @app.get("/question/result/{task_id}")
-def get_question_result(task_id: str):  
-    if task_id not in tasks:
+async def get_question_result(task_id: str):
+    task_data = tasks.get(task_id)
+    if not task_data:
         raise HTTPException(status_code=404, detail="Task ID không tồn tại.")
-    return tasks[task_id]
+
+    response = {
+        "status": task_data["status"],
+        "result": task_data["result"],
+        "current_number_question": task_data.get("current_number_question", 0)
+    }
+
+    if task_data["status"] == "done":
+        del tasks[task_id]  # cleanup
+
+    return response
 
 
-@app.post("/question/create", summary="Route này dùng để tạo câu hỏi")
+@app.post("/question/create")
 async def create_question(
     token: int = Form(...),
     model: str = Form(...),
     file: UploadFile = File(...),
     Nquestion_json: str = Form(...),
-    api_key: str = (get_api_key),
 ):
-    """
-    Route này dùng để tạo câu hỏi\n
-    **Parameters**
-    - **file**: File giáo trình để ai dựa vào tạo câu hỏi
-    - **Nquestion_json**: Số lượng câu hỏi cho từng cấp độ
-    - **api_key**: key xác thực 
-    - **model**: tên model ai tạo câu hỏi
-    - **token**: số token hiện tại của user
+    try:
+        print("[DEBUG] Start create_question")
+        start_time = time.time()
+        Nquestion = NQuestion.model_validate_json(Nquestion_json)
 
-    **Returns:**
-    - Danh sách câu hỏi:
-    [{question:Nội dung câu hỏi,
-    options: Danh sách 4 đáp án,
-    answer: Đáp án đúng,
-    level: Cấp độ Bloom's taxonomy},
-    {},
-    ....
-    ]
-    """
-    start_time = time.time()
-    Nquestion = NQuestion.model_validate_json(Nquestion_json)
-    
-    n_question = {
-    "remember": Nquestion.remember,
-    "understand": Nquestion.understand,
-    "apply": Nquestion.apply,
-    "analyze": Nquestion.analyze,
-    "evaluate": Nquestion.evaluate,
-    "create": Nquestion.create,
-    }
-    # Check file type
-    if file.content_type not in [
-    "application/pdf",
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",  # .docx
-    "text/plain"  # .txt
-    ]:
-        raise HTTPException(status_code=400, detail="Unsupported file type.")
+        n_question = {
+            "remember": Nquestion.remember,
+            "understand": Nquestion.understand,
+            "apply": Nquestion.apply,
+            "analyze": Nquestion.analyze,
+            "evaluate": Nquestion.evaluate,
+            "create": Nquestion.create,
+        }
 
-    log_file_path=save_log_file(file)
-    # agent = FilesChatAgent(file, n_question, model, log_file_path, token)
-    # questions = await agent.get_lst_question()
+        # Save uploaded file
+        temp_folder = Path("temp_uploads")
+        temp_folder.mkdir(exist_ok=True)
+        temp_file_path = temp_folder / f"{uuid.uuid4()}_{file.filename}"
+        file_content = await file.read()
+        with open(temp_file_path, "wb") as f:
+            f.write(file_content)
+        await file.close()
+        print(f"[DEBUG] File saved at: {temp_file_path}")
 
+        # Load documents
+        ext = temp_file_path.suffix.lower()[1:]
+        if ext == "pdf":
+            loader = PyMuPDFLoader(str(temp_file_path))
+        elif ext == "docx":
+            loader = UnstructuredWordDocumentLoader(str(temp_file_path))
+        elif ext == "txt":
+            loader = TextLoader(str(temp_file_path), encoding="utf-8")
+        else:
+            raise HTTPException(status_code=400, detail="Unsupported file extension")
 
-     # 🔽 Lưu file ngay lập tức để dùng lại sau
-    temp_folder = Path("temp_uploads")
-    temp_folder.mkdir(exist_ok=True)
-    temp_file_path = temp_folder / f"{uuid.uuid4()}_{file.filename}"
+        documents = loader.load()
+        print(f"[DEBUG] Loaded {len(documents)} documents")
 
-    with temp_file_path.open("wb") as buffer:
-        shutil.copyfileobj(file.file, buffer)
-    task_id = str(uuid.uuid4())
-    tasks[task_id] = {"status": "processing", "result": None}
+        log_file_path = save_log_file(file.filename)
+        task_id = str(uuid.uuid4())
+        tasks[task_id] = {"status": "processing", "result": None, "current_number_question": 0}
+        task_ref = tasks[task_id]
 
-    asyncio.create_task(handle_question_task(temp_file_path,task_id, file, model, n_question, token, log_file_path, start_time))
-    # end_time = time.time()
-    # execution_time_seconds = end_time - start_time
-    # minutes = execution_time_seconds // 60  # Get the whole minutes
-    # seconds = execution_time_seconds % 60  # Get the remaining seconds
-
-    #write_log(log_file_path,f"Execution Time: {int(minutes)} minutes and {seconds:.2f} seconds")
-    return {"task_id": task_id}
-    
-
-@app.put("/update-api-key", summary="Route này dùng để thay đổi key api")
-async def update_api_key(
-    model_name: str, 
-    api_key: str
-):
-    """
-   Route này dùng để thay đổi api key của các model ai\n
-    **Parameters**
-    - **model_name**: tên công ty cung cấp ai model ('openai', 'google' hoặc 'xai')
-    - **api_key**: api key được thay đổi cho model bên trên
-
-    **Returns:**
-    {status_code: trạng thái code,
-    message: tin nhắn}s
-    """
-    model_name=model_name.lower()
-    key = ""
-    
-    if model_name == 'openai':
-        key = "KEY_API_GPT"
-    elif model_name == 'google':
-        key = "KEY_API_GEMINI"
-    elif model_name == 'xai':
-        key = "KEY_API_GROK"
-    else:
-        return JSONResponse(
-            status_code=400,
-            content={"message": "model_name không hợp lệ!"}
+        asyncio.create_task(
+            handle_question_task(documents, task_id, model, n_question, token, log_file_path, start_time, temp_file_path, task_ref)
         )
 
-    lines = []
-    found = False
+        return {"task_id": task_id, "status": "processing",  "current_number_question": 0}
+
+    except Exception as e:
+        print("[ERROR] Exception occurred:", str(e))
+        return JSONResponse(status_code=500, content={"error": str(e)})
+
+
+async def handle_question_task(doc, task_id: str, model: str, nquestion_json: dict, token: int, log_file_path: str, start_time: float, temp_file_path, task):
     try:
-        with open('.env', 'r', encoding='utf-8') as file:
-            for line in file:
-                # So sánh tên biến đã strip, bỏ qua dấu cách
-                if line.strip().split('=')[0] == key:
-                    lines.append(f'{key}={api_key}\n')
-                    found = True
-                else:
-                    lines.append(line)
-    except FileNotFoundError:
-        pass
+        # agent = FilesChatAgent(doc, nquestion_json, model, log_file_path, token)
+        # questions = agent.get_lst_question()
+        def blocking():
+            agent = FilesChatAgent(doc, nquestion_json, model, log_file_path, token, task)
+            return agent.get_lst_question()
 
-    if not found:
-        lines.append(f'{key}={api_key}\n')
-    with open('.env', 'w', encoding='utf-8') as file:
-        file.writelines(lines)
+        loop = asyncio.get_event_loop()
+        questions = await loop.run_in_executor(None, blocking)
+        tasks[task_id]["status"] = "done"
+        tasks[task_id]["result"] = questions
+        print(f"Finish")
+        end_time = time.time()
+        duration = end_time - start_time
+        write_log(log_file_path, f"Execution Time: {int(duration // 60)}m {duration % 60:.2f}s")
+    except Exception as e:
+        tasks[task_id]["status"] = "error"
+        tasks[task_id]["result"] = str(e)
+        write_log(log_file_path, f"[ERROR] {str(e)}")
+    finally:
+        try:
+            os.remove(temp_file_path)
+            print(f"[DEBUG] Deleted temp file: {temp_file_path}")
+        except Exception as e:
+            print(f"[WARN] Failed to delete temp file: {e}")
 
-    return JSONResponse(
-        status_code=200,
-        content={"message": "Đổi api key thành công"}
-    )
-
-def save_log_file(file: UploadFile):
-    # Tạo thư mục log nếu chưa có
+def save_log_file(file_name: str) -> str:
     log_dir = "log"
     os.makedirs(log_dir, exist_ok=True)
-
-    # Lấy tên file gốc và loại bỏ phần mở rộng
-    base_filename = os.path.splitext(file.filename)[0]
-
-    # Lấy thời gian hiện tại định dạng YYYYMMDD_HHMMSS
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-
-    # Tạo tên file log
+    base_filename = Path(file_name).stem
     log_filename = f"{base_filename}_{timestamp}.txt"
-
-    # Đường dẫn đầy đủ
     log_path = os.path.join(log_dir, log_filename)
 
-    # Ghi một nội dung mẫu (bạn có thể thay thế bằng nội dung thực tế)
     with open(log_path, "w", encoding="utf-8") as f:
-        f.write(f"Log created at {timestamp} for file: {file.filename}\n")
+        f.write(f"Log created at {timestamp} for file: {file_name}\n")
 
     return log_path
 
-def write_log(log_file_path, content):
-        with open(log_file_path, "a", encoding="utf-8") as f:
-            f.write(content + "\n")
+def write_log(log_file_path: str, content: str):
+    with open(log_file_path, "a", encoding="utf-8") as f:
+        f.write(content + "\n")

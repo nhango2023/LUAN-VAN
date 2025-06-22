@@ -82,7 +82,7 @@
 
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="10" aria-label=""
+                                <input type="number" min="0" class="form-control" value="2" aria-label=""
                                     name="n_remember">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #848fc6; color: black">Cấp
@@ -106,7 +106,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="10" name="n_understand"
+                                <input type="number" min="0" class="form-control" value="2" name="n_understand"
                                     aria-label="Dollar amount (with dot and two decimal places)">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #89c0e6; color: black">Cấp
@@ -129,7 +129,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="10" name="n_apply"
+                                <input type="number" min="0" class="form-control" value="2" name="n_apply"
                                     aria-label="Dollar amount (with dot and two decimal places)">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #75ac82; color: black">Cấp
@@ -152,7 +152,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="10"
+                                <input type="number" min="0" class="form-control" value="2"
                                     name="n_analyze" aria-label="Dollar amount (with dot and two decimal places)">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #aed981; color: black">Cấp
@@ -175,7 +175,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="10"
+                                <input type="number" min="0" class="form-control" value="2"
                                     name="n_evaluate" aria-label="Dollar amount (with dot and two decimal places)">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #f3da69; color: black">Cấp
@@ -198,7 +198,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="10"
+                                <input type="number" min="0" class="form-control" value="2"
                                     name="n_create" aria-label="Dollar amount (with dot and two decimal places)">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #e78b76; color: black">Cấp
@@ -210,6 +210,7 @@
                     <button id='btn-submit' type="submit"
                         {{ !Auth::check() || Auth::user()->isCreated ? 'disabled' : '' }} class="btn btn-primary">Tạo
                         câu hỏi</button>
+
                 </form>
             </div>
         </div>
@@ -428,7 +429,9 @@
 
                     // const result = await response.json();
                     // console.log("Laravel received task ID:", result);
-
+                    const data = await res.json();
+                    const insertedFileId = data.id_file;
+                    return insertedFileId;
                 } catch (err) {
                     console.error("Error sending task_id to Laravel:", err);
                 }
@@ -471,14 +474,12 @@
             }
 
 
-
-
             const form = document.querySelector('form');
             const submitButton = form.querySelector('button[type="submit"]');
             const realInput = document.getElementById('file-upload');
 
             //save file and task id to user
-            async function saveTaskId(taskId, status) {
+            async function saveTaskId(taskId, status, total_question) {
 
                 const file = realInput.files[0]; // Get the selected file
 
@@ -486,8 +487,9 @@
                 formData.append('task_id', taskId); // Append task_id to FormData
                 formData.append('file', file); // Append the file to FormData
                 formData.append('status', status)
+                formData.append('total_question', total_question)
                 try {
-                    const response = await fetch('/upload-file', {
+                    const response = await fetch('/question/start', {
                         method: 'POST',
                         headers: {
                             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')
@@ -497,7 +499,7 @@
                     });
 
                     if (!response.ok) {
-                        throw new Error('File upload failed');
+                        throw new Error('Save task failed');
                     }
 
                     const result = await response.json();
@@ -506,8 +508,6 @@
                     console.error("Error uploading file:", error);
                 }
             }
-
-
 
 
             form.addEventListener('submit', async function(e) {
@@ -537,44 +537,72 @@
                     create: parseInt(form.querySelector('input[name="n_create"]').value)
                 };
                 formData.append('Nquestion_json', JSON.stringify(Nquestion));
-
+                const total_question =
+                    Nquestion.remember +
+                    Nquestion.understand +
+                    Nquestion.apply +
+                    Nquestion.analyze +
+                    Nquestion.evaluate +
+                    Nquestion.create;
+                const currentPlan = @json($currentPlan);
+                const tasks = @json($tasks);
+                const number_task = tasks.length;
+                const authUser = @json(Auth::user());
+                if (total_question > authUser.available_question) {
+                    createToastError('error',
+                        'Số lượng câu hỏi có thể tạo nhỏ hơn số lượng bạn yêu cầu, vui lòng mua thêm gói của bạn'
+                    );
+                    return;
+                }
+                if (number_task >= currentPlan.processes) {
+                    createToastError('error',
+                        'Bạn đã đạt tối đa tiến trình tạo câu hỏi, vui lòng đợi các tiến trình tạo xong câu, sau đó tiếp tục tạo'
+                    );
+                    return;
+                }
                 const file = realInput.files[0];
                 formData.append('file', file);
                 const fileName = file.name;
+                const API_BASE_URL = "{{ env('API_URL') }}";
                 try {
                     const response = await fetch(`${API_BASE_URL}question/create`, {
                         method: 'POST',
                         headers: {
-                            'API-Key': API_KEY, // bắt buộc phải khớp
+                            'API-Key': window.API_KEY,
                         },
                         body: formData
                     });
-
                     if (!response.ok) {
                         throw new Error('Tạo câu hỏi thất bại.');
                     }
-
+                    document.querySelector('.file-selector').disabled = true;
+                    document.getElementById('btn-submit').disabled = true;
                     const data = await response.json();
                     const taskId = data.task_id;
                     const status = data.status;
-                    await saveTaskId(taskId, status);
+                    id_file = await saveTaskId(taskId, status, total_question);
 
-                    document.querySelector('.file-selector').disabled = true;
-                    document.getElementById('btn-submit').disabled = true;
-                    document.getElementById('loading_logo').classList.add('bloom-loading');
+                    document.querySelector('.file-selector').disabled = false;
+                    document.getElementById('btn-submit').disabled = false;
+                    window.activeTaskCount++;
 
+                    // const isLoading = document.getElementById('loading_logo').classList.contains(
+                    //     'bloom-loading');
+
+                    // if (!isLoading) {
+                    //     document.getElementById('loading_logo').classList.add('bloom-loading');
+                    // }
                     createToastInfor('info', 'Đang tạo câu hỏi...');
-
-                    // Bắt đầu polling
-                    // pollResult(taskId);
-
+                    setTimeout(() => {
+                        location.reload();
+                    }, 3000);
                 } catch (error) {
-                    console.error(error);
+                    document.querySelector('.file-selector').disabled = false;
+                    document.getElementById('btn-submit').disabled = false;
+                    console.error('Fetch Error:', error);
                     createToastError('error', error.message || 'Lỗi không xác định.');
                 }
             });
-
-
 
         });
     </script>

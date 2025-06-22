@@ -24,7 +24,7 @@
         integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body style="height: 100vh">
     <style>
         :root {
             --dark: #34495E;
@@ -175,8 +175,8 @@
         }
     </style>
     <!--  Body Wrapper -->
-    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-        data-sidebar-position="fixed" data-header-position="fixed">
+    <div class="page-wrapper h-100" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6"
+        data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
         <!-- Sidebar Start -->
         <aside class="left-sidebar">
             <!-- Sidebar scroll-->
@@ -217,7 +217,34 @@
                                 <span class="hide-menu">Users</span>
                             </a>
                         </li>
-
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{{ route('admin.plan.show') }}" aria-expanded="false">
+                                <span>
+                                    <iconify-icon icon="solar:layers-minimalistic-bold-duotone"
+                                        class="fs-6"></iconify-icon>
+                                </span>
+                                <span class="hide-menu">Plan</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{{ route('admin.payment.show') }}" aria-expanded="false">
+                                <span>
+                                    <iconify-icon icon="solar:layers-minimalistic-bold-duotone"
+                                        class="fs-6"></iconify-icon>
+                                </span>
+                                <span class="hide-menu">Payment</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{{ route('admin.addition-question.show') }}"
+                                aria-expanded="false">
+                                <span>
+                                    <iconify-icon icon="solar:layers-minimalistic-bold-duotone"
+                                        class="fs-6"></iconify-icon>
+                                </span>
+                                <span class="hide-menu">Additional question</span>
+                            </a>
+                        </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="{{ route('admin.ai-model.show') }}" aria-expanded="false">
                                 <span>
@@ -229,7 +256,8 @@
                         </li>
 
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="{{ route('admin.config-web.show') }}" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ route('admin.config-web.show') }}"
+                                aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:layers-minimalistic-bold-duotone"
                                         class="fs-6"></iconify-icon>

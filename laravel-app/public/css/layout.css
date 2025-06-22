@@ -4,7 +4,9 @@
         --bs-body-color: #182032;
         margin: 0;
     }
-
+    a{
+        text-decoration: none;
+    }
     html,
     body {
         height: 100%;
@@ -136,7 +138,7 @@
     /* Main Content Styles */
     .main-container {
         display: flex;
-        height: var(--body-vh);
+        /* height: var(--body-vh); */
         padding: 20px;
         background: #f8fafc;
     }
@@ -1186,3 +1188,153 @@
             width: 400px;
         }
     }
+
+
+    
+        .progress {
+            height: 25px;
+            margin-bottom: 5px;
+        }
+
+        .progress-bar {
+            font-weight: bold;
+            line-height: 25px;
+            transition: width 0.6s ease;
+        }
+
+        th,
+        td {
+            vertical-align: middle !important;
+        }
+
+        .btn-open-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1001;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            border: 2px solid green;
+            color: green;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-open-popup:hover {
+            background-color: #e6ffe6;
+            color: #2e7d32;
+            border-color: #2e7d32;
+        }
+
+        .btn-open-popup i.material-icons {
+            font-size: 24px;
+        }
+
+        .overlay-container {
+            display: none;
+            position: fixed;
+            /* changed from absolute */
+            bottom: 20px;
+            right: 20px;
+            background: none;
+            z-index: 1100;
+            /* higher than btn-open-popup (1001) */
+            max-width: 100%;
+            transition: opacity 0.3s ease;
+        }
+
+
+        .popup-box {
+            background: #fff;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 340px;
+            text-align: center;
+            transform: scale(0.95);
+            animation: fadeInUp 0.3s ease-out forwards;
+        }
+
+        .btn-close-popup {
+            margin-top: 10px;
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .btn-close-popup:hover {
+            background-color: #c0392b;
+        }
+
+        .btn-increase {
+            font-size: 12px;
+            padding: 4px 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn-increase:hover {
+            background-color: #0056b3;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .overlay-container.show {
+            display: block;
+        }
+
+        .table-sm td,
+        .table-sm th {
+            padding: 0.3rem;
+            font-size: 14px;
+        }
+
+        @media (max-width: 576px) {
+            .popup-box {
+                width: 95vw;
+                font-size: 14px;
+            }
+
+            .btn-open-popup {
+        width: 40px;
+        height: 40px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .btn-open-popup i.material-icons {
+        font-size: 20px;
+    }
+
+            .overlay-container {
+                right: 10px;
+                bottom: 70px;
+            }
+        }
+    .main-container{
+        min-height: 70vh;
+    }
+    

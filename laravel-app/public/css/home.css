@@ -279,6 +279,15 @@
     }
     .text-input-section{
         margin: 0 auto;
+        /* margin-bottom: 1rem; */
+        margin-right: 2rem;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .text-input-section{
+        margin: 0 auto;
         margin-bottom: 1rem;
+        margin-right: 0;
     }
 }

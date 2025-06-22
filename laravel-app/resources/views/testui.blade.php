@@ -2,108 +2,108 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment History</title>
 
-    <!--====== Design by foolishdeveloper.com =====-->
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
 
-
-    <title>Automatic Popup</title>
-    <!--Google Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <!--Stylesheets-->
-    <style media="screen">
-        *,
-        *:before,
-        *:after {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
+    <style>
+        /* Styling for the table */
+        .table-responsive {
+            margin-top: 30px;
         }
 
-        body {
-            background-color: #0855ae;
+        .status-success {
+            color: green;
+            font-weight: bold;
         }
 
-        .popup {
-            background-color: #ffffff;
-            width: 420px;
-            padding: 30px 40px;
-            position: absolute;
-            transform: translate(-50%, -50%);
-            left: 50%;
-            top: 50%;
-            border-radius: 8px;
-            font-family: "Poppins", sans-serif;
-            display: none;
-            text-align: center;
+        .status-failed {
+            color: red;
+            font-weight: bold;
         }
 
-        .popup button {
-            display: block;
-            margin: 0 0 20px auto;
-            background-color: transparent;
-            font-size: 30px;
-            color: #ffffff;
-            background: #03549a;
-            border-radius: 100%;
-            width: 40px;
-            height: 40px;
-            border: none;
-            outline: none;
-            cursor: pointer;
+        .status-pending {
+            color: orange;
+            font-weight: bold;
         }
 
-        .popup h2 {
-            margin-top: -20px;
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
         }
 
-        .popup p {
-            font-size: 14px;
-            text-align: justify;
-            margin: 20px 0;
-            line-height: 25px;
+        /* Make the status indicator more readable */
+        .status-success {
+            background-color: #d4edda;
         }
 
-        a {
-            display: block;
-            width: 150px;
-            position: relative;
-            margin: 10px auto;
-            text-align: center;
-            background-color: #0f72e5;
-            border-radius: 20px;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 8px 0;
+        .status-failed {
+            background-color: #f8d7da;
+        }
+
+        .status-pending {
+            background-color: #fff3cd;
         }
     </style>
 </head>
 
 <body>
-    <div class="popup">
-        <button id="close">&times;</button>
-        <h2>Automatic Pop-Up</h2>
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita distinctio fugiat alias iure qui, commodi
-            minima magni ullam aliquam dignissimos?
-        </p>
-        <a href="#">Let's Go</a>
+
+    <div class="container">
+        <h2 class="text-center my-5">Payment History</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Subscription Package</th>
+                        <th>Payment Method</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>22/06/23 08:08</td>
+                        <td>Monthly</td>
+                        <td>Card payment</td>
+                        <td>NGN 2,500.00</td>
+                        <td><span class="status status-success">Success</span></td>
+                    </tr>
+                    <tr>
+                        <td>22/06/23 08:08</td>
+                        <td>Monthly</td>
+                        <td>Card payment</td>
+                        <td>NGN 2,500.00</td>
+                        <td><span class="status status-success">Success</span></td>
+                    </tr>
+                    <tr>
+                        <td>22/06/23 08:08</td>
+                        <td>Monthly</td>
+                        <td>Card payment</td>
+                        <td>NGN 2,500.00</td>
+                        <td><span class="status status-failed">Failed</span></td>
+                    </tr>
+                    <tr>
+                        <td>22/06/23 08:08</td>
+                        <td>Monthly</td>
+                        <td>Card payment</td>
+                        <td>NGN 2,500.00</td>
+                        <td><span class="status status-pending">Pending</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <!--Script-->
-    <script type="text/javascript">
-        window.addEventListener("load", function() {
-            setTimeout(
-                function open(event) {
-                    document.querySelector(".popup").style.display = "block";
-                },
-                2000
-            )
-        });
 
-
-        document.querySelector("#close").addEventListener("click", function() {
-            document.querySelector(".popup").style.display = "none";
-        });
-    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>

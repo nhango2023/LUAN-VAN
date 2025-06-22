@@ -56,16 +56,24 @@
                                             id="exampleInputPassword1">
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between mb-4">
-                                        <div class="form-check">
+                                        {{-- <div class="form-check">
                                             <input class="form-check-input primary" type="checkbox" value=""
                                                 id="flexCheckChecked" checked>
                                             <label class="form-check-label text-dark" for="flexCheckChecked">
                                                 Remeber this Device
                                             </label>
-                                        </div>
+                                        </div> --}}
                                         <a class="text-primary fw-bold" href="./index.html">Forgot Password ?</a>
                                     </div>
-                                    <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4">Sign In</button>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <button type="submit" class="btn btn-primary w-100 py-8 fs-4 ">Sign
+                                            In</button>
+                                        <p class="mb-0 text-center" style="font-weight: bold; font-szie: 1rem ">Or</p>
+                                        <a href="{{ route('auth.google') }}" class="btn btn-light mb-2">
+                                            Login with Google
+                                        </a>
+                                    </div>
+
                                     <div class="d-flex align-items-center justify-content-center">
                                         <p class="fs-4 mb-0 fw-bold">Don't have an account?</p>
                                         <a class="text-primary fw-bold ms-2" href="{{ route('signup') }}">Create an
@@ -73,6 +81,7 @@
                                     </div>
                                     @csrf
                                 </form>
+
                             </div>
                         </div>
                     </div>

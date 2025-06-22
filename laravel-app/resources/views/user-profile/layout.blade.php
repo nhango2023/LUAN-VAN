@@ -44,12 +44,12 @@
                     <div class="status-item">
                         <i class="fas fa-check-circle"></i>
                         <span>Current plan</span>
-                        <span class="status-badge yellow">Free</span>
+                        <span class="status-badge yellow">{{ $currentPlan->name }}</span>
                     </div>
                     <div class="status-item">
                         <i class="fas fa-star"></i>
-                        <span>Available credits</span>
-                        <span class="status-badge blue">{{ Auth::user()->credit }}</span>
+                        <span>Available questions</span>
+                        <span class="status-badge blue">{{ Auth::user()->available_question }}</span>
                     </div>
                     <div class="status-item">
                         <i class="fas fa-lock"></i>
@@ -68,22 +68,26 @@
                         <div class="action-item {{ Route::is('profile.buy-credit') ? 'active' : '' }}">🛒 Buy
                             credits</div>
                     </a>
-                    <div class="action-item">📄 Payment history</div>
+                    {{-- <div class="action-item">📄 Payment history</div> --}}
+                    <a href="{{ route('profile.payment-history') }}">
+                        <div class="action-item {{ Route::is('profile.payment-history') ? 'active' : '' }}">
+                            📄 Payment history</div>
+                    </a>
                     <a href="{{ route('profile.account-infor') }}">
                         <div class="action-item {{ Route::is('profile.account-infor') ? 'active' : '' }}">👤
                             Account
                             Information</div>
                     </a>
-                    <div class="action-item with-badge">
+                    {{-- <div class="action-item with-badge">
                         🔗 Service Integration <span class="new-badge">New</span>
-                    </div>
+                    </div> --}}
                     <div class="dv1">
                         <div class="dv2"></div>
                     </div>
-                    <div class="action-item">
+                    {{-- <div class="action-item">
                         🎁 Gift Card<br>
                         <span class="subtext">Redeem a gift card to get more credits</span>
-                    </div>
+                    </div> --}}
                     <a class="action-item d-flex align-items-center" style="text-decoration: none;"
                         href="{{ route('logout') }}">
                         <i class="material-icons">logout</i>
@@ -95,7 +99,7 @@
 
             </div>
         </div>
-        <div class="account-settings-root ml-3">
+        <div class="account-settings-root">
             @yield('profile-right')
         </div>
     </div>
