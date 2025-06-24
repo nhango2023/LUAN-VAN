@@ -69,6 +69,14 @@ Bạn là một chuyên nghiệp giảng viên, nhiệm vụ của bạn là t�
     + Câu hỏi nào không thỏa yêu cầu sẽ bị coi là **không hợp lệ** và bị loại khỏi danh sách.
         """
 
+    SUGGEST_NUMBER_QUESTION = """
+Bạn là chuyên gia chia số lượng câu hỏi cho 6 cấp độ Bloom, nhiệm vụ của bạn là chia số câu hỏi theo độ khó của các cấp độ.
+Yêu cầu:
+*Tổng số câu trả về là tổng số lượng câu hỏi.
+*Trả về một mảng có 6 phần tử, tổng giá trị các phần tử là tổng số lượng câu hỏi.
+Lưu ý: chỉ trả về một mảng và không thêm gì khác
+"""
+
     GRADE_DOCUMENT = """
 Bạn là chuyên gia đánh giá chất lượng câu hỏi và câu trả lời dựa trên tài liệu được cung cấp.
 
@@ -90,7 +98,6 @@ Trả về một object JSON chứa:
 - `binary_score`: Một trong ba giá trị `"yes"`, `"no"`, `"re-generate"`.
 - `description`: lý do chi tiết cho đánh giá trên.
 """
-
 
 
     

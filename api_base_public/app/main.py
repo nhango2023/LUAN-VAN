@@ -6,6 +6,9 @@ from app.models.n_question import NQuestion
 from app.security.security import get_api_key
 from .files_chat_agent import FilesChatAgent
 
+from llm.llm_suggest_question.llm import LLM_SUGGEST_NUMBER_QUESTION
+from llm.llm_suggest_question.suggest_number_question_template import SuggestNumberQuestion
+
 from langchain_community.document_loaders import PyMuPDFLoader, UnstructuredWordDocumentLoader, TextLoader
 
 from pathlib import Path
@@ -50,6 +53,15 @@ async def get_question_result(task_id: str):
 
     return response
 
+@app.get("/question/suggest-number-question/{number_question}")
+async def get_suggest_number_question(number_question: int):
+    print(f"So luong cau hoi: {number_question}")
+    llm_SuggestNumberQuestion = SuggestNumberQuestion(LLM_SUGGEST_NUMBER_QUESTION().get_llm('gpt')).get_chain()
+    input_data = {
+        "number_question": number_question 
+    }
+    result = llm_SuggestNumberQuestion.invoke(input_data)
+    return result
 
 @app.post("/question/create")
 async def create_question(

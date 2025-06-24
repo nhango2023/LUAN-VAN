@@ -6,27 +6,38 @@
         <div class="card">
             <div class="card-body">
                 <div class="text-center">
-                    <h5>Chủ Tài Khoản: <strong>NGO QUAN THANH NHA</strong></h5>
+                    {{-- <h5>Chủ Tài Khoản: <strong>NGO QUAN THANH NHA</strong></h5>
                     <h5>Số Tài Khoản: <strong>9337405155</strong></h5>
-                    <h5>Ngân Hàng: <strong>Vietcombank</strong></h5>
-                    <h5>Gói Thanh Toán: <strong>{{ $planToPay->name }}-{{ $planToPay->price }}</strong></h5>
+                    <h5>Ngân Hàng: <strong>Vietcombank</strong></h5> --}}
+                    <h5>Gói Thanh Toán: <strong>{{ $planToPay->name }}-{{ number_format($planToPay->price) }}</strong></h5>
                     <h5>Câu hỏi mua thêm:
-                        <strong>{{ $questions }}*{{ $additionalQuestion->price }}={{ $questions * $additionalQuestion->price }}</strong>
+                        <strong>{{ $questions }}*{{ number_format($additionalQuestion->price) }}={{ $questions * number_format($additionalQuestion->price) }}</strong>
                     </h5>
                     <h5>Tổng tiền cần thanh toán:
                         <strong>{{ $planToPay->price + $questions * $additionalQuestion->price }}VND</strong>
                     </h5>
-                    <p class="mt-4">Vui lòng ấn <strong>"Confirm"</strong> khi đã chuyển khoản</p>
-                    <p class="mt-4">Chúng tôi sẽ xác nhận trong vòng 24 giờ.</p>
+                    <p class="my-2">Vui lòng ấn <strong>"Confirm"</strong> khi đã chuyển khoản</p>
+                    <p class="">Chúng tôi sẽ xác nhận trong vòng 24 giờ.</p>
                     <div>
                         <a href="{{ route('profile.payment-confirm', ['id_plan' => $planToPay->id, 'questions' => $questions]) }}"
                             class="btn btn-secondary">Confirm</a>
                     </div>
+                    @php
+                        $accountNumber = '9337405155';
+                        $accountName = 'NGO QUAN THANH NHA';
+                        $bankId = 'VCB'; // Mã ngân hàng của Vietcombank
+                        $amount = $planToPay->price + $questions * $additionalQuestion->price;
+                        $description = Auth::id() . ' Thanh toan BloomAI';
+                    @endphp
+
+
+
                     <!-- Thẻ img để hiển thị mã QR -->
-                    <img id="qrcode-img" alt="QR Code" style="max-width: 100%; height: auto;" />
+                    <img src="https://img.vietqr.io/image/{{ $bankId }}-{{ $accountNumber }}-compact2.png?amount={{ $amount }}&addInfo={{ urlencode($description) }}&accountName={{ urlencode($accountName) }}"
+                        alt="QR Thanh Toán" style="max-width: 100%;">
 
 
-                    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script> <!-- Đảm bảo thư viện QRCode.js được tải đúng -->
+                    {{-- <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script> <!-- Đảm bảo thư viện QRCode.js được tải đúng -->
                     <script>
                         // Dữ liệu thanh toán
                         const additionalQuestion = @json($additionalQuestion); // Correct variable name
@@ -59,7 +70,7 @@
                             document.getElementById('qrcode-img').src = url;
                             console.log("QR code generated!");
                         });
-                    </script>
+                    </script> --}}
 
                 </div>
             </div>

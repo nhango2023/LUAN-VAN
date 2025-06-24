@@ -63,14 +63,15 @@
                             <td>{{ $payment->created_at }}</td>
                             @if ($payment->plan_name)
                                 <td>
-                                    {{ $payment->plan_name }}-{{ $payment->plan_price }}VND
+                                    {{ $payment->plan_name }}-{{ number_format($payment->plan_price) }}VND
                                 </td>
                             @else
                                 <td>
                                     0 VND
                                 </td>
                             @endif
-                            <td>{{ $payment->extra_questions }}*{{ $payment->additional_question_price }}VND</td>
+                            <td>{{ $payment->extra_questions }}*{{ number_format($payment->additional_question_price) }}VND
+                            </td>
                             <td>{{ $payment->plan_price + $payment->extra_questions * $payment->additional_question_price }}
                             </td>
                             <td> <span class="status status-{{ $payment->status }}">{{ $payment->status }}</span></td>

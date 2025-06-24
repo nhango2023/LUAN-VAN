@@ -1,0 +1,5 @@
+Log created at 20250623_105625 for file: GIÁO TRÌNH HỆ THỐNG TMDT-pages-6.pdf
+use gpt  to grade doc
+use gpt to generate qa
+use gpt to grade qs
+[ERROR] type object 'CustomPrompt' has no attribute 'GRADE_DOCUMENT'

@@ -27,10 +27,16 @@ class HomeController extends Controller
                 ->select('tasks.*', 'uploaded_files.original_name')
                 ->get();
 
-            $currentPlan = UserPlan::join('plans', 'user_plan.id_plan', '=', 'plans.id')
+            $currentPlan = UserPlan::leftJoin('plans', 'user_plan.id_plan', '=', 'plans.id')
                 ->where('user_plan.id_user', $user->id)
-                ->select('plans.id as plan_id', 'plans.name as name', 'user_plan.end_date')
+                ->select(
+                    'plans.id as plan_id',
+                    'plans.name as name',
+                    'user_plan.end_date',
+                    'plans.processes'
+                )
                 ->first();
+            Log::debug($user->id . '');
         }
         return view('home', compact('configWeb', 'tasks', 'currentPlan'));
     }

@@ -100,9 +100,14 @@ class QuestionController extends Controller
         $user = Auth::user();
         $configWeb = ConfigWeb::where('isUse', 1)->first();
         if (Auth::check()) {
-            $currentPlan = UserPlan::join('plans', 'user_plan.id_plan', '=', 'plans.id')
+            $currentPlan = UserPlan::leftJoin('plans', 'user_plan.id_plan', '=', 'plans.id')
                 ->where('user_plan.id_user', $user->id)
-                ->select('plans.id as plan_id', 'plans.name as name', 'user_plan.end_date')
+                ->select(
+                    'plans.id as plan_id',
+                    'plans.name as name',
+                    'user_plan.end_date',
+                    'plans.processes'
+                )
                 ->first();
             $tasks = Task::join('uploaded_files', 'uploaded_files.id', '=', 'tasks.id_file')
                 ->where('tasks.id_user', $user->id)
@@ -111,8 +116,12 @@ class QuestionController extends Controller
                 ->get();
             // Query chính
             $userId = $user->id;
+            // $query = DB::table('questions as q')
+            //     ->join('uploaded_files as ulf', 'q.id_file', '=', 'ulf.id')
+            //     ->where('ulf.id_user', $userId);
             $query = DB::table('questions as q')
                 ->join('uploaded_files as ulf', 'q.id_file', '=', 'ulf.id')
+                ->leftJoin('file_format as ff', 'ulf.id', '=', 'ff.idfile')
                 ->where('ulf.id_user', $userId);
 
             // Nếu có truyền $id_file thì thêm điều kiện lọc
@@ -125,13 +134,18 @@ class QuestionController extends Controller
                 'ulf.file_path',
                 'ulf.created_at',
                 'ulf.original_name',
+                'q.id',
                 'q.content as question',
                 'q.option_1',
                 'q.option_2',
                 'q.option_3',
                 'q.option_4',
                 'q.answer',
-                'q.level'
+                'q.level',
+                'q.document',
+                'ff.subject_name',
+                'ff.exam_duration',
+                'ff.code'
             )
                 ->orderBy('ulf.created_at', 'desc')
                 ->get();
@@ -145,7 +159,9 @@ class QuestionController extends Controller
                 $levels = $groupByFile->groupBy('level')->map(function ($questionsByLevel) {
                     return $questionsByLevel->map(function ($q) {
                         return [
+                            'id' => $q->id,
                             'question' => $q->question,
+
                             'options' => [
                                 'A: ' . $q->option_1,
                                 'B: ' . $q->option_2,
@@ -153,6 +169,8 @@ class QuestionController extends Controller
                                 'D: ' . $q->option_4,
                             ],
                             'answer' => $q->answer,
+                            'document' => $q->document,
+
                         ];
                     });
                 });
@@ -162,6 +180,9 @@ class QuestionController extends Controller
                     'original_name' => $fileName,
                     'created_at' => $created_at,
                     'levels' => $levels,
+                    'subject_name' => $groupByFile->first()->subject_name,
+                    'exam_duration' => $groupByFile->first()->exam_duration,
+                    'code' => $groupByFile->first()->code,
                 ];
             });
 

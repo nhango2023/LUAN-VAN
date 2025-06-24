@@ -50,7 +50,6 @@ class GoogleAuthController extends Controller
             'fullname' => $request->name,
             'email' => $request->email,
             'google_id' => $request->google_id,
-
             'available_question' => $plan->questions_limit,
             'password' => Hash::make($request->password),
             'level' => 'user'

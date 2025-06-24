@@ -59,12 +59,14 @@
                     <!-- Hidden input file (vẫn có thể trigger bằng JS) -->
                     <input type="file" name="file_upload" id="file-upload" style="display: none;">
 
-                    <div class="input-group mb-3 d-none" id='div_total'>
+                    <div class="input-group mb-3" id='div_total'>
                         <div class="input-group-prepend">
-                            <span class="input-group-text" style=" color: black;">Tổng số</span>
+                            <span class="input-group-text" style=" color: black;"><strong>Tổng số</strong></span>
                         </div>
                         <input id="total" type="number" min="0" value="0" class="form-control"
                             aria-label="Dollar amount (with dot and two decimal places)">
+                        <button class="btn btn-success" {{ !Auth::check() || Auth::user()->isCreated ? 'disabled' : '' }}
+                            id="suggest-btn" type="button">Đề xuất</button>
                     </div>
 
                     <div class="form-row">
@@ -82,8 +84,8 @@
 
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="2" aria-label=""
-                                    name="n_remember">
+                                <input onchange="updateTotal()" type="number" min="0" class="form-control"
+                                    value="2" aria-label="" name="n_remember">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #848fc6; color: black">Cấp
                                         1</span>
@@ -106,7 +108,8 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="2" name="n_understand"
+                                <input type="number" onchange="updateTotal()" min="0" class="form-control"
+                                    value="2" name="n_understand"
                                     aria-label="Dollar amount (with dot and two decimal places)">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #89c0e6; color: black">Cấp
@@ -129,7 +132,8 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="2" name="n_apply"
+                                <input onchange="updateTotal()" type="number" min="0" class="form-control"
+                                    value="2" name="n_apply"
                                     aria-label="Dollar amount (with dot and two decimal places)">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #75ac82; color: black">Cấp
@@ -152,8 +156,9 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="2"
-                                    name="n_analyze" aria-label="Dollar amount (with dot and two decimal places)">
+                                <input onchange="updateTotal()" type="number" min="0" class="form-control"
+                                    value="2" name="n_analyze"
+                                    aria-label="Dollar amount (with dot and two decimal places)">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #aed981; color: black">Cấp
                                         4</span>
@@ -175,8 +180,9 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="2"
-                                    name="n_evaluate" aria-label="Dollar amount (with dot and two decimal places)">
+                                <input onchange="updateTotal()" type="number" min="0" class="form-control"
+                                    value="2" name="n_evaluate"
+                                    aria-label="Dollar amount (with dot and two decimal places)">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #f3da69; color: black">Cấp
                                         5</span>
@@ -198,8 +204,9 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="input-group ">
-                                <input type="number" min="0" class="form-control" value="2"
-                                    name="n_create" aria-label="Dollar amount (with dot and two decimal places)">
+                                <input onchange="updateTotal()" type="number" min="0" class="form-control"
+                                    value="2" name="n_create"
+                                    aria-label="Dollar amount (with dot and two decimal places)">
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="background-color: #e78b76; color: black">Cấp
                                         6</span>
@@ -218,8 +225,76 @@
 
     </div>
 
+
     {{-- <script src="{{ asset('js/home.js') }}" defer></script> --}}
     <script>
+        function updateTotal() {
+            const levelNames = [
+                "n_remember", "n_understand", "n_apply",
+                "n_analyze", "n_evaluate", "n_create"
+            ];
+
+            let total = 0;
+
+            levelNames.forEach(name => {
+                const input = document.querySelector(`input[name="${name}"]`);
+                if (input && !isNaN(parseInt(input.value))) {
+                    total += parseInt(input.value);
+                }
+            });
+
+            document.getElementById("total").value = total;
+        }
+
+        // Gắn sự kiện onchange cho các trường n_*
+        ["n_remember", "n_understand", "n_apply", "n_analyze", "n_evaluate", "n_create"].forEach(name => {
+            const input = document.querySelector(`input[name="${name}"]`);
+            if (input) {
+                input.addEventListener("change", updateTotal);
+                input.addEventListener("input", updateTotal); // xử lý cả khi gõ trực tiếp
+            }
+        });
+        updateTotal();
+        document.getElementById("suggest-btn").addEventListener("click", async () => {
+            const numberQuestion = document.getElementById("total").value;
+            if (numberQuestion < 1) {
+                createToastError('error', 'Tổng số lượng câu hỏi phải lớn hơn 0');
+                return;
+            }
+
+            const API_URL = "{{ env('API_URL') }}"
+            try {
+                document.getElementById("suggest-btn").disabled = true;
+                const response = await fetch(`${API_URL}question/suggest-number-question/${numberQuestion}`);
+
+                if (!response.ok) {
+                    throw new Error("Lỗi khi gọi API");
+                }
+
+                const data = await response.json();
+                // Gán kết quả vào các ô input tương ứng
+                const fields = [
+                    "n_remember", // cấp 1
+                    "n_understand", // cấp 2
+                    "n_apply", // cấp 3
+                    "n_analyze", // cấp 4
+                    "n_evaluate", // cấp 5
+                    "n_create" // cấp 6
+                ];
+
+                fields.forEach((name, index) => {
+                    const input = document.querySelector(`input[name="${name}"]`);
+                    if (input) {
+                        input.value = data.counts[index] ?? 0;
+                    }
+                });
+                document.getElementById("suggest-btn").disabled = false;
+            } catch (error) {
+                document.getElementById("suggest-btn").disabled = false;
+                createToastError('error', 'Không thể đề xuất câu hỏi');
+            }
+        });
+
         //toggle an hien input %
         document.addEventListener('DOMContentLoaded', function() {
             const rdoPercentage = document.getElementById('rdo_percent');
@@ -235,7 +310,7 @@
                             firstChild.classList.remove('d-none');
                         }
                     });
-                    total.classList.remove('d-none');
+                    // total.classList.remove('d-none');
                 } else {
                     rows.forEach(row => {
                         const firstChild = row.firstElementChild;
@@ -243,7 +318,7 @@
                             firstChild.classList.add('d-none');
                         }
                     });
-                    total.classList.add('d-none');
+                    // total.classList.add('d-none');
                 }
             }
             rdoPercentage.addEventListener('change', toggleVisibility);
@@ -564,6 +639,8 @@
                 formData.append('file', file);
                 const fileName = file.name;
                 const API_BASE_URL = "{{ env('API_URL') }}";
+                document.querySelector('.file-selector').disabled = true;
+                document.getElementById('btn-submit').disabled = true;
                 try {
                     const response = await fetch(`${API_BASE_URL}question/create`, {
                         method: 'POST',
@@ -575,15 +652,14 @@
                     if (!response.ok) {
                         throw new Error('Tạo câu hỏi thất bại.');
                     }
-                    document.querySelector('.file-selector').disabled = true;
-                    document.getElementById('btn-submit').disabled = true;
+
                     const data = await response.json();
                     const taskId = data.task_id;
                     const status = data.status;
                     id_file = await saveTaskId(taskId, status, total_question);
 
-                    document.querySelector('.file-selector').disabled = false;
-                    document.getElementById('btn-submit').disabled = false;
+                    // document.querySelector('.file-selector').disabled = false;
+                    // document.getElementById('btn-submit').disabled = false;
                     window.activeTaskCount++;
 
                     // const isLoading = document.getElementById('loading_logo').classList.contains(

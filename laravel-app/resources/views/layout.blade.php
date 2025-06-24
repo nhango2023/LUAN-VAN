@@ -183,7 +183,7 @@
                         </div>
                         <div class="status-item">
                             <i class="fas fa-star"></i>
-                            <span>Available credits</span>
+                            <span>Available questions</span>
                             <span class="status-badge blue">{{ Auth::user()->available_question }}</span>
                         </div>
                         <div class="status-item">
@@ -316,6 +316,10 @@
                     console.log("Task results saved successfully:", data);
                     await window.fetchMessages(5);
                     createToastSuccess('success');
+                    setTimeout(function() {
+                        location.reload(); // Refresh the page after a delay
+                    }, 2000);
+
                 } else {
                     console.error("Error saving task results:", data);
                 }
@@ -352,7 +356,7 @@
                                     <td>
                                         <div class="progress">
                                             <div id="{{ $task->id }}" class="progress-bar bg-primary"
-                                                style="width: 0%">
+                                                style="width: 0%; ">
                                                 (0/{{ $task->total_question }})
                                             </div>
                                         </div>

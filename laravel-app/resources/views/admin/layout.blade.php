@@ -196,14 +196,14 @@
                             <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
                             <span class="hide-menu">Home</span>
                         </li>
-                        <li class="sidebar-item">
+                        {{-- <li class="sidebar-item">
                             <a class="sidebar-link" href="{{ route('admin.home') }}" aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:home-smile-bold-duotone" class="fs-6"></iconify-icon>
                                 </span>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-small-cap">
                             <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
                             <span class="hide-menu">Quản lý</span>
@@ -256,8 +256,7 @@
                         </li>
 
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="{{ route('admin.config-web.show') }}"
-                                aria-expanded="false">
+                            <a class="sidebar-link" href="{{ route('admin.config-web.show') }}" aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:layers-minimalistic-bold-duotone"
                                         class="fs-6"></iconify-icon>

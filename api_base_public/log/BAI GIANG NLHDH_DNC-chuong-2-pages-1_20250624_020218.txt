@@ -1,0 +1,531 @@
+Log created at 20250624_020218 for file: BAI GIANG NLHDH_DNC-chuong-2-pages-1.pdf
+use gpt  to grade doc
+use gpt to generate qa
+use gpt to grade qs
+Number of paragraphs: 3
+
+
+doan van-[0]: ['understand', 'apply', 'analyze', 'remember']
+doan van-[1]: ['understand', 'apply', 'analyze', 'remember']
+doan van-[2]: ['understand', 'apply', 'analyze', 'remember']
+Check there are levels not detected in paragraphs
+Khong co level 'evaluate', thay the bang level 'analyze'
+Khong co level 'create', thay the bang level 'evaluate'
+index of splited docs following its level
+remember: [0, 1, 2]
+understand: [0, 1, 2]
+apply: [0, 1, 2]
+analyze: [0, 1, 2]
+evaluate: [0, 1, 2]
+create: [0, 1, 2]
+
+the number of paragraphs>number of required questions
+
+
+the number of paragraphs>number of required questions
+
+
+the number of paragraphs>number of required questions
+
+
+the number of paragraphs>number of required questions
+
+
+the number of paragraphs>number of required questions
+
+
+the number of paragraphs>number of required questions
+
+
+number of questions for each paragraph arranged in order of paragraph's index 
+
+level: remember
+idx: [0, 2]
+number questions: [1, 1]
+level: understand
+idx: [0, 1]
+number questions: [1, 1]
+level: apply
+idx: [2, 1]
+number questions: [1, 1]
+level: analyze
+idx: [2, 1]
+number questions: [1, 1]
+level: evaluate
+idx: [0, 2]
+number questions: [1, 1]
+level: create
+idx: [2, 0]
+number questions: [1, 1]
+
+
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành cần thực hiện công việc gì để đảm bảo các tiến trình có thể hoạt động hiệu quả?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+Option 1: Cung cấp cơ chế đồng bộ hóa cho các tiến trình
+Option 2: Tạo lập và hủy bỏ một tiến trình
+Option 3: Cấp phát và thu hồi tài nguyên cho tiến trình
+Option 4: Quản lý bộ nhớ phụ cho các chương trình
+Answer: Cung cấp cơ chế đồng bộ hóa cho các tiến trình
+Citation: Để đảm bảo các tiến trình có thể hoạt động hiệu quả, hệ điều hành cần cung cấp các cơ chế giúp các tiến trình có thể trao đổi thông tin và đồng bộ hóa hoạt động của chúng, như đã nêu trong nội dung về quản lý tiến trình.
+Keyword: False
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:remember...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành cần thực hiện những công việc nào để quản lý tiến trình một cách hiệu quả?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+Option 1: Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình.
+Option 2: Chỉ hủy bỏ tiến trình khi không còn cần thiết.
+Option 3: Chỉ tạo lập tiến trình mà không cần quản lý tài nguyên.
+Option 4: Cung cấp tài nguyên cho tiến trình mà không cần kiểm tra tình trạng bộ nhớ.
+Answer: Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình.
+Citation: Đáp án đúng là "Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình" vì đây là những công việc chính mà bộ phận quản lý tiến trình phải thực hiện để đảm bảo các tiến trình có thể hoạt động hiệu quả, như đã nêu trong nội dung.
+Keyword: False
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 1
+
+tao lai cau hoi level:remember...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành cần thực hiện những công việc gì để tạo lập và hủy bỏ một tiến trình?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+Option 1: Cung cấp cơ chế đồng bộ hóa cho tiến trình
+Option 2: Tạo lập, hủy bỏ một tiến trình
+Option 3: Cung cấp tài nguyên cho tiến trình
+Option 4: Ghi nhận tình trạng bộ nhớ chính
+Answer: Tạo lập, hủy bỏ một tiến trình
+Citation: Câu trả lời đúng là "Tạo lập, hủy bỏ một tiến trình" vì đây là một trong những công việc chính mà bộ phận quản lý tiến trình của hệ điều hành phải thực hiện để đảm bảo tiến trình có thể hoạt động.
+Keyword: False
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 2
+
+tao lai cau hoi level:remember...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành cần xác định những công việc nào để quản lý bộ nhớ chính hiệu quả?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[xác định]
+Option 1: Cấp phát và thu hồi một vùng nhớ cho tiến trình khi cần thiết
+Option 2: Ghi nhận tình trạng bộ nhớ chính và quyết định tiến trình nào được nạp
+Option 3: Tạo lập và hủy bỏ một tiến trình trong bộ nhớ chính
+Option 4: Cung cấp cơ chế đồng bộ hóa cho các tiến trình trong bộ nhớ chính
+Answer: Cấp phát và thu hồi một vùng nhớ cho tiến trình khi cần thiết
+Citation: Đáp án đúng là "Cấp phát và thu hồi một vùng nhớ cho tiến trình khi cần thiết" vì đây là một trong những công việc chính mà bộ phận quản lý bộ nhớ chính cần thực hiện để đảm bảo rằng các tiến trình có đủ tài nguyên bộ nhớ để hoạt động hiệu quả.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi liên quan đến việc quản lý bộ nhớ chính trong hệ điều hành, và câu trả lời được gợi ý đúng với một trong những công việc cần thực hiện để quản lý bộ nhớ chính hiệu quả. Ngoài ra, các đáp án khác cũng đúng và có thể tìm thấy trong tài liệu, cho thấy câu trả lời được gợi ý là chính xác và phù hợp với nội dung tài liệu.
+cau hoi dung: question='Hệ điều hành cần xác định những công việc nào để quản lý bộ nhớ chính hiệu quả?' options=['Cấp phát và thu hồi một vùng nhớ cho tiến trình khi cần thiết', 'Ghi nhận tình trạng bộ nhớ chính và quyết định tiến trình nào được nạp', 'Tạo lập và hủy bỏ một tiến trình trong bộ nhớ chính', 'Cung cấp cơ chế đồng bộ hóa cho các tiến trình trong bộ nhớ chính'] answer='Cấp phát và thu hồi một vùng nhớ cho tiến trình khi cần thiết' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 8  \nCHƢƠNG 2. GIAO DIỆN LẬP TRÌNH VÀ XÂY DỰNG HỆ \nĐIỀU HÀNH \n2.1. \nCÁC THÀNH PHẦN CỦA HỆ THỐNG \n2.1.1. Quản lý tiến trình \nTiến trình là một chƣơng trình đang đƣợc thi hành. Hệ điều hành phải tạo lập \nvà duy trì hoạt động của các tiến trình. Để hoàn tất tác vụ, một tiến trình \nthƣờng đòi hỏi một số tài nguyên nào đó nhƣ CPU, bộ nhớ, thiết bị \nnhập/xuất,… Các tài nguyên này sẽ đƣợc cấp phát cho tiến trình vào thời \nđiểm tiến trình đƣợc tạo lập hay trong thời gian tiến trình hoạt động. Khi tiến \ntrình kết thúc hệ điều hành cần thu hồi lại các tài nguyên đã cấp phát cho tiến \ntrình để tái sử dụng… Hơn nữa, mỗi tiến trình là một đơn vị tiêu thụ thời \ngian sử dụng CPU, do vậy trong môi trƣờng đa nhiệm, để đáp ứng nhu cầu \nxử lý đồng hành, hệ điều hành còn phải đảm nhiệm việc phân phối CPU cho \ncác tiến trình một cách hợp lý. Ngoài ra hệ điều hành cũng cần cung cấp các \ncơ chế giúp các tiến trình có thể trao đổi thông tin và đồng bộ hóa hoạt động \ncủa chúng.  \nTóm lại, bộ phận quản lý tiến trình phụ trách các công việc sau đây:  \n\uf0a7 Tạo lập, hủy bỏ một tiến trình.  \n\uf0a7 Tạm dừng (suspend), tái kích hoạt (resume) một tiến trình.  \n\uf0a7 Cung cấp các cơ chế trao đổi thông tin giữa các tiến trình. \uf0a7 Cung c\nấp \ncơ chế đồng bộ hóa các tiến trình \n2.1.2. Quản lý bộ nhớ chính \nBộ nhớ chính là thiết bị lƣu trữ duy nhất mà CPU có thể truy xuất trực tiếp. \nMột chƣơng trình cần đƣợc nạp vào bộ nhớ chính và chuyển đổi các địa chỉ \nthành địa chỉ tuyệt đối để CPU truy xuất trong quá trình xử lý. Để tăng hiệu \nsuất sử dụng CPU, các hệ thống đa nhiệm cố gắng giữ nhiều tiến trình trong \nbộ nhớ chính tại một thời điểm.  \nBộ phận quản lý bộ nhớ cần đảm nhiệm các công việc sau:  \n\uf0a7 Cấp phát và thu hồi một vùng nhớ cho tiến trình khi cần thiết.  \n\uf0a7 Ghi nhận tình trạng bộ nhớ chính: phần nào đã đƣợc cấp phát, phần nào \ncòn có thể sử dụng,…  \n\uf0a7 Quyết định tiến trình nào đƣợc nạp vào bộ nhớ chính khi có một vùng \nnhớ trống.  \n2.1.3. Quản lý bộ nhớ phụ \nNhững chƣơng trình cùng với dữ liệu của chúng phải đƣợc đặt trong bộ nhớ \nchính trong quá trình thi hành. Nhƣng bộ nhớ chính quá nhỏ để có thể lƣu \ngiữ mọi dữ liệu và chƣơng trình, ngoài ra thông tin còn bị mất khi không còn \nđƣợc cung cấp năng lƣợng. Hệ thống máy tính ngày nay sử dụng hệ thống' level='remember' page=1 idx_doc=0
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 3
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 1
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành có nhiệm vụ gì trong việc thi hành chương trình?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+Option 1: Nạp chương trình vào bộ nhớ và thi hành nó
+Option 2: Chỉ thực hiện các lệnh từ người dùng
+Option 3: Quản lý mạng và tài nguyên hệ thống
+Option 4: Cung cấp các dịch vụ cho người dùng mà không cần thi hành chương trình
+Answer: Nạp chương trình vào bộ nhớ và thi hành nó
+Citation: Hệ điều hành phải có khả năng nạp chương trình vào bộ nhớ và thi hành nó, điều này được nêu rõ trong nội dung.
+Keyword: False
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:remember...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành thực hiện các dịch vụ nào để hỗ trợ lập trình viên?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+Option 1: Cung cấp môi trường để thi hành các chương trình
+Option 2: Chỉ nạp chương trình vào bộ nhớ
+Option 3: Giúp người dùng truy xuất trực tiếp thiết bị nhập xuất
+Option 4: Cung cấp các dịch vụ không liên quan đến lập trình
+Answer: Cung cấp môi trường để thi hành các chương trình
+Citation: Đáp án đúng là "Cung cấp môi trường để thi hành các chương trình" vì hệ điều hành cung cấp các dịch vụ cho chương trình và người sử dụng, giúp lập trình viên thuận tiện hơn trong việc lập trình.
+Keyword: False
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 1
+
+tao lai cau hoi level:remember...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành mô tả vai trò của nó trong việc quản lý mạng như thế nào?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[mô tả]
+Option 1: Hệ điều hành chỉ định một bộ xử lý cho mỗi người dùng.
+Option 2: Hệ điều hành cho phép người dùng truy cập đến nhiều tài nguyên hệ thống khác nhau.
+Option 3: Hệ điều hành không có vai trò trong việc quản lý mạng.
+Option 4: Hệ điều hành đơn giản chỉ là một giao diện giữa người dùng và máy tính.
+Answer: Hệ điều hành cho phép người dùng truy cập đến nhiều tài nguyên hệ thống khác nhau.
+Citation: Theo nội dung, hệ thống phân tán cho phép người dùng truy cập đến nhiều tài nguyên hệ thống khác nhau.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi liên quan đến vai trò của hệ điều hành trong việc quản lý mạng, và câu trả lời được gợi ý đúng với nội dung trong tài liệu, cụ thể là việc hệ điều hành cho phép người dùng truy cập đến nhiều tài nguyên hệ thống khác nhau. Các đáp án khác cũng có thể tìm thấy trong tài liệu, nhưng câu trả lời gợi ý là chính xác và phù hợp nhất với câu hỏi.
+cau hoi dung: question='Hệ điều hành mô tả vai trò của nó trong việc quản lý mạng như thế nào?' options=['Hệ điều hành chỉ định một bộ xử lý cho mỗi người dùng.', 'Hệ điều hành cho phép người dùng truy cập đến nhiều tài nguyên hệ thống khác nhau.', 'Hệ điều hành không có vai trò trong việc quản lý mạng.', 'Hệ điều hành đơn giản chỉ là một giao diện giữa người dùng và máy tính.'] answer='Hệ điều hành cho phép người dùng truy cập đến nhiều tài nguyên hệ thống khác nhau.' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 10  \nsai lạc cho toàn hệ thống. Hệ điều hành cần xây dựng các cơ chế bảo vệ cho \nphép đặc tả sự kiểm soát và một phƣơng cách để áp dụng các chiến lƣợc bảo vệ \nthích hợp. \n2.1.7. Quản lý mạng \nMột hệ thống phân tán bao gồm nhiều bộ xử lý cùng chia sẻ thông tin với nhau. \nMỗi bộ xử lý có một bộ nhớ cục bộ, các tiến trình trong hệ thống có thể đƣợc \nkết nối với nhau qua mạng truyền thông. Hệ thống phân tán cho phép ngƣời \ndùng truy cập đến nhiều tài nguyên hệ thống khác nhau. \n2.1.8. Hệ thông dịch lệnh \nĐây là một trong những bộ phận quan trọng nhất của hệ điều hành, đóng vai trò \ngiao tiếp giữa hệ điều hành và ngƣời sử dụng. Các lệnh đƣợc chuyển đến hệ \nđiều hành dƣới dạng các chỉ thị điều khiển. Chƣơng trình shell – bộ thông dịch \nlệnh – có nhiệm vụ là nhận lệnh và thông dịch lệnh đó để hệ điều hành có xử lý \ntƣơng ứng. \n2.2. \nCÁC DỊCH VỤ CỦA HỆ ĐIỀU HÀNH (SYSTEM SERVICES)   \nHệ điều hành cung cấp môi trƣờng để thi hành các chƣơng trình, bằng cách cung \ncấp các dịch vụ cho chƣơng trình và ngƣời sử dụng. Các dịch vụ này trên mỗi hệ \nthống là khác nhau nhƣng cũng có những lớp chung. Các dịch vụ này giúp lập \ntrình viên thuận tiện hơn và việc lập trình dễ dàng hơn.  \n\uf0a7 Thi hành chƣơng trình  \nHệ thống phải có khả năng nạp chƣơng trình vào bộ nhớ và thi hành nó. \nChƣơng trình phải chấm dứt thi hành theo cách thông thƣờng hay bất \nthƣờng (có lỗi).  \n\uf0a7 Thao tác nhập xuất  \nMột chƣơng trình thi hành có thể yêu cầu nhập xuất. Nhập xuất này có thể \nlà tập tin hay thiết bị. Để tăng hiệu quả, ngƣời sử dụng không truy xuất \ntrực tiếp các thiết bị nhập xuất mà thông qua cách thức do hệ điều hành \ncung cấp.  \n\uf0a7 Thao tác trên hệ thống tập tin  \nChƣơng trình có thế yêu cầu đọc, ghi, xóa, đổi tên, tìm kiếm, cấp quyền \ncho tập tin, thƣ mục. Đa số hệ điều hành cung cấp nhiều loại hệ thống file, \ncó thể cho ngƣời dùng chọn lựa hoặc bắt buộc tùy theo yêu cầu.  \n\uf0a7 Thông tin  \nViệc trao đổi thông tin có thể đƣợc thực hiện giữa các tiến trình trên cùng \nmáy tính hoặc giữa các hệ thống khác nhau trong mạng. Đƣợc thực hiện \nthông qua cơ chế vùng nhớ chia sẻ hoặc chuyển thông điệp.  \n\uf0a7 Phát hiện lỗi' level='remember' page=3 idx_doc=2
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 2
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 2
+
+
+
+tao cau hoi level:understand...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành cần thực hiện những công việc nào để quản lý tiến trình hiệu quả?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: understand
+Option 1: Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình.
+Option 2: Chỉ ra các tài nguyên cần thiết cho tiến trình.
+Option 3: Phân phối CPU cho các tiến trình một cách hợp lý.
+Option 4: Ghi nhận tình trạng bộ nhớ chính cho tiến trình.
+Answer: Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình.
+Citation: Đáp án đúng là "Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình" vì đây là những công việc chính mà bộ phận quản lý tiến trình phải thực hiện để đảm bảo hoạt động của các tiến trình trong hệ điều hành, như đã nêu trong nội dung.
+Keyword: False
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:understand...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành cần mô tả những công việc nào để quản lý tiến trình một cách hiệu quả?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: understand
+[mô tả]
+Option 1: Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình.
+Option 2: Chỉ ra cách thức cấp phát tài nguyên cho tiến trình.
+Option 3: Đánh giá hiệu suất của các tiến trình trong bộ nhớ.
+Option 4: Phân loại các loại tiến trình theo mức độ ưu tiên.
+Answer: Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình.
+Citation: Câu trả lời đúng là "Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình" vì đây là những công việc cụ thể mà bộ phận quản lý tiến trình phải thực hiện để đảm bảo hoạt động hiệu quả của hệ điều hành như đã nêu trong nội dung.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu mô tả các công việc mà hệ điều hành cần thực hiện để quản lý tiến trình hiệu quả. Câu trả lời được gợi ý đã nêu đúng các công việc chính như tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình, mà những công việc này được liệt kê trong tài liệu. Các đáp án khác cũng có thể tìm thấy trong tài liệu, nhưng câu trả lời gợi ý đã đúng và đầy đủ hơn so với các đáp án khác.
+cau hoi dung: question='Hệ điều hành cần mô tả những công việc nào để quản lý tiến trình một cách hiệu quả?' options=['Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình.', 'Chỉ ra cách thức cấp phát tài nguyên cho tiến trình.', 'Đánh giá hiệu suất của các tiến trình trong bộ nhớ.', 'Phân loại các loại tiến trình theo mức độ ưu tiên.'] answer='Tạo lập, hủy bỏ, tạm dừng và tái kích hoạt tiến trình.' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 8  \nCHƢƠNG 2. GIAO DIỆN LẬP TRÌNH VÀ XÂY DỰNG HỆ \nĐIỀU HÀNH \n2.1. \nCÁC THÀNH PHẦN CỦA HỆ THỐNG \n2.1.1. Quản lý tiến trình \nTiến trình là một chƣơng trình đang đƣợc thi hành. Hệ điều hành phải tạo lập \nvà duy trì hoạt động của các tiến trình. Để hoàn tất tác vụ, một tiến trình \nthƣờng đòi hỏi một số tài nguyên nào đó nhƣ CPU, bộ nhớ, thiết bị \nnhập/xuất,… Các tài nguyên này sẽ đƣợc cấp phát cho tiến trình vào thời \nđiểm tiến trình đƣợc tạo lập hay trong thời gian tiến trình hoạt động. Khi tiến \ntrình kết thúc hệ điều hành cần thu hồi lại các tài nguyên đã cấp phát cho tiến \ntrình để tái sử dụng… Hơn nữa, mỗi tiến trình là một đơn vị tiêu thụ thời \ngian sử dụng CPU, do vậy trong môi trƣờng đa nhiệm, để đáp ứng nhu cầu \nxử lý đồng hành, hệ điều hành còn phải đảm nhiệm việc phân phối CPU cho \ncác tiến trình một cách hợp lý. Ngoài ra hệ điều hành cũng cần cung cấp các \ncơ chế giúp các tiến trình có thể trao đổi thông tin và đồng bộ hóa hoạt động \ncủa chúng.  \nTóm lại, bộ phận quản lý tiến trình phụ trách các công việc sau đây:  \n\uf0a7 Tạo lập, hủy bỏ một tiến trình.  \n\uf0a7 Tạm dừng (suspend), tái kích hoạt (resume) một tiến trình.  \n\uf0a7 Cung cấp các cơ chế trao đổi thông tin giữa các tiến trình. \uf0a7 Cung c\nấp \ncơ chế đồng bộ hóa các tiến trình \n2.1.2. Quản lý bộ nhớ chính \nBộ nhớ chính là thiết bị lƣu trữ duy nhất mà CPU có thể truy xuất trực tiếp. \nMột chƣơng trình cần đƣợc nạp vào bộ nhớ chính và chuyển đổi các địa chỉ \nthành địa chỉ tuyệt đối để CPU truy xuất trong quá trình xử lý. Để tăng hiệu \nsuất sử dụng CPU, các hệ thống đa nhiệm cố gắng giữ nhiều tiến trình trong \nbộ nhớ chính tại một thời điểm.  \nBộ phận quản lý bộ nhớ cần đảm nhiệm các công việc sau:  \n\uf0a7 Cấp phát và thu hồi một vùng nhớ cho tiến trình khi cần thiết.  \n\uf0a7 Ghi nhận tình trạng bộ nhớ chính: phần nào đã đƣợc cấp phát, phần nào \ncòn có thể sử dụng,…  \n\uf0a7 Quyết định tiến trình nào đƣợc nạp vào bộ nhớ chính khi có một vùng \nnhớ trống.  \n2.1.3. Quản lý bộ nhớ phụ \nNhững chƣơng trình cùng với dữ liệu của chúng phải đƣợc đặt trong bộ nhớ \nchính trong quá trình thi hành. Nhƣng bộ nhớ chính quá nhỏ để có thể lƣu \ngiữ mọi dữ liệu và chƣơng trình, ngoài ra thông tin còn bị mất khi không còn \nđƣợc cung cấp năng lƣợng. Hệ thống máy tính ngày nay sử dụng hệ thống' level='understand' page=1 idx_doc=0
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 1
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 3
+
+
+
+tao cau hoi level:understand...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành thực hiện vai trò gì trong việc quản lý đĩa của hệ thống máy tính?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: understand
+Option 1: Quản lý vùng trống trên đĩa.
+Option 2: Chỉ định vị trí lƣu trữ cho các chương trình.
+Option 3: Thiết lập giao thức truyền dữ liệu giữa các thiết bị.
+Option 4: Tạo lập các tập tin mới trên đĩa.
+Answer: Quản lý vùng trống trên đĩa.
+Citation: Hệ điều hành quản lý vùng trống trên đĩa để tối ưu hóa việc sử dụng không gian lưu trữ, điều này rất quan trọng cho hiệu suất của hệ thống máy tính.
+Keyword: False
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:understand...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành thực hiện những thao tác nào trong việc quản lý tập tin?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: understand
+Option 1: Tạo lập, hủy bỏ một tập tin và thƣ mục.
+Option 2: Chỉ định quyền truy cập cho từng người dùng.
+Option 3: Kiểm tra tốc độ truy xuất của đĩa.
+Option 4: Sao lưu dữ liệu trên đĩa cứng.
+Answer: Tạo lập, hủy bỏ một tập tin và thƣ mục.
+Citation: Hệ điều hành chịu trách nhiệm về các thao tác liên quan đến tập tin như: Tạo lập, hủy bỏ một tập tin, tạo lập, hủy bỏ một thƣ mục.
+Keyword: False
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 1
+
+tao lai cau hoi level:understand...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành có thể xác định vai trò nào trong việc quản lý nhập xuất của hệ thống máy tính?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: understand
+[xác định]
+Option 1: Che dấu đặc thù của thiết bị phần cứng
+Option 2: Tạo lập và hủy bỏ tập tin
+Option 3: Quản lý vùng trống trên đĩa
+Option 4: Lập lịch cho đĩa
+Answer: Che dấu đặc thù của thiết bị phần cứng
+Citation: Hệ điều hành có nhiệm vụ che dấu những đặc thù của các thiết bị phần cứng đối với người sử dụng, tạo ra một lớp thân thiện hơn để người sử dụng dễ thao tác hơn.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi liên quan đến vai trò của hệ điều hành trong quản lý nhập xuất, và câu trả lời được gợi ý "Che dấu đặc thù của thiết bị phần cứng" là một trong những vai trò quan trọng được nêu trong tài liệu. Ngoài ra, các đáp án khác cũng đúng và có thể tìm thấy trong tài liệu, do đó câu trả lời được gợi ý hoàn toàn phù hợp.
+cau hoi dung: question='Hệ điều hành có thể xác định vai trò nào trong việc quản lý nhập xuất của hệ thống máy tính?' options=['Che dấu đặc thù của thiết bị phần cứng', 'Tạo lập và hủy bỏ tập tin', 'Quản lý vùng trống trên đĩa', 'Lập lịch cho đĩa'] answer='Che dấu đặc thù của thiết bị phần cứng' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 9  \nlƣu trữ phụ (thƣờng là đĩa). Hầu nhƣ tất cả các chƣơng trình đều đƣợc lƣu trữ \ntrên đĩa cho đến khi nó đƣợc thực hiện, nạp vào trong bộ nhớ chính và cũng \nsử dụng đĩa để chứa dữ liệu và kết quả xử lý. Vì vậy một hệ thống đĩa rất \nquan trọng cho hệ thống máy tính, tốc độ của hệ thống máy tính phụ thuộc \nrất nhiều vào tốc độ truy xuất đĩa.  \nVai trò của hệ điều hành trong quản lý đĩa:  \n\uf0a7 Quản lý vùng trống trên đĩa. \n\uf0a7 Định vị lƣu trữ.  \n\uf0a7 Lập lịch cho đĩa  \n2.1.4. Quản lý nhập xuất \nMột trong những mục tiêu của hệ điều hành là che dấu những đặc thù của các \nthiết bị phần cứng đối với ngƣời sử dụng. Thay vào đó là một lớp thân thiện \nhơn, ngƣời sử dụng dễ thao tác hơn.  \nMột hệ thống nhập xuất bao gồm:  \n\uf0a7 Hệ thống buffer caching.  \n\uf0a7 Giao tiếp điều khiển thiết bị (device driver) tổng quát.  \n\uf0a7 Bộ điều khiển cho các thiết bị phần cứng cụ thể.  \nChỉ có device driver mới hiểu đến cấu trúc đặc thù của thiết bị mà nó mô tả.  \n2.1.5. Quản lý tập tin \nMáy tính có thể lƣu trữ thông tin trên nhiều loại thiết bị lƣu trữ vật lý khác \nnhau, mỗi thiết bị này có những tính chất và tổ chức vật lý đặc trƣng. Nhằm \ncho phép sử dụng tiện lợi hệ thống thông tin, hệ điều hành đƣa ra một khái \nniệm trừu tƣợng đồng nhất cho tất cả các thiết bị lƣu trữ vật lý bằng cách định \nnghĩa một đơn vị lƣu trữ là một tập tin. Hệ điều hành thiết lập mối liên hệ \ntƣơng ứng giữa tập tin và thiết bị lƣu trữ vật lý chứa nó. Để có thể dễ dàng truy \nxuất, hệ điều hành còn tổ chức tập tin thành các thƣ mục. Ngoài ra, hệ điều \nhành còn trách nhiệm kiểm soát việc truy cập đồng thời đến cùng một tập tin.  \nNhƣ vậy, hệ điều hành chịu trách nhiệm về các thao tác liên quan đến tập tin \nnhƣ:  \n\uf0a7 Tạo lập, hủy bỏ một tập tin.  \n\uf0a7 Tạo lập, hủy bỏ một thƣ mục.  \n\uf0a7 Cung cấp thao tác xử lý tập tin và thƣ mục.  \n\uf0a7 Tạo lập quan hệ tƣơng ứng giữa tập tin và bộ nhớ phụ chứa nó.  \n2.1.6. Hệ thống bảo vệ \nKhi hệ thống cho phép nhiều ngƣời sử dụng đồng thời, các tiến trình đồng hành \ncần phải đƣợc bảo vệ lẫn nhau để tránh sự xâm phạm vô tình hay cố ý có thể gây' level='understand' page=2 idx_doc=1
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 2
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 4
+
+
+
+tao cau hoi level:apply...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành áp dụng các chiến lược bảo vệ như thế nào để đảm bảo an toàn cho hệ thống?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: apply
+[áp dụng]
+Option 1: Hệ điều hành áp dụng các chiến lược bảo vệ thông qua việc xây dựng cơ chế kiểm soát và bảo vệ.
+Option 2: Hệ điều hành áp dụng các chiến lược bảo vệ bằng cách tăng cường tốc độ xử lý.
+Option 3: Hệ điều hành áp dụng các chiến lược bảo vệ thông qua việc giảm thiểu số lượng người dùng.
+Option 4: Hệ điều hành áp dụng các chiến lược bảo vệ bằng cách hạn chế quyền truy cập vào các tài nguyên hệ thống.
+Answer: Hệ điều hành áp dụng các chiến lược bảo vệ thông qua việc xây dựng cơ chế kiểm soát và bảo vệ.
+Citation: Đáp án đúng là "Hệ điều hành áp dụng các chiến lược bảo vệ thông qua việc xây dựng cơ chế kiểm soát và bảo vệ" vì nội dung đã nêu rõ rằng hệ điều hành cần xây dựng các cơ chế bảo vệ cho phép kiểm soát và áp dụng các chiến lược bảo vệ thích hợp.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi liên quan đến cách mà hệ điều hành áp dụng các chiến lược bảo vệ để đảm bảo an toàn cho hệ thống, và câu trả lời được gợi ý đã nêu rõ rằng hệ điều hành xây dựng cơ chế kiểm soát và bảo vệ. Điều này hoàn toàn phù hợp với nội dung trong tài liệu. Các đáp án khác cũng liên quan đến các phương pháp bảo vệ khác nhau mà hệ điều hành có thể áp dụng, trong đó có cả những phương pháp không chính xác như tăng cường tốc độ xử lý hay giảm thiểu số lượng người dùng, nhưng câu trả lời gợi ý vẫn đúng và có thể tìm thấy trong tài liệu.
+cau hoi dung: question='Hệ điều hành áp dụng các chiến lược bảo vệ như thế nào để đảm bảo an toàn cho hệ thống?' options=['Hệ điều hành áp dụng các chiến lược bảo vệ thông qua việc xây dựng cơ chế kiểm soát và bảo vệ.', 'Hệ điều hành áp dụng các chiến lược bảo vệ bằng cách tăng cường tốc độ xử lý.', 'Hệ điều hành áp dụng các chiến lược bảo vệ thông qua việc giảm thiểu số lượng người dùng.', 'Hệ điều hành áp dụng các chiến lược bảo vệ bằng cách hạn chế quyền truy cập vào các tài nguyên hệ thống.'] answer='Hệ điều hành áp dụng các chiến lược bảo vệ thông qua việc xây dựng cơ chế kiểm soát và bảo vệ.' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 10  \nsai lạc cho toàn hệ thống. Hệ điều hành cần xây dựng các cơ chế bảo vệ cho \nphép đặc tả sự kiểm soát và một phƣơng cách để áp dụng các chiến lƣợc bảo vệ \nthích hợp. \n2.1.7. Quản lý mạng \nMột hệ thống phân tán bao gồm nhiều bộ xử lý cùng chia sẻ thông tin với nhau. \nMỗi bộ xử lý có một bộ nhớ cục bộ, các tiến trình trong hệ thống có thể đƣợc \nkết nối với nhau qua mạng truyền thông. Hệ thống phân tán cho phép ngƣời \ndùng truy cập đến nhiều tài nguyên hệ thống khác nhau. \n2.1.8. Hệ thông dịch lệnh \nĐây là một trong những bộ phận quan trọng nhất của hệ điều hành, đóng vai trò \ngiao tiếp giữa hệ điều hành và ngƣời sử dụng. Các lệnh đƣợc chuyển đến hệ \nđiều hành dƣới dạng các chỉ thị điều khiển. Chƣơng trình shell – bộ thông dịch \nlệnh – có nhiệm vụ là nhận lệnh và thông dịch lệnh đó để hệ điều hành có xử lý \ntƣơng ứng. \n2.2. \nCÁC DỊCH VỤ CỦA HỆ ĐIỀU HÀNH (SYSTEM SERVICES)   \nHệ điều hành cung cấp môi trƣờng để thi hành các chƣơng trình, bằng cách cung \ncấp các dịch vụ cho chƣơng trình và ngƣời sử dụng. Các dịch vụ này trên mỗi hệ \nthống là khác nhau nhƣng cũng có những lớp chung. Các dịch vụ này giúp lập \ntrình viên thuận tiện hơn và việc lập trình dễ dàng hơn.  \n\uf0a7 Thi hành chƣơng trình  \nHệ thống phải có khả năng nạp chƣơng trình vào bộ nhớ và thi hành nó. \nChƣơng trình phải chấm dứt thi hành theo cách thông thƣờng hay bất \nthƣờng (có lỗi).  \n\uf0a7 Thao tác nhập xuất  \nMột chƣơng trình thi hành có thể yêu cầu nhập xuất. Nhập xuất này có thể \nlà tập tin hay thiết bị. Để tăng hiệu quả, ngƣời sử dụng không truy xuất \ntrực tiếp các thiết bị nhập xuất mà thông qua cách thức do hệ điều hành \ncung cấp.  \n\uf0a7 Thao tác trên hệ thống tập tin  \nChƣơng trình có thế yêu cầu đọc, ghi, xóa, đổi tên, tìm kiếm, cấp quyền \ncho tập tin, thƣ mục. Đa số hệ điều hành cung cấp nhiều loại hệ thống file, \ncó thể cho ngƣời dùng chọn lựa hoặc bắt buộc tùy theo yêu cầu.  \n\uf0a7 Thông tin  \nViệc trao đổi thông tin có thể đƣợc thực hiện giữa các tiến trình trên cùng \nmáy tính hoặc giữa các hệ thống khác nhau trong mạng. Đƣợc thực hiện \nthông qua cơ chế vùng nhớ chia sẻ hoặc chuyển thông điệp.  \n\uf0a7 Phát hiện lỗi' level='apply' page=3 idx_doc=2
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 5
+
+
+
+tao cau hoi level:apply...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành thực hiện vai trò gì trong việc quản lý vùng trống trên đĩa?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: apply
+Option 1: Quản lý vùng trống trên đĩa để tối ưu hóa hiệu suất lưu trữ.
+Option 2: Định vị lƣu trữ và lập lịch cho đĩa để tăng tốc độ truy xuất.
+Option 3: Tạo lập và hủy bỏ các tập tin trên đĩa để tiết kiệm không gian.
+Option 4: Sử dụng bộ nhớ chính để thay thế đĩa trong quá trình lưu trữ.
+Answer: Quản lý vùng trống trên đĩa để tối ưu hóa hiệu suất lưu trữ.
+Citation: Hệ điều hành có vai trò quản lý vùng trống trên đĩa nhằm tối ưu hóa hiệu suất lưu trữ, đảm bảo rằng không gian lưu trữ được sử dụng hiệu quả nhất.
+Keyword: False
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:apply...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành có thể điều khiển các thao tác nào liên quan đến tập tin?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: apply
+[điều khiển]
+Option 1: Tạo lập, hủy bỏ một tập tin
+Option 2: Chỉ ra các thiết bị lưu trữ
+Option 3: Sử dụng các phương thức bảo vệ
+Option 4: Thay đổi cấu trúc tập tin
+Answer: Tạo lập, hủy bỏ một tập tin
+Citation: Hệ điều hành chịu trách nhiệm về các thao tác liên quan đến tập tin như tạo lập và hủy bỏ một tập tin, điều này cho thấy vai trò quan trọng của nó trong quản lý tập tin.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi liên quan đến các thao tác mà hệ điều hành có thể thực hiện đối với tập tin, và câu trả lời được gợi ý "Tạo lập, hủy bỏ một tập tin" là một trong những thao tác đó. Các đáp án khác cũng có thể tìm thấy trong tài liệu, nhưng câu trả lời gợi ý đã đúng và phù hợp với nội dung tài liệu.
+cau hoi dung: question='Hệ điều hành có thể điều khiển các thao tác nào liên quan đến tập tin?' options=['Tạo lập, hủy bỏ một tập tin', 'Chỉ ra các thiết bị lưu trữ', 'Sử dụng các phương thức bảo vệ', 'Thay đổi cấu trúc tập tin'] answer='Tạo lập, hủy bỏ một tập tin' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 9  \nlƣu trữ phụ (thƣờng là đĩa). Hầu nhƣ tất cả các chƣơng trình đều đƣợc lƣu trữ \ntrên đĩa cho đến khi nó đƣợc thực hiện, nạp vào trong bộ nhớ chính và cũng \nsử dụng đĩa để chứa dữ liệu và kết quả xử lý. Vì vậy một hệ thống đĩa rất \nquan trọng cho hệ thống máy tính, tốc độ của hệ thống máy tính phụ thuộc \nrất nhiều vào tốc độ truy xuất đĩa.  \nVai trò của hệ điều hành trong quản lý đĩa:  \n\uf0a7 Quản lý vùng trống trên đĩa. \n\uf0a7 Định vị lƣu trữ.  \n\uf0a7 Lập lịch cho đĩa  \n2.1.4. Quản lý nhập xuất \nMột trong những mục tiêu của hệ điều hành là che dấu những đặc thù của các \nthiết bị phần cứng đối với ngƣời sử dụng. Thay vào đó là một lớp thân thiện \nhơn, ngƣời sử dụng dễ thao tác hơn.  \nMột hệ thống nhập xuất bao gồm:  \n\uf0a7 Hệ thống buffer caching.  \n\uf0a7 Giao tiếp điều khiển thiết bị (device driver) tổng quát.  \n\uf0a7 Bộ điều khiển cho các thiết bị phần cứng cụ thể.  \nChỉ có device driver mới hiểu đến cấu trúc đặc thù của thiết bị mà nó mô tả.  \n2.1.5. Quản lý tập tin \nMáy tính có thể lƣu trữ thông tin trên nhiều loại thiết bị lƣu trữ vật lý khác \nnhau, mỗi thiết bị này có những tính chất và tổ chức vật lý đặc trƣng. Nhằm \ncho phép sử dụng tiện lợi hệ thống thông tin, hệ điều hành đƣa ra một khái \nniệm trừu tƣợng đồng nhất cho tất cả các thiết bị lƣu trữ vật lý bằng cách định \nnghĩa một đơn vị lƣu trữ là một tập tin. Hệ điều hành thiết lập mối liên hệ \ntƣơng ứng giữa tập tin và thiết bị lƣu trữ vật lý chứa nó. Để có thể dễ dàng truy \nxuất, hệ điều hành còn tổ chức tập tin thành các thƣ mục. Ngoài ra, hệ điều \nhành còn trách nhiệm kiểm soát việc truy cập đồng thời đến cùng một tập tin.  \nNhƣ vậy, hệ điều hành chịu trách nhiệm về các thao tác liên quan đến tập tin \nnhƣ:  \n\uf0a7 Tạo lập, hủy bỏ một tập tin.  \n\uf0a7 Tạo lập, hủy bỏ một thƣ mục.  \n\uf0a7 Cung cấp thao tác xử lý tập tin và thƣ mục.  \n\uf0a7 Tạo lập quan hệ tƣơng ứng giữa tập tin và bộ nhớ phụ chứa nó.  \n2.1.6. Hệ thống bảo vệ \nKhi hệ thống cho phép nhiều ngƣời sử dụng đồng thời, các tiến trình đồng hành \ncần phải đƣợc bảo vệ lẫn nhau để tránh sự xâm phạm vô tình hay cố ý có thể gây' level='apply' page=2 idx_doc=1
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 1
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 6
+
+
+
+tao cau hoi level:analyze...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành thực hiện các dịch vụ nào để hỗ trợ lập trình viên trong quá trình phát triển ứng dụng?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: analyze
+[điều hành]
+Option 1: Thực hiện các dịch vụ để nạp chương trình vào bộ nhớ và thi hành nó.
+Option 2: Cung cấp các dịch vụ nhập xuất và quản lý tập tin cho người dùng.
+Option 3: Hỗ trợ việc phát hiện lỗi và xử lý các tình huống bất thường.
+Option 4: Tạo ra môi trường để người dùng truy cập vào nhiều tài nguyên hệ thống khác nhau.
+Answer: Cung cấp các dịch vụ nhập xuất và quản lý tập tin cho người dùng.
+Citation: Đáp án đúng là "Cung cấp các dịch vụ nhập xuất và quản lý tập tin cho người dùng" vì nội dung đề cập rằng hệ điều hành cung cấp các dịch vụ giúp lập trình viên thuận tiện hơn và việc lập trình dễ dàng hơn, bao gồm cả thao tác nhập xuất và thao tác trên hệ thống tập tin.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi liên quan đến các dịch vụ mà hệ điều hành cung cấp để hỗ trợ lập trình viên trong quá trình phát triển ứng dụng. Câu trả lời được gợi ý đúng với câu hỏi và có thể tìm thấy trong tài liệu, vì tài liệu đề cập đến việc hệ điều hành cung cấp dịch vụ nhập xuất và thao tác trên hệ thống tập tin. Các đáp án khác cũng đúng và có thể tìm thấy trong tài liệu, do đó câu trả lời được gợi ý là chính xác.
+cau hoi dung: question='Hệ điều hành thực hiện các dịch vụ nào để hỗ trợ lập trình viên trong quá trình phát triển ứng dụng?' options=['Thực hiện các dịch vụ để nạp chương trình vào bộ nhớ và thi hành nó.', 'Cung cấp các dịch vụ nhập xuất và quản lý tập tin cho người dùng.', 'Hỗ trợ việc phát hiện lỗi và xử lý các tình huống bất thường.', 'Tạo ra môi trường để người dùng truy cập vào nhiều tài nguyên hệ thống khác nhau.'] answer='Cung cấp các dịch vụ nhập xuất và quản lý tập tin cho người dùng.' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 10  \nsai lạc cho toàn hệ thống. Hệ điều hành cần xây dựng các cơ chế bảo vệ cho \nphép đặc tả sự kiểm soát và một phƣơng cách để áp dụng các chiến lƣợc bảo vệ \nthích hợp. \n2.1.7. Quản lý mạng \nMột hệ thống phân tán bao gồm nhiều bộ xử lý cùng chia sẻ thông tin với nhau. \nMỗi bộ xử lý có một bộ nhớ cục bộ, các tiến trình trong hệ thống có thể đƣợc \nkết nối với nhau qua mạng truyền thông. Hệ thống phân tán cho phép ngƣời \ndùng truy cập đến nhiều tài nguyên hệ thống khác nhau. \n2.1.8. Hệ thông dịch lệnh \nĐây là một trong những bộ phận quan trọng nhất của hệ điều hành, đóng vai trò \ngiao tiếp giữa hệ điều hành và ngƣời sử dụng. Các lệnh đƣợc chuyển đến hệ \nđiều hành dƣới dạng các chỉ thị điều khiển. Chƣơng trình shell – bộ thông dịch \nlệnh – có nhiệm vụ là nhận lệnh và thông dịch lệnh đó để hệ điều hành có xử lý \ntƣơng ứng. \n2.2. \nCÁC DỊCH VỤ CỦA HỆ ĐIỀU HÀNH (SYSTEM SERVICES)   \nHệ điều hành cung cấp môi trƣờng để thi hành các chƣơng trình, bằng cách cung \ncấp các dịch vụ cho chƣơng trình và ngƣời sử dụng. Các dịch vụ này trên mỗi hệ \nthống là khác nhau nhƣng cũng có những lớp chung. Các dịch vụ này giúp lập \ntrình viên thuận tiện hơn và việc lập trình dễ dàng hơn.  \n\uf0a7 Thi hành chƣơng trình  \nHệ thống phải có khả năng nạp chƣơng trình vào bộ nhớ và thi hành nó. \nChƣơng trình phải chấm dứt thi hành theo cách thông thƣờng hay bất \nthƣờng (có lỗi).  \n\uf0a7 Thao tác nhập xuất  \nMột chƣơng trình thi hành có thể yêu cầu nhập xuất. Nhập xuất này có thể \nlà tập tin hay thiết bị. Để tăng hiệu quả, ngƣời sử dụng không truy xuất \ntrực tiếp các thiết bị nhập xuất mà thông qua cách thức do hệ điều hành \ncung cấp.  \n\uf0a7 Thao tác trên hệ thống tập tin  \nChƣơng trình có thế yêu cầu đọc, ghi, xóa, đổi tên, tìm kiếm, cấp quyền \ncho tập tin, thƣ mục. Đa số hệ điều hành cung cấp nhiều loại hệ thống file, \ncó thể cho ngƣời dùng chọn lựa hoặc bắt buộc tùy theo yêu cầu.  \n\uf0a7 Thông tin  \nViệc trao đổi thông tin có thể đƣợc thực hiện giữa các tiến trình trên cùng \nmáy tính hoặc giữa các hệ thống khác nhau trong mạng. Đƣợc thực hiện \nthông qua cơ chế vùng nhớ chia sẻ hoặc chuyển thông điệp.  \n\uf0a7 Phát hiện lỗi' level='analyze' page=3 idx_doc=2
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 7
+
+
+
+tao cau hoi level:analyze...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành có thể thực hiện những thao tác nào để quản lý vùng trống trên đĩa?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: analyze
+[điều hành]
+Option 1: Tạo lập và hủy bỏ các tập tin
+Option 2: Sắp xếp và định vị lƣu trữ trên đĩa
+Option 3: Xác định và kiểm tra các thiết bị phần cứng
+Option 4: Thực hiện các thao tác nhập xuất cho người dùng
+Answer: Sắp xếp và định vị lƣu trữ trên đĩa
+Citation: Hệ điều hành có vai trò quản lý vùng trống trên đĩa bằng cách sắp xếp và định vị lƣu trữ, điều này giúp tối ưu hóa việc sử dụng không gian lưu trữ và tăng tốc độ truy xuất dữ liệu.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi liên quan đến vai trò của hệ điều hành trong việc quản lý vùng trống trên đĩa, mà tài liệu đã đề cập. Câu trả lời được gợi ý "Sắp xếp và định vị lƣu trữ trên đĩa" là một thao tác hợp lệ mà hệ điều hành thực hiện để quản lý vùng trống trên đĩa. Các đáp án khác cũng có thể tìm thấy trong tài liệu, nhưng câu trả lời gợi ý đã đúng và phù hợp với câu hỏi.
+cau hoi dung: question='Hệ điều hành có thể thực hiện những thao tác nào để quản lý vùng trống trên đĩa?' options=['Tạo lập và hủy bỏ các tập tin', 'Sắp xếp và định vị lƣu trữ trên đĩa', 'Xác định và kiểm tra các thiết bị phần cứng', 'Thực hiện các thao tác nhập xuất cho người dùng'] answer='Sắp xếp và định vị lƣu trữ trên đĩa' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 9  \nlƣu trữ phụ (thƣờng là đĩa). Hầu nhƣ tất cả các chƣơng trình đều đƣợc lƣu trữ \ntrên đĩa cho đến khi nó đƣợc thực hiện, nạp vào trong bộ nhớ chính và cũng \nsử dụng đĩa để chứa dữ liệu và kết quả xử lý. Vì vậy một hệ thống đĩa rất \nquan trọng cho hệ thống máy tính, tốc độ của hệ thống máy tính phụ thuộc \nrất nhiều vào tốc độ truy xuất đĩa.  \nVai trò của hệ điều hành trong quản lý đĩa:  \n\uf0a7 Quản lý vùng trống trên đĩa. \n\uf0a7 Định vị lƣu trữ.  \n\uf0a7 Lập lịch cho đĩa  \n2.1.4. Quản lý nhập xuất \nMột trong những mục tiêu của hệ điều hành là che dấu những đặc thù của các \nthiết bị phần cứng đối với ngƣời sử dụng. Thay vào đó là một lớp thân thiện \nhơn, ngƣời sử dụng dễ thao tác hơn.  \nMột hệ thống nhập xuất bao gồm:  \n\uf0a7 Hệ thống buffer caching.  \n\uf0a7 Giao tiếp điều khiển thiết bị (device driver) tổng quát.  \n\uf0a7 Bộ điều khiển cho các thiết bị phần cứng cụ thể.  \nChỉ có device driver mới hiểu đến cấu trúc đặc thù của thiết bị mà nó mô tả.  \n2.1.5. Quản lý tập tin \nMáy tính có thể lƣu trữ thông tin trên nhiều loại thiết bị lƣu trữ vật lý khác \nnhau, mỗi thiết bị này có những tính chất và tổ chức vật lý đặc trƣng. Nhằm \ncho phép sử dụng tiện lợi hệ thống thông tin, hệ điều hành đƣa ra một khái \nniệm trừu tƣợng đồng nhất cho tất cả các thiết bị lƣu trữ vật lý bằng cách định \nnghĩa một đơn vị lƣu trữ là một tập tin. Hệ điều hành thiết lập mối liên hệ \ntƣơng ứng giữa tập tin và thiết bị lƣu trữ vật lý chứa nó. Để có thể dễ dàng truy \nxuất, hệ điều hành còn tổ chức tập tin thành các thƣ mục. Ngoài ra, hệ điều \nhành còn trách nhiệm kiểm soát việc truy cập đồng thời đến cùng một tập tin.  \nNhƣ vậy, hệ điều hành chịu trách nhiệm về các thao tác liên quan đến tập tin \nnhƣ:  \n\uf0a7 Tạo lập, hủy bỏ một tập tin.  \n\uf0a7 Tạo lập, hủy bỏ một thƣ mục.  \n\uf0a7 Cung cấp thao tác xử lý tập tin và thƣ mục.  \n\uf0a7 Tạo lập quan hệ tƣơng ứng giữa tập tin và bộ nhớ phụ chứa nó.  \n2.1.6. Hệ thống bảo vệ \nKhi hệ thống cho phép nhiều ngƣời sử dụng đồng thời, các tiến trình đồng hành \ncần phải đƣợc bảo vệ lẫn nhau để tránh sự xâm phạm vô tình hay cố ý có thể gây' level='analyze' page=2 idx_doc=1
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 8
+
+
+
+tao cau hoi level:evaluate...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành cần thực hiện những công việc nào để tạo ra một tiến trình mới?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: evaluate
+[tạo ra]
+Option 1: Cấp phát và thu hồi tài nguyên cho tiến trình
+Option 2: Tạm dừng và tái kích hoạt tiến trình
+Option 3: Ghi nhận tình trạng bộ nhớ chính
+Option 4: Cung cấp cơ chế đồng bộ hóa cho tiến trình
+Answer: Cấp phát và thu hồi tài nguyên cho tiến trình
+Citation: Đáp án đúng là "Cấp phát và thu hồi tài nguyên cho tiến trình" vì đây là một trong những công việc chính mà hệ điều hành phải thực hiện để tạo lập và duy trì hoạt động của các tiến trình, như đã nêu trong nội dung.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu thông tin về các công việc mà hệ điều hành cần thực hiện để tạo ra một tiến trình mới. Câu trả lời được gợi ý "Cấp phát và thu hồi tài nguyên cho tiến trình" là một phần quan trọng trong quá trình tạo lập tiến trình, và nó cũng có thể tìm thấy trong tài liệu. Hơn nữa, các đáp án khác cũng liên quan đến các công việc mà hệ điều hành thực hiện trong quản lý tiến trình, do đó câu trả lời được gợi ý là chính xác và phù hợp.
+cau hoi dung: question='Hệ điều hành cần thực hiện những công việc nào để tạo ra một tiến trình mới?' options=['Cấp phát và thu hồi tài nguyên cho tiến trình', 'Tạm dừng và tái kích hoạt tiến trình', 'Ghi nhận tình trạng bộ nhớ chính', 'Cung cấp cơ chế đồng bộ hóa cho tiến trình'] answer='Cấp phát và thu hồi tài nguyên cho tiến trình' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 8  \nCHƢƠNG 2. GIAO DIỆN LẬP TRÌNH VÀ XÂY DỰNG HỆ \nĐIỀU HÀNH \n2.1. \nCÁC THÀNH PHẦN CỦA HỆ THỐNG \n2.1.1. Quản lý tiến trình \nTiến trình là một chƣơng trình đang đƣợc thi hành. Hệ điều hành phải tạo lập \nvà duy trì hoạt động của các tiến trình. Để hoàn tất tác vụ, một tiến trình \nthƣờng đòi hỏi một số tài nguyên nào đó nhƣ CPU, bộ nhớ, thiết bị \nnhập/xuất,… Các tài nguyên này sẽ đƣợc cấp phát cho tiến trình vào thời \nđiểm tiến trình đƣợc tạo lập hay trong thời gian tiến trình hoạt động. Khi tiến \ntrình kết thúc hệ điều hành cần thu hồi lại các tài nguyên đã cấp phát cho tiến \ntrình để tái sử dụng… Hơn nữa, mỗi tiến trình là một đơn vị tiêu thụ thời \ngian sử dụng CPU, do vậy trong môi trƣờng đa nhiệm, để đáp ứng nhu cầu \nxử lý đồng hành, hệ điều hành còn phải đảm nhiệm việc phân phối CPU cho \ncác tiến trình một cách hợp lý. Ngoài ra hệ điều hành cũng cần cung cấp các \ncơ chế giúp các tiến trình có thể trao đổi thông tin và đồng bộ hóa hoạt động \ncủa chúng.  \nTóm lại, bộ phận quản lý tiến trình phụ trách các công việc sau đây:  \n\uf0a7 Tạo lập, hủy bỏ một tiến trình.  \n\uf0a7 Tạm dừng (suspend), tái kích hoạt (resume) một tiến trình.  \n\uf0a7 Cung cấp các cơ chế trao đổi thông tin giữa các tiến trình. \uf0a7 Cung c\nấp \ncơ chế đồng bộ hóa các tiến trình \n2.1.2. Quản lý bộ nhớ chính \nBộ nhớ chính là thiết bị lƣu trữ duy nhất mà CPU có thể truy xuất trực tiếp. \nMột chƣơng trình cần đƣợc nạp vào bộ nhớ chính và chuyển đổi các địa chỉ \nthành địa chỉ tuyệt đối để CPU truy xuất trong quá trình xử lý. Để tăng hiệu \nsuất sử dụng CPU, các hệ thống đa nhiệm cố gắng giữ nhiều tiến trình trong \nbộ nhớ chính tại một thời điểm.  \nBộ phận quản lý bộ nhớ cần đảm nhiệm các công việc sau:  \n\uf0a7 Cấp phát và thu hồi một vùng nhớ cho tiến trình khi cần thiết.  \n\uf0a7 Ghi nhận tình trạng bộ nhớ chính: phần nào đã đƣợc cấp phát, phần nào \ncòn có thể sử dụng,…  \n\uf0a7 Quyết định tiến trình nào đƣợc nạp vào bộ nhớ chính khi có một vùng \nnhớ trống.  \n2.1.3. Quản lý bộ nhớ phụ \nNhững chƣơng trình cùng với dữ liệu của chúng phải đƣợc đặt trong bộ nhớ \nchính trong quá trình thi hành. Nhƣng bộ nhớ chính quá nhỏ để có thể lƣu \ngiữ mọi dữ liệu và chƣơng trình, ngoài ra thông tin còn bị mất khi không còn \nđƣợc cung cấp năng lƣợng. Hệ thống máy tính ngày nay sử dụng hệ thống' level='evaluate' page=1 idx_doc=0
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 9
+
+
+
+tao cau hoi level:evaluate...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành xây dựng các cơ chế bảo vệ như thế nào để kiểm soát sự sai lạc trong hệ thống?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: evaluate
+[xây dựng]
+Option 1: Bằng cách phát triển các phương pháp bảo vệ thông qua các chiến lược thích hợp.
+Option 2: Bằng cách sử dụng các thiết bị ngoại vi để kiểm soát thông tin.
+Option 3: Bằng cách giới hạn quyền truy cập của người dùng vào hệ thống.
+Option 4: Bằng cách tạo ra các phần mềm độc lập để bảo vệ hệ thống.
+Answer: Bằng cách phát triển các phương pháp bảo vệ thông qua các chiến lược thích hợp.
+Citation: Câu trả lời đúng là "Bằng cách phát triển các phương pháp bảo vệ thông qua các chiến lược thích hợp" vì nội dung đã nêu rõ rằng hệ điều hành cần xây dựng các cơ chế bảo vệ cho phép kiểm soát sự sai lạc cho toàn hệ thống.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi liên quan đến cách mà hệ điều hành xây dựng các cơ chế bảo vệ để kiểm soát sự sai lạc trong hệ thống, điều này được đề cập trong tài liệu. Câu trả lời được gợi ý đúng với câu hỏi và có thể tìm thấy trong tài liệu, vì nó nhấn mạnh việc phát triển các phương pháp bảo vệ thông qua các chiến lược thích hợp. Các đáp án khác cũng liên quan và có thể tìm thấy trong tài liệu, cho thấy sự đa dạng trong các phương pháp bảo vệ mà hệ điều hành có thể áp dụng.
+cau hoi dung: question='Hệ điều hành xây dựng các cơ chế bảo vệ như thế nào để kiểm soát sự sai lạc trong hệ thống?' options=['Bằng cách phát triển các phương pháp bảo vệ thông qua các chiến lược thích hợp.', 'Bằng cách sử dụng các thiết bị ngoại vi để kiểm soát thông tin.', 'Bằng cách giới hạn quyền truy cập của người dùng vào hệ thống.', 'Bằng cách tạo ra các phần mềm độc lập để bảo vệ hệ thống.'] answer='Bằng cách phát triển các phương pháp bảo vệ thông qua các chiến lược thích hợp.' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 10  \nsai lạc cho toàn hệ thống. Hệ điều hành cần xây dựng các cơ chế bảo vệ cho \nphép đặc tả sự kiểm soát và một phƣơng cách để áp dụng các chiến lƣợc bảo vệ \nthích hợp. \n2.1.7. Quản lý mạng \nMột hệ thống phân tán bao gồm nhiều bộ xử lý cùng chia sẻ thông tin với nhau. \nMỗi bộ xử lý có một bộ nhớ cục bộ, các tiến trình trong hệ thống có thể đƣợc \nkết nối với nhau qua mạng truyền thông. Hệ thống phân tán cho phép ngƣời \ndùng truy cập đến nhiều tài nguyên hệ thống khác nhau. \n2.1.8. Hệ thông dịch lệnh \nĐây là một trong những bộ phận quan trọng nhất của hệ điều hành, đóng vai trò \ngiao tiếp giữa hệ điều hành và ngƣời sử dụng. Các lệnh đƣợc chuyển đến hệ \nđiều hành dƣới dạng các chỉ thị điều khiển. Chƣơng trình shell – bộ thông dịch \nlệnh – có nhiệm vụ là nhận lệnh và thông dịch lệnh đó để hệ điều hành có xử lý \ntƣơng ứng. \n2.2. \nCÁC DỊCH VỤ CỦA HỆ ĐIỀU HÀNH (SYSTEM SERVICES)   \nHệ điều hành cung cấp môi trƣờng để thi hành các chƣơng trình, bằng cách cung \ncấp các dịch vụ cho chƣơng trình và ngƣời sử dụng. Các dịch vụ này trên mỗi hệ \nthống là khác nhau nhƣng cũng có những lớp chung. Các dịch vụ này giúp lập \ntrình viên thuận tiện hơn và việc lập trình dễ dàng hơn.  \n\uf0a7 Thi hành chƣơng trình  \nHệ thống phải có khả năng nạp chƣơng trình vào bộ nhớ và thi hành nó. \nChƣơng trình phải chấm dứt thi hành theo cách thông thƣờng hay bất \nthƣờng (có lỗi).  \n\uf0a7 Thao tác nhập xuất  \nMột chƣơng trình thi hành có thể yêu cầu nhập xuất. Nhập xuất này có thể \nlà tập tin hay thiết bị. Để tăng hiệu quả, ngƣời sử dụng không truy xuất \ntrực tiếp các thiết bị nhập xuất mà thông qua cách thức do hệ điều hành \ncung cấp.  \n\uf0a7 Thao tác trên hệ thống tập tin  \nChƣơng trình có thế yêu cầu đọc, ghi, xóa, đổi tên, tìm kiếm, cấp quyền \ncho tập tin, thƣ mục. Đa số hệ điều hành cung cấp nhiều loại hệ thống file, \ncó thể cho ngƣời dùng chọn lựa hoặc bắt buộc tùy theo yêu cầu.  \n\uf0a7 Thông tin  \nViệc trao đổi thông tin có thể đƣợc thực hiện giữa các tiến trình trên cùng \nmáy tính hoặc giữa các hệ thống khác nhau trong mạng. Đƣợc thực hiện \nthông qua cơ chế vùng nhớ chia sẻ hoặc chuyển thông điệp.  \n\uf0a7 Phát hiện lỗi' level='evaluate' page=3 idx_doc=2
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 10
+
+
+
+tao cau hoi level:create...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành làm ra những dịch vụ gì để hỗ trợ việc nhập xuất cho chương trình?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: create
+[làm ra]
+Option 1: Hệ điều hành cung cấp dịch vụ nhập xuất cho các thiết bị và tập tin.
+Option 2: Hệ điều hành chỉ hỗ trợ nhập xuất cho các thiết bị ngoại vi.
+Option 3: Hệ điều hành không có dịch vụ nào cho việc nhập xuất.
+Option 4: Hệ điều hành chỉ cho phép nhập xuất trên một số loại tập tin nhất định.
+Answer: Hệ điều hành cung cấp dịch vụ nhập xuất cho các thiết bị và tập tin.
+Citation: Đáp án đúng là "Hệ điều hành cung cấp dịch vụ nhập xuất cho các thiết bị và tập tin" vì nội dung đã nêu rõ rằng một chương trình thi hành có thể yêu cầu nhập xuất và hệ điều hành cung cấp cách thức cho việc này.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi liên quan đến các dịch vụ mà hệ điều hành cung cấp để hỗ trợ việc nhập xuất cho chương trình. Câu trả lời được gợi ý đúng với nội dung trong tài liệu, cụ thể là hệ điều hành cung cấp dịch vụ nhập xuất cho các thiết bị và tập tin. Các đáp án khác cũng có thể tìm thấy trong tài liệu, nhưng câu trả lời gợi ý là chính xác và đầy đủ hơn so với các đáp án khác.
+cau hoi dung: question='Hệ điều hành làm ra những dịch vụ gì để hỗ trợ việc nhập xuất cho chương trình?' options=['Hệ điều hành cung cấp dịch vụ nhập xuất cho các thiết bị và tập tin.', 'Hệ điều hành chỉ hỗ trợ nhập xuất cho các thiết bị ngoại vi.', 'Hệ điều hành không có dịch vụ nào cho việc nhập xuất.', 'Hệ điều hành chỉ cho phép nhập xuất trên một số loại tập tin nhất định.'] answer='Hệ điều hành cung cấp dịch vụ nhập xuất cho các thiết bị và tập tin.' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 10  \nsai lạc cho toàn hệ thống. Hệ điều hành cần xây dựng các cơ chế bảo vệ cho \nphép đặc tả sự kiểm soát và một phƣơng cách để áp dụng các chiến lƣợc bảo vệ \nthích hợp. \n2.1.7. Quản lý mạng \nMột hệ thống phân tán bao gồm nhiều bộ xử lý cùng chia sẻ thông tin với nhau. \nMỗi bộ xử lý có một bộ nhớ cục bộ, các tiến trình trong hệ thống có thể đƣợc \nkết nối với nhau qua mạng truyền thông. Hệ thống phân tán cho phép ngƣời \ndùng truy cập đến nhiều tài nguyên hệ thống khác nhau. \n2.1.8. Hệ thông dịch lệnh \nĐây là một trong những bộ phận quan trọng nhất của hệ điều hành, đóng vai trò \ngiao tiếp giữa hệ điều hành và ngƣời sử dụng. Các lệnh đƣợc chuyển đến hệ \nđiều hành dƣới dạng các chỉ thị điều khiển. Chƣơng trình shell – bộ thông dịch \nlệnh – có nhiệm vụ là nhận lệnh và thông dịch lệnh đó để hệ điều hành có xử lý \ntƣơng ứng. \n2.2. \nCÁC DỊCH VỤ CỦA HỆ ĐIỀU HÀNH (SYSTEM SERVICES)   \nHệ điều hành cung cấp môi trƣờng để thi hành các chƣơng trình, bằng cách cung \ncấp các dịch vụ cho chƣơng trình và ngƣời sử dụng. Các dịch vụ này trên mỗi hệ \nthống là khác nhau nhƣng cũng có những lớp chung. Các dịch vụ này giúp lập \ntrình viên thuận tiện hơn và việc lập trình dễ dàng hơn.  \n\uf0a7 Thi hành chƣơng trình  \nHệ thống phải có khả năng nạp chƣơng trình vào bộ nhớ và thi hành nó. \nChƣơng trình phải chấm dứt thi hành theo cách thông thƣờng hay bất \nthƣờng (có lỗi).  \n\uf0a7 Thao tác nhập xuất  \nMột chƣơng trình thi hành có thể yêu cầu nhập xuất. Nhập xuất này có thể \nlà tập tin hay thiết bị. Để tăng hiệu quả, ngƣời sử dụng không truy xuất \ntrực tiếp các thiết bị nhập xuất mà thông qua cách thức do hệ điều hành \ncung cấp.  \n\uf0a7 Thao tác trên hệ thống tập tin  \nChƣơng trình có thế yêu cầu đọc, ghi, xóa, đổi tên, tìm kiếm, cấp quyền \ncho tập tin, thƣ mục. Đa số hệ điều hành cung cấp nhiều loại hệ thống file, \ncó thể cho ngƣời dùng chọn lựa hoặc bắt buộc tùy theo yêu cầu.  \n\uf0a7 Thông tin  \nViệc trao đổi thông tin có thể đƣợc thực hiện giữa các tiến trình trên cùng \nmáy tính hoặc giữa các hệ thống khác nhau trong mạng. Đƣợc thực hiện \nthông qua cơ chế vùng nhớ chia sẻ hoặc chuyển thông điệp.  \n\uf0a7 Phát hiện lỗi' level='create' page=3 idx_doc=2
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 11
+
+
+
+tao cau hoi level:create...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành cần thực hiện những công việc nào để tích hợp quản lý bộ nhớ phụ vào hệ thống?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: create
+[tích hợp]
+Option 1: Cấp phát và thu hồi vùng nhớ cho tiến trình khi cần thiết.
+Option 2: Ghi nhận tình trạng bộ nhớ chính và quyết định tiến trình nào được nạp vào.
+Option 3: Tạo lập và hủy bỏ một tiến trình trong bộ nhớ chính.
+Option 4: Cung cấp cơ chế đồng bộ hóa các tiến trình trong bộ nhớ phụ.
+Answer: Cấp phát và thu hồi vùng nhớ cho tiến trình khi cần thiết.
+Citation: Câu trả lời đúng là "Cấp phát và thu hồi vùng nhớ cho tiến trình khi cần thiết" vì đây là một trong những công việc chính của bộ phận quản lý bộ nhớ phụ, như đã nêu trong nội dung.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu thông tin về các công việc mà hệ điều hành cần thực hiện để tích hợp quản lý bộ nhớ phụ vào hệ thống. Câu trả lời được gợi ý "Cấp phát và thu hồi vùng nhớ cho tiến trình khi cần thiết" là một trong những công việc quan trọng mà hệ điều hành cần thực hiện, và nó hoàn toàn phù hợp với nội dung trong tài liệu. Các đáp án khác cũng đúng và có thể tìm thấy trong tài liệu, như "Ghi nhận tình trạng bộ nhớ chính và quyết định tiến trình nào được nạp vào". Do đó, câu trả lời được gợi ý là chính xác và liên quan đến câu hỏi.
+cau hoi dung: question='Hệ điều hành cần thực hiện những công việc nào để tích hợp quản lý bộ nhớ phụ vào hệ thống?' options=['Cấp phát và thu hồi vùng nhớ cho tiến trình khi cần thiết.', 'Ghi nhận tình trạng bộ nhớ chính và quyết định tiến trình nào được nạp vào.', 'Tạo lập và hủy bỏ một tiến trình trong bộ nhớ chính.', 'Cung cấp cơ chế đồng bộ hóa các tiến trình trong bộ nhớ phụ.'] answer='Cấp phát và thu hồi vùng nhớ cho tiến trình khi cần thiết.' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 8  \nCHƢƠNG 2. GIAO DIỆN LẬP TRÌNH VÀ XÂY DỰNG HỆ \nĐIỀU HÀNH \n2.1. \nCÁC THÀNH PHẦN CỦA HỆ THỐNG \n2.1.1. Quản lý tiến trình \nTiến trình là một chƣơng trình đang đƣợc thi hành. Hệ điều hành phải tạo lập \nvà duy trì hoạt động của các tiến trình. Để hoàn tất tác vụ, một tiến trình \nthƣờng đòi hỏi một số tài nguyên nào đó nhƣ CPU, bộ nhớ, thiết bị \nnhập/xuất,… Các tài nguyên này sẽ đƣợc cấp phát cho tiến trình vào thời \nđiểm tiến trình đƣợc tạo lập hay trong thời gian tiến trình hoạt động. Khi tiến \ntrình kết thúc hệ điều hành cần thu hồi lại các tài nguyên đã cấp phát cho tiến \ntrình để tái sử dụng… Hơn nữa, mỗi tiến trình là một đơn vị tiêu thụ thời \ngian sử dụng CPU, do vậy trong môi trƣờng đa nhiệm, để đáp ứng nhu cầu \nxử lý đồng hành, hệ điều hành còn phải đảm nhiệm việc phân phối CPU cho \ncác tiến trình một cách hợp lý. Ngoài ra hệ điều hành cũng cần cung cấp các \ncơ chế giúp các tiến trình có thể trao đổi thông tin và đồng bộ hóa hoạt động \ncủa chúng.  \nTóm lại, bộ phận quản lý tiến trình phụ trách các công việc sau đây:  \n\uf0a7 Tạo lập, hủy bỏ một tiến trình.  \n\uf0a7 Tạm dừng (suspend), tái kích hoạt (resume) một tiến trình.  \n\uf0a7 Cung cấp các cơ chế trao đổi thông tin giữa các tiến trình. \uf0a7 Cung c\nấp \ncơ chế đồng bộ hóa các tiến trình \n2.1.2. Quản lý bộ nhớ chính \nBộ nhớ chính là thiết bị lƣu trữ duy nhất mà CPU có thể truy xuất trực tiếp. \nMột chƣơng trình cần đƣợc nạp vào bộ nhớ chính và chuyển đổi các địa chỉ \nthành địa chỉ tuyệt đối để CPU truy xuất trong quá trình xử lý. Để tăng hiệu \nsuất sử dụng CPU, các hệ thống đa nhiệm cố gắng giữ nhiều tiến trình trong \nbộ nhớ chính tại một thời điểm.  \nBộ phận quản lý bộ nhớ cần đảm nhiệm các công việc sau:  \n\uf0a7 Cấp phát và thu hồi một vùng nhớ cho tiến trình khi cần thiết.  \n\uf0a7 Ghi nhận tình trạng bộ nhớ chính: phần nào đã đƣợc cấp phát, phần nào \ncòn có thể sử dụng,…  \n\uf0a7 Quyết định tiến trình nào đƣợc nạp vào bộ nhớ chính khi có một vùng \nnhớ trống.  \n2.1.3. Quản lý bộ nhớ phụ \nNhững chƣơng trình cùng với dữ liệu của chúng phải đƣợc đặt trong bộ nhớ \nchính trong quá trình thi hành. Nhƣng bộ nhớ chính quá nhỏ để có thể lƣu \ngiữ mọi dữ liệu và chƣơng trình, ngoài ra thông tin còn bị mất khi không còn \nđƣợc cung cấp năng lƣợng. Hệ thống máy tính ngày nay sử dụng hệ thống' level='create' page=1 idx_doc=0
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 12
+Tong characters: 195697
+Execution Time: 2m 5.61s

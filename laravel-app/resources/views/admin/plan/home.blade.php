@@ -54,7 +54,7 @@
                     @foreach ($plans as $plan)
                         <tr>
                             <td>{{ $plan->name }}</td>
-                            <td>{{ number_format($plan->price, 2) }} VNĐ</td>
+                            <td>{{ number_format($plan->price) }} VNĐ</td>
                             <td>{{ $plan->processes }}</td>
                             <td>{{ $plan->questions_limit }}</td>
                             <td>{{ $plan->duration }}</td>
