@@ -13,7 +13,7 @@ class GradeDocumentModel(BaseModel):
         binary_score (str): Giá trị điểm nhị phân xác định tài liệu có liên quan hay không ('yes' hoặc 'no').
     """
 
-    binary_score: str = Field(description="Giá trị 'yes' hoặc 'no' hoặc 're-generate'")
+    binary_score: str = Field(description="Giá trị 'yes' hoặc 'no'")
     description: str = Field(description="Giải thích chi tiết lý do tại sao câu hỏi trắc nghiệm hoặc câu trả lời không liên quan đến tài liệu")
 
 

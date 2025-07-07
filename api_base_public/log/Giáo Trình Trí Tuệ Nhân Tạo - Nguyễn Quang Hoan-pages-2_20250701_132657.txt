@@ -1,0 +1,767 @@
+Log created at 20250701_132657 for file: Giáo Trình Trí Tuệ Nhân Tạo - Nguyễn Quang Hoan-pages-2.pdf
+use gpt  to grade doc
+use gpt to generate qa
+use gpt to grade qs
+Number of paragraphs: 161
+
+
+doan van-[0]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[1]: ['understand', 'remember', 'evaluate', 'apply', 'analyze', 'create']
+doan van-[2]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[3]: ['understand', 'remember', 'evaluate', 'apply', 'analyze']
+doan van-[4]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[5]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[6]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[7]: ['understand', 'remember', 'evaluate', 'apply', 'analyze']
+doan van-[8]: ['understand', 'remember', 'evaluate', 'apply', 'analyze']
+doan van-[9]: ['analyze', 'understand', 'remember']
+doan van-[10]: ['analyze', 'understand', 'evaluate', 'remember']
+doan van-[11]: ['understand', 'remember', 'evaluate', 'apply', 'analyze']
+doan van-[12]: ['analyze', 'understand', 'apply']
+doan van-[13]: ['analyze', 'understand', 'evaluate']
+doan van-[14]: ['analyze', 'understand', 'apply']
+doan van-[15]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[16]: ['analyze', 'understand', 'apply']
+doan van-[17]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[18]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[19]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[20]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[21]: ['analyze', 'understand', 'evaluate']
+doan van-[22]: ['analyze', 'understand', 'apply']
+doan van-[23]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[24]: ['analyze', 'understand', 'evaluate']
+doan van-[25]: ['analyze', 'understand', 'apply']
+doan van-[26]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[27]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[28]: ['analyze', 'understand', 'apply']
+doan van-[29]: ['analyze', 'understand', 'apply']
+doan van-[30]: ['understand', 'evaluate', 'apply', 'analyze', 'create']
+doan van-[31]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[32]: ['analyze', 'understand', 'apply']
+doan van-[33]: ['understand', 'evaluate', 'apply', 'analyze', 'create']
+doan van-[34]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[35]: ['analyze', 'understand', 'apply']
+doan van-[36]: ['understand', 'remember', 'evaluate', 'apply', 'analyze']
+doan van-[37]: ['understand', 'remember', 'evaluate', 'apply', 'analyze']
+doan van-[38]: ['understand', 'evaluate', 'apply', 'analyze', 'create']
+doan van-[39]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[40]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[41]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[42]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[43]: ['understand', 'remember', 'evaluate', 'apply', 'analyze']
+doan van-[44]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[45]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[46]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[47]: ['understand', 'remember', 'evaluate', 'apply', 'analyze']
+doan van-[48]: ['understand', 'remember', 'evaluate', 'apply', 'analyze']
+doan van-[49]: ['understand', 'remember', 'evaluate', 'apply', 'analyze']
+doan van-[50]: ['analyze', 'understand', 'apply']
+doan van-[51]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[52]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[53]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[54]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[55]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[56]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[57]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[58]: ['analyze', 'understand', 'apply']
+doan van-[59]: ['analyze', 'understand', 'create', 'apply']
+doan van-[60]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[61]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[62]: ['understand', 'remember', 'apply', 'analyze', 'create']
+doan van-[63]: ['analyze', 'understand', 'apply']
+doan van-[64]: ['analyze', 'understand', 'apply']
+doan van-[65]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[66]: ['analyze', 'understand', 'apply']
+doan van-[67]: ['analyze', 'understand', 'apply']
+doan van-[68]: ['understand', 'remember', 'evaluate', 'apply', 'analyze']
+doan van-[69]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[70]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[71]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[72]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[73]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[74]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[75]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[76]: ['analyze', 'understand', 'evaluate']
+doan van-[77]: ['analyze', 'understand', 'apply']
+doan van-[78]: ['analyze', 'understand', 'apply']
+doan van-[79]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[80]: ['analyze', 'understand', 'remember']
+doan van-[81]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[82]: ['analyze', 'understand', 'apply']
+doan van-[83]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[84]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[85]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[86]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[87]: ['analyze', 'create', 'apply']
+doan van-[88]: ['analyze', 'understand']
+doan van-[89]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[90]: ['analyze', 'understand', 'evaluate']
+doan van-[91]: ['analyze', 'understand']
+doan van-[92]: ['analyze', 'understand', 'apply']
+doan van-[93]: ['understand', 'remember', 'evaluate', 'apply', 'analyze']
+doan van-[94]: ['analyze', 'understand', 'apply']
+doan van-[95]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[96]: ['analyze', 'understand', 'apply']
+doan van-[97]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[98]: ['analyze', 'understand', 'apply']
+doan van-[99]: ['understand', 'remember', 'evaluate', 'apply', 'analyze']
+doan van-[100]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[101]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[102]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[103]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[104]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[105]: ['analyze', 'understand', 'apply']
+doan van-[106]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[107]: ['analyze', 'understand', 'apply']
+doan van-[108]: ['analyze', 'understand', 'apply']
+doan van-[109]: ['analyze', 'understand', 'apply']
+doan van-[110]: ['analyze', 'understand', 'apply']
+doan van-[111]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[112]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[113]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[114]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[115]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[116]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[117]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[118]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[119]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[120]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[121]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[122]: ['analyze', 'understand', 'apply']
+doan van-[123]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[124]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[125]: ['understand', 'remember', 'evaluate', 'apply', 'analyze', 'create']
+doan van-[126]: ['analyze', 'understand', 'apply']
+doan van-[127]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[128]: ['understand', 'evaluate', 'apply', 'analyze', 'create']
+doan van-[129]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[130]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[131]: ['analyze', 'understand', 'apply']
+doan van-[132]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[133]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[134]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[135]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[136]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[137]: ['analyze', 'understand', 'apply']
+doan van-[138]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[139]: ['analyze', 'understand', 'evaluate']
+doan van-[140]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[141]: ['analyze', 'understand', 'apply']
+doan van-[142]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[143]: ['understand', 'remember', 'evaluate', 'apply', 'analyze']
+doan van-[144]: ['analyze', 'understand', 'evaluate']
+doan van-[145]: ['analyze', 'understand', 'apply']
+doan van-[146]: ['understand', 'remember']
+doan van-[147]: ['analyze', 'understand']
+doan van-[148]: ['analyze', 'understand', 'apply']
+doan van-[149]: ['analyze', 'understand', 'apply']
+doan van-[150]: ['analyze', 'understand', 'apply']
+doan van-[151]: ['analyze', 'understand', 'evaluate', 'apply']
+doan van-[152]: ['analyze', 'understand', 'apply']
+doan van-[153]: ['analyze', 'understand', 'apply']
+doan van-[154]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[155]: ['analyze', 'understand', 'apply']
+doan van-[156]: ['analyze', 'understand', 'evaluate']
+doan van-[157]: ['analyze', 'understand']
+doan van-[158]: ['analyze', 'understand', 'apply']
+doan van-[159]: ['analyze', 'understand', 'remember', 'apply']
+doan van-[160]: ['analyze', 'understand', 'remember', 'apply']
+Check there are levels not detected in paragraphs
+index of splited docs following its level
+remember: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 15, 18, 36, 37, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 51, 52, 53, 54, 55, 57, 60, 61, 62, 65, 68, 69, 71, 72, 73, 74, 75, 79, 80, 81, 83, 84, 85, 86, 89, 93, 97, 99, 100, 101, 102, 103, 104, 106, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 125, 127, 129, 130, 135, 136, 140, 143, 146, 154, 159, 160]
+understand: []
+apply: []
+analyze: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160]
+evaluate: []
+create: []
+
+the number of paragraphs>number of required questions
+
+
+the number of paragraphs>number of required questions
+
+
+number of questions for each paragraph arranged in order of paragraph's index 
+
+level: remember
+idx: [47, 44, 48, 83, 42, 39, 10, 40, 102, 127]
+number questions: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+level: understand
+idx: []
+number questions: []
+level: apply
+idx: []
+number questions: []
+level: analyze
+idx: [99, 129, 143, 104, 17, 73, 110, 102, 159, 88]
+number questions: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+level: evaluate
+idx: []
+number questions: []
+level: create
+idx: []
+number questions: []
+
+
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Mô tả cách mà luật phân giải được chứng minh là tin cậy thông qua bảng chân lý.
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[mô tả]
+Option 1: Luật phân giải được chứng minh là tin cậy bằng cách kiểm tra từng trường hợp trong bảng chân lý.
+Option 2: Luật phân giải không cần bảng chân lý để chứng minh tính tin cậy.
+Option 3: Luật phân giải chỉ đúng khi áp dụng cho một số công thức nhất định.
+Option 4: Luật phân giải không liên quan đến các luật suy diễn khác.
+Answer: Luật phân giải được chứng minh là tin cậy bằng cách kiểm tra từng trường hợp trong bảng chân lý.
+Citation: Luật phân giải được xác định là tin cậy vì trong bất kỳ một minh họa nào mà cả hai giả thiết α ∨ β, ⎤ β ∨ γ đúng thì kết luận α ∨ γ cũng đúng, như đã thể hiện trong bảng chân lý.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu mô tả cách mà luật phân giải được chứng minh là tin cậy thông qua bảng chân lý, và câu trả lời được gợi ý đã nêu rõ rằng luật phân giải được chứng minh là tin cậy bằng cách kiểm tra từng trường hợp trong bảng chân lý. Điều này hoàn toàn phù hợp với nội dung tài liệu, nơi mà bảng chân lý được sử dụng để chứng minh tính tin cậy của luật phân giải. Các đáp án khác cũng liên quan đến nội dung tài liệu, nhưng chỉ có đáp án gợi ý là đúng với câu hỏi.
+cau hoi dung: question='Mô tả cách mà luật phân giải được chứng minh là tin cậy thông qua bảng chân lý.' options=['Luật phân giải được chứng minh là tin cậy bằng cách kiểm tra từng trường hợp trong bảng chân lý.', 'Luật phân giải không cần bảng chân lý để chứng minh tính tin cậy.', 'Luật phân giải chỉ đúng khi áp dụng cho một số công thức nhất định.', 'Luật phân giải không liên quan đến các luật suy diễn khác.'] answer='Luật phân giải được chứng minh là tin cậy bằng cách kiểm tra từng trường hợp trong bảng chân lý.' citation='50\nα1,.......,αi,........αm \nα1 ∧.......∧αi ∧....... ∧αm \nTừ một danh sách các công thức, ta suy ra hội của chúng. \n\x1f Luật đưa vào tuyển  \nαi \nα1∨.......∨ αi. ∨.......∨ αm \nTừ một công thức, ta suy ra một tuyển mà một trong các hạng tử của tuyển là công thức đó. \n\x1f Luật phân giải \n α ∨ β,⎤ β ∨ γ  \n  α ∨ γ \nTừ hai tuyển, một tuyển chứa một hạng tử đối lập với một hạng tử trong tuyển kia, ta suy ra tuyển \ncủa các hạng tử còn lại trong cả hai tuyển.  \nMột luật suy diễn được xem là tin cậy (sound) nếu bất kỳ một mô hình nào của giả thiết của luật \ncũng là mô hình của kết luận của luật. Chúng ta chỉ quan tâm đến các luật suy diễn tin cậy. \nBằng phương pháp bảng chân lý, ta có thể kiểm chứng được các luật suy diễn nêu trên đều là tin \ncậy. Bảng chân lý của luật phân giải được cho trong hình 3.3. Từ bảng này ta thấy rằng, trong bất \nkỳ một minh họa nào mà cả hai giả thiết α ∨ β, ⎤ β ∨ γ đúng thì kết luận α ∨ γ cũng đúng. Do đó \nluật phân giải là luật suy điễn tin cậy. \n \nα \nβ \nγ \nα ∨ β \nlβ ∨ γ \nα ∨ γ \nFalse \nFalse \nFalse \nFalse \nTrue \nFalse \nFalse \nFalse \nTrue \nFalse \nTrue \nTrue \nFalse \nTrue \nFalse \nTrue \nFalse \nFalse \nFalse \nTrue \nTrue \nTrue \nTrue \nTrue \nTrue \nFalse \nFalse \nTrue \nTrue \nTrue \nTrue \nFalse \nTrue \nTrue \nTrue \nTrue \nTrue \nTrue \nFalse \nTrue \nFalse \nTrue \nTrue \nTrue \nTrue \nTrue \nTrue \nTrue \nHình 3.3 Bảng chân lý chứng minh tính tin cậy của luật phân giải. \n \nTa có nhận xét rằng, luật phân giải là một luật suy diễn tổng quát, nó bao gồm luật Modus \nPonens, luật Modus Tollens, luật bắc cầu như các trường hợp riêng. (Bạn đọc dễ dàng chứng minh \nđược điều đó). \nTiên đề, định lý, chứng minh.  \nGiả sử chúng ta có một tập nào đó các công thức. Các luật suy diễn cho phép ta từ các \ncông thức đã có suy ra công thức mới bằng một dãy áp dụng các luật suy diễn. Các công thức đã \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='remember' page=48 idx_doc=47
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 1
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Xác định số dòng trong bảng chân lý cho công thức (P⇒Q) ∧S khi có n biến.
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[xác định]
+Option 1: 2n
+Option 2: n^2
+Option 3: n!
+Option 4: n+2
+Answer: 2n
+Citation: Theo nội dung, một công thức chứa n biến sẽ có số dòng trong bảng chân lý là 2n.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu xác định số dòng trong bảng chân lý cho công thức (P⇒Q) ∧S khi có n biến, và câu trả lời được gợi ý là 2n, điều này hoàn toàn chính xác và có thể tìm thấy trong tài liệu. Các đáp án khác như +n^2, +n!, +n+2 không đúng với thông tin trong tài liệu, do đó câu trả lời được gợi ý là đúng hơn các đáp án khác.
+cau hoi dung: question='Xác định số dòng trong bảng chân lý cho công thức (P⇒Q) ∧S khi có n biến.' options=['2n', 'n^2', 'n!', 'n+2'] answer='2n' citation='47\nP \nQ \nS \nP⇒Q \n(P⇒Q) ∧S \nFalse \nFalse \nFalse \nTrue \nFalse \nFalse \nFalse \nTrue \nTrue \nTrue \nFalse \nTrue \nFalse \nTrue \nFalse \nFalse \nTrue \nTrue \nTrue \nTrue \nTrue \nFalse \nFalse \nFalse \nFalse \nTrue \nFalse \nTrue \nFalse \nFalse \nTrue \nTrue \nFalse \nTrue \nFalse \nTrue \nTrue \nTrue \nTrue \nTrue \nHình 3.2 Bảng chân lý cho công thức (P⇒Q) ∧S \nCần lưu ý rằng, một công thức chứa n biến, thì số các minh họa của nó là 2n, tức là bảng \nchân lý có 2n dòng. Như vậy việc kiểm tra một công thức có thoả được hay không bằng phương \npháp bảng chân lý, đòi hỏi thời gian mũ. Cook (1971) đã chứng minh rằng, vấn đề kiểm tra một \ncông thức trong logic mệnh đề có thoả được hay không là vấn đề NP-đầy đủ. \nChúng ta sẽ nói rằng một tập công thức G = {G1,..,Gm } là vững chắc (thoả được, không \nthoả được) nếu hội của chúng G1∧.......∧Gm là vững chắc (thoả được, không thoả được). Một \nmô hình của tập công thức G là mô hình của công thức G1∧.......∧Gm.. \n3.5.2  Dạng chuẩn tắc  \nTrong mục này chúng ta sẽ xét việc chuẩn hóa các công thức, đưa các công thức về dạng thuận lợi \ncho việc lập luận, suy diễn. Trước hết ta sẽ xét các phép biến đổi tương đương. Sử dụng các phép \nbiển đổi này, ta có thể đưa một công thức bất kỳ về dạng chuẩn tắc. \n3.5.2.1 Sự tương đương của các công thức  \nHai công thức A và B được xem là tương đương nếu chúng có cùng một giá trị chân lý trong mọi \nminh họa. Để chỉ A tương đương với B ta viết A≡ B. Bằng phương pháp bảng chân lý, dễ dàng \nchứng minh được sự tương đương của các công thức sau đây: \nA⇒B   ≡  lA ∨ B \nA ⇔ B  ≡   (A⇒B) ∧ (B⇒A) \nl(lA)  ≡  A \n• \nLuật De Morgan \nl(A ∨ B) ≡ lA ∧ lB \nl(A ∧ B) ≡ lA ∨ lB \n• \nLuật giao hoán  \nA ∨ B    ≡   B ∨ A \nA ∧ B    ≡   B ∧ A \n• \nLuật kết hợp  \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='remember' page=45 idx_doc=44
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 2
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hãy xác định phương pháp nào được sử dụng để chứng minh một mệnh đề bằng cách giả định mệnh đề đó sai và dẫn đến mâu thuẫn?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[xác định]
+Option 1: Chứng minh bác bỏ
+Option 2: Chứng minh trực tiếp
+Option 3: Chứng minh gián tiếp
+Option 4: Chứng minh bằng phản chứng
+Answer: Chứng minh bác bỏ
+Citation: Phương pháp chứng minh bác bỏ (refutation proof hoặc proof by contradiction) là một phương pháp thường xuyên được sử dụng trong các chứng minh toán học. Tư tưởng của phương pháp này là giả sử P sai và dẫn tới một mâu thuẫn.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu xác định phương pháp chứng minh bằng cách giả định mệnh đề sai và dẫn đến mâu thuẫn, điều này hoàn toàn phù hợp với nội dung tài liệu, nơi đã mô tả rõ ràng về phương pháp chứng minh bác bỏ. Câu trả lời được gợi ý "Chứng minh bác bỏ" là chính xác và phù hợp với câu hỏi. Ngoài ra, các đáp án khác cũng có thể tìm thấy trong tài liệu, nhưng câu trả lời gợi ý đã đúng và đầy đủ hơn so với các đáp án khác.
+cau hoi dung: question='Hãy xác định phương pháp nào được sử dụng để chứng minh một mệnh đề bằng cách giả định mệnh đề đó sai và dẫn đến mâu thuẫn?' options=['Chứng minh bác bỏ', 'Chứng minh trực tiếp', 'Chứng minh gián tiếp', 'Chứng minh bằng phản chứng'] answer='Chứng minh bác bỏ' citation='51\ncho được gọi là các tiên đề. Các công thức được suy ra được gọi là các định lý. Dãy các luật được \náp dụng để dẫn tới định lý được gọi là một chứng minh của định lý. Nếu các luật suy diễn là tin \ncậy, thì các định lý là hệ quả logic của các tiên đề. \nVí dụ: Giả sử ta có các công thức sau: \nQ ∧ S ⇒ G ∨ H \n(1) \nP ⇒ Q   \n \n(2) \nR ⇒ S  \n \n(3) \nP \n \n \n(4) \nR \n \n \n(5) \nGiả sử ta cần chứng minh công thức G∨H. Từ công thức (2) và (4), ta suy ra Q (Luật \nModus Ponens). Lại áp dụng luật Modus Ponens, từ (3) và (5) ta suy ra S. Từ Q, S ta suy ra Q∧S \n(luật đưa vào hội). Từ (1) và Q∧S ta suy ra G∨H. Công thức G∨H đã được chứng minh. \nTrong các hệ tri thức, chẳng hạn các hệ chuyên gia, hệ lập trình logic,..., sử dụng các luật \nsuy diễn người ta thiết kế lên các thủ tục suy diễn (còn được gọi là thủ tục chứng minh) để từ \ncác tri thức trong cơ sở tri thức ta suy ra các tri thức mới đáp ứng nhu cầu của người sử dụng. \nMột hệ hình thức (formal system) bao gồm một tập các tiên đề và một tập các luật suy \ndiễn nào đó (trong ngôn ngữ biểu diễn tri thức nào đó). \nMột tập luật suy diễn được xem là đầy đủ, nếu mọi hệ quả logic của một tập các tiên đề \nđều chứng minh được bằng cách chỉ sử dụng các luật của tập đó.  \nPhương pháp chứng minh bác bỏ \nPhương pháp chứng minh bác bỏ (refutation proof hoặc proof by contradiction) là một \nphương pháp thường xuyên được sử dụng trong  các chứng minh toán học. Tư tưởng của phương \npháp này là như sau: Để chứng minh P đúng, ta giả sử P sai (thêm ⎤ P vào các giả thiết) và dẫn tới \nmột mâu thuẫn. Sau đây ta sẽ trình bầy cơ sở của phương pháp chứng minh này. \nGiả sử chúng ta có một tập các công thức G ={G1,.....,Gm} ta cần chứng minh công thức H \nlà hệ quả logic của G. Điều đó tương đương với chứng minh công thức G1^....^Gm ⇒ H là vững \nchắc. Thay cho chứng minh G1^..... ^Gm ⇒H là vững chắc, ta chứng minh G1^....^Gm ^⎤ H là \nkhông thỏa mãn được. Tức là ta chứng minh tập G’= (G1,.......,Gm,⎤ H) là không thỏa được. G sẽ \nkhông thoả được nếu từ G‘ta suy ra hai mệnh đề đối lập nhau. Việc chứng minh công thức H là hệ \nquả logic của tập các tiêu đề G bằng cách chứng minh tính không thỏa được của tập các tiêu đề \nđược thêm vào phủ định của công thức cần chứng minh, được gọi là chứng minh bác bỏ. \n3.5.5.  Luật phân giải, chứng minh bác bỏ bằng luật phân giải \nĐể thuận tiện cho việc sử dụng luật phân giải, chúng ta sẽ cụ thể hoá luật phân giải trên \ncác dạng câu đặc biệt quan trọng. \n\x1fLuật phân giải trên các câu tuyển \nA1 ∨............... ∨ Am ∨ C \n⎤ C ∨ B1 ∨............... ∨ Bn       \nA1 ∨........... ∨ Am ∨ B1 ∨... ∨ Bn \ntrong đó Ai, Bj và C là các literal. \n\x1fLuật phân giải trên các câu Horn: \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='remember' page=49 idx_doc=48
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 3
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hãy xác định các bước chính trong thủ tục suy diễn lùi được mô tả trong nội dung?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[mô tả]
+Option 1: Loại bỏ giả thuyết đầu tiên, thêm điều kiện vào danh sách Hyp, áp dụng phép thế, gọi lại thủ tục
+Option 2: Thêm giả thuyết vào danh sách, loại bỏ điều kiện, áp dụng phép thế, trả về kết quả
+Option 3: Gọi lại thủ tục, thêm điều kiện vào danh sách Hyp, loại bỏ phép thế, trả về giá trị
+Option 4: Áp dụng phép thế, loại bỏ giả thuyết đầu tiên, thêm điều kiện vào danh sách Hyp, gọi lại thủ tục
+Answer: Loại bỏ giả thuyết đầu tiên, thêm điều kiện vào danh sách Hyp, áp dụng phép thế, gọi lại thủ tục
+Citation: Các bước trong thủ tục suy diễn lùi bao gồm việc loại bỏ giả thuyết đầu tiên, thêm các điều kiện của luật vào danh sách Hyp, áp dụng phép thế và gọi lại thủ tục cho đến khi danh sách Hyp rỗng.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu xác định các bước chính trong thủ tục suy diễn lùi, và câu trả lời được gợi ý đã nêu đúng các bước này: loại bỏ giả thuyết đầu tiên, thêm điều kiện vào danh sách Hyp, áp dụng phép thế, và gọi lại thủ tục. Các đáp án khác cũng có thể tìm thấy trong tài liệu, nhưng câu trả lời gợi ý là chính xác và đầy đủ hơn.
+cau hoi dung: question='Hãy xác định các bước chính trong thủ tục suy diễn lùi được mô tả trong nội dung?' options=['Loại bỏ giả thuyết đầu tiên, thêm điều kiện vào danh sách Hyp, áp dụng phép thế, gọi lại thủ tục', 'Thêm giả thuyết vào danh sách, loại bỏ điều kiện, áp dụng phép thế, trả về kết quả', 'Gọi lại thủ tục, thêm điều kiện vào danh sách Hyp, loại bỏ phép thế, trả về giá trị', 'Áp dụng phép thế, loại bỏ giả thuyết đầu tiên, thêm điều kiện vào danh sách Hyp, gọi lại thủ tục'] answer='Loại bỏ giả thuyết đầu tiên, thêm điều kiện vào danh sách Hyp, áp dụng phép thế, gọi lại thủ tục' citation='86\nSau đây là thủ tục suy diễn lùi. Trong thủ tục này, Hyp và θ là các biến địa phương trong \nthủ tục. Giá trị ban đầu của Hyp là danh sách các giả thuyết ban đầu (biểu diễn câu hỏi được đặt \nra), còn giá trị ban đầu của θ là phép thế rỗng. \nprocedure  Backward_Chaining (Hyp, θ); \nbegin \nH  ←  giả thuyết đầu tiên trong danh sách Hyp; \nfor mỗi luật R = (conds, Q) do \nif  H hợp nhất với Q bởi phép thế θ1 then  \n1. \nLoại H khỏi danh sách Hyp; \n2. \nThêm các điều kiện của luật Conds vào danh sách Hyp; \n3. \nÁp dụng phép thế θ1 vào các giả thuyết trong danh sách Hyp; \n4. \nLấy hợp thành của các phép thế θ và θ1 để nhận được phép thế θ mới, tức là θ ← \nθθ1; \n5. \nif  Hyp = [ ] then  cho ra θ \nelse  Backward_Chaining (Hyp, θ); \nend; \nTrong thủ tục lập luận lùi, mỗi θ được cho ra là một phép thế biến làm cho giả thuyết ban đầu trở \nthành đúng, tức là (Hyp) θ = H1θ Λ ... ΛHmθ là đúng (là hệ quả logic của cơ sở tri thức). Do đó \nmỗi phép thế biến θ được cho ra bởi thủ tục là một câu trả lời cho câu hỏi đặt ra. \nVí dụ. Giả sử cơ sở tri thức chứa các sự kiện sau \nHouse(Tom)   (Tom là ngựa)  \n            (1) \nHouse(Ken) \n \n \n \n \n(2) \nHouse(Kit) \n \n \n \n \n(3) \nHouse(Bin) \n \n \n \n \n(4) \nMother(Tom, Bin) \n(Tom là mẹ Bin) \n(5) \nMother(Tom, Ken) \n \n \n \n(6) \nMother(Bin, Kit) \n \n \n \n(7) \nFast(Kit) \n \n(Kit chạy nhanh) \n(8) \nWinner(Bin) \n \n(Bin thắng cuộc) \n(9) \nGiả sử cơ sở tri thức chứa hai luật sau \nHouse(x) Λ Mother(x, y) Λ Fast(y) ⇒ Valuable(x)  (10) \n(nếu    1.  x là ngựa, và \n \n2.  x là mẹ y, và \n \n3.  y chạy nhanh \n  thì     x có giá ) \nWinner(z) ⇒ Fast(z) (11) \n(nếu  z thắng cuộc thì  x chạy nhanh) \nCâu hỏi đặt ra là:  con ngựa nào có giá ? \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='remember' page=84 idx_doc=83
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 4
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hãy xác định các ký hiệu mệnh đề trong cú pháp của logic mệnh đề.
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[xác định]
+Option 1: P, Q, R
+Option 2: True, False, P, Q
+Option 3: A, B, C, D
+Option 4: X, Y, Z
+Answer: True, False, P, Q
+Citation: Các ký hiệu mệnh đề trong cú pháp của logic mệnh đề bao gồm hai hằng logic là True và False, cùng với các ký hiệu mệnh đề như P, Q.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu xác định các ký hiệu mệnh đề trong cú pháp của logic mệnh đề, và câu trả lời được gợi ý (True, False, P, Q) hoàn toàn đúng với nội dung trong tài liệu. Các ký hiệu mệnh đề được nêu rõ trong tài liệu là True, False, P, Q. Hơn nữa, câu trả lời này cũng đúng hơn các đáp án khác vì nó bao gồm tất cả các ký hiệu mệnh đề được đề cập trong tài liệu.
+cau hoi dung: question='Hãy xác định các ký hiệu mệnh đề trong cú pháp của logic mệnh đề.' options=['P, Q, R', 'True, False, P, Q', 'A, B, C, D', 'X, Y, Z'] answer='True, False, P, Q' citation='45\ngian tính toán và không gian nhớ. Người ta mong muốn ngôn ngữ biểu diễn tri thức gần với ngôn \nngữ tự nhiên. \n3.5.1.1. Cú pháp \nCú pháp của logic mệnh đề rất đơn giản. Nó cho phép xây dựng các công thức. Cú pháp \ncủa logic mệnh đề gồm tập các ký hiệu và tập các luật xây dựng công thức. \n• \nCác ký hiệu \nHai hằng logic: True và False. \nCác ký hiệu mệnh đề (còn được gọi là các biến mệnh đề): P, Q,... \nCác phép kết nối logic: ∧, ∨, ⎤, ⇒, ⇔. \nCác dấu mở ngoặc”(“ và đóng ngoặc ”)”. \n• \nCác quy tắc xây dựng các công thức  \nCác biến mệnh đề là công thức. Nếu A và B là công thức thì: \n(A∧B)  (đọc “A hội B” hoặc “A và B”) \n(A∨B)  (đọc “A tuyển B”hoặc “A hoặc B”) \n  (⎤A)  (đọc “phủ định A”) \n(A⇒B) (đọc “A kéo theo B”hoặc “nếu A thì B”) \n(A⇔B) (đọc “A và B kéo theo nhau”) \n \nlà các công thức. \n Để ngắn gọn, ta bỏ đi các cặp dấu ngoặc khi không cần thiết. Ví dụ, thay cho ((A∨B)∧C),  \nta viết (A∨B)∧C. \nCác công thức là các ký hiệu mệnh đề sẽ được gọi là các câu đơn hoặc câu phân tử. Các \ncông thức không phải là câu đơn sẽ được gọi là câu phức hợp. Nếu P là ký hiệu mệnh đề thì P và ⎤ \nP được gọi là literal, P là literal dương, còn ⎤ P là literal âm. Câu phức hợp có dạng A1∨...∨Am \ntrong đó Ai là các literal sẽ được gọi là câu tuyển (clause). \n3.5.1.2  Ngữ nghĩa:  \nNgữ nghĩa của logic mệnh đề cho phép ta xác định ý nghĩa của các công thức trong thế \ngiới hiện thực nào đó. Điều đó được thực hiện bằng cách kết hợp mỗi ký hiệu mệnh đề với sự kiện \nnào đó trong thế giới hiện thực. Chẳng hạn, ký hiệu mệnh đề P có thể ứng với sự kiện “Paris là \nthủ đô nước Pháp”hoặc bất kỳ một sự kiện nào khác. Bất kỳ một sự kết hợp các kí hiệu mệnh đề \nvới các sự kiện trong thế giới thực được gọi là một minh họa  (interpretation). Chẳng hạn minh \nhọa của kí hiệu mệnh đề P có thể là một sự kiện (mệnh đề) “Paris là thủ đô nước Pháp ”. Một sự \nkiện chỉ có thể đúng hoặc sai. Chẳng hạn, sự kiện “Paris là thủ đô nước Pháp “là đúng, còn sự \nkiện “Số Pi là số hữu tỉ “là sai. \nMột cách chính xác hơn, ta hiểu một minh họa là một cách gán cho mỗi ký hiệu mệnh đề \nmột giá trị chân lý True hoặc False. Trong một minh họa, nếu kí hiệu mệnh đề P được gán giá trị \nchân lý True/False (P: True/ P: False) thì ta nói mệnh đề P đúng/sai trong minh họa đó. Trong \nmột minh họa, ý nghĩa của các câu phức hợp được xác định bởi ý nghĩa của các kết nối logic. \nChúng ta xác định ý nghĩa của các kết nối logic trong các bảng chân lý (xem hình 3.1) \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='remember' page=43 idx_doc=42
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 5
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Trong chương 3, hãy xác định các thành phần nào tạo nên một Agent thông minh?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[xác định]
+Option 1: Cảm nhận và hành động
+Option 2: Tri thức và dữ liệu
+Option 3: Cảm nhận và suy diễn
+Option 4: Hành động và thông tin
+Answer: Tri thức và dữ liệu
+Citation: Trong nội dung, Agent thông minh được mô tả là có khả năng nhận thức môi trường thông qua các bộ cảm nhận và đưa ra hành động hợp lý dựa trên tri thức tích luỹ được, cho thấy tri thức và dữ liệu là thành phần trung tâm của Agent thông minh.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: no
+Giai thich: Câu trả lời được gợi ý "Tri thức và dữ liệu" không đầy đủ và không chính xác cho câu hỏi yêu cầu xác định các thành phần tạo nên một Agent thông minh. Theo tài liệu, các thành phần chính của một Agent thông minh bao gồm bộ cảm nhận (sensors) và bộ phận hành động (effectors), cùng với tri thức và khả năng suy diễn. Do đó, câu trả lời không đáp ứng yêu cầu của câu hỏi.
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:remember...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Trong chương 3, hãy mô tả vai trò của cơ sở tri thức trong hệ tri thức?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[mô tả]
+Option 1: Cơ sở tri thức không có vai trò gì trong hệ tri thức.
+Option 2: Cơ sở tri thức giúp Agent đưa ra quyết định hợp lý dựa trên tri thức.
+Option 3: Cơ sở tri thức chỉ là một phần nhỏ trong hệ tri thức mà thôi.
+Option 4: Cơ sở tri thức chỉ chứa thông tin mà không có tri thức.
+Answer: Cơ sở tri thức giúp Agent đưa ra quyết định hợp lý dựa trên tri thức.
+Citation: Cơ sở tri thức là một tập hợp các tri thức được biểu diễn dưới dạng nào đó và giúp Agent đưa ra các quyết định đúng đắn.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu mô tả vai trò của cơ sở tri thức trong hệ tri thức, và câu trả lời được gợi ý đã nêu rõ rằng cơ sở tri thức giúp Agent đưa ra quyết định hợp lý dựa trên tri thức, điều này hoàn toàn phù hợp với nội dung trong tài liệu. Hơn nữa, câu trả lời được gợi ý cũng đúng hơn các đáp án khác, vì các đáp án khác không phản ánh đúng vai trò quan trọng của cơ sở tri thức trong hệ tri thức.
+cau hoi dung: question='Trong chương 3, hãy mô tả vai trò của cơ sở tri thức trong hệ tri thức?' options=['Cơ sở tri thức không có vai trò gì trong hệ tri thức.', 'Cơ sở tri thức giúp Agent đưa ra quyết định hợp lý dựa trên tri thức.', 'Cơ sở tri thức chỉ là một phần nhỏ trong hệ tri thức mà thôi.', 'Cơ sở tri thức chỉ chứa thông tin mà không có tri thức.'] answer='Cơ sở tri thức giúp Agent đưa ra quyết định hợp lý dựa trên tri thức.' citation='42\nCHƯƠNG 3:  BIỂU DIỄN TRI THỨC VÀ SUY DIỄN \n \nTrong chương này chúng ta sẽ trình bày các đặc trưng của ngôn ngữ biểu diễn tri thức. \nChúng ta sẽ nghiên cứu logic mệnh đề, một ngôn ngữ biểu diễn tri thức rất đơn giản, có khả năng \nbiểu diễn hẹp, nhưng thuận lợi cho ta làm quen với nhiều khái niệm quan trọng trong logic, đặc \nbiệt trong logic vị từ cấp một sẽ được nghiên cứu trong các chương sau. \n3.1 \nNhập môn \n3.2 \nTri thức và dữ liệu \n3.3 \nPhân loại tri thức \n3.4 \nBản chất của các tri thức chuyên gia \n3.5 \nCác phương pháp biểu diễn tri thức \n3.6 \nCơ chế suy diễn \n3.7 \nCác hệ cơ sỏ tri thức và các hệ chuyên gia \n3.8 \nCác ngôn ngữ lập trình thông minh \n3.1 NHẬP MÔN \nCon người sống trong môi trường có thể nhận thức được thế giới nhờ các giác quan (tai, \nmắt và các giác quan khác), sử dụng các tri thức tích luỹ được và nhờ khả năng lập luận, suy diễn, \ncon người có thể đưa ra các hành động hợp lý cho công việc mà con người đang làm. Một mục \ntiêu của Trí tuệ nhân tạo ứng dụng là thiết kế các Agent thông minh (intelligent agent) cũng có \nkhả năng đó như con người. Chúng ta có thể hiểu Agent thông minh là bất cứ cái gì có thể nhận \nthức được môi trường thông qua các bộ cảm nhận (sensors) và đưa ra hành động hợp lý đáp ứng \nlại môi trường thông qua bộ phận hành động  (effectors). Các robots, các softbot (software \nrobot), các hệ chuyên gia,... là các ví dụ về Agent thông minh. Các Agent thông minh cần phải có \ntri thức về thế giới hiện thực mới có thể đưa ra các quyết định đúng đắn.  \n3.2 TRI THỨC VÀ DỮ LIỆU \nThành phần trung tâm của agent dựa trên tri thức (knowledge-based agent), còn gọi là hệ \ndựa trên tri thức (knowledge-based system) hoặc đơn giản là hệ tri thức trong đó chứa cơ sở tri \nthức (Knowledge Base: viết tắt tiếng Anh: KB; viết tắt tiếng Việt: CSTT).  \nCơ sở tri thức là một tập hợp các tri thức được biểu diễn dưới dạng nào đó. Mỗi khi nhận \nđược các thông tin đưa vào, Agent cần có khả năng suy diễn để đưa ra các câu trả lời, đưa ra các \nhành động hợp lý. Nhiệm vụ này được thực hiện bởi bộ suy diễn-thành phần cơ bản khác của các \nhệ tri thức. Như vậy, hệ tri thức bao hàm một CSTT và được trang bị một thủ tục suy diễn. Mỗi \nkhi tiếp nhận các sự kiện từ môi trường, thủ tục suy diễn thực hiện quá trình liên kết các sự kiện \nvới các tri thức trong CSTT để rút ra các câu trả lời, hoặc các hành động hợp lý mà Agent cần \nthực hiện. Khi thiết kế một Agent giải quyết vấn đề nào đó thì CSTT sẽ chứa các tri thức về  đối \ntượng cụ thể đó. Để máy tính có thể sử dụng, xử lý tri thức, cần biểu diễn tri thức dưới dạng thuận \ntiện. Đó là mục tiêu của biểu diễn tri thức. \nTri thức là một khái niệm trừu tượng. Chúng ta không cố gắng đưa ra một định nghĩa \nchính xác ở đây mà muốn so sánh nó với hai khái niệm có liên quan là thông tin và dữ liệu. Karan \nSing đã phát biểu:”Chúng ta ngập chìm trong thông biển thông tin nhưng lại khát tri thức”. \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='remember' page=40 idx_doc=39
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 1
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 6
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hãy xác định nội dung chính của cuốn sách "Artificial Intelligence" của Daniel Crevier.
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[xác định]
+Option 1: Cuốn sách này trình bày lịch sử của lĩnh vực AI.
+Option 2: Cuốn sách này chỉ tập trung vào các ứng dụng thực hành của AI.
+Option 3: Cuốn sách này không đề cập đến lịch sử của AI.
+Option 4: Cuốn sách này chỉ nói về các thuật toán trong AI.
+Answer: Cuốn sách này trình bày lịch sử của lĩnh vực AI.
+Citation: Cuốn sách "Artificial Intelligence" của Daniel Crevier (1993) đưa ra lịch sử khá hoàn chỉnh của lĩnh vực này, cho thấy nội dung chính của nó là về lịch sử của AI.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu xác định nội dung chính của cuốn sách 'Artificial Intelligence' của Daniel Crevier, và câu trả lời được gợi ý là 'Cuốn sách này trình bày lịch sử của lĩnh vực AI', điều này hoàn toàn chính xác và phù hợp với nội dung tài liệu. Các đáp án khác cũng có thể tìm thấy trong tài liệu, nhưng câu trả lời gợi ý là đúng và chính xác hơn so với các đáp án khác, vì nó nêu rõ nội dung chính của cuốn sách.
+cau hoi dung: question='Hãy xác định nội dung chính của cuốn sách "Artificial Intelligence" của Daniel Crevier.' options=['Cuốn sách này trình bày lịch sử của lĩnh vực AI.', 'Cuốn sách này chỉ tập trung vào các ứng dụng thực hành của AI.', 'Cuốn sách này không đề cập đến lịch sử của AI.', 'Cuốn sách này chỉ nói về các thuật toán trong AI.'] answer='Cuốn sách này trình bày lịch sử của lĩnh vực AI.' citation='13\nCuốn sách Artificial Intelligence của Daniel Crevier (1993) đưa ra lịch sử khá hoàn chỉnh \ncủa lĩnh vực này, và Age of Intelligent Machines của Raymond Kurzweil (1990) về AI trong ngữ \ncảnh của khoa học máy tính và lịch sử trí tuệ. Các văn bản của Dianne Martin (1993) cũng công \nnhận rằng từ rất sớm các máy tính là có khả năng bởi sức mạnh thần kỳ của trí tuệ. \nPhương pháp luận trạng thái của AI được Herb Simon bàn tới trong The Sciences of the \nArtificial (1981), đó là các lĩnh vực nghiên cứu được quan tâm cùng với các đồ tạo tác phức tạp. \nNó cũng lý giải tại sao AI có thể có tầm nhìn trên cả hai lĩnh vực toán học và khoa học.     \nArtificial Intelligence: The very Idea bởi John Haugeland (1985) đã đưa ra sự tường thuật có \nthể đọc được của triết học và các vấn đề của AI. Khoa học nhận thức được mô tả tốt nhất bởi \nJohnson Laird, Máy tính và não bộ: giới thiệu về khoa học nhận thức. Baker (1989) gồm cả phần \ncú pháp của ngôn ngữ học hiện đại, cùng Chierchia và McConnel-Ginet (1990) bao gồm cả ngữ \nnghĩa, Allen (1995) bao gồm cả ngôn ngữ học từ quan điểm của AI.  \n Feigenbaum và Feldman đã làm việc với AI từ rất sớm, cuốn sách của họ có tựa đề  Máy \ntính và suy nghĩ. Cuốn Xử lý thông tin ngữ nghĩa của Minsky và một loạt bài viết về Trí tuệ máy \ncủa Donald Michie. Một số lượng lớn các trang báo được tập hợp lại trong Sự hiểu biết trong AI \n(Webber và Nilsson, 1981). \nCác cuộc hội thảo xuất hiện gần đây bàn về vấn đề chính của AI, đó là: thống nhất cứ hai \nnăm một lần diễn ra hội thảo quốc tế AI, gọi tắt là IJCA (International Joint Conference AI), và \nhội thảo diễn ra hàng năm ở mức quốc gia về AI, và AAAI là tổ chức đứng ra bảo trợ cho AI. Các \ntạp chí chuyên ngành chung về AI là AI, Computation Intelligence, tổ chức IEEE Transactions on \nPattern Analysis and Machine Intelligence, và tạp chí điện tử Journal of Artificial Intelligence \nResearch. Các sản phẩm thương mại đưa ra trong các tạp chí như AI Expert và PC AI. Tổ chức xã \nhội chuyên nghiệp về AI là American Association for AI (AAAI), ACM Special Interest Group in \nAI (SIGART) và AISB (Society for AI and Simulation of Behaviour). Tạp chí về AI của AAAI và \nSIGART Bullentin có rất nhiều các  đề tài và thầy hướng dẫn tốt như là thông báo của các cuộc \nhội thảo và thảo luận. \nỞ Việt Nam gần đây có tổ chức các Hội nghi Khoa học: Hệ mờ mạng nơ ron; Hoi thảo Quốc \ngia vè Hệ mờ do viện Toan học, Viện Công nghệ Thông tin thuộc viện Khoa học Công nghệ Quốc \ngia tổ chức hàng năm. \nBÀI TẬP VÀ CÂU HỎI \n1. Chúng tôi đưa ra định nghĩa của AI theo hai khía cạnh, con người, ý tưởng và hành động. \nNhưng có nhiều khía cạnh khác có giá trị đáng xét đến. Một trong số đó là sự chọn lựa giữa: sự \nphấn khích của chúng tôi về các kết quả lí thuyết hoặc các ứng dụng thực hành. Một khía cạnh nữa \nlà chúng tôi có dự kiến có thể nhận ra các máy tính của chúng tôi có thông minh hay không. Đã có \n8 định nghĩa tiêu biểu trong Hình 1.1 và có 7 định nghĩa theo bốn khía cạnh chúng tôi vừa đề cập \nvà bạn có cảm thấy các định nghĩa là hữu ích sau đây \nAI là ...    \na. “một tập hợp các thuật toán dễ tính toán, thích hợp tính gần đúng cho các bài toán đặc biệt \nkhó .” (Partridge, 1991) \nb. “sự tham gia vào xây dựng một hệ thống kí hiệu vật lí sao cho có thể vượt qua trắc nghiệm \ncủa Turning.” \nc. “lĩnh vực khoa học máy tính nghiên cứu về các máy có thể hành động thông minh ra sao.” \n(Jackson, 1986) \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='remember' page=11 idx_doc=10
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 7
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Mô tả tri thức sự kiện trong ngữ cảnh của khoa học máy tính là gì?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[mô tả]
+Option 1: Tri thức sự kiện là khẳng định về một sự kiện trong không gian hoặc thời gian nhất định.
+Option 2: Tri thức sự kiện là một khái niệm không rõ ràng về một hiện tượng.
+Option 3: Tri thức sự kiện là thông tin không có giá trị thực tiễn.
+Option 4: Tri thức sự kiện là một quy trình xử lý công việc trong khoa học máy tính.
+Answer: Tri thức sự kiện là khẳng định về một sự kiện trong không gian hoặc thời gian nhất định.
+Citation: Tri thức sự kiện được định nghĩa là một khẳng định về một sự kiện, hiện tượng hay một khái niệm nào đó trong một hoàn cảnh không gian hoặc thời gian nhất định.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu mô tả tri thức sự kiện trong ngữ cảnh khoa học máy tính, và câu trả lời được gợi ý đã cung cấp một định nghĩa chính xác về tri thức sự kiện. Định nghĩa này phù hợp với nội dung trong tài liệu. Các đáp án khác cũng liên quan đến tri thức sự kiện, nhưng chỉ có đáp án đầu tiên là đúng. Do đó, câu trả lời được gợi ý là chính xác và có thể tìm thấy trong tài liệu.
+cau hoi dung: question='Mô tả tri thức sự kiện trong ngữ cảnh của khoa học máy tính là gì?' options=['Tri thức sự kiện là khẳng định về một sự kiện trong không gian hoặc thời gian nhất định.', 'Tri thức sự kiện là một khái niệm không rõ ràng về một hiện tượng.', 'Tri thức sự kiện là thông tin không có giá trị thực tiễn.', 'Tri thức sự kiện là một quy trình xử lý công việc trong khoa học máy tính.'] answer='Tri thức sự kiện là khẳng định về một sự kiện trong không gian hoặc thời gian nhất định.' citation='43\nTrong ngữ cảnh của khoa học máy tính “dữ liệu là nguyên liệu thô để xử lý” là các con số, chữ \ncái, hình ảnh, âm thanh… Thông tin là tất cả những gì con người có thể cảm nhận qua các giác \nquan (chính xác, xem khái niệm Entropy là độ đo thông thông tin, đọ đo về các tin tức mới đối vói \nmột người nào đó). Nếu so về số lượng: dữ liệu nhiều hơn thông tin; thông tin nhiều hơn tri thức. \nChúng ta có thể mô tả chúng theo dạng hình chóp. \n3.3 PHÂN LOẠI TRI THỨC \nNgười ta thường phân loại tri thức thành các dạng sau: \nTri thức sự kiện  \nĐịnh nghĩa: Tri thức sự kiện là một khẳng địng về một sự kiện, hiện tượng hay một khái \nniệm nào đó trong một hoàn cảng không gian hoặc thời gian nhất định. \nVí dụ: khẳng định về hiện tượng: ”Mặt trời lặn ở phương Tây”. Khái niệm về: “tam giác \nđều: là tam giác có ba góc bằng nhau”. \nTri thức mô tả \nĐịnh nghĩa: Tri thức sự kiện là một khẳng địng về một sự kiện, hiện tượng hay một khái \nniệm nào đó trong một hoàn cảng không gian hoặc thời gian nhất định. \nVí dụ: khẳng định về hiện tượng: ”Mặt trời lặn ở phương Tây”. Khái niệm về: “tam giác \nđều: là tam giác có ba góc bằng nhau”. \nTri thức thủ tục \nĐịnh nghĩa: Tri thức thủ tục là tri thức mô tả cách giải quyết một vấn đề, quy trình xử lý \ncác công việc, lịch trình tiến hành các thao tác … Các dạng của tri thức thủ tục thường dùng là các \nluật, chiến lược, lịch trình \nVí dụ: IF xe máy không khởi động được \n            THEN đầu tiên kiểm tra bugi \nTri thức heuristic  \nĐịnh nghĩa: Tri thức heuristic là tri nông cạn do không đảm bảo hòan tòan chính xác \nhoặc tối ưu theo một nghĩa nào đó về cách giải quyết vấn đề. Tri thức heuristic thường được coi \nlà một mẹo nhằm dẫn dắt tiến trình lập luận  \nVí dụ: một số giải thuật tìm đường đi ngắn nhất, giải thuật  A* có thể được coi là lời giả \ncủa một vấn đề tốt nhưng chưa hẳn tối ưu. \nNgòai ra người ta còn phân chia ra tri thức mêta: tri thức tham chiếu đến  các tri thức \nkhác; tri thức có cấu trúc: tri thức về các quan hệ giữa các khái niệm, quan hệ giữa các đối \ntượng… \n  \n3.4. BẢN CHẤT CỦA CÁC TRI THỨC CHUYÊN GIA \n Chuyên gia (Expert).  \nNói chung, chuyên gia là là người có đầy đủ kỹ năng, kiến thức sâu (cả về luật và các sự \nkiện) về một lĩnh vực nào đó; người có thể làm những việc mà người khác ít khả năng làm được. \nHệ chuyên gia \n \nHệ chuyên gia (đơn giản) là chương trình máy tính có thể thực hiện các công việc, vấn đề  \ntrong  thuộc lĩnh vực hẹp ở mức tương tự như mộ người chuyên gia [19]. \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='remember' page=41 idx_doc=40
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 8
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Xác định ngưỡng năng lượng dưới (thấp) trong thuật toán phát hiện tiếng nói dựa trên năng lượng phổ ngắn hạn là gì?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[xác định]
+Option 1: DownE
+Option 2: UpE
+Option 3: TZCR
+Option 4: ZCR
+Answer: DownE
+Citation: Ngưỡng năng lượng dưới (thấp) được ký hiệu là DownE trong thuật toán phát hiện tiếng nói dựa trên năng lượng phổ ngắn hạn.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu xác định ngưỡng năng lượng dưới trong thuật toán phát hiện tiếng nói, và câu trả lời được gợi ý là 'DownE', đúng với thông tin trong tài liệu. Các đáp án khác cũng được liệt kê và có thể tìm thấy trong tài liệu, do đó câu trả lời được gợi ý là chính xác và phù hợp.
+cau hoi dung: question='Xác định ngưỡng năng lượng dưới (thấp) trong thuật toán phát hiện tiếng nói dựa trên năng lượng phổ ngắn hạn là gì?' options=['DownE', 'UpE', 'TZCR', 'ZCR'] answer='DownE' citation='105\n                                        sgn[x(n+1)] ≠ sgn[x(n)]                                                           \n   \ntrong đó, sgn(.) là hàm dấu  \nNăng lượng là đại lượng được dùng để xác định vùng chứa âm hữu thanh, vô thanh. \nNhưng hàm năng lượng thường rất nhạy cảm với nhiễu. Do vậy, người ta thường sử dụng hàm giả \nnăng lượng trong tính toán. Hàm giả năng lượng được xác định bởi: \n  \n∑\n−\n=\n∧\n−\n=\n1\n0\n)\n(\n)\n(\n)\n(\nN\nm\nm\nn\nx\nm\nw\nn\nE\n                                                                \ntrong đó;  \n              \n)\n(n\nE ∧\n : là hàm giả năng lượng,  \n               N        : là kích thước khung cửa sổ.  \n  Tỷ lệ vượt quá điểm không ZCR  \n        Ta thấy, khung có năng lượng càng cao thì tỷ lệ vượt quá điểm không càng thấp và ngược \nlại. Như vậy, tỷ lệ vượt quá điểm không là đại lượng đặc trưng cho tần số tín hiệu tiếng nói. Ở \nđây, chúng ta cần xác định các tham số ngưỡng cho hàm giả năng lượng với hai ngưỡng trên và \ndưới và một ngưỡng tỷ lệ vượt quá điểm không.  \n    Kí hiệu:  \n                 \nUp\nE\n       : ngưỡng năng lượng trên (cao); \n                 \nDown\nE\n     : ngưỡng năng lượng dưới (thấp);  \n                 \nT\nZCR _\n: ngưỡng tỷ lệ vượt quá điểm không.  \nThuật toán này được mô tả như sau : \nBước 1: Chia chuỗi tín hiệu tiếng nói thành các khung. Tính giá trị hàm giả năng lượng theo (2-5) \nvà tỷ lệ vượt quá điểm không theo (2-6) tương ứng trên mỗi khung. \nBước 2: Xét từ khung đầu tiên. Đánh dấu khung thứ i là điểm bắt đầu nếu tại khung i tỷ lệ vượt \nquá điểm không của ZCR vượt ngưỡng (ZCR>\nT\nZCR _\n), và giá trị hàm giả năng lượng vượt \nngưỡng dưới (\n( )\nn\nE ∧\n>\nDown\nE\n) theo hướng tăng của của hàm giả năng lượng. \nBước 3: Xét các khung kế tiếp. Đánh dấu khung kế tiếp thuộc từ. Nếu hàm giả năng lượng vượt \nngưỡng trên (\n( )\nn\nE ∧\n>\nUp\nE\n) theo hướng tăng của năng lượng. \nBước 4: Điểm bắt đầu của từ được xác định lại khi hàm giả năng lượng trên khung đó nhỏ hơn \nngưỡng dưới (\n( )\nn\nE ∧\n<\nDown\nE\n), và đồng thời tỷ lệ vượt quá điểm không trên khung lớn hơn \nngưỡng (ZCR>\nT\nZCR _\n).  \nBước 5: Điểm kết thúc từ được xác định nếu tại đó; tỷ lệ vượt quá điểm không \nnhỏ hơn ngưỡng (ZCR<\nT\nZCR _\n), và hàm giả năng lượng tương ứng nhỏ hơn \nngưỡng dưới (\n( )\nn\nE ∧\n<\nDown\nE\n) theo xu hướng đi xuống của hàm giả năng lượng. \nc) Phát hiện tiếng nói dựa trên năng lượng phổ ngắn hạn  \n \nÝ tưởng chính của phương pháp này là sử dụng bộ điều khiển dò biên tiếng nói VAD \n(Voice Activity Detector) dựa trên việc xác định năng lượng phổ ngắn hạn\nf\nE trên các khung tín \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='remember' page=103 idx_doc=102
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 9
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hãy xác định luật cập nhật nào được sử dụng trong mạng BAM để mã hóa liên kết giữa các véc tơ?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[xác định]
+Option 1: Luật Hebb
+Option 2: Luật tích ngoài
+Option 3: Luật hồi tiếp
+Option 4: Luật điều chỉnh đồng bộ
+Answer: Luật Hebb
+Citation: Luật cập nhật trong mạng BAM được đề cập đến là luật Hebb, được sử dụng để mã hóa liên kết giữa các véc tơ trong mạng này.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu xác định luật cập nhật được sử dụng trong mạng BAM để mã hóa liên kết giữa các véc tơ, và câu trả lời được gợi ý là 'Luật Hebb', điều này hoàn toàn chính xác và có thể tìm thấy trong tài liệu. Hơn nữa, các đáp án khác cũng được liệt kê trong tài liệu, cho thấy câu trả lời được gợi ý là một phần của thông tin chính xác trong tài liệu.
+cau hoi dung: question='Hãy xác định luật cập nhật nào được sử dụng trong mạng BAM để mã hóa liên kết giữa các véc tơ?' options=['Luật Hebb', 'Luật tích ngoài', 'Luật hồi tiếp', 'Luật điều chỉnh đồng bộ'] answer='Luật Hebb' citation="130\n⎪⎩\n⎪⎨\n⎧\n<\n+\n=\n+\n>\n+\n=\n+\n0\n)1\nk\n(\n0\n0\n)1\nk\n(\n)\nk\n(\ny\n0\n)1\nk\n(\n1\n)1\nk\n(\nyi\n*\ni\n*\ni\n*\ni\ny \nnÕu\ny \nnÕu\ny \nnÕu\n;\n \n      \n \n \n                        \n∑\n=\n=\nn\n1\nj\nj\nij\n*\ni\nx\nw\n)\nk\n(\ny\n                  (5.37)                        \nPhương trình trạng thái phần tử thứ i lớp x:             \n⎪⎩\n⎪⎨\n⎧\n<\n+\n=\n+\n>\n+\n=\n+\n0\n)1\nk\n(\n0\n0\n)1\nk\n(\n)\nk\n(\nx\n0\n)1\nk\n(\n1\n)1\nk\n(\nx\ni\ni\n*\ni\n*\ni\n*\ni\nx \nnÕu\nx \nnÕu\nx \nnÕu\n;\n \n       \n∑\n=\n=\nm\n1\nj\nji\nj\n*\ni\nw\ny\n)\nk\n(\nx\n                                                                         (5.38)  \nQuá trình điều chỉnh được tiến hành đồng bộ khi tất cả các nơron xuất hiện ở cùng một \nchu kỳ tính, hoặc cập nhật không đồng bộ khi từng tập con cập nhật ở từng thời điểm. Hàm năng \nlượng được sử dụng (T là ký hiệu chuyển vị), mạng ổn định sau một thời gian  \n                        \nT\nYWX\nE\n−\n=\n \n             \n \n                      (5.39) \n \nLuật cập nhật là luật Hebb hay luật tích ngoài để mã hoá liên kết {Xi,Yi} trong mạng \nBAM bằng cách đổi mô tả véc tơ nhị phân thành mô tả lưỡng cực 0 đến 1. Giả sử các véc tơ cột \nAi và Bi có giá trị lưỡng cực thì ma trận trọng W được cho: \n                              \nq\nT\nq\n2\nT\n2\n1\nT\n1\nA\nB\n...\nA\nB\nA\nB\nW\n+\n+\n+\n=\n  \n            (5.40) \nBài toán tách lỗi với mạng BAM được dùng như một ánh xạ từ không gian đầu vào đến không \ngian đầu ra. Chúng ta định nghĩa ba véc tơ vào và ra theo bảng:  \n \nĐể mã hoá với việc sử dụng luật Hebb thì các véc tơ cần được đổi thành dạng có giá trị nhị phân \nđổi dấu (xem bảng trên bên phải).       \nTổng các tích ngoài của các véc tơ này cho ma trận trọng W     \n               \n⎥\n⎥\n⎥\n⎥\n⎦\n⎤\n⎢\n⎢\n⎢\n⎢\n⎣\n⎡\n−\n−\n−\n−\n−\n−\n−\n−\n−\n−\n=\n+\n+\n=\n3\n1\n1\n1\n1\n1\n3\n3\n3\n3\n1\n3\n3\n3\n3\n3\n1\n1\n1\n1\n'\nC\n'\nN\n'\nB\n'\nM\n'\nA\n'\nL\nW\nT\nT\nT\n \nVéc tơ vào \nVéc tơ ra \nA=(1 0 1 0 1) \nB= (1 0 1 0 0) \nC= (0 1 0 1 1) \nL = (1 1 1 1) \nM = (0 1 1 0) \nN = (1 0 0 1) \nVéc tơ vào \nVéc tơ ra \nA’=( 1 -1  1  -1  1) \nB’=(1  -1   1  -1 -1) \nC’=(-1  1 -1   1   1) \nL’ = (1   1   1   1) \nM’= (-1  1  1  -1) \nN’ = (1  -1 -1   1) \nx1 \nx2 \nxn \ny1 \ny2 \nym \nLớp 1 \nLớp 2 \nHình 5.7: Mạng BAM 2 lớp \n... \n... \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt" level='remember' page=128 idx_doc=127
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 10
+
+
+
+tao cau hoi level:analyze...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Trong quá trình nhận dạng tiếng nói, bước nào được thực hiện đầu tiên để xác định các mẫu tiếng nói đặc trưng?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: analyze
+[xác định]
+Option 1: Sử dụng tập mẫu tiếng nói để đào tạo các mẫu tham chiếu hoặc các tham số hệ thống
+Option 2: Đối sánh mẫu tiếng nói từ ngoài với các mẫu đặc trưng
+Option 3: Trích chọn đặc trưng từ tín hiệu tiếng nói
+Option 4: Huấn luyện mẫu tiếng nói ứng với các đơn vị âm thanh cùng loại
+Answer: Sử dụng tập mẫu tiếng nói để đào tạo các mẫu tham chiếu hoặc các tham số hệ thống
+Citation: Đáp án đúng là 'Sử dụng tập mẫu tiếng nói để đào tạo các mẫu tham chiếu hoặc các tham số hệ thống' vì đây là bước đầu tiên trong quy trình nhận dạng tiếng nói, như đã nêu trong nội dung.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu xác định bước đầu tiên trong quá trình nhận dạng tiếng nói, và câu trả lời được gợi ý đã nêu rõ rằng bước đầu tiên là 'Sử dụng tập mẫu tiếng nói để đào tạo các mẫu tham chiếu hoặc các tham số hệ thống'. Điều này hoàn toàn chính xác và phù hợp với nội dung tài liệu. Các đáp án khác cũng liên quan đến các bước trong quá trình nhận dạng tiếng nói, nhưng không phải là bước đầu tiên, do đó câu trả lời gợi ý là đúng hơn các đáp án khác.
+cau hoi dung: question='Trong quá trình nhận dạng tiếng nói, bước nào được thực hiện đầu tiên để xác định các mẫu tiếng nói đặc trưng?' options=['Sử dụng tập mẫu tiếng nói để đào tạo các mẫu tham chiếu hoặc các tham số hệ thống', 'Đối sánh mẫu tiếng nói từ ngoài với các mẫu đặc trưng', 'Trích chọn đặc trưng từ tín hiệu tiếng nói', 'Huấn luyện mẫu tiếng nói ứng với các đơn vị âm thanh cùng loại'] answer='Sử dụng tập mẫu tiếng nói để đào tạo các mẫu tham chiếu hoặc các tham số hệ thống' citation='102\nBước 1: Sử dụng tập mẫu tiếng nói (cơ sở dữ liệu mẫu tiếng nói) để đào tạo các mẫu tiếng \nnói đặc trưng (mẫu tham chiếu) hoặc các tham số hệ thống. \nBước 2: Đối sánh mẫu tiếng nói từ ngoài với các mẫu đặc trưng để ra quyết định.   \nTrong phương pháp này, nếu cơ sở dữ liệu tiếng nói cho đào tạo có đủ các phiên bản mẫu \ncấn nhận dạng thì quá trình đào tạo có thể xác định chính xác các đặc tính âm học của mẫu (các \nmẫu ở đây có thể là âm vị, từ, cụm từ…). Hiện nay, một số kỹ thuật nhận dạng mẫu được áp dụng \nthành công trong nhận dạng tiếng nói là lượng tử hóa vector, so sánh thời gian động (DTW), mô \nhình Markov ẩn (HMM), mạng nơron nhân tạo (ANN). \nHệ thống bao gồm các hoạt động sau: \nTrích chọn đặc trung: Tín hiệu tiếng nói được phân tích thành chuỗi các số đo để xác định \nmẫu nhận dạng. Các số đo đặc trưng là kết quả xử lý của các kỹ thuật phân tích phổ như: lọc \nthông dải, phân tích mã hóa dự đoán tuyến tính (LPC), biến đổi Fourier rời rạc (DFT).    \nHuấn luyện mẫu: Nhiều mẫu tiếng nói ứng với các đơn vị âm thanh cùng loại dùng để đào \ntạo các mẫu hoặc các mô hình đại diện, được gọi là mẫu tham chiếu hay mẫu chuẩn.    \nNhận dạng: Các mẫu tiếng nói được đưa tới khối phân loại mẫu. Khối này đối sánh mẫu \nđầu vào với các mẫu tham chiếu. Kối nhận dạng căn cứ vào các tiêu chuẩn đánh giá để quyết định \nmẫu tham chiếu nào giống mẫu đầu vào.    \nMột số đặc điểm của phương pháp nhận dạng mẫu: \n• \nHiệu năng của hệ phụ thuộc vào số mẫu đưa vào. Nếu số lượng mẫu càng nhiều thì độ \nchính xác của hệ càng cao; tuy nhiên, dung lượng nhớ và thời gian luyện mẫu tăng.     \n• \nCác mẫu tham chiếu phụ thuộc vào môi trường thu âm và môi trường truyền dẫn.  \n• \nKhông đòi hỏi kiến thức sâu về ngôn ngữ.  \n• \nPhương pháp ứng dụng trí tuệ nhân tạo   \nPhương pháp ứng dụng trí tuệ nhân tạo kết hợp các phương pháp trên nhằm tận dụng tối \nđa các ưu điểm của chúng, đồng thời bắt chước các khả năng của con người trong phân tích và \ncảm nhận các sự kiện bên ngoài để áp dụng vào nhận dạng tiếng nói. Sơ đồ khối của phương pháp \ntrí tuệ nhân tạo theo mô hình từ dưới lên (bottom-up) (Hình 4.4). \n \nĐặc điểm của các hệ thống nhận dạng theo phương pháp này là: \nSử dụng hệ chuyên gia để phân đoạn, gán nhãn ngữ âm. Điều này làm đơn giản hóa hệ \nthống so với phương pháp nhận dạng ngữ âm. \nSử dụng mạng nơron nhân tạo để học mối quan hệ giữa các ngữ âm, sau đó dùng nó để \nnhận dạng tiếng nói. \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='analyze' page=100 idx_doc=99
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 11
+
+
+
+tao cau hoi level:analyze...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Phân biệt sự khác nhau giữa hàm liên thuộc của tập hợp kinh điển và tập mờ?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: analyze
+[phân biệt]
+Option 1: Hàm liên thuộc của tập hợp kinh điển chỉ nhận giá trị 0 và 1, trong khi hàm liên thuộc của tập mờ nhận giá trị từ 0 đến 1.
+Option 2: Hàm liên thuộc của tập hợp kinh điển có thể nhận giá trị từ 0 đến 1, trong khi hàm liên thuộc của tập mờ chỉ nhận 0 và 1.
+Option 3: Hàm liên thuộc của tập hợp kinh điển không có sự suy luận thuận ngược, trong khi hàm liên thuộc của tập mờ có sự suy luận thuận ngược.
+Option 4: Hàm liên thuộc của tập hợp kinh điển có thể có nhiều giá trị khác nhau, trong khi hàm liên thuộc của tập mờ chỉ có một giá trị duy nhất.
+Answer: Hàm liên thuộc của tập hợp kinh điển chỉ nhận giá trị 0 và 1, trong khi hàm liên thuộc của tập mờ nhận giá trị từ 0 đến 1.
+Citation: Hàm liên thuộc của tập hợp kinh điển A chỉ có hai giá trị chính xác là 0 và 1, trong khi hàm liên thuộc của tập mờ có thể nhận toàn bộ các giá trị từ 0 đến 1, như đã nêu trong nội dung.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu phân biệt sự khác nhau giữa hàm liên thuộc của tập hợp kinh điển và tập mờ, và câu trả lời được gợi ý đã nêu rõ sự khác biệt này: hàm liên thuộc của tập hợp kinh điển chỉ nhận giá trị 0 và 1, trong khi hàm liên thuộc của tập mờ nhận giá trị từ 0 đến 1. Điều này hoàn toàn đúng với nội dung tài liệu. Các đáp án khác cũng có thể tìm thấy trong tài liệu và có liên quan đến câu hỏi, do đó, câu trả lời được gợi ý là chính xác.
+cau hoi dung: question='Phân biệt sự khác nhau giữa hàm liên thuộc của tập hợp kinh điển và tập mờ?' options=['Hàm liên thuộc của tập hợp kinh điển chỉ nhận giá trị 0 và 1, trong khi hàm liên thuộc của tập mờ nhận giá trị từ 0 đến 1.', 'Hàm liên thuộc của tập hợp kinh điển có thể nhận giá trị từ 0 đến 1, trong khi hàm liên thuộc của tập mờ chỉ nhận 0 và 1.', 'Hàm liên thuộc của tập hợp kinh điển không có sự suy luận thuận ngược, trong khi hàm liên thuộc của tập mờ có sự suy luận thuận ngược.', 'Hàm liên thuộc của tập hợp kinh điển có thể có nhiều giá trị khác nhau, trong khi hàm liên thuộc của tập mờ chỉ có một giá trị duy nhất.'] answer='Hàm liên thuộc của tập hợp kinh điển chỉ nhận giá trị 0 và 1, trong khi hàm liên thuộc của tập mờ nhận giá trị từ 0 đến 1.' citation='132\nnhững khái niệm và phép tính tương tự. Trước tiên, ta xem xét sự khác nhau giữa tập mờ và tập \nhợp kinh điển thông qua khái niệm hàm liên thuộc. Hàm liên thuộc μA của tập hợp kinh điển A \nđược định nghĩa là: \n   \n( )\n⎩\n⎨\n⎧\n∉\n∈\n=\nA\nx\nnÕu\n0\nA\nx\nnÕu\n1\nx\nA\nμ\n               \n \nNhư vậy, hàm liên thuộc chỉ có hai giá trị chính xác là 0 và 1 như Hình 5.8. Do vậy nếu ta \nđã biết tập hợp A thì cũng xác định được hàm liên thuộc μA(x) của nó và ngược lại. \n \nTrong lôgic mờ, vấn đề này lại khác. Hàm liên thuộc của tập mờ không chỉ nhận 2 giá trị \nlà 0 và 1 mà là toàn bộ các giá trị từ 0 đến 1 tức là \n1\n)\nx\n(\n0\nB\n≤\nμ\n≤\n. Trên Hình 5.9 là hai hàm liên \nthuộc của hai tập mờ B và C. Như vậy ở lôgic mờ không có sự suy luận thuận ngược như với tập \nhợp kinh điển. Vì vậy, trong định nghĩa tập mờ phải nêu thêm về hàm liên thuộc này do vai trò \ncủa nó là làm rõ ra chính tập mờ đó. \nb. Định nghĩa tập mờ \n \nTập mờ F xác định trên tập kinh điển M là một tập mà mỗi phần tử của nó là một cặp các \ngiá trị (x, μf (x)), trong đó x∈M và μf là ánh xạ \n]1,0\n[\nM\n:\nf\n→\nμ\n. Ánh xạ μf được gọi là hàm liên \nthuộc (phụ thuộc) của tập mờ F. Tập \nkinh điển M được gọi là cơ sở của tập \nmờ F. \n \nCác hàm liên thuộc μf(x) có \ndạng trơn như Hình bên gọi là hàm liên \nthuộc kiểu S. Đối với các hàm liên \nthuộc kiểu S, do các công thức biểu \ndiễn \n)\nx\n(\nf\nμ\n có độ phức tạp lớn, nên \nthời gian tính độ phụ thuộc cho một phần tử lâu. Vì vậy, trong kỹ thuật thông thường các hàm liên \nthuộc kiểu S được thay bằng các đoạn thẳng (tuyến tính từng đoạn). \n \nMột hàm liên thuộc có dạng tuyến tính từng đoạn được gọi là hàm liên thuộc có mức \nchuyển đổi tuyến tính (Hình 5.10. Với hàm liên thuộc như Hình2.2b nếu m1 = m2 và \n4\n3\nm\nm =\n \nthì nó chính là hàm liên thuộc của tập kinh điển. \n  x \nμf(x)\n1\n0,5 \n0\n3\n9 \n4 5\n6\n8\nHình 5.10: Hàm liên thuộc có mức chuyển đổi tuyến tính\nHình 5.9: Hàm liên thuộc của tập mờ. \na, \n b, \n  μB(x)  \n  x \n0 \n1 \n  μC()  \n  x \n0\n1\n m1  m2 \n m3 \n m4 \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='analyze' page=130 idx_doc=129
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 12
+
+
+
+tao cau hoi level:analyze...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Bạn hãy xác định tiêu chuẩn nào là tiêu chí để đánh giá sự thực hiện của một agent trong môi trường của nó?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: analyze
+[đánh giá]
+Option 1: Số lượng bụi bẩn làm sạch trong một ca làm việc 8 giờ
+Option 2: Thời gian hoạt động của agent trong một ngày
+Option 3: Mức độ tiếng ồn phát ra trong quá trình hoạt động
+Option 4: Số lượng điện tiêu thụ trong quá trình làm việc
+Answer: Số lượng bụi bẩn làm sạch trong một ca làm việc 8 giờ
+Citation: Tiêu chuẩn đánh giá sự thực hiện được xác định là số lượng bụi bẩn làm sạch trong một ca làm việc 8 giờ, điều này cho thấy hiệu suất và khả năng hoạt động của agent trong môi trường của nó.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu xác định tiêu chuẩn để đánh giá sự thực hiện của một agent trong môi trường của nó, và câu trả lời được gợi ý là 'Số lượng bụi bẩn làm sạch trong một ca làm việc 8 giờ', điều này hoàn toàn phù hợp với nội dung trong tài liệu. Ngoài ra, các đáp án khác cũng được liệt kê trong tài liệu, cho thấy rằng câu trả lời được gợi ý là một trong những tiêu chí chính để đánh giá hiệu suất của agent.
+cau hoi dung: question='Bạn hãy xác định tiêu chuẩn nào là tiêu chí để đánh giá sự thực hiện của một agent trong môi trường của nó?' options=['Số lượng bụi bẩn làm sạch trong một ca làm việc 8 giờ', 'Thời gian hoạt động của agent trong một ngày', 'Mức độ tiếng ồn phát ra trong quá trình hoạt động', 'Số lượng điện tiêu thụ trong quá trình làm việc'] answer='Số lượng bụi bẩn làm sạch trong một ca làm việc 8 giờ' citation='146\nMột “agent” là bất kỳ vật gì đó mà nó có thể nhận biết (perceiving) môi trường \n(environment) quanh nó thông qua các cảm biến (sensor) và tác động lại môi trường thông qua \ncác bộ phận phản ứng lại kích thích (effector). Một cơ thể người có đôi mắt, đôi tai và các bộ phận \nkhác là các cảm biến; đôi bàn tay, đôi chân và các phần cơ thể khác là các cơ quan phản ứng lại \nkích thích. Một robot camera và tia hồng ngoại nhìn thấy được là các sensor; các motor khác nhau \nlà các các bộ phận phản ứng lại kích thích. Một phần mềm đã mã hoá các xâu bit xem như là các \nđối tượng tri giác và các hành động của nó. Một agent nói chung được mô tả: \nMục đích của chúng ta trong cuốn sách này là thiết kế các agent sao cho chúng làm việc \ntốt trong môi trường của chúng. Trước tiên, chúng ta sẽ làm rõ ràng hơn một chút về cái ý “việc \ntốt” vừa nói trên. Sau đó, chúng ta sẽ nói về các cách khác nhau thiết kế các agent hoàn thiện (đó \nchính là câu trả lời cho dấu ? trong hình 5.15). Chúng ta thảo luận một vài nguyên lý chung được \nsử dụng thiết kế các agent trình bày trong cuốn sách này. Quan trọng nhất đó là nguyên lý để thiết \ncác agent phải hiểu biết các sự việc. Cuối cùng, chúng ta chỉ ra sự gắn liền giữa một agent và một \nmôi trường như thế nào, và chỉ ra một vài loại môi trường. \n5.5.2. Hoạt động của các Agent \nMột agent có lý trí (rational agent) là agent làm các việc theo lẽ phải. Hiển nhiên, điều đó \ntốt hơn là làm việc sai trái, vậy điều đó có có ý nghĩa là gì. Như là một sự đánh giá không được \nchính xác lắm, chúng ta nói rằng hành động đúng là lý do agent thành công hơn. Điều đó dẫn đến \nvấn đề chúng ta phải đánh giá sự thành công của agent như thế nào (how) và khi nào (when). \nTiêu chuẩn đánh giá sự thực hiện (Performance Measure) \nChúng ta sử dụng thuật ngữ tiêu chuẩn đánh giá sự thực hiện cho tiêu chuẩn how − tiêu \nchuẩn xác định xem như thế nào là một agent là thành công. Hiển nhiên không có một tiêu chuẩn \nđánh giá cố định nào thích hợp cho tất cả các agent. Chúng ta có thể hỏi agent theo quan điểm chủ \nquan nó hạnh phúc như thế nào với sự thực hiện của chính nó, nhưng một vài agent không thể trả \nlời, và một vài agent khác lừa dối chính chúng. (Con người ai cũng biết câu chuyện “con cáo và \nchùm nho xanh” – các con cáo nói rằng chúng không thực sự muốn điều đó sau khi họ không \nthành công trong việc dành lấy nó). Vì vậy, chúng ta đòi hỏi một tiêu chuẩn đánh giá sự thực hiện \nkhách quan áp đặt bởi một số chuyên gia. Nói cách khác, chúng ta như là người quan sát thiết lập \nmột chuẩn để cho nó thành công trong một môi trường và sử dụng nó để đánh giá sự thực hiện của \ncác agent. \nCho một ví dụ, xem xét trường hợp một agent được hỗ trợ để hút bụi bẩn sàn nhà. Một \ntiêu chuẩn đánh giá hiệu suất đáng tin cậy có thể là số lượng bụi bẩn làm sạch trong một ca làm \nviệc 8 giờ. Một đánh giá hiệu suất phức tạp hơn có thể là số lượng điện tiêu thụ và mức độ tiếng \nồn phát ra. Đánh giá hiệu suất thứ ba có thể đưa ra điểm số cao hơn cho một agent không chỉ làm \nsạch sàn nhà một cách yên tĩnh và hiệu quả mà còn nhận ra thời gian nghỉ cuối tuần.1 \nTiêu chuẩn when để đánh giá sự thực hiện cũng quan trọng. Nếu chúng ta đánh giá xem \ncó bao nhiêu bụi bẩn agent làm sạch trong giờ đầu tiên trong ngày, chúng ta có thể thoả mãn với \ncác agent khởi động nhanh (thậm chí chúng làm ít hoặc không làm sau thời điểm đó), và không \nhài lòng với những agent làm việc hợp lý. Vì vậy, chúng ta muốn đánh giá sự thực hiện trên toàn \nthời gian hoạt động, đó là một ca làm việc 8 giờ hoặc thời gian tồn tại của agent. \n                                                 \n1 Ở đây có một nguy cơ cho những người thiết lập các tiêu chuẩn đánh giá : bạn thường phải đưa cái điều bạn \nyêu cầu. Đó là, nếu bạn đánh giá sự thành công bởi số lượng bụi bẩn đã làm sạch, thì một vài agent khôn ngoan \nsẽ bị băt buộc phải thu gom một vật bẩn to nặng trong buổi sáng, nhanh chóng dọn sạch sẽ, và được cho điểm tốt \ncho của sự thực hiện. \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='analyze' page=144 idx_doc=143
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 13
+
+
+
+tao cau hoi level:analyze...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Xác định mục đích của khối Bộ lọc hiệu chỉnh trong quá trình xử lý tín hiệu tiếng nói là gì?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: analyze
+[xác định]
+Option 1: Để làm cho tín hiệu tiếng nói đồng đều hơn
+Option 2: Để tăng cường độ âm thanh của tín hiệu
+Option 3: Để giảm thiểu độ nhiễu của tín hiệu
+Option 4: Để phân loại các tín hiệu âm thanh khác nhau
+Answer: Để làm cho tín hiệu tiếng nói đồng đều hơn
+Citation: Khối 1: Bộ lọc hiệu chỉnh (Preemphasis) được mô tả là tín hiệu tiếng nói s(n) được đưa qua bộ lọc số bậc thấp để phổ đồng đều hơn, giảm ảnh hưởng gây ra cho các xử lý tín hiệu sau này.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu xác định mục đích của khối Bộ lọc hiệu chỉnh trong xử lý tín hiệu tiếng nói, và câu trả lời được gợi ý là "Để làm cho tín hiệu tiếng nói đồng đều hơn", điều này hoàn toàn đúng với nội dung trong tài liệu. Các đáp án khác cũng liên quan đến mục đích của khối này, nhưng không chính xác như đáp án gợi ý. Do đó, câu trả lời được gợi ý là chính xác và phù hợp với tài liệu.
+cau hoi dung: question='Xác định mục đích của khối Bộ lọc hiệu chỉnh trong quá trình xử lý tín hiệu tiếng nói là gì?' options=['Để làm cho tín hiệu tiếng nói đồng đều hơn', 'Để tăng cường độ âm thanh của tín hiệu', 'Để giảm thiểu độ nhiễu của tín hiệu', 'Để phân loại các tín hiệu âm thanh khác nhau'] answer='Để làm cho tín hiệu tiếng nói đồng đều hơn' citation='107\nhàm logarit ở tần số cao được sử dụng để trích chọn các đặc trưng âm học quan trọng của tiếng \nnói. Mô hình tính toán các hệ số MFCC được mô tả như Hình 4.5.  \n \n \n \n \n \n \n \n \nHình 4.5. Sơ đồ tính toán các hệ số MFCC \n Ý nghĩa và phương pháp xác định tham số ở các khối trong sơ đồ trên mô tả như sau: \nKhối 1: Bộ lọc hiệu chỉnh (Preemphasis) \n \nTín hiệu tiếng nói  s(n) được đưa qua bộ lọc số bậc thấp để phổ đồng đều hơn, giảm ảnh \nhưởng gây ra cho các xử lý tín hiệu sau này. Thường bộ lọc này cố định bậc một, có dạng: \n                                        H(z) = 1– az\n1\n−    0.9≤ a≤ 1.0                                                \n \nQuan hệ giữa tín hiệu ra với tín hiệu vào tuân theo phương trình \n                                      \n~\ns (n) = s(n)-a.s(n-1) \n            \n                         \n \n \nGiá trị a thường được chọn là 0.97. \nKhối 2: Phân khung (Frame Blocking) \n \nTrong khối này tín hiệu hiệu chỉnh\n~\ns (n) được phân thành các khung, mỗi khung có N \nmẫu; hai khung kề lệch nhau M mẫu. Khung đầu tiên chứa N mẫu, khung thứ hai bắt đầu chậm \nhơn khung thứ nhất M mẫu và chồng lên khung thứ nhất N-M mẫu. Tương tự, khung thứ ba chậm \nhơn khung thứ nhất 2M mẫu (chậm hơn khung thứ hai M mẫu) và chờm lên khung thứ nhất N-2M \nmẫu. Quá trình này tiếp tục cho đến khi tất cả các mẫu tiếng nói cần phân tích thuộc về một hoặc \nnhiều khung. \n \nKhối 3: Lấy cửa sổ (Windowing) \nBước tiếp theo là lấy cửa sổ cho mỗi khung riêng rẽ nhằm giảm sự gián đoạn của tín hiệu tiếng \nnói tại đầu và cuối mỗi khung. Nếu w(n), 0 ≤ n ≤ N-1, sau khi lấy cửa sổ được:  \n1\n0\n),\n(\n)\n(\n)\n(\n~\n−\n≤\n≤\n=\nN\nn\nn\nw\nk\nx\nk\nx\nn\nn\n \n \n          \nThông thường, của sổ Hamming được sử dụng. Cửa sổ này có dạng:  \nN      M                     \nW( )\n)\n(\n^\nt\nc i\n)\n(n\ns\n)\n(\n~\nt\nci\nΔ\nk\nm\n)\n(\n~\nn\ns\n)\n(n\nxt\n)\n(\n~\nn\nxt\n)\n(t\nci\nPhổ \nnăng \nl\n   W(n) \nBộ lọc/Hiệu \nchỉnh \nĐạo hàm \ntheo thời \nCác băng \nlọc tam \nLấy \ncửa \nGắn \ntrọng số\nDTC \nFFT \nPhân \nkhung\nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='analyze' page=105 idx_doc=104
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 14
+
+
+
+tao cau hoi level:analyze...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hãy xác định độ phức tạp của bài toán người bán hàng rong (TSP) theo Karp, 1972?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: analyze
+[xác định]
+Option 1: O(n)
+Option 2: O(n^2)
+Option 3: O(n!)
+Option 4: O(mn)
+Answer: O(n!)
+Citation: Độ phức tạp của bài toán người bán hàng rong (TSP) được xác định là O(n!) theo Karp, 1972, vì số lượng đường đi cần xem xét tăng rất nhanh khi số lượng thành phố tăng lên.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu xác định độ phức tạp của bài toán người bán hàng rong (TSP) theo Karp, 1972, và câu trả lời được gợi ý là O(n!), đúng với thông tin trong tài liệu. Các đáp án khác cũng được liệt kê, trong đó O(n!) là đáp án chính xác cho câu hỏi này.
+cau hoi dung: question='Hãy xác định độ phức tạp của bài toán người bán hàng rong (TSP) theo Karp, 1972?' options=['O(n)', 'O(n^2)', 'O(n!)', 'O(mn)'] answer='O(n!)' citation='20\nUrziceni, Vaslui}.” và việc kiểm tra mục tiêu sẽ kiểm tra xem agent đã ở Bucaret chưa và tất cả \n20 thành phố đã được viếng thăm xong toàn bộ chưa. \n Bài toán người bán hàng rong (TSP) là một bài toán du lịch nổi tiếng trong đó mỗi thành \nphố phải được viếng thăm đúng chính xác một lần. Mục đích là  tìm hành trình ngắn nhất. 6 Bài \ntoán có độ phức tạp NP(Karp,1972), nhưng đã có một sự cố gắng rất lớn nhắm cải thiện khả năng \ncủa các thuật toán TSP. Ngoài các chuyến đi đã được lập kế hoạch cho người bán hàng rong, \nnhững thuật toán này đã được sử dụng cho các nhiệm vụ như lập kế hoạch cho sự dịch chuyển của \ncác mũi khoan trên trên bảng mạch một cách tự động. \n \nBài toán hành trình ngắn nhất - ứng dụng nguyên lý tham lam (Greedy) \nBài toán: Hãy tìm một hành trình cho người giao hàng đi qua n điểm khác nhau, mỗi điểm \nđi qua một lần và trở về điểm xuất phát sao cho tổng chiều dài đoạn đường cần đi là ngắn nhất. \nGiả sử rằng có con đường nối trực tiếp từ giữa hai điểm bất kỳ. \n \nTất nhiên là có thể giải bài toán này bằng cách liệt kê tất cả các con đường có thể đi, tính \nchiều dài của mỗi con đường đó rồi tìm con đường có chiều dài ngắn nhất. Tuy nhiên cách giải \nnày có độ phức tạp O(n!) Do đó, khi số đại lý tăng thì số con đường phải xét sẽ tăng lên rất nhanh. \n \nMột cách đơn giản hơn nhiều cho kết quả tương đối tốt là ứng dụng thuật toán heuristic ứng \ndụng nguyên lý tham lam Greedy. Tư tưởng của thuật giải như sau: \n• \nĐiểm khởi đầu, ta liệt kê tất cả các quãng đường từ điểm xuất phát cho đến n đại lý rồi chọn \nđi theo con đường ngắn nhất. \n• \nKhi đã đi đến một đại lý chọn đi đến đại lý kế tiếp cũng theo nguyên tắc trên. Nghĩa là liệt \nkê tất cả các con đường từ đại lý ta đang đứng đến những đại lý chưa đến. Chọn con đường \nngắn nhất. Lặp lại quá trình này cho đến lúc không còn đại lý nào để đi \n \nBài toán phân việc - ứng dụng của nguyên lý thứ tự \n \nBài toán: Một công ty nhận được hợp đồng gia công m chi tiết máy J1, J2, … Jm. Công ty có \nn máy gia công lần lượt là P1, P2, … Pn. Mọi chi tiết đều có thể gia công trên bất kỳ máy gia công \nnào. Một khi đã gia công một chi tiết trên một máy, công việc sẽ tiếp tục cho đến lúc hoàn thành, \nkhông thể bị cắt ngang. Để gia công một việc J1 trên một máy bất kỳ ta cần dùng thời gian tương \nứng là t1. Nhiệm vụ của công ty là làm sao để gia công xong toàn bộ n chi tiết trong thời gian sớm \nnhất. \n \nChúng ta xét bài toán trong trường hợp có 3 máy P1, P2, P3 và sáu công việc với thời gian là \nt1 = 2 , t2 = 5, t3 = 8, t4 = 1, t5 = 5, t6 = 1. Có một giải pháp được đặt ra là: Tại thời điểm t = 0, ta \ntiến hành gia công chi tiết J2 trên máy P1, J5  trên máy P2 và J1 tại P3. Tại thời điểm t = 2 công việc \nJ1  được hoàn thành, trên máy P3 ta gia công tiếp chi tiết J4. Trong lúc đó, hai máy P1 và P2 vẫn \nđang thực hiện công việc đầu tiên của mình … Theo vậy sau đó máy P3 sẽ tiếp tục hoàn thành nốt \ncác công việc J6 và J3. Thời gian hoàn thành công việc là 12. Ta thấy phương án này đã thực hiện \ncông việc một cách không tốt. Các máy P1 và P2 có quá nhiều thời gian rảnh. \n \nThuật toán tìm phương án tối ưu L0 cho bài toán này theo kiểu vét cạn có độ phức tạp cỡ \nO(mn) (với m là số máy và n là số công việc). Bây giờ ta xét đến một thuật giải Heuristic rất đơn \ngiản (độ phức tạp O(n)) để giải bài toán này: \n• Sắp xếp các công việc theo thứ tự giảm dần về thời gian gia công \n• Lần lượt sắp xếp các việc theo thứ tự đó vào máy còn dư nhiều thời gian nhất \n \nVới tư tưởng như vậy ta hoàn toàn có thể đưa ra một phương án tối ưu L*, thời gian thực \nhiện công việc bằng 8, đúng bằng thời gian thực hiện công việc J3 \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='analyze' page=18 idx_doc=17
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 15
+
+
+
+tao cau hoi level:analyze...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Bạn có thể phân tích quá trình lập luận tiến trong các hệ dựa trên luật không?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: analyze
+[phân tích]
+Option 1: Quá trình lập luận tiến chỉ xem xét các luật mà không cần điều kiện nào
+Option 2: Quá trình lập luận tiến là việc áp dụng luật suy diễn Modus Ponens để rút ra kết luận
+Option 3: Quá trình lập luận tiến chỉ tìm kiếm các câu trả lời cho một vấn đề cụ thể
+Option 4: Quá trình lập luận tiến không liên quan đến cơ sở tri thức nào cả
+Answer: Quá trình lập luận tiến là việc áp dụng luật suy diễn Modus Ponens để rút ra kết luận
+Citation: Quá trình lập luận tiến được mô tả là việc xét một luật trong cơ sở luật và áp dụng luật suy diễn Modus Ponens để rút ra các kết luận từ cơ sở tri thức.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu phân tích quá trình lập luận tiến trong các hệ dựa trên luật, và câu trả lời được gợi ý đã nêu rõ rằng quá trình này liên quan đến việc áp dụng luật suy diễn Modus Ponens để rút ra kết luận. Điều này hoàn toàn phù hợp với nội dung trong tài liệu, nơi mô tả chi tiết về lập luận tiến và cách thức hoạt động của nó. Các đáp án khác cũng liên quan đến quá trình lập luận tiến, nhưng chỉ có câu trả lời được gợi ý là chính xác và đúng hơn các đáp án khác, vì nó nêu rõ phương pháp suy diễn cụ thể được sử dụng.
+cau hoi dung: question='Bạn có thể phân tích quá trình lập luận tiến trong các hệ dựa trên luật không?' options=['Quá trình lập luận tiến chỉ xem xét các luật mà không cần điều kiện nào', 'Quá trình lập luận tiến là việc áp dụng luật suy diễn Modus Ponens để rút ra kết luận', 'Quá trình lập luận tiến chỉ tìm kiếm các câu trả lời cho một vấn đề cụ thể', 'Quá trình lập luận tiến không liên quan đến cơ sở tri thức nào cả'] answer='Quá trình lập luận tiến là việc áp dụng luật suy diễn Modus Ponens để rút ra kết luận' citation='76\n3.6  CƠ CHẾ SUY DIỄN \n3.6.1 Khái niêm về suy diễn và lập luận \nSuy diễn (inference) và lập luận (reasoning) là hai khái niệm được dùng chung để chỉ một tiến \ntrình đưa đến kết luận từ các giả thiết cho ở dạng cơ sở tri thức (sự kiện, quy luật) \nCác hệ tri thức mà cơ sở tri thức bao gồm các luật sẽ được gọi là các hệ dựa trên luật (rule - \nbased system). Trong các mục còn lại của chương này chúng ta sẽ nghiên cứu các thủ tục suy diễn \ntrong các hệ dựa trên luật. \nMột khi chúng ta đã lưu trữ một cơ sở tri thức, chúng ta cần có thủ tục lập luận để rút ra các \nkết luận từ cơ sở tri thức. Trong các hệ dựa luật, có hai phương pháp luận lập luận cơ bản: \n• \nLập luận tiến và  \n• \nlập luận lùi \nChúng ta sẽ phân chia cơ sở tri thức thành hai bộ phận: cơ sở luật và cơ sở sự kiện (hoặc bộ \nnhớ làm việc). Cơ sở luật bao gồm các luật có ít nhất một điều kiện, biểu diễn các tri thức chung \nvề lĩnh vực áp dụng. Còn cơ sở luật bao gồm các câu phần tử (các luật không điều kiện) mô tả các \nsự kiện mà chúng ta biết về các đối tượng trong lĩnh vực áp dụng. \n3.6.2 Lập luận tiến \nTư tưởng cơ bản của lập luận tiến là áp dụng luật suy diễn Modus Ponens tổng quát). \nTrong mỗi bước của thủ tục lập luận tiến, người ta xét một luật trong cơ sở luật. Đối sánh mỗi \nđiều kiện của luật với các sự kiện trong cơ sở sự kiện, nếu tất cả các điều kiện của luật đều được \nthoả mãn thì sự kiện trong phần kết luận của luật được xem là sự kiện được suy ra. Nếu sự kiện \nnày là sự kiện mới (không có trong bộ nhớ làm việc), thì nó được đặt vào bộ nhớ làm việc. Quá \ntrình trên được lặp lại cho tới khi nào không có luật nào sinh ra các sự kiện mới. \nNhư vậy quá trình lập luận tiến là quá trình xem xét các luật. Với mỗi luật, ta đi từ phần \nđiều kiện tới phần kết luận của luật, khi mà tất cả các điều kiện của luật đều được làm thoả mãn \n(bởi các sự kiện trong cơ sở sự kiện), thì ta suy ra sự kiện trong phần kết luận của luật. Chính vì lẽ \nđó mà có tên lập luận tiến (forward chaining hoặc forward reasoning). \nQuá trình lập luận tiến không định hướng tới giải quyết một vấn đề nào cả, không định \nhướng tới tìm ra câu trả lời cho một câu hỏi nào cả. Lập luận tiến chỉ là quá trình suy ra các sự \nkiện mới từ các sự kiện trong bộ nhớ làm việc. Vì vậy lập luận tiến còn được gọi là lập luận điều \nkhiển bởi dữ liệu (data - driven reasioning), hoặc lập luận định hướng dữ liệu (data - directed \nreasioning). \nVí dụ lập luận tiến. Để thấy được quá trình lập luận tiến diễn ra như thế nào, chúng ta xét \nví dụ sau đây. (Ví dụ này là của P. H. Winston xem [17]). \nGiả sử cơ sở luật (cơ sở luật về các động vật trong sở thú) gồm các luật sau \nLuật 1:  nếu   động vật có lông mao \n             thì    động vật là loài có vú \nLuật 2:  nếu   động vật có lông vũ \n             thì    động vật là chim \n \nLuật 3:  nếu   1.  động vật biết bay, và \n       2.  động vật đẻ trứng \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='analyze' page=74 idx_doc=73
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 16
+
+
+
+tao cau hoi level:analyze...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Làm thế nào để áp dụng thuật toán Durbin trong việc tính toán các hệ số dự báo tuyến tính?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: analyze
+[tính toán]
+Option 1: Bằng cách sử dụng các hệ số tự tương quan đã được biến đổi Fourier ngược
+Option 2: Bằng cách sử dụng các giá trị delta từ phương pháp MFCC
+Option 3: Bằng cách sử dụng các ký hiệu quy ước trong giao tiếp
+Option 4: Bằng cách áp dụng luật cường độ nghe cho âm thanh
+Answer: Bằng cách sử dụng các hệ số tự tương quan đã được biến đổi Fourier ngược
+Citation: Thuật toán Durbin được sử dụng để tính các hệ số dự báo tuyến tính như phương pháp LPC, và các hệ số tự tương quan được biến đổi Fourier ngược là giá trị đầu vào cho LPC.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi liên quan đến việc áp dụng thuật toán Durbin trong tính toán các hệ số dự báo tuyến tính, và câu trả lời được gợi ý đã nêu rõ rằng thuật toán này sử dụng các hệ số tự tương quan đã được biến đổi Fourier ngược, điều này hoàn toàn đúng với nội dung trong tài liệu. Các đáp án khác cũng liên quan đến các phương pháp và khái niệm có thể tìm thấy trong tài liệu, do đó câu trả lời được gợi ý là chính xác và phù hợp.
+cau hoi dung: question='Làm thế nào để áp dụng thuật toán Durbin trong việc tính toán các hệ số dự báo tuyến tính?' options=['Bằng cách sử dụng các hệ số tự tương quan đã được biến đổi Fourier ngược', 'Bằng cách sử dụng các giá trị delta từ phương pháp MFCC', 'Bằng cách sử dụng các ký hiệu quy ước trong giao tiếp', 'Bằng cách áp dụng luật cường độ nghe cho âm thanh'] answer='Bằng cách sử dụng các hệ số tự tương quan đã được biến đổi Fourier ngược' citation='113\n                              \n)\n10\n*\n58\n.9\n)(\n10\n*\n3.6\n(\n)\n10\n*\n8,\n56\n(\n)\n(\n26\n6\n6\n2\n4\n6\n2\n+\n+\n+\n=\nω\nω\nω\nω\nω\nE\n                   \n \n                        \nKhối 4: Dùng luật cường độ nghe (Power Law of Hearing) \nBước xử lý này giống như bước lấy giá trị logarit trong phương pháp MFCC. Hàm căn lập \nphương được dùng có dạng:  \n  \n \n \n  \n33\n.0)\n(\n)\n(\nf\nf\nψ\n=\nΦ\n  \n \n                                          \n♦ Khối 5: Biến đổi Fourier ngược (Inverse DFT) \nCác hệ số tự tương quan được biến đổi Fourier ngược là giá trị đầu vào cho LPC. \n♦ Khối 6: Thuật toán Durbin \nThuật toán Durbin được sử dụng để tính các hệ số dự báo tuyến tính như phương pháp LPC  \n♦ Khối 7: Tính các giá trị delta \nPhương pháp tính tương tự như phương pháp hệ số MFCC.  \nPhương pháp ứng dụng trí tuệ nhân tạo cho xử lý và nhận dạng tiếng nói có thể tham khảo thêm \ncác tai liệu trích dẫn trong tài liêu.. \n4.5 CÁC HỆ THỐNG HỘI THOẠI \nChúng ta quan tâm đến những gì xảy ra bên trong của một đối tượng - từ khi nó nhận \nđược một kết quả của tri thức đến khi đối tượng này quyết định một hành động. Trong phần này \nchúng ta tập trung vào giao diện giữa đối tượng và môi trường. Kết quả chúng ta có được sự nhận \nthức: thị giác, thính giác và có thể nhiều giác quan khác, ở một kết quả khác chúng ta có hành \nđộng: sự cử động của một cánh tay robot chẳng hạn. \nMặc dù bao trùm lên phần này là đối thoại. Một nhóm đối tượng có thể thành công hơn, cá \nthể hay tập thể nếu họ đối thoại với nhau về mục tiêu và sự hiểu biết của mình. Chúng ta sẽ xem \nxét một cách chặt chẽ ngôn ngữ nhân loại và ngôn ngữ này được sử dụng như là một công cụ đối \nthoại. \nCon người sử dụng một số hữu hạn các ký hiệu quy ước (mỉm cười, bắt tay) để giao tiếp \ntương tự như hầu hết các động vật khác. Con người cũng có thể phát triển một hệ thống các kí \nhiệu có kiến trúc phức tạp được biết như là ngôn ngữ mà có thể sử dụng chúng để đối thoại trong \nhầu hết những gì mà họ biết về thế giới.  \nTrong các hệ cơ sở tri thức, đặc biệt hẹ chuyên gia, các hệ thống đối thoai giữa ngươi và máy \nđươc thiết lập và là một khâu rất cần thiết để xử lý thông tin, Học viên có thể tham khảo thêm \nphần này ở các tài liệu trích dẫn kèm theo \n4.6 TỪ ĐIỂN ĐIỆN TỬ \nBước đầu tiên trong việc định nghĩa ngữ pháp là định nghĩa một từ điển ngôn ngữ, hoặc \ndanh sách các từ vựng có thể cho phép. Các từ được nhóm lại vào những phạm trù hoặc những \nphần của lời nói quen thuộc đến từ điển người dùng: danh từ, đại từ, và tên để biểu thị chúng, \nđộng từ để biểu thị một sự kiện, tính từ để bổ nghĩa cho danh từ, trạng từ bổ nghĩa cho động từ. \nHình 4.9 cho một từ điển ngôn ngữ nhỏ.  \n \n \n \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='analyze' page=111 idx_doc=110
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 17
+
+
+
+tao cau hoi level:analyze...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Tính toán tỷ lệ vượt quá điểm không ZCR trong thuật toán phát hiện tiếng nói dựa trên năng lượng phổ ngắn hạn như thế nào?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: analyze
+[phát hiện]
+Option 1: Bằng cách chia tổng số khung có ZCR vượt ngưỡng cho tổng số khung
+Option 2: Bằng cách lấy trung bình cộng của tất cả các khung
+Option 3: Bằng cách cộng tất cả các giá trị năng lượng lại với nhau
+Option 4: Bằng cách nhân số khung với ngưỡng năng lượng trên
+Answer: Bằng cách chia tổng số khung có ZCR vượt ngưỡng cho tổng số khung
+Citation: Đáp án đúng là "Bằng cách chia tổng số khung có ZCR vượt ngưỡng cho tổng số khung" vì đây là cách tính tỷ lệ vượt quá điểm không ZCR được mô tả trong nội dung, liên quan đến việc xác định các khung tín hiệu tiếng nói.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi liên quan đến cách tính toán tỷ lệ vượt quá điểm không ZCR trong thuật toán phát hiện tiếng nói dựa trên năng lượng phổ ngắn hạn, điều này được đề cập trong tài liệu. Câu trả lời được gợi ý đúng với câu hỏi và phù hợp với các đáp án khác có trong tài liệu, vì nó nêu rõ cách tính tỷ lệ này bằng cách chia tổng số khung có ZCR vượt ngưỡng cho tổng số khung.
+cau hoi dung: question='Tính toán tỷ lệ vượt quá điểm không ZCR trong thuật toán phát hiện tiếng nói dựa trên năng lượng phổ ngắn hạn như thế nào?' options=['Bằng cách chia tổng số khung có ZCR vượt ngưỡng cho tổng số khung', 'Bằng cách lấy trung bình cộng của tất cả các khung', 'Bằng cách cộng tất cả các giá trị năng lượng lại với nhau', 'Bằng cách nhân số khung với ngưỡng năng lượng trên'] answer='Bằng cách chia tổng số khung có ZCR vượt ngưỡng cho tổng số khung' citation='105\n                                        sgn[x(n+1)] ≠ sgn[x(n)]                                                           \n   \ntrong đó, sgn(.) là hàm dấu  \nNăng lượng là đại lượng được dùng để xác định vùng chứa âm hữu thanh, vô thanh. \nNhưng hàm năng lượng thường rất nhạy cảm với nhiễu. Do vậy, người ta thường sử dụng hàm giả \nnăng lượng trong tính toán. Hàm giả năng lượng được xác định bởi: \n  \n∑\n−\n=\n∧\n−\n=\n1\n0\n)\n(\n)\n(\n)\n(\nN\nm\nm\nn\nx\nm\nw\nn\nE\n                                                                \ntrong đó;  \n              \n)\n(n\nE ∧\n : là hàm giả năng lượng,  \n               N        : là kích thước khung cửa sổ.  \n  Tỷ lệ vượt quá điểm không ZCR  \n        Ta thấy, khung có năng lượng càng cao thì tỷ lệ vượt quá điểm không càng thấp và ngược \nlại. Như vậy, tỷ lệ vượt quá điểm không là đại lượng đặc trưng cho tần số tín hiệu tiếng nói. Ở \nđây, chúng ta cần xác định các tham số ngưỡng cho hàm giả năng lượng với hai ngưỡng trên và \ndưới và một ngưỡng tỷ lệ vượt quá điểm không.  \n    Kí hiệu:  \n                 \nUp\nE\n       : ngưỡng năng lượng trên (cao); \n                 \nDown\nE\n     : ngưỡng năng lượng dưới (thấp);  \n                 \nT\nZCR _\n: ngưỡng tỷ lệ vượt quá điểm không.  \nThuật toán này được mô tả như sau : \nBước 1: Chia chuỗi tín hiệu tiếng nói thành các khung. Tính giá trị hàm giả năng lượng theo (2-5) \nvà tỷ lệ vượt quá điểm không theo (2-6) tương ứng trên mỗi khung. \nBước 2: Xét từ khung đầu tiên. Đánh dấu khung thứ i là điểm bắt đầu nếu tại khung i tỷ lệ vượt \nquá điểm không của ZCR vượt ngưỡng (ZCR>\nT\nZCR _\n), và giá trị hàm giả năng lượng vượt \nngưỡng dưới (\n( )\nn\nE ∧\n>\nDown\nE\n) theo hướng tăng của của hàm giả năng lượng. \nBước 3: Xét các khung kế tiếp. Đánh dấu khung kế tiếp thuộc từ. Nếu hàm giả năng lượng vượt \nngưỡng trên (\n( )\nn\nE ∧\n>\nUp\nE\n) theo hướng tăng của năng lượng. \nBước 4: Điểm bắt đầu của từ được xác định lại khi hàm giả năng lượng trên khung đó nhỏ hơn \nngưỡng dưới (\n( )\nn\nE ∧\n<\nDown\nE\n), và đồng thời tỷ lệ vượt quá điểm không trên khung lớn hơn \nngưỡng (ZCR>\nT\nZCR _\n).  \nBước 5: Điểm kết thúc từ được xác định nếu tại đó; tỷ lệ vượt quá điểm không \nnhỏ hơn ngưỡng (ZCR<\nT\nZCR _\n), và hàm giả năng lượng tương ứng nhỏ hơn \nngưỡng dưới (\n( )\nn\nE ∧\n<\nDown\nE\n) theo xu hướng đi xuống của hàm giả năng lượng. \nc) Phát hiện tiếng nói dựa trên năng lượng phổ ngắn hạn  \n \nÝ tưởng chính của phương pháp này là sử dụng bộ điều khiển dò biên tiếng nói VAD \n(Voice Activity Detector) dựa trên việc xác định năng lượng phổ ngắn hạn\nf\nE trên các khung tín \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='analyze' page=103 idx_doc=102
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 18
+
+
+
+tao cau hoi level:analyze...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hãy phân tích vai trò của agent trong môi trường trí tuệ nhân tạo?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: analyze
+[phân tích]
+Option 1: Agent có khả năng nhận biết và tác động đến môi trường.
+Option 2: Agent chỉ đơn thuần là một chương trình máy tính.
+Option 3: Agent không có khả năng tự trị trong quyết định.
+Option 4: Agent không cần thiết phải tương tác với môi trường.
+Answer: Agent có khả năng nhận biết và tác động đến môi trường.
+Citation: Theo nội dung, agent là một cái gì đó mà nó có thể nhận biết và tác động lại môi trường, điều này cho thấy vai trò quan trọng của agent trong trí tuệ nhân tạo.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu phân tích vai trò của agent trong môi trường trí tuệ nhân tạo, và câu trả lời được gợi ý đã nêu rõ một trong những vai trò quan trọng của agent là khả năng nhận biết và tác động đến môi trường. Điều này hoàn toàn phù hợp với nội dung trong tài liệu, nơi đã mô tả agent là một thực thể có khả năng tương tác với môi trường. Các đáp án khác cũng liên quan đến vai trò của agent, nhưng chỉ có đáp án gợi ý là đúng và phù hợp với tài liệu.
+cau hoi dung: question='Hãy phân tích vai trò của agent trong môi trường trí tuệ nhân tạo?' options=['Agent có khả năng nhận biết và tác động đến môi trường.', 'Agent chỉ đơn thuần là một chương trình máy tính.', 'Agent không có khả năng tự trị trong quyết định.', 'Agent không cần thiết phải tương tác với môi trường.'] answer='Agent có khả năng nhận biết và tác động đến môi trường.' citation='161\n \nfunction Run-Eval-Environment(state, Update-Fn, agents, termination, \nPerformance-Fn) returns scores \nlocal variable: scores, a vector thw same size as  agents, all 0 \nrepeat \nfor each agent in agents do \nPercept[agent] ← Get-Percept(agent,state) \nend \nfor each agent in agents do \nAction[agent] ← Program[agent](Percept[agent]) \nend \nstate ← Update-Fn(actions,agents,state) \nscores ← Performance-Fn(scores,agents,state) \nuntil termination(state) \nreturn scores \nHình 5.22  Một chương trình mô phỏng môi trường mà nó theo dõi phạm \nvi thực hiện cho mỗi agent. \n \nTÓM TẮT \nChương này chúng ta đã giới thiệu tổng quan một số vấn đề của Trí tuệ nhân tạo, chúng ta \nđã hình dung được việc thiết kế agent. Những điểm chủ yếu đó là: \n\x1f Agent là một cái gì đó mà nó có thể nhận biết và tác động lại môi trường. Chúng ta \nphân biệt agent với kiểu kiến trúc và agent chương trình. \n\x1f Agent lý tưởng luôn luôn thực hiện hành động được mong đợi đạt được phạm vi thực \nhiện cực đại, đem lại chuỗi kết quả tri giác nó thấy. \n\x1f Agent là tự trị để phạm vi mà các hành động của nó lựa chọn được quyết định bởi \nchính kinh nghiệm của nó, một phần nào đó sự hiểu biết của môi trường được xây \ndựng bởi người thiết kế. \n\x1f Chương trình agent ánh xạ từ một tri giác đến một hành động, khi cập nhật một trạng \nthái trong. \n\x1f Có nhiều chương trình agent cơ bản khác nhau được thiết kế, được quyết định bởi loại \nthông tin và việc sử dụng trong quá trình ra quyết định. Các thiết kế dẫn đến sự khác \nnhau về hiệu quả, tính súc tích và tính linh động. Các thiết kế chương trình agent thích \nhợp quyết định bởi các tri giác, các hành động, các mục tiêu và môi trường. \n\x1f Các agent phản xạ (reflex agents) phản ứng lại ngay tức thì các tri giác, các agent mục \ntiêu cơ bản (goal-based agents) hành động với mục đích là chúng sẽ giành được được \ncác mục tiêu của chúng, và các agent lợi ích (utility-based agent) cố gắng để đạt được \nsự “hạnh phúc” lớn nhất. \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='analyze' page=159 idx_doc=159
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 19
+
+
+
+tao cau hoi level:analyze...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Làm thế nào người nghe H có thể phân tích từ W' trong quá trình giao tiếp?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: analyze
+[phân tích]
+Option 1: H nhận thức W' và suy luận các nghĩa P1…,Pn
+Option 2: H chỉ nghe từ W mà không suy luận gì
+Option 3: H không cần nhận thức từ W' để phân tích
+Option 4: H sẽ luôn hiểu nghĩa của W' mà không cần phân tích
+Answer: H nhận thức W' và suy luận các nghĩa P1…,Pn
+Citation: Trong quá trình giao tiếp, người nghe H nhận thức từ W' và phải phân tích để suy luận rằng W' có thể mang nhiều nghĩa khác nhau, từ đó có thể hiểu được ý định của người nói S.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi liên quan đến tài liệu vì nó hỏi về cách mà người nghe phân tích từ W' trong quá trình giao tiếp, điều này được đề cập trong phần mô tả các bước thành phần của giao tiếp. Câu trả lời được gợi ý là chính xác và phù hợp với nội dung trong tài liệu, vì nó nêu rõ rằng người nghe H nhận thức W' và suy luận các nghĩa P1…,Pn, điều này cũng được nhấn mạnh trong tài liệu. Các đáp án khác cũng có thể tìm thấy trong tài liệu và có sự khác biệt rõ ràng với câu trả lời được gợi ý.
+cau hoi dung: question="Làm thế nào người nghe H có thể phân tích từ W' trong quá trình giao tiếp?" options=["H nhận thức W' và suy luận các nghĩa P1…,Pn", 'H chỉ nghe từ W mà không suy luận gì', "H không cần nhận thức từ W' để phân tích", "H sẽ luôn hiểu nghĩa của W' mà không cần phân tích"] answer="H nhận thức W' và suy luận các nghĩa P1…,Pn" citation='91\nCHƯƠNG 4: XỬ LÝ NGÔN NGỮ TỰ NHIÊN \n4.1 XỬ LÝ NGÔN NGỮ TỰ NHIÊN VÀ TRÍ TUỆ NHÂN TẠO \n4.1.1 Sự tiến hóa của ngôn ngữ \nVấn đề để hiểu được lời nói hành động giống như việc hiểu các vấn đề khác, tương tự như \nviệc hiểu hình ảnh hoặc chẩn đoán y học. Chúng ta đưa ra một tập các đầu vào đa nghĩa và từ đó \nchúng ta làm ngược lại để quyết định trạng thái nào của thế giới có thể được tạo ra đầu vào. Hiểu \nđược vấn đề của lời nói hành động là phần đặc tả của ngôn ngữ. Một phần của hiểu vấn đề có thể \ngiải thích bằng các lí do logic. Chúng ta nhận thấy rằng các chuỗi logic liên kết lại là cách tốt để \nmô tả cách mà các từ và các cụm từ phối hợp để tạo ra một cụm từ lớn. Phần khác của việc hiểu \nvấn đề có thể chỉ được giải thích bởi các lí do kĩ thuật không rõ ràng. Thông thường có nhiều \ntrạng thái của thế giới mà tất cả đều hướng dẫn đến một lời nói hành động tương tự, vì vậy người \nhiểu phải quyết định cái mà nó dễ xảy ra hơn. \n4.1.2 Cơ sở của ngôn ngữ \nMột ngôn ngữ hình thức được định nghĩa như một tập các chuỗi kí tự, trong đó mỗi chuỗi \nkí tự là một chuỗi các biểu tượng được lấy ra từ một tập hữu hạn được gọi là biểu tượng terminal. \nMột trong những phiền toái khi làm việc với cả ngôn ngữ tự nhiên và ngôn ngữ hình thức là có \nquá nhiều sự khác biệt hình thức và kí hiệu cho việc viết ngữ pháp. Tuy nhiên, hầu hết chúng đều \ntương tự như cách mà chúng căn cứ vào ý tưởng của cấu trúc cụm từ - các chuỗi kí tự được soạn \nthảo của các chuỗi kí tự cơ sở được gọi là cụm từ, dẫn đến các phạm trù khác nhau. Các phạm trù \nnhư cụm danh từ, cụm động từ, câu được gọi là biểu tượng nonterminal. Trong kí pháp BNF quy \nluật viết phù hợp của biểu tượng nonterminal đơn ở bên trái và liên kết của đầu cuối hoặc không \nđầu cuối viết ở bên phải. Quy luật được viết như trong ví dụ sau: \nS → NP VP \nCó nghĩa là chúng ta có thể đem bất kì cụm từ NP thêm vào sau bất kì cụm từ VP và kết \nquả là một cụm từ dạng câu. \nCác bước thành phần của giao tiếp: \nMột đoạn giao tiếp điển hình, trong đó người nói S muốn truyền đạt lời thông báo P đến \nngười nghe H sử dụng từ W, được sắp xếp trong 7 tiến trình. Ba bước đối với người nói: \nMục đích   \n: S muốn H tin P (trong đó S đặc biệt tin P) \nPhát sinh   \n: S chọn từ W (bởi vì chúng nhấn mạnh nghĩa của P) \nTổng hợp \n: S phát âm từ W ( thường chuyển thẳng chúng đến H) \nBốn bước đối với người nghe \nNhận thức \n: H nhận thức W’( W’=W, nhưng mất nhận thức là có thể) \nPhân tích \n: H suy luận W’ có thể mang các nghĩa P1…,Pn (từ và cụm từ có thể có \nnhiều nghĩa) \nÝ nghĩa hóa \n: H suy luận rằng S có ý định truyền đạt Pi (trong đó ý nghĩa Pi=P, nhưng \nsự mất giải thích là có thể) \nHợp nhất \n: H quyết định tin tưởng vào Pi, (hoặc loại bỏ nó nếu nó không được H \nchắc chắn tin tưởng) \nCuuDuongThanCong.com\nhttps://fb.com/tailieudientucntt' level='analyze' page=89 idx_doc=88
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 20
+Tong characters: 765429
+Execution Time: 4m 6.44s

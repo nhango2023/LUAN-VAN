@@ -112,7 +112,7 @@ async def create_question(
         task_id = str(uuid.uuid4())
         tasks[task_id] = {"status": "processing", "result": None, "current_number_question": 0}
         task_ref = tasks[task_id]
-
+    
         asyncio.create_task(
             handle_question_task(documents, task_id, model, n_question, token, log_file_path, start_time, temp_file_path, task_ref)
         )

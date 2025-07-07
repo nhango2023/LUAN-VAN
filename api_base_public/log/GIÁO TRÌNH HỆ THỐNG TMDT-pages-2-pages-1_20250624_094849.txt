@@ -1,0 +1,168 @@
+Log created at 20250624_094849 for file: GIÁO TRÌNH HỆ THỐNG TMDT-pages-2-pages-1.pdf
+use gpt  to grade doc
+use gpt to generate qa
+use gpt to grade qs
+Number of paragraphs: 2
+
+
+doan van-[0]: ['understand', 'apply', 'remember']
+doan van-[1]: ['understand', 'apply', 'analyze', 'remember']
+Check there are levels not detected in paragraphs
+index of splited docs following its level
+remember: [0, 1]
+understand: []
+apply: []
+analyze: []
+evaluate: []
+create: []
+the number of paragraphs < number of required questions
+
+number of questions for each paragraph arranged in order of paragraph's index 
+
+level: remember
+idx: [0, 1]
+number questions: [3, 2]
+level: understand
+idx: []
+number questions: []
+level: apply
+idx: []
+number questions: []
+level: analyze
+idx: []
+number questions: []
+level: evaluate
+idx: []
+number questions: []
+level: create
+idx: []
+number questions: []
+
+
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Mô tả quá trình giao dịch điện tử là gì?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[mô tả]
+Option 1: Là quá trình mua bán, trao đổi hàng hóa qua mạng Internet.
+Option 2: Là một dạng hợp đồng thực hiện qua phương tiện điện tử.
+Option 3: Là tài liệu có giá trị pháp lý được tạo qua phương tiện điện tử.
+Option 4: Là chứng chỉ số giúp xác định tính xác thực của chứng từ.
+Answer: Là quá trình mua bán, trao đổi hàng hóa qua mạng Internet.
+Citation: Giao dịch điện tử được định nghĩa là quá trình mua bán, trao đổi hàng hóa, dịch vụ, hoặc thông tin giữa các bên thông qua sự sử dụng của phương tiện điện tử, thường là qua mạng Internet.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: no
+Giai thich: Câu trả lời được gợi ý chỉ mô tả một phần của quá trình giao dịch điện tử, không đầy đủ và không chính xác. Giao dịch điện tử không chỉ bao gồm việc mua bán hàng hóa qua mạng Internet mà còn bao gồm việc trao đổi dịch vụ và thông tin giữa các bên thông qua phương tiện điện tử. Do đó, câu trả lời không đáp ứng đúng yêu cầu của câu hỏi.
+
+Cau hoi: Liệt kê một loại chứng từ điện tử quan trọng là gì?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[liệt kê]
+Option 1: Hóa Đơn Điện Tử
+Option 2: Giấy phép kinh doanh truyền thống
+Option 3: Hợp đồng bằng giấy
+Option 4: Chứng chỉ không có giá trị pháp lý.
+Answer: Hóa Đơn Điện Tử
+Citation: Hóa Đơn Điện Tử là một trong những loại chứng từ điện tử quan trọng, cho phép doanh nghiệp tạo và gửi hóa đơn qua email hoặc các hệ thống quản lý tài chính trực tuyến.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu liệt kê một loại chứng từ điện tử quan trọng, và câu trả lời được gợi ý là 'Hóa Đơn Điện Tử', đây là một trong những loại chứng từ điện tử quan trọng được nêu trong tài liệu. Các đáp án khác cũng có thể tìm thấy trong tài liệu, nhưng chỉ có 'Hóa Đơn Điện Tử' là đúng với yêu cầu của câu hỏi.
+cau hoi dung: question='Liệt kê một loại chứng từ điện tử quan trọng là gì?' options=['Hóa Đơn Điện Tử', 'Giấy phép kinh doanh truyền thống', 'Hợp đồng bằng giấy', 'Chứng chỉ không có giá trị pháp lý.'] answer='Hóa Đơn Điện Tử' citation='Chương 2: QUY ĐỊNH PHÁP LUẬT VỀTHƯƠNG MẠI ĐIỆN TỬ\n2.1 KHÁI QUÁT CHUNG\n2.1.1 Một sốkhái niệm liên quan\n+\nGiao dịch điện tử(Electronic Transaction): là quá trình mua bán, trao đổi hàng\nhóa, dịch vụ, hoặc thông tin giữa các bên thông qua sựsửdụng của phương\ntiện điện tử, thường là qua mạng Internet. Điều này bao gồm mọi hoạt động từ\nviệc đặt hàng trực tuyến, thanh toán điện tử, đến việc trao đổi thông tin kinh\ndoanh qua các phương tiện số.\n+\nChứng từđiện tử:\nChứng từđiện tửlà các tài liệu hoặc giấy tờcó giá trịpháp lý được tạo, truyền\nvà lưu trữthông qua phương tiện điện tử. Sựphổbiến của công nghệsốvà môi\ntrường kinh doanh trực tuyến đã tạo ra nhiều cơ hội đểthay thếchứng từtruyền\nthống bằng các chứng từđiện tử. Dưới đây là một sốloại chứng từđiện tử\nquan trọng:\n-\nHóa Đơn Điện Tử(Electronic Invoice): Thay vì sửdụng hóa đơn giấy\ntruyền thống, các doanh nghiệp có thểtạo và gửi hóa đơn qua email\nhoặc các hệthống quản lý tài chính trực tuyến.\n-\nHợp Đồng Điện Tử(Electronic Contract): Hợp đồng điện tửlà một dạng\nhợp đồng được thực hiện thông qua các phương tiện điện tử, thường là\nqua Internet. Điều này bao gồm mọi giao dịch, thỏa thuận, hay cam kết\nnào được thực hiện bằng cách sửdụng các phương tiện điện tửnhư\nemail, trang web, hay các hình thức truyền thông điện tửkhác.\n-\nGiấy\nPhép và Chứng Thực Điện Tử(Electronic Licenses and\nCertificates): Các giấy phép và chứng thực có thểđược tạo và phát hành\ndưới dạng điện tử, chẳng hạn như chứng chỉsố, giấy phép kinh doanh\ntrực tuyến, và nhiều hơn nữa.\n-\nChứng Thư Số(Digital Certificate): Là một công cụquan trọng trong\nchứng thực điện tử, chứng thư sốgiúp xác định tính xác thực của chứng\ntừđiện tửvà đối tác giao dịch.\n17' level='remember' page=1 idx_doc=0
+them cau hoi vao danh sach tam thoi!
+
+Cau hoi: Xác định vai trò của chứng thư số trong chứng thực điện tử là gì?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[xác định]
+Option 1: Giúp xác định tính xác thực của chứng từ điện tử.
+Option 2: Là tài liệu chứng minh quyền sở hữu hàng hóa.
+Option 3: Là hợp đồng được thực hiện qua phương tiện điện tử.
+Option 4: Là hóa đơn giấy truyền thống.
+Answer: Giúp xác định tính xác thực của chứng từ điện tử.
+Citation: Chứng thư số là một công cụ quan trọng trong chứng thực điện tử, giúp xác định tính xác thực của chứng từ điện tử và đối tác giao dịch.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu xác định vai trò của chứng thư số trong chứng thực điện tử, và câu trả lời được gợi ý đã nêu rõ rằng chứng thư số giúp xác định tính xác thực của chứng từ điện tử, điều này hoàn toàn phù hợp với nội dung trong tài liệu. Các đáp án khác cũng có thể tìm thấy trong tài liệu, nhưng không liên quan đến vai trò của chứng thư số, do đó câu trả lời được gợi ý là chính xác và đúng hơn các đáp án khác.
+cau hoi dung: question='Xác định vai trò của chứng thư số trong chứng thực điện tử là gì?' options=['Giúp xác định tính xác thực của chứng từ điện tử.', 'Là tài liệu chứng minh quyền sở hữu hàng hóa.', 'Là hợp đồng được thực hiện qua phương tiện điện tử.', 'Là hóa đơn giấy truyền thống.'] answer='Giúp xác định tính xác thực của chứng từ điện tử.' citation='Chương 2: QUY ĐỊNH PHÁP LUẬT VỀTHƯƠNG MẠI ĐIỆN TỬ\n2.1 KHÁI QUÁT CHUNG\n2.1.1 Một sốkhái niệm liên quan\n+\nGiao dịch điện tử(Electronic Transaction): là quá trình mua bán, trao đổi hàng\nhóa, dịch vụ, hoặc thông tin giữa các bên thông qua sựsửdụng của phương\ntiện điện tử, thường là qua mạng Internet. Điều này bao gồm mọi hoạt động từ\nviệc đặt hàng trực tuyến, thanh toán điện tử, đến việc trao đổi thông tin kinh\ndoanh qua các phương tiện số.\n+\nChứng từđiện tử:\nChứng từđiện tửlà các tài liệu hoặc giấy tờcó giá trịpháp lý được tạo, truyền\nvà lưu trữthông qua phương tiện điện tử. Sựphổbiến của công nghệsốvà môi\ntrường kinh doanh trực tuyến đã tạo ra nhiều cơ hội đểthay thếchứng từtruyền\nthống bằng các chứng từđiện tử. Dưới đây là một sốloại chứng từđiện tử\nquan trọng:\n-\nHóa Đơn Điện Tử(Electronic Invoice): Thay vì sửdụng hóa đơn giấy\ntruyền thống, các doanh nghiệp có thểtạo và gửi hóa đơn qua email\nhoặc các hệthống quản lý tài chính trực tuyến.\n-\nHợp Đồng Điện Tử(Electronic Contract): Hợp đồng điện tửlà một dạng\nhợp đồng được thực hiện thông qua các phương tiện điện tử, thường là\nqua Internet. Điều này bao gồm mọi giao dịch, thỏa thuận, hay cam kết\nnào được thực hiện bằng cách sửdụng các phương tiện điện tửnhư\nemail, trang web, hay các hình thức truyền thông điện tửkhác.\n-\nGiấy\nPhép và Chứng Thực Điện Tử(Electronic Licenses and\nCertificates): Các giấy phép và chứng thực có thểđược tạo và phát hành\ndưới dạng điện tử, chẳng hạn như chứng chỉsố, giấy phép kinh doanh\ntrực tuyến, và nhiều hơn nữa.\n-\nChứng Thư Số(Digital Certificate): Là một công cụquan trọng trong\nchứng thực điện tử, chứng thư sốgiúp xác định tính xác thực của chứng\ntừđiện tửvà đối tác giao dịch.\n17' level='remember' page=1 idx_doc=0
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 2/3 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:remember...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Định nghĩa chứng từ điện tử là gì?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[định nghĩa]
+Option 1: Chứng từ điện tử là tài liệu có giá trị pháp lý được tạo và lưu trữ qua phương tiện điện tử.
+Option 2: Chứng từ điện tử là giấy tờ truyền thống được gửi qua email.
+Option 3: Chứng từ điện tử là tài liệu không có giá trị pháp lý.
+Option 4: Chứng từ điện tử là các tài liệu chỉ được sử dụng trong giao dịch trực tiếp.
+Answer: Chứng từ điện tử là tài liệu có giá trị pháp lý được tạo và lưu trữ qua phương tiện điện tử.
+Citation: Đáp án đúng là "Chứng từ điện tử là tài liệu có giá trị pháp lý được tạo và lưu trữ qua phương tiện điện tử" vì nó phản ánh chính xác định nghĩa về chứng từ điện tử được nêu trong nội dung, trong khi các đáp án khác đều chứa thông tin sai lệch hoặc không đầy đủ.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu định nghĩa về chứng từ điện tử, và câu trả lời được gợi ý đã cung cấp một định nghĩa chính xác, phù hợp với nội dung trong tài liệu. Các đáp án khác cũng bao gồm một định nghĩa đúng và một số định nghĩa sai, cho thấy câu trả lời được gợi ý là chính xác hơn so với các đáp án khác.
+cau hoi dung: question='Định nghĩa chứng từ điện tử là gì?' options=['Chứng từ điện tử là tài liệu có giá trị pháp lý được tạo và lưu trữ qua phương tiện điện tử.', 'Chứng từ điện tử là giấy tờ truyền thống được gửi qua email.', 'Chứng từ điện tử là tài liệu không có giá trị pháp lý.', 'Chứng từ điện tử là các tài liệu chỉ được sử dụng trong giao dịch trực tiếp.'] answer='Chứng từ điện tử là tài liệu có giá trị pháp lý được tạo và lưu trữ qua phương tiện điện tử.' citation='Chương 2: QUY ĐỊNH PHÁP LUẬT VỀTHƯƠNG MẠI ĐIỆN TỬ\n2.1 KHÁI QUÁT CHUNG\n2.1.1 Một sốkhái niệm liên quan\n+\nGiao dịch điện tử(Electronic Transaction): là quá trình mua bán, trao đổi hàng\nhóa, dịch vụ, hoặc thông tin giữa các bên thông qua sựsửdụng của phương\ntiện điện tử, thường là qua mạng Internet. Điều này bao gồm mọi hoạt động từ\nviệc đặt hàng trực tuyến, thanh toán điện tử, đến việc trao đổi thông tin kinh\ndoanh qua các phương tiện số.\n+\nChứng từđiện tử:\nChứng từđiện tửlà các tài liệu hoặc giấy tờcó giá trịpháp lý được tạo, truyền\nvà lưu trữthông qua phương tiện điện tử. Sựphổbiến của công nghệsốvà môi\ntrường kinh doanh trực tuyến đã tạo ra nhiều cơ hội đểthay thếchứng từtruyền\nthống bằng các chứng từđiện tử. Dưới đây là một sốloại chứng từđiện tử\nquan trọng:\n-\nHóa Đơn Điện Tử(Electronic Invoice): Thay vì sửdụng hóa đơn giấy\ntruyền thống, các doanh nghiệp có thểtạo và gửi hóa đơn qua email\nhoặc các hệthống quản lý tài chính trực tuyến.\n-\nHợp Đồng Điện Tử(Electronic Contract): Hợp đồng điện tửlà một dạng\nhợp đồng được thực hiện thông qua các phương tiện điện tử, thường là\nqua Internet. Điều này bao gồm mọi giao dịch, thỏa thuận, hay cam kết\nnào được thực hiện bằng cách sửdụng các phương tiện điện tửnhư\nemail, trang web, hay các hình thức truyền thông điện tửkhác.\n-\nGiấy\nPhép và Chứng Thực Điện Tử(Electronic Licenses and\nCertificates): Các giấy phép và chứng thực có thểđược tạo và phát hành\ndưới dạng điện tử, chẳng hạn như chứng chỉsố, giấy phép kinh doanh\ntrực tuyến, và nhiều hơn nữa.\n-\nChứng Thư Số(Digital Certificate): Là một công cụquan trọng trong\nchứng thực điện tử, chứng thư sốgiúp xác định tính xác thực của chứng\ntừđiện tửvà đối tác giao dịch.\n17' level='remember' page=1 idx_doc=0
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 3/3 câu hỏi
+Số lần tạo lại: 1
+Them 3 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 3
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Mô tả vai trò của văn bản pháp luật trong hoạt động thương mại điện tử là gì?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[mô tả]
+Option 1: Tạo hành lang pháp lý cho giao dịch TMĐT
+Option 2: Đảm bảo tính an toàn trong giao dịch truyền thống
+Option 3: Thay thế hoàn toàn các quy định của Luật thương mại
+Option 4: Giảm thiểu chi phí giao dịch cho các bên tham gia
+Answer: Tạo hành lang pháp lý cho giao dịch TMĐT
+Citation: Văn bản pháp luật tạo hành lang pháp lý thống nhất cho hoạt động giao dịch TMĐT, giúp các bên thực hiện đúng quy trình khi đồng ý lựa chọn luật làm căn cứ.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu mô tả vai trò của văn bản pháp luật trong hoạt động thương mại điện tử, và câu trả lời được gợi ý "Tạo hành lang pháp lý cho giao dịch TMĐT" là một phần quan trọng trong vai trò này. Ngoài ra, các đáp án khác cũng liên quan đến vai trò của văn bản pháp luật, nhưng không chính xác hơn so với câu trả lời được gợi ý. Do đó, câu trả lời được gợi ý là đúng và có thể tìm thấy trong tài liệu.
+cau hoi dung: question='Mô tả vai trò của văn bản pháp luật trong hoạt động thương mại điện tử là gì?' options=['Tạo hành lang pháp lý cho giao dịch TMĐT', 'Đảm bảo tính an toàn trong giao dịch truyền thống', 'Thay thế hoàn toàn các quy định của Luật thương mại', 'Giảm thiểu chi phí giao dịch cho các bên tham gia'] answer='Tạo hành lang pháp lý cho giao dịch TMĐT' citation='-\nChứng Minh Thư Điện Tử(Electronic Identity Proof): Được sửdụng để\nxác minh danh tính trực tuyến của người sửdụng và đảm bảo tính an\ntoàn trong các giao dịch điện tử.\n-\nChứng TừGiao Dịch Tài Chính (Electronic Financial Transaction\nDocuments): Bao gồm các chứng từnhư biểu đồgiao dịch, hóa đơn\nthanh toán, và các tài liệu khác liên quan đến quá trình tài chính trực\ntuyến.\n+\nChữký số(Digital Signature): Chữký sốlà một phương tiện điện tửđược sử\ndụng đểxác thực và chứng minh tính xác thực của một tài liệu điện tử, thường\nlà trong bối cảnh giao dịch trực tuyến hoặc trong các quá trình ký điện tửhợp\npháp. Đây là một công nghệquan trọng giúp thay thếchữký truyền thống trên\ngiấy.\n2.1.2 Vai trò của văn bản pháp luật đối với hoạt động TMĐT\nCác văn bản pháp luật vềthương mại điện tửlà tổng thểcác quy tắc hàm chứa trong\nluật và các văn bản dưới luật, điều chỉnh hoạt động thương mại điện tửởphạm vi từng\nquốc gia và cũng như trên phạm vi quốc tế. Hệthống Văn bản pháp luật vềthương\nmại đã điều chỉnh tất cảcác hoạt động thương mại thông thường như các hoạt động về\nmua bán, ủy thác, nội dung hợp đồng… Các văn bản vềpháp luật thương mại điện tử\nvì thếsẽkhông phủnhận hay có những quy định khác vềhoạt động mà Luật thương\nmại đã nêu ra. Pháp luật điều chỉnh vềhoạt động thương mại điện tửchỉra những nội\ndung cơ bản liên quan đến đặc trưng của thương mại điện tửmà thương mại truyền\nthống không có nhằm tạo ra một môi trường pháp lý cho thương mại điện tửhoạt\nđộng có hiệu quảhơn.\nHệthống văn bản pháp luật vềthương mại điện tửkhi ban hành có 3 tác dụng chính:\n●Tạo hành lang pháp lý thống nhất cho hoạt động giao dịch TMĐT. Hoạt động\ngiao dịch trên các phương tiện điện tửsẽtheo quy trình thống nhất khi các bên\nđồng ý lựa chọn luật làm căn cứ. Cảbên bán và bên mua đều dựa vào luật mà\ncó các bước thực thi đúng đắn và khoa học.\n●Đem lại niềm tin cho các bên tham gia TMĐT bao gồm cảngười bán, người\nmua và người cung ứng dịch vụtrung gian. Các bên tham gia sẽcảm thấy tin\ncậy hơn khi các hoạt động mua bán và kinh doanh trên mạng của họđược pháp\n18' level='remember' page=2 idx_doc=1
+them cau hoi vao danh sach tam thoi!
+
+Cau hoi: Xác định một trong những tác dụng chính của hệ thống văn bản pháp luật về thương mại điện tử là gì?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[xác định]
+Option 1: Tạo ra sự cạnh tranh không lành mạnh
+Option 2: Đem lại niềm tin cho các bên tham gia TMĐT
+Option 3: Giảm thiểu rủi ro cho người tiêu dùng
+Option 4: Thay thế hoàn toàn các hình thức giao dịch truyền thống
+Answer: Đem lại niềm tin cho các bên tham gia TMĐT
+Citation: Hệ thống văn bản pháp luật về thương mại điện tử đem lại niềm tin cho người bán, người mua và người cung ứng dịch vụ trung gian khi các hoạt động mua bán trên mạng được pháp luật điều chỉnh.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu xác định một trong những tác dụng chính của hệ thống văn bản pháp luật về thương mại điện tử, và câu trả lời được gợi ý "Đem lại niềm tin cho các bên tham gia TMĐT" hoàn toàn phù hợp với nội dung trong tài liệu. Ngoài ra, các đáp án khác cũng có thể tìm thấy trong tài liệu, nhưng câu trả lời gợi ý là chính xác và đúng hơn các đáp án khác.
+cau hoi dung: question='Xác định một trong những tác dụng chính của hệ thống văn bản pháp luật về thương mại điện tử là gì?' options=['Tạo ra sự cạnh tranh không lành mạnh', 'Đem lại niềm tin cho các bên tham gia TMĐT', 'Giảm thiểu rủi ro cho người tiêu dùng', 'Thay thế hoàn toàn các hình thức giao dịch truyền thống'] answer='Đem lại niềm tin cho các bên tham gia TMĐT' citation='-\nChứng Minh Thư Điện Tử(Electronic Identity Proof): Được sửdụng để\nxác minh danh tính trực tuyến của người sửdụng và đảm bảo tính an\ntoàn trong các giao dịch điện tử.\n-\nChứng TừGiao Dịch Tài Chính (Electronic Financial Transaction\nDocuments): Bao gồm các chứng từnhư biểu đồgiao dịch, hóa đơn\nthanh toán, và các tài liệu khác liên quan đến quá trình tài chính trực\ntuyến.\n+\nChữký số(Digital Signature): Chữký sốlà một phương tiện điện tửđược sử\ndụng đểxác thực và chứng minh tính xác thực của một tài liệu điện tử, thường\nlà trong bối cảnh giao dịch trực tuyến hoặc trong các quá trình ký điện tửhợp\npháp. Đây là một công nghệquan trọng giúp thay thếchữký truyền thống trên\ngiấy.\n2.1.2 Vai trò của văn bản pháp luật đối với hoạt động TMĐT\nCác văn bản pháp luật vềthương mại điện tửlà tổng thểcác quy tắc hàm chứa trong\nluật và các văn bản dưới luật, điều chỉnh hoạt động thương mại điện tửởphạm vi từng\nquốc gia và cũng như trên phạm vi quốc tế. Hệthống Văn bản pháp luật vềthương\nmại đã điều chỉnh tất cảcác hoạt động thương mại thông thường như các hoạt động về\nmua bán, ủy thác, nội dung hợp đồng… Các văn bản vềpháp luật thương mại điện tử\nvì thếsẽkhông phủnhận hay có những quy định khác vềhoạt động mà Luật thương\nmại đã nêu ra. Pháp luật điều chỉnh vềhoạt động thương mại điện tửchỉra những nội\ndung cơ bản liên quan đến đặc trưng của thương mại điện tửmà thương mại truyền\nthống không có nhằm tạo ra một môi trường pháp lý cho thương mại điện tửhoạt\nđộng có hiệu quảhơn.\nHệthống văn bản pháp luật vềthương mại điện tửkhi ban hành có 3 tác dụng chính:\n●Tạo hành lang pháp lý thống nhất cho hoạt động giao dịch TMĐT. Hoạt động\ngiao dịch trên các phương tiện điện tửsẽtheo quy trình thống nhất khi các bên\nđồng ý lựa chọn luật làm căn cứ. Cảbên bán và bên mua đều dựa vào luật mà\ncó các bước thực thi đúng đắn và khoa học.\n●Đem lại niềm tin cho các bên tham gia TMĐT bao gồm cảngười bán, người\nmua và người cung ứng dịch vụtrung gian. Các bên tham gia sẽcảm thấy tin\ncậy hơn khi các hoạt động mua bán và kinh doanh trên mạng của họđược pháp\n18' level='remember' page=2 idx_doc=1
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 2/2 câu hỏi
+Số lần tạo lại: 0
+Them 2 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 5
+Tong characters: 56063
+Execution Time: 0m 35.80s

@@ -1,0 +1,22 @@
+Log created at 20250624_094606 for file: GIÁO TRÌNH HỆ THỐNG TMDT-pages-2-pages-1.pdf
+use gpt  to grade doc
+use gpt to generate qa
+use gpt to grade qs
+Number of paragraphs: 2
+
+
+doan van-[0]: ['understand', 'apply', 'remember']
+doan van-[1]: ['understand', 'apply', 'analyze', 'remember']
+Check there are levels not detected in paragraphs
+Khong tim thay level nho hon de thay the cho level 'create'. De trong
+Khong tim thay level nho hon de thay the cho level 'create'. De trong
+index of splited docs following its level
+remember: [0, 1]
+understand: []
+apply: []
+analyze: []
+evaluate: []
+create: []
+the number of paragraphs < number of required questions
+the number of paragraphs < number of required questions
+[ERROR] list index out of range

@@ -95,7 +95,7 @@ Bạn là chuyên gia đánh giá chất lượng câu hỏi và câu trả lờ
     - Nếu câu trả lời không đạt: mô tả điểm chưa đúng.
 
 Trả về một object JSON chứa:
-- `binary_score`: Một trong ba giá trị `"yes"`, `"no"`, `"re-generate"`.
+- `binary_score`: Một trong ba giá trị `"yes"`, `"no"`.
 - `description`: lý do chi tiết cho đánh giá trên.
 """
 

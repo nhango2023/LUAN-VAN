@@ -1,0 +1,470 @@
+Log created at 20250624_100718 for file: BAI GIANG NLHDH_DNC-chuong-3.pdf
+use gpt  to grade doc
+use gpt to generate qa
+use gpt to grade qs
+Number of paragraphs: 6
+
+
+doan van-[0]: ['understand', 'analyze', 'remember']
+doan van-[1]: ['understand', 'apply', 'analyze', 'remember']
+doan van-[2]: ['understand', 'analyze']
+doan van-[3]: ['understand', 'apply', 'analyze', 'remember']
+doan van-[4]: ['understand', 'apply', 'analyze', 'remember']
+doan van-[5]: ['understand', 'apply', 'analyze', 'remember']
+Check there are levels not detected in paragraphs
+Khong co level 'evaluate', thay the bang level 'analyze'
+Khong co level 'create', thay the bang level 'evaluate'
+index of splited docs following its level
+remember: [0, 1, 3, 4, 5]
+understand: [0, 1, 2, 3, 4, 5]
+apply: [1, 3, 4, 5]
+analyze: [0, 1, 2, 3, 4, 5]
+evaluate: [0, 1, 2, 3, 4, 5]
+create: [0, 1, 2, 3, 4, 5]
+
+the number of paragraphs>number of required questions
+
+
+the number of paragraphs>number of required questions
+
+
+the number of paragraphs>number of required questions
+
+
+the number of paragraphs>number of required questions
+
+
+the number of paragraphs>number of required questions
+
+
+the number of paragraphs>number of required questions
+
+
+number of questions for each paragraph arranged in order of paragraph's index 
+
+level: remember
+idx: [0, 1]
+number questions: [1, 1]
+level: understand
+idx: [5, 3]
+number questions: [1, 1]
+level: apply
+idx: [3, 1]
+number questions: [1, 1]
+level: analyze
+idx: [0, 5]
+number questions: [1, 1]
+level: evaluate
+idx: [2, 0]
+number questions: [1, 1]
+level: create
+idx: [2, 1]
+number questions: [1, 1]
+
+
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Mô tả cấu trúc của hệ điều hành monolithique dựa trên thông tin đã cho.
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[mô tả]
+Option 1: Cấu trúc bao gồm chương trình chính, thủ tục dịch vụ và thủ tục tiện ích
+Option 2: Cấu trúc chỉ bao gồm chương trình chính và phần cứng
+Option 3: Cấu trúc chỉ bao gồm thủ tục tiện ích và chương trình thường trú
+Option 4: Cấu trúc không có sự phân chia giữa các thủ tục
+Answer: Cấu trúc bao gồm chương trình chính, thủ tục dịch vụ và thủ tục tiện ích
+Citation: Cấu trúc của hệ điều hành monolithique được mô tả là bao gồm chương trình chính gọi đến thủ tục của hệ điều hành, tập hợp các thủ tục dịch vụ xử lý những lời gọi hệ thống và tập hợp các thủ tục tiện ích hỗ trợ các thủ tục dịch vụ.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu mô tả cấu trúc của hệ điều hành monolithique, và câu trả lời được gợi ý đã nêu đúng các thành phần chính của cấu trúc này, bao gồm chương trình chính, thủ tục dịch vụ và thủ tục tiện ích. Các đáp án khác cũng có thể tìm thấy trong tài liệu, nhưng chỉ có đáp án gợi ý là chính xác và đầy đủ nhất. Do đó, câu trả lời được đánh giá là đúng.
+cau hoi dung: question='Mô tả cấu trúc của hệ điều hành monolithique dựa trên thông tin đã cho.' options=['Cấu trúc bao gồm chương trình chính, thủ tục dịch vụ và thủ tục tiện ích', 'Cấu trúc chỉ bao gồm chương trình chính và phần cứng', 'Cấu trúc chỉ bao gồm thủ tục tiện ích và chương trình thường trú', 'Cấu trúc không có sự phân chia giữa các thủ tục'] answer='Cấu trúc bao gồm chương trình chính, thủ tục dịch vụ và thủ tục tiện ích' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 14  \nCHƢƠNG 3. CẤU TRÚC HỆ ĐIỀU HÀNH \n3.1. \nCẤU TRÚC HỆ THỐNG \n3.1.1. Cấu trúc đơn giản (Monolithique)  \nHệ điều hành là một tập hợp các thủ tục, có thể gọi lẫn nhau. Một số hệ \nmonolithique cũng có thể có một cấu trúc tối thiểu khi phân chia các thủ tục \ntrong hệ thống thành 3 cấp độ:  \n\uf0a7 Chƣơng trình chính (chƣơng trình của ngƣời sử dụng) gọi đến một thủ \ntục của hệ điều hành, đƣợc gọi là lời gọi hệ thống.  \n\uf0a7 Tập hợp các thủ tục dịch vụ (service) xử lý những lời gọi hệ thống. \n\uf0a7 Tập hợp các thủ tục tiện ích (utility) hỗ trợ các thủ tục dịch vụ xử lý \nnhững lời gọi hệ thống.  \n \nVí dụ  \n \nKhuyết điểm  \n\uf0a7 Không có sự che dấu dữ liệu, mỗi thủ tục có thể gọi đến tất cả các thủ \ntục khác. Các mức độ phân chia thủ tục nếu có cũng không rõ rệt, \nchƣơng trình ứng dụng có thể truy xuất đến các thủ tục cấp thấp, tác \nđộng đến cả phần cứng, do vậy hệ điều hành khó kiểm soát và bảo vệ \nhệ thống.  \n\uf0a7 Hệ thống thủ tục chỉ mang tính chất tĩnh, chỉ đƣợc kích hoạt khi cần \nthiết, do vậy hệ điều hành thiếu chủ động trong việc quản lý môi \ntrƣờng.  \nHình 3.1.Cấu trúc một hệ monolithique \n  \nThủ tục chính   \n  Thủ tục dịch vụ   \n  Thủ tục tiện ích   \n  \nChương trình ứng dụng   \nChương trình thường trú   \nMS - DOS   \nPhần cứng   \nHình 3.2. Cấu trúc của hệ điều hành MS-DOS' level='remember' page=1 idx_doc=0
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 1
+
+
+
+tao cau hoi level:remember...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Mô tả cấu trúc phân lớp của hệ điều hành THE bao gồm những lớp nào?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: remember
+[mô tả]
+Option 1: Lớp 5: chương trình ứng dụng, Lớp 4: quản lý bộ đệm, Lớp 3: trình điều khiển thao tác console, Lớp 2: quản lý bộ nhớ, Lớp 1: điều phối CPU, Lớp 0: phần cứng
+Option 2: Lớp 1: quản lý bộ nhớ, Lớp 2: điều phối CPU, Lớp 3: chương trình ứng dụng, Lớp 4: phần cứng, Lớp 5: giao diện người dùng
+Option 3: Lớp 0: phần cứng, Lớp 1: chương trình ứng dụng, Lớp 2: điều phối CPU, Lớp 3: quản lý bộ đệm, Lớp 4: trình điều khiển thao tác console
+Option 4: Lớp 2: phần cứng, Lớp 3: chương trình ứng dụng, Lớp 4: quản lý bộ nhớ, Lớp 5: điều phối CPU, Lớp 1: giao diện người dùng
+Answer: Lớp 5: chương trình ứng dụng, Lớp 4: quản lý bộ đệm, Lớp 3: trình điều khiển thao tác console, Lớp 2: quản lý bộ nhớ, Lớp 1: điều phối CPU, Lớp 0: phần cứng
+Citation: Cấu trúc phân lớp của hệ điều hành THE được mô tả rõ ràng trong nội dung, bao gồm các lớp từ lớp 0 là phần cứng đến lớp 5 là chương trình ứng dụng.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu mô tả cấu trúc phân lớp của hệ điều hành THE, và câu trả lời được gợi ý đã liệt kê chính xác các lớp từ lớp 5 đến lớp 0 như trong tài liệu. Các đáp án khác cũng có thể tìm thấy trong tài liệu, nhưng không chính xác như câu trả lời được gợi ý. Do đó, câu trả lời được gợi ý là đúng và phù hợp với yêu cầu của câu hỏi.
+cau hoi dung: question='Mô tả cấu trúc phân lớp của hệ điều hành THE bao gồm những lớp nào?' options=['Lớp 5: chương trình ứng dụng, Lớp 4: quản lý bộ đệm, Lớp 3: trình điều khiển thao tác console, Lớp 2: quản lý bộ nhớ, Lớp 1: điều phối CPU, Lớp 0: phần cứng', 'Lớp 1: quản lý bộ nhớ, Lớp 2: điều phối CPU, Lớp 3: chương trình ứng dụng, Lớp 4: phần cứng, Lớp 5: giao diện người dùng', 'Lớp 0: phần cứng, Lớp 1: chương trình ứng dụng, Lớp 2: điều phối CPU, Lớp 3: quản lý bộ đệm, Lớp 4: trình điều khiển thao tác console', 'Lớp 2: phần cứng, Lớp 3: chương trình ứng dụng, Lớp 4: quản lý bộ nhớ, Lớp 5: điều phối CPU, Lớp 1: giao diện người dùng'] answer='Lớp 5: chương trình ứng dụng, Lớp 4: quản lý bộ đệm, Lớp 3: trình điều khiển thao tác console, Lớp 2: quản lý bộ nhớ, Lớp 1: điều phối CPU, Lớp 0: phần cứng' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 15  \n3.1.2. Cấu trúc phân lớp (Layered) \nĐơn thể hóa hệ thống bằng cách cắt hệ thống thành một số lớp, mỗi lớp đƣợc \nxây dựng dựa trên các lớp bên trong. Lớp trong cùng (lớp 0) thƣờng là phần \ncứng, lớp ngoài cùng (lớp N) thƣờng là giao diện với ngƣời sử dụng.  \nMỗi lớp là một đối tƣợng trừu tƣợng bao bọc bên trong nó các dữ liệu và \nthao tác xử lý các dữ liệu đó. Lớp N chứa đựng một số cấu trúc dữ liệu và \nmột số thủ tục có thể đƣợc gọi bởi những lớp bên ngoài và lớp N có thể gọi \nnhững thủ tục của các lớp bên trong N.  \n \n \nVí dụ  \nCấu trúc của hệ điều hành THE (Technische Hogeschool Eidhoven)  \n\uf0a7 Lớp 5: chƣơng trình ứng dụng  \n\uf0a7 Lớp 4: quản lý bộ đệm cho thiết bị nhập xuất  \n\uf0a7 Lớp 3: trình điều khiển thao tác console  \n\uf0a7 Lớp 2: quản lý bộ nhớ  \n\uf0a7 Lớp 1: điều phối CPU  \n\uf0a7 Lớp 0: phần cứng  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \nHình 3.3. Mô hình cấu trúc \n  \nLớp 0 \nPhần cứng \nLớp 0 \nPhần cứng \nLớp 1 \n…   \nLớp N \nGiao diện người dùng \n  \n Hình 3.4.Một lớp của hệ điều hành phân lớp \n  \nLớp N   \nThao tác mới   \nThao tác đã có   \nT hao tác   \nnội bộ   \nLớp N   - 1' level='remember' page=2 idx_doc=1
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 2
+
+
+
+tao cau hoi level:understand...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Mô tả vai trò của mô hình máy ảo trong việc triển khai nhiều hệ điều hành trên cùng một hệ thống?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: understand
+[mô tả]
+Option 1: Mô hình máy ảo cho phép chạy nhiều ứng dụng trên một hệ điều hành duy nhất.
+Option 2: Mô hình máy ảo giúp tiết kiệm tài nguyên hệ thống bằng cách giảm số lượng máy chủ cần thiết.
+Option 3: Mô hình máy ảo cho phép triển khai nhiều hệ điều hành cùng lúc trên cùng một hệ thống.
+Option 4: Mô hình máy ảo chỉ hỗ trợ một loại hệ điều hành duy nhất hoạt động trên máy tính.
+Answer: Mô hình máy ảo cho phép triển khai nhiều hệ điều hành cùng lúc trên cùng một hệ thống.
+Citation: Mô hình máy ảo giúp triển khai được nhiều hệ điều hành cùng lúc trên cùng một hệ thống, điều này cho phép người dùng thử nghiệm và sử dụng nhiều hệ điều hành mà không cần phải có nhiều máy vật lý khác nhau.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu mô tả vai trò của mô hình máy ảo trong việc triển khai nhiều hệ điều hành trên cùng một hệ thống, và câu trả lời được gợi ý đã nêu rõ rằng mô hình máy ảo cho phép điều này. Ngoài ra, các đáp án khác cũng liên quan đến mô hình máy ảo, trong đó có một đáp án đúng và một số đáp án không chính xác, cho thấy sự đa dạng trong thông tin. Do đó, câu trả lời được gợi ý là chính xác và phù hợp với câu hỏi.
+cau hoi dung: question='Mô tả vai trò của mô hình máy ảo trong việc triển khai nhiều hệ điều hành trên cùng một hệ thống?' options=['Mô hình máy ảo cho phép chạy nhiều ứng dụng trên một hệ điều hành duy nhất.', 'Mô hình máy ảo giúp tiết kiệm tài nguyên hệ thống bằng cách giảm số lượng máy chủ cần thiết.', 'Mô hình máy ảo cho phép triển khai nhiều hệ điều hành cùng lúc trên cùng một hệ thống.', 'Mô hình máy ảo chỉ hỗ trợ một loại hệ điều hành duy nhất hoạt động trên máy tính.'] answer='Mô hình máy ảo cho phép triển khai nhiều hệ điều hành cùng lúc trên cùng một hệ thống.' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 19  \nTÓM TẮT CHƢƠNG  \n\uf0a7 Hệ điều hành đƣợc thiết kế bao gồm nhiều thành phần hệ thống phối hợp \nvới nhau để hoạt động.  \n\uf0a7 Có nhiều loại dịch vụ đƣợc cung cấp cho ngƣời dùng, phần mềm ứng \ndụng.  \n\uf0a7 Các dịch vụ đƣợc khai thác thông qua những lời gọi hệ thống.  \n\uf0a7 Các chƣơng trình hệ thống đƣợc cung cấp để đáp ứng những yêu cầu \nchung của ngƣời dùng.  \n\uf0a7 Mô hình máy ảo giúp triển khai đƣợc nhiều hệ điều hành cùng lúc trên \ncùng một hệ thống.  \n\uf0a7 Hầu hết các hệ điều hành hiện đại đƣợc thiết kế theo mô hình Client – \nServer.  \nBÀI TẬP  \n1) Mô tả những ứng dụng của máy ảo trong thực tế.  \n2) Tìm hiểu về hệ điều hành MS-DOS.  \n3) Tìm hiểu cấu trúc của hệ điều hành Windows, Linux' level='understand' page=6 idx_doc=5
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 3
+
+
+
+tao cau hoi level:understand...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Mô hình Client-Server trong hệ điều hành có những đặc điểm gì mà bạn có thể chỉ ra?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: understand
+[chỉ ra]
+Option 1: Các thành phần không cần thiết được đưa ra khỏi hạt nhân
+Option 2: Hạt nhân của hệ điều hành bao gồm tất cả các tiến trình
+Option 3: Tiến trình server luôn chạy ở chế độ đặc quyền
+Option 4: Tiến trình client không thể gửi yêu cầu đến server
+Answer: Các thành phần không cần thiết được đưa ra khỏi hạt nhân
+Citation: Trong mô hình Client-Server, các thành phần không cần thiết sẽ được đưa ra khỏi hạt nhân của hệ điều hành và chạy như một tiến trình server ở chế độ không đặc quyền (user-mode).
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu mô tả các đặc điểm của mô hình Client-Server trong hệ điều hành, và câu trả lời được gợi ý đã nêu một đặc điểm chính xác là "Các thành phần không cần thiết được đưa ra khỏi hạt nhân". Điều này hoàn toàn phù hợp với nội dung trong tài liệu. Các đáp án khác cũng liên quan đến mô hình Client-Server và có thể tìm thấy trong tài liệu, nhưng chỉ cần một đặc điểm đúng là đủ để đánh giá câu trả lời này là chính xác.
+cau hoi dung: question='Mô hình Client-Server trong hệ điều hành có những đặc điểm gì mà bạn có thể chỉ ra?' options=['Các thành phần không cần thiết được đưa ra khỏi hạt nhân', 'Hạt nhân của hệ điều hành bao gồm tất cả các tiến trình', 'Tiến trình server luôn chạy ở chế độ đặc quyền', 'Tiến trình client không thể gửi yêu cầu đến server'] answer='Các thành phần không cần thiết được đưa ra khỏi hạt nhân' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 17  \nHình 3.5. Mô hình hệ thống máy ảo \nƯu điểm  \n\uf0a7 Trong môi trƣờng này, các tài nguyên hệ thống đƣợc bảo vệ hoàn toàn vì \nmỗi máy ảo là độc lập với các máy ảo khác.  \n\uf0a7 Sự phân tách hoàn toàn sự đa chƣơng và máy tính mở rộng dẫn đến một hệ \nthống mềm dẻo linh động hơn và dễ bảo trì hơn.  \n\uf0a7 Việc tạo lập các máy ảo đã cung cấp một phƣơng tiện để giải quyết vấn đề \ntƣơng thích: một chƣơng trình đƣợc phát triển trên hệ điều hành X có thể \nhoạt động trong môi trƣờng máy ảo X trên một máy tính thật sự sử dụng \nhệ điều hành Y.  \nKhuyết điểm  \nViệc cài đặt các phần mềm giả lập phần cứng thƣờng rất khó khăn.  \n3.1.4. Mô hình Client – Server (Microkernel)  \nXu hƣớng chung của các hệ điều hành hiện đại là chuyển dần các tác vụ của \nhệ điều hành ra những lớp bên ngoài, thu nhỏ phần cốt lõi của hệ điều hành \nthành hạt nhân cực tiểu (microkernel) sao cho chỉ phần hạt nhân này là phụ \nthuộc phần cứng. Một cách tiếp cận phổ biến là cấu trúc hệ thống theo mô \nhình Client – Server.   \nTrong mô hình Client-Server, các thành phần không cần thiết sẽ đƣợc đƣa ra \nkhỏi hạt nhân của hệ điều hành và chạy nhƣ một tiến trình server ở chế độ \nkhông đặc quyền (user-mode). Phần hạt nhân hệ điều hành sẽ đảm nhiệm \nviệc tạo cơ chế thông tin liên lạc giữa các tiến trình client và tiến trình server. \nKhi đó các tiến trình trong hệ thống có thể chia thành 2 loại:   \n\uf0a7 Tiến trình của ngƣời dùng (client)  \n\uf0a7 Tiến trình của hệ điều hành (server)  \nKhi cần thực hiện một chức năng của hệ thống, tiến trình client sẽ gởi yêu \ncầu đến tiến trình server tƣơng ứng, tiến trình server sẽ xử lý yêu cầu và hồi \nđáp cho tiến trình client. Liên lạc giữa 2 tiến trình đƣợc thực hiện thông qua \nhạt nhân của hệ điều hành.' level='understand' page=4 idx_doc=3
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 4
+
+
+
+tao cau hoi level:apply...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Bạn có thể mô tả ưu điểm của mô hình hệ thống máy ảo trong môi trường hệ điều hành không?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: apply
+[mô tả]
+Option 1: Mỗi máy ảo độc lập với các máy ảo khác, bảo vệ tài nguyên hệ thống
+Option 2: Mô hình này không có khả năng mở rộng
+Option 3: Các máy ảo không thể hoạt động trên hệ điều hành khác
+Option 4: Mô hình này không dễ bảo trì và không linh động
+Answer: Mỗi máy ảo độc lập với các máy ảo khác, bảo vệ tài nguyên hệ thống
+Citation: Ưu điểm của mô hình hệ thống máy ảo là mỗi máy ảo độc lập với các máy ảo khác, giúp bảo vệ hoàn toàn tài nguyên hệ thống.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu mô tả ưu điểm của mô hình hệ thống máy ảo trong môi trường hệ điều hành, và câu trả lời được gợi ý đã nêu rõ một trong những ưu điểm chính là sự độc lập của mỗi máy ảo và việc bảo vệ tài nguyên hệ thống. Các đáp án khác cũng có thể tìm thấy trong tài liệu, trong đó có một số đáp án đúng và một số không đúng, nhưng câu trả lời gợi ý vẫn đúng với câu hỏi và có thể tìm thấy trong tài liệu.
+cau hoi dung: question='Bạn có thể mô tả ưu điểm của mô hình hệ thống máy ảo trong môi trường hệ điều hành không?' options=['Mỗi máy ảo độc lập với các máy ảo khác, bảo vệ tài nguyên hệ thống', 'Mô hình này không có khả năng mở rộng', 'Các máy ảo không thể hoạt động trên hệ điều hành khác', 'Mô hình này không dễ bảo trì và không linh động'] answer='Mỗi máy ảo độc lập với các máy ảo khác, bảo vệ tài nguyên hệ thống' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 17  \nHình 3.5. Mô hình hệ thống máy ảo \nƯu điểm  \n\uf0a7 Trong môi trƣờng này, các tài nguyên hệ thống đƣợc bảo vệ hoàn toàn vì \nmỗi máy ảo là độc lập với các máy ảo khác.  \n\uf0a7 Sự phân tách hoàn toàn sự đa chƣơng và máy tính mở rộng dẫn đến một hệ \nthống mềm dẻo linh động hơn và dễ bảo trì hơn.  \n\uf0a7 Việc tạo lập các máy ảo đã cung cấp một phƣơng tiện để giải quyết vấn đề \ntƣơng thích: một chƣơng trình đƣợc phát triển trên hệ điều hành X có thể \nhoạt động trong môi trƣờng máy ảo X trên một máy tính thật sự sử dụng \nhệ điều hành Y.  \nKhuyết điểm  \nViệc cài đặt các phần mềm giả lập phần cứng thƣờng rất khó khăn.  \n3.1.4. Mô hình Client – Server (Microkernel)  \nXu hƣớng chung của các hệ điều hành hiện đại là chuyển dần các tác vụ của \nhệ điều hành ra những lớp bên ngoài, thu nhỏ phần cốt lõi của hệ điều hành \nthành hạt nhân cực tiểu (microkernel) sao cho chỉ phần hạt nhân này là phụ \nthuộc phần cứng. Một cách tiếp cận phổ biến là cấu trúc hệ thống theo mô \nhình Client – Server.   \nTrong mô hình Client-Server, các thành phần không cần thiết sẽ đƣợc đƣa ra \nkhỏi hạt nhân của hệ điều hành và chạy nhƣ một tiến trình server ở chế độ \nkhông đặc quyền (user-mode). Phần hạt nhân hệ điều hành sẽ đảm nhiệm \nviệc tạo cơ chế thông tin liên lạc giữa các tiến trình client và tiến trình server. \nKhi đó các tiến trình trong hệ thống có thể chia thành 2 loại:   \n\uf0a7 Tiến trình của ngƣời dùng (client)  \n\uf0a7 Tiến trình của hệ điều hành (server)  \nKhi cần thực hiện một chức năng của hệ thống, tiến trình client sẽ gởi yêu \ncầu đến tiến trình server tƣơng ứng, tiến trình server sẽ xử lý yêu cầu và hồi \nđáp cho tiến trình client. Liên lạc giữa 2 tiến trình đƣợc thực hiện thông qua \nhạt nhân của hệ điều hành.' level='apply' page=4 idx_doc=3
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 5
+
+
+
+tao cau hoi level:apply...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Xác định lớp nào trong cấu trúc phân lớp của hệ điều hành THE chịu trách nhiệm quản lý bộ nhớ?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: apply
+Option 1: Lớp 2: quản lý bộ nhớ
+Option 2: Lớp 5: chương trình ứng dụng
+Option 3: Lớp 3: trình điều khiển thao tác console
+Option 4: Lớp 1: điều phối CPU
+Answer: Lớp 2: quản lý bộ nhớ
+Citation: Lớp 2 trong cấu trúc phân lớp của hệ điều hành THE được xác định là lớp quản lý bộ nhớ, theo thông tin trong nội dung.
+Keyword: False
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:apply...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Giải thích vai trò của lớp N trong cấu trúc phân lớp của hệ điều hành THE?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: apply
+[giải thích]
+Option 1: Lớp N quản lý bộ nhớ cho hệ thống
+Option 2: Lớp N là giao diện với người sử dụng và chứa các thủ tục gọi từ lớp bên ngoài
+Option 3: Lớp N thực hiện điều phối CPU cho hệ thống
+Option 4: Lớp N là phần cứng của hệ điều hành THE
+Answer: Lớp N là giao diện với người sử dụng và chứa các thủ tục gọi từ lớp bên ngoài
+Citation: Lớp N trong cấu trúc phân lớp của hệ điều hành THE thường là giao diện với người sử dụng, chứa đựng một số cấu trúc dữ liệu và thủ tục có thể được gọi bởi những lớp bên ngoài.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu giải thích vai trò của lớp N trong cấu trúc phân lớp của hệ điều hành THE, và câu trả lời được gợi ý đã nêu rõ rằng lớp N là giao diện với người sử dụng và chứa các thủ tục gọi từ lớp bên ngoài, điều này hoàn toàn chính xác và có thể tìm thấy trong tài liệu. Các đáp án khác cũng được liệt kê, trong đó có một đáp án đúng trùng với câu trả lời gợi ý, cho thấy tính chính xác của thông tin.
+cau hoi dung: question='Giải thích vai trò của lớp N trong cấu trúc phân lớp của hệ điều hành THE?' options=['Lớp N quản lý bộ nhớ cho hệ thống', 'Lớp N là giao diện với người sử dụng và chứa các thủ tục gọi từ lớp bên ngoài', 'Lớp N thực hiện điều phối CPU cho hệ thống', 'Lớp N là phần cứng của hệ điều hành THE'] answer='Lớp N là giao diện với người sử dụng và chứa các thủ tục gọi từ lớp bên ngoài' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 15  \n3.1.2. Cấu trúc phân lớp (Layered) \nĐơn thể hóa hệ thống bằng cách cắt hệ thống thành một số lớp, mỗi lớp đƣợc \nxây dựng dựa trên các lớp bên trong. Lớp trong cùng (lớp 0) thƣờng là phần \ncứng, lớp ngoài cùng (lớp N) thƣờng là giao diện với ngƣời sử dụng.  \nMỗi lớp là một đối tƣợng trừu tƣợng bao bọc bên trong nó các dữ liệu và \nthao tác xử lý các dữ liệu đó. Lớp N chứa đựng một số cấu trúc dữ liệu và \nmột số thủ tục có thể đƣợc gọi bởi những lớp bên ngoài và lớp N có thể gọi \nnhững thủ tục của các lớp bên trong N.  \n \n \nVí dụ  \nCấu trúc của hệ điều hành THE (Technische Hogeschool Eidhoven)  \n\uf0a7 Lớp 5: chƣơng trình ứng dụng  \n\uf0a7 Lớp 4: quản lý bộ đệm cho thiết bị nhập xuất  \n\uf0a7 Lớp 3: trình điều khiển thao tác console  \n\uf0a7 Lớp 2: quản lý bộ nhớ  \n\uf0a7 Lớp 1: điều phối CPU  \n\uf0a7 Lớp 0: phần cứng  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \nHình 3.3. Mô hình cấu trúc \n  \nLớp 0 \nPhần cứng \nLớp 0 \nPhần cứng \nLớp 1 \n…   \nLớp N \nGiao diện người dùng \n  \n Hình 3.4.Một lớp của hệ điều hành phân lớp \n  \nLớp N   \nThao tác mới   \nThao tác đã có   \nT hao tác   \nnội bộ   \nLớp N   - 1' level='apply' page=2 idx_doc=1
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 1
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 6
+
+
+
+tao cau hoi level:analyze...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hãy phân tích những khuyết điểm của cấu trúc hệ điều hành monolithique.
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: analyze
+[phân tích]
+Option 1: Hệ điều hành khó kiểm soát và bảo vệ hệ thống do không có sự che dấu dữ liệu.
+Option 2: Cấu trúc hệ điều hành monolithique có thể kiểm soát và bảo vệ hệ thống tốt.
+Option 3: Hệ điều hành monolithique có sự che dấu dữ liệu rõ ràng giữa các thủ tục.
+Option 4: Cấu trúc này cho phép chương trình ứng dụng truy xuất đến các thủ tục cấp cao hơn.
+Answer: Hệ điều hành khó kiểm soát và bảo vệ hệ thống do không có sự che dấu dữ liệu.
+Citation: Khuyết điểm của cấu trúc hệ điều hành monolithique được nêu rõ là không có sự che dấu dữ liệu, khiến cho mỗi thủ tục có thể gọi đến tất cả các thủ tục khác, gây khó khăn trong việc kiểm soát và bảo vệ hệ thống.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu phân tích khuyết điểm của cấu trúc hệ điều hành monolithique, và câu trả lời được gợi ý đã nêu rõ một trong những khuyết điểm chính là hệ điều hành khó kiểm soát và bảo vệ hệ thống do không có sự che dấu dữ liệu. Các đáp án khác cũng liên quan đến khuyết điểm và ưu điểm của cấu trúc này, trong đó có những đáp án sai, nhưng không ảnh hưởng đến tính đúng đắn của câu trả lời được gợi ý.
+cau hoi dung: question='Hãy phân tích những khuyết điểm của cấu trúc hệ điều hành monolithique.' options=['Hệ điều hành khó kiểm soát và bảo vệ hệ thống do không có sự che dấu dữ liệu.', 'Cấu trúc hệ điều hành monolithique có thể kiểm soát và bảo vệ hệ thống tốt.', 'Hệ điều hành monolithique có sự che dấu dữ liệu rõ ràng giữa các thủ tục.', 'Cấu trúc này cho phép chương trình ứng dụng truy xuất đến các thủ tục cấp cao hơn.'] answer='Hệ điều hành khó kiểm soát và bảo vệ hệ thống do không có sự che dấu dữ liệu.' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 14  \nCHƢƠNG 3. CẤU TRÚC HỆ ĐIỀU HÀNH \n3.1. \nCẤU TRÚC HỆ THỐNG \n3.1.1. Cấu trúc đơn giản (Monolithique)  \nHệ điều hành là một tập hợp các thủ tục, có thể gọi lẫn nhau. Một số hệ \nmonolithique cũng có thể có một cấu trúc tối thiểu khi phân chia các thủ tục \ntrong hệ thống thành 3 cấp độ:  \n\uf0a7 Chƣơng trình chính (chƣơng trình của ngƣời sử dụng) gọi đến một thủ \ntục của hệ điều hành, đƣợc gọi là lời gọi hệ thống.  \n\uf0a7 Tập hợp các thủ tục dịch vụ (service) xử lý những lời gọi hệ thống. \n\uf0a7 Tập hợp các thủ tục tiện ích (utility) hỗ trợ các thủ tục dịch vụ xử lý \nnhững lời gọi hệ thống.  \n \nVí dụ  \n \nKhuyết điểm  \n\uf0a7 Không có sự che dấu dữ liệu, mỗi thủ tục có thể gọi đến tất cả các thủ \ntục khác. Các mức độ phân chia thủ tục nếu có cũng không rõ rệt, \nchƣơng trình ứng dụng có thể truy xuất đến các thủ tục cấp thấp, tác \nđộng đến cả phần cứng, do vậy hệ điều hành khó kiểm soát và bảo vệ \nhệ thống.  \n\uf0a7 Hệ thống thủ tục chỉ mang tính chất tĩnh, chỉ đƣợc kích hoạt khi cần \nthiết, do vậy hệ điều hành thiếu chủ động trong việc quản lý môi \ntrƣờng.  \nHình 3.1.Cấu trúc một hệ monolithique \n  \nThủ tục chính   \n  Thủ tục dịch vụ   \n  Thủ tục tiện ích   \n  \nChương trình ứng dụng   \nChương trình thường trú   \nMS - DOS   \nPhần cứng   \nHình 3.2. Cấu trúc của hệ điều hành MS-DOS' level='analyze' page=1 idx_doc=0
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 7
+
+
+
+tao cau hoi level:analyze...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Phân tích các dịch vụ mà hệ điều hành cung cấp cho người dùng và phần mềm ứng dụng?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: analyze
+[phân tích]
+Option 1: Các dịch vụ chủ yếu là quản lý tệp và quản lý bộ nhớ.
+Option 2: Các dịch vụ bao gồm quản lý mạng và bảo mật dữ liệu.
+Option 3: Các dịch vụ bao gồm quản lý tệp, quản lý bộ nhớ và giao tiếp giữa các ứng dụng.
+Option 4: Các dịch vụ chủ yếu là bảo trì hệ thống và cập nhật phần mềm.
+Answer: Các dịch vụ bao gồm quản lý tệp, quản lý bộ nhớ và giao tiếp giữa các ứng dụng.
+Citation: Câu trả lời này đúng vì nội dung đã đề cập rằng hệ điều hành cung cấp nhiều loại dịch vụ cho người dùng và phần mềm ứng dụng, bao gồm quản lý tệp và quản lý bộ nhớ, cùng với giao tiếp giữa các ứng dụng.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu phân tích các dịch vụ mà hệ điều hành cung cấp cho người dùng và phần mềm ứng dụng, và câu trả lời được gợi ý đã nêu rõ các dịch vụ này, bao gồm quản lý tệp, quản lý bộ nhớ và giao tiếp giữa các ứng dụng. Các đáp án khác cũng có liên quan và có thể tìm thấy trong tài liệu, do đó câu trả lời được gợi ý là chính xác và phù hợp.
+cau hoi dung: question='Phân tích các dịch vụ mà hệ điều hành cung cấp cho người dùng và phần mềm ứng dụng?' options=['Các dịch vụ chủ yếu là quản lý tệp và quản lý bộ nhớ.', 'Các dịch vụ bao gồm quản lý mạng và bảo mật dữ liệu.', 'Các dịch vụ bao gồm quản lý tệp, quản lý bộ nhớ và giao tiếp giữa các ứng dụng.', 'Các dịch vụ chủ yếu là bảo trì hệ thống và cập nhật phần mềm.'] answer='Các dịch vụ bao gồm quản lý tệp, quản lý bộ nhớ và giao tiếp giữa các ứng dụng.' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 19  \nTÓM TẮT CHƢƠNG  \n\uf0a7 Hệ điều hành đƣợc thiết kế bao gồm nhiều thành phần hệ thống phối hợp \nvới nhau để hoạt động.  \n\uf0a7 Có nhiều loại dịch vụ đƣợc cung cấp cho ngƣời dùng, phần mềm ứng \ndụng.  \n\uf0a7 Các dịch vụ đƣợc khai thác thông qua những lời gọi hệ thống.  \n\uf0a7 Các chƣơng trình hệ thống đƣợc cung cấp để đáp ứng những yêu cầu \nchung của ngƣời dùng.  \n\uf0a7 Mô hình máy ảo giúp triển khai đƣợc nhiều hệ điều hành cùng lúc trên \ncùng một hệ thống.  \n\uf0a7 Hầu hết các hệ điều hành hiện đại đƣợc thiết kế theo mô hình Client – \nServer.  \nBÀI TẬP  \n1) Mô tả những ứng dụng của máy ảo trong thực tế.  \n2) Tìm hiểu về hệ điều hành MS-DOS.  \n3) Tìm hiểu cấu trúc của hệ điều hành Windows, Linux' level='analyze' page=6 idx_doc=5
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 8
+
+
+
+tao cau hoi level:evaluate...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hệ điều hành có ưu điểm gì trong việc xây dựng hệ thống mang tính đơn thể?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: evaluate
+[xây dựng]
+Option 1: Giúp đơn giản việc tìm lỗi và kiểm chứng hệ thống
+Option 2: Khó xác định các lớp một cách đầy đủ
+Option 3: Có khuynh hướng hoạt động kém hiệu quả
+Option 4: Cần cân nhắc cẩn thận thứ tự xếp đặt các lớp
+Answer: Giúp đơn giản việc tìm lỗi và kiểm chứng hệ thống
+Citation: Câu trả lời đúng là "Giúp đơn giản việc tìm lỗi và kiểm chứng hệ thống" vì đây là một trong những ưu điểm chính của hệ điều hành khi xây dựng hệ thống mang tính đơn thể, theo thông tin trong nội dung.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi liên quan đến tài liệu vì nó hỏi về ưu điểm của hệ điều hành trong việc xây dựng hệ thống mang tính đơn thể. Câu trả lời được gợi ý đúng với câu hỏi và có thể tìm thấy trong tài liệu, cụ thể là việc giúp đơn giản việc tìm lỗi và kiểm chứng hệ thống. Các đáp án khác cũng liên quan đến khuyết điểm, nhưng không ảnh hưởng đến việc đánh giá câu trả lời được gợi ý là đúng.
+cau hoi dung: question='Hệ điều hành có ưu điểm gì trong việc xây dựng hệ thống mang tính đơn thể?' options=['Giúp đơn giản việc tìm lỗi và kiểm chứng hệ thống', 'Khó xác định các lớp một cách đầy đủ', 'Có khuynh hướng hoạt động kém hiệu quả', 'Cần cân nhắc cẩn thận thứ tự xếp đặt các lớp'] answer='Giúp đơn giản việc tìm lỗi và kiểm chứng hệ thống' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 16  \nƯu điểm  \nCho phép xây dựng hệ thống mang tính đơn thể, điều này giúp đơn giản việc tìm \nlỗi và kiểm chứng hệ thống, việc thiết kế và cài đặt đơn giản.  \nKhuyết điểm  \n\uf0a7 Khó có thể xác định các lớp một cách đầy đủ: bao nhiêu lớp? Mỗi lớp đảm \nnhiệm những chức năng gì? Do mỗi lớp chỉ có thể sử dụng các lớp bên \ntrong nên thứ tự xếp đặt các lớp cần phải đƣợc cân nhắc cẩn thận.  \n\uf0a7 Khi cài đặt thực tế, các hệ thống theo cấu trúc phân lớp có khuynh hƣớng \nhoạt động kém hiệu quả do một lời gọi thủ tục có thể kích hoạt lan truyền \ncác thủ tục khác ở các lớp bên trong, vì thế tổng chi phí để truyền tham số, \nchuyển đổi ngữ cảnh,… tăng lên. Hậu quả là lời gọi hệ thống trong hệ \nthống phân lớp đƣợc thực hiện chậm hơn trong các hệ thống không phân \nlớp.  \n3.1.3. Máy ảo (Virtual Machine)  \nPhần nhân của hệ thống là trình tổ chức giám sát máy ảo (monitor of virtual \nmachine) chịu trách nhiệm giao tiếp với phần cứng và cho phép khả năng đa \nchƣơng bằng cách cung cấp nhiều máy ảo cho các lớp bên trên. Các máy ảo \nkhông phải là các máy tính mở rộng mà là bản sao (ảo) chính xác các đặc \ntính phần cứng của máy tính thật sự và cho phép một hệ điều hành khác hoạt \nđộng trên nó nhƣ trên phần cứng thực sự, các hệ điều hành này mới là thành \nphần chịu trách nhiệm cung cấp cho ngƣời sử dụng một máy tính mở rộng. \nHơn nữa, mỗi máy ảo có thể cho phép một hệ điều hành khác nhau hoạt động \ntrên nó, nhƣ vậy có thể tạo ra nhiều môi trƣờng đồng thời trên một máy tính \nthật sự.' level='evaluate' page=3 idx_doc=2
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 9
+
+
+
+tao cau hoi level:evaluate...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Hãy đánh giá mức độ kiểm soát và bảo vệ của hệ điều hành monolithique dựa trên cấu trúc của nó.
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: evaluate
+[đánh giá]
+Option 1: Hệ điều hành monolithique có khả năng kiểm soát và bảo vệ tốt nhờ vào sự phân chia rõ ràng giữa các thủ tục.
+Option 2: Hệ điều hành monolithique không có sự che dấu dữ liệu, làm cho việc kiểm soát và bảo vệ kém hiệu quả.
+Option 3: Hệ điều hành monolithique có thể kiểm soát tốt các thủ tục cấp thấp, do đó bảo vệ hệ thống hiệu quả.
+Option 4: Hệ điều hành monolithique hoàn toàn không có khả năng kiểm soát và bảo vệ hệ thống.
+Answer: Hệ điều hành monolithique không có sự che dấu dữ liệu, làm cho việc kiểm soát và bảo vệ kém hiệu quả.
+Citation: Cấu trúc của hệ điều hành monolithique cho thấy rằng mỗi thủ tục có thể gọi đến tất cả các thủ tục khác, dẫn đến việc chương trình ứng dụng có thể truy xuất đến các thủ tục cấp thấp, gây khó khăn trong việc kiểm soát và bảo vệ hệ thống.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu đánh giá mức độ kiểm soát và bảo vệ của hệ điều hành monolithique, và câu trả lời được gợi ý đã nêu rõ rằng hệ điều hành này không có sự che dấu dữ liệu, dẫn đến việc kiểm soát và bảo vệ kém hiệu quả. Điều này hoàn toàn phù hợp với nội dung trong tài liệu. Các đáp án khác cũng có thể tìm thấy trong tài liệu, nhưng câu trả lời được gợi ý là chính xác và phù hợp nhất với câu hỏi.
+cau hoi dung: question='Hãy đánh giá mức độ kiểm soát và bảo vệ của hệ điều hành monolithique dựa trên cấu trúc của nó.' options=['Hệ điều hành monolithique có khả năng kiểm soát và bảo vệ tốt nhờ vào sự phân chia rõ ràng giữa các thủ tục.', 'Hệ điều hành monolithique không có sự che dấu dữ liệu, làm cho việc kiểm soát và bảo vệ kém hiệu quả.', 'Hệ điều hành monolithique có thể kiểm soát tốt các thủ tục cấp thấp, do đó bảo vệ hệ thống hiệu quả.', 'Hệ điều hành monolithique hoàn toàn không có khả năng kiểm soát và bảo vệ hệ thống.'] answer='Hệ điều hành monolithique không có sự che dấu dữ liệu, làm cho việc kiểm soát và bảo vệ kém hiệu quả.' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 14  \nCHƢƠNG 3. CẤU TRÚC HỆ ĐIỀU HÀNH \n3.1. \nCẤU TRÚC HỆ THỐNG \n3.1.1. Cấu trúc đơn giản (Monolithique)  \nHệ điều hành là một tập hợp các thủ tục, có thể gọi lẫn nhau. Một số hệ \nmonolithique cũng có thể có một cấu trúc tối thiểu khi phân chia các thủ tục \ntrong hệ thống thành 3 cấp độ:  \n\uf0a7 Chƣơng trình chính (chƣơng trình của ngƣời sử dụng) gọi đến một thủ \ntục của hệ điều hành, đƣợc gọi là lời gọi hệ thống.  \n\uf0a7 Tập hợp các thủ tục dịch vụ (service) xử lý những lời gọi hệ thống. \n\uf0a7 Tập hợp các thủ tục tiện ích (utility) hỗ trợ các thủ tục dịch vụ xử lý \nnhững lời gọi hệ thống.  \n \nVí dụ  \n \nKhuyết điểm  \n\uf0a7 Không có sự che dấu dữ liệu, mỗi thủ tục có thể gọi đến tất cả các thủ \ntục khác. Các mức độ phân chia thủ tục nếu có cũng không rõ rệt, \nchƣơng trình ứng dụng có thể truy xuất đến các thủ tục cấp thấp, tác \nđộng đến cả phần cứng, do vậy hệ điều hành khó kiểm soát và bảo vệ \nhệ thống.  \n\uf0a7 Hệ thống thủ tục chỉ mang tính chất tĩnh, chỉ đƣợc kích hoạt khi cần \nthiết, do vậy hệ điều hành thiếu chủ động trong việc quản lý môi \ntrƣờng.  \nHình 3.1.Cấu trúc một hệ monolithique \n  \nThủ tục chính   \n  Thủ tục dịch vụ   \n  Thủ tục tiện ích   \n  \nChương trình ứng dụng   \nChương trình thường trú   \nMS - DOS   \nPhần cứng   \nHình 3.2. Cấu trúc của hệ điều hành MS-DOS' level='evaluate' page=1 idx_doc=0
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 0
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 10
+
+
+
+tao cau hoi level:create...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Khó khăn nào trong việc xác định các lớp trong hệ thống phân lớp được đề cập trong nội dung?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: create
+Option 1: Khó xác định số lượng lớp và chức năng của từng lớp
+Option 2: Không thể sử dụng các lớp bên trong
+Option 3: Các lớp không cần phải được cân nhắc cẩn thận
+Option 4: Mỗi lớp đều có thể sử dụng bất kỳ lớp nào bên ngoài
+Answer: Khó xác định số lượng lớp và chức năng của từng lớp
+Citation: Nội dung đề cập rằng khó có thể xác định các lớp một cách đầy đủ, bao gồm việc xác định số lượng lớp và chức năng của từng lớp trong hệ thống phân lớp.
+Keyword: False
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:create...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Khó khăn nào trong việc cài đặt thực tế của hệ thống phân lớp có thể được phát hiện?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: create
+Option 1: Gây ra sự chậm trễ trong lời gọi hệ thống do lan truyền thủ tục
+Option 2: Cho phép dễ dàng xác định số lượng lớp cần thiết
+Option 3: Giúp cải thiện hiệu suất hoạt động của hệ thống
+Option 4: Đảm bảo tính hiệu quả cao trong việc truyền tham số
+Answer: Gây ra sự chậm trễ trong lời gọi hệ thống do lan truyền thủ tục
+Citation: Câu trả lời đúng là "Gây ra sự chậm trễ trong lời gọi hệ thống do lan truyền thủ tục" vì nội dung đã nêu rõ rằng các hệ thống theo cấu trúc phân lớp có khuynh hướng hoạt động kém hiệu quả do một lời gọi thủ tục có thể kích hoạt lan truyền các thủ tục khác ở các lớp bên trong, dẫn đến chi phí tăng lên và thời gian thực hiện chậm hơn.
+Keyword: False
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 1
+
+tao lai cau hoi level:create...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Bạn hãy chỉ ra những khuyết điểm nào của hệ thống phân lớp trong việc cài đặt thực tế?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: create
+Option 1: Khó xác định số lượng lớp và chức năng của từng lớp
+Option 2: Tăng chi phí truyền tham số và chuyển đổi ngữ cảnh
+Option 3: Hoạt động kém hiệu quả do lời gọi thủ tục lan truyền
+Option 4: Giảm hiệu suất tổng thể của hệ thống không phân lớp
+Answer: Tăng chi phí truyền tham số và chuyển đổi ngữ cảnh
+Citation: Trong nội dung đã đề cập rằng khi cài đặt thực tế, các hệ thống theo cấu trúc phân lớp có khuynh hướng hoạt động kém hiệu quả do một lời gọi thủ tục có thể kích hoạt lan truyền các thủ tục khác ở các lớp bên trong, dẫn đến tổng chi phí để truyền tham số, chuyển đổi ngữ cảnh tăng lên.
+Keyword: False
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 2
+
+tao lai cau hoi level:create...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Bạn hãy đề xuất một ưu điểm của hệ điều hành trong việc thiết kế và cài đặt hệ thống mang tính đơn thể?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: create
+[đề xuất]
+Option 1: Cho phép xây dựng hệ thống đơn giản hơn và dễ dàng kiểm chứng
+Option 2: Khó có thể xác định số lượng lớp trong hệ thống
+Option 3: Khi cài đặt thực tế, hoạt động kém hiệu quả hơn
+Option 4: Có thể tạo ra nhiều môi trường đồng thời trên một máy tính thật sự
+Answer: Cho phép xây dựng hệ thống đơn giản hơn và dễ dàng kiểm chứng
+Citation: Đáp án đúng là "Cho phép xây dựng hệ thống đơn giản hơn và dễ dàng kiểm chứng" vì trong nội dung đã nêu rõ rằng ưu điểm của hệ điều hành là giúp đơn giản việc tìm lỗi và kiểm chứng hệ thống.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu đề xuất một ưu điểm của hệ điều hành trong việc thiết kế và cài đặt hệ thống mang tính đơn thể. Câu trả lời được gợi ý "Cho phép xây dựng hệ thống đơn giản hơn và dễ dàng kiểm chứng" hoàn toàn phù hợp với nội dung trong tài liệu, nơi nêu rõ rằng ưu điểm của hệ thống mang tính đơn thể là giúp đơn giản việc tìm lỗi và kiểm chứng hệ thống. Các đáp án khác cũng liên quan đến nội dung trong tài liệu, nhưng không phải là ưu điểm, do đó không ảnh hưởng đến đánh giá của câu trả lời được gợi ý.
+cau hoi dung: question='Bạn hãy đề xuất một ưu điểm của hệ điều hành trong việc thiết kế và cài đặt hệ thống mang tính đơn thể?' options=['Cho phép xây dựng hệ thống đơn giản hơn và dễ dàng kiểm chứng', 'Khó có thể xác định số lượng lớp trong hệ thống', 'Khi cài đặt thực tế, hoạt động kém hiệu quả hơn', 'Có thể tạo ra nhiều môi trường đồng thời trên một máy tính thật sự'] answer='Cho phép xây dựng hệ thống đơn giản hơn và dễ dàng kiểm chứng' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 16  \nƯu điểm  \nCho phép xây dựng hệ thống mang tính đơn thể, điều này giúp đơn giản việc tìm \nlỗi và kiểm chứng hệ thống, việc thiết kế và cài đặt đơn giản.  \nKhuyết điểm  \n\uf0a7 Khó có thể xác định các lớp một cách đầy đủ: bao nhiêu lớp? Mỗi lớp đảm \nnhiệm những chức năng gì? Do mỗi lớp chỉ có thể sử dụng các lớp bên \ntrong nên thứ tự xếp đặt các lớp cần phải đƣợc cân nhắc cẩn thận.  \n\uf0a7 Khi cài đặt thực tế, các hệ thống theo cấu trúc phân lớp có khuynh hƣớng \nhoạt động kém hiệu quả do một lời gọi thủ tục có thể kích hoạt lan truyền \ncác thủ tục khác ở các lớp bên trong, vì thế tổng chi phí để truyền tham số, \nchuyển đổi ngữ cảnh,… tăng lên. Hậu quả là lời gọi hệ thống trong hệ \nthống phân lớp đƣợc thực hiện chậm hơn trong các hệ thống không phân \nlớp.  \n3.1.3. Máy ảo (Virtual Machine)  \nPhần nhân của hệ thống là trình tổ chức giám sát máy ảo (monitor of virtual \nmachine) chịu trách nhiệm giao tiếp với phần cứng và cho phép khả năng đa \nchƣơng bằng cách cung cấp nhiều máy ảo cho các lớp bên trên. Các máy ảo \nkhông phải là các máy tính mở rộng mà là bản sao (ảo) chính xác các đặc \ntính phần cứng của máy tính thật sự và cho phép một hệ điều hành khác hoạt \nđộng trên nó nhƣ trên phần cứng thực sự, các hệ điều hành này mới là thành \nphần chịu trách nhiệm cung cấp cho ngƣời sử dụng một máy tính mở rộng. \nHơn nữa, mỗi máy ảo có thể cho phép một hệ điều hành khác nhau hoạt động \ntrên nó, nhƣ vậy có thể tạo ra nhiều môi trƣờng đồng thời trên một máy tính \nthật sự.' level='create' page=3 idx_doc=2
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 3
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 11
+
+
+
+tao cau hoi level:create...
+
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Xác định lớp nào trong cấu trúc phân lớp của hệ điều hành THE chịu trách nhiệm quản lý bộ nhớ?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: create
+Option 1: Lớp 2: quản lý bộ nhớ
+Option 2: Lớp 4: quản lý bộ đệm cho thiết bị nhập xuất
+Option 3: Lớp 3: trình điều khiển thao tác console
+Option 4: Lớp 5: chương trình ứng dụng
+Answer: Lớp 2: quản lý bộ nhớ
+Citation: Đáp án đúng là Lớp 2: quản lý bộ nhớ, vì theo nội dung, lớp 2 trong cấu trúc phân lớp của hệ điều hành THE được chỉ định để thực hiện chức năng quản lý bộ nhớ.
+Keyword: False
+Tạo đủ 0/1 câu hỏi
+Số lần tạo lại: 0
+
+tao lai cau hoi level:create...
+Kiem tra cau hoi da ton tai hay chua...
+
+Cau hoi: Tìm ra lớp nào trong cấu trúc phân lớp của hệ điều hành THE chịu trách nhiệm điều phối CPU?
+Cau hoi chua ton tai=>Kiem tra tu khoa....
+Level: create
+[tìm ra]
+Option 1: Lớp 1: điều phối CPU
+Option 2: Lớp 4: quản lý bộ đệm cho thiết bị nhập xuất
+Option 3: Lớp 2: quản lý bộ nhớ
+Option 4: Lớp 3: trình điều khiển thao tác console
+Answer: Lớp 1: điều phối CPU
+Citation: Đáp án đúng là Lớp 1: điều phối CPU vì trong cấu trúc phân lớp của hệ điều hành THE, lớp 1 được xác định là lớp chịu trách nhiệm điều phối CPU, theo thông tin trong nội dung.
+Keyword: True
+Danh gia cau hoi....
+Lien quan: yes
+Giai thich: Câu hỏi yêu cầu tìm lớp chịu trách nhiệm điều phối CPU trong cấu trúc phân lớp của hệ điều hành THE, và câu trả lời được gợi ý là 'Lớp 1: điều phối CPU', hoàn toàn chính xác. Ngoài ra, các đáp án khác cũng được liệt kê và đều có thể tìm thấy trong tài liệu, do đó câu trả lời được gợi ý là đúng và phù hợp.
+cau hoi dung: question='Tìm ra lớp nào trong cấu trúc phân lớp của hệ điều hành THE chịu trách nhiệm điều phối CPU?' options=['Lớp 1: điều phối CPU', 'Lớp 4: quản lý bộ đệm cho thiết bị nhập xuất', 'Lớp 2: quản lý bộ nhớ', 'Lớp 3: trình điều khiển thao tác console'] answer='Lớp 1: điều phối CPU' citation='HỆ ĐIỀU HÀNH \n \n \nTRƢỜNG ĐẠI HỌC NAM CẦN THƠ – KHOA KTCN \nTrang 15  \n3.1.2. Cấu trúc phân lớp (Layered) \nĐơn thể hóa hệ thống bằng cách cắt hệ thống thành một số lớp, mỗi lớp đƣợc \nxây dựng dựa trên các lớp bên trong. Lớp trong cùng (lớp 0) thƣờng là phần \ncứng, lớp ngoài cùng (lớp N) thƣờng là giao diện với ngƣời sử dụng.  \nMỗi lớp là một đối tƣợng trừu tƣợng bao bọc bên trong nó các dữ liệu và \nthao tác xử lý các dữ liệu đó. Lớp N chứa đựng một số cấu trúc dữ liệu và \nmột số thủ tục có thể đƣợc gọi bởi những lớp bên ngoài và lớp N có thể gọi \nnhững thủ tục của các lớp bên trong N.  \n \n \nVí dụ  \nCấu trúc của hệ điều hành THE (Technische Hogeschool Eidhoven)  \n\uf0a7 Lớp 5: chƣơng trình ứng dụng  \n\uf0a7 Lớp 4: quản lý bộ đệm cho thiết bị nhập xuất  \n\uf0a7 Lớp 3: trình điều khiển thao tác console  \n\uf0a7 Lớp 2: quản lý bộ nhớ  \n\uf0a7 Lớp 1: điều phối CPU  \n\uf0a7 Lớp 0: phần cứng  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \nHình 3.3. Mô hình cấu trúc \n  \nLớp 0 \nPhần cứng \nLớp 0 \nPhần cứng \nLớp 1 \n…   \nLớp N \nGiao diện người dùng \n  \n Hình 3.4.Một lớp của hệ điều hành phân lớp \n  \nLớp N   \nThao tác mới   \nThao tác đã có   \nT hao tác   \nnội bộ   \nLớp N   - 1' level='create' page=2 idx_doc=1
+them cau hoi vao danh sach tam thoi!
+Tạo đủ 1/1 câu hỏi
+Số lần tạo lại: 1
+Them 1 cau hoi vao danh sach tong
+Tong cau hoi hien tai: 12
+Tong characters: 149159
+Execution Time: 1m 56.59s
